@@ -191,7 +191,7 @@ s
 
 **MySQL index** limit on tinkering & production plans is only a recommendation. See above.
 
-**MySQL index** limit on a dedicated plan is a soft limit. When exceeding, either nothing happens or the App get's slower because total available memory of dedicated is exhausted depending on whether index memory exhaustion is caused permanently or by isolated event.
+**MySQL index** limit on a dedicated plan is a soft limit. When exceeding, either nothing happens or the App get's slower because the total available dedicated memory is exhausted depending on whether index memory exhaustion is caused permanently or by isolated event.
 
 **MySQL IOPS** limit is a soft limit. Exceeding it probably degrades performance for website delivery.
 
