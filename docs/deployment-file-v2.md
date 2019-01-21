@@ -38,13 +38,13 @@ composer:
     # Per default dist is prefered
     prefer-source: false
 
-    # Resolves to the --no-dev parameter
+    # Resolves to the --no-dev parameter, default is true
     no-dev: false
 
-    # Resolves to the --no-plugins parameter
+    # Resolves to the --no-plugins parameter, default is false
     no-plugins: false
 
-    # Resolves to the --no-scripts parameter
+    # Resolves to the --no-scripts parameter, default is false
     no-scripts: false
 
 # called after Composer runs
