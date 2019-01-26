@@ -71,6 +71,8 @@ post: post.php
 
 When developing pre/post scripts, it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
+Bear in mind the pre script won't have access to dependencies/libraries, since composer hasn't ran at that time! 
+
 ## Multi staging use case
 
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
