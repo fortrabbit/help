@@ -29,7 +29,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 # differentiate from the deployment files
 version: 2
 
-# called before Composer runs (must be a PHP script)
+# called before Composer runs, so dependencies/libraries not guaranteed to be in place (must be a single PHP script)
 pre: my-script.php arg1 arg2 arg3
 
 # optional Composer settings
@@ -47,7 +47,7 @@ composer:
     # Resolves to the --no-scripts parameter, default is false
     no-scripts: false
 
-# called after Composer runs (must be a PHP script)
+# called after Composer runs (must be a single PHP script)
 post: my-script.php arg1 arg2 arg3
 
 # list of sustained folders in ~/htdocs. If not given, then it defaults to the "vendor" folder
@@ -72,6 +72,8 @@ post: post.php
 When developing pre/post scripts, it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
 Bear in mind the pre script won't have access to dependencies/libraries during your first deployment, since `composer install` hasn't ran at that time. Subsequent deployments will have those files however, since the `/vendor` directory is sustained - unless you reset the repositiory.
+
+Only a single pre/post script will be executed, chaining won't work. If you need to run multiple scripts, you'll need to create a wrapper script and require your other scripts within.
 
 ## Multi staging use case
 
