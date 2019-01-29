@@ -93,7 +93,7 @@ The need for a pre script is rare, but if you [use private repositories](/privat
 $fortrabbitSshConfigPath  = '/app/.ssh/config';
 $fortrabbitKnownHostsPath = '/app/.ssh/known_hosts';
 
-file_put_contents($fortrabbitKnownHostsPath, '1.2.3.4 ssh-rsa ABC..DEF==' . PHP_EOL);
+file_put_contents($fortrabbitKnownHostsPath, '1.2.3.4 ssh-rsa ABC...paste in here...DEF==' . PHP_EOL);
 file_put_contents($fortrabbitSshConfigPath, str_replace(
     ['StrictHostKeyChecking no', 'UserKnownHostsFile /dev/null'],
     ['StrictHostKeyChecking yes', 'UserKnownHostsFile ' . $fortrabbitKnownHostsPath],
