@@ -29,7 +29,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 # differentiate from the deployment files
 version: 2
 
-# called before Composer runs
+# called before Composer runs (must be a PHP script)
 pre: my-script.php arg1 arg2 arg3
 
 # optional Composer settings
@@ -47,7 +47,7 @@ composer:
     # Resolves to the --no-scripts parameter, default is false
     no-scripts: false
 
-# called after Composer runs
+# called after Composer runs (must be a PHP script)
 post: my-script.php arg1 arg2 arg3
 
 # list of sustained folders in ~/htdocs. If not given, then it defaults to the "vendor" folder
