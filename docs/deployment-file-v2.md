@@ -87,7 +87,7 @@ The need for a pre script is rare, but if you [use private repositories](/privat
 
 ```php
 <?php
-// Prevent MITM, by enabling StrictHostKeyChecking and adding a verified host for github.com before composer install
+// Prevent MITM, by enabling StrictHostKeyChecking and adding a verified host for github.com before composer SSH installs
 // Changes are sustained, so could be done once manually (and after resetting the repo) but safer to automate
 
 $fortrabbitSshConfigPath  = '/app/.ssh/config';
