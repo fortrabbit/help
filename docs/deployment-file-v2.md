@@ -80,3 +80,23 @@ Only a single pre/post script will be executed, chaining won't work. If you need
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
 
 Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
+
+## Private composer use case
+
+The need for a pre script is rare, but if you [use private repositories](/private-composer-repos) over SSH (i.e. rather than `github-oauth`) and are concerned about a (highly unlikely) MITM attack, you can add a simple pre script as follows:
+
+```php
+<?php
+// Prevent MITM, by enabling StrictHostKeyChecking and adding a verified host for github.com before composer install
+// Changes are sustained, so could be done once manually (and after resetting the repo) but safer to automate
+
+$fortrabbitSshConfigPath  = '/app/.ssh/config';
+$fortrabbitKnownHostsPath = '/app/.ssh/known_hosts';
+
+file_put_contents($fortrabbitKnownHostsPath, '1.2.3.4 ssh-rsa ABC..DEF==' . PHP_EOL);
+file_put_contents($fortrabbitSshConfigPath, str_replace(
+    ['StrictHostKeyChecking no', 'UserKnownHostsFile /dev/null'],
+    ['StrictHostKeyChecking yes', 'UserKnownHostsFile ' . $fortrabbitKnownHostsPath],
+    file_get_contents($fortrabbitSshConfigPath)
+));
+```
