@@ -61,5 +61,5 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail {{app-name}} mono
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr source:web_php_error
 
 # Filter by HTTP status code, e.g. 4xx OR 3xx
-ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access 2>&1 | grep -E ' 40.?| 30.?'
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access 2>&1 | grep -E ' 40.?| 30.?'
 ```
