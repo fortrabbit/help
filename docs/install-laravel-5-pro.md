@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-07
+reviewed:         2019-03-21
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -11,12 +11,9 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.6
+version:          5.8
 stack:            pro
 uniLink:          install-laravel-5-uni
-
-otherVersions:
-   4 : install-laravel-4-pro
 
 keywords:
     - php
@@ -440,6 +437,10 @@ Make sure you have added `VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRab
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `rabbitmq `.
 
+<!--
+TODO:
+https://github.com/vyuldashev/laravel-queue-rabbitmq 
+-->
 
 #### Using envoy
 

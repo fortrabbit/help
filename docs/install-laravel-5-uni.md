@@ -1,17 +1,17 @@
 ---
 
 template:         article
-reviewed:         2018-11-28
+reviewed:         2019-03-21
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
 group:            Install_guides
 
-websiteLink:      http://laravel.com?utm_source=fortrabbit
+websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.6
+version:          5.8
 stack:            uni
 proLink:          install-laravel-5-pro
 
@@ -84,18 +84,20 @@ return [
     'connections'   => [
         // keep above
         'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE', 'forge'),
+             'username' => env('DB_USERNAME', 'forge'),
+             'password' => env('DB_PASSWORD', ''),
+             'unix_socket' => env('DB_SOCKET', ''),
+             'charset' => 'utf8mb4',
+             'collation' => 'utf8mb4_unicode_ci',
+             'prefix' => '',
+             'prefix_indexes' => true,
+             'strict' => true,
+             'engine' => null,
+         ],
         // keep below
     ],
     // keep below
@@ -143,7 +145,7 @@ $ php artisan migrate
 You can also add this command to your `composer.json` to have it run automatically every time you push changes.
 
 ```json
-"scripts": {
+"scripts": {  
     "post-install-cmd": [
         "php artisan migrate --no-interaction --force",
     ],
