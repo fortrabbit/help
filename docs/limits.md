@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-11-15
+reviewed:         2019-02-21
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -113,7 +113,11 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 ## Load testing
 
-So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the above and <a href="" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________ please confirm')">tell us upfront please</a>. Please respect the following limits: 
+So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the limits above. Make sure to have a swift PHP response time already, at least 200ms. Also, please respect the following limits: 
 
 * Universal Stack: Max 300 RPM
-* Professional Stack: 300 RPM per Node.
+* Professional Stack: 300 RPM per Node
+
+Each App is different in the way it's build and in the way it is consumed. There are compute-intensive highly dynamic Apps, there are Apps that are mostly static. Some have many assets, some none. Some have only one page, some have thousands of pages. You as the developer should know you project, the way it is build how it will be used. Follow best practices, see our [application design article](/app-design). Get insights from a plugin like [Blackfire](/blackfire) or [NewRelic](/new-relic).
+
+<a class="action b-2"  href="#" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________. And ____ ____ ____ ___ _ ____ __ …').preventDefault()">Contact support to schedule a load test</a>
