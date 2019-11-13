@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2019-09-30
+reviewed:    2019-11-13
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
@@ -59,7 +59,7 @@ $secrets == [
 ];
 ```
 
-See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel-pro#toc-mysql), [Symfony](install-symfony-pro#toc-mysql), [WordPress](install-wordpress-pro#toc-mysql), [Craft CMS](install-craft-pro#toc-mysql), [Drupal](install-drupal-pro#toc-mysql).
+See an example to use the App secrets to connect to MySQL for [Laravel](install-laravel-pro#toc-mysql).
 
 
 ## App secrets from local
