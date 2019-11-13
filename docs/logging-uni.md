@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2019-11-08
+reviewed:   2019-11-13
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing logs of your App is essential for developing. Here is how you can do it on fortrabbit.
@@ -20,7 +20,7 @@ You are developing your App and see the "white screen of death". You are getting
 
 ## Log file access
 
-You can access your log files from [SSH](ssh-uni) or [SFTP](sftp-uni). They are stored in the folder `logs`, right above the `htdocs` folder. The `log` folder contains up to 8 files, by type of log and time:
+You can access your log files from [SSH](ssh-uni) or [SFTP](sftp-uni). They are stored in the folder `logs`, right above the `htdocs` folder. The `log` folder contains up to eight files, by type of log and time:
 
 ```bash
 $ ls -1 ../logs
@@ -33,16 +33,17 @@ apache_access.log.1.gz
 cron.log
 cron.log.1.gz
 
-# PHP error logs (`error_log`)
+# PHP error logs (`error_log`) (current and historic)
 php_error.log
 php_error.log.1.gz
 
-# PHP STDERR output
+# PHP STDERR output (current and historic)
 stderr.log
 stderr.log.1.gz
 ```
 
-The `.log` file contains the latest logs, the `.gz` (gzipped) file contains older logs for each type.
+The `.log` file contains the latest logs, the `.gz` (gzipped) file contains older logs for each type. Not each log might actually be available, the files shown are `symlinks`. The Apache error logs are containing IP addresses (Remote_Addr). Logs are rotated with `logrotate` on a daily basis and a cap of 100 MB per uncompressed log file. You will most likely find different available historic logging time frames per type of log file.
+
 
 ### Log files in your CMS/framework
 
