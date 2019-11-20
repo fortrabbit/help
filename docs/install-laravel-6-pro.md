@@ -1,8 +1,8 @@
 ---
 
 template:         article
-reviewed:         2019-04-02
-title:            Install Laravel 5
+reviewed:         2019-11-20
+title:            Install Laravel 6
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
 group:            Install_guides
@@ -11,9 +11,9 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.8
+version:          6.0
 stack:            pro
-uniLink:          install-laravel-5-uni
+uniLink:          install-laravel-6-uni
 
 keywords:
     - php
@@ -296,26 +296,10 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 
 Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
 
-#### In Laravel 5.6
-
 Laravel's new `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
 
 ```
 LOG_CHANNEL=errorlog
-```
-
-#### In Laravel 5.1 - 5.5
-
-That's easily done: open `boostrap/app.php` and add the following **just before the** `return $app` statement at the bottom:
-
-```php
-$app->configureMonologUsing(function($monolog) {
-    // chose the error_log handler
-    $handler = new \Monolog\Handler\ErrorLogHandler();
-    // time will already be logged -> change default format
-    $handler->setFormatter(new \Monolog\Formatter\LineFormatter('%channel%.%level_name%: %message% %context% %extra%'));
-    $monolog->pushHandler($handler);
-});
 ```
 
 You can now use our regular [log access](logging-pro) to view the stream.
@@ -407,6 +391,7 @@ if (isset($_SERVER['APP_SECRETS'])) {
         'host'     => $secrets['CUSTOM']['REDIS_HOST'],
         'port'     => $secrets['CUSTOM']['REDIS_PORT'],
         'password' => $secrets['CUSTOM']['REDIS_PASSWORD']
+        'persistent' => 1
     ];
 }
 
@@ -437,10 +422,6 @@ Make sure you have added `VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRab
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `rabbitmq `.
 
-<!--
-TODO:
-https://github.com/vyuldashev/laravel-queue-rabbitmq 
--->
 
 #### Using envoy
 
