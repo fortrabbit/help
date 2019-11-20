@@ -45,7 +45,6 @@ GitHub is so popular that beginners sometimes confuse GitHub with Git. Git is th
 
 Your fortrabbit Apps are already coming with a [Git repo](/git-deployment). So why to combine GitHub with fortrabbit at all? The fortrabbit Git repo is vanilla plain, GitHub and alike are offering enhanced pull request workflows, through their web interfaces. So in general, it's for professionally managed projects with three or more team members.
 
-
 ## Simple integration
 
 This example shows you how to combine the two services in an easy detached way. The idea is, that the code development master is hosted on GitHub while each developer has it's [own local dev env](/local-development). fortrabbit is the live production. Once changes, or a new version is ready, it get's deployed to fortrabbit. All developers have access to GitHub, while for example only the lead developer also has access to fortrabbit. There hir needs to be able to push the code base either to fortrabbit or to GitHub.
@@ -59,6 +58,10 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 # now push to the master branch of your App's remote on fortrabbit
 $ git push fortrabbit master
 ```
+
+## Using Github Actions
+
+Github recently released [Github Actions](https://github.com/features/actions), their brand new shiny CI. [This blog post](https://blog.fortrabbit.com/how-to-use-github-actions) explains how it could help you build amazing things with fortrabbit.
 
 ## GitHub API limits and Composer
 
