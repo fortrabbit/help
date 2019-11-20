@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2019-11-20
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -59,9 +59,9 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 $ git push fortrabbit master
 ```
 
-## Using Github Actions
+## GitHub Actions
 
-Github recently released [Github Actions](https://github.com/features/actions), their brand new shiny CI. [This blog post](https://blog.fortrabbit.com/how-to-use-github-actions) explains how it could help you build amazing things with fortrabbit.
+GitHub is also offering [Github Actions](https://github.com/features/actions), an integrated continuous integration solution. Combining GitHub Actions with fortrabbit can help to integrate testing and frontend build systems based on Node.JS (think Webpack). We do not offer predefined GitHub Actions yet, but [this blog post](https://blog.fortrabbit.com/how-to-use-github-actions) contains two templates to get started.
 
 ## GitHub API limits and Composer
 
