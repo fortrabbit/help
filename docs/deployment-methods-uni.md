@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Deployment methods"
 title:         "Deployment methods"
-reviewed:      2018-04-29
+reviewed:      2019-09-30
 excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni
@@ -72,7 +72,7 @@ The strategy applied in the synchronization is:
 
 ### Not all applications work well with Git
 
-Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster childs for good Git support. [WordPress](/install-wordpress) and other CMS are not Git compatible, out-of-the-box (while good [hacks](install-wordpress-pro) are available). [Craft 3](/craft-3-deploy-git) works well with Git and Composer.
+Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster-child-level for good Git support. [WordPress](/install-wordpress) and other CMS are not Git compatible, out-of-the-box (while good [hacks](install-wordpress-pro) are available). [Craft 3](/craft-3-deploy-git) works well with Git and Composer.
 
 ## Choosing a workflow
 

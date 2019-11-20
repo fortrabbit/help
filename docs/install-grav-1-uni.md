@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-10-04
+reviewed:         2019-03-29
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular, free, file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      https://getgrav.org?utm_source=fortrabbit
 websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
-version:          1.5.5
+version:          1.6
 stack:            uni
 proLink:          install-grav-1-pro
 
@@ -79,4 +79,4 @@ During initial development, everything is in Git, including content. This allows
 
 Once it's ready to handover to the client, the user-editable content get's pulled out of Git. Simply leave it on the App's file system so it can be edited from that point on via Grav admin and not overwritten by Git. The fortrabbit backups are helping to keep things stored safely. 
 
-The rest of Grav stays in Git. Theme, plugin or core Grav udgrades are first done in local dev environment, then committed, and deployed.
+The rest of Grav stays in Git. Theme, plugin or core Grav upgrades are first done in local dev environment, then committed, and deployed.

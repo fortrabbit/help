@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2018-09-07
+reviewed:     2019-09-30
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set up a local PHP development environment.

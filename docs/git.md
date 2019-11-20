@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-07
+reviewed:      2019-09-30
 naviTitle:     Getting started with Git
 title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
@@ -37,7 +37,7 @@ To deploy code to fortrabbit you use Git from your local machine and push to the
 
 To successfully use fortrabbit you should be familiar with Git standard operations and concepts — these are: `commit`, `push` and `pull`. If you don't know Git, yet, we recommend to go ahead and learn the basics. You will profit from it either way — whether you keep using fortrabbit or not. It's a cornerstone of todays software development. For developers not used to the shell it might not be very intuitive to start with, but once you got started it soon becomes very, very handy for all kinds of things besides deploying to fortrabbit. There are many good tutorials out there in the interwebs to get started. For example:
 
-* [Offical docs from Git SCM](https://git-scm.com/doc)
+* [Official docs from Git SCM](https://git-scm.com/doc)
 * [Try Git in your browser for free](https://try.github.io/levels/1/challenges/1)
 * [Guides & ebook from Git Tower](https://www.git-tower.com/learn/)
 * [Get Git right from Atlassian](https://www.atlassian.com/git/)

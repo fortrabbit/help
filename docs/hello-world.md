@@ -1,12 +1,11 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2019-10-30
 naviTitle:     Hello world
 title:         Hello world tutorial with Git
 lead:          This is the famous 3 minute tutorial to get started with fortrabbit. It uses plain simple PHP without any framework or CMS. See how fast and easy you can get your code up and running.
 stack:         all
-group:         Install_guides
 
 
 keywords:
@@ -22,8 +21,7 @@ keywords:
 
 ## Get ready
 
-Let's have a quick check-up before we get started here: You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup), have created a plain vanilla [App](app) and have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine.
-
+Let's have a quick check-up before we get started here: You have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine. You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup), have created a plain vanilla PHP [App](app) - make sure to not select any framework or CMS (or if you did, change the root path back to htdocs in the Dashboard).
 
 
 ## Deploy a hello world example with Git

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-04-05
+reviewed:         2019-09-11
 title:            Install Symfony 4
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
@@ -89,7 +89,7 @@ $ git push
 
 ## MySQL
 
-Until now you just deployed some code. It needs some more tinkering to make it yours.
+Until now you just deployed some code. If you want to use doctrine and Mysql it requires some more tinkering to make it yours.
 
 ### Configuration
 
@@ -127,8 +127,6 @@ You can also add this migrate command to your `composer.json` to have it run aut
 ```
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
-
-
 
 ## Webpack Encore
 

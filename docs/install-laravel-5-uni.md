@@ -10,7 +10,7 @@ group:            Install_guides
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
-image:            laravel-mark.png
+image:            laravel-mark.svg
 version:          5.8
 stack:            uni
 proLink:          install-laravel-5-pro

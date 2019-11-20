@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2018-09-06
+reviewed:      2019-09-30
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         stacks
 stack:         uni
@@ -65,7 +65,7 @@ Thanks for understanding!
 # 1. login to your App via SSH
 
 
-# 2. create a .htpasswd file containg a "username" in the tmp folder
+# 2. create a .htpasswd file containing a "username" in the tmp folder
 htpasswd -c /srv/tmp/.htpasswd username
 # You'll be asked for a password
 

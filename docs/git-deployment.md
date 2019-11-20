@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-10-31
+reviewed:      2019-05-10
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -37,7 +37,7 @@ $ echo '<?php echo "PHPower to the PHPeople";' >index.php
 
 # 4. Initialize Git locally
 $ git add index.php
-$ git commit -am 'Intial commit'
+$ git commit -am 'Initial commit'
 
 # 5. Set upstream and 1st push
 $ git push -u origin master
@@ -76,7 +76,7 @@ The reset operation is non-destructive, meaning: It does not generate a release.
 
 ### Git with a GUI or IDE
 
-You can also use a graphical interface like SourceTree, Tower, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
+You can also use a graphical interface like SourceTree, Tower and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
 
 * **SSH clone URL**: {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
 * **SSH password**: {{ssh-password}}
@@ -225,6 +225,13 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 
 **Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
 
+### Deployment lock error
+
+```
+!! Could not get lock on repository; probably deployment in progress.
+```
+
+Wait around 20 minutes when you see above message when deploying. That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. That should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time when not finished before successfully. Contact support, when the repository lock is not resolving or when that happens often or even all the time.
 
 ### Git client max connections
 

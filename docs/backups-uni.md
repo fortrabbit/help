@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-03-01
+reviewed:      2019-11-10
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -50,8 +50,7 @@ Find them in the Dashboard > Your App > Backups. Two backup files per day are au
 
 ### Older backups
 
-If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), we recommend to periodically download the backups from the dashboard and store them locally.
-
+If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), we recommend to periodically download the backups from the Dashboard and store them locally.
 
 
 ## Recovering
@@ -69,3 +68,41 @@ Web storage backups are stored in an uncompressed `.tar` archive file. How to re
 **Recover a single or a couple of files**: Just download the web storage backup file, unpack it locally, copy the files you want to recover manually to back to your App.
 
 **Recover everything**: After downloading and unpacking the web storage `.tar` archive locally, you need to remove all files from your current App, then upload the previously unpacked archive again.
+
+
+## Environment variables and App secrets
+
+Please mind that [environment variables](/env-vars) and [App secrets](/secrets) will not be backed up.
+
+
+## Backups from deleted Apps
+
+Associated backups will also get removed when an App is getting deleted. There is a short delay of 2 days in which backups from already deleted Apps — only in case the previous App plan contained backups - can be supplied on request by fortrabbit.
+
+## Backup excludes
+
+Some run-time and cache files, like a `storage` folder, are excluded from the file backups to save some space within the backups. For the same reason `*.mysql` files are excluded - we already provide MySQL backups without affecting performance while creating. Whole exclude list:
+
+
+```
+# Craft 2
+craft/storage/backups
+craft/storage/logs
+craft/storage/runtime
+
+# Craft 3
+storage/backups
+storage/logs
+storage/runtime
+web/cpresources
+
+# Laravel
+storage/framework
+storage/logs
+
+# Misc
+.git
+.idea
+*.sql
+```
+

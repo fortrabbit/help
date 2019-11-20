@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-03-11
+reviewed:         2019-10-31
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -12,8 +12,8 @@ order:            20
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
-version:          3.0.36
+image:            craft-cms-mark.svg
+version:          3.3
 
 keywords:
   - craft
@@ -28,6 +28,17 @@ keywords:
 Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
 
 
+## Domain setup
+
+Your fortrabbit App comes with a predefined App Name and an URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to that here, please see our [domains article](/domains). For Craft make sure to have set your domains root path to "/web" folder. Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
+
+You can also add multiple domains. From the fortrabbit side, just point them to the Apps root path, configure routing and display of contents withing Craft CMS and/or use additional [htaccess rules](/htaccess).
+
+
+### Domain license
+
+The Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+
 
 ## Multi-Environment configuration
 
@@ -41,6 +52,7 @@ We assume fortrabbit to be your production environment, so the `ENVIRONMENT` ENV
 # Local environment ENV setting
 ENVIRONMENT=dev
 ```
+
 
 ### Craft config example
 
@@ -208,10 +220,9 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
-## Cache & Session on the Professional Stack
+## Cache and sessions on the Professional Stack
 
-In multi node environments you can not rely on the file based cache or session storage. Instead you store this data in [Memcache](/memcache-pro), a key-value-storage which is accessible from all nodes.  
-With this little extension, no further configuration is required, you just need to pull it in to your `composer.json`:
+On the [Pro Stack](/app-pro) in multi Node environments - see [terminology](/terminology) - you can not rely on the file based cache or session storage. Store this data in Memcache a key-value-storage which is accessible from all Nodes instead - also see [Memcache article](/memcache-pro). We have a custom extension developed. With that no further configuration is required, you just need to pull it in to your `composer.json` like so:
 
 ```bash
 $ composer require fortrabbit/yii-memcached
@@ -229,6 +240,10 @@ Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms
 
 
 ## Troubleshooting
+
+### You see a Max Execution Time warning
+
+The Craft CMS Control Panel has a system report that will check for technical requirements. Our default setting for `max_execution_time` is 60 seconds. The Control Panel will complain that: "Craft requires a minimum PHP max execution time of 120 seconds. The max_execution_time directive in php.ini is currently set to 60." We believe that Pixel and Tonic is wrong about this and we are asking them to change their mind. We think: Long execution times will make your App slow. Nothing should take longer than a second, actually. Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
 
 ### You see a "Service Unavailable" or 5xx message
 
@@ -295,4 +310,9 @@ return [
 
 ### Large assets upload problems
 
-Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashbaord, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
+Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashboard, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
+
+
+### Sending mail
+
+You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.

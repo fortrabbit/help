@@ -9,6 +9,9 @@ stack:            all
 group:            Queues
 section:          Extending_fortrabbit
 
+deprecated:       yes
+dontList:         true
+
 websiteLink:      https://www.iron.io/platform/ironmq/
 websiteLinkText:  iron.io/platform/ironmq
 dataCenters:      n/a

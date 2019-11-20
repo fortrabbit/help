@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-11-09
+reviewed:      2019-10-24
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
@@ -33,7 +33,7 @@ A high cache hit rate indicates if your caching strategy works as expected. For 
 
 It's always a good idea to reduce file input/output operations on the disk to the minimum. In PHP this means:
 
-* **PHP includes**: Reduce amount of includes as much as possible. Always use absolute pathnames, which reduces the amount of lookups.
+* **PHP includes**: Reduce amount of includes as much as possible. Always use absolute path names, which reduces the amount of lookups.
 * **Avert files**: Don't use file-sessions, file-caches or anything `file-*`, if you can replace it with an in-memory cache or even the database.
 * **Outsource static files**: Put your static files on an object storage. Sure, they could be delivered very fast from local, but still, they will create I/O which your (PHP) App will be missing.
 * **Shrink your loader chain**: Make sure you load only the classes (files) you need. For a production App (in which code changes do not occur often) you can set `apc.stat` or `pcache.validate_timestamps` to `0`, which reduces I/O on `.php` files even further, but requires an APC/OPcache flush for changed files to apply.
@@ -70,6 +70,17 @@ Sure, a request to a static file can be delivered faster than a request handled 
 
 Web applications are usually fast after the launch, but degrade over time. They receive more requests and process more data. You add more features and at some point everything or some parts of your app become slow. Profilers give you deep insights of your code and all dependencies that are involved to handle requests. XDEBUG profiler and XHPROF are the defacto open source standard, but you need additional tools to visualize the data. The [blackfire profiler](blackfire) makes it really easy to start profiling in minutes.
 
+### Reduce the max execution time
+
+This is an opinionated topic. If you come from searching 504 time out errors, you will often read to increase the `max_execution_time` setting to allow a certain process to finish it's task. 
+
+By the way: You can adjust this setting with your App under "PHP settings" in the Dashboard. 
+
+In some cases that makes sense, but it's often a poor design decision. Image transformations with imageMagick are often long running, therefore you might want to increase the execution time to avoid time outs. But, as stated here often: long running tasks should best be separated from the frontend tasks into the background. We also have a [Worker service](/worker-pro) for that. 
+
+Frontend requests should always return a swift answer. The number of PHP processes is limited. When all PHP processes are occupied with long running tasks, new requests need to wait. That can easily pile up. A lower max execution time limit often results in faster errors. And that's often what you want. When making an API call to an external service, usually that reply should be there within a second, how long should you wait for it max? Maybe 10 seconds is reasonable. It's not likely that there will be an answer when you wait longer. 
+
+So for most cases, short is better.
 
 ## Frontend design
 
@@ -124,7 +135,7 @@ Eat diet Cookies! Cookies are sent in the HTTP headers in every single request, 
 
 ### DNS lookups
 
-You might parallelize downloads across hostnames. This may help speed up delivery, but if the number of hostnames is too long the time that the client spends to resolve the domain can affect negatively. The concurrent connections of web browsers is limited.
+You might parallelize downloads across host names. This may help speed up delivery, but if the number of host names is too long the time that the client spends to resolve the domain can affect negatively. The concurrent connections of web browsers is limited.
 
 
 ### Check your speed
@@ -155,4 +166,4 @@ If your App runs fast with only a few visitors it doesn't mean it can handle the
 
 ## Security design
 
-Last not least: take care to integrate [security patterns](security) as well!
+Last not least: Take care to keep your App secure. Check our [security page](https://www.fortrabbit.com/security) with some best practices and duties.

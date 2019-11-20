@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-09-02
+reviewed:      2019-10-28
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -249,7 +249,7 @@ Find the "Create an App" on the Dashboard home. When asked for the plan, you can
 
 ### Trial limits
 
-The trial App scaling specs are matching a small preset, always enough to get started. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime:
+The trial App scaling specs are matching a small preset, always enough to get started. For the Pro Stack not all Components are enabled. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime. 
 
 ### Extending the trial
 
@@ -348,6 +348,14 @@ The strangeness occurs when you are mixing workflows and are going offroad: For 
 
 The fix for that depends on your specific situation. In many cases we suggest to update your installation and bring that in order and then re-deploy the changes via Git one more time.
 
+
+### phpinfo to the rescue
+
+Sometimes, you might be unsure on configuration settings such as which extension in which version are exactly enabled or which ENV vars are actually available with your App. You can use `phpinfo` (see [offcial doc](https://www.php.net/manual/en/function.phpinfo.php)) for that. Place a "info.php" file with the content `<?php phpinfo(); ?>` anywhere in your public accessible path and call that URL with the browser to see the config dump.
+
+We are maintaining standard PHPinfo Apps as well here: [fortrabbit.com/specs#php-extensions](https://www.fortrabbit.com/specs#php-extensions). Your CMS / framework might have it's own dump of that. With Craft CMS for example you can visit a nicely formated phpinfo in the control panel. 
+
+**A word of warning**: Don't do that in production. Make sure to delete that file right away after you have finished your investigation. The output might contain sensible information you don't want to share with the world. Key and values of your ENV vars are visible, that can contain database access and API keys to external services.
 
 
 ## Further readings

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-09-28
+reviewed:      2019-09-30
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
@@ -93,7 +93,7 @@ S/eTlx2qWrmhsf20H+P/FK8otXKa+EW4UY6mew/lVxboEYDfCTju8cS5raJBmTehBaYyWI2dy
 IvP1bffus+WdY75 you@localhost
 ```
 
-MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only for readability. Please remove the line breaks from the SSH key when adding it to the Dashboard. The key should start with `ssh-rsa`, `ssh-dss` or `ecdsa-sha2-nistp...` if not, it's probably not a supported version.
+MIND THE DIFFERENCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only for readability. Please remove the line breaks from the SSH key when adding it to the Dashboard. The key should start with `ssh-rsa`, `ssh-dss` or `ecdsa-sha2-nistp...` if not, it's probably not a supported version.
 
 You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
 
@@ -123,7 +123,7 @@ We advice not to use PuTTY for this. If you installed your SSH keys on Windows w
 * [Stack Overflow: Where to find my private RSA key?](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
 * [superuser: Where does Putty store known_hosts information on Windows?](http://superuser.com/questions/197489/where-does-putty-store-known-hosts-information-on-windows)
 
-Putty uses .ppk key files - Putty Private Key. Those don't work here. You can convert those files to stanadard openSSH keys within PuttyGen or an online service.
+Putty uses .ppk key files - Putty Private Key. Those don't work here. You can convert those files to standard openSSH keys within PuttyGen or an online service.
 
 ### When nothing works for you
 

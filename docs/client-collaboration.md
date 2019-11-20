@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-07-16
+reviewed:      2019-09-27
 title:         Working for a client
 naviTitle:     Working for a client
 excerpt:       How to work with a non-techie client
@@ -76,7 +76,7 @@ Your client will not be bothered with setting up SSH keys, nor will hir receive 
 ### The 35 seconds video
 
 <div class="responsive-video m-top-s">
-  <iframe src="https://www.youtube.com/embed/k-67ce2olAk?showinfo=0" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/k-67ce2olAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 In this video you see how both sides of the invite look like. What you need to do, and what your client will see.

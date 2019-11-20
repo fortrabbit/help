@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-09-10
+reviewed:      2019-09-30
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.

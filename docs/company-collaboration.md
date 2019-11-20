@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-27
+reviewed:      2019-08-26
 title:         Company collaboration
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
@@ -103,7 +103,7 @@ Just like in real life the roles of Accounts inside a Company can change like so
 * Admins can promote App collaborators to become Admins
 * Owners can promote App collaborators to become Admins or Owners
 * Owners can promote Admins to become Owners
-* Owners can demote Admins to become App collaboratoes
+* Owners can demote Admins to become App collaborators
 
 Role changes have immediate effect, they do not require another confirmation by the affected Account.
 
@@ -127,16 +127,14 @@ You might want to leave the Company when the project you have collaborated on ha
 
 ##### How to actively leave a Company
 
-In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Company" button
-
-There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
+In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Company" button. There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
 
 
 #### Passive: An Owner or Admin terminates Company access for another Account
 
 Let's say a project phase has ended, so that an App Collaborator does not need have access any more. Who can can fire whom:
 
-* An Owner can remove Admins and App collaboratores
+* An Owner can remove Admins and App collaborators
 * An Admin can remove App collaborators
 * An App Collaborator can remove nobody
 * No one can remove an Owner
@@ -154,3 +152,8 @@ To make the process of leaving transparent, all involved parties will get a noti
 #### A note on security when people leave
 
 Please mind that the person who has left still might have local code copies and thereby access to sensitive data like MySQL passwords. We advice to reset service passwords. Please see the [security article](security#toc-password-reset) for more.
+
+
+#### Remove an Owner Account that already left a business
+
+It sometimes can get a bit hectic when people leave. There are so many things to think about, emotions are often involved as well. Sometimes we get contacted to remove Owner Accounts from Companies here at fortrabbit who already left the business in real live. There is no interface for this currently, as an Owner can not just remove another Owner, but you can ask us in support to get your old business partner removed from the Company here. Be prepared to identify yourself and provide some details on the person who has left (maybe link to LinkedIn with a the new job), so that we can make sure your request is legit.

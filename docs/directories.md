@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-09-13
+reviewed:      2019-09-27
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
@@ -29,7 +29,7 @@ dev
 etc
 lib64
 proc
-tmp               < 2GB temporaray files
+tmp               < 2GB temporary files
 usr
 srv
   app
@@ -39,7 +39,7 @@ srv
 ```
 
 
-When you login with [SFTP](/sftp-uni) or [SSH](ssh-uni) to your [Universal App](app-uni) you can travel up in the file directory structure. In this article you can learn the predefined set of folders for each App and what they are for.
+When you login with [SFTP](/sftp-uni) or [SSH](ssh-uni) to your [Universal App](app-uni) you can "travel up" in the file directory structure. In this article you can learn the predefined set of folders for each App and what they are for.
 
 ### htdocs
 

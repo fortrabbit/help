@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-28
+reviewed:         2019-09-30
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -12,8 +12,8 @@ dontList:         true
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
-version:          3.0.36
+image:            craft-cms-mark.svg
+version:          3.3
 
 otherVersions:
     2 : install-craft-2-uni

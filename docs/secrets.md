@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2017-12-20
+reviewed:    2019-11-13
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
@@ -22,7 +22,7 @@ Your App needs confidential access details to connect to other services (user-na
 
 ## Solution
 
-Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
+Use fortrabbit App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
 ## App secrets vs ENV vars
 
@@ -59,7 +59,7 @@ $secrets == [
 ];
 ```
 
-See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel-pro#toc-mysql), [Symfony](install-symfony-pro#toc-mysql), [WordPress](install-wordpress-pro#toc-mysql), [Craft CMS](install-craft-pro#toc-mysql), [Drupal](install-drupal-pro#toc-mysql).
+See an example to use the App secrets to connect to MySQL for [Laravel](install-laravel-pro#toc-mysql).
 
 
 ## App secrets from local

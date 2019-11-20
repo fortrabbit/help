@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-10
+reviewed:         2019-10-30
 title:            Upgrade from Craft 2 to Craft 3
 naviTitle:        Upgrade from Craft 2
 lead:             What you need to know, when upgrading from a Craft CMS 2 installation to Craft CMS 3 here on fortrabbit. 
@@ -12,8 +12,8 @@ dontList:         true
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
-version:          3.0.36
+image:            craft-cms-mark.svg
+version:          3.3
 
 keywords:
   - craft

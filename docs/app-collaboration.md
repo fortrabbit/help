@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-28
+reviewed:      2019-09-30
 title:         App collaboration
 naviTitle:     App collaboration
 lead:          Leverage App level collaboration to easily develop code with others on fortrabbit.
@@ -22,7 +22,7 @@ keywords:
     - multitenancy
     - tenant
     - client
-    - epmloyees
+    - employees
     - developer
     - collaborator
     - administrator

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-28
+reviewed:         2019-09-03
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -11,8 +11,8 @@ stack:            all
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
-version:          3.0.36
+image:            craft-cms-mark.svg
+version:          3.3
 
 otherVersions:
     2.6 : install-craft-2-uni
@@ -50,8 +50,9 @@ $ git init .
 # 2. Add your App's Git remote to your local repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 3. Download the fortrabbit Craft .gitignore file
-$ curl -O  https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore
+# 3. Download a fortrabbit Craft .gitignore file
+$ curl https://raw.githubusercontent.com/fortrabbit/craft-copy/master/src/.gitignore.example -o .gitignore
+# This exclude the assets folder from Git, manage uploads outside via ssh/rsync/sftp
 
 # 4. Add changes to Git
 $ git add -A

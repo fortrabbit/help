@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2019-09-30
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -65,11 +65,16 @@ So you need a place to store stuff you'd like to keep, something like `https://{
 
 The fortrabbit Object Storage is a multi purpose solution for offshore files. You can use it to store user uploads, any files your App generates and all other static assets: logos, compressed JS and CSS... you get the gist.
 
+To sum it up:
+
+- Everything is *public* and accessible through `https://{{app-name}}.objects.frb.io/path-of-the-file.extension`.
+- Everything in /private/… is private and only accessible if proxified through your app.
 
 ### Implementation
 
 The fortrabbit Object Storage implements large parts of the [AWS S3 REST API](http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html) making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
 
+For now we don't support `preSignedRequest` which allows to upload to S3 without proxifying. If your users need to upload a file on your storage or need to access a private file, the request needs to go through your app.
 
 ## Booking & scaling
 
@@ -213,7 +218,7 @@ Once you have uploaded some files, the ultimate goal is of course to serve them 
 
 * [{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md) < works when Object Storage is booked
 
-We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framwork/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
+We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framework/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 
 ### Log access
 

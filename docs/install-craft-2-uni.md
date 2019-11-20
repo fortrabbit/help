@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-02-08
+reviewed:         2019-10-30
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft 2
 group:            Install_guides
@@ -11,7 +11,7 @@ proLink:          install-craft-2-pro
 websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
+image:            craft-cms-mark.svg
 version:          2.6
 group:            Install_guides
 deprecated:       yes
@@ -28,6 +28,11 @@ keywords:
     - install-guide
 
 ---
+
+## Please note
+
+**Craft 2 is deprecated.** Better not use it any more. It's end of life was/will be January 2020. See more details on the [official Craft CMS page](https://craftcms.com/guides/craft-cms-2-and-craft-commerce-1-end-of-life-information). We do have an [upgrade guide](/craft-2-3-upgrade).
+
 
 
 ## Get ready

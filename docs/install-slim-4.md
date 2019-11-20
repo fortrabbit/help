@@ -1,22 +1,19 @@
 ---
 
 template:         article
-reviewed:         2018-05-02
-title:            Install Slim Framework 3
+reviewed:         2019-09-30
+title:            Install Slim Framework 4
 naviTitle:        Slim Framework
-lead:             Slim is a PHP micro framework that helps you write simple web applications and APIs quickly. Learn how to install and tune Slim 3 on fortrabbit.
+lead:             Slim is a PHP micro framework that helps you write simple web applications and APIs quickly. Learn how to install and tune Slim 4 on fortrabbit.
 
 group:            Install_guides
 stack:            all
-deprecated:       true
-dontList:         true
-dontIndex:        true
 
 websiteLink:      http://www.slimframework.com/?utm_source=fortrabbit
 websiteLinkText:  slimframework.com
 category:         micro framework
 image:            slim-logo.png
-version:          3.10
+version:          4.2
 
 ---
 
@@ -65,3 +62,5 @@ $ git push
 
 You can see the welcome page in the browser:
 [https://{{app-name}}.frb.io/](https://{{app-name}}.frb.io/)
+
+Seeing a "Hello world!" message now? You have succeeded. The rest is up to you. The Slim framework is very slim. 

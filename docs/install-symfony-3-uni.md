@@ -98,7 +98,7 @@ Until now this is a vanilla Symfony. It needs some more tinkering to make it you
 
 ### MySQL
 
-The MySQL access details are available via [environment variables](env-vars). If you have chosen Symfony in the Stack choser when creating the App, we will automatically create `SYMFONY__DATABASE__*` environment for you and you can use them as following (if you haven't choosen the right stack, please [add those Symfony env vars manually, as shown above](#toc-env-vars)):
+The MySQL access details are available via [environment variables](env-vars). If you have chosen Symfony in the Stack chooser when creating the App, we will automatically create `SYMFONY__DATABASE__*` environment for you and you can use them as following (if you haven't chosen the right stack, please [add those Symfony env vars manually, as shown above](#toc-env-vars)):
 
 Open `app/config/parameters.yml.dist` and modify all `database_*` parameters:
 

@@ -152,7 +152,7 @@ Your app: {{app-name}}
 
 ### Authentication in teams
 
-You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them. Also see our [team work article](/collaboration).
+You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different access method and that your settings might not work for them. Also see our [team work article](/collaboration).
 
 - - -
 

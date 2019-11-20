@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2017-12-20
+reviewed:    2019-09-28 
 title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
@@ -21,11 +21,11 @@ This article covers the general basics as well as some deep links for moving you
 
 ## Create your fortrabbit App
 
-Each website or web application is represented by an [App](app) on fortrabbit. You can have as many Apps as you want. So in order to move your project you need to create an App on fortrabbit first. Do so in the forabbit [Dashboard](/dashboard).
+Each website or web application is represented by an [App](app) on fortrabbit. You can have as many Apps as you want. So in order to move your project you need to create an App on fortrabbit first. Do so in the fortrabbit [Dashboard](/dashboard).
 
 ### Choose a Stack
 
-When creating an App, you'll be asked for a Stack. Small standard webites go into Universal, high performance web applications go into the Professional Stack. See our [stack article](/stacks) to learn more.
+When creating an App, you'll be asked for a Stack. Small standard websites go into Universal, high performance web applications go into the Professional Stack. See our [stack article](/stacks) to learn more.
 
 
 ## Prepare your domains

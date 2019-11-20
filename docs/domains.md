@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-03-09
+reviewed:      2019-09-16
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -99,9 +99,7 @@ In some cases you could just use `CNAME` routing for your naked domain. It's the
 
 ### Forwarding a naked domain to www
 
-You still should care about your naked domain, as some users might type it in directly in the browser address bar. So you usually want to forward all requests from your naked domain to your primary canonical subdomain:
-
-When you register a `www.` domain in the fortrabbit Dashboard, we additionally provide a simple forwarding service for your naked domain. That's why you'll get two routing values, the main `CNAME` target (for the www domain) and an additional `A`-record (for the naked domain) that points to our forwarding service.
+You still should care about your naked domain, as some users might type it in directly in the browser address bar. So you usually want to forward all requests from your naked domain to your primary canonical subdomain. That's why you'll get two routing values, the main `CNAME` target (for the www domain) and an additional `A`-record (for the naked domain).
 
 #### Example setup
 
@@ -112,8 +110,9 @@ HOSTNAME  TYPE       VALUE
 www       CNAME      {{app-name}}.frb.io  < Only www!
 ```
 
-This will redirect all requests incoming to the naked domain to the `www.` domain. The service is optional but recommended. We will also issue an SSL cert for the redirect service, so that ALL communication is secured.
+#### Domain forwarding service explained
 
+Optional but highly recommended: The fortrabbit domain forwarding service redirects all incoming requests on the naked domain to the `www.` version of the domain using `301 Moved Permanently` headers. It also works for deeplinks, so `http://your-domain.com/page` will be forwarded to `http://www.your-domain.com/page`. A custom SSL cert from Let's Encrypt for each naked domain will be issued, so that ALL communication can be secure (best combine with [.htaccess](/htaccess) rules on the www side to force https). It needs to be set up as an `A`-record, you can not use `CNAME` on a naked domain, as that would possibly break your DNS settings (especially if you want to send e-mails). The service itself is independent from the App it's the same IP for all Apps in one region.
 
 
 ### Alternative ways to use a naked domain

@@ -108,7 +108,7 @@ $ php artisan october:up --env=dev
 
 ### MySQL
 
-Create a the database configuratin file in `config/prod/database.php` with the following contents:
+Create a the database configuration file in `config/prod/database.php` with the following contents:
 
 ```php
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);

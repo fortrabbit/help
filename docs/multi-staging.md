@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-10-20
+reviewed:      2019-08-01
 naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.

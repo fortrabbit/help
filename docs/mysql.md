@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-12
+reviewed:      2019-09-28
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -135,7 +135,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Usinf a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
+Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Using a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
 
 
 ## Export & import
@@ -151,7 +151,7 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 $ mysqldump -u{{your-local-db-user}} -p{{your-local-db-password}} {{your-local-db-name}} > dump.sql
 ```
 
-Replace the placeholders with your local 
+Replace the placeholders with your local credentials. 
 
 Next, open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import. Do this on your **local machine**, please don't login via SSH before, run it locally:
 
@@ -205,6 +205,17 @@ $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
 **Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+
+### Foreign keys
+
+In some cases — like when importing our [MySQL backups](/backups) — you might need to temporarily disable foreign key constraints first, before importing the database. Just run this MySQL query, after connecting in to the database before actually doing the import:
+
+```mysql
+SET FOREIGN_KEY_CHECKS=0;
+```
+
+In a GUI like Sequel Pro there is a query window to run it. This value will then be reset to the default value when you close the connection.
+
 
 ## Local MySQL
 
@@ -280,5 +291,5 @@ The most common misunderstanding when trying to connect from a local machine, is
 
 You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are balanced and therefore kept on a low level, to force best practices and improve security. Once the connection are eaten up, it can take a little until the App recovers, auto-heals itself. There might be a setting with the client to limit the connections, or you'll try the command line tools as an alternative.
 
-If you see that error on other ocasions or it's not going away after a while, contact support.
+If you see that error on other occasions or it's not going away after a while, contact support.
 

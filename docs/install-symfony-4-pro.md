@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-02-26
+reviewed:         2019-09-11
 title:            Install Symfony 4
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
@@ -89,7 +89,7 @@ $ git push
 
 ## MySQL
 
-Until now you just deployed some code. It needs some more tinkering to make it yours.
+Until now you just deployed some code. If you want to use doctrine and Mysql it requires some more tinkering to make it yours. 
 
 ### Configuration
 
@@ -105,7 +105,7 @@ doctrine:
 
 ### Doctrine & symfony console
 
-Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You can login via [ssh](ssh) in to your App, or instead just fire single commands like so:
+Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You can use [remote ssh execution](remote-ssh-execution-pro) and fire single commands like so:
 
 ```bash
 # doctrine
@@ -128,6 +128,10 @@ You can also add this migrate command to your `composer.json` to have it run aut
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
+## Cache
+
+In pro stack, when you deploy your app, the old code is removed and the new one is deployed.
+If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the pro stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.
 
 ## Advanced configurations
 

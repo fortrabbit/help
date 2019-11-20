@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-09-02
+reviewed:      2019-09-30
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
@@ -19,7 +19,7 @@ keywords:
     - access
     - tenant
     - client
-    - epmloyees
+    - employees
 
 ---
 

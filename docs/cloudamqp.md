@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudAMQP
-reviewed:         2017-12-20
+reviewed:         2019-09-207
 title:            Using CloudAMQP with fortrabbit
 group:            Queues
 section:          Extending_fortrabbit
@@ -69,11 +69,12 @@ CLOUD_AMQP_VHOST=acbd123
 CLOUD_AMQP_PASSWORD=acbd123
 ```
 
-To use CloudAMQP from your fortrabbit App you need to do one more thing:
+You can also use [environment variables](/env-vars) for the above. To use CloudAMQP from your fortrabbit App you need to do one more thing:
+
 
 ## Requesting a firewall white-listing
 
-By default all outgoing calls from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
+By default all outgoing calls from your fortrabbit App are blocked for security reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
 Login to the fortrabbit Dashboard, navigate to your App > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port `5672` in the Port field. As descriptions we suggest "CloudAMQP" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new queue!
 
@@ -82,9 +83,6 @@ Login to the fortrabbit Dashboard, navigate to your App > Firewall whitelist and
 ## Using CloudAMQP
 
 You can use any [AMQP library](https://packagist.org/search/?q=amqp). The most popular currently is [zircote/amqp](https://packagist.org/packages/zircote/amqp).
-
-Also check out the [install guides](/#install-guides) and find out how to integrate CloudAMQP with your favorite framework or CMS.
-
 
 ## Further reading
 

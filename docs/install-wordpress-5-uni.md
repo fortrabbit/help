@@ -1,13 +1,12 @@
 ---
 
 template:         article
-reviewed:         2018-12-10
+reviewed:         2019-10-30
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
 stack:            uni
-lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
-proLink:          install-wordpress-4-pro
+lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 5 on fortrabbit.
 deprecated:       0
 stack:            uni
 
@@ -15,7 +14,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          5.0.2
+version:          5.2.3
 
 keywords:
     - wp-admin

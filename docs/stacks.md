@@ -1,10 +1,9 @@
-
 ---
 
 template:      article
 naviTitle:     "About the Stacks"
 title:         "About the Stacks"
-reviewed:      2018-05-12
+reviewed:      2019-09-30
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide."
 group:         stacks
 stack:         all

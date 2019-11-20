@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-04-27
+reviewed:      2019-09-30
 title:         Using and scaling PHP
 naviTitle:     PHP
 lead:          PHP is — as you are probably aware — a popular web programming language. It's also the core Component here on fortrabbit. See here how to use and scale PHP.
@@ -59,7 +59,7 @@ The majority of applications will run within this scaling group.
 
 ### PHP l: fat CMS & e-commerce
 
-* [Magento](http://magento.com/)
+* [Magneto](http://magento.com/)
 * [Sylius](http://sylius.org/)
 * [Thelia](http://thelia.net/)
 

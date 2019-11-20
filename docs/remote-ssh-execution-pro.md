@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2019-09-30
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 excerpt:       "How to run Artisan migrate and other useful commands."
@@ -14,7 +14,7 @@ group:         deployment
 
 ## Problem
 
-With fortrabbits [Pro Stack Apps](app-pro) you [deploy with Git](/git-deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](app-pro#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade off is that full SSH access is not feasible.
+With fortrabbit [Pro Stack Apps](app-pro) you [deploy with Git](/git-deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](app-pro#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade off is that full SSH access is not feasible.
 
 
 ## Solution
@@ -89,11 +89,11 @@ Many modern web development frameworks and CMS come with a programmable command 
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php {{my-script.php}} {{arg1}} {{arg2}}
 
 # Laravel: artisan
-# Execute `some:command` using Laravels's `artisan` CLI:
+# Execute `some:command` using Laravel `artisan` CLI:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan {{some:command}}
 
 # Symfony: console
-# Execute `some:command` using Symfony's `app/console` CLI:
+# Execute `some:command` using Symfony `app/console` CLI:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console {{some:command}}
 ```
 
@@ -168,7 +168,7 @@ $ alias artisan-{{app-name}}="ssh {{ssh-user}}@deploy.{{region}}.frbit.com php a
 
 # use the alias
 $ artisan-{{app-name}} migrate
-# this actuall calls "ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate"
+# this actually calls "ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate"
 ```
 
 To persist those aliases between shell sessions you need to add them to your shell profile file. Usually that is either `~/.profile`, `~/.zshrc` or `~/.bashrc`.

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-10
+reviewed:    2019-09-30
 title:       Using HTTP Auth on fortrabbit
 lead:        You probably don't want the whole world to see your development in progress. Better restrict access to a fortunate few. This is how to use HTTP (basic) authentication to trigger a username/password prompt in the browser.
 naviTitle:   HTTP auth

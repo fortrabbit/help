@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-02-21
+reviewed:         2019-09-30
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -15,6 +15,9 @@ We don't believe in hosting offerings with unlimited resources. There is always 
 > I just want to say that you all make us better for our clients. The limits you set on the servers are reasonable and prevent us from coming up with lazy or hacked solutions. We are definitely better because of you all.
 
 – Stephen Callender from [Shoe Shine Design](http://shoeshinedesign.com/)
+
+What happens when you hit or even go over one of the scaling limits described in the [specs page](http://www.fortrabbit.com/specs)? All Components are different by nature, the behavior when you exceed a limit is different. The following list helps to understanding the consequences and when it is a good idea to scale up or out:
+
 
 ## PHP memory
 
@@ -47,11 +50,19 @@ The amount of processes divided by the average PHP response time determines how 
 
 If more (PHP handled) requests are coming in than the application can handle, then they will be queued for a short time. If the queue is full, then the request will result in a `504 Gateway Timeout` error.
 
-**Solution**: The Dashboard metric _Page views_ show the amount of PHP requests per hour and the metric _PHP response time_ shows the average response those PHP requests took. With those metrics, you can determine whether your current scaling is sufficient. For example, if you have 100,000 average _Page views_ per hour and those execute on average (_PHP response_time_) in 100 ms, then you know that you need at least three processes to handle it, four to be safer. A simple calcualtion would be `100,000 requests per hour / 3600 seconds per hour = ~28` then `28 * 0.1 seconds average PHP response time = ~2.8 minimum required processes`.
+**Solution**: The Dashboard metric _Page views_ show the amount of PHP requests per hour and the metric _PHP response time_ shows the average response those PHP requests took. With those metrics, you can determine whether your current scaling is sufficient. For example, if you have 100,000 average _Page views_ per hour and those execute on average (_PHP response_time_) in 100 ms, then you know that you need at least three processes to handle it, four to be safer. A simple calculation would be `100,000 requests per hour / 3600 seconds per hour = ~28` then `28 * 0.1 seconds average PHP response time = ~2.8 minimum required processes`.
 
 Mind that those _PHP response time_ values are averages in the hour. If you have a strong difference in response times for individual requests (say 100 ms is the average, while some requests finish in 50 ms and others in 200 ms) then you might need more processes, to compensate for changes in the "request profile" (i.e. if those endpoints which result in 200 ms response time are suddenly more frequently used and your average response time goes toward 200 ms as a result).
 
 Also mind that the hourly _Page view_ metrics do not show you clustering within smaller time periods. If those 100k requests do not happen about evenly distributed within the hour, but in a very short window (say 5 minutes), then you need a lot more processes to handle them properly.
+
+
+### OPcache
+
+**Scope**: Universal and Professional Apps
+
+The OPcache limit is soft, when exceeded either nothing happens or you see a degraded performance depending on whether the OPcache exhaustion is constantly caused or only in seldom, special requests.
+
 
 ### Pitfall: Self requests
 
@@ -70,7 +81,7 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each MySQL scaling comes with a fixed amount of maximum available storage - [Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
+**Description**: Each MySQL scaling comes with a fixed amount of maximum available MySQL storage - [Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
 
 * `CREATE TABLE`
 * `CREATE VIEW`
@@ -79,7 +90,23 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 
 All other write operations, such as `DELETE` or `DROP`, which are needed for possible cleanup operations, are still allowed. The implementation of those suspensions is time delayed and can take effect a few minutes after the limit has been exceeded.
 
+The MySQL storage limit is critical. When exceeding this, multiple things can happen: maybe nothing happens, or some parts of the site throwing errors or even "white screens". The kind of error depends where write capabilities are used, a news site which can only be written by an editor might deliver just fine - whereas a community site, which stores user comments stops working in large parts.
+
 **Solution**: To re-enable write capabilities you either can upgrade to a bigger scaling or reduce data size by deleting rows or dropping tables. Mind that the time delay goes both ways: When you clean up the DB and remove data size, it can take a couple of minutes for the privileges to become available again.
+
+
+## MySQL index
+
+**Scope**: Professional Apps
+
+**Description**: Each MySQL scaling comes with a fixed amount of maximum available MySQL index size [Professional](http://www.fortrabbit.com/specs-pro#mysql)). That is just a soft limit. When exceeding, either nothing happens or the App gets slower because the total available dedicated memory is exhausted depending on whether index memory exhaustion is caused permanently or by isolated event.
+
+
+## MySQL IOPS
+
+**Scope**: Professional Apps
+
+**Description**: MySQL IOPS is a soft limit. Exceeding it probably degrades performance for website delivery.
 
 
 ## Web storage
@@ -87,7 +114,6 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 **Scope**: Universal Apps
 
 **Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). [Professional Apps](/app-pro) have [ephemeral storage](/app-pro#toc-ephemeral-storage), so uploads will be outsourced to the [Object Storage](/object-storage). Consider that we are doing backups with some plans. Backups have a retention period, so there are multiple backups. For example, when you are using 5 GB web storage, there are 14 copies, so 70 GB in total used. That's really a lot. Each a new copy gets created and transferred. At a certain size and file number those backups might fail.
-
 
 **Solution**: We currently allow slight exceeding those limits, there is no hard capping in place. You might upgrade to the next bigger scaling, when available. The storage availability of the biggest Universal App scaling is currently the highest we offer. The purpose of fortrabbit Apps is fast light weight PHP engines, the web storage limits are set accordingly. To store many large images or videos, better use an external image/video hosting service or cloud storage. Consider our Professional Stack with Object Storage an alternative. Review your files. Maybe there are custom temp files, custom logs or other unused resources you can safely delete. Maybe you have a WordPress backup plugin enabled filling up the web storage? Turn it off. Contact us if you are unsure what to do.
 
@@ -101,6 +127,20 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 **Solution**: You can either clean up obsolete data to reduce the used size or upgrade to a bigger scaling. If you need more than our current plans offer, please [get in touch](mailto:support@fortrabbit.com) and let us know how much you need and we will get back to you with an offer.
 
 
+### Memcache
+
+**Scope**: Professional Apps with Memcache Component
+
+**Description**:  Memcache memory is a soft limit. Exceeding it can cause degraded performance. You might see "empty baskets" or aborted user sessions. See the App metrics in the Dashboard.
+
+
+### Worker
+
+**Scope**: Professional Apps with Worker Component
+
+**Description**: Worker memory is a soft limit. When exceeding it, either nothing happens or you can see fatal errors or slower execution depending on whether memory exhaustion is caused by permanent usage or isolated events or accidental overlapping of time scheduled jobs. Worker memory is limited in the Dashboard. You can only add a s many jobs as included in the selected plan.
+
+
 ## Transfer
 
 **Scope**: Universal and Professional Apps
@@ -109,7 +149,6 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page. High traffic is often caused by videos or images. Images are often not compressed well enough and videos are big by definition. An alternative way to set delivery of static assets is by using a pull-CDN or by completely outsourcing the static files, either to image and video hosting service, or to a cloud storage like AWS S3, for the Professional Stack we are offering the Object Storage.
 
-- - -
 
 ## Load testing
 

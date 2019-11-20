@@ -15,7 +15,7 @@ Do you run a 3rd party service or an open source project that can be integrated 
 
 ### File name conventions
 
-* use dashes instead of spaces or lowdashes for file names
+* use dashes instead of spaces or low dashes for file names
 * use the short versions: `-uni`, `-pro` on the end for different stacks
 
 ### Front Matter syntax
@@ -53,7 +53,7 @@ noToc: true
 # where to show this: uni, pro old, all — REQUIRED when required
 stack:     uni
 
-# link to the Universal App verison
+# link to the Universal App version
 uniLink:   mysql-uni
 
 # link to the professional version
@@ -66,7 +66,7 @@ proLink:   mysql-pro
 # When the article was last checked?
 # Don't forget to edit this each time you have reviewed a page
 # pages older than one year will be marked outdated
-reviewed: 2017-12-20
+reviewed: 2019-12-20
 
 # set a warning that this article is outdated, no matter the date
 deprecated: 1
@@ -224,7 +224,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **Software Preset** — ~~stack chooser~~
 * **Professional Stack** — ~~Pro Stack~~, ~~Professional stack~~
 * **Universal Stack** — ~~Hobby stack~~, ~~hobby stack~~
-* **{{ interchangble-value }}** < something the users will need to modify
+* **{{ interchangeable-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 
 
@@ -240,7 +240,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **Admin** = the Role
 * **Owner** = the Role
 * **App Collaborator**
-* **Role** — ~~permission~~, ~~acccess role~~
+* **Role** — ~~permission~~, ~~access role~~
 
 ## Times & dates
 

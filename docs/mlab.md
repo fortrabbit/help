@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        mLab
-reviewed:         2017-12-20
+reviewed:         2019-09-30
 title:            Using mLab with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit
@@ -48,7 +48,7 @@ Go to the [mLab sign up page](https://mlab.com/signup?utm_source=fortrabbit) and
 Once you are logged in click on the "Create new" button. In the next dialog, choose "amazon web services" as the "cloud provider". In the below "Location" chooser use the location fitting with the placement of your fortrabbit App:
 
 * Europe: Choose `Amazon's EU (Ireland) Region (us-west-1)`
-* USA: Choose `Amazon's US East (Virgina) Region (us-east-1)`
+* USA: Choose `Amazon's US East (Virginia) Region (us-east-1)`
 
 Now you need to decide which plan to choose. First mind that you can later on upgrade, so no need to panic if you do not exactly know what you are doing. As a guideline: If you are using fortrabbit redundant Production level plans, then you want to use mLab's "Replica set cluster", because they are redundant as well. If you just want to test things out, then choose the "Single-node Sandbox" plan, which is free.
 
@@ -66,7 +66,7 @@ If you are not still there, go to the just created database detail view. Here yo
 
 What you need to take from this are two things: Your **hostname**, which would be `ds123456.mlab.com` in this case and your **port**, which would be `23456` in this case.
 
-We recommend to stash those information and the user credentials from before in your App's [secrets](secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
+We recommend to stash those information and the user credentials from before in your App's [secrets](secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
 
 ```plain
 # the hostname and port you got

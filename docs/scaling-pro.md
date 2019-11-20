@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-04-27
+reviewed:      2019-07-26
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -155,51 +155,19 @@ The Object Storage plans are limited by storage (not traffic). It will not scale
 
 ## Clean code saves money
 
-We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design).
+We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design). Also the [limits article](/limits) to understand what happens when your App is exceeding those.
+
 
 ## Advanced specifications
 
 Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained informations about plans and limits.
 
-## Exceeding limits
 
-What happens when you hit or even go over one of the scaling limits described in the [specs page](http://www.fortrabbit.com/specs)? As described above, there is no auto-scaling in place. As all Components are different by nature, the behavior when you exceed a limit is different. The following list helps to understanding the consequences and when it is a good idea to scale up or out:
+## General scaling tips
 
-
-### App base limits
-
-**Traffic** is measured with the App. When an App exceeds the included traffic, additional traffic will be billed. See the [specs page](http://www.fortrabbit.com/specs) for costs and packaged.
-s
-
-### PHP plan limits
-
-**PHP memory** is a soft limit, when an App exceeds this limit either nothing happens or you can see a degraded App performance or even "white screens". This depends on whether the memory exhaustion is constantly or only in isolated events and whether the additional memory is swappable. See the PHP memory consumption with your Apps metrics in the Dashboard.
-
-**PHP requests** limits shown in the specs page are only a recommendation. When exceeded for the chosen PHP plan the App might responds slower.
-
-**OPcache** is a soft limit, when exeeded either nothing happens or you see a degraded performance depending on whether the OPcache exhaustion is constantly caused or only in seldom, special requests.
-
-
-### MySQL limits
-
-**MySQL storage** limit is critical. When exceeding this, multi things can happen: maybe nothing happens, or some parts of the site throwing errors or even "white screens". The kind of error depends where write capabilities are used, a news site which can only be written by an editor might deliver just fine - whereas a community site, which stores user comments stops working in large parts.
-
-**MySQL memory** limit is only a recommendation. As long as: `memory + index < total storage` all is good.
-
-**MySQL index** limit on tinkering & production plans is only a recommendation. See above.
-
-**MySQL index** limit on a dedicated plan is a soft limit. When exceeding, either nothing happens or the App get's slower because the total available dedicated memory is exhausted depending on whether index memory exhaustion is caused permanently or by isolated event.
-
-**MySQL IOPS** limit is a soft limit. Exceeding it probably degrades performance for website delivery.
-
-
-### Memcache limits
-
-**Memcache memory** is a soft limit. Exceeding it can cause degraded performance. You might see "empty baskets" or aborted user sessions. See the App metrics in the Dashboard.
-
-
-### Worker limits
-
-**Worker memory** is a soft limit. When exceeding it, either nothing happens or you can see fatal errors or slower execution depending on whether memory exhaustion is caused by permanent usage or isolated events or accidental overlapping of time scheduled jobs.
-
-**Worker memory** is limited in the Dashboard. You can only add a s many jobs as included in the selected plan.
+* Scaling between plans should only cause seconds or no downtime at all.
+* In edge cases hanging "PHP processes" can extend downtime to minutes.
+* The actual execution of the scaling happens postponed. Usually a few minutes after booking the plan. 
+* Required scaling is very unique to your application.
+* Experiment with the settings that are best working good for you.
+* Experimenting with scaling settings is not cost-intensive, thanks to [daily billing](/billing).
