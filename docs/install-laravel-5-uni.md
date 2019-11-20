@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-03-21
+reviewed:         2019-04-02
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -133,11 +133,11 @@ You can either login to [SSH](ssh-uni) and execute `artisan` or utilize [execute
 
 ```bash
 # remote execution
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate --force'
 
 # login and execute
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
-$ php artisan migrate
+$ php artisan migrate --force
 ```
 
 **Note**: If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
@@ -164,9 +164,10 @@ You can access your logs via SSH or SFTP. Laravel, per default, stores it's log 
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 
 # tail the logs (they contain the current date, per default)
-$ tail -f storage/logs/laravel-2018-10-27.log
+$ tail -f storage/logs/laravel-$(date '+%Y-%m-%d').log
 ```
 
+<!--
 #### Setting time zone in Laravel
 
 As Eloquent uses `PDO`, you can use the `PDO::MYSQL_ATTR_INIT_COMMAND` option. Extend your `mysql` configuration array in `app/config/database.php` or your specific environment `database.php` file:
@@ -183,11 +184,13 @@ return [
     // other code …
 ];
 ```
+-->
 
 
-### Queues & Redis
+### Queues
 
-Laravel supports multiple queue and cache drivers. Please check out the [Laravel 5 Professional article](install-laravel-5-pro#toc-queue) on how to integrate those.
+The Universal stack does not support long running processes like `php artisan queue:work`.
+Please check out the [Laravel 5 Professional article](install-laravel-5-pro#toc-queue) on how to integrate those.
 
 #### Using envoy
 
@@ -214,13 +217,32 @@ $ envoy run migrate
 
 ### Laravel Mix
 
-Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first. For deploying the minified output — this also applies to other workflows like with Gulp — you can either:
+Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first.
 
-1. Include the .min files with Git and push it along. That's not a clean method, but it works.
-2. Deploy the minified files separately. You can do this with SFTP or rsync.
+```
+# Install node modules (locally)
+npm install
 
-<!-- TODO: include rsync example -->
+# Build assets using Laravel Mix (locally)
+npm run prod
+```
 
+For deploying the assets we recommend using `rsync`. The one-liner below works with the most common scenarios, adjust it to your needs if your setup differs.
+
+```
+# Rsync command to sync the asset in your /public folder 
+rsync -av --include='*.js' --include='*.css' --include='mix-manifest.json' --exclude='*'  ./public/ {{app-name}}@deploy.{{region}}.frbit.com:./public/
+```
+
+For your convenience you can define rsync command `npm run deploy-assets` ...
+
+```package.json
+{
+  "scripts": {
+    "deploy-assets": "rsync -av ...",
+   }
+}
+```
 
 ### Scheduling
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-03-21
+reviewed:         2019-04-02
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
