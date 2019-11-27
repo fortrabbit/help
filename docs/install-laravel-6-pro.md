@@ -289,9 +289,9 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
+Per default Laravel writes all logs to `storage/logs/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
 
-Laravel's new `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
+Laravel's `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
 
 ```
 LOG_CHANNEL=errorlog
@@ -300,29 +300,7 @@ LOG_CHANNEL=errorlog
 You can now use our regular [log access](logging-pro) to view the stream.
 
 
-#### Setting time zone in Laravel
-
-<!-- TODO: review -->
-
-As Eloquent uses `PDO`, you can use the `PDO::MYSQL_ATTR_INIT_COMMAND` option. Extend your `mysql` configuration array in `app/config/database.php` or your specific environment `database.php` file:
-
-```php
-return [
-    // other code …
-    'mysql' => [
-        // other code …
-        'options'   => [
-            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+02:00\''
-        ]
-    ],
-    // other code …
-];
-```
-
-
 ### Memcache
-
-<!-- TODO: failover tweaks -->
 
 Make sure you enabled the [Memcache](memcache-pro) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
@@ -335,8 +313,8 @@ $servers = [[
 ]];
 
 // on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+if (getenv('APP_SECRETS')) {
+    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
     $servers = [[
         'host' => $secrets['MEMCACHE']['HOST1'],
         'port' => $secrets['MEMCACHE']['PORT1'],
@@ -351,15 +329,42 @@ if (isset($_SERVER['APP_SECRETS'])) {
     }
 }
 
-// other code …
+if (extension_loaded('memcached')) {
+    $timeout_ms = 50;
+    $options = [
+      // Assure that dead servers are properly removed and ...
+      \Memcached::OPT_REMOVE_FAILED_SERVERS => true,
+      
+      // ... retried after a short while (here: 2 seconds)
+      \Memcached::OPT_RETRY_TIMEOUT         => 2,
+      
+      // KETAMA must be enabled so that replication can be used
+      \Memcached::OPT_LIBKETAMA_COMPATIBLE  => true,
+      
+      // Replicate the data, write it to both memcached servers   
+      \Memcached::OPT_NUMBER_OF_REPLICAS    => 1,
+      
+      // Those values assure that a dead (due to increased latency or
+      // really unresponsive) memcached server is dropped fast
+      \Memcached::OPT_POLL_TIMEOUT          => $timeout_ms,        // milliseconds
+      \Memcached::OPT_SEND_TIMEOUT          => $timeout_ms * 1000, // microseconds
+      \Memcached::OPT_RECV_TIMEOUT          => $timeout_ms * 1000, // microseconds
+      \Memcached::OPT_CONNECT_TIMEOUT       => $timeout_ms,        // milliseconds
+      
+      // Further performance tuning
+      \Memcached::OPT_NO_BLOCK              => true,
+    ];
+}    
 
 return [
     // other code …
     'stores' => [
         // other code …
         'memcached' => [
-            'driver'  => 'memcached',
-            'servers' => $servers
+            'driver'        => 'memcached',
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
+            'servers'       => $servers,
+            'options'       => $options ?? []
         ],
         // other code …
     ],
@@ -367,12 +372,10 @@ return [
 ];
 ```
 
-In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit and `apc` or `array` on your local machine, via `.env` file.
+In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
 
 
 ### Redis
-
-<!-- TODO: presistents -->
 
 Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
 
@@ -406,7 +409,7 @@ return [
 ];
 ```
 
-If you plan on using Redis as a cache, then open `config/cache.php` and set `default` to `redis` (or set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
+If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
 
 ### Queue
 
