@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-11-25
+reviewed:         2019-11-29
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -10,7 +10,7 @@ group:            Install_guides
 websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
-image:            laravel-mark.png
+image:            laravel-mark.svg
 version:          5.8
 stack:            pro
 uniLink:          install-laravel-5-uni
@@ -157,9 +157,8 @@ Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to acce
 You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate'
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate:rollack'
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan tinker'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate --force'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate:rollback --force'
 ```
 
 If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
