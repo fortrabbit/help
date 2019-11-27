@@ -231,12 +231,11 @@ $ composer require fortrabbit/yii-memcached
 
 ## HTTPS
 
-fortrabbit will provide Let's Encrypt certificates for all domains, please see our [HTTPS article](/https) for more on that.
+fortrabbit will provide Let's Encrypt TLS certificates for all domains, please see our [HTTPS article](/https) for more on that.
 
 ## htaccess
 
-Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https. Please see our [.htaccess article](/htaccess) for more.
-
+Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) with examples.
 
 
 ## Troubleshooting
