@@ -299,6 +299,8 @@ LOG_CHANNEL=errorlog
 
 You can now use our regular [log access](logging-pro) to view the stream.
 
+Do you need more than live logs? Consider [Flare](https://flareapp.io/), the error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
+                                                                                                                                             
 
 ### Memcache
 
