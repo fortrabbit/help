@@ -94,8 +94,6 @@ $mysql = [
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
-    'strict'    => false,
-    'engine'    => null,
 ];
 
 
@@ -112,12 +110,10 @@ if (isset($_SERVER['APP_SECRETS'])) {
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',
-        'strict'    => false,
     ];
 }
 
 return [
-    'fetch'         => PDO::FETCH_OBJ,
     'default'       => env('DB_CONNECTION', 'mysql'),
     'connections'   => [
         'mysql' => $mysql,
@@ -181,8 +177,11 @@ With that in place, any time you deploy your code, database changes will be appl
 Using the `database` driver is the easiest way to persist sessions cross multiple PHP nodes. Since it requires a migration it is a good exercise.
 
 ```bash
-# Create the session table via artisan command locally
+# Create a migration for the session table locally
 $ php artisan session:table
+
+# Apply the migration locally
+$ php artisan migrate
 
 # Add, commit and push the migration file
 $ git add .
@@ -205,43 +204,34 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 
 fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
 
+Using our `object-storage` driver reduces the configuration efforts to a minimum. 
+
+```
+composer require fortrabbit/laravel-object-storage
+```
+
 To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
 
 ```php
-// construct credentials from App secrets, when running on fortrabbit in production
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 
 return [
-    // other code …
-    'disks' => [
-        // other code …
-        's3' => [
-            'driver'   => 's3',
-            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
-            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
-            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
-            'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
-            'url'      => 'https://'. $secrets['OBJECT_STORAGE']['HOST'],
-            'region'   => $secrets['OBJECT_STORAGE']['REGION'],
-        ],
-        // other code …
-    ],
-    // other code …
+    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'cloud'   => env('FILESYSTEM_CLOUD', 's3'),
+    'disks'   => [
+            's3' => [
+                'driver' => 'object-storage'
+                // no further settings required
+            ],
+            // other disk …
+    ]
 ];
 ```
 
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. 
 
-```php
-// other code ….
-'default' => env('FS_TYPE', 'local'),
-// other code …
-```
+Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
-Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
-
-An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
-
+Until Laravel 5.6 the env var `FS_TYPE` was used instead of `FILESYSTEM_DRIVER`.
 
 #### Laravel Mix
 
@@ -255,32 +245,35 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 Then put the values to your .env file an prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
 ```js
-let mix = require('laravel-mix');
-let S3Plugin = require('webpack-s3-plugin')
 
-// ...
+const mix = require('laravel-mix');
+const S3Plugin = require('webpack-s3-plugin');
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 
 // S3Plugin config
 if (process.env.npm_config_env === 'production') {
-	mix.webpackConfig({
-	    plugins: [
-	        new S3Plugin({
-	            s3Options: {
-	                accessKeyId: process.env.OBJECT_STORAGE_KEY,
-	                secretAccessKey: process.env.OBJECT_STORAGE_SECRET,
-	                endpoint: process.env.OBJECT_STORAGE_SERVER,
-	                region: process.env.OBJECT_STORAGE_REGION
-	            },
-	            s3UploadOptions: {
-	                Bucket: process.env.OBJECT_STORAGE_BUCKET
-	            },
-	            directory: 'public'
-	        })
-	    ]
-	});
+    mix.webpackConfig({
+        plugins: [
+            new S3Plugin({
+                // Only upload css and js
+                include: /.*\.(css|js)/,
+                s3Options: {
+                    accessKeyId: process.env.OBJECT_STORAGE_KEY,
+                    secretAccessKey: process.env.OBJECT_STORAGE_SECRET,
+                    endpoint: process.env.OBJECT_STORAGE_SERVER,
+                    region: process.env.OBJECT_STORAGE_REGION,
+                    signatureVersion: 'v2'
+                },
+                s3UploadOptions: {
+                    Bucket: process.env.OBJECT_STORAGE_BUCKET
+                },
+                // the source dir
+                directory: 'public'
+            })
+        ]
+    });
 }
 
 ```
@@ -301,7 +294,7 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 
 Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
 
-#### In Laravel 5.6
+#### In Laravel 5.6 - 5.8
 
 Laravel's new `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
 
@@ -325,23 +318,8 @@ $app->configureMonologUsing(function($monolog) {
 
 You can now use our regular [log access](logging-pro) to view the stream.
 
+Do you need more than live logs? Consider [Flare](https://flareapp.io/), the error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
 
-#### Setting time zone in Laravel
-
-As Eloquent uses `PDO`, you can use the `PDO::MYSQL_ATTR_INIT_COMMAND` option. Extend your `mysql` configuration array in `app/config/database.php` or your specific environment `database.php` file:
-
-```php
-return [
-    // other code …
-    'mysql' => [
-        // other code …
-        'options'   => [
-            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+02:00\''
-        ]
-    ],
-    // other code …
-];
-```
 
 
 ### Memcache
@@ -357,8 +335,8 @@ $servers = [[
 ]];
 
 // on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+if (getenv('APP_SECRETS')) {
+    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
     $servers = [[
         'host' => $secrets['MEMCACHE']['HOST1'],
         'port' => $secrets['MEMCACHE']['PORT1'],
@@ -373,15 +351,42 @@ if (isset($_SERVER['APP_SECRETS'])) {
     }
 }
 
-// other code …
+if (extension_loaded('memcached')) {
+    $timeout_ms = 50;
+    $options = [
+      // Assure that dead servers are properly removed and ...
+      \Memcached::OPT_REMOVE_FAILED_SERVERS => true,
+      
+      // ... retried after a short while (here: 2 seconds)
+      \Memcached::OPT_RETRY_TIMEOUT         => 2,
+      
+      // KETAMA must be enabled so that replication can be used
+      \Memcached::OPT_LIBKETAMA_COMPATIBLE  => true,
+      
+      // Replicate the data, write it to both memcached servers   
+      \Memcached::OPT_NUMBER_OF_REPLICAS    => 1,
+      
+      // Those values assure that a dead (due to increased latency or
+      // really unresponsive) memcached server is dropped fast
+      \Memcached::OPT_POLL_TIMEOUT          => $timeout_ms,        // milliseconds
+      \Memcached::OPT_SEND_TIMEOUT          => $timeout_ms * 1000, // microseconds
+      \Memcached::OPT_RECV_TIMEOUT          => $timeout_ms * 1000, // microseconds
+      \Memcached::OPT_CONNECT_TIMEOUT       => $timeout_ms,        // milliseconds
+      
+      // Further performance tuning
+      \Memcached::OPT_NO_BLOCK              => true,
+    ];
+}    
 
 return [
     // other code …
     'stores' => [
         // other code …
         'memcached' => [
-            'driver'  => 'memcached',
-            'servers' => $servers
+            'driver'        => 'memcached',
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
+            'servers'       => $servers,
+            'options'       => $options ?? []
         ],
         // other code …
     ],
@@ -389,7 +394,7 @@ return [
 ];
 ```
 
-In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit and `apc` or `array` on your local machine, via `.env` file.
+In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
 
 
 ### Redis
@@ -406,12 +411,13 @@ $redis = [
 ];
 
 // on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+if (isset(getenv('APP_SECRETS'))) {
+    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
     $redis = [
         'host'     => $secrets['CUSTOM']['REDIS_HOST'],
         'port'     => $secrets['CUSTOM']['REDIS_PORT'],
         'password' => $secrets['CUSTOM']['REDIS_PASSWORD']
+        'persistent' => 1
     ];
 }
 
@@ -425,29 +431,22 @@ return [
 ];
 ```
 
-If you plan on using Redis as a cache, then open `config/cache.php` and set `default` to `redis` (or set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
+If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
+
 
 ### Queue
-
 Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue. That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
 
 Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_CONNECTION` [environment variable](env-vars) accordingly in the Dashboard.
 
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
-
-
-
 Make sure you have added `VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class` to `providers` in `config/app.php`.
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `rabbitmq `.
 
-<!--
-TODO:
-https://github.com/vyuldashev/laravel-queue-rabbitmq 
--->
 
-#### Using envoy
+### Using envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 
