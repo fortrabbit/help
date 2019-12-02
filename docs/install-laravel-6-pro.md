@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2019-11-29
+reviewed:         2019-12-01
 title:            Install Laravel 6
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit.
 group:            Install_guides
 
 websiteLink:      http://laravel.com?utm_source=fortrabbit
