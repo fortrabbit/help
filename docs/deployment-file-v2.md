@@ -29,7 +29,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 # differentiate from the deployment files
 version: 2
 
-# called before Composer runs
+# called before Composer runs, so dependencies/libraries not guaranteed to be in place (must be a single PHP script)
 pre: my-script.php arg1 arg2 arg3
 
 # optional Composer settings
@@ -38,16 +38,16 @@ composer:
     # Per default dist is preferred
     prefer-source: false
 
-    # Resolves to the --no-dev parameter
+    # Resolves to the --no-dev parameter, default is true
     no-dev: false
 
-    # Resolves to the --no-plugins parameter
+    # Resolves to the --no-plugins parameter, default is false
     no-plugins: false
 
-    # Resolves to the --no-scripts parameter
+    # Resolves to the --no-scripts parameter, default is false
     no-scripts: false
 
-# called after Composer runs
+# called after Composer runs (must be a single PHP script)
 post: my-script.php arg1 arg2 arg3
 
 # list of sustained folders in ~/htdocs. If not given, then it defaults to the "vendor" folder
@@ -71,8 +71,32 @@ post: post.php
 
 When developing pre/post scripts, it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
+Bear in mind the pre script won't have access to dependencies/libraries during your first deployment, since `composer install` hasn't ran at that time. Subsequent deployments will have those files however, since the `/vendor` directory is sustained - unless you reset the repositiory.
+
+Only a single pre/post script will be executed, chaining won't work. If you need to run multiple scripts, you'll need to create a wrapper script and require your other scripts within.
+
 ## Multi staging use case
 
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
 
 Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
+
+## Private composer use case
+
+The need for a pre script is rare, but if you [use private repositories](/private-composer-repos) over SSH (i.e. rather than `github-oauth`) and are concerned about a (highly unlikely) MITM attack, you can add a simple pre script as follows:
+
+```php
+<?php
+// Prevent MITM, by enabling StrictHostKeyChecking and adding a verified host for github.com before composer SSH installs
+// Changes are sustained, so could be done once manually (and after resetting the repo) but safer to automate
+
+$fortrabbitSshConfigPath  = '/app/.ssh/config';
+$fortrabbitKnownHostsPath = '/app/.ssh/known_hosts';
+
+file_put_contents($fortrabbitKnownHostsPath, '1.2.3.4 ssh-rsa ABC...paste in here...DEF==' . PHP_EOL);
+file_put_contents($fortrabbitSshConfigPath, str_replace(
+    ['StrictHostKeyChecking no', 'UserKnownHostsFile /dev/null'],
+    ['StrictHostKeyChecking yes', 'UserKnownHostsFile ' . $fortrabbitKnownHostsPath],
+    file_get_contents($fortrabbitSshConfigPath)
+));
+```
