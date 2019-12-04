@@ -178,7 +178,7 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft project-config/sync"
 
 ```
 
-To automate this task, we created a little package which triggers `migrate/all` and `project-config/sync` runs every time you push changes.
+To automate this task, we created a little package which triggers `migrate/all` and `project-config/sync` every time you push changes.
 
 ```bash
 # Install the craft-auto-migrate package
@@ -237,6 +237,21 @@ return [
 
 When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. Please see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
 With the `fortrabbit/craft-auto-migrate` package mentioned above, Project Config changes are applied automatically to your fortrabbit App. 
+
+
+## Queue Jobs
+
+Craft CMS uses queue jobs for long-running tasks. By default these jobs are processed by a web based ajax call which blocks PHP processes that are meant for site delivery.
+In the worst case scenario the queue runner consumes all PHP resources. Luckily there are more robust solutions available. [Andrew Welch](https://nystudio107.com/blog/robust-queue-job-handling-in-craft-cms) explains it in detail, here is the TLDR:
+
+### Async Queue Plugin
+
+For most queue workloads the `ostark/craft-async-queue` plugin mitigates the problems described above. There is further configuration required, just install it like any other plugin. See the [guide on Github](https://github.com/ostark/craft-async-queue) understand what it does.  
+
+### Worker Job
+
+On the [Pro Stack](/app-pro) you can run long running processes in a isolated environment without hurting site delivery.
+You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `craft queue/listen`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
 
 ## Troubleshooting
 
