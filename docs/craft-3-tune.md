@@ -102,14 +102,14 @@ Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the [example above](#t
 <?php
 return [
 
-    // fortrabbit
+    // fortrabbit (multi site)
     'production' => [
         'siteUrl' => [
             'en' => '//www.site.com',
             'nl' => '//www.site.nl',
         ]
     ],
-    // local
+    // local (multi site)
     'dev' => [
         'siteUrl' => [
             'en' => '//en.site.dev',
@@ -118,19 +118,6 @@ return [
     ]
 ];
 ```
-
-
-<!--
-
-  TBD: Why is the above documented here? 
-  Not sure how this is connected to Multi Staging ? And why this is important to us?
-
-### userSessionDuration
-
-The amount of time a user stays logged in seconds as an integer value or a [period](http://php.net/manual/en/dateinterval.construct.php) as a string.
-
-
--->
 
 
 ## Manually setting ENV vars
@@ -162,7 +149,7 @@ DB_TABLE_PREFIX=craft_
 
 We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. **Test updates locally first!** For production (your fortrabbit App) we have set the ENV "allowUpdates" to false (see above). That will make the update button not show up in the control panel, so that your client will not accidentally update. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
 
-### A. Update Craft with a Git workflow
+### A. Update Craft with a Git workflow (recommended)
 
 When you have used a Git to deploy Craft, your update workflow can looks like this: Use Composer from the command line to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**:
 
@@ -174,11 +161,11 @@ $ composer update
 Loading composer repositories with package information
 Updating dependencies (including require-dev)
 Package operations: 0 installs, 9 updates, 0 removals
-  - Updating symfony/process (v4.0.11 => v4.1.0): Downloading (100%)
-  - Updating symfony/console (v4.0.11 => v4.1.0): Downloading (100%)
-  - Updating craftcms/cms (3.0.11 => 3.0.25): Downloading (100%)
+  - Updating symfony/process (v4.0.11 => v4.4.1): Downloading (100%)
+  - Updating symfony/console (v4.0.11 => v4.4.1): Downloading (100%)
+  - Updating craftcms/cms (3.0.11 => 3.3.5): Downloading (100%)
   [...]
-  - Updating symfony/event-dispatcher (v4.0.11 => v4.1.0): Downloading (100%)
+  - Updating symfony/event-dispatcher (v4.0.11 => v4.4.1): Downloading (100%)
 Writing lock file
 Generating optimized autoload files
 ```
@@ -187,16 +174,15 @@ The `composer.lock` file reflects the exact package versions you've installed lo
 
 ```bash
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft migrate/all"
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft project-config/sync"
+
 ```
 
-You can also add this migrate command to your `composer.json` to have it run automatically every time you push changes.
+To automate this task, we created a little package which triggers `migrate/all` and `project-config/sync` runs every time you push changes.
 
-```json
-"scripts": {
-    "post-install-cmd": [
-        "php craft migrate/all",
-    ],
-}
+```bash
+# Install the craft-auto-migrate package
+$ composer require fortrabbit/craft-auto-migrate
 ```
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
@@ -249,13 +235,16 @@ return [
 ];
 ```
 
-When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. ÌPlease see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
+When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. Please see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
+With the `fortrabbit/craft-auto-migrate` package mentioned above, Project Config changes are applied automatically to your fortrabbit App. 
 
 ## Troubleshooting
 
 ### You see a Max Execution Time warning
 
-The Craft CMS Control Panel has a system report that will check for technical requirements. Our default setting for `max_execution_time` is 60 seconds. The Control Panel will complain that: "Craft requires a minimum PHP max execution time of 120 seconds. The max_execution_time directive in php.ini is currently set to 60." We believe that Pixel and Tonic is wrong about this and we are asking them to change their mind. We think: Long execution times will make your App slow. Nothing should take longer than a second, actually. Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
+The Craft CMS Control Panel has a system report that will check for technical requirements. Our default setting for `max_execution_time` is 60 seconds. The Control Panel will complain that: "Craft requires a minimum PHP max execution time of 120 seconds ... "
+The truth is, only heavy tasks like updates, backups and queue execution in the Craft Control Panel may take longer than 60 seconds. For site delivery a short `max_execution_time` is beneficial to prevent blocking PHP resources. No HTTP response should take longer than a few seconds, actually.
+Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
 
 ### You see a "Service Unavailable" or 5xx message
 
