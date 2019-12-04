@@ -231,13 +231,25 @@ $ composer require fortrabbit/yii-memcached
 
 ## HTTPS
 
-fortrabbit will provide Let's Encrypt certificates for all domains, please see our [HTTPS article](/https) for more on that.
+fortrabbit will provide Let's Encrypt TLS certificates for all domains, please see our [HTTPS article](/https) for more on that.
 
 ## htaccess
 
-Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https. Please see our [.htaccess article](/htaccess) for more.
+Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) with examples.
 
+## Project Config
 
+Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. We like it. You can enable it using the `useProjectConfigFile` setting in `config/general.php` like so:
+
+```php
+return [
+    '*' => [
+        'useProjectConfigFile' => true,
+    ],
+];
+```
+
+When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. ÌPlease see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
 
 ## Troubleshooting
 

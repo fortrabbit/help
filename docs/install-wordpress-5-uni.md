@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-10-30
+reviewed:         2019-11-26
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
@@ -205,12 +205,17 @@ This is pretty standard operations. You can download and update themes directly 
 Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check the article from the offical WordPress codex on how to [configure automatic background updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates) and take care that your WordPress core, plugins and even the themes are always [up-to-date](#toc-updating-wordpress).
 
 
+#### Protect against bots
+
+WordPress often gets targeted by bots, trying to access `wp-login.php` and `xmlrpc.php`.  Blocking access to these files will increase stability and security.
+
+
 ### Sending e-mails
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a SMTP plugin like [WP SMTP](http://wordpress.org/plugins/wp-smtp/) or [MAIL SMTP](http://wordpress.org/plugins/wp-mail-smtp/) to enable SMTP support for the `wp_mail()` function.
 
 
-### Resetting your passsword for wp-admin
+### Resetting your password for wp-admin
 
 Some user might to lazy to configure the mail delivery for WordPress via SMTP (see above). Then lazy user also forgets the password for `wp-admin`. Now the forgot password function from WordPress will not work. The lazy user can still set a new password in the database. Like so: 
 
