@@ -2,25 +2,22 @@
 
 template:         article
 reviewed:         2019-12-01
-title:            Install Laravel 5
+title:            Install Laravel 6
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit.
 group:            Install_guides
 
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.svg
-version:          5.8
+version:          6.6
 stack:            uni
-proLink:          install-laravel-5-pro
-
-deprecated:       yes
-dontList:         true
+proLink:          install-laravel-6-pro
 
 otherVersions:
-    6 : install-laravel-6-uni
-    
+    5 : install-laravel-5-uni
+
 keywords:
     - php
     - install
@@ -176,7 +173,8 @@ $ tail -f storage/logs/laravel-$(date '+%Y-%m-%d').log
 ### Queues
 
 The Universal stack does not support long running processes like `php artisan queue:work`.
-Please check out the [Laravel 5 Professional article](install-laravel-5-pro#toc-queue) on how to integrate those.
+Please check out the [Laravel 6 Professional article](install-laravel-6-pro#toc-queue) on how to integrate those.
+
 
 #### Using envoy
 
@@ -232,7 +230,7 @@ For your convenience you can define rsync command `npm run deploy-assets` ...
 
 ### Scheduling
 
-The [Laravel scheduler](https://laravel.com/docs/5.8/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 
+The [Laravel scheduler](https://laravel.com/docs/6.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 
 
 
 ### Sending mail
