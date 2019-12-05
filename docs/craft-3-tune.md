@@ -246,7 +246,7 @@ In the worst case scenario the queue runner consumes all PHP resources. Luckily 
 
 ### Async Queue Plugin
 
-For most queue workloads the `ostark/craft-async-queue` plugin mitigates the problems described above. There is further configuration required, just install it like any other plugin. See the [guide on Github](https://github.com/ostark/craft-async-queue) understand what it does.  
+For most queue workloads the `ostark/craft-async-queue` plugin mitigates the problems described above. There is no further configuration required, just install it like any other plugin. See the [guide on Github](https://github.com/ostark/craft-async-queue) understand what it does.  
 
 ### Worker Job
 
