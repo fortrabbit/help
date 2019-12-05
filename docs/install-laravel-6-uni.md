@@ -10,7 +10,7 @@ group:            Install_guides
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
-image:            laravel-mark.svg
+image:            laravel-black-new.svg
 version:          6.6
 stack:            uni
 proLink:          install-laravel-6-pro
