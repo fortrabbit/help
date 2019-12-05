@@ -12,7 +12,7 @@ order:            10
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-mark.svg
+image:            craft-cms-mark-black-new.svg
 version:          3.3
 
 otherVersions:

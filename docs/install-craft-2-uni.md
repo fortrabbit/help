@@ -11,7 +11,7 @@ proLink:          install-craft-2-pro
 websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-mark.svg
+image:            craft-cms-mark-black-new.svg
 version:          2.6
 group:            Install_guides
 deprecated:       yes
