@@ -33,6 +33,9 @@ keywords:
 
 Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
 
+MIND: This the install guide for Laravel version 5. We have an [Laravel install guide](/install-laravel) for a newer version (6). Check out that article as well, it includes more up-to-date information.
+
+
 ## Quick start
 
 Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
