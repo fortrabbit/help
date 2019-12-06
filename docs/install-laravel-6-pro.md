@@ -4,7 +4,7 @@ template:         article
 reviewed:         2019-12-01
 title:            Install Laravel 6
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit Professional Apps.
 group:            Install_guides
 
 websiteLink:      http://laravel.com?utm_source=fortrabbit
@@ -32,7 +32,7 @@ Please make sure to have followed our [get ready guide](/get-ready) before start
 
 ## Quick start
 
-Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-setup-for-an-existing-code-base). Execute the following in your terminal **on your local machine**:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
@@ -67,15 +67,16 @@ $ git push
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
+## Setup
+
+**Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Laravel installation or if you would like to setup Laravel so that you can run in a local development environment as well as in your fortrabbit App:
+
+### Setup for an existing code base
+
+You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
 
 
-
-## Tune
-
-Until now this is a vanilla Laravel. Now, make it yours.
-
-
-### MySQL
+### MySQL configuration
 
 Use [App secrets](secrets) to attain database credentials. Replace all contents from `config/database.php` in your editor like so:
 
@@ -459,8 +460,3 @@ There are at least two options to do this:
 
 1. Add `artisan down` as a `post-install-cmd` script in `composer.json`, then `git push` (remove the command and push again to bring it back online)
 2. Use a custom middleware and command which uses another source than a file, eg memcache or database
-
-
-## Add an existing project
-
-You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
