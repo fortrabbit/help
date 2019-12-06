@@ -193,7 +193,7 @@ In macOS Finder you can toggle invisible files with ` CMD + SHIFT + .`, easy to 
 
 ### Changes are not applied
 
-`.htaccess` contents are cached (Apache / web browser), so it might take a while until you see changes you have made to `.htaccess` files to be applied. You can try `curl` to test the new rules.
+`.htaccess` contents are cached (web browser), so it might take a while until you see changes you have made to `.htaccess` files to be applied. You can try `curl` to test the new rules or you can try another browser or incognito mode.
 
 
 ### Wrong location
