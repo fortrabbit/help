@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-12-03
+reviewed:    2019-12-06
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -52,9 +52,24 @@ When you are using a framework or a CMS, chances are high, that you don't need t
 
 You will find examples in context on the different help pages here on fortrabbit. Here are a couple of common categories of usage: 
 
+
 ### Redirects
 
 The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, or specific domain, prettify URLs by omitting file endings, force https and much more.
+
+
+#### Redirect all requests to https
+
+**Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
+
+```plain
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,N]
+```
+
+**Order matters. This rule should be one of first rules, so right on top of your htaccess file** Please also note the X-Header part. Other code snippets you find elsewhere might not work here. This is because we are running our Apache behind a set of load-balancers. They are performing the HTTPS encryption and not Apache. Many CMS and frameworks are already offering convenient settings and configurations for this.
+
 
 #### Redirect all requests to the primary domain
 
@@ -68,20 +83,6 @@ RewriteRule .* https://www.your-domain.example%{REQUEST_URI} [r=301,L,N]
 ```
 
 A CMS will have it's own options for that. If you don't use a redirect, make sure to at least set the "canonical URL" to be on your primary custom domain so that that search engines know that there is only one content.
-
-
-#### Redirect all requests to https
-
-**Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
-
-```plain
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,N]
-
-```
-
-Please note the X-Header part. Other code snippets you find elsewhere might not work here. This is because we are running our Apache behind a set of loadbalancers. They are performing the HTTPS encryption and not Apache. Many CMS and frameworks are already offering convenient settings and configurations for this.
 
 
 #### Force HTTPS for future visits with HSTS
@@ -182,11 +183,17 @@ Apache directives with regular expressions tend to look glibberish. Make sure to
 
 Here are the most common mistakes we see in combination with `.htaccess`:
 
+
 ### Missing .htaccess
 
 Another common mistake we see quite often is to miss out the `.htaccess` file. The dot at the beginning of the file name indicates that this file should be invisible in your operating system. So when you dragged files in your FTP client from the Downloads folder, it's very likely that the `.htaccess` file was left home. This can cause 403 errors.
 
 In macOS Finder you can toggle invisible files with ` CMD + SHIFT + .`, easy to remember, like dot files. SFTP clients with a split view option are mostly showing those files by default. Take care, there are possibly other hidden files in your project, like `.gitignore` and `.env`.
+
+
+### Changes are not applied
+
+`.htaccess` contents are cached (Apache / web browser), so it might take a while until you see changes you have made to `.htaccess` files to be applied. You can try `curl` to test the new rules.
 
 
 ### Wrong location
