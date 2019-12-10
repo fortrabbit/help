@@ -205,7 +205,7 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 </div>
 
 
-### Object Storage
+### Use the Object Storage for assets
 
 fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
 
@@ -237,7 +237,7 @@ If you want to use the Object Storage with your fortrabbit App and a local stora
 Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
 
-#### Laravel Mix
+#### Using Laravel Mix
 
 Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can use Mix locally - not on fortrabbit as there is no Node on remote. You can extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
 
@@ -296,7 +296,7 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 
 
 
-### Memcache
+### Setting up Memcache
 
 Make sure you enabled the [Memcache](memcache-pro) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
@@ -371,9 +371,11 @@ return [
 In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
 
 
-### Redis
+### Using Redis
 
-Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
+<!-- TODO: Adjust example to use ENV vars -->
+
+Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer hosted Reds, so first integrate with [Redis Cloud](redis-cloud) or similar external service, then configure the redis database connection in `config/database.php`:
 
 ```php
 // locally: use standards
@@ -407,14 +409,14 @@ return [
 
 If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
 
-### Queue
+
+### Queueing
 
 Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue. That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
 
 Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_CONNECTION` [environment variable](env-vars) accordingly in the Dashboard.
 
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
-
 
 
 ### Using envoy
@@ -456,7 +458,7 @@ There are at least two options to do this:
 2. Use a custom middleware and command which uses another source than a file, eg memcache or database
 
 
-### MySQL configuration with App Secrets
+### Configuration with App Secrets
 
 Beside using ENV vars to set your configs, you can use fortrabbit App Secrets ([see article](secrets)) to attain database credentials. Here is an example for `config/database.php`:
 
