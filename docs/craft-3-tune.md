@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-10-31
+reviewed:         2019-12-10
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -35,12 +35,16 @@ Your fortrabbit App comes with a predefined App Name and an URL like `{{appname}
 You can also add multiple domains. From the fortrabbit side, just point them to the Apps root path, configure routing and display of contents withing Craft CMS and/or use additional [htaccess rules](/htaccess).
 
 
-### Domain license
+### Licensing Craft CMS
 
-The Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+Craft CMS is not all free. To enable the good parts you need to obtain a licence  from Pixel & Tonic (the folks building Craft CMS). 
+
+A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. 
+
+Your fortrabbit App comes with a predefined App URL like `{{appname}}.frb.io`. You might have used this for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
 
 
-## Multi-Environment configuration
+## Multi-environment configuration
 
 Craft embraces the idea of storing environment specific configurations in ENV vars. The database config ([config/db.php](https://github.com/craftcms/craft/blob/master/config/db.php)) is a good example for that.
 
