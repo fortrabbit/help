@@ -139,7 +139,6 @@ There are various use cases to export and import the database. Likely you want t
 Read on in the [MySQL article](/mysql-uni) on how to do that and other tasks.
 
 
-
 ### Working with artisan migrate
 
 You might want to update database on the App with the `artisan migrate` command at some point.  You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
