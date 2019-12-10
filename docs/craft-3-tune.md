@@ -66,8 +66,6 @@ return [
     // Global settings
     '*' => [
         'useProjectConfigFile' => true,
-        'cpTrigger'            => 'godmode',
-        'userSessionDuration'  => 'P24H',
         'securityKey'          => getenv('SECURITY_KEY'),
         'siteUrl'              => getenv('SITE_URL') ?: '@web'
     ],    
@@ -83,7 +81,7 @@ return [
 ];
 ```
 
-Above is an extended example for `config/general.php`. It sets some useful shared settings, as well as some environment specific settings for production (fortrabbit) and development (locally). Here are the details on the settings:
+Above is an example for `config/general.php`. In the actual file, you will find more settings. The ones above might be discussed in context of hosting. There are some shared settings, as well as some environment specific settings for production (fortrabbit) and development (locally). Here are the details:
 
 
 ### Project config
@@ -105,10 +103,21 @@ So you better prevent the shiny "update" button from showing up at all. You can 
 
 ### Change the admin URL
 
-"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. Do so with the `cpTrigger` setting. If you don't set this value it defaults to `admin`. The example above sets it to `godmode`, choose anything you like.
+"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. Do so with the `cpTrigger` setting. If you don't set this value it defaults to `admin`. The example below sets it to `godmode`, choose anything you like.
+
+```php
+<?php
+return [
+    '*' => [
+        'cpTrigger'    => 'godmode'
+    ]
+];
+```
 
 
 ### Domain settings
+
+<!-- TODO: Check and confirm! -->
 
 Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the example above tells Craft CMS to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. 
 
@@ -119,7 +128,6 @@ For multi site setups, you may need to hard-code the domains for each environmen
 ```php
 <?php
 return [
-
     // fortrabbit (multi site)
     'production' => [
         'siteUrl' => [
