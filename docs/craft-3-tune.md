@@ -86,33 +86,33 @@ return [
 Above is an extended example for `config/general.php`. It sets some useful shared settings, as well as some environment specific settings for production (fortrabbit) and development (locally). Here are the details on the settings:
 
 
-#### Project config
+### Project config
 
-Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. We like it. You can enable it using the `useProjectConfigFile` setting in `config/general.php` like so:
+Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. You can enable it using the `useProjectConfigFile` setting. We highly recommend using it.
 
 
 ### Dev mode
 
-Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details.
+Sometime while developing you might want to see some error output directly on your browser screen. That's what the `devMode` flag is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details.
 
 
-### allowUpdates
+### Don't allow updates in production
 
 Craft CMS has the option to run updates directly from the Craft Control Panel. A client or editor might be tempted to use that update button in production. This is not a good idea. On fortrabbit Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way), so any changes on the App itself can not easily be ported back to the local development environment. Also `composer update` might be triggered on the App and that can lead to performance problems.
 
-So you better prevent the shiny "update" button from showing up at all. You can do that in your Craft configuration in the general settings. Also see above example.  Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
+So you better prevent the shiny "update" button from showing up at all. You can do that in your Craft configuration in the general settings with the `allowUpdates` flag. Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
 
 
-### cpTrigger
+### Change the admin URL
 
-"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. If you don't set this value it defaults to `admin`. The example above sets it to `godmode`, choose anything you like.
+"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. Do so with the `cpTrigger` setting. If you don't set this value it defaults to `admin`. The example above sets it to `godmode`, choose anything you like.
 
 
-### siteUrl
+### Domain settings
 
 Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the example above tells Craft CMS to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. 
 
-#### Multi site domains
+#### Multi site domain settings
 
 For multi site setups, you may need to hard-code the domains for each environment. Here is an example for that:
 
