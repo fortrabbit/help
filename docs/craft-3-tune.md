@@ -30,7 +30,9 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 
 ## Domain setup
 
-Your fortrabbit App comes with a predefined App Name and an URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to that here, please see our [domains article](/domains). For Craft make sure to have set your domains root path to "/web" folder. Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
+Your fortrabbit App comes with a predefined App Name and an URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS make sure to have set your domains root path to `/web` folder. 
+
+Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
 
 You can also add multiple domains. From the fortrabbit side, just point them to the Apps root path, configure routing and display of contents withing Craft CMS and/or use additional [htaccess rules](/htaccess).
 
@@ -39,9 +41,7 @@ You can also add multiple domains. From the fortrabbit side, just point them to 
 
 Craft CMS is not all free. To enable the good parts you need to obtain a licence  from Pixel & Tonic (the folks building Craft CMS). 
 
-A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. 
-
-Your fortrabbit App comes with a predefined App URL like `{{appname}}.frb.io`. You might have used this for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL this for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
 
 
 ## Multi-environment configuration
@@ -58,20 +58,18 @@ ENVIRONMENT=dev
 ```
 
 
-### Craft config example
-
-Below is an example of a `config/general.php`. It sets some useful shared settings, like [userSessionDuration](#toc-usersessionduration) and [cpTrigger](#toc-cptrigger), as well as [allowUpdates](#toc-allowupdates) (false) in production and [DevMode](#toc-dev-mode) (true) for local development.
-
+### Craft CMS configuration details
 
 ```php
 <?php
 return [
     // Global settings
     '*' => [
-        'cpTrigger'           => 'godmode',
-        'userSessionDuration' => 'P24H',
-        'securityKey'         => getenv('SECURITY_KEY'),
-        'siteUrl'             => getenv('SITE_URL') ?: '@web'
+        'useProjectConfigFile' => true,
+        'cpTrigger'            => 'godmode',
+        'userSessionDuration'  => 'P24H',
+        'securityKey'          => getenv('SECURITY_KEY'),
+        'siteUrl'              => getenv('SITE_URL') ?: '@web'
     ],    
     // fortrabbit
     'production' => [
@@ -85,22 +83,38 @@ return [
 ];
 ```
 
-### Dev Mode
+Above is an extended example for `config/general.php`. It sets some useful shared settings, as well as some environment specific settings for production (fortrabbit) and development (locally). Here are the details on the settings:
 
-Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. See [above](#toc-craft-config-example) for an configuration groups example.
+
+#### Project config
+
+Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. We like it. You can enable it using the `useProjectConfigFile` setting in `config/general.php` like so:
+
+
+### Dev mode
+
+Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details.
 
 
 ### allowUpdates
 
-Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in production. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) and that those changes get lost. So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example above](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
+Craft CMS has the option to run updates directly from the Craft Control Panel. A client or editor might be tempted to use that update button in production. This is not a good idea. On fortrabbit Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way), so any changes on the App itself can not easily be ported back to the local development environment. Also `composer update` might be triggered on the App and that can lead to performance problems.
+
+So you better prevent the shiny "update" button from showing up at all. You can do that in your Craft configuration in the general settings. Also see above example.  Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
+
 
 ### cpTrigger
 
-"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. If you don't set this value it defaults to `admin`.
+"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. If you don't set this value it defaults to `admin`. The example above sets it to `godmode`, choose anything you like.
+
 
 ### siteUrl
 
-Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the [example above](#toc-craft-config-example), tells Craft to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. For multi site setups, you may need to hardcode the domains for each environment. Here is an example for that:
+Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the example above tells Craft CMS to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. 
+
+#### Multi site domains
+
+For multi site setups, you may need to hard-code the domains for each environment. Here is an example for that:
 
 ```php
 <?php
@@ -149,7 +163,7 @@ When your local Craft installation contains a table prefix the one on the fortra
 DB_TABLE_PREFIX=craft_
 ```
 
-## Updating Craft
+## Updating Craft CMS
 
 We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. **Test updates locally first!** For production (your fortrabbit App) we have set the ENV "allowUpdates" to false (see above). That will make the update button not show up in the control panel, so that your client will not accidentally update. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
 
@@ -227,17 +241,6 @@ fortrabbit will provide Let's Encrypt TLS certificates for all domains, please s
 
 Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) with examples.
 
-## Project Config
-
-Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. We like it. You can enable it using the `useProjectConfigFile` setting in `config/general.php` like so:
-
-```php
-return [
-    '*' => [
-        'useProjectConfigFile' => true,
-    ],
-];
-```
 
 When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. Please see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
 With the `fortrabbit/craft-auto-migrate` package mentioned above, Project Config changes are applied automatically to your fortrabbit App. 
