@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudAMQP
-reviewed:         2019-09-207
+reviewed:         2019-09-20
 title:            Using CloudAMQP with fortrabbit
 group:            Queues
 section:          Extending_fortrabbit
