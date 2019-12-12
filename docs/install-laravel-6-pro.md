@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2019-12-01
+reviewed:         2019-12-12
 title:            Install Laravel 6
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit Professional Apps.
 group:            Install_guides
 
 websiteLink:      http://laravel.com?utm_source=fortrabbit
@@ -28,11 +28,12 @@ keywords:
 
 ## Get ready
 
-Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
+Please make sure to have followed our [get ready guide](/get-ready) before starting here.
+
 
 ## Quick start
 
-Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-setup-for-an-existing-code-base). Execute the following in your terminal **on your local machine**:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
@@ -68,64 +69,50 @@ $ git push
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
+## Setup
+
+**Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Laravel installation or if you would like to setup Laravel so that you can run in a local development environment as well as in your fortrabbit App:
 
 
-## Tune
+### Setup for an existing code base
 
-Until now this is a vanilla Laravel. Now, make it yours.
+You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
 
 
-### MySQL
+### MySQL configuration
 
-Use [App secrets](secrets) to attain database credentials. Replace all contents from `config/database.php` in your editor like so:
+If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source again for reference:
 
 ```php
 <?php
-// locally: use standard settings
-$mysql = [
-    'driver'    => 'mysql',
-    'host'      => env('DB_HOST', 'localhost'),
-    'database'  => env('DB_DATABASE', 'forge'),
-    'username'  => env('DB_USERNAME', 'forge'),
-    'password'  => env('DB_PASSWORD', ''),
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-];
-
-
-// on fortrabbit: construct credentials from App secrets
-if (isset(getenv('APP_SECRETS'))) {
-    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
-    $mysql = [
-        'driver'    => 'mysql',
-        'host'      => $secrets['MYSQL']['HOST'],
-        'port'      => $secrets['MYSQL']['PORT'],
-        'database'  => $secrets['MYSQL']['DATABASE'],
-        'username'  => $secrets['MYSQL']['USER'],
-        'password'  => $secrets['MYSQL']['PASSWORD'],
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-    ];
-}
-
 return [
-    'default'       => env('DB_CONNECTION', 'mysql'),
     'connections'   => [
-        'mysql' => $mysql,
+        'mysql' => [
+             'driver' => 'mysql',
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+             'database' => env('DB_DATABASE', 'forge'),
+             'username' => env('DB_USERNAME', 'forge'),
+             'password' => env('DB_PASSWORD', ''),
+             'unix_socket' => env('DB_SOCKET', ''),
+             'charset' => 'utf8mb4',
+             'collation' => 'utf8mb4_unicode_ci',
+             'prefix' => '',
+             'prefix_indexes' => true,
+             'strict' => true,
+             'engine' => null,
+         ],
     ],
-    'migrations' => 'migrations'
-    // possible other code …
 ];
 ```
 
-This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-mysql-configuration-with-app-secrets).
 
-Laravel uses the `utf8mb4` character set by default, which includes support for storing "emojis 🔥" in the database.
-You need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them in your `AppServiceProvider:
+### Emoji support
 
-```
+Laravel uses the `utf8mb4` character set by default, which includes support for storing "emojis 🔥" in the database. You need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them in your `AppServiceProvider`:
+
+```php
 use Illuminate\Support\Facades\Schema;
 
 /**
@@ -140,23 +127,27 @@ public function boot()
 ```
 
 
+### Database import and export
 
-#### MySQL access from local
+There are various use cases to export and import the database. Likely you want to:
 
-Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
+1. Export the database from your old webhosting
+2. Export your local database to import it to the fortrabbit database
+3. Export the remote database from fortrabbit to bring your local installation up-to-date
 
-#### Update database with artisan migrate command
+Read on in the [MySQL article](/mysql-uni) on how to do that and other tasks.
 
-You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
+
+### Working with artisan migrate
+
+You might want to update database on the App with the `artisan migrate` command at some point.  You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate --force'
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate:rollback --force'
 ```
 
-If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
-
-You can also add this command to your `composer.json` to have it run automatically every time you push changes.
+If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands. You can also add this command to your `composer.json` to have it run automatically every time you push changes.
 
 ```json
 "scripts": {
@@ -169,15 +160,30 @@ You can also add this command to your `composer.json` to have it run automatical
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
 
-#### Database Session
+### Logging
 
-Using the `database` driver is the easiest way to persist sessions cross multiple PHP nodes. Since it requires a migration it is a good exercise.
+Per default Laravel writes all logs to `storage/logs/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
+
+Laravel's `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
+
+```
+LOG_CHANNEL=errorlog
+```
+
+You can now use our regular [log access](logging-pro) to view the stream. 
+
+[Flare](https://flareapp.io/) (no business association) is an error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
+
+
+### Dealing with user sessions
+
+Since you might have multiple Nodes and no persistent shared storage, you can not rely on files to keep sessions. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
 
 ```bash
-# Create a migration for the session table locally
+# Create a migration for the session table  - locally
 $ php artisan session:table
 
-# Apply the migration locally
+# Apply the migration - locally
 $ php artisan migrate
 
 # Add, commit and push the migration file
@@ -185,9 +191,8 @@ $ git add .
 $ git commit -m "session migration"
 $ git push
 
-# Run the migration
+# Run the migration on the App via SSH remote execution
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
-
 ```
 
 Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to make use of the database sessions.
@@ -197,11 +202,9 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 </div>
 
 
-### Object Storage
+### Using the Object Storage for assets
 
-fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
-
-Using our `object-storage` driver reduces the configuration efforts to a minimum. 
+fortrabbit Pro Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration efforts to a minimum:
 
 ```
 composer require fortrabbit/laravel-object-storage
@@ -210,7 +213,6 @@ composer require fortrabbit/laravel-object-storage
 To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
 
 ```php
-
 return [
     'default' => env('FILESYSTEM_DRIVER', 'local'),
     'cloud'   => env('FILESYSTEM_CLOUD', 's3'),
@@ -224,24 +226,22 @@ return [
 ];
 ```
 
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. 
-
-Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`. Also see the [README](https://github.com/fortrabbit/laravel-object-storage) of the repo.
 
 
-#### Laravel Mix
 
-You can use Mix locally - not on fortrabbit as there is no Node on remote. You can extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
+### Using Laravel Mix
+
+Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can use Mix locally - not on fortrabbit as there is no Node on remote. You can extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
 
 ```bash
 # Get your Object Storage credentials
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
-Then put the values to your .env file an prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
+Then put the values to your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
 ```js
-
 const mix = require('laravel-mix');
 const S3Plugin = require('webpack-s3-plugin');
 
@@ -271,8 +271,8 @@ if (process.env.npm_config_env === 'production') {
         ]
     });
 }
-
 ```
+
 Back in your terminal:
 
 ```bash
@@ -285,23 +285,10 @@ $ npm run production --env=production
 
 Mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
 
+Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
-### Logging
 
-Per default Laravel writes all logs to `storage/logs/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
-
-Laravel's `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
-
-```
-LOG_CHANNEL=errorlog
-```
-
-You can now use our regular [log access](logging-pro) to view the stream.
-
-Do you need more than live logs? Consider [Flare](https://flareapp.io/), the error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
-                                                                                                                                             
-
-### Memcache
+### Setting up Memcache
 
 Make sure you enabled the [Memcache](memcache-pro) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
@@ -376,9 +363,11 @@ return [
 In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
 
 
-### Redis
+### Using Redis
 
-Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
+<!-- TODO: Use ENV vars instead? Include for Universal as well? -->
+
+Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer hosted Reds, so first integrate with [Redis Cloud](redis-cloud) or similar external service, then configure the redis database connection in `config/database.php`:
 
 ```php
 // locally: use standards
@@ -410,9 +399,10 @@ return [
 ];
 ```
 
-If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
+If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For queue usage, see below.
 
-### Queue
+
+### Queueing
 
 Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue. That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
 
@@ -421,8 +411,7 @@ Once you've decided the queue you want to use just open `config/queue.php` and s
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
 
-
-### Using envoy
+### Using Laravel Envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 
@@ -446,21 +435,64 @@ $ envoy run migrate
 ```
 
 
-### Sending mail
-
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
-
-
 ### Using artisan down
 
-`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App (i.e. any file changes via SSH remote exec do not affect your App).
+`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App. Any file changes via SSH remote exec do not affect your App.
 
 There are at least two options to do this:
 
 1. Add `artisan down` as a `post-install-cmd` script in `composer.json`, then `git push` (remove the command and push again to bring it back online)
-2. Use a custom middleware and command which uses another source than a file, eg memcache or database
+2. Use a custom middleware and command which uses another source than a file like `memcache` or `database`
 
 
-## Add an existing project
+### MySQL configuration with App secrets
 
-You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
+Beside using ENV vars to set your configs, you can use fortrabbit App secrets — also [see the article](secrets)) - to attain credentials. Here is an example for `config/database.php`:
+
+```php
+<?php
+// locally: use standard settings
+$mysql = [
+    'driver'    => 'mysql',
+    'host'      => env('DB_HOST', 'localhost'),
+    'database'  => env('DB_DATABASE', 'forge'),
+    'username'  => env('DB_USERNAME', 'forge'),
+    'password'  => env('DB_PASSWORD', ''),
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+];
+
+
+// on fortrabbit: construct credentials from App secrets
+if (isset(getenv('APP_SECRETS'))) {
+    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
+    $mysql = [
+        'driver'    => 'mysql',
+        'host'      => $secrets['MYSQL']['HOST'],
+        'port'      => $secrets['MYSQL']['PORT'],
+        'database'  => $secrets['MYSQL']['DATABASE'],
+        'username'  => $secrets['MYSQL']['USER'],
+        'password'  => $secrets['MYSQL']['PASSWORD'],
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ];
+}
+
+return [
+    'default'       => env('DB_CONNECTION', 'mysql'),
+    'connections'   => [
+        'mysql' => $mysql,
+    ],
+    'migrations' => 'migrations'
+    // possible other code …
+];
+```
+
+This configuration contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. You can also use App secrets to store custom third party access.
+
+
+### Sending mail
+
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
