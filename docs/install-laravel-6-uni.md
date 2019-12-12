@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-12-10
+reviewed:         2019-12-12
 title:            Install Laravel 6
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit Universal Apps.
@@ -78,7 +78,7 @@ $ git push
 You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
 
 
-## MySQL configuration
+### MySQL configuration
 
 If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source, for reference only:
 
@@ -177,13 +177,13 @@ $ tail -f storage/logs/laravel-$(date '+%Y-%m-%d').log
 ```
 
 
-### Queues
+### Queueing
 
-The Universal stack does not support long running processes like `php artisan queue:work`.
-Please check out the [Laravel 6 Professional article](install-laravel-6-pro#toc-queue) on how to integrate those.
+The Universal Stack does not support long running processes like `php artisan queue:work`.
+Please check out the [Laravel 6 Professional article](install-laravel-6-pro#toc-queueing) on how to integrate those there.
 
 
-#### Using Laravel Envoy
+### Using Laravel Envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 

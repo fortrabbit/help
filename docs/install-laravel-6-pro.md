@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-12-10
+reviewed:         2019-12-12
 title:            Install Laravel 6
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 6 on fortrabbit Professional Apps.
@@ -79,7 +79,7 @@ $ git push
 You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
 
 
-## MySQL configuration
+### MySQL configuration
 
 If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source again for reference:
 
@@ -179,7 +179,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 <!-- TODO: Let'S discuss best placing this, also more explanation required!  -->
 
-Using the `database` driver is the easiest way to persist sessions cross multiple PHP nodes. Since it requires a migration it is a good exercise.
+Using the `database` driver is the easiest way to persist sessions cross multiple Nodes. Since it requires a migration it is a good exercise for migrations.
 
 ```bash
 # Create a migration for the session table locally
@@ -206,9 +206,7 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 
 ### Use the Object Storage for assets
 
-fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
-
-Using our `object-storage` driver reduces the configuration efforts to a minimum. 
+fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration efforts to a minimum:
 
 ```
 composer require fortrabbit/laravel-object-storage
@@ -217,7 +215,6 @@ composer require fortrabbit/laravel-object-storage
 To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
 
 ```php
-
 return [
     'default' => env('FILESYSTEM_DRIVER', 'local'),
     'cloud'   => env('FILESYSTEM_CLOUD', 's3'),
@@ -231,9 +228,7 @@ return [
 ];
 ```
 
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. 
-
-Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
 
 ### Using Laravel Mix
@@ -245,7 +240,7 @@ Laravel Mix compiles JS and CSS to really small and handy files using webpack, a
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
-Then put the values to your .env file an prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
+Then put the values to your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
 ```js
 
@@ -278,8 +273,8 @@ if (process.env.npm_config_env === 'production') {
         ]
     });
 }
-
 ```
+
 Back in your terminal:
 
 ```bash
@@ -291,8 +286,6 @@ $ npm run production --env=production
 ```
 
 Mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
-
-
 
 
 ### Setting up Memcache
@@ -372,7 +365,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 
 ### Using Redis
 
-<!-- TODO: Adjust example to use ENV vars -->
+<!-- TODO: Use ENV vars instead? Include for Universal as well? -->
 
 Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer hosted Reds, so first integrate with [Redis Cloud](redis-cloud) or similar external service, then configure the redis database connection in `config/database.php`:
 
@@ -406,7 +399,7 @@ return [
 ];
 ```
 
-If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
+If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For queue usage, see below.
 
 
 ### Queueing
@@ -418,7 +411,7 @@ Once you've decided the queue you want to use just open `config/queue.php` and s
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
 
-### Using envoy
+### Using Laravel Envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 
@@ -444,17 +437,17 @@ $ envoy run migrate
 
 ### Using artisan down
 
-`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App (i.e. any file changes via SSH remote exec do not affect your App).
+`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App. Any file changes via SSH remote exec do not affect your App.
 
 There are at least two options to do this:
 
 1. Add `artisan down` as a `post-install-cmd` script in `composer.json`, then `git push` (remove the command and push again to bring it back online)
-2. Use a custom middleware and command which uses another source than a file, eg memcache or database
+2. Use a custom middleware and command which uses another source than a file like `memcache` or `database`
 
 
-### Configuration with App Secrets
+### MySQL configuration with App secrets
 
-Beside using ENV vars to set your configs, you can use fortrabbit App Secrets ([see article](secrets)) to attain database credentials. Here is an example for `config/database.php`:
+Beside using ENV vars to set your configs, you can use fortrabbit App secrets — also [see the article](secrets)) - to attain credentials. Here is an example for `config/database.php`:
 
 ```php
 <?php
@@ -497,7 +490,8 @@ return [
 ];
 ```
 
-This configuration contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+This configuration contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. You can also use App secrets to store custom third party access.
+
 
 ### Sending mail
 
