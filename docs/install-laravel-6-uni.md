@@ -80,7 +80,7 @@ You can also push your existing Laravel installation to fortrabbit. When you alr
 
 ## MySQL configuration
 
-If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source again for reference:
+If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source, for reference only:
 
 ```php
 <?php
@@ -105,7 +105,7 @@ return [
 ];
 ```
 
-The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with the database credentials. See our [ENV var article](/env-vars) as well.
+The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-configuration-with-app-secrets).
 
 
 ### Emoji support
@@ -176,13 +176,14 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 $ tail -f storage/logs/laravel-$(date '+%Y-%m-%d').log
 ```
 
+
 ### Queues
 
 The Universal stack does not support long running processes like `php artisan queue:work`.
 Please check out the [Laravel 6 Professional article](install-laravel-6-pro#toc-queue) on how to integrate those.
 
 
-#### Using envoy
+#### Using Laravel Envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 
@@ -205,7 +206,8 @@ $ envoy run ls
 $ envoy run migrate
 ```
 
-### Laravel Mix
+
+### Using Laravel Mix
 
 Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first.
 
@@ -241,6 +243,7 @@ Another option might be to combine fortrabbit with GitHub Actions so you can hav
 
 The [Laravel scheduler](https://laravel.com/docs/6.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 
 
+<!-- TODO: Link to pro article, which headline? -->
 
 ### Sending mail
 

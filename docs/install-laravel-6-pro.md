@@ -106,8 +106,7 @@ return [
 ];
 ```
 
-The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with the database credentials. See our [ENV var article](/env-vars) as well.
-
+The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-configuration-with-app-secrets).
 
 ### Emoji support
 
@@ -237,7 +236,7 @@ If you want to use the Object Storage with your fortrabbit App and a local stora
 Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
 
-#### Using Laravel Mix
+### Using Laravel Mix
 
 Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can use Mix locally - not on fortrabbit as there is no Node on remote. You can extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
 
@@ -443,11 +442,6 @@ $ envoy run migrate
 ```
 
 
-### Sending mail
-
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
-
-
 ### Using artisan down
 
 `artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App (i.e. any file changes via SSH remote exec do not affect your App).
@@ -504,3 +498,7 @@ return [
 ```
 
 This configuration contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+
+### Sending mail
+
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
