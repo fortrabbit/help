@@ -105,7 +105,7 @@ return [
 ];
 ```
 
-The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-configuration-with-app-secrets).
+The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-mysql-configuration-with-app-secrets).
 
 
 ### Emoji support
@@ -209,7 +209,7 @@ $ envoy run migrate
 
 ### Using Laravel Mix
 
-Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first.
+Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is no Node.JS on remote running. So you need to run the built process for production locally first.
 
 ```
 # Install node modules (locally)
@@ -226,9 +226,9 @@ For deploying the assets we recommend using `rsync`. The one-liner below works w
 rsync -av --include='*.js' --include='*.css' --include='mix-manifest.json' --exclude='*'  ./public/ {{app-name}}@deploy.{{region}}.frbit.com:./public/
 ```
 
-For your convenience you can define rsync command `npm run deploy-assets` ...
+For your convenience you can define rsync command `npm run deploy-assets`. Example of `package.json`:
 
-```package.json
+```
 {
   "scripts": {
     "deploy-assets": "rsync -av ...",
@@ -236,14 +236,13 @@ For your convenience you can define rsync command `npm run deploy-assets` ...
 }
 ```
 
-Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards.
+Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
 
 ### Scheduling
 
 The [Laravel scheduler](https://laravel.com/docs/6.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 
 
-<!-- TODO: Link to pro article, which headline? -->
 
 ### Sending mail
 

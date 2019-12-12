@@ -106,7 +106,7 @@ return [
 ];
 ```
 
-The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-configuration-with-app-secrets).
+The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well. We are also offering an alternative more secure setup using App secrets, see [here](/install-laravel-6-pro#toc-mysql-configuration-with-app-secrets).
 
 ### Emoji support
 
@@ -172,20 +172,18 @@ LOG_CHANNEL=errorlog
 
 You can now use our regular [log access](logging-pro) to view the stream. 
 
-[Flare](https://flareapp.io/) (no business association) is a error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
+[Flare](https://flareapp.io/) (no business association) is an error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
 
 
-### Persist database sessions
+### Dealing with user sessions
 
-<!-- TODO: Let'S discuss best placing this, also more explanation required!  -->
-
-Using the `database` driver is the easiest way to persist sessions cross multiple Nodes. Since it requires a migration it is a good exercise for migrations.
+Since you might have multiple Nodes and no persistent shared storage, you can not rely on files to keep sessions. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
 
 ```bash
-# Create a migration for the session table locally
+# Create a migration for the session table  - locally
 $ php artisan session:table
 
-# Apply the migration locally
+# Apply the migration - locally
 $ php artisan migrate
 
 # Add, commit and push the migration file
@@ -193,7 +191,7 @@ $ git add .
 $ git commit -m "session migration"
 $ git push
 
-# Run the migration
+# Run the migration on the App via SSH remote execution
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
 ```
 
@@ -204,9 +202,9 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 </div>
 
 
-### Use the Object Storage for assets
+### Using the Object Storage for assets
 
-fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration efforts to a minimum:
+fortrabbit Pro Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration efforts to a minimum:
 
 ```
 composer require fortrabbit/laravel-object-storage
@@ -228,7 +226,8 @@ return [
 ];
 ```
 
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`. Also see the [README](https://github.com/fortrabbit/laravel-object-storage) of the repo.
+
 
 
 ### Using Laravel Mix
@@ -243,7 +242,6 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 Then put the values to your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
 ```js
-
 const mix = require('laravel-mix');
 const S3Plugin = require('webpack-s3-plugin');
 
@@ -286,6 +284,8 @@ $ npm run production --env=production
 ```
 
 Mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
+
+Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
 
 ### Setting up Memcache
