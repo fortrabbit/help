@@ -82,7 +82,7 @@ return [
 ];
 ```
 
-The file contains other settings as well. 
+The file contains other settings as well, keep those. For more details and options, check out our [Craft CMS tuning guide](/craft-3-tune#toc-craft-cms-configuration-details).
 
 
 ## Database synchronization
