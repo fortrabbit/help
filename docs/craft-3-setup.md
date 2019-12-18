@@ -14,6 +14,7 @@ websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
 version:          3.3
+supportLevel:     a
 
 otherVersions:
     2 : install-craft-2-uni

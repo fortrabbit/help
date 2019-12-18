@@ -47,6 +47,12 @@ excerpt: Get to know about the basic concepts.
 noToc: true
 
 
+# Set support level
+supportLevel: a
+supportLevel: b
+supportLevel: c
+
+
 
 # Stack meta
 

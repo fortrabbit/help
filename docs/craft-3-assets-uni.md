@@ -14,6 +14,7 @@ category:         CMS
 image:            craft-cms-mark-black-new.svg
 version:          3.3
 proLink:          craft-3-assets-pro
+supportLevel:     a
 
 otherVersions:
     2.6 : install-craft-2-pro

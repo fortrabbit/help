@@ -13,6 +13,7 @@ category:         framework
 image:            laravel-black-new.svg
 version:          6.6
 stack:            pro
+supportLevel:     a
 uniLink:          install-laravel-6-uni
 
 otherVersions:
