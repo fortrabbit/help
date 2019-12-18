@@ -15,6 +15,7 @@ image:            wordpress-mark.png
 version:          5.0.2
 stack:            pro
 uniLink:          install-wordpress-5-uni
+supportLevel:     b
 
 ---
 

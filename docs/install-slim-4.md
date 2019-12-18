@@ -14,6 +14,7 @@ websiteLinkText:  slimframework.com
 category:         micro framework
 image:            slim-logo.png
 version:          4.2
+supportLevel:     b
 
 ---
 

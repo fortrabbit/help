@@ -15,6 +15,7 @@ websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
 version:          5.2.3
+supportLevel:     b
 
 keywords:
     - wp-admin

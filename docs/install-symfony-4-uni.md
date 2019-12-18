@@ -15,6 +15,7 @@ websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
 version:          4.0
+supportLevel:     a
 
 otherVersions:
   3 : install-symfony-3-uni

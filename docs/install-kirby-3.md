@@ -15,6 +15,7 @@ websiteLinkText:  getkirby.com
 category:         CMS
 image:            kirby-mark.png
 version:          3.2
+supportLevel:     b
 
 otherVersions:
     2 : install-kirby-2
