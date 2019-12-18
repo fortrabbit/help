@@ -16,6 +16,7 @@ websiteLink:      https://octobercms.com/?utm_source=fortrabbit
 websiteLinkText:  octobercms.com
 category:         CMS
 image:            october-cms-mark.png
+supportLevel:     c
 
 keywords:
     - cms

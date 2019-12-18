@@ -16,6 +16,8 @@ websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
 version:          3.1.2
+supportLevel:     c
+
 
 keywords:
     - phalconphp

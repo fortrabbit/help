@@ -17,6 +17,7 @@ version:          8.1
 deprecated:       yes
 dontList:         true
 dontIndex:        true
+supportLevel:     c
 
 
 keywords:
