@@ -14,6 +14,7 @@ image:            grav-symbol.png
 version:          1.4.3
 stack:            pro
 uniLink:          install-grav-1-uni
+supportLevel:     b
 
 ---
 
