@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-11-19
+reviewed:         2019-12-10
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -55,7 +55,35 @@ That ENV var is already set. Just replace it with your local one. Also see the [
 
 ## Database setup
 
-TLDR: **No need to configure the MySQL database connection for fortrabbit, it should be set.** On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard (not from the .env file). When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
+TLDR: **No need to configure the MySQL database connection for fortrabbit, it should already be set.** On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard (not from the .env file). When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
+
+
+## Configuration settings
+
+Please include the following settings in the settings file located in `config/general.php`:
+
+```php
+<?php
+return [
+    // Global settings
+    '*' => [
+        'useProjectConfigFile' => true,
+        'securityKey'          => getenv('SECURITY_KEY'),
+        'siteUrl'              => getenv('SITE_URL') ?: '@web'
+    ],    
+    // fortrabbit
+    'production' => [
+        'devMode'      => false,
+        'allowUpdates' => false
+    ],
+    // local
+    'dev' => [
+        'devMode' => true
+    ]
+];
+```
+
+The file contains other settings as well, keep those. For more details and options, check out our [Craft CMS tuning guide](/craft-3-tune#toc-craft-cms-configuration-details).
 
 
 ## Database synchronization
