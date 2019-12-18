@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2018-12-23
 title:            Install WordPress 5
-naviTitle:        WordPress 5
+naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 5 on fortrabbit.
 group:            Install_guides
 workInProgress:   yes
