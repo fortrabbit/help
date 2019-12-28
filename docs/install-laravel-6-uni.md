@@ -240,6 +240,11 @@ For your convenience you can define rsync command `npm run deploy-assets`. Examp
 Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
 
+### Working with Redis
+
+fortrabbit does not offer Redis services on it's own. To use Redis, you will need to book an external hosted Redis service. We have an article for [redislabs](/redis-cloud). On the fortrabbit side, turn on the Redis extension in the Dashboard under the Apps settings.
+
+
 ### Scheduling
 
 The [Laravel scheduler](https://laravel.com/docs/6.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 

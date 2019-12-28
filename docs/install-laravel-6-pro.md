@@ -494,6 +494,11 @@ return [
 This configuration contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. You can also use App secrets to store custom third party access.
 
 
+### Working with Redis
+
+fortrabbit does not offer Redis services on it's own. To use Redis, you will need to book an external hosted Redis service. We have an article for [redislabs](/redis-cloud). On the fortrabbit side, turn on the Redis extension in the Dashboard under the Apps settings.
+
+
 ### Sending mail
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
