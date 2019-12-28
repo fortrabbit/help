@@ -496,7 +496,43 @@ This configuration contains environment detection, so the App can run on your lo
 
 ### Working with Redis
 
-fortrabbit does not offer Redis services on it's own. To use Redis, you will need to book an external hosted Redis service. We have an article for [redislabs](/redis-cloud). On the fortrabbit side, turn on the Redis extension in the Dashboard under the Apps settings.
+Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer Redis services on it's own. To use Redis, you will need to book an external hosted Redis service. We have an article for [redislabs](/redis-cloud). 
+
+1. On the fortrabbit side, turn on the Redis extension in the Dashboard under the Apps settings.
+2. Then setup an Account with a Redis provider. 
+3. Then configure the redis database connection in `config/database.php`:
+
+```php
+// locally: use standards
+$redis = [
+    'host'     => env('REDIS_HOST', 'localhost'),
+    'password' => env('REDIS_PASSWORD', null),
+    'port'     => env('REDIS_PORT', 6379),
+    'database' => 0,
+];
+
+// on fortrabbit: construct credentials from App secrets
+if (isset(getenv('APP_SECRETS'))) {
+    $secrets = json_decode(file_get_contents(getenv('APP_SECRETS')), true);
+    $redis = [
+        'host'     => $secrets['CUSTOM']['REDIS_HOST'],
+        'port'     => $secrets['CUSTOM']['REDIS_PORT'],
+        'password' => $secrets['CUSTOM']['REDIS_PASSWORD']
+        'persistent' => 1
+    ];
+}
+
+return [
+    // other code …
+    'redis' => [
+        'cluster' => false,
+        'default' => $redis
+    ],
+    // other code …
+];
+```
+
+If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). 
 
 
 ### Sending mail
