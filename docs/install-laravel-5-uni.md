@@ -17,6 +17,7 @@ proLink:          install-laravel-5-pro
 
 deprecated:       yes
 dontList:         true
+dontIndex:        true
 
 otherVersions:
     6 : install-laravel-6-uni
