@@ -14,7 +14,7 @@ proLink:       backups-pro
 
 ## Problem
 
-Data loss is something, which can happen to everybody: be it an unpatched security whole in your underlying CMS or be it the overworked content editor, who accidentally deletes rather important data. Whatever the cause, you should have backups to recover in case of disaster. Backups are notoriously underused, because it can be hard to set them up properly and also hard to monitor them continuously, to guarantee that they are there, when needed.
+Data loss is something, which can happen to everybody: be it an unpatched security hole in your underlying CMS or be it the overworked content editor, who accidentally deletes rather important data. Whatever the cause, you should have backups to recover in case of disaster. Backups are notoriously underused, because it can be hard to set them up properly and also hard to monitor them continuously, to guarantee that they are there, when needed.
 
 ## Solution
 
