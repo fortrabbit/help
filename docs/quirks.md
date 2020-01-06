@@ -20,7 +20,7 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 
 ## No root shell
 
-Professional Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails a mailserver. 
+Professional Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails a mailserver. You cannot execute directly programs apart from PHP scripts. To launch a PHP script directly, please remember to specify the PHP interpreter explicitly (`php artisan` for example).
 
 We do so for security and performance reasons. Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video or some images. Consider to use an alternative or a third party service.
 

@@ -80,6 +80,19 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 **No background execution**: Commands cannot be detached to the background. This means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well - whether there are still running detached processes or not.
 
+### Executing PHP scripts
+
+If you want to execute PHP scripts, including `artisan` and it's like, make sure to specify the PHP interpreter explicitly:
+
+```bash
+# will work
+$ php artisan some:command
+$ php some-script.php
+
+# will _not_ work:
+$ ./artisan some:command
+$ ./some-script.php
+```
 
 ### Examples
 

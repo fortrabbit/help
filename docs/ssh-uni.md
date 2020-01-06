@@ -57,7 +57,7 @@ Also checkout: [WordPress install from SSH](install-wordpress-4-uni#toc-installi
 
 ### Executing PHP scripts
 
-If you want to execute PHP scripts, including `artisan` and it's like, make sure to specify the PHP interpreter explicity:
+If you want to execute PHP scripts, including `artisan` and it's like, make sure to specify the PHP interpreter explicitly:
 
 ```bash
 # will work
