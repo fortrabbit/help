@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-11-26
+reviewed:         2020-01-10
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
@@ -236,6 +236,9 @@ There are two reasons to install wordpress not in the `htdocs` but in a sub dire
 
 You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above). Also see the official WordPress codex on how to [give WordPress it's own directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory).
 
+### Working with multisite
+
+Usually we advice to use one App per website (see [here](/app#toc-one-website-per-app)). But you can use the website "network" feature (previously multi-site) with one WordPress installation here as well. You might point different domains to one App.
 
 
 ## Updating WordPress
