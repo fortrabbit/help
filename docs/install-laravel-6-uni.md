@@ -154,6 +154,10 @@ $ php artisan migrate --force
 
 **Note**: If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands. You can also add this command to your `composer.json` to have it run automatically every time you push changes.
 
+Also note that you'll need to call `artisan` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter).
+
+
+
 ```json
 "scripts": {  
     "post-install-cmd": [
