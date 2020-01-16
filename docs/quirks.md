@@ -29,7 +29,7 @@ The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long
 
 ### Need to call via php interpreter
 
-To launch a PHP script you need to specify the PHP interpreter explicitly, like `php artisan` or `php craft` for example.
+To launch a PHP script you need to specify the PHP interpreter explicitly, like `php artisan` or `php ./craft` for example.
 
 
 ## Image optimization tools

@@ -259,6 +259,8 @@ Craft CMS comes with a built in command line interface which can be called from 
 php ./craft
 ```
 
+Note that you'll need to call `./craft` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter).
+
 <!-- TODO: write more here on use cases and don't use cases. -->
 
 
