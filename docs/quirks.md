@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2019-10-01
+reviewed:      2020-01-16
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
@@ -20,11 +20,17 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 
 ## No root shell
 
-Professional Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails a mailserver. You cannot execute directly programs apart from PHP scripts. To launch a PHP script directly, please remember to specify the PHP interpreter explicitly (`php artisan` for example).
+Professional Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails a mailserver. 
 
 We do so for security and performance reasons. Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video or some images. Consider to use an alternative or a third party service.
 
 The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background, but again only for software you can install via Composer.
+
+
+### Need to call via php interpreter
+
+To launch a PHP script you need to specify the PHP interpreter explicitly, like `php artisan` or `php craft` for example.
+
 
 ## Image optimization tools
 
