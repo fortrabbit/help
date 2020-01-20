@@ -54,6 +54,16 @@ Once the plugin is installed and enabled, a new Volume Type "fortrabbit Object S
 To access the Object Storage from your computer, use a S3 compatible "SFTP" client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
 
 
+### Using the Craft Imager plugin
+
+The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons of options for image transforms including support for `webp`. Please mind we do not support any optimizers besides `webp`. If **not** using **imgix**, we suggest the following settings:
+
+* `'imagerSystemPath' => '/tmp/imager'` To make sure cached transforms persist when you deploy new code.
+* `'useCwebp' => true` Use the cwebp command line tool (ImageMagick works with webp as well).
+* `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
+
+
+
 ## Next steps
 
 Continue with [tuning Craft](/craft-3-tune).
