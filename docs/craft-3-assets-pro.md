@@ -1,13 +1,12 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-01-20
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
 group:            craft
 stack:            pro
-workInProgress:   yes
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -34,9 +33,12 @@ For best results here, make sure you have completed all steps from the [get read
 
 ## About Craft CMS assets
 
-With Craft 3, the "assets" folder contains files that are managed by the CMS. This is the user generated stuff, uploaded files, mostly images — also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html) on that. 
 
-The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to an Pro App will get destroyed the next you time deploy anyways, see [here](/app-pro#ephemeral-storage) for more and why.
+By default assets are stored in a local volume, which means user uploads are located in a folder along with the code. 
+
+With Pro Apps you separte the uploads from your code, since your App usually runs on multiple nodes which do not share the same file system. Every time you deploy a new version of Craft or change templates, we replace the old with new state. Read more about nature of the  
+ [Ephemeral storage](/app-pro#ephemeral-storage).
+
 
 ### Upload assets to the Object Storage
 
@@ -47,6 +49,8 @@ So what you want: is to swap the assets folder on the file system with external 
 Once the plugin is installed and enabled, a new Volume Type "fortrabbit Object Storage" is available. In your `config/volumes.php` you can setup additional volumes. 
 
 To access the Object Storage from your computer, use a S3 compatible SFTP client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
+
+
 
 ## Next steps
 
