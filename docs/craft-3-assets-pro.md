@@ -42,14 +42,16 @@ With Pro Apps you separte the uploads from your code, since your App usually run
 
 ### Upload assets to the Object Storage
 
-So what you want: is to swap the assets folder on the file system with external files stored on the fortrabbit [Object Storage](/object-storage). We have developed a Craft plugin to connect the fortrabbit Craft App with the Object Storage. All uploads will transferred to the Object Storage directly, all URLs will point to the Object Storage. See the install guide on GitHub for usage:
+First, make sure to enable the Object Storage component with your Pro App. This step is not required, if you did not disable it when creating your App.
 
-* [github.com/fortrabbit/craft-object-storage](https://github.com/fortrabbit/craft-object-storage)
+Now you have access to our S3 compatible [Object Storage](/object-storage). You do not need an AWS account, since this is a first party service we provide.
+
+To connect Craft with the Object Storage, install the [fortrabbit/craft-object-storage](https://plugins.craftcms.com/fortrabbit-object-storage) plugin we prepared for you. 
+ On the [Github page](https://github.com/fortrabbit/craft-object-storage) of the plugin you find further setup the instructions.
 
 Once the plugin is installed and enabled, a new Volume Type "fortrabbit Object Storage" is available. In your `config/volumes.php` you can setup additional volumes. 
 
-To access the Object Storage from your computer, use a S3 compatible SFTP client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
-
+To access the Object Storage from your computer, use a S3 compatible "SFTP" client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
 
 
 ## Next steps
