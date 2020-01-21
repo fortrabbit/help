@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-01-21
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
@@ -38,7 +38,7 @@ composer:
     # Per default dist is preferred
     prefer-source: false
 
-    # Resolves to the --no-dev parameter, default is true
+    # Resolves to the --no-dev parameter, default is false
     no-dev: false
 
     # Resolves to the --no-plugins parameter, default is false
