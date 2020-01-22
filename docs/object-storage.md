@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-01-22
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -136,6 +136,7 @@ $credentials = [
 
 **Note**: The ["Dynamic ENV vars"](env-vars#toc-dynamic-env-vars) option must be enabled for the App to use ENV vars.
 
+
 ### Programmatic upload
 
 Your App handles user uploads or storing all other created runtime data on the Object Storage. To that purpose most modern Apps come with file system abstractions. Those allow you to easily switch out the storage layer by changing your App's configuration. How that is done depends on your framework/CMS.
@@ -230,7 +231,8 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:objects_access
 # See requests when and from whom
 ```
 
-## Advanced usage, troubleshooting & quirks
+
+## Advanced usage
 
 Still reading? Go on and dig into the details:
 
@@ -271,36 +273,6 @@ If you need to change the secret key of your Object Storage: Login to the Dashbo
 </div>
 
 
-- - -
-
-
-
-
-### Uploading PHP to the Object Storage
-
-You can upload PHP files to the Object Storage — but that will not make much sense, as those will not be executed. In fact, they will be displayed probably in plain text (depending on the Content-Type). So, unless you want to publish it: Don't do it.
-
-
-### Using the Object Storage for static site hosting
-
-At this point we do not support custom domains. So, yes, you can host a static page by eg redirecting your custom domain using `Location` header to your Object Storage URL but in the browser address bar will still be the Object Storage URL (ok, you can use iframes to hide that, but that's just nasty).
-
-
-### Differences to AWS S3
-
-The Object Storage is tightly integrated with fortrabbit. You don't need to fight with complicated IAM rules and the AWS console. Most plugins & clients will work out of the box. Please keep in mind that the domain is always tied to our fortrabbit App: AWS domains will not work for upload or HTTP access. The Object Storage supports both AWS v4 signatures and old AWS S3 signatures.
-
-#### No multi-part upload
-
-In some cases, very big uploads (500 MB for example) might be need to be split into multiple parts and put together after upload again. This is called multi-part-upload. This can be done by your plugin or client — mostly in the background. Please mind that the fortrabbit Object Storage currently does not support multi-part uploading.
-
-#### Advanced S3 REST API
-
-The following bucket or object actions are currently not support - but will reply with a dummy-OK message, to not break clients: ACL, CORS, Lifecycle, Policy, Replication, Tagging, Website, Logging, Notification, RequestPayment, Versioning.
-
-CORS is partially supported: CORS rules will be not be accepted but a default CORS rules, which accepts all, is active.
-
-
 ### Deploying static assets to the Object Storage
 
 You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool.
@@ -331,6 +303,38 @@ gulp.src('./dist/**')
 ```
 
 
+
+## Quirks
+
+Good to know the limits!
+
+### No PHP execution
+
+You can upload PHP files to the Object Storage — but that will not make much sense, as those will not be executed. In fact, they will be displayed probably in plain text (depending on the Content-Type). So, unless you want to publish it: Don't do it.
+
+
+### No custom domains
+
+The Object Storage can only be accessed by HTTP(S) via the standard App name related URL. You can currently not route any custom domains. Neither you can use your own TLS (SSL) termination here.
+
+
+### Differences to AWS S3
+
+The Object Storage is tightly integrated with fortrabbit. You don't need to fight with complicated IAM rules and the AWS console. Most plugins & clients will work out of the box. Please keep in mind that the domain is always tied to our fortrabbit App: AWS domains will not work for upload or HTTP access. The Object Storage supports both AWS v4 signatures and old AWS S3 signatures.
+
+
+#### No multi-part upload
+
+In some cases, very big uploads (500 MB for example) might be need to be split into multiple parts and put together after upload again. This is called multi-part-upload. This can be done by your plugin or client — mostly in the background. Please mind that the fortrabbit Object Storage currently does not support multi-part uploading.
+
+
+#### Advanced S3 REST API
+
+The following bucket or object actions are currently not support - but will reply with a dummy-OK message, to not break clients: ACL, CORS, Lifecycle, Policy, Replication, Tagging, Website, Logging, Notification, RequestPayment, Versioning.
+
+CORS is partially supported: CORS rules will be not be accepted but a default CORS rules, which accepts all, is active.
+
+
 ### The private folder
 
 On root level of your Object Storage you'll find a folder called `private`. This folder is special, as you can not access any of it's contents by HTTP (via the browser). You can only do so via PHP. Hence: You can use it for anything you want to store, but do not publish.
@@ -341,19 +345,19 @@ On root level of your Object Storage you'll find a folder called `private`. This
 The location of the Object Storage will match the Apps location. So if you choose your App to be hosted in US, the files in your Object Storage will be there as well. We have ideas to extend the Object Storage with by CDN functionality (think CloudFront).
 
 
-### Big files
+### File size limit
 
-The Object Storage is laid out to handle lot's of small to medium sized files, not very large files. Please see our [specs](https://fortrabbit.com/specs) table for current limitations.
+The Object Storage is laid out to handle lot's of small to medium sized files, not very large files, like videos. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
+
+
+### Number of files
+
+Currently, the Object Storage only supports 999 files per directory. As a work-around when you have more than a thousand files, you can spread them over multiple folders.
 
 
 ### No directory listings
 
 As with S3 it is not possible to list directories. You can place an `index.html` file containing your custom listing.
-
-
-### Custom domains
-
-The Object Storage can only be accessed by HTTP(S) via the standard App name related URL. You can currently not route any custom domains. Neither you can use your own TLS (SSL) termination here.
 
 
 ### Case sensitivity
