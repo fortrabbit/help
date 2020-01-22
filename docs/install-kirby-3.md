@@ -84,7 +84,7 @@ Open your local Kirby project folder with your text editor or IDE. Within there 
 …
 ```
 
-PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way to do it. It will help keeping your repo tidy and separating code from content. But you will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to exclude the `/content` with the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way.
+PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way og doing it. It will help keeping your repo tidy and by separating code from content. But you will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way.
 
 At that point you should be able to run the project in your local development environment already. We highly recommend to develop the site locally, use fortrabbit for staging and production.
 
