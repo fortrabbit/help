@@ -81,23 +81,19 @@ Open your local Statamatic project folder with your text editor or IDE. Within t
 
 ```
 …
-# Statamatic itself
-/Statamatic
-
-# Composer dependencies
-/vendor
-
 # Stuff you are creating
 /content
 …
 ```
 
-PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way to do it. It will help keeping your repo tidy and separating code from content. But you will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to exclude the `/content` with the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way.
+PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way of doing it. It will help keeping your repo tidy and by separating code from content. But you will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way.
 
 At that point you should be able to run the project in your local development environment already. We highly recommend to develop the site locally, use fortrabbit for staging and production.
 
 
 ### Deploy Statamatic with Git
+
+In case you haven't already, setup Git, configure the fortrabbit App Git repo as a remote and push code:
 
 ```
 # 1. Initialize Git
@@ -118,6 +114,9 @@ $ git push -u fortrabbit master
 # From there on only
 $ git push
 ```
+
+Also see our [Git deployment article](/git-deployment) for more details on Git here on fortrabbit.
+
 
 ### Synchronize your contents
 
@@ -142,18 +141,27 @@ You can also use [SFTP](/sftp) to synchronize the `content` folder.
 
 By now, you have Statamatic installation running on your local machine and you can easily deploy it to your fortrabbit App. You can deploy code changes and Statamatic updated with Git. Additionally contents are synced down and up using rsync or Git. Let's get deeper:
 
-### Working with the Panel
+### Using MySQL as a content store
 
-Statamatic - like other CMS - has a "Panel". That Dashboard enables you - or maybe the client/editor - to create and edit the contents easily in the Browser. You can create different users (admins) for the Panel. When first visiting the panel, locally, you are greeted to set up the first admin user. 
+Beside storing contents on the file system in markdown, Statamatic also offers to store contents with a MySQL database. On fortrabbit, that might be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync. 
 
-The panel users are by default NOT stored with Git. So your local users will not available on the fortrabbit App. You can now either include the users with Git by removing the according lines from `.gitignore` or - maybe better - set up the users locally and on the remote App:
+_WORK IN PROGRESS! TOOD: How to set it up using ENV vars_
 
-* [{{app-name}}.frb.io/panel](https://{{app-name}}.frb.io/panel/) < address of the Panel
+
+### Working with the Control Panel
+
+Statamatic - like other CMS - has a "Control Panel". That Dashboard enables you - or maybe the client/editor - to create and edit the contents easily in the browser. You can create different users (admins) for the Control Panel.
+
+For this, please consider how you are dealing with the contents created: 
+
+* You should really not use the Control Panel on the App when you have all contents in Git, in fact you should only change things locally first. 
+* When using rsync (or SFTP) you can sync changes you have made on the App directly back down or the other way around.
+* When using MySQL as a data store, you might want to dump the production database and bring it back locally from time to time
 
 
 ### Continuos development
 
-We recommend to always develop locally first — it's just the most convenient way. Deploy, when you have reached a certain status of development. In many cases the real content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync.
+We recommend to always develop locally first — it's just the most convenient way. Deploy, when you have reached a certain status of development. In many cases the "real" content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync or sftp or you have the contents in MySQL.
 
 
 ### Backups
