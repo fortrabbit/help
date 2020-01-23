@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-28
+reviewed:      2020-01-23
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -280,6 +280,12 @@ All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Pr
 ### Limits
 
 Each App has one database named like the App. There are no privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
+
+### Using MySQL functions, procedures and triggers
+
+By default you don't have permissongs to create MySQL functions, procedures and triggers as it requires SUPER privileges.
+We enable it on request for dedicated MySQL plans (Pro Stack only).
+
 
 ## Troubleshooting MySQL
 
