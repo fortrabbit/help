@@ -59,23 +59,21 @@ Next up, let's get Statamatic ready that the same installation can run locally a
 
 Statamatic comes with a predefined (hidden) `.env` file. t includes what you'll need to run Statamatic locally. Mind that the `.env` is ignored from Git. 
 
-Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars". Please also see our [environment variables](/env-vars) article for more.
+Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars":
 
-####  ENV vars for the fortrabbit App
-
-```
-# Keep in sync with local setup
-APP_NAME=Statamic
-# APP_NAME might also be your fortrabbit App name
+```env
 APP_KEY=base64:nh4IjpE8duK2GDRG2hYouQjOcmFR9wtCNgKXDkAoMRw=
-# Have the same APP_KEY locally and on the App (copy from your local installation)
+```
 
-# differs from your local setup
+Have the same APP_KEY locally and on the App (copy from your local installation).
+
+```env
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://{{app-name}}.frb.io
-# APP_URL might become your domain once you are routing one
 ```
+
+The three ENV vars above will differ from your local installation. You can also add your own, of course. Please also see our [environment variables article](/env-vars) to learn more about that kind of configuration and our implementation.
 
 
 ## Choose your deployment work-flow
