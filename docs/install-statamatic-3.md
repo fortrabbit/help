@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2020-01-22
+reviewed:         2020-01-28
 title:            Install Statamatic 3 on fortrabbit
 naviTitle:        Statamatic
-lead:             Statamatic is a popular, file based CMS. Learn here how to install and tune Statamatic on fortrabbit.
+lead:             Statamatic is a cool file based CMS. Learn here how to install and tune Statamatic 3 on fortrabbit.
 group:            Install_guides
 stack:            uni
 dontList:         false
@@ -31,17 +31,17 @@ keywords:
 
 ## Document status
 
-Mind that this install guide is work in progress and for the beta version of Statamatic 3. Our current knowledge on the inner workings of Statamatic is also limited, we have not much first hand experience. Make sure to use the official Statamatic docs at [statamic.dev](https://statamic.dev/) as your main source.
+Mind that this install guide is work in progress and for the BETA version of Statamatic 3. Our current knowledge on the inner workings of Statamatic is limited. We have not much first hand experience. Make sure to use the official Statamatic docs at [statamic.dev](https://statamic.dev/) as your main source of truth.
 
  
 ## Get ready
 
-Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready.
+Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready. Also best, already have a plain vanilla App at fortrabbit ready. There is no Statamatic preset yet, so best choose "plain PHP" when bookng a new App in the fortrabbit Dashboard. 
 
 
 ## Install Statamatic locally
 
-Before you deploy anything to fortrabbit, we highly recommend to have your Statamatic project running locally. This is how to start a project from scratch on your local machine:
+Before you deploy anything to fortrabbit, we highly recommend to have your Statamatic project running locally. This is how to start a project from scratch on your local machine (with a folder called like your App):
 
 ```
 # 1. Create a local (on your own computer) Statamatic project folder (called like your App) with Composer:
@@ -51,14 +51,40 @@ composer create-project statamic/statamic {{app-name}} --prefer-dist --stability
 From there on, some development might happen or you already have a project running locally, now:
 
 
+## Setup
 
-## Choose your work-flow
+Next up, let's get Statamatic ready that the same installation can run locally and on the fortrabbit App.
+
+### Set environment variables
+
+Statamatic comes with a predefined (hidden) `.env` file. t includes what you'll need to run Statamatic locally. Mind that the `.env` is ignored from Git. 
+
+Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars". Please also see our [environment variables](/env-vars) article for more.
+
+####  ENV vars for the fortrabbit App
+
+```
+# Keep in sync with local setup
+APP_NAME=Statamic
+# APP_NAME might also be your fortrabbit App name
+APP_KEY=base64:nh4IjpE8duK2GDRG2hYouQjOcmFR9wtCNgKXDkAoMRw=
+# Have the same APP_KEY locally and on the App (copy from your local installation)
+
+# differs from your local setup
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://{{app-name}}.frb.io
+# APP_URL might become your domain once you are routing one
+```
+
+
+## Choose your deployment work-flow
 
 There are two "main" ways to deploy code here on fortrabbit: [Git](/git-deployment) and [SFTP](/sftp-uni). The general rule of thumb is, that content driven legacy applications, like [WordPress](/install-wordpress), are better uploaded in classical manner with SFTP. Modern PHP web frameworks that are based on [Composer](/composer) are mostly deployed with Git. 
 
-Now, Statamatic is a bit in between and is - like [Grav](/install-grav) and [Kirby](/install-kirby-3) - file based. So there is usually no database, the actual contents are text files written on the file system.
+Now, Statamatic is a bit in between and is - like [Grav](/install-grav) and [Kirby](/install-kirby-3) - file based. So there is usually no database by default, the actual contents are text files written on the file system.
 
-[Our architecture graphic here](/deployment-methods-uni#toc-understanding-the-architecture) shows you that the files, you can access via SFTP or SSH (Universal App) are not the ones, that are in Git. The Git repo is a separated thing. So, deploying with Git is a one way street that only goes up, not down. In other words: You can NOT `git pull` any changes you have made on the Apps file system. In an ideal world, code and content are maybe separated. With a file based CMS this is all together.
+[Our architecture graphic here](/deployment-methods-uni#toc-understanding-the-architecture) shows you that the files, you can access via SFTP or SSH (Universal App) are not the ones, that are in Git. The Git repo is a separated thing. So, deploying with Git is a one way street that only goes up, not down (also [see here](/deployment-methods-uni#toc-git-works-only-one-way)). In other words: You can NOT `git pull` any changes you have made on the Apps file system. In an ideal world, code and content are maybe separated. With a file based CMS this is all together.
 
 
 ## SFTP upload
@@ -68,25 +94,20 @@ Now, Statamatic is a bit in between and is - like [Grav](/install-grav) and [Kir
 
 ## Deploy with Git and rsync
 
-**Workflow 2 of 2 and recommended** — Here is a basic rundown: 
-
-1. Deploy to fortrabbit using Git ( and Composer )
-2. Synchronize contents with rsync
-
+**Workflow 2 of 2 and recommended** — You'll  deploy to fortrabbit using Git ( and Composer ) and (optionally) synchronize contents with rsync. Let's go:
 
 
 ### Configure Statamatic for Git deployment
 
-Open your local Statamatic project folder with your text editor or IDE. Within there open the (hidden) `.gitignore` file on top level to tell Git to ignore some folders. Add those two lines:
+Open your local Statamatic project folder with your text editor or IDE. Within there open the (hidden) `.gitignore` file on top level to tell Git to ignore some folders. Add this to `.gitignore`:
 
 ```
 …
-# Stuff you are creating
+# Exclude stuff you are creating from Git
 /content
-…
 ```
 
-PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way of doing it. It will help keeping your repo tidy and by separating code from content. But you will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way.
+PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our opinionated way of doing it. It separates code from content. You will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way (see on work-flows above).
 
 At that point you should be able to run the project in your local development environment already. We highly recommend to develop the site locally, use fortrabbit for staging and production.
 
@@ -143,10 +164,24 @@ By now, you have Statamatic installation running on your local machine and you c
 
 ### Using MySQL as a content store
 
-Beside storing contents on the file system in markdown, Statamatic also offers to store contents with a MySQL database. On fortrabbit, that might be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync. 
+Beside storing contents on the file system in markdown, Statamatic also offers to store contents with a MySQL database. On fortrabbit, that might ( depends on your use case ) be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync and you have good separation of code and content.
 
 _WORK IN PROGRESS! TOOD: How to set it up using ENV vars_
 
+#### MySQL ENV vars for Statamatic
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
+### Adding domains
+
+…
 
 ### Working with the Control Panel
 
