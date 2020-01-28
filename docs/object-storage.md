@@ -352,7 +352,7 @@ The Object Storage is laid out to handle lot's of small to medium sized files, n
 
 ### Number of files
 
-Currently, the Object Storage only supports a listing for 999 files per directory. As a work-around, when you have more than a thousand files, you can spread them over multiple folders.
+Currently, the Object Storage only supports a listing for limited number of files per directory. As a work-around, you can spread them over multiple folders. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
 
 
 ### No directory listings
