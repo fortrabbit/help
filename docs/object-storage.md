@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-01-22
+reviewed:      2020-01-28
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -358,6 +358,11 @@ Currently, the Object Storage only supports 999 files per directory. As a work-a
 ### No directory listings
 
 As with S3 it is not possible to list directories. You can place an `index.html` file containing your custom listing.
+
+
+### No custom error pages
+
+It's not possible to define custom 404 pages matching your own design.
 
 
 ### Case sensitivity
