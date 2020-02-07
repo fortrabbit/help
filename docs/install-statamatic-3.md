@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-01-28
+reviewed:         2020-02-07
 title:            Install Statamatic 3 on fortrabbit
 naviTitle:        Statamatic
 lead:             Statamatic is a cool file based CMS. Learn here how to install and tune Statamatic 3 on fortrabbit.
@@ -76,6 +76,14 @@ APP_URL=https://{{app-name}}.frb.io
 The three ENV vars above will differ from your local installation. You can also add your own, of course. Please also see our [environment variables article](/env-vars) to learn more about that kind of configuration and our implementation.
 
 
+### Set the root path
+
+Statamatic 3 is a Laravel application. So the root path needs to be set to `public`. Within the settings of the App under the Dashboard, open the form to change the root path, enter `public` and save the new value.
+
+* [dashboard.fortrabbit.com/apps/{{app-name}}/rootpath](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath) <- direct link
+
+
+
 ## Choose your deployment work-flow
 
 There are two "main" ways to deploy code here on fortrabbit: [Git](/git-deployment) and [SFTP](/sftp-uni). The general rule of thumb is, that content driven legacy applications, like [WordPress](/install-wordpress), are better uploaded in classical manner with SFTP. Modern PHP web frameworks that are based on [Composer](/composer) are mostly deployed with Git. 
@@ -137,57 +145,70 @@ $ git push
 Also see our [Git deployment article](/git-deployment) for more details on Git here on fortrabbit.
 
 
-### Synchronize your contents
+### Synchronize content with rsync
 
 As mentioned above, deployment of your code base (templates and configuration) and dependencies (Statamatic and Composer) is done via Git deployment. Deploying the content is a separated step. We recommend to use rsync to up- or down-load new contents to and from your remote fortrabbit App (see also our [rsync article](/rsync)). On your local computer in the Terminal in the Statamatic project folder execute:
 
 ```
 # SYNC UP: from local to remote
-$ rsync -av ./content {{app-name}}@deploy.{{region}}.frbit.com:~/content
+$ rsync -av ./content {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
 It works also the other way around. For example in a case, where you have done some edits online and want those changes to be reflected in your local development environment:
 
 ```
 # SYNC DOWN: from remote to local
-$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/content ./content
+$ rsync -av statamatic-test@deploy.eu2.frbit.com:~/content ./
 ```
 
-You can also use [SFTP](/sftp) to synchronize the `content` folder.
+
+### Synchronize content with SFTP
+
+You can also use [SFTP](/sftp) to synchronize the `content` folder. That's straight forward straight from the 90s: Open your SFTP client and drag the folder over, whatever direction you prefer.
 
 
 ## Tuning
 
 By now, you have Statamatic installation running on your local machine and you can easily deploy it to your fortrabbit App. You can deploy code changes and Statamatic updated with Git. Additionally contents are synced down and up using rsync or Git. Let's get deeper:
 
-### Using MySQL as a content store
-
-Beside storing contents on the file system in markdown, Statamatic also offers to store contents with a MySQL database. On fortrabbit, that might ( depends on your use case ) be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync and you have good separation of code and content.
-
-_WORK IN PROGRESS! TOOD: How to set it up using ENV vars_
-
-#### MySQL ENV vars for Statamatic
-
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
-```
 
 ### Adding domains
 
-…
+At the beginning you most likely have been using the App URL as your domain. You can also add any number of domains to your App. Please see our [domain article](/domains) for more.
+
+
+### Using MySQL as a content store
+
+_MYSQL is still WORK IN PROGRESS!_
+
+Beside storing contents on the file system in markdown, Statamatic also offers to store contents with a MySQL database. On fortrabbit, that might ( depends on your use case ) be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync while still having good separation of code and content.
+
+#### ENV vars for Statamatic MySQL setup
+
+MySQL access will be configured via ENV vars as well (see above on the matter as well). Copy/paste this additional setup into the textarea with environment variables settings form in the fortrabbit Dashboard:
+
+```
+DB_CONNECTION=mysql
+DB_DATABASE=${MYSQL_DATABASE}
+DB_HOST=${MYSQL_HOST}
+DB_PASSWORD=${MYSQL_PASSWORD}
+DB_PORT=3306
+DB_USERNAME=${MYSQL_USER}
+```
+
+It maps the keys Statamatic is expecting with dynamic ENV vars provided by fortrabbit.
+
+_MYSQL is still WORK IN PROGRESS!_
 
 ### Working with the Control Panel
 
 Statamatic - like other CMS - has a "Control Panel". That Dashboard enables you - or maybe the client/editor - to create and edit the contents easily in the browser. You can create different users (admins) for the Control Panel.
 
+* [{{app-name}}.frb.io/cp](https://{{app-name}}.frb.io/cp)
+
 For this, please consider how you are dealing with the contents created: 
 
-* You should really not use the Control Panel on the App when you have all contents in Git, in fact you should only change things locally first. 
+* You should really not use the Control Panel on the App when you have all contents in Git, in fact you should only change things locally. 
 * When using rsync (or SFTP) you can sync changes you have made on the App directly back down or the other way around.
 * When using MySQL as a data store, you might want to dump the production database and bring it back locally from time to time
 
