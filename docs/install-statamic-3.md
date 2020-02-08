@@ -235,4 +235,4 @@ fortrabbit does not support `sendmail`, so sending mails out of the box might no
 
 ### Getting a license
 
-Remember that Statamic is not a free software. Get a license, support the authors!
+Remember that Statamic is free for personal use. For a client project, get a license, support the authors!
