@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-01-28
+reviewed:         2020-02-10
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
