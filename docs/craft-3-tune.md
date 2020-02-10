@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-12-10
+reviewed:         2020-01-28
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -42,8 +42,9 @@ return [
     ],    
     // fortrabbit
     'production' => [
-        'devMode'      => false,
-        'allowUpdates' => false
+        'devMode'           => false,
+        'allowUpdates'      => false,
+        'allowAdminChanges  => false,
     ],
     // local
     'dev' => [
@@ -100,24 +101,24 @@ return [
 ];
 ```
 
-### HTTPS
+#### HTTPS
 
 fortrabbit will provide Let's Encrypt TLS certificates for all domains, please see our [HTTPS article](/https) for more on that.
 
 
-### htaccess
+#### .htaccess
 
 Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) with examples.
 
-
-When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. Please see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
-With the `fortrabbit/craft-auto-migrate` package mentioned above, Project Config changes are applied automatically to your fortrabbit App. 
 
 
 ### Project config
 
 Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. You can enable it using the `useProjectConfigFile` setting. We highly recommend using it.
 
+When enabled, Craft CMS will create and update a file called `project.yml` containing Craft configuration. Please see the [Craft CMS docs article](https://docs.craftcms.com/v3/project-config.html#enabling-the-project-config-file) for more on it. 
+
+With the [fortrabbit/craft-auto-migrate](https://github.com/fortrabbit/craft-auto-migrate) package, Project Config changes are applied automatically every time you `git push` changes.
 
 ### Dev mode
 
@@ -170,6 +171,10 @@ DB_USER=${MYSQL_USER}
 ENVIRONMENT=production
 SECURITY_KEY=LongRandomString
 ```
+
+
+
+
 
 
 ## Updating Craft CMS
@@ -234,7 +239,7 @@ For the same reasons as above with updating Craft, we highly recommend to not in
 
 Image uploads to Craft are usually getting processed by ImageMagick. Image transformations are happening when original images are getting sized down into several delivery formats. That happens while upload for display in the Craft Control Panel but also in your templates when you want to show those images to the users. Nowadays with image media queries like `srcset` one needs not only two sizes (thumbnail and large) but all kind of different sizes for different device resolutions. Please keep in mind that image transforms are "expensive" in terms of CPU utilization. Best don't overdo it. Use only as much as you'll need. Maybe four sizes per image are enough, for the imager plugin that can be four steps.
 
-By the way: The image format `webp` is supported with forttrabbits imageMagick version. Also check out our [application design article](/app-design) on website performance best practices. 
+By the way: The image format `webp` is supported with fortrabbits imageMagick version. Also check out our [application design article](/app-design) on website performance best practices. 
 
 
 ### jpegoptim and company
@@ -256,12 +261,21 @@ Craft CMS comes with a built in command line interface which can be called from 
 
 ```
 # Call Craft CLI via php
-php ./craft
+php craft
 ```
 
-Note that you'll need to call `./craft` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter).
+Note that you'll need to call `craft` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter).
 
-<!-- TODO: write more here on use cases and don't use cases. -->
+Not all craft cli commands are safe to run in production, see our recommendations:
+
+* `setup/*` (Intended to run locally only)
+* `update/*` (Don't, if you deploy using git or project config)
+* `clear-caches/*` (Don't, unless you have a good reason)
+* `resave/*` (Sometimes needed)
+* `project-config/sync` (Only needed if it's not part of your deployment)
+* `migrate/all` (Only needed if it's not part of your deployment)
+* `backup/db` (Usefull to make a DB backup. Can harm performance)
+* `restore/db` (Usefull if you need to revert the DB to a previous state)
 
 
 
@@ -387,7 +401,7 @@ Most likely this is a setting within Craft CMS itself. The setting you are looki
 
 You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
 
-Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) are maintaining a [plugin for Mailgun](https://plugins.craftcms.com/mailgun). With that plugin installed you can easily set it up.
+Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) are maintaining a [plugin for Postmark](https://plugins.craftcms.com/postmark). With that plugin installed you can easily set it up.
 
 
 ## Licensing Craft CMS

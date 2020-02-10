@@ -1,13 +1,12 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-01-28
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
 group:            craft
 stack:            pro
-workInProgress:   yes
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -34,19 +33,36 @@ For best results here, make sure you have completed all steps from the [get read
 
 ## About Craft CMS assets
 
-With Craft 3, the "assets" folder contains files that are managed by the CMS. This is the user generated stuff, uploaded files, mostly images — also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html) on that. 
 
-The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to an Pro App will get destroyed the next you time deploy anyways, see [here](/app-pro#ephemeral-storage) for more and why.
+By default assets are stored in a local volume, which means user uploads are located in a folder along with the code. 
+
+With Pro Apps you separte the uploads from your code, since your App usually runs on multiple nodes which do not share the same file system. Every time you deploy a new version of Craft or change templates, we replace the old with new state. Read more about nature of the  
+ [Ephemeral storage](/app-pro#ephemeral-storage).
+
 
 ### Upload assets to the Object Storage
 
-So what you want: is to swap the assets folder on the file system with external files stored on the fortrabbit [Object Storage](/object-storage). We have developed a Craft plugin to connect the fortrabbit Craft App with the Object Storage. All uploads will transferred to the Object Storage directly, all URLs will point to the Object Storage. See the install guide on GitHub for usage:
+First, make sure to enable the Object Storage component with your Pro App. This step is not required, if you did not disable it when creating your App.
 
-* [github.com/fortrabbit/craft-object-storage](https://github.com/fortrabbit/craft-object-storage)
+Now you have access to our S3 compatible [Object Storage](/object-storage). You do not need an AWS account, since this is a first party service we provide.
+
+To connect Craft with the Object Storage, install the [fortrabbit/craft-object-storage](https://plugins.craftcms.com/fortrabbit-object-storage) plugin we prepared for you. 
+ On the [Github page](https://github.com/fortrabbit/craft-object-storage) of the plugin you find further setup the instructions.
 
 Once the plugin is installed and enabled, a new Volume Type "fortrabbit Object Storage" is available. In your `config/volumes.php` you can setup additional volumes. 
 
-To access the Object Storage from your computer, use a S3 compatible SFTP client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
+To access the Object Storage from your computer, use a S3 compatible "SFTP" client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
+
+
+### Using the Craft Imager plugin
+
+The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons of options for image transforms including support for `webp`. Please mind we do not support any optimizers besides `webp`. If **not** using **imgix**, we suggest the following settings:
+
+* `'imagerSystemPath' => '/tmp/imager'` To make sure cached transforms persist when you deploy new code.
+* `'useCwebp' => true` Use the cwebp command line tool (ImageMagick works with webp as well).
+* `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
+
+
 
 ## Next steps
 
