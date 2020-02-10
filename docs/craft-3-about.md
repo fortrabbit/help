@@ -57,7 +57,7 @@ Sophisticated developers, experienced in backend development and ready to work w
 ```bash
 # Install and initialize
 $ composer config platform --unset
-$ composer require fortrabbit/craft-copy:^1.0.0-beta
+$ composer require fortrabbit/craft-copy:^1.0.0-RC9
 $ ./craft install/plugin copy
 $ ./craft copy/setup
 
@@ -65,14 +65,12 @@ $ ./craft copy/setup
 $ php craft copy/db/up
 ```
 
-Please head on to the GitHub page for more usage examples:
-
-* [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy)
+Please head on to [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy) for more details and usage examples.
 
 
 ### Legacy workflow
 
-Juniors and web developers with a focus on front-end are likely more comfortable using the legacy SFTP workflow. Use this workflow when you are coming from WordPress and not yet familiar to use the Terminal, Git and Composer. This is your route:
+Juniors and web designers with a focus on front-end are likely more comfortable using the legacy SFTP workflow. Use this workflow when you are coming from WordPress and not yet familiar to use the Terminal, Git and Composer. This is your route:
 
 1. **[Run Craft locally](craft-3-install-local)**: Install new or existing project
 2. **[Setup Craft](/craft-3-setup)**: Prepare environments, sync database
