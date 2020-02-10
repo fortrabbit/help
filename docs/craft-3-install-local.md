@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-02-10
 title:            Install Craft CMS locally
 naviTitle:        Install Craft locally
 lead:             Learn how to install Craft CMS locally, matching your skills and workflows.
@@ -29,7 +29,8 @@ keywords:
 
 ## Get ready
 
-[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-3-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first.
+[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-3-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
+
 
 ## Choose your Craft install workflow
 
@@ -46,9 +47,11 @@ $ composer create-project craftcms/craft {{app-name}}
 
 See an error? Check your [local development](/local-development). Later on you can [deploy Craft with Git](/craft-3-deploy-git) either to Universal or Professional Apps on fortrabbit.
 
+
 ### 1b. Download the Craft zip file
 
 Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files. Later on you can upload [Craft with SFTP](/craft-3-upload-sftp) on Universal Apps.
+
 
 ## Install Craft CMS locally
 
@@ -65,6 +68,7 @@ $ ./craft setup
 ```
 
 This will ask you some questions, the defaults will work mostly, you can change these settings later.
+
 
 ### 2b. Browser setup
 
