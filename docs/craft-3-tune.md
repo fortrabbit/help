@@ -173,10 +173,6 @@ SECURITY_KEY=LongRandomString
 ```
 
 
-
-
-
-
 ## Updating Craft CMS
 
 We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. **Test updates locally first!** For production (your fortrabbit App) we have set the ENV "allowUpdates" to false (see above). That will make the update button not show up in the control panel, so that your client will not accidentally update. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
@@ -234,13 +230,11 @@ Then upload the file changes. `rsync` can help to sync only changed files, see o
 For the same reasons as above with updating Craft, we highly recommend to not install plugins directly on your production App. We advice to install plugins locally first (best using Composer) and then deploy via Git to get them installed on the App as well.
 
 
-
 ## Image tuning
 
 Image uploads to Craft are usually getting processed by ImageMagick. Image transformations are happening when original images are getting sized down into several delivery formats. That happens while upload for display in the Craft Control Panel but also in your templates when you want to show those images to the users. Nowadays with image media queries like `srcset` one needs not only two sizes (thumbnail and large) but all kind of different sizes for different device resolutions. Please keep in mind that image transforms are "expensive" in terms of CPU utilization. Best don't overdo it. Use only as much as you'll need. Maybe four sizes per image are enough, for the imager plugin that can be four steps.
 
 By the way: The image format `webp` is supported with fortrabbits imageMagick version. Also check out our [application design article](/app-design) on website performance best practices. 
-
 
 
 ### jpegoptim and company
@@ -339,8 +333,6 @@ return [
 ```
 
 
-
-
 ## Cache and sessions on the Pro Stack
 
 On the [Pro Stack](/app-pro) in multi Node environments - see [terminology](/terminology) - you can not rely on the file based cache or session storage. Store this data in Memcache a key-value-storage which is accessible from all Nodes instead - also see [Memcache article](/memcache-pro). We have a custom extension developed. With that no further configuration is required, you just need to pull it in to your `composer.json` like so:
@@ -365,6 +357,24 @@ For most queue workloads the `ostark/craft-async-queue` plugin mitigates the pro
 
 On the [Pro Stack](/app-pro) you can run long running processes in a isolated environment without hurting site delivery.
 You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `craft queue/listen`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
+
+
+
+## Sending mail
+
+You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
+
+Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) are maintaining a [plugin for Postmark](https://plugins.craftcms.com/postmark). With that plugin installed you can easily set it up.
+
+
+## Licensing Craft CMS
+
+Craft CMS is not all free. To enable the good parts you need to obtain a licence  from Pixel & Tonic (the folks building Craft CMS). 
+
+A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL this for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+
+The App URL `{{appname}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
+
 
 
 ## Troubleshooting
@@ -403,19 +413,3 @@ That's a timeout issue. Commonly this happens when doing too many image transfor
 ### Large assets upload problems
 
 Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashboard, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
-
-
-## Sending mail
-
-You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
-
-Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) are maintaining a [plugin for Postmark](https://plugins.craftcms.com/postmark). With that plugin installed you can easily set it up.
-
-
-## Licensing Craft CMS
-
-Craft CMS is not all free. To enable the good parts you need to obtain a licence  from Pixel & Tonic (the folks building Craft CMS). 
-
-A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL this for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
-
-The App URL `{{appname}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
