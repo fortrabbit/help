@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.3
+version:          3.4
 supportLevel:     a
 
 keywords:
@@ -242,6 +242,7 @@ Image uploads to Craft are usually getting processed by ImageMagick. Image trans
 By the way: The image format `webp` is supported with fortrabbits imageMagick version. Also check out our [application design article](/app-design) on website performance best practices. 
 
 
+
 ### jpegoptim and company
 
 [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here on fortrabbit, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. 
@@ -254,6 +255,15 @@ We evangelize to use dedicated specialized third party image optimization servic
 * [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
 
 
+#### Using the Craft Imager plugin
+
+The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons of options for image transforms including support for `webp`. Please mind we do not support any optimizers besides `webp`. If **not** using **imgix**, we suggest the following settings:
+
+* `'imagerSystemPath' => '/tmp/imager'` To make sure cached transforms persist when you deploy new code.
+* `'useCwebp' => true` Use the cwebp command line tool (ImageMagick works with webp as well).
+* `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
+
+
 
 ## Craft CLI
 
@@ -264,18 +274,16 @@ Craft CMS comes with a built in command line interface which can be called from 
 php craft
 ```
 
-Note that you'll need to call `craft` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter).
+Note that you'll need to call `craft` via PHP, more on that [here](/quirks#toc-need-to-call-via-php-interpreter). Not all Craft CLI commands are safe to run in production, see our recommendations:
 
-Not all craft cli commands are safe to run in production, see our recommendations:
-
-* `setup/*` (Intended to run locally only)
-* `update/*` (Don't, if you deploy using git or project config)
-* `clear-caches/*` (Don't, unless you have a good reason)
-* `resave/*` (Sometimes needed)
-* `project-config/sync` (Only needed if it's not part of your deployment)
-* `migrate/all` (Only needed if it's not part of your deployment)
-* `backup/db` (Usefull to make a DB backup. Can harm performance)
-* `restore/db` (Usefull if you need to revert the DB to a previous state)
+* `setup/*` — Intended to run locally only
+* `update/*` — Don't, if you deploy using git or project config
+* `clear-caches/*` — Don't, unless you have a good reason
+* `resave/*` — Sometimes needed
+* `project-config/sync` — Only needed if it's not part of your deployment
+* `migrate/all` — Only needed if it's not part of your deployment
+* `backup/db` — Useful to make a database backup. Can harm performance
+* `restore/db` — Useful if you need to revert the DB to a previous state
 
 
 
