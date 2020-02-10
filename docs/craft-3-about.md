@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-02-10
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
 order:            1
