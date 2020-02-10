@@ -106,13 +106,12 @@ return [
 fortrabbit will provide Let's Encrypt TLS certificates for all domains, please see our [HTTPS article](/https) for more on that.
 
 
-#### .htaccess
+#### Using .htaccess for redirects and to force https
 
 Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) with examples.
 
 
-
-### Project config
+### Using project config
 
 Craft 3.1 introduced the project config. It helps keeping track of config settings and changes outside of the database (separation of concerns). It's currently not enabled by default. You can enable it using the `useProjectConfigFile` setting. We highly recommend using it.
 
@@ -120,7 +119,8 @@ When enabled, Craft CMS will create and update a file called `project.yml` conta
 
 With the [fortrabbit/craft-auto-migrate](https://github.com/fortrabbit/craft-auto-migrate) package, Project Config changes are applied automatically every time you `git push` changes.
 
-### Dev mode
+
+### Enabling dev mode
 
 Sometime while developing you might want to see some error output directly on your browser screen. That's what the `devMode` flag is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details.
 
@@ -258,7 +258,6 @@ The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons 
 * `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
 
 
-
 ## Craft CLI
 
 Craft CMS comes with a built in command line interface which can be called from the console. You can also run it one the App (Universal Apps only) itself like so:
@@ -387,9 +386,11 @@ The truth is, only heavy tasks like updates, backups and queue execution in the 
 
 Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
 
+
 ### You see a "Service Unavailable" or 503 message
 
 What to do when your Craft CMS throws an "Service Unavailable" message on the screen instead of rendering your website? Don't be afraid, you can likely solve that yourself. Especially during setup it's likely that some tiny config is still missing or wrong. Check the logs.
+
 
 #### Common errors while initial setup
 
@@ -398,6 +399,7 @@ Here are some common errors, the cause of 90% of failing Craft CMS installations
 * **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App
 * **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your .env file at home as it will be ignored anyways.
 * **Missing .htaccess file** — Commonly happens with SFTP upload, the `.htaccess` is hidden, make sure to copy it over as well
+
 
 #### Temporary turning on/off dev mode
 
