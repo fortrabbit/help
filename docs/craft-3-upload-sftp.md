@@ -14,6 +14,7 @@ websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
 version:          3.4
+supportLevel:     a
 
 keywords:
   - craft
