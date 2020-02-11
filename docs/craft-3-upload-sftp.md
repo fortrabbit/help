@@ -15,9 +15,6 @@ category:         CMS
 image:            craft-cms-mark-black-new.svg
 version:          3.4
 
-otherVersions:
-    2 : install-craft-2-uni
-
 keywords:
   - craft
   - craftCMS
