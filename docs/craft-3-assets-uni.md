@@ -16,9 +16,6 @@ version:          3.4
 proLink:          craft-3-assets-pro
 supportLevel:     a
 
-otherVersions:
-    2.6 : install-craft-2-pro
-
 keywords:
   - craft
   - craftCMS

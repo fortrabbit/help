@@ -16,9 +16,6 @@ version:          3.4
 uniLink:          craft-3-assets-uni
 supportLevel:     a
 
-otherVersions:
-    2.6 : install-craft-2-pro
-
 keywords:
   - craft
   - craftCMS
