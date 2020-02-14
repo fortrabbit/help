@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2019-09-10
+reviewed:     2020-02-14
 title:        Using Cron Jobs
 naviTitle:    Cron Jobs
 lead:         Use time scheduled cron jobs to execute long running operations in the background. They run at defined times, independent of visits to the web application.
@@ -16,7 +16,7 @@ proLink:      worker-pro
 
 **Database maintenance**: say the web application cumulates data which needs to be transformed and/or wiped periodically. A Cron Job allows you to make sure the `app/console db:cleanup` - or whatever - script executes hourly, daily, weekly or whenever your want.
 
-**Cache clearing**: say the web application has a news site, which homepage must be rebuilt every ten minutes or so. With a Cron Job you can schedule a cleanup of the homepage every one, ten, thirty or whatever minutes required.
+**Cache clearing**: say the web application has a news site, which homepage must be rebuilt every ten minutes or so. With a Cron Job you can schedule a cleanup of the homepage.
 
 
 ## Availabilty
