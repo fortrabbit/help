@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-08
+reviewed:         2020-02-14
 title:            Install Statamic 3 on fortrabbit
 naviTitle:        Statamic
 lead:             Statamic is a cool file based CMS. Learn here how to install and tune Statamic 3 on fortrabbit.
@@ -95,12 +95,12 @@ Now, Statamic is a bit in between and is - like [Grav](/install-grav) and [Kirby
 
 ## SFTP upload
 
-**Workflow 1 of 2** — There is not much to say on that topic. Just make sure to upload all contents of your local Statamic folder, including the hidden `.htaccess` file into the `htdocs` folder within your App.
+**Option 1** — There is not much to say on that topic. Just make sure to upload all contents of your local Statamic folder, including the hidden `.htaccess` file into the `htdocs` folder within your App.
 
 
 ## Deploy with Git and rsync
 
-**Workflow 2 of 2 and recommended** — You'll  deploy to fortrabbit using Git ( and Composer ) and (optionally) synchronize contents with rsync. Let's go:
+**Option 2 (recommended)** — You'll  deploy to fortrabbit using Git ( and Composer ) and (optionally) synchronize contents with rsync. Let's go:
 
 
 ### Configure Statamic for Git deployment
