@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-16
+reviewed:      2020-02-17
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -366,3 +366,10 @@ After your domain has been moved/propagated be sure to remove the entry from you
 ### Configuring your domain for e-mail
 
 So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
+
+
+## Quirks
+
+### Domain limit
+
+Please mind that there is a limit of 100 domains per App. In many cases you can use wildcard instead.
