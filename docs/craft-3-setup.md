@@ -71,8 +71,9 @@ return [
     ],    
     // fortrabbit
     'production' => [
-        'devMode'      => false,
-        'allowUpdates' => false
+        'devMode'           => false,
+        'allowAdminChanges' => false,
+        'allowUpdates'      => false
     ],
     // local
     'dev' => [
