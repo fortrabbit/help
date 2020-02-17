@@ -42,9 +42,9 @@ return [
     ],    
     // fortrabbit
     'production' => [
-        'devMode'           => false,
-        'allowUpdates'      => false,
-        'allowAdminChanges  => false,
+        'devMode'            => false,
+        'allowUpdates'       => false,
+        'allowAdminChanges'  => false
     ],
     // local
     'dev' => [
