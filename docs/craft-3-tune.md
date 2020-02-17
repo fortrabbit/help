@@ -132,6 +132,13 @@ Craft CMS has the option to run updates directly from the Craft Control Panel. A
 So you better prevent the shiny "update" button from showing up at all. You can do that in your Craft configuration in the general settings with the `allowUpdates` flag. Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
 
 
+### Don't allow admin changes in production
+
+Especially when you are using project config — having `project.yml` enabled - we highly recommend to not make any admin changes to your production environment (fortrabbit) at all. Only do editorial changes. Have one single source of truth and only one direction (up). Please also see the official [Craft CMS docs](https://docs.craftcms.com/v3/config/config-settings.html#allowadminchanges) on that. 
+
+Otherwise you can run into trouble with that: Imagine that you make changes to the database structure, let's say by adding tables by changing the field layout in production. Now you don't have the changes locally. But you deploy other new changes from local to production. This might overwrite the `project.yml` in production and therefore rolling back your changes. Best have your local development be your master in applying design and functional changes.
+
+
 ### Change the control panel URL
 
 "Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. Do so with the `cpTrigger` setting. If you don't set this value it defaults to `admin`. The example below sets it to `godmode`, choose anything you like.
