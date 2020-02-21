@@ -221,7 +221,6 @@ In a GUI like Sequel Pro there is a query window to run it. This value will then
 
 This article describes how to deal with the fortrabbit remote MySQL database. You might want to have a local one as well. Please see our [local development article](/local-development).
 
-- - -
 
 ## Advanced usage
 
