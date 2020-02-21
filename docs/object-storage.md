@@ -310,6 +310,10 @@ gulp.src('./dist/**')
 ```
 
 
+### Accessing the Object Storage from another App
+
+It's possible to access the Object Storage from one App by another App or by some external website or application. The Object Storage access is not restricted to be used by the App itself.
+
 
 ## Quirks
 
