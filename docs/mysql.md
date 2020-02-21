@@ -227,9 +227,9 @@ This article describes how to deal with the fortrabbit remote MySQL database. Yo
 
 ### Different time zone
 
-MySQL has [time zone support](http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html) Our nodes default to the standard time zone "UTC". If you want to change this time zone, you can do so on a "per connection" basis.
+MySQL has [time zone support](http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html). Our Nodes are defaulting to the standard time zone "UTC". If you want to change this time zone, you can do so on a "per connection" basis.
 
-There are two approaches to tackle this issue: handle the time zone on application level or handle the time zone on database level. Each has its merits and which one is better strongly depends on the use case. This article shows you how to set the time zone in the database.
+There are two approaches to tackle this issue: handle the time zone on application level or handle the time zone on database level. Each has its merits and which one is better strongly depends on the use case.
 
 #### Setting time zone in plain (My)SQL
 
