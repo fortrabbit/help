@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-01-28
+reviewed:      2020-02-21
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -70,11 +70,13 @@ To sum it up:
 - Everything is *public* and accessible through `https://{{app-name}}.objects.frb.io/path-of-the-file.extension`.
 - Everything in /private/… is private and only accessible if proxified through your app.
 
+
 ### Implementation
 
 The fortrabbit Object Storage implements large parts of the [AWS S3 REST API](http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html) making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
 
 For now we don't support `preSignedRequest` which allows to upload to S3 without proxifying. If your users need to upload a file on your storage or need to access a private file, the request needs to go through your app.
+
 
 ## Booking & scaling
 
@@ -105,9 +107,11 @@ The Apps Object Storage access details consist of: a bucket name, a server (aka:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
+
 ### Access credentials from code
 
 You have two options:
+
 
 #### Access credentials using secrets file
 
@@ -121,6 +125,7 @@ $credentials = [
     'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
 ];
 ```
+
 
 #### Access credentials using mapped ENV vars
 
@@ -145,6 +150,7 @@ See our specific guides for: [Laravel](install-laravel#toc-object-storage), [Sym
 
 Since we live in the Composer age most of those abstraction libraries use the AWS S3 SDK, with which our Object Storage is compatible. The most commonly used libraries are:
 
+
 #### Flysystem
 
 [Flysystem](http://flysystem.thephpleague.com/) by The PHP League / Frank De-Jonge. Both available AWS Adapters are compatible with the Object Storage.
@@ -167,6 +173,7 @@ $filesystem = new League\Flysystem\Filesystem($adapter);
 $filesystem->put('hello', 'world...');
 ```
 
+
 ##### Flysystem V3
 
 ```php
@@ -187,11 +194,10 @@ $filesystem = new League\Flysystem\Filesystem($adapter);
 $filesystem->put('hello', 'world...');
 ```
 
+
 #### Gaufrette
 
-
 [Gaufrette](https://github.com/KnpLabs/Gaufrette) is an alternative file system abstraction by KnpLabs, a bit older, but also actively maintained.
-
 
 
 #### Custom PHP applications
@@ -210,9 +216,6 @@ In some use-cases you want to upload and modify (CRUD) files manually. Also you 
 In those cases S3 behaves pretty much like your good old friend FTP.
 
 
-
-
-
 ### HTTP access
 
 Once you have uploaded some files, the ultimate goal is of course to serve them to the browser. To that purpose all Apps come with an Object Storage URL in the form:
@@ -220,6 +223,7 @@ Once you have uploaded some files, the ultimate goal is of course to serve them 
 * [{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md) < works when Object Storage is booked
 
 We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framework/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
+
 
 ### Log access
 
@@ -250,6 +254,7 @@ You can change the default cache durations of 24 hours in the Dashboard (Dashboa
 
 Take care that we don't do cache purging. So when changing the cache duration, only new assets will be effected. Assets already in the cache will stay there as long as the old value is past.
 
+
 #### Cache busting
 
 Caching is great but if you want to make changes appear immediately you need a way around them. One approach would be to set manual caching headers with a low value, but this would just annul the positive effect of caching. So what you want to do is query string versioning, like so:
@@ -261,6 +266,7 @@ https://{{app-name}}.objects.frb.io/path/to/file.jpg?2019-05-06.1
 ```
 
 Caching works on the whole URL, including the query string. So if you change the query string you are delivering accessing a different item, hence it's not cached. Many frameworks/CMS already do that for you, but it's easy to implement manually as well.
+
 
 ### Resetting the secret key
 
@@ -277,7 +283,8 @@ If you need to change the secret key of your Object Storage: Login to the Dashbo
 
 You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool.
 
-#### Gulp, Grunt & co
+
+#### Webpack, Gulp, Grunt & co
 
 You can automate the process of uploading files with a task runner or build script. You can use Gulp with an S3 plugin, such as `gulp-awspublish` or `gulp-S3`. Please mind to find a plugin that supports to send over the `endpoint`, as standard AWS locations will not work. Plugins that are based on `knox` or `aws-sdk` will probably work.
 
@@ -307,6 +314,7 @@ gulp.src('./dist/**')
 ## Quirks
 
 Good to know the limits!
+
 
 ### No PHP execution
 
