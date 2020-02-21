@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-02-21
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -141,11 +141,11 @@ The MySQL storage limit is critical. When exceeding this, multiple things can ha
 **Description**: Worker memory is a soft limit. When exceeding it, either nothing happens or you can see fatal errors or slower execution depending on whether memory exhaustion is caused by permanent usage or isolated events or accidental overlapping of time scheduled jobs. Worker memory is limited in the Dashboard. You can only add a s many jobs as included in the selected plan.
 
 
-## Transfer
+## Trafic
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each App has an included traffic (transfer / bandwidth) amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
+**Description**: Each App has an included traffic, also known as transfer or bandwidth, amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
 **Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page. High traffic is often caused by videos or images. Images are often not compressed well enough and videos are big by definition. An alternative way to set delivery of static assets is by using a pull-CDN or by completely outsourcing the static files, either to image and video hosting service, or to a cloud storage like AWS S3, for the Professional Stack we are offering the Object Storage.
 
