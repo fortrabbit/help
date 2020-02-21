@@ -97,6 +97,7 @@ $ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
 
 In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
 
+
 ### MySQL via GUI
 
 We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
@@ -142,6 +143,7 @@ Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local ph
 
 A common task is to move your MySQL data around, like when you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
 
+
 ### Using the terminal
 
 Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers from the shell. First of start by exporting your data from your local database. Do this on your local machine:
@@ -166,6 +168,7 @@ $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 
 If you see a connection error with the first command, please troubleshoot your connection. 
 
+
 ### Using MySQL Workbench (GUI)
 
 **Export from local**:
@@ -189,6 +192,7 @@ If you see a connection error with the first command, please troubleshoot your c
 5. Make sure to select your App name in the *Default Target Schema*
 6. Start the import
 
+
 ### LOAD DATA
 
 You can export and import a large, single table with the following example:
@@ -205,6 +209,7 @@ $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
 **Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+
 
 ### Foreign keys
 
@@ -224,11 +229,13 @@ This article describes how to deal with the fortrabbit remote MySQL database. Yo
 
 ## Advanced usage
 
+
 ### Different time zone
 
 MySQL has [time zone support](http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html). Our Nodes are defaulting to the standard time zone "UTC". If you want to change this time zone, you can do so on a "per connection" basis.
 
 There are two approaches to tackle this issue: handle the time zone on application level or handle the time zone on database level. Each has its merits and which one is better strongly depends on the use case.
+
 
 #### Setting time zone in plain (My)SQL
 
@@ -247,6 +254,7 @@ You can query the current time zone like so:
 ```sql
 SELECT @@session.time_zone;
 ```
+
 
 #### Setting time zone with PDO
 
@@ -276,9 +284,13 @@ Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-passwo
 
 All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Professional Apps](app-pro), MySQL is an optional Component. There you can [scale](scaling#toc-mysql) it up and down individually.
 
-### Limits
+
+
+
+## Limits
 
 Each App has one database named like the App. There are no privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
+
 
 ### Using MySQL functions, procedures and triggers
 
@@ -288,9 +300,11 @@ We enable it on request for dedicated MySQL plans (Pro Stack only).
 
 ## Troubleshooting MySQL
 
+
 ### Can't connect from local
 
 The most common misunderstanding when trying to connect from a local machine, is that people overlook to first open up the SSH tunnel and then connect to the database. Graphical MySQL clients support this connection method out of the box. You'll need to enter both: SSH access and MySQL access details. Within the fortrabbit Dashboard under your App > Access, there is a small link labeled: "Show SSH tunnel info" which will reveal everything you'll need to enter in a MySQL client to connect to the remote database.
+
 
 ### max_user_connections
 
