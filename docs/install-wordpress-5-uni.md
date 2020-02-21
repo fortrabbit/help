@@ -245,7 +245,7 @@ Usually we advice to use one App per website (see [here](/app#toc-one-website-pe
 
 As you now have seen above, there are many ways to deploy and develop WordPress. Depending on your work-flow, the way you'll update WordPress and deploy the update might be different. Minor patch versions of WordPress might be updated automatically.
 
-With WordPress, expect when using [Bedrock](/install-wordpress-pro), most likely you will just use the update functionality provided by the WordPress admin. Login to wp-admin, when an update is available, it will inform you and display a "update" button you can click. That will trigger the update.
+With WordPress, expect when using [Bedrock](https://roots.io/bedrock/) or alike, most likely you will just use the update functionality provided by the WordPress admin. Login to `wp-admin`, when an update is available, it will inform you and display a "update" button you can click. That will trigger the update.
 
 See also the [official WordPress docs on updating](https://codex.wordpress.org/Upgrading_WordPress).
 
