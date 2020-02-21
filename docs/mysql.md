@@ -271,6 +271,7 @@ $pdo = new PDO(
 );
 ```
 
+
 ### Resetting the MySQL password
 
 Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-password), you can also reset it. Do so in the Dashboard > Your App > Access > MySQL. Please mind that this comes with consequences:
@@ -278,6 +279,15 @@ Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-passwo
 * Unless your are using [env vars](env-vars): You'll need to change the password in your App's configuration files
 * Your coworkers need to change their password in their locally configured remote access tools (see below)
 
+
+### Accessing MySQL from a different App
+
+It is possible to access a MySQL from another App within the same region (EU, US). The database from `App-A` can be accessed from `App-B`. This works since both Apps are within the same network. You will only need to update the MySQL access credentials to do so. There are not many good use cases for this, but it might be good to know.
+
+
+### Accessing the remote MySQL from your local App
+
+It might also be possible to access the fortrabbit database from the local installation of your App. Think your local development App will directly connect to the fortrabbit App. You will need to open a tunnel, as described above to do so. We recommend to not do that. It's not only slow, it will most likely cause you some trouble. Best separate your local development environment from production.
 
 
 ### Differences between Professional and Universal
