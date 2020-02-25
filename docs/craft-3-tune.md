@@ -192,7 +192,8 @@ You have two options to install plugins:
 This method let's you conveniently discover, install and also "activate" (pay) the plugins right in place.
  
 1. Visit the control panel of your local Craft installation
-2. There, visit the plugin store, search and install plugins directly from there
+2. Visit the plugin store
+3. Search, install and activate plugins
 
 Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our updating instructions.
 
