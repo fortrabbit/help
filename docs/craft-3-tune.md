@@ -212,6 +212,8 @@ $ ./craft install/plugin {plugin-name}
 
 Plugins installed that way can be updated with `composer update` later on. Please also see our updating instructions.
 
+Bonus Tip: There is a Yii extension to install, uninstall, enable and disable plugins from the command line: [craft-plugin-commands](https://github.com/ostark/craft-plugin-commands).
+
 
 ### Using image tuning plugins
 
