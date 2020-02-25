@@ -175,6 +175,7 @@ DB_DRIVER=mysql
 DB_PASSWORD=${MYSQL_PASSWORD}
 DB_SERVER=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
+DB_DSN=mysql:host=${MYSQL_HOST};port=3306;dbname=${MYSQL_DATABASE}
 ENVIRONMENT=production
 SECURITY_KEY=LongRandomString
 ```
@@ -195,7 +196,7 @@ This method let's you conveniently discover, install and also "activate" (pay) t
 2. Visit the plugin store
 3. Search, install and activate plugins
 
-Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our updating instructions.
+Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our [updating instructions](/craft-3-update).
 
 
 #### B) Install Craft plugins via command line
@@ -204,10 +205,10 @@ This is a more advanced method to install plugins directly from the command line
 
 ```bash
 # 1. Add the plugin to Composer:
-$ composer require {repo/plugin-name}
+$ composer require {vendor/package-name}
 
 # 2. Install the plugin via Craft CLI
-$ ./craft install/plugin {plugin-name}
+$ ./craft install/plugin {plugin-handle}
 ```
 
 Plugins installed that way can be updated with `composer update` later on. Please also see our updating instructions.
@@ -329,6 +330,27 @@ $ composer require fortrabbit/yii-memcached
 ```
 
 
+## Performance
+
+When you experience a slow site, but no errors, often the database is the bottle neck. The [Craft Debug Tool­bar](https://nystudio107.com/blog/profiling-your-website-with-craft-cms-3s-debug-toolbar) provides useful information about which queries you run and how long it takes to execute them. Rule of thumb: if you run more 50 queries you should do something.
+
+
+### Twig cache tag
+
+Craft's `{% cache %}` tag is a good thing to prevent execution of expensive queries over and over again, however it's **very important** to use it wisely. Make sure to use a specific cache key, otherwise you risk filling up your database with thousands of rows. Andew Welch explains it [in this blog post](https://nystudio107.com/blog/the-craft-cache-tag-in-depth) in detail.
+
+
+### Cache plugins
+
+Full page cache plugins like [Blitz](https://github.com/putyourlightson/craft-blitz) or [Upper](https://github.com/ostark/upper) can improve TTFB dramatically, as they turn a dynamic site into static HTML. However, if your site is slow, you identify the problem, instead of hiding it with a cache plugin. 
+
+
+### Static files in /templates
+
+We've seen this many times. Developers put static assets like .css and .js in the `/templates` folder next to the twig templates. Craft delivers those files, but it creates massive overhead. Instead you should always put static files in `/web/some-dir/` to prevent any PHP execution for delivering those files.
+
+
+
 ## Queue jobs
 
 Craft CMS uses queue jobs for long-running tasks. By default these jobs are processed by a web based ajax call which blocks PHP processes that are meant for site delivery.
@@ -343,7 +365,7 @@ For most queue workloads the `ostark/craft-async-queue` plugin mitigates the pro
 ### Worker job
 
 On the [Pro Stack](/app-pro) you can run long running processes in a isolated environment without hurting site delivery.
-You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `craft queue/listen`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
+You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `php craft queue/listen`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
 
 
 
@@ -391,7 +413,7 @@ Here are some common errors, the cause of 90% of failing Craft CMS installations
 
 #### Temporary turning on/off dev mode
 
-Your fortrabbit App is set to be your production environment per default. So when an runtime exception occurs, you will represented with the very basic "Service Unavailable" error screen. That's a feature, as visitors of your website should not be able to get any information about the system and the errors. One thing you can do, is temporarily setting DevMode to true, so that you can see the error output printed on screen. So so in the fortrabbit Dashboard, with the App under ENV vars, set the "devMode" to true (or 1). Don't forget to turn this off, later on, as you do not want to expose your development settings to the world.
+Your fortrabbit App is set to be your production environment per default. So when an runtime exception occurs, you will represented with the very basic "Service Unavailable" error screen. That's a feature, as visitors of your website should not be able to get any information about the system and the errors. One thing you can do, is temporarily setting DevMode to true, so that you can see the error output printed on screen. We advice against doing it, unless it is a non-production environment. 
 
 
 ### You see a 504 message
