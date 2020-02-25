@@ -26,7 +26,6 @@ keywords:
 
  
 
-
 ### Update your local development environment first
 
 **Remember**: your local development environment is the master where changes are applied and tested first. Please update your local Craft CMS installation first and apply updates by deploying to production as a second step. Make sure that your environments are in sync that way.
