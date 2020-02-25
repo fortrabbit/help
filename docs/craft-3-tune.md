@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-10
+reviewed:         2020-02-25
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -183,11 +183,33 @@ SECURITY_KEY=LongRandomString
 
 We highly recommend to not install plugins directly on your production App. We advice to install plugins locally first and then deploy to get them installed on the App as well.
 
-### Installing plugins
+### Installing Craft CMS plugins
 
-#### A) Install Craft CMS plugins on the command line
+You have two options to install plugins:
 
-#### B) Install Craft CMS plugins from the control panel
+#### A) Install Craft plugins from the control panel
+
+This method let's you conveniently discover, install and also "activate" (pay) the plugins right in place.
+ 
+1. Visit the control panel of your local Craft installation
+2. There, visit the plugin store, search and install plugins directly from there
+
+Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our updating instructions.
+
+
+#### B) Install Craft plugins via command line
+
+This is a more advanced method to install plugins directly from the command line:
+
+```bash
+# 1. Add the plugin to Composer:
+$ composer require {repo/plugin-name}
+
+# 2. Install the plugin via Craft CLI
+$ ./craft install/plugin {plugin-name}
+```
+
+Plugins installed that way can be updated with `composer update` later on. Please also see our updating instructions.
 
 
 ### Using image tuning plugins
