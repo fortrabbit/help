@@ -77,4 +77,4 @@ This is basically what we are doing with the [Object Storage](/object-storage) f
 
 ## Next steps
 
-Make sure to have [tune and optimize](/craft-3-tune) your Craft installation.
+Check out how to [tune](/craft-3-tune) and [update]([tune](/craft-3-update)) your Craft installation.
