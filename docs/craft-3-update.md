@@ -88,7 +88,7 @@ Continuous development with a SFTP workflow is a hustle. One strategy is to uplo
 
 In many update cases a database migration is required. This will update the database table structure to match the latest updates. Sometimes it's a required extra step to be done with the App. 
 
-We also recommend to use `projectConfig` which will store all essential settings in a `project.yaml` file. This is the recommended way to keep your environments. Here are your options to run migrations:
+We recommend to use `projectConfig` which will store all essential settings in a `project.yaml` file. This is the recommended way to keep your environments. Here are your options to run migrations:
 
 
 #### A) Automate database migrations
