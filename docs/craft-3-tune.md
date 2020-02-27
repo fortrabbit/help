@@ -136,7 +136,7 @@ So you better prevent the shiny "update" button from showing up at all. You can 
 
 Especially when you are using project config - having `project.yml` enabled - we highly recommend to not make any admin changes to your production environment (fortrabbit) at all. Only do editorial changes. Have one single source of truth and only one direction (up). Please also see the official [Craft CMS docs](https://docs.craftcms.com/v3/config/config-settings.html#allowadminchanges) on that. 
 
-Otherwise you can run into trouble with that: Imagine that you make changes to the database structure, let's say by adding tables by changing the field layout in production. Now you don't have the changes locally. But you deploy other new changes from local to production. This might overwrite the `project.yml` in production and therefore rolling back your changes. Best have your local development be your master in applying design and functional changes.
+Otherwise you can run into trouble:: Imagine you make changes to the database structure, by adding tables for example, changing the field layout in production. Now you don't have the changes locally. But you deploy other new changes from local to production. This might overwrite the `project.yml` in production and therefore will roll back your changes. Your local development should be your master in applying design and functional changes.
 
 
 ### Change the control panel URL
