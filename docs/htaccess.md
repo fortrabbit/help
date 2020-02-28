@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2019-12-06
+reviewed:    2020-02-28
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -141,6 +141,26 @@ Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
 ```
 
 Use this with care and only open what you really need. Reduce the risk of XSS. Also check out the new Content Security Policy (CSP) for more advanced control on what you allow and what not. This website is a good reference: [content-security-policy.com](https://content-security-policy.com/)
+
+
+### Environment detection
+
+You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that you might want to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. Use an If statement for that. The following example will check against the `{{app-name}}.frb.io` or any domain you'll give it (replace www.yourdomain.com with your domain):
+
+```
+### Check for fortrabbit App (either frb.io or your domain)
+<If "%{HTTP_HOST} == '^(.*\.frb\.io|www.yourdomain.com)'">
+  # PLACE RULE IN HERE
+</If>
+```
+
+You can also do it the other way around by by replacing everything within the single quotes in the example above with `localtestdomain.test` (replace with your testing URL) to have rules that will only apply to your local development environment.
+
+One can also use that method to detect a staging App and for example display a http-auth for the staging version.
+
+A benefit of this technique is that you can have one `.htaccess` file which can be under version control and be deployed along with a `git push`. 
+
+Another alternative to this `<If>` solution is to alter the `.htaccess` file in a post deploy step during deployment.
 
 
 ### Allow access only for you
