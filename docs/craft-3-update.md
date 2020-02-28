@@ -34,7 +34,7 @@ The `config/general.php` we use in [our setup guide](/craft-3-setup#toc-configur
 
 It's a common mistake we see. Make sure your environments are in sync and you don't mess with updates and installing plugins on the App itself. 
 
-Here are three options to update Craft CMS and Craft plugins. Make sure to also check out the [official guides on the topic](https://docs.craftcms.com/v3/updating.html).
+Here are the options to update Craft CMS and Craft plugins. Make sure to also check out the [official guides on the topic](https://docs.craftcms.com/v3/updating.html).
 
 
 ### A) Update Craft using the Control Panel – simple
@@ -43,7 +43,7 @@ Here are three options to update Craft CMS and Craft plugins. Make sure to also 
 2. Go to Utilities > Updates
 3. Click the "Update all" button
 
-This will update your local development environment to the latest versions of Craft CMS as well as all plugins. After testing changes, deploy updates to your production App (see below).
+This will update your **local** development environment to the latest versions of Craft CMS as well as all plugins. After testing changes, deploy updates to your production App (see below).
 
 
 ### B) Update Craft using the Craft CLI – advanced
@@ -54,16 +54,6 @@ Run the following command in the terminal on your computer **locally** in the ro
 $ ./craft update
 ```
 
-### C) Update Craft using Composer – super advanced
-
-Run the following command in the terminal on your computer **locally** in the root folder of the Craft project:
-
-```bash
-$ composer update
-$ ./craft migrate
-```
-
-**Please mind**: The two other options to update Craft above (via Control Panel or Craft CLI) are "pinning" the installed versions in `composer.json`. So instead of `"craftcms/cms": "^3.5.4"` you might just find `"craftcms/cms": "3.5.4"`. Best avoid mixing update methods. Running `composer update` after you have used the Craft CLI or the Control Panel will have no effect, since the versions in `composer.json` are fixed.
 
 
 ### Deploying Craft updates
@@ -84,11 +74,13 @@ During the [Git deployment](/git-deployment) `composer install` will run automat
 Continuous development with a SFTP workflow is a hustle. One strategy is to upload the changes files from local to the App. Another strategy is to re-run the very same steps that have been done locally on the App itself. Good luck.
 
 
-### Database migrations & project config
+### Database migrations
 
-In many update cases a database migration is required. This will update the database table structure to match the latest updates. Sometimes it's a required extra step to be done with the App. 
+In many update cases a database migration is required. This will upgrade the database table structure to match the latest updates. This will be done when running the updates locally already. But it's an extra step required to be done with your fortrabbit App.
 
-We recommend to use `projectConfig` which will store all essential settings in a `project.yaml` file. This is the recommended way to keep your environments. Here are your options to run migrations:
+We recommend to use `projectConfig` which will store all essential settings in a `project.yaml` file. See also [here](/craft-3-tune#toc-using-project-config).
+
+Here are your options to run migrations:
 
 
 #### A) Automate database migrations
@@ -114,10 +106,9 @@ After applying updates on your fortrabbit Craft App, you might see a "Service un
 
 Instead of visiting the control panel URL you can trigger the changes via the Craft CLI in the terminal. The following commands are using remote SSH execution and are issued from your local computer:
 
-
 ```bash
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft migrate/all"
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft project-config/sync"
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com "php craft migrate/all"
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com "php craft project-config/sync"
 ```
 
 You can also login by SSH and call the commands on the App directly.
