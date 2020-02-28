@@ -145,6 +145,8 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 
 ### Environment detection
 
+_WORK IN PROGRESS: This chapter needs some editing/review. 2020-02-28_
+
 You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that you might want to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. Use an If statement for that. The following example will check against the `{{app-name}}.frb.io` or any domain you'll give it (replace www.yourdomain.com with your domain):
 
 ```
