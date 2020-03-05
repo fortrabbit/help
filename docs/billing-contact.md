@@ -101,7 +101,7 @@ A valid payment method is required to use the fortrabbit services. Each Billing 
 2. Billing Contact >
 3. **Payment method**
 
-Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices.
+Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to.
 
 
 ### Adding a VAT IN
