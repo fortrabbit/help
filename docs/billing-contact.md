@@ -33,6 +33,7 @@ Most people are happy with just one Billing Contact, but in some cases you need 
 
 Each App (except trial Apps) has is always associated with a specific Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing article](/billing).
 
+
 ## Differences between Billing Contact, Company and Account
 
 ```
@@ -53,6 +54,7 @@ Each App (except trial Apps) has is always associated with a specific Billing Co
 
 The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company. Remember: [Accounts](/account) are representing persons here on fortrabbit.
 
+
 ## Creating a Billing Contact
 
 Each Company comes with one Billing Contact out of the box, when creating a Company, you also create a Billing Contact. For most cases this is enough. But in some cases you might want to separate billing within one Company. So you can create multiple Billing Contact under one Company like so:
@@ -71,6 +73,7 @@ You cannot, because they are bound to previously created invoices and are needed
 
 To completely delete all invoices and all associated Apps, you can also [delete the Company](/company#toc-deleting-a-company).
 
+
 ## Changing the billing e-mail address
 
 Each month we'll send an invoice and send a link by e-mail. You can change this e-mail to go directly to your book keeping department.
@@ -80,6 +83,7 @@ Each month we'll send an invoice and send a link by e-mail. You can change this 
 * Billing Contact >
 * **Invoice e-mail**
 
+
 ## Changing the invoice address
 
 Your invoices contain the street address of your organization. You will be asked for that while setting up a Billing Contact. You can change this invoice address for future invoices at any time like so:
@@ -87,6 +91,7 @@ Your invoices contain the street address of your organization. You will be asked
 * Dashboard > Companies > {{ Your Company }} >
 * Billing Contact >
 * **Invoice address**
+
 
 ## Changing the payment method
 
@@ -97,6 +102,7 @@ A valid payment method is required to use the fortrabbit services. Each Billing 
 3. **Payment method**
 
 Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices.
+
 
 ### Adding a VAT IN
 
