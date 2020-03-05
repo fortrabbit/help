@@ -146,7 +146,7 @@ Sophisticated developers might have a look at rsync. It's by many times faster t
 
 #### Deploying WordPress changes with Git
 
-WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called [Bedrock](https://roots.io/bedrock/). Please see our [WordPress install guide for the Professional stack](/install-wordpress-4-pro) on how to set it up. It works best with the Professional Stack, but can also be used on the Universal Stack.
+WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called [Bedrock](https://roots.io/bedrock/). It's required to run WordPress on the Professional Stack, but can also be used on the Universal Stack.
 
 
 ### Installing WordPress with SSH
