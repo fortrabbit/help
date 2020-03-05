@@ -104,7 +104,7 @@ A valid payment method is required to use the fortrabbit services. Each Billing 
 Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to.
 
 
-### Adding a VAT IN
+## Adding a VAT IN
 
 It is recommended to add your VAT IN to your Billing Contact when your company is registered in the European Union. This can save you (and us) upfront value added taxes. Please see our [tax topic](/billing#toc-taxes). To enter your VAT IN:
 
@@ -117,7 +117,7 @@ Please mind that we need to validate the VAT IN. So the number you enter needs t
 Entering the VAT IN will change how VAT will be charged for future invoices, entering the VAT IN can not affect past invoices.
 
 
-### Costs monitoring
+## Costs monitoring
 
 You can see a live preview of the usage for the current month: 
 
@@ -128,6 +128,6 @@ You can see a live preview of the usage for the current month:
 There you'll find a cost preview (invoice draft) for the ongoing month, covering all of your Apps. This shows what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far, it will show different values the next day.
 
 
-### Changing the Billing Contact of an App
+## Changing the Billing Contact of an App
 
 In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company. Then, please see the instructions with [app article](app#toc-changing-app-ownership) on how to change ownership of an App.
