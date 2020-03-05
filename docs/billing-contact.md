@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-03-05
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
@@ -53,7 +53,7 @@ Each App (except trial Apps) has is always associated with a specific Billing Co
 
 The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company. Remember: [Accounts](/account) are representing persons here on fortrabbit.
 
-### Creating a Billing Contact
+## Creating a Billing Contact
 
 Each Company comes with one Billing Contact out of the box, when creating a Company, you also create a Billing Contact. For most cases this is enough. But in some cases you might want to separate billing within one Company. So you can create multiple Billing Contact under one Company like so:
 
@@ -65,13 +65,13 @@ Each Company comes with one Billing Contact out of the box, when creating a Comp
 Follow the steps. You will be asked for an invoice address and a payment method. This will give you an empty Billing Contact, no costs, as long as you don't assign an App to the Billing Contact. You must be Owner of the Company for this. You might need to book a Company Plan to enable more Billing Contacts.
 
 
-### Deleting a Billing Contact
+## Deleting a Billing Contact
 
 You cannot, because they are bound to previously created invoices and are needed for our accounting. You can, of course, delete or move all Apps away from a Billing Contact so that it becomes inactive and no more bills will be created for it. As the Billing Contact also contains an archive of previously issued invoices, you can always access your old invoices.
 
 To completely delete all invoices and all associated Apps, you can also [delete the Company](/company#toc-deleting-a-company).
 
-### Changing the billing e-mail address
+## Changing the billing e-mail address
 
 Each month we'll send an invoice and send a link by e-mail. You can change this e-mail to go directly to your book keeping department.
 
@@ -80,7 +80,7 @@ Each month we'll send an invoice and send a link by e-mail. You can change this 
 * Billing Contact >
 * **Invoice e-mail**
 
-### Changing the invoice address
+## Changing the invoice address
 
 Your invoices contain the street address of your organization. You will be asked for that while setting up a Billing Contact. You can change this invoice address for future invoices at any time like so:
 
@@ -88,7 +88,7 @@ Your invoices contain the street address of your organization. You will be asked
 * Billing Contact >
 * **Invoice address**
 
-### Changing the payment method
+## Changing the payment method
 
 A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/billing#toc-payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing). Change the payment method of a Billing Contact like so:
 
@@ -96,7 +96,7 @@ A valid payment method is required to use the fortrabbit services. Each Billing 
 2. Billing Contact >
 3. **Payment method**
 
-Changing the payment method is required when your credit card expired or you which to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices.
+Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices.
 
 ### Adding a VAT IN
 
