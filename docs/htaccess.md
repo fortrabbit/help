@@ -145,9 +145,49 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 
 ### Environment detection
 
-_WORK IN PROGRESS: This chapter needs some editing/review. 2020-02-28_
+You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that is to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. 
 
-You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that you might want to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. 
+
+#### 1. Make sure environment variables are set
+
+In the Dashboard with your fortrabbit App, make sure an environment variable key-value pair like this is present:
+
+```.env
+ENVIRONMENT=production
+```
+
+In some cases we have pre-populated that for you already. See also our [environment variables article](/env-vars) for more details on how environment variables are handled here.
+
+
+#### 2. Setup .htaccess files
+
+Now with root path in the local code base of your project, setup a custom `.htaccess` file for each environment: 
+
+* `.htaccess` in general and for local development
+* `.htaccess_production` for your fortrabbit App
+
+This can also be extended to more environments. All `.htaccess` files should be under version control with Git.
+
+
+#### 3. Configure Composer 
+
+Add this to the script part of your `composer.json` file in your local code base:
+
+```json
+"scripts": {
+    "post-install-cmd": [
+      "@php -r \" define('HTSRC', 'web/.htaccess_' . getenv('ENVIRONMENT')); echo (file_exists(HTSRC) && copy(HTSRC, 'web/.htaccess')) ? HTSRC.' copied to web/.htaccess'.PHP_EOL : ''; \""
+    ]
+}
+```
+
+This Composer post install command will replace the contents of the `.htaccess` file with the contents of a file `.htaccess_production`, if that file is present and the environment variable is `ENVIORNMENT` is set to `production`.
+
+On fortrabbit, each time you'll deploy with Git (see our [Git deployment article](/git-deployment)), composer install will run (see our [Composer article](/composer)). 
+
+You can extend the concept to have more stages of course (see our [multi staging article](/multi-staging)). To add custom rules for a staging environment, like http-auth (see [article](/http-auth)), create a matching `.htaccess_staging` file and set the `ENVIORNMENT` accordingly.
+
+This also assumes that the root path of your App is `web`, which is true for Craft CMS. In the Composer example above, replace the `web` with the root path of your project, see an overview on different root paths [here](/app#toc-root-path).
 
 
 
