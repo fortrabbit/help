@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-03-06
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -22,13 +22,16 @@ You can test fortrabbit before you pay a dime. All you need to do is: sign up to
 
 Pay after usage: No upfront costs nor payment! **First you book, then you'll use it, then we'll invoice you** for what you have actually used. It's prorate, just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month. 
 
+
 ### Daily billing cycle
 
 When you book something on the 16th day of a month and the month has 30 days you only pay for the 15 days you're using the product. The minimum billing period is one day. 
 
+
 ### Monthly invoices
 
 Within the first days of every new month you will get the invoice for your last month's consumption. After receiving the invoice, the payments are due and will automatically be done by us. Credit Cards usually will happen within the first days of the month, SEPA direct within the first two weeks.
+
 
 ### The monthly billing cycle in detail
 
@@ -41,13 +44,16 @@ At the middle of the month, a human will look after all the bounced invoices. Th
 
 You can check the current costs with your Billing Contact, see [here](/billing-contact#toc-costs-monitoring).
 
+
 ### Payment methods
 
 You can pay by **credit card** (Visa, Master, Amex, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" (large volume) we also offer to pay by **bill** (on account, after invoice).
 
+
 ### Billing e-mail address
 
 You can setup a different e-mail address for each [Billing Contact](/billing-contact#toc-changing-the-billing-e-mail-address).
+
 
 ### Taxes
 
@@ -58,6 +64,7 @@ fortrabbit is a B2B hosting solution, it's for entrepreneurs only, we expect you
 * If you are a VAT-registered company in a EU country and add your valid VAT IN, we don't charge you VAT.
 * If you are a VAT-registered company in Germany, we add VAT, but you will get it back from your tax-office.
 * If you are a company from a NON-EU country, we don't charge you VAT.
+
 
 ### VAT-IN from clients in EU countries
 
@@ -91,6 +98,7 @@ Sometimes payments bounce, that just happens. Please mind that banks collect fee
 * Expired credit card — please update your [payment method](/billing-contact/#toc-changing-the-payment-method).
 * Something else - please update your payment method or contact us
 
+
 #### Service cancellation after bounced payments
 
 At some point we have to delete your Apps to avoid further costs. Usually that happens when a client has multiple open invoices and didn't replied. But that can also happen sooner, for example, when the card or the project looks suspicious or neglected.
@@ -106,13 +114,22 @@ Login to the Dashboard > follow the instructions on the "open invoices" warning.
 
 Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
 
+
 ### No upfront payments
 
 As the billing is based on consumption, we can not foresee what you are about to use. That's why it is also not possible to pay upfront.
 
+
 ### No yearly payments
 
 Yearly payments are not supported, as there are no upfront costs and the exact usage is unknown in advance. Therefore it is also not possible to pay with PayPal.
+
+
+### No refunds
+
+Sorry, we are not offering refunds at this time. This is because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
+
+If you think something is wrong with your invoice, contact us anyways. We might be able to give you a "good will reduction" on your next invoice.
 
 
 ### Account cancellation
