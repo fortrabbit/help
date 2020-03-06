@@ -147,22 +147,8 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 
 _WORK IN PROGRESS: This chapter needs some editing/review. 2020-02-28_
 
-You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that you might want to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. Use an If statement for that. The following example will check against the `{{app-name}}.frb.io` or any domain you'll give it (replace www.yourdomain.com with your domain):
+You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that you might want to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. 
 
-```
-### Check for fortrabbit App (either frb.io or your domain)
-<If "%{HTTP_HOST} == '^(.*\.frb\.io|www.yourdomain.com)'">
-  # PLACE RULE IN HERE
-</If>
-```
-
-You can also do it the other way around by by replacing everything within the single quotes in the example above with `localtestdomain.test` (replace with your testing URL) to have rules that will only apply to your local development environment.
-
-One can also use that method to detect a staging App and for example display a http-auth for the staging version.
-
-A benefit of this technique is that you can have one `.htaccess` file which can be under version control and be deployed along with a `git push`. 
-
-Another alternative to this `<If>` solution is to alter the `.htaccess` file in a post deploy step during deployment.
 
 
 ### Allow access only for you
