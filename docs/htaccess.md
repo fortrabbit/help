@@ -161,7 +161,7 @@ In some cases we have pre-populated that for you already. See also our [environm
 
 #### 2. Setup .htaccess files
 
-Now with root path in the local code base of your project, setup a custom `.htaccess` file for each environment: 
+Now in the local code base of your project, setup a custom `.htaccess` file for each environment in the web root of your project: 
 
 * `.htaccess` in general and for local development
 * `.htaccess_production` for your fortrabbit App
@@ -171,7 +171,7 @@ This can also be extended to more environments. All `.htaccess` files should be 
 
 #### 3. Configure Composer 
 
-Add this to the script part of your `composer.json` file in your local code base:
+Add this to the script part of your `composer.json` in your local code base:
 
 ```json
 "scripts": {
@@ -181,11 +181,11 @@ Add this to the script part of your `composer.json` file in your local code base
 }
 ```
 
-This Composer post install command will replace the contents of the `.htaccess` file with the contents of a file `.htaccess_production`, if that file is present and the environment variable is `ENVIORNMENT` is set to `production`.
+This Composer post install command will replace the contents of the `.htaccess` file with the contents of the file `.htaccess_production`, if that file is present and the environment variable `ENVIRONMENT` is set to `production`.
 
-On fortrabbit, each time you'll deploy with Git (see our [Git deployment article](/git-deployment)), composer install will run (see our [Composer article](/composer)). 
+On fortrabbit, each time you deploy with Git (see our [Git deployment article](/git-deployment)), composer install runs automatically (see our [Composer article](/composer)). 
 
-You can extend the concept to have more stages of course (see our [multi staging article](/multi-staging)). To add custom rules for a staging environment, like http-auth (see [article](/http-auth)), create a matching `.htaccess_staging` file and set the `ENVIORNMENT` accordingly.
+You can extend the concept to have more stages of course (see our [multi staging article](/multi-staging)). To add custom rules for a staging environment, like http-auth (see [article](/http-auth)), create a matching `.htaccess_staging` file and set the `ENVIRONMENT` accordingly.
 
 This also assumes that the root path of your App is `web`, which is true for Craft CMS. In the Composer example above, replace the `web` with the root path of your project, see an overview on different root paths [here](/app#toc-root-path).
 
@@ -193,7 +193,7 @@ This also assumes that the root path of your App is `web`, which is true for Cra
 
 ### Allow access only for you
 
-You may want to prevent accessing your website from anyone except your company. So when your company has  a fixed IP, you can use `.htaccess` to only allow traffic from that IP or range of IPs.
+You may want to prevent accessing your website for anyone except your company. If your company has a fixed IP, you can use `.htaccess` to only allow traffic from that IP or range of IPs.
 
 ```
 ### 1st deny all
@@ -224,7 +224,7 @@ This has to be a publically accessible URL. You can do this with 4XX and 5XX err
 
 ### Comment your .htaccess file
 
-Apache directives with regular expressions tend to look glibberish. Make sure to comment what you have been doing there so that "the later you" can understand what's going on.
+Apache directives with regular expressions tend to look gibberish. Make sure to comment what you have been doing there so that "the later you" can understand what's going on.
 
 
 ## Troubleshooting
