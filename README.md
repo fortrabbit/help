@@ -1,10 +1,8 @@
 # fortrabbit help pages
 
-Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, with a little frontmatter meta-data on top. We include this repo as a Git subtree and publish it on: https://help.fortrabbit.com
+Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, extended with frontmatter meta-data. 
 
-This repo lives under (clone URL):
-
-* git@github.com:fortrabbit/help.git
+These contents are published on: https://help.fortrabbit.com
 
 
 ## Contributing
@@ -13,12 +11,14 @@ Found a typo or an error? Do you want to add something about your framework or s
 
 Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are also more than welcome to add it.
 
-### File name conventions
+- - -
+
+## File name conventions
 
 * use dashes instead of spaces or low dashes for file names
 * use the short versions: `-uni`, `-pro` on the end for different stacks
 
-### Front Matter syntax
+## Front Matter syntax
 
 Each markdown file requires a yaml block at the top. See here which attributes are available, how and when to use them.
 
@@ -27,7 +27,6 @@ Each markdown file requires a yaml block at the top. See here which attributes a
 
 # which template to use - "article", if in doubt — REQUIRED
 template: article
-
 
 # Headline & display
 
@@ -53,7 +52,6 @@ supportLevel: b
 supportLevel: c
 
 
-
 # Stack meta
 
 # where to show this: uni, pro old, all — REQUIRED when required
@@ -64,7 +62,6 @@ uniLink:   mysql-uni
 
 # link to the professional version
 proLink:   mysql-pro
-
 
 
 # General meta data
@@ -153,52 +150,48 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 # Writing conventions
 
+## Support driven documentation
+
+These help pages are often used to point clients to answers on common questions. That's why some topics are covered im much detail. Clients are asking for it. So instead of writing an answer in client support, one might just update the help pages and point the client to the new section. Headlines have anchors for deep-linking like https://help.fortrabbit.com/craft-3-assets-uni#toc-options-to-sync-assets .
+
+
+## Know the target audience
+
+While some implicit technical details are obvious to you, they might not be for the client. Explaining one acronym only with another acronym might not help. Sometimes it needs some more words.
+
+
 ## Code examples
 
 * try to keep code examples together in one block, avoid mixing paragraphs and code blocks
-
-### Bash
-
-* each command should have
-* show output only when necessary
-* output should be a comment
+* Code blocks follow standard markdown formatting
+* Show output only when necessary
+* Output should be a comment
 * `$` to start a command
-
-## Writing help & blog articles
-
-* Don't bullshit. Avoid the use of marketing buzzwords.
-* Avoid "eg", otherwise choose one style to write it
-* Keep lists readable (no sublists, etc).
-* available headlines in text: h2, h3, h4, please don't go deeper.
-* Text structure is important, but readability is even more important.
-* Use ASCII art to illustrate topographies and such things.
-* code blocks follow standard markdown formatting.
-* Use sentence case in headlines.
-* Don't use too many headlines to structure text.
-* Don't use italic > it looks ugly, it's rendered by the browser not the font.
 * Start code examples right away: PHP without "<?php", Bash without "$"
-* Don't use a paragraph for every sentence.
+
+## Writing 
+
+* Use sentence case in headlines
+* Don't use too many headlines to structure text
+* Available headlines in text: h2, h3, h4, don't go deeper
+* Avoid "eg", otherwise choose one style to write it
+* Keep lists readable (no sublists, etc)
+* Text structure is important, but readability is even more important
+* Use ASCII art to illustrate topographies and such things
+* Don't use italic > it looks ugly, it's rendered by the browser not the font
+* Don't use a paragraph for every sentence
 * Write speaking links, not like so: `[here](http://somewhere)` but so: `[GitHub project](http…)`
+* Don't bullshit. Avoid the use of marketing buzzwords
 
 ## Maintainability
 
-* Find the right balance between being general and being precise (aka Captain Obvious). 
-* Very detailed step-by-step articles are easy to follow but get outdated very quickly. 
-* Don't "bury" numbers (like prices and limits) in articles. 
-* All those numbers must be managed in the "pricing" and the "specs" page.
-* Keep it DRY! Don't repeat yourself. 
-* Have one SSOT, link to it.
-* Don't fully cover the same topic on different places. Just link to the location where it best suits. 
-
-## Link checking
-
-This example shows how to use the linkcheck command line tool (not included here) for macOS:
-
-```
-$ mv linkcheck.mac /usr/local/bin
-$ chmod +x linkcheck.mac
-$ linkcheck.mac --url http://help.fortrabbit.dev
-```
+* Find the right balance between being general and being precise (aka Captain Obvious)
+* Very detailed step-by-step articles are easy to follow but get outdated very quickly 
+* Don't bury numbers (like prices and limits) in articles.
+* All those numbers must be managed in the "pricing" and the "specs" page
+* Keep it DRY! Don't repeat yourself
+* Have one SSOT, link to it
+* Don't fully cover the same topic on different places. Just link to the location where it best suits
 
 
 ## fortrabbit owned words and common casing
@@ -303,7 +296,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 
 ## Avoid words list
 
-please do not use the following "bullshit" words:
+Please do not use the following "bullshit" words:
 
 * great
 * awesome
