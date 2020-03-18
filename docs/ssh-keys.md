@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-03-18
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
@@ -154,6 +154,16 @@ If you only want to disable it for fortrabbit, then add the following to your `~
 Host deploy.*.frbit.com
   ForwardAgent no
 ```
+
+
+### When it is asking for a password while it shouldn't and the Account password isn't working
+
+In this case you might have setup a local SSH key passphrase. That's not related to fortrabbit services. It's a password you have setup to protect your SSH keys. Check the terminal prompt. It should ask for a `passphrase` not a password.
+
+You can configure your authentication agent `ssh-agent` to securely save that so that you don't have to re-enter it all the time. See this [help article on GitHub](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases) for more on it.
+
+
+
 
 - - -
 
