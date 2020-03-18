@@ -158,7 +158,7 @@ Host deploy.*.frbit.com
 
 ### When it is asking for a password while it shouldn't and the Account password isn't working
 
-In this case you might have setup a local SSH key passphrase. That's not related to fortrabbit services. It's a password you have setup to protect your SSH keys. Check the terminal prompt. It should ask for a `passphrase` not a password.
+In this case you might have setup a local SSH key passphrase. That's not related to fortrabbit services. It's a password you have setup to protect your SSH keys. Check the terminal prompt, it will ask something like `Enter passphrase for key`.
 
 You can configure your authentication agent `ssh-agent` to securely save that so that you don't have to re-enter it all the time. See this [help article on GitHub](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases) for more on it.
 
