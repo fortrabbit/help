@@ -247,7 +247,6 @@ While some implicit technical details are obvious to you, they might not be for 
 * the communicated time-zone is UTC
 * use relative times (an hour ago, a few seconds ago)
 * Markup example: `<time datetime="2016-01-01 08:22:10 UTC" title="2018-01-01 08:22:10 UTC">A few minutes ago</time>`
-
 * **ms** — ~~MS~~
 * **s** - ~~scds~~
 * **m** - ~~mins~~, ~~min~~
