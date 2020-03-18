@@ -167,7 +167,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * Show output only when necessary
 * Output should be a comment
 * `$` to start a command
-* Start code examples right away: PHP without "<?php", Bash without "$"
+* Start code examples right away: PHP without `<?php`, Bash without `#!/bin/bash`
 
 ## Writing 
 
