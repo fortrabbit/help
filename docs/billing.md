@@ -92,7 +92,7 @@ Invoices are shown as HTML > you can use print from the browser to generate and 
 
 ### Bounced payments
 
-Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you — our client. In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. There are various reasons why payments bounce: 
+Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you. In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. There are various reasons why payments bounce: 
 
 * Not sufficient funds - we might try to debit again after a few days.
 * Expired credit card — please update your [payment method](/billing-contact/#toc-changing-the-payment-method).
