@@ -92,18 +92,30 @@ Invoices are shown as HTML > you can use print from the browser to generate and 
 
 ### Bounced payments
 
-Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you. In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. There are various reasons why payments bounce: 
+Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you. There are various reasons why payments bounce: 
 
-* Not sufficient funds - we might try to debit again after a few days.
-* Expired credit card — please update your [payment method](/billing-contact/#toc-changing-the-payment-method).
-* Something else - please update your payment method or contact us
+* Insufficient funds - we will try to debit again after a few days, best please contact us
+* Expired credit cards — [update your payment method](/billing-contact/#toc-changing-the-payment-method)
+* Something else - [update your payment method](billing-contact/#toc-changing-the-payment-method) (enter a new card or switch to SEPA) or contact us
 
+In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and/or questions about it.
 
 #### Service cancellation after bounced payments
 
-At some point we have to delete your Apps to avoid further costs. Usually that happens when a client has multiple open invoices and didn't replied. But that can also happen sooner, for example, when the card or the project looks suspicious or neglected.
+At some point we have to delete your Apps to avoid further costs on both sides. Please note that we will not take your data hostage until you pay us. We will actually delete Apps. Deleted Apps can not be recovered by us. [Read why we do this in a story from our blog](https://blog.fortrabbit.com/bounced-payment).
 
-Every month we have to deleted because of bounced payments. This is a part of this job that is not fun. [Read a drama story](https://blog.fortrabbit.com/bounced-payment).
+We consider deleting Apps for bounced payments carefully with human review on a per client basis. Here is the basic rule set:
+
+For new clients with less than 6 invoices or when the credit card processor reports possible fraud or the Account looks suspicious: We might delete Apps about 5 days after the first bounced invoice and no further reply from the client.
+
+For long term clients with more than 6 paid invoices and now at least 2 bounced invoices in a row or a total of 4 unpaid invoices: Before deletion we will attempt to write personal e-mails. We will try to contact everyone involved in the Company or project.
+
+With 3 open invoices in a row and no reply from the client: We will delete Apps. If possible, we will try to delete uncritical Apps first:  We will look of there is an active domain routed, or if there is traffic, even if the website looks finished and if there has been any recent Git commits.
+
+
+
+
+
 
 
 ### Paying open invoices
