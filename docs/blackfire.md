@@ -49,7 +49,7 @@ To use Blackfire with your fortrabbit App, you only need to paste the Agent cred
 ### Over at Blackfire
 
 * Sign up or log in to [Blackfire](https://blackfire.io).
-* Go to your Account > My Credentials > [My Server Credentials](https://blackfire.io/my/settings/credentials)
+* Click your Profile > Account -> Credentials -> [My Server Credentials](https://blackfire.io/my/settings/credentials)
 * Copy the credentials: Server ID and Server Token
 
 
