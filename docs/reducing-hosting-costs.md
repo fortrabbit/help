@@ -8,6 +8,12 @@ lead:          "We want you to succeed with your online business here on fortrab
 group:         tips
 stack:         all
 
+keywords:
+    - server costs
+    - IT costs
+    - cloud costs
+
+
 ---
 
 ## Use the costs overview
