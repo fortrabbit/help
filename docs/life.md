@@ -6,7 +6,7 @@ title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life
 noToc:         1
-group:         platform
+group:         tips
 stack:         all
 hideExamples:  yes
 

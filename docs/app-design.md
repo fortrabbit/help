@@ -5,7 +5,7 @@ reviewed:      2019-10-24
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
-group:         platform
+group:         tips
 stack:         all
 
 ---
