@@ -4,7 +4,7 @@ template:      article
 reviewed:      2020-03-24
 title:         How to reduce your hosting costs
 naviTitle:     Reducing hosting costs
-lead:          "We want you to succeed with your online business here on fortrabbit. This article helps you reviewing and cutting down your cloud costs here."
+lead:          "We want you to succeed with your online business here on fortrabbit. This article helps you reviewing and cutting down your cloud costs."
 group:         tips
 stack:         all
 
@@ -43,3 +43,8 @@ Pro Apps can easily be scaled up **and down**. Review if your currently selected
 ## Review your Company plans
 
 Our Company plans are helping you to [collaborate](/collaboration). Review your Company team here. Do all members need to have access to your fortrabbit Apps. If not, remove them for now, you can invite them later on again. With a reduced team you might be able scale down the Company plan. [See more details about our Company plans](https://www.fortrabbit.com/company-plans).
+
+
+## Contact us
+
+We are here to help. Just <a class="type-bold" href="#asd" onclick="Intercom('showNewMessage', 'I would like to reduce my costs here. Can you help? Here is my situation: …')">ask us</a>.
