@@ -35,9 +35,11 @@ Make sure you have an up-to-date and complete local backup of your App. That way
 Do you have Apps for multi-staging here? Do you make active use of them? Remove inactive staging Apps.
 
 
-### Check the scaling of Pro Apps
+### Check your scaling
 
 Pro Apps can easily be scaled up **and down**. Review if your currently selected Components. Compare with visitors. You can experiment with a lower scaling of PHP and MySQL. Keep an eye on PHP requests and performance. Maybe you can scale down from high availability to a single Node plan. See our [scaling tips](/scaling-pro).
+
+Sorry, Universal Apps can not be scaled down at the time of this writing (missing feature). Suggested work-around: You might spin up a new smaller App and deploy your App to that one. We are happy to assist you with that.
 
 
 ## Review your Company plans
