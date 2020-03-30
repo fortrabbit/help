@@ -26,6 +26,7 @@ But there are some real world scenarios why downloading the remote App might sti
 
 Your App on fortrabbit consists of different parts that play together to display a functional website or application. The different parts need to be treated separately. The steps required are depending on your previous deployment workflows. Choose what matches best for you:
 
+
 ### Code via Git
 
 When you deployed by Git here before, you can clone the existing Git repo from fortrabbit. Please follow the steps in our [Git guides](/git-deployment) to clone down the code. The benefit is that the Git repo contains all the history of the project as well. Make sure that the Git repo is an up-to-date state.
@@ -39,6 +40,7 @@ After cloning the Git repo, you might need to install the dependencies to make y
 ### Runtime data excluded by Git
 
 Beside the code base which you might have received via Git, take care to grab assets and runtime data as well. This can be some compiled CSS/JS files that got deployed along with pipelining or uploads done by users of the application.
+
 
 #### Receiving assets from the Object Storage for Pro Apps
 
