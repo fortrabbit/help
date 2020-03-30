@@ -115,11 +115,6 @@ For long term clients with more than 6 paid invoices and now at least 2 bounced 
 In any case, with 3 open invoices in a row and no reply: We will immediately delete Apps. If possible, we will try to delete uncritical Apps first: We will look of there is an active domain routed, or if there is traffic, even if the website looks finished and if there has been any recent Git commits.
 
 
-
-
-
-
-
 ### Paying open invoices
 
 You pay your open invoices in the Dashboard yourself like so: 
