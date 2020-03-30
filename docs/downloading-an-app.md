@@ -49,7 +49,7 @@ Pro Apps have ephemeral storage. So the files you have received from git clone, 
 
 #### Receiving assets and other files for Universal Apps
 
-Universal Apps have persistent local storage. And remember Git works in [one direction only here](/deployment-methods-uni#toc-git-works-only-one-way). So you might find files, like uploads, that are not covered with Git. Options on your disposal:
+Universal Apps have persistent local storage. Remember Git works in [one direction only here](/deployment-methods-uni#toc-git-works-only-one-way). So you might find files, like uploads, that are not covered with the Git repo, or files in the Git repo are not up-to-date. Options on your disposal:
 
 * Login by SFTP and just download what is required - [see here](/sftp)
 * Login by SSH, zip the files and question and them from a public URL - [see here](/ssh-uni)
