@@ -106,13 +106,13 @@ At some point we have to delete your Apps to avoid further costs on both sides. 
 
 We consider deleting Apps for bounced payments carefully with human review on a per client basis. Here is the basic rule set:
 
-For brand new clients with no previous invoices: In case the first ever invoice keeps on bouncing (we will retry at least 2 times over  a week) and you have not reacted on our mails, we will proceed to delete Apps right away.
+For brand new clients with no previous invoices: In case the first ever invoice keeps on bouncing (we will retry) and you have not reacted on our mails, we will proceed to delete Apps right away.
 
-For clients with less than 6 invoices or when the credit card processor reports possible fraud or the Account looks suspicious: We might delete Apps about after the first bounced invoice (we will retry at least 2 times) and no further reply on our mails.
+For clients with less than 6 invoices or when the credit card processor reports possible fraud or the Account looks suspicious: We might delete Apps about after the first bounced invoice (we will retry) and no further reply on our mails.
 
-For long term clients with more than 6 paid invoices and now at least 2 bounced invoices in a row or a total of 4 unpaid invoices: Before deletion we will attempt to write personal e-mails. We will try to contact everyone involved in the Company or project.
+For long term clients with more than 6 paid invoices and now at least 2 bounced invoices (we will retry) in a row or a total of 4 unpaid invoices: Before deletion we will attempt to write personal e-mails, beside the automated once. We will also try to contact everyone involved in the Company or project. We might delete Apps when there was no reply on our attempts to contact you.
 
-In any case, with 3 open invoices in a row and no reply from the client: We will delete Apps. If possible, we will try to delete uncritical Apps first:  We will look of there is an active domain routed, or if there is traffic, even if the website looks finished and if there has been any recent Git commits.
+In any case, with 3 open invoices in a row and no reply: We will immediately delete Apps. If possible, we will try to delete uncritical Apps first: We will look of there is an active domain routed, or if there is traffic, even if the website looks finished and if there has been any recent Git commits.
 
 
 
