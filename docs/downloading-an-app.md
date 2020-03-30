@@ -15,7 +15,7 @@ stack:         all
 
 We highly advice to have your App in a local development environment running all the time. Your development setup should also be your master where development happens first and which is kept up-to-date in terms of contents. Please see [local development article](/local-development) for more.
 
-But there are some real world scenarios why this still might be needed: 
+But there are some real world scenarios why downloading the remote App might still be needed:
 
 * A new developer is joining the project
 * A previous developer has left without transferring the project in a responsible manner
