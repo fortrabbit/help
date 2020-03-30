@@ -402,13 +402,14 @@ Please see our [App design article](/app-design#toc-reduce-the-max-execution-tim
 What to do when your Craft CMS throws an "Service Unavailable" message on the screen instead of rendering your website? Don't be afraid, you can likely solve that yourself. Especially during setup it's likely that some tiny config is still missing or wrong. Check the logs.
 
 
-#### Common errors while initial setup
+#### Common errors with initial setup
 
 Here are some common errors, the cause of 90% of failing Craft CMS installations here:
 
-* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App
-* **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your .env file at home as it will be ignored anyways.
-* **Missing .htaccess file** — Commonly happens with SFTP upload, the `.htaccess` is hidden, make sure to copy it over as well
+* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App, see our [security key setup guide](craft-3-setup#toc-security-key).
+* **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your `.env` file at home as it will be ignored anyways. See our [environment variables article](/env-vars) as well. 
+* **Missing table prefix** - You might have a table prefix locally, some users do this locally to have multiple installations in one big database. To separate between those you can set up a table prefix. You can do this with an environment variable, locally you set that with your `.env` file. In fortrabbit best via the Dashboard.
+* **Missing .htaccess file** — Commonly happens with SFTP upload, the `.htaccess` is hidden, make sure to copy it over as well.
 
 
 #### Temporary turning on/off dev mode
