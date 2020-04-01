@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-01-14
+reviewed:         2020-04-01
 title:            Integrate New Relic with fortrabbit
 naviTitle:        New Relic
 lead:             Where should I improve the performance of my App? Learn how to combine the popular software analysis tool with fortrabbit.
@@ -40,6 +40,7 @@ fortrabbit has a Bring-Your-Own-License integration with New Relic. That basical
 1. Paste the New Relic license key
 1. Save the PHP Settings
 
+You are all good! After 5 minutes you should start to see data in your NewRelic dashboard. To get more information about how to use NewRelic, head to their [documentation](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm).
 
 ## Further readings
 
