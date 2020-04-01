@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-27
+reviewed:         2020-03-31
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
 stack:            all
@@ -27,16 +27,16 @@ keywords:
 ---
 
 
-
 ## About Blackfire
 
 Blackfire empowers all developers and IT/Ops to continuously verify and improve their app’s performance, throughout its lifecycle, by getting the right information at the right moment. Relying on a cutting-edge profiling technology, Blackfire enables to write performance tests that can be run along your standard test suite. Better than that, it provides recommendations to help you improve the performance of your app.
 
+To profile a non-local HTTP application (so to use it with your fortrabbit app, on our servers) you need a paid plan. See the [pricing](https://blackfire.io/pricing).
 
 
 ## Integration
 
-Blackfire is integreated with a BYO licence model for all fortrabbit Apps.
+Blackfire is integrated with a BYO (Buy Your Own) licence model for all fortrabbit Apps.
 
 To use Blackfire with your fortrabbit App, you only need to paste the Agent credentials from Blackfire into the fortrabbit [Dashboard](/dashboard). Here is a detailed step by step guide:
 
@@ -44,7 +44,7 @@ To use Blackfire with your fortrabbit App, you only need to paste the Agent cred
 ## Over at Blackfire
 
 * Sign up or log in to [Blackfire](https://blackfire.io).
-* Go to your Account () > My Credentials > [My Server Credentials](https://blackfire.io/account/credentials#server)
+* Go to your Account > My Credentials > [My Server Credentials](https://blackfire.io/my/settings/credentials)
 * Copy the credentials: Server ID and Server Token
 
 ## At fortrabbit
@@ -54,10 +54,14 @@ To use Blackfire with your fortrabbit App, you only need to paste the Agent cred
 * Enable Blackfire
 * Paste the Blackfire Server ID and Server Token
 * Save the PHP Settings
+* Wait at least one minute, so that the containers are restarted with the new configuration
 
 ## At your browser
 
-* Install the [Chrome Extension](https://blackfire.io/docs/integrations/chrome)
+* Install the [Chrome Extension](https://blackfire.io/docs/integrations/chrome) or the [Firefox one](https://blackfire.io/docs/integrations/browsers/firefox) depending on your favorite browser
 * Browse to your App
 * Hit the Blackfire button to start profiling
 
+## Limitations
+
+There is no way to profile CLI calls (except through [PHP SDK](https://blackfire.io/docs/integrations/php/sdk)) for now.
