@@ -14,7 +14,7 @@ websiteLink:      https://symfony.com
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          5.0
+version:          "5 & 4"
 supportLevel:     a
 
 otherVersions:
@@ -28,6 +28,11 @@ otherVersions:
 ## Get ready
 
 We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
+
+
+### A note on Symfony versions
+
+Symfony 5 did not bring backward breaking changes. So you can safely follow this guide for Symfony 4 and Symfony 5.
 
 
 ### Root path
