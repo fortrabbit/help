@@ -19,7 +19,6 @@ supportLevel:     a
 
 otherVersions:
   3 : install-symfony-3-pro
-  4 : install-symfony-4-pro
 
 
 ---
