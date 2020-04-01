@@ -33,6 +33,19 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 * …
 
 
+### Limitations
+
+**No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/git-deployment).
+
+**No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/git-deployment) due to [ephemeral storage](app-pro#toc-ephemeral-storage).
+
+**No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments and parallel SSH executions are not allowed.
+
+**Limited execution time**: The maximal execution time for remote SSH commands is [limited](https://www.fortrabbit.com/specs#limits).
+
+**No background execution**: Commands cannot be detached to the background. This means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well - whether there are still running detached processes or not.
+
+
 ## Usage
 
 The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command.
@@ -68,17 +81,6 @@ For remote SSH execution you can identify yourself using your public SSH keys or
 Many modern web development frameworks and CMS come with a programmable command line interfaces (CLI), Drupal Console and Artisan for example. These CLIs allow you to automate often occurring tasks, help you to develop your App via code generators and provide useful helpers to set up new installations. Executing commands, like database migration, can hugely simplify development.
 
 
-### Limitations
-
-**No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/git-deployment).
-
-**No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/git-deployment) due to [ephemeral storage](app-pro#toc-ephemeral-storage).
-
-**No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments and parallel SSH executions are not allowed.
-
-**Limited execution time**: The maximal execution time for remote SSH commands is [limited](https://www.fortrabbit.com/specs#limits).
-
-**No background execution**: Commands cannot be detached to the background. This means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well - whether there are still running detached processes or not.
 
 ### Executing PHP scripts
 
