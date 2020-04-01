@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-04-01
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 excerpt:       "How to run Artisan migrate and other useful commands."
@@ -79,6 +79,7 @@ Many modern web development frameworks and CMS come with a programmable command 
 **Limited execution time**: The maximal execution time for remote SSH commands is [limited](https://www.fortrabbit.com/specs#limits).
 
 **No background execution**: Commands cannot be detached to the background. This means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well - whether there are still running detached processes or not.
+
 
 ### Executing PHP scripts
 
