@@ -83,6 +83,7 @@ Each month we'll send an invoice and send a link by e-mail. You can change this 
 * Billing Contact >
 * **Invoice e-mail**
 
+This needs to be done by an Owner Account - see our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
 
 ## Changing the invoice address
 
@@ -91,6 +92,9 @@ Your invoices contain the street address of your organization. You will be asked
 * Dashboard > Companies > {{ Your Company }} >
 * Billing Contact >
 * **Invoice address**
+
+This needs to be done by an Owner Account - see our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
+
 
 
 ## Changing the payment method
@@ -101,7 +105,8 @@ A valid payment method is required to use the fortrabbit services. Each Billing 
 2. Billing Contact >
 3. **Payment method**
 
-Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to.
+Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to. See our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
+
 
 
 ## Adding a VAT IN
@@ -115,6 +120,9 @@ It is recommended to add your VAT IN to your Billing Contact when your company i
 Please mind that we need to validate the VAT IN. So the number you enter needs to match the correct format. Please mind that your VAT IN is not the tax number. The correct number should start with your country code. Our VAT IN looks like so:
 
 Entering the VAT IN will change how VAT will be charged for future invoices, entering the VAT IN can not affect past invoices.
+
+This needs to be done by an Owner Account - see our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
+
 
 
 ## Costs monitoring
