@@ -164,6 +164,7 @@ These is no persistent storage with the Professional Stack.  We provide the Obje
 
 Still reading? Let's go on:
 
+
 ### Logging
 
 In Universal Stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal Stack](logging-uni#toc-live-log-access) or in [Professional Stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
@@ -178,11 +179,13 @@ monolog:
             # ..
 ```
 
+
 ### Sending emails
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `Swiftmailer`.
 Symfony provides a Mailer component that makes things easy. To configure the way your emails are sent, mind setting a `MAILER_DSN` environment variable.
 More on this in the [official documentation](https://symfony.com/doc/current/mailer.html).
+
 
 ### Cache
 
