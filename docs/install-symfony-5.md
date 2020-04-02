@@ -17,7 +17,7 @@ version:          "5 & 4"
 supportLevel:     a
 
 otherVersions:
-  3 : install-symfony-3-uni
+  3 : install-symfony-3
 
 
 ---
@@ -158,7 +158,7 @@ Still reading? Let's go on:
 
 ### Logging
 
-You can access all log files your App writes on the file system. If you want to use live logging in [Universal stack](logging-uni#toc-live-log-access) or in [Professional stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
+In Universal stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal stack](logging-uni#toc-live-log-access) or in [Professional stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
 
 ``` yml
 monolog:
@@ -176,7 +176,7 @@ You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the
 Symfony provides a Mailer component that makes things easy. To configure the way your emails are sent, mind setting a `MAILER_DSN` environment variable.
 More on this in the [official documentation](https://symfony.com/doc/current/mailer.html).
 
-## Cache
+### Cache
 
 In Universal stack you can use the default file cache. In Professional stack, when you deploy your app, the old code is removed and the new one is deployed.
 If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the Professional stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.
