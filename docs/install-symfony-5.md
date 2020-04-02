@@ -147,7 +147,7 @@ Given the way our stacks are designed (Universal having persistent storage and P
 
 ### Deploying compiled assets for Universal Apps
 
-To deploy your compiled assets to your app, when using Universal stack, you can simply use rsync. It works great for this and it's easier than you might think:
+To deploy your compiled assets to your app, when using Universal Stack, you can simply use rsync. It works great for this and it's easier than you might think:
 
 ```bash
 # Deploy the build folder
@@ -166,7 +166,7 @@ Still reading? Let's go on:
 
 ### Logging
 
-In Universal stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal stack](logging-uni#toc-live-log-access) or in [Professional stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
+In Universal Stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal Stack](logging-uni#toc-live-log-access) or in [Professional Stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
 
 ``` yml
 monolog:
@@ -186,5 +186,5 @@ More on this in the [official documentation](https://symfony.com/doc/current/mai
 
 ### Cache
 
-In Universal stack you can use the default file cache. In Professional stack, when you deploy your app, the old code is removed and the new one is deployed.
-If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the Professional stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.
+In Universal Stack you can use the default file cache. In Professional Stack, when you deploy your app, the old code is removed and the new one is deployed.
+If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the Professional Stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.
