@@ -7,8 +7,7 @@ naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 5 on fortrabbit.
 
 group:            Install_guides
-stack:            uni
-proLink:          install-symfony-5-pro
+stack:            all
 
 websiteLink:      https://symfony.com
 websiteLinkText:  symfony.com
@@ -18,7 +17,7 @@ version:          "5 & 4"
 supportLevel:     a
 
 otherVersions:
-  3 : install-symfony-3-uni
+  3 : install-symfony-3
 
 
 ---
@@ -26,13 +25,7 @@ otherVersions:
 
 ## Get ready
 
-We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
-
-
-### A note on Symfony versions
-
-Symfony 5 did not bring backward breaking changes. So you can safely follow this guide for Symfony 4 and Symfony 5.
-
+We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you are using Symfony 4, you can safely follow this guide, given Symfony 5 did not break compatibility changes.
 
 ### Root path
 
@@ -139,54 +132,25 @@ You can also add this migrate command to your `composer.json` to have it run aut
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
-## Webpack Encore
+## Assets
 
-We assume you are using Encore to manage your CSS & JS assets and `yarn` is configured in the local environment already.
+There is for now no possibility to use nodejs on our server. You need to build your assets locally (whether with [Encore](https://symfony.com/doc/current/frontend/encore/installation.html), [Webpack](https://www.npmjs.com/package/webpack), [Gulp](https://www.npmjs.com/package/gulp), [Grunt](https://www.npmjs.com/package/grunt), or the solution of your choice), and then upload it to your fortrabbit app.
 
-### Installation
+Compiled assets should not be under version control. So, instead of committing the build files to Git, you deploy them separately. 
+Given the way our stacks are designed (Universal having persistent storage and Professional allowing horizontal scaling), deploying your assets will be done differently.
 
-Locally:
+### Universal stack
 
-```
-$ composer require symfony/webpack-encore-bundle
-$ yarn install
-```
-
-### Configuration
-
-In your `webpack.config.js` define a few basic options for your webpack installations:
-
-```js
-var Encore = require("@symfony/webpack-encore");
-
-if (!Encore.isRuntimeEnvironmentConfigured()) {
-    Encore.configureRuntimeEnvironment(process.env.NODE_ENV || "dev");
-}
-
-Encore.setOutputPath("public/build/")
-    .setPublicPath("/build")
-    .addEntry("app", "./assets/js/app.js")
-    .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning(Encore.isProduction());
-
-module.exports = Encore.getWebpackConfig();
-```
-
-This will generate a `build` directory in `public`, with a manifest.json and your your compiled assets. Symfony already knows where to look for files thanks to the `config/packages/assets.yaml` file.
-
-### Deploying assets
-
-Compiled assets should not be under version control. Installation of Encore via flex should have added `public/build` to your `.gitignore` already.
-So, instead of committing the build files to Git, you deploy them separately. rsync works great for this and it's easier than you might think:
+To deploy your compiled assets to your app, when using Universal stack, you can simply use rsync. It works great for this and it's easier than you might think:
 
 ```bash
-# Build production assets locally
-$ yarn run encore production
-
-# Deploy the build/prod folder
+# Deploy the build folder
 $ rsync -av ./public/build/ {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/
 ```
 
+### Professional stack
+
+On the professional stack, given the horizontal scaling features, your code is sent to multiple PHP nodes, hence there is no persistent storage. You can therefore not rsync there (if you rsync, you will do it only on the deploy node and not on your final PHP nodes). The solution we advise, to follow the [Twelve-Factor App rules](https://12factor.net/), is to upload your assets to an external storage. We provide the Object Storage for this type of use cases. You can read more about it [here](https://help.fortrabbit.com/object-storage).
 
 ## Advanced configurations
 
@@ -194,7 +158,7 @@ Still reading? Let's go on:
 
 ### Logging
 
-You can access all log files your App writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
+In Universal stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal stack](logging-uni#toc-live-log-access) or in [Professional stack](logging-pro), then you should configure Symfony to use `error_log`. After having installed monolog bundle (`composer require symfony/monolog-bundle`), modify the `config/packages/prod/monolog.yml` file:
 
 ``` yml
 monolog:
@@ -211,3 +175,8 @@ monolog:
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `Swiftmailer`.
 Symfony provides a Mailer component that makes things easy. To configure the way your emails are sent, mind setting a `MAILER_DSN` environment variable.
 More on this in the [official documentation](https://symfony.com/doc/current/mailer.html).
+
+### Cache
+
+In Universal stack you can use the default file cache. In Professional stack, when you deploy your app, the old code is removed and the new one is deployed.
+If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the Professional stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.

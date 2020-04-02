@@ -9,8 +9,7 @@ lead:             Symfony has been around for some while — but it doesn't look
 group:            Install_guides
 dontList:         true
 deprecated:       true
-stack:            uni
-proLink:          install-symfony-3-pro
+stack:            all
 
 websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
@@ -19,7 +18,7 @@ image:            symfony-mark.png
 version:          3.4.4
 
 otherVersions:
-  4 : install-symfony-4-uni
+  5 : install-symfony-5
 
 ---
 
@@ -28,10 +27,9 @@ otherVersions:
 
 We assume you've already created a New App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
 
-
 ### Root path
 
-If you haven't chosen Symfony stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **web**.
+If you did not choose Symfony stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -135,7 +133,7 @@ This way you can easily decide per App whether you want to allow the dev mode or
 
 ### Logging
 
-You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `app/config/config_prod.yml` file:
+In Universal stack, you can access all log files your App writes on the file system. If you want to use live logging in [Universal stack](logging-uni#toc-live-log-access) or in [Professional stack](logging-pro), then you should configure Symfony to use `error_log`. Modify the `app/config/config_prod.yml` file:
 
 ``` yaml
 monolog:
@@ -154,3 +152,8 @@ You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the
 ```php
 Swift_Preferences::getInstance()->setCharset('UTF-8');
 ```
+
+### Cache
+
+In Universal stack you can use the default file cache. In Professional stack, when you deploy your app, the old code is removed and the new one is deployed.
+If you need at some point to store custom information in the cache (through cache pools), you then need to avoid filesystem (because of the way the Professional stack works, with its distributed nodes): instead, use an adapter amongst `doctrine`, `redis` or `memcached`.
