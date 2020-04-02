@@ -27,6 +27,7 @@ otherVersions:
 
 We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you are using Symfony 4, you can safely follow this guide, given Symfony 5 did not break compatibility changes.
 
+
 ### Root path
 
 If you did not choose Symfony when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
@@ -34,6 +35,7 @@ If you did not choose Symfony when creating the App in the Dashboard at first, p
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
+
 
 ### ENV vars
 
@@ -55,9 +57,9 @@ Within the Dashboard under your App settings you can modify the ENV vars. Modify
 
 ## Quick start
 
-We assume that you already have your [Symfony project locally](http://symfony.com/download).
+It is assumed that you already have a Symfony project installed and running locally. This can be an existing project or a new one, see the [official download page](https://symfony.com/download) for instructions for your local Operating System.
 
-Given that fortrabbit uses Apache as a web server, consider fetching the default .htaccess file for symfony, via flex (since this is from contrib repository, you will be asked to confirm the installation. Do it by pressing `y`):
+Given that fortrabbit uses Apache as a web server, consider fetching the default `.htaccess` file for Symfony, via flex (since this is from contrib repository, you will be asked to confirm the installation. Do it by pressing `y`):
 
 ```bash
 $ composer require symfony/apache-pack
@@ -95,6 +97,7 @@ $ git push
 
 Until now you just deployed some code. If you want to use doctrine and Mysql it requires some more tinkering to make it yours.
 
+
 ### Configuration
 
 The `DATABASE_URL` ENV var stores all DB access information already (see [above](#toc-env-vars)). You just need to use it in `doctrine.yaml` like so:  
@@ -106,6 +109,7 @@ doctrine:
         url: '%env(DATABASE_URL)%'
 
 ```
+
 
 ### Doctrine & symfony console
 
@@ -132,14 +136,16 @@ You can also add this migrate command to your `composer.json` to have it run aut
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
-## Assets
 
-There is for now no possibility to use nodejs on our server. You need to build your assets locally (whether with [Encore](https://symfony.com/doc/current/frontend/encore/installation.html), [Webpack](https://www.npmjs.com/package/webpack), [Gulp](https://www.npmjs.com/package/gulp), [Grunt](https://www.npmjs.com/package/grunt), or the solution of your choice), and then upload it to your fortrabbit app.
+## Deploying compiled JS & CSS
+
+There currently is no possibility to use Node.js with our services. The build process to compile JS and CSS needs to run locally - whether with [Encore](https://symfony.com/doc/current/frontend/encore/installation.html), [Webpack](https://www.npmjs.com/package/webpack), [Gulp](https://www.npmjs.com/package/gulp), [Grunt](https://www.npmjs.com/package/grunt), or the solution of your choice).
 
 Compiled assets should not be under version control. So, instead of committing the build files to Git, you deploy them separately. 
 Given the way our stacks are designed (Universal having persistent storage and Professional allowing horizontal scaling), deploying your assets will be done differently.
 
-### Universal stack
+
+### Deploying compiled assets for Universal Apps
 
 To deploy your compiled assets to your app, when using Universal stack, you can simply use rsync. It works great for this and it's easier than you might think:
 
@@ -148,9 +154,11 @@ To deploy your compiled assets to your app, when using Universal stack, you can 
 $ rsync -av ./public/build/ {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/
 ```
 
-### Professional stack
 
-On the professional stack, given the horizontal scaling features, your code is sent to multiple PHP nodes, hence there is no persistent storage. You can therefore not rsync there (if you rsync, you will do it only on the deploy node and not on your final PHP nodes). The solution we advise, to follow the [Twelve-Factor App rules](https://12factor.net/), is to upload your assets to an external storage. We provide the Object Storage for this type of use cases. You can read more about it [here](https://help.fortrabbit.com/object-storage).
+### Deploying compiled assets for Professional Apps
+
+These is no persistent storage with the Professional Stack.  We provide the Object Storage for this, see the [main article](/object-storage) on how to access.
+
 
 ## Advanced configurations
 
