@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-03-31
+reviewed:         2020-04-09
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
 stack:            all
@@ -31,7 +31,7 @@ keywords:
 
 Blackfire empowers all developers and IT/Ops to continuously verify and improve their app’s performance, throughout its lifecycle, by getting the right information at the right moment. Relying on a cutting-edge profiling technology, Blackfire enables to write performance tests that can be run along your standard test suite. Better than that, it provides recommendations to help you improve the performance of your app.
 
-To profile a non-local HTTP application (so to use it with your fortrabbit app, on our servers) you need a paid plan. See the [pricing](https://blackfire.io/pricing).
+To profile a non-local HTTP application you would normally need a [paid plan](https://blackfire.io/pricing). But thanks to their team, all **\*.frb.io** domains were gracefully whitelisted, so you can use your free plan on your fortrabbit app!
 
 
 ## Integration
