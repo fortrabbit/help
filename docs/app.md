@@ -381,7 +381,7 @@ We are maintaining standard PHPinfo Apps as well here: [fortrabbit.com/specs#php
 **A word of warning**: Don't do that in production. Make sure to delete that file right away after you have finished your investigation. The output might contain sensible information you don't want to share with the world. Key and values of your ENV vars are visible, that can contain database access and API keys to external services.
 
 
-## Further readings
+## Further reading
 
 Now you know the basics about Apps on fortrabbit, keep going:
 
