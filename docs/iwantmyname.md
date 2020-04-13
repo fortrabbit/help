@@ -69,6 +69,6 @@ After the DNS changes are populated everywhere (this can take a while), you can 
 To forward use your naked domain as well you forward it to the `www.`-prefixed-version. Use the "Web forwarding" tool from iwantmyname for this. You find it under setup.
 
 
-## Further readings
+## Further reading
 
 Check out our [general article about DNS & domains](/domains) to dive into the strange world of the Domain Name System. 
