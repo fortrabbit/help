@@ -296,9 +296,15 @@ When the trial is finally over, the trial App will be deleted. That might sounds
 Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
 
 
-## Resetting an App
+## Restart an App
 
-To reset an App, visit the App in the Dashboard, find and hit the "Reset App" button. This will restart the Apache service and the PHP-FPM processes - nothing more. There will be a short downtime of the App. This can help in certain edge cases, such as persistent 408 errors or hanging PHP processes with 503 errors. Use carefully, it should not be used on a regular basis. Please <a href="javascript:Intercom('showNewMessage')">contact us</a>. if you have ongoing trouble with your App.
+In some edge cases, like hanging PHP processes with 504 errors or 408 errors, restarting an App is an option. Here is how you can do this:
+
+1. visit the App in the Dashboard
+2. find and click the "Restart App" button
+3. wait a minute until changes apply
+  
+This will restart the Apache service and the PHP-FPM processes. Nothing more, your data will stay safe. There will be a short downtime of the App. Use carefully, it should not be used on a regular basis. Please <a href="javascript:Intercom('showNewMessage')">contact us</a>, if you have ongoing trouble with your App.
 
 
 ## Deleting an App
