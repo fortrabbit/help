@@ -75,7 +75,9 @@ The trick is that you can route subdomains using `CNAME` records. By this you ar
 
 ### Naked domains
 
-There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours. Naked domains should not be routed using a `CNAME` record; they should be routed using an `A`-Record. An domain routed to a an IP is static. It doesn't give us the flexibility to move your App around.
+There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours. 
+
+Naked domains should not be routed using a `CNAME` record; they should be routed using an `A`-Record. This is because of the specifications of DNS. You may want to have e-mails with your domain like `info@fortrabbit.com`, it is not possible to have with a CNAME record at the same time. Any domain routed to a an IP is bound to that IP. This doesn't give us the flexibility to move your App around in case of incidents.
 
 Yes, naked domains may look more pleasing to the eye, but don't take this too serious. Look, all big players, like Google are using a www. subdomain, without that you ever noticed, most bigger sites you'll visit do as well. 
 
