@@ -7,6 +7,7 @@ Welcome to the source of the official fortrabbit documentation. These files here
 
 Found a typo or an error? Do you want to add something about your framework or service of choice? Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are more than welcome to contribute.
 
+
 ### Sending pull requests
 
 Please find a good balance in the number of commits contained with a pull request. For small typos, just use one commit and one PR. For larger text changes, consider combining commits for readability.
