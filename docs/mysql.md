@@ -78,20 +78,20 @@ If you haven't: you need to [obtain your MySQL password](/#toc-obtain-the-mysql-
 
 ### MySQL via terminal
 
-If you are familiar with the shell then this is no biggie. Issue this in your **local** terminal:
+To set up a tunnel from port 13306 on localhost to the mysql-database on 3306, use the following command;
 
 ```bash
-# open a tunnel on local port 13306 < arbitrary, choose between 10000-65000
 $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
 ```
 
-**This command will not reply with any message on success! If nothing shows up: you did right!** This behavior is how SSH clients are implemented and sadly we cannot issue any positive response message.
+Port local 13306 is just an example, any port in the range 1025-65535 can be used. The remote port 3306 must be 3306.
+This command is not supposed to print a confirmation message. If nothing shows up: you did it right!
 
 Once the tunnel is up, you can connect to the remote MySQL database with the `mysql` console client. Open a **new window terminal window** and issue this on your **local machine**:
 
 ```bash
 # connect to the database < use 127.0.0.1, not localhost
-$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
+$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p -D {{app-name}}
 ```
 
 In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
@@ -99,11 +99,11 @@ In the next step you will be asked for your [MySQL password](#toc-obtain-the-mys
 
 ### MySQL via GUI
 
-We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
+We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac, along with [at least a few others](https://www.google.com/search?q=mysql%20gui).
 
-All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information.
+The clients above can be configured to help you to connect via an SSH tunnel to the MySQL database in one convenient step. In the connection dialog or tab of the client you pick, you will need to insert the correct parameters for SSH and MySQL.
 
-To give you an idea of how the access details should be inserted, here an example using MySQL Workbench:
+To give you an idea of how the access details should be configured, here an example using MySQL Workbench:
 
 * Create a new connection with *Connection Method* set to `Standard TCP/IP over SSH`, then:
 * **SSH Hostname**: `tunnel.{{region}}.frbit.com`
@@ -140,7 +140,7 @@ Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local ph
 
 ## Export & import
 
-A common task is to move your MySQL data around, like when you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
+To set up an application environment, you may need to migrate existing data. The following examples deal with exporting and importing data from one environment (local machine) to another (fortrabbit). The same steps apply in reverse, but the to and from login details need to be swapped.
 
 
 ### Using the terminal
@@ -149,24 +149,24 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump -u{{your-local-db-user}} -p{{your-local-db-password}} {{your-local-db-name}} > dump.sql
+$ mysqldump -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
 ```
 
 Replace the placeholders with your local credentials. 
 
-Next, open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import. Do this on your **local machine**, please don't login via SSH before, run it locally:
+Next, open a tunnel and import the newly created dump file into your database. This is easier with two terminal windows: One for the tunnel and the other to execute the import. These instructions must be run on your **local machine**, the import will not work if you log in to fortrabbit before running these commands.
+
+open the tunnel in the first terminal
 
 ```bash
-# open the tunnel
 $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
-
-# !!! in a new terminal window !!!
-# import the dump
-$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
-If you see a connection error with the first command, please troubleshoot your connection. 
+open a new terminal and run the mysql import
 
+```
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
+```
 
 ### Using MySQL Workbench (GUI)
 
@@ -192,7 +192,7 @@ If you see a connection error with the first command, please troubleshoot your c
 6. Start the import
 
 
-### LOAD DATA
+### MySQL LOAD DATA
 
 You can export and import a large, single table with the following example:
 
@@ -231,7 +231,7 @@ This article describes how to deal with the fortrabbit remote MySQL database. Yo
 
 ### Different time zone
 
-MySQL has [time zone support](http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html). Our Nodes are defaulting to the standard time zone "UTC". If you want to change this time zone, you can do so on a "per connection" basis.
+MySQL has [time zone support](http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html). Our Nodes are defaulting to the standard time zone UTC+00 (aka GMT). If you want to change this time zone, you can do so on a "per connection" basis.
 
 There are two approaches to tackle this issue: handle the time zone on application level or handle the time zone on database level. Each has its merits and which one is better strongly depends on the use case.
 
@@ -286,7 +286,7 @@ It is possible to access a MySQL from another App within the same region (EU, US
 
 ### Accessing the remote MySQL from your local App
 
-It might also be possible to access the fortrabbit database from the local installation of your App. Think your local development App will directly connect to the fortrabbit App. You will need to open a tunnel, as described above to do so. We recommend to not do that. It's not only slow, it will most likely cause you some trouble. Best separate your local development environment from production.
+It is also possible to access the fortrabbit database from the local installation of your App. You will need to open a tunnel, as described above to do so. While possible we do not recommend that approach. You local App will feel slow, unless you have a very good internet connection. Further, you will run the risk of messing up the database if several apps are wrinting to it at the same time. The best practice here is separating the local development environment from production.
 
 
 ### Differences between Professional and Universal
@@ -298,7 +298,7 @@ All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Pr
 
 ## Limits
 
-Each App has one database named like the App. There are no privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
+Each App has one database named like the App. The mysql-user you have received is not granted the privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
 
 
 ### Using MySQL functions, procedures and triggers
@@ -317,7 +317,7 @@ The most common misunderstanding when trying to connect from a local machine, is
 
 ### max_user_connections
 
-You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are balanced and therefore kept on a low level, to force best practices and improve security. Once the connection are eaten up, it can take a little until the App recovers, auto-heals itself. There might be a setting with the client to limit the connections, or you'll try the command line tools as an alternative.
+You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are limited. If you use up all the allotted connections, it can take a little until the App recovers. If this turns out to be a problem for you, look into limiting the number of concurrent connections from your MySQL gui or the App iteslf.
 
 If you see that error on other occasions or it's not going away after a while, contact support.
 
