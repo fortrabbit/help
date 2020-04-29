@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-10-28
+reviewed:      2020-04-13
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -10,6 +10,7 @@ stack:         all
 
 ---
 
+
 ## Understanding the platform
 
 We claim that the fortrabbit hosting platform is different to classical hosting. Our comparison pages give you a good picture what fortrabbit is about:
@@ -17,7 +18,6 @@ We claim that the fortrabbit hosting platform is different to classical hosting.
 * [How fortrabbit is different than VPS hosting](https://www.fortrabbit.com/why-not-vps)
 * [How IaaS is being used](https://www.fortrabbit.com/why-not-aws)
 * [See the fortrabbit terminology](/terminology)
-
 
 
 ## The App Concept
@@ -41,9 +41,11 @@ We claim that the fortrabbit hosting platform is different to classical hosting.
 
 An App is a virtual container for your web project, website, web application, staging branch, project or whatever you do.
 
+
 ### Multiple Apps per Company
 
 fortrabbit hosting has a multi-seat and multi-tenant model. Apps are owned by [Companies](/company) (your business) and managed by [Accounts](/account) (you). The App plans displayed on the [pricing page](https://fortrabbit.com/pricing) are per App. You can create as many Apps as you want of course.
+
 
 ### One website per App
 
@@ -71,6 +73,7 @@ So, a fortrabbit App is designed to host one website:
 
 <div markdown="1" data-user="known">
 
+
 ## Dashboard links
 
 * [Go to your list of Apps](https://dashboard.fortrabbit.com/apps)
@@ -89,6 +92,7 @@ fortrabbit comes in two flavors (stacks): Universal & Professional. With each Ap
 
 The following sections here are describing functionalities that are shared by the two different stacks.
 
+
 ## Creating an App
 
 When you sign up to fortrabbit, a new [trial App](#toc-the-app-trial) will be created on the fly. Later on you can create any number Apps in the Dashboard —  just find an accordingly named button. While creating an App, there are a few things to decide: 
@@ -97,6 +101,7 @@ When you sign up to fortrabbit, a new [trial App](#toc-the-app-trial) will be cr
 2. **Software Preset:** see [below](#toc-software-preset)
 3. **Data center location:** Where your App shall be hosted?
 4. **Stack & scaling**: [Uni](app-uni) or [Pro](app-pro), plan, or trial?
+
 
 ### Software Preset
 
@@ -108,6 +113,7 @@ While creating an App you can choose from a variety of popular open source PHP s
 * Populate [ENV vars](env-vars) — to connect to to the database automatically
 
 So, the Software Preset saves you some work and helps to prevent errors. It does not install anything. It's non-destructive, you can change all settings later on as you wish. This is especially handy with modern software that supports [ENV var](env-vars) configuration and environment detection — like [Laravel](install-laravel) or [Craft CMS](craft-3-deploy-git) do. It makes the application really portable, you can deploy the same code base to any App and it will work out of the box. 
+
 
 ## Settings
 
@@ -122,9 +128,11 @@ Each App comes with a set of basic [features](https://www.fortrabbit.com/specs) 
 
 Most of it can be viewed and edited in the [Dashboard](/dashboard). Here is what you'll need to know:
 
+
 ### Domains
 
 There are various settings to control the routing of domains. Please also see the [domains help article](/domains).
+
 
 ### App Name
 
@@ -145,9 +153,11 @@ To identify the App within the Dashboard, you can also use App notes.
 
 If you are really desperate for your own vanity App Name: delete your current App and start a new one, this time using the desired App name. Apps are disposable, so deploying everything again shouldn't take too long.
 
+
 #### Re-using App names
 
 Sometimes you can't get it to work and you want to start over again. So you can delete your App and create a new one from scratch. Please mind that you can not use the same App name immediately. It takes 7 days after you have deleted an App, that the same App Name will become available to use again.
+
 
 ### App URL
 
@@ -173,6 +183,7 @@ You can register your App to accept requests from any external domain you route 
 * [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new)
 </div>
 
+
 #### Root path
 
 Per default all the [domains](/domains) of the App will route to the same root path (sometimes this is also called: document root, docroot or root folder): `htdocs`. This path is, where the first `index.php` will be called, when people are visiting your App on any domain. This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
@@ -197,11 +208,13 @@ In some cases, you might want to route individual domains to different folders. 
 
 When visiting the root path settings you will find a switch to change from a global root path for all domains to custom root paths for each domain. Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
+
 ### Firewall
 
 Most connections calls on most ports are forbidden for [security](security) reasons. You can request to white-list a port or port range. With the firewall setting of your App you can see custom white-listed ports and request a new firewall rule.
 
 * [List of open ports](https://www.fortrabbit.com/specs#firewall)
+
 
 ### Metrics
 
@@ -211,15 +224,18 @@ Some Apps also come with "**Performance metrics**": Those show you how fast your
 
 * https://dashboard.fortrabbit.com/apps/{{app-name}}/metrics
 
+
 ### App team
 
 The team settings of the App are showing you which other developers have access to the App. From here you can also invite new team members directly to the App.
 
 See our [collaboration article](/collaboration) to learn more about joint development.
 
+
 ### App Company
 
 This setting links to the Company owning the App. From here you can also:
+
 
 #### Changing App ownership
 
@@ -243,13 +259,16 @@ Are you working on behalf of someone? You want your client or the boss of the ag
 
 You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is test-drive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
 
+
 ### Starting a new trial App
 
 Find the "Create an App" on the Dashboard home. When asked for the plan, you can choose the free trial option instead. Trial Apps are available for both stacks, Universal & Professional.
 
+
 ### Trial limits
 
 The trial App scaling specs are matching a small preset, always enough to get started. For the Pro Stack not all Components are enabled. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime. 
+
 
 ### Extending the trial
 
@@ -264,9 +283,11 @@ A task that is completed has a check-mark `✔`. Tasks that are still todo will 
 
 Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period. You can see those tasks in the Dashboard with the overview of your App.
 
+
 ### Upgrading the trial
 
 You can, of course, upgrade from your trial to a paid plan at any time. You can do so under your Apps overview.
+
 
 ### The end of a trial
 
@@ -275,30 +296,41 @@ When the trial is finally over, the trial App will be deleted. That might sounds
 Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
 
 
+## Restart an App
+
+In some edge cases, like hanging PHP processes with 504 errors or 408 errors, restarting an App is an option. Here is how you can do this:
+
+1. visit the App in the Dashboard
+2. find and click the "Restart App" button
+3. wait a minute until changes apply
+  
+This will restart the Apache service and the PHP-FPM processes. Nothing more, your data will stay safe. There will be a short downtime of the App. Use carefully, it should not be used on a regular basis. Please <a href="javascript:Intercom('showNewMessage')">contact us</a>, if you have ongoing trouble with your App.
+
 
 ## Deleting an App
 
 You can always delete Apps you own or admin. To delete an App, visit the App in the Dashboard, find and hit the "delete" button. You might need to enter your Account password and also confirm what you are about to do. The App will then get deleted within a couple of minutes. This includes all files and the database.
 
+
 ### Recovering deleted Apps
 
 Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINAL here and can't be reversed. We delete as much as possible when a client requests so or we had to when payments bounced to often. We do so for privacy and security reasons. We believe that it should be your right to be forgotten. Imagine that we take your data as a hostage until you pay us. So in most cases that's actually good. Also read [how we handle bounced payments](/billing#toc-bounced-payments).
+
 
 ### Recovering Backups
 
 While the App get's deleted irrevocable, Backups might still be around. When your App plan included [Backups](/backups-uni) and those have not yet faded out within their retention period, we might can restore the backups for you. We then can provide you tar ball containing your data (web + mysql). Please contact us for that via chat.
 
 
-
-
-
 ## Troubleshooting
 
 Here are some common gotachs that mostly happen with new Apps:
 
+
 ### 404 Not Found
 
 When your App is just sending a "404 file not found" page, please check this before contacting support:
+
 
 #### No code deployed
 
@@ -307,6 +339,7 @@ A common case for the 404 page is, that no code has been deployed yet.
 This can be misunderstanding, you might thought with choosing a [Software Preset](#toc-software-prest) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead deploy some code first.
 
 Maybe also, the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error? Please check if all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
+
 
 #### Wrong root path
 
@@ -323,6 +356,7 @@ Another common cause for 404 errors is a missing `.htaccess` file. This file is 
 So when you are uploading with SFTP and you have maybe dragged the files from your Desktop (Finder) into your SFTP application (Cyberduck, Transmit, FileZilla), this file is likely missing. 
 
 You might can use the file explorer from your SFTP application or temporary show hidden files in your OS to make the `.htaccess` visible to you. Just make sure that when a htaccess is present (most likely it is), that it get's uploaded as well.
+
 
 #### App is not yet ready
 
@@ -358,7 +392,7 @@ We are maintaining standard PHPinfo Apps as well here: [fortrabbit.com/specs#php
 **A word of warning**: Don't do that in production. Make sure to delete that file right away after you have finished your investigation. The output might contain sensible information you don't want to share with the world. Key and values of your ENV vars are visible, that can contain database access and API keys to external services.
 
 
-## Further readings
+## Further reading
 
 Now you know the basics about Apps on fortrabbit, keep going:
 

@@ -1,26 +1,23 @@
 # fortrabbit help pages
 
-Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, extended with frontmatter meta-data. 
-
-These contents are published on: https://help.fortrabbit.com
+Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, extended with frontmatter meta-data. Contents are getting published on: https://help.fortrabbit.com
 
 
 ## Contributing
 
-Found a typo or an error? Do you want to add something about your framework or service of choice? You are more than welcome to contribute. Please send us a Pull Request.
+Found a typo or an error? Do you want to add something about your framework or service of choice? Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are more than welcome to contribute.
 
-Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are also more than welcome to add it.
 
-- - -
+### Sending pull requests
 
-## File name conventions
+Please find a good balance in the number of commits contained with a pull request. For small typos, just use one commit and one PR. For larger text changes, consider combining commits for readability.
 
-* use dashes instead of spaces or low dashes for file names
-* use the short versions: `-uni`, `-pro` on the end for different stacks
 
 ## Front Matter syntax
 
-Each markdown file requires a yaml block at the top. See here which attributes are available, how and when to use them.
+Each markdown file has a yaml block at the top.
+
+### Available attributes
 
 ```yaml
 # Rendering
@@ -44,7 +41,6 @@ excerpt: Get to know about the basic concepts.
 
 # disable TOC generation for this article
 noToc: true
-
 
 # Set support level
 supportLevel: a
@@ -121,6 +117,7 @@ type:  CMS
 * `---` don't use this, otherwise the whole help page won't be rendered
 * `- - -` use this
 
+
 ## Dynamic help
 
 Those values will be replaced by JS when users are logged in:
@@ -132,6 +129,7 @@ Your app: {{app-name}}
 ```
 
 It will dynamically show the correct code examples and Dashboard links.
+
 
 ## Dashboard links
 
@@ -169,6 +167,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * `$` to start a command
 * Start code examples right away: PHP without "<?php", Bash without "$"
 
+
 ## Writing 
 
 * Use sentence case in headlines
@@ -183,15 +182,24 @@ While some implicit technical details are obvious to you, they might not be for 
 * Write speaking links, not like so: `[here](http://somewhere)` but so: `[GitHub project](http…)`
 * Don't bullshit. Avoid the use of marketing buzzwords
 
+
 ## Maintainability
 
 * Find the right balance between being general and being precise (aka Captain Obvious)
 * Very detailed step-by-step articles are easy to follow but get outdated very quickly 
-* Don't bury numbers (like prices and limits) in articles.
+* Don't bury numbers (like prices and limits) in articles
 * All those numbers must be managed in the "pricing" and the "specs" page
 * Keep it DRY! Don't repeat yourself
 * Have one SSOT, link to it
-* Don't fully cover the same topic on different places. Just link to the location where it best suits
+* Don't fully cover the same topic on different places, just link to the location
+
+
+## File name conventions
+
+When creating new files:
+
+* use dashes instead of spaces or low dashes for file names
+* use the short versions: `-uni`, `-pro` at the end for different stacks
 
 
 ## fortrabbit owned words and common casing
@@ -241,6 +249,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * **App Collaborator**
 * **Role** — ~~permission~~, ~~access role~~
 
+
 ## Times & dates
 
 * use the same time-zone E V E R Y W H E R E when communicating times
@@ -251,6 +260,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * **s** - ~~scds~~
 * **m** - ~~mins~~, ~~min~~
 * **h** - ~~hrs~~
+
 
 ### Metric units
 
@@ -324,5 +334,3 @@ There is no fortrabbit logo as graphic file. To create the brand logo just type:
 ### Logos and brand assets
 
 Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
-
-
