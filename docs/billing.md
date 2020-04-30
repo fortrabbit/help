@@ -20,11 +20,11 @@ You can test fortrabbit before paying a single a dime, completely for free. All 
 
 ### Consumption based billing
 
-There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This may break your expectations, but in practice this is how we do things;
+There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This may break some expectations, but in practice this is the regular flow;
 
-1. Customer signs up and opts in to pay for the service
-2. The customer is using the platform for a certain amount of days
-3. At the end of the month, they receive an invoice for the preceding days
+1. A client signs up and opts in to pay for the service
+2. Their App is in use for a few days
+3. At the end of the month, the client receives an invoice for the preceding days
 
 German users may recognize this as prorate, just like with the old telephone bill -
 at the end of the month, you get an invoice for the consumption during that month.
@@ -72,10 +72,10 @@ You can check the current costs by looking at your *Billing Contact*, see link:/
 
 You can pay by credit card or SEPA direct debit. For enterprise clients (large volume) we also offer to pay by bill (giro / wire) (on account, after invoice).
 
-* We support credit cards including Visa, MasterCart and Amex.
+* Supported credit cards are Visa, MasterCart and Amex.
 * SEPA direct debit is accessible to clients in the European Union.
-* We do not support debit cards.
-* We do not support payments via PayPal at this time and there are no future plans to integrate with PayPal.
+* Debit cards are not supported.
+* PayPal is not supported. There are no future plans to integrate with PayPal.
 
 
 ### Billing e-mail address
@@ -122,7 +122,9 @@ Invoices are shown as HTML. Depending on support in your browser, a PDF can be g
 
 ### Bounced payments
 
-Sometimes payments may bounce, that just happens. Regrettably, some banks may collect fees for failed charges or insufficient funds. We may pass those fees to you.
+Sometimes payments may bounce, that just happens. Please note that our bank
+collects fees for failed charges or insufficient funds. We may pass those fees
+to you.
 
 There are various reasons why payments bounce:
 
