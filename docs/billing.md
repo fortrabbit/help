@@ -20,14 +20,13 @@ You can test fortrabbit before paying a single a dime, completely for free. All 
 
 ### Consumption based billing
 
-There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This may break some expectations, but in practice this is the regular flow;
+There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This may break your expectations, but in practice this is the regular flow;
 
-1. A client signs up and opts in to pay for the service
-2. Their App is in use for a few days
-3. At the end of the month, the client receives an invoice for the preceding days
+1. You sign up and opts in to pay for the service.
+2. Your App is in use for a few days.
+3. At the end of the month, you receive an invoice for the preceding days.
 
-German users may recognize this as prorate, just like with the old telephone bill -
-at the end of the month, you get an invoice for the consumption during that month.
+German users may recognize this as prorate, just like with the old telephone bill - at the end of the month, you get an invoice for the consumption during that month.
 
 
 #### Daily billing cycle
@@ -122,9 +121,7 @@ Invoices are shown as HTML. Depending on support in your browser, a PDF can be g
 
 ### Bounced payments
 
-Sometimes payments may bounce, that just happens. Please note that our bank
-collects fees for failed charges or insufficient funds. We may pass those fees
-to you.
+Sometimes payments may bounce, that just happens. Please note that our bank collects fees for failed charges or insufficient funds. We may pass those fees to you.
 
 There are various reasons why payments bounce:
 
