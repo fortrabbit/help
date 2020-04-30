@@ -112,9 +112,9 @@ When you create a Billing Contact, we'll do a debit test on your credit card. Th
 
 ### Downloading previous invoices
 
-*Option 1*: Search your e-mail inbox for "fortrabbit invoice". Each invoice e-mail contains a secret link to the invoice. From there you can print or download the invoice.
+**Option 1**: Search your e-mail inbox for "fortrabbit invoice". Each invoice e-mail contains a secret link to the invoice. From there you can print or download the invoice.
 
-*Option 2*: Use the "Download / print" button from the link:/dashboard[Dashboard]: Login to the Dashboard &gt; Your Account &gt; Companies (Your Company) &gt; Billing Contact &gt; Invoice archive &gt; Invoice &gt; Download &amp; print invoice.
+**Option 2**: Use the "Download / print" button from the link:/dashboard[Dashboard]: Login to the Dashboard &gt; Your Account &gt; Companies (Your Company) &gt; Billing Contact &gt; Invoice archive &gt; Invoice &gt; Download &amp; print invoice.
 
 Invoices are shown as HTML. Depending on support in your browser, a PDF can be generated using the "Print to File" feature.
 
