@@ -296,7 +296,7 @@ When the trial is finally over, the trial App will be deleted. That might sounds
 Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
 
 
-## Restart an App
+## Restarting an App
 
 In some edge cases, like hanging PHP processes with 504 errors or 408 errors, restarting an App is an option. Here is how you can do this:
 
