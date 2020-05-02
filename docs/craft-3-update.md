@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-25
+reviewed:         2020-05-02
 title:            Update Craft CMS
 naviTitle:        Update Craft
 lead:             We recommend to always use the latest version of all software for security reasons. Mind that you are responsible for the software you write yourself and use. Here are some strategies to best keep Craft CMS up-to-date.
@@ -51,9 +51,10 @@ This will update your **local** development environment to the latest versions o
 Run the following command in the terminal on your computer **locally** in the root folder of the Craft project:
 
 ```bash
-$ ./craft update
+$ ./craft update all
 ```
 
+This will update Craft, as well as all dependencies. For a dry run just type `./craft update`, that will list the available updates.
 
 
 ### Deploying Craft updates
