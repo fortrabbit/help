@@ -20,19 +20,15 @@ You can test fortrabbit before paying a single a dime, completely for free. All 
 
 ### Consumption based billing
 
-There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This is the regular flow:
-
-1. Opt-in to pay for the service
-2. Have an App running for a few days
-3. Receive an invoice for the preceding days at the end of the month
+There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it.
 
 
 #### Daily billing cycle
 
-For example, if you order one of our plans on the 16th of a 30-day month, the invoice will be calculated for 15 _active days_ since you started using the service. The minimum billing period is one day;
+For example, if you order one of our plans on the 16th of a 30-day month, the invoice will be calculated for 15 active days since you started using the service. The minimum billing period is one day;
 
 ```
-      April 2020               April 2020
+       April                     April
  Mo Tu We Th Fr Sa Su     Mo Tu We Th Fr Sa Su
         1  2  3  4  5            -  -  -  -  -
   6  7  8  9 10 11 12      -  -  -  -  -  -  -
