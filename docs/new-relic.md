@@ -42,6 +42,7 @@ fortrabbit has a Bring-Your-Own-License integration with New Relic. That basical
 
 You are all good! After 5 minutes you should start to see data in your NewRelic dashboard. To get more information about how to use NewRelic, head to their [documentation](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm).
 
-## Further Reading
+
+## Further reading
 
 * [New Relic BYOL integration announcement](http://blog.fortrabbit.com/new-relic-byol)

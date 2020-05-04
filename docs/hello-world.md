@@ -110,7 +110,8 @@ $ git push
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-### Further Reading
+
+### Further reading
 
 This was just a simple example. Don't miss our guides to: 
 

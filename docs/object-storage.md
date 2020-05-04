@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-02-21
+reviewed:      2020-04-17
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -250,7 +250,7 @@ Not existing files (404) are also cached, but only shortly. See [specs](https://
 
 #### Manipulate cache durations
 
-You can change the default cache durations of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simple set either of two headers: `Cache-Control` or `Expires`. Those will then be forwarded to the browser and also define the caching time on the server. A helpful guide to work with caching headers can be found [here](http://www.mobify.com/blog/beginners-guide-to-http-cache-headers/).
+You can change the default cache durations of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simple set either of two headers: `Cache-Control` or `Expires`. Those will then be forwarded to the browser and also define the caching time on the server.
 
 Take care that we don't do cache purging. So when changing the cache duration, only new assets will be effected. Assets already in the cache will stay there as long as the old value is past.
 

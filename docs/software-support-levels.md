@@ -64,6 +64,6 @@ You can definitely install this software here. We know some clients are using it
 * Zend
 
 
-## Further Reading
+## Further reading
 
 Please also check out our [general support policies](https://www.fortrabbit.com/support-policy).
