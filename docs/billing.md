@@ -25,19 +25,19 @@ There are no upfront costs or payments. The service is priced by usage, similar 
 
 #### Daily billing cycle
 
-For example, if you order one of our plans on the 16th of a 30-day month, the invoice will be calculated for 15 active days since you started using the service. The minimum billing period is one day;
+If you order one of our plans on the 16th of a 30-day month, the invoice will be calculated for 15 active days since you started using the service. The minimum billing period is one day.
 
 ```
        April                     April
  Mo Tu We Th Fr Sa Su     Mo Tu We Th Fr Sa Su
         1  2  3  4  5            -  -  -  -  -
   6  7  8  9 10 11 12      -  -  -  -  -  -  -
- 13 14 15 16 17 18 19      -  -  -  $  $  $  $  <- the  16th is on a Thursday
+ 13 14 15 16 17 18 19      -  -  -  $  $  $  $
  20 21 22 23 24 25 26      $  $  $  $  $  $  $
  27 28 29 30               $  $  $  $
 ```
 
-The dollar-sign indicates the days you would be billed for if signe up on the 16th.
+The dollar-sign indicates the days you would be billed on the 16th.
 
 
 ### Monthly invoices
