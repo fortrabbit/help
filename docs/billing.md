@@ -26,8 +26,6 @@ There are no upfront costs or payments. The service is priced by usage, similar 
 2. Have an App running for a few days
 3. Receive an invoice for the preceding days at the end of the month
 
-German users may recognize this as prorate, just like with the old telephone bill - at the end of the month, you get an invoice for the consumption during that month.
-
 
 #### Daily billing cycle
 
