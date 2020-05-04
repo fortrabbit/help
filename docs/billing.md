@@ -20,11 +20,11 @@ You can test fortrabbit before paying a single a dime, completely for free. All 
 
 ### Consumption based billing
 
-There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This may break your expectations, but in practice this is the regular flow;
+There are no upfront costs or payments. The service is priced by usage, similar to how other cloud providers do it. This is the regular flow:
 
-1. You sign up and opts in to pay for the service.
-2. Your App is in use for a few days.
-3. At the end of the month, you receive an invoice for the preceding days.
+1. Opt-in to pay for the service
+2. Have an App running for a few days
+3. Receive an invoice for the preceding days at the end of the month
 
 German users may recognize this as prorate, just like with the old telephone bill - at the end of the month, you get an invoice for the consumption during that month.
 
