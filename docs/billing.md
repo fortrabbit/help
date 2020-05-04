@@ -155,9 +155,7 @@ Yearly payments are not supported because we do not accept upfront payments beca
 
 ### No refunds
 
-We are not offering refunds at this time.
-
-This is our current policy because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
+We are not offering refunds at this time. This is our current policy because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
 
 If you think something is wrong with your invoice, please contact us. We may be able to give you a discount on your next invoice to show good will on our part.
 
