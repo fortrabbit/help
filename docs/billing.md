@@ -79,11 +79,11 @@ You can use a different e-mail address for each Billing Contact, see the [Billin
 
 We consider our primary clients to be entrepreneurs and other businesses. In other words, fortrabbit is primarily a B2B service. While that can mean anything and nothing, it carries some fiscal implications:
 
-* Our prices are shown as net prices without Value Added Tax (VAT).
-* If you are a non-VAT registered company in a EU country, we add VAT.
-* If you are a VAT-registered company in a EU country and add your valid VATIN, we don't charge you VAT.
-* If you are a VAT-registered company in Germany, we add VAT, but you will get it back from your tax-office.
-* If you are a company from a NON-EU country, we don't charge you VAT.
+* Our prices are shown as net prices without Value Added Tax (VAT)
+* If you are a non-VAT registered company in a EU country, we add VAT
+* If you are a VAT-registered company in a EU country and add your valid VATIN, we don't charge you VAT
+* If you are a VAT-registered company in Germany, we add VAT, but you will get it back from your tax-office
+* If you are a company from a NON-EU country, we don't charge you VAT
 
 
 ### VAT Tax ID (VATIN) from clients in EU countries
