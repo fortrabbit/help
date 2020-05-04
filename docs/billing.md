@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-03-06
+reviewed:      2020-05-04
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
