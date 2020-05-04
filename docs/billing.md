@@ -64,10 +64,10 @@ You can check the current costs by looking at your **Billing Contact**, see the 
 
 You can pay by credit card or SEPA direct debit. For enterprise clients (large volume) we also offer to pay by bill (giro / wire) (on account, after invoice).
 
-* Supported credit cards are Visa, MasterCart and Amex.
-* SEPA direct debit is accessible to clients in the European Union.
-* Debit cards are not supported.
-* PayPal is not supported. There are no future plans to integrate with PayPal.
+* Visa, MasterCart and Amex are the supported credit cards
+* Debit cards are not supported
+* SEPA direct debit is accessible to clients in the European Union
+* PayPal is NOT supported, there are no future plans for that
 
 
 ### Billing e-mail address
