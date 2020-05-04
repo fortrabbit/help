@@ -72,7 +72,7 @@ You can pay by credit card or SEPA direct debit. For enterprise clients (large v
 
 ### Billing e-mail address
 
-You can use a different e-mail address for each link:/billing-contact#toc-changing-the-billing-e-mail-address[Billing Contact] in your company.
+You can use a different e-mail address for each Billing Contact, see the [Billing Contact help](billing-contact#toc-changing-the-billing-e-mail-address) in how to change that.
 
 
 ### Taxes
