@@ -139,11 +139,7 @@ In any case, with 3 open invoices in a row and no reply: We will immediately del
 
 ### Paying open invoices
 
-Open invoices can be found in the Dashboard;
-
-Login to our Dashboard &gt; follow the instructions in the "open invoices" warning.
-
-Credit card payments are done immediately. SEPA direct payments are delayed. If your credit card has insufficient funds at the time of charging, we may try to charge it again during the month.
+Open invoices can be found in the Dashboard. Login to our Dashboard &gt; follow the instructions in the "open invoices" warning. Credit card payments are done immediately. SEPA direct payments are delayed. If your credit card has insufficient funds at the time of charging, we may try to charge it again during the month.
 
 ### No upfront payments
 
