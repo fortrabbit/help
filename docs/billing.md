@@ -137,17 +137,21 @@ For long term clients with more than 6 paid invoices and at least 2 bounced invo
 
 In any case, with 3 open invoices in a row and no reply: We will immediately delete Apps.
 
+
 ### Paying open invoices
 
 Open invoices can be found in the Dashboard. Login to our Dashboard &gt; follow the instructions in the "open invoices" warning. Credit card payments are done immediately. SEPA direct payments are delayed. If your credit card has insufficient funds at the time of charging, we may try to charge it again during the month.
+
 
 ### No upfront payments
 
 It is not possible to pay upfront because our billing model is based on consumed resources up to present time.
 
+
 ### No yearly payments
 
 Yearly payments are not supported because we do not accept upfront payments because the costs and the exact usage can not be predicted in advance.
+
 
 ### No refunds
 
@@ -156,6 +160,7 @@ We are not offering refunds at this time.
 This is our current policy because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
 
 If you think something is wrong with your invoice, please contat us. We may be able to give you a discount on your next invoice to show good will on our part.
+
 
 ### Account cancellation
 
