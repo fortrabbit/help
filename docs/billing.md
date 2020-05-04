@@ -93,9 +93,7 @@ We recommend to enter your VATIN (Value Added Tax Identification Number). This w
 
 ### Currencies
 
-All Billing Contacts within the EU are required to pay in EUR. Billing Contacts from other countries can pay in USD or EUR.
-
-It is not possible to change the currency of a Billing Contact later on. However, you can create a new Billing Contact with a different currency and then move Apps there.
+All Billing Contacts within the EU are required to pay in EUR. Billing Contacts from other countries can pay in USD or EUR. It is not possible to change the currency of a Billing Contact later on. However, you can create a new Billing Contact with a different currency and then move Apps there.
 
 
 ### Pending transactions
