@@ -86,7 +86,7 @@ We consider our primary clients to be entrepreneurs and other businesses. In oth
 * If you are a company from a NON-EU country, we don't charge you VAT
 
 
-### VAT Tax ID (VATIN) from clients in EU countries
+### VAT Tax ID (VATIN) for EU clients
 
 We recommend to enter your VATIN (Value Added Tax Identification Number). This way you save upfront costs for VAT — reverse charge makes this possible. See [our guide](billing-contact#toc-adding-a-vat-in) to setup your VATIN with your Billing Contact.
 
