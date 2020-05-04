@@ -93,14 +93,14 @@ We recommend to enter your VATIN (Value Added Tax Identification Number). This w
 
 ### Currencies
 
-All link:/company#toc-billing-contacts[Billing Contacts] within the EU are required to pay in EUR. Billing Contacts from other countries can pay in USD or EUR.
+All Billing Contacts within the EU are required to pay in EUR. Billing Contacts from other countries can pay in USD or EUR.
 
 It is not possible to change the currency of a Billing Contact later on. However, you can create a new Billing Contact with a different currency and then move Apps there.
 
 
 ### Pending transactions
 
-When you create a Billing Contact, we'll do a debit test on your credit card. This should not show up on your credit card statements, because we will not finalize this trsansaction. Some clients have reported that this transaction shows up in their online banking. In any case, this reserved amount will not be claimed by us.
+When you create a Billing Contact, we'll do a debit test on your credit card. This should not show up on your credit card statements, because we will not finalize this transaction. Some clients have reported that this transaction shows up in their online banking. In any case, this reserved amount will not be claimed by us.
 
 
 ### Downloading previous invoices
