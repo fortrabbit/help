@@ -279,6 +279,7 @@ $ rsync -av -e 'ssh -o PreferredAuthentications=password' {{app-name}}@deploy.{{
 
 Say you have changed ten files in your local code set and want to deploy them now. `rsync` will first build a local set of files and directories and a remote set of files and directories. For each item in either set it will generate a check value. This check value, can be either the timestamp of the last change of a file, the size of a file, the current permissions or even a checksum (think MD5) of the file contents. Or any combination of those. Using the `-a` option rsync is gonna use timestamp + file size which is a good balance between performance and accuracy.
 
+
 ## Further reading
 
 This article is loosely based on our still popular [blog post](https://blog.fortrabbit.com/deploying-code-with-rsync) which is even more complete and includes more details. Also of interest:

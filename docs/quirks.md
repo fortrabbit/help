@@ -145,7 +145,7 @@ With persistent connections this can take longer (possibly up to half an hour). 
 
 
 
-## Firewalling
+## Firewall
 
 Outgoing traffic is limited for [security](security) reasons — most ports for making outgoing calls are locked. Only the most [standard ports are white-listed](http://www.fortrabbit.com/specs#firewall). Any access to service Components provided by us directly (Memcached, MySQL, ..) is of course also allowed. Any other traffic is denied - but you can request to open ports for your App. To do so: login to the Dashboard, browse to your App, go to the firewall settings, "request a custom white listing".
 
