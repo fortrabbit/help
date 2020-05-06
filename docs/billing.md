@@ -37,7 +37,7 @@ If you order one of our plans on the 16th of a 30-day month, the invoice will be
  27 28 29 30               $  $  $  $
 ```
 
-The dollar-sign indicates the days you would be billed on the 16th.
+The dollar-signs indicate days that would be incuded in the invoice.
 
 
 ### Monthly invoices
