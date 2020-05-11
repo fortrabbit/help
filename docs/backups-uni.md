@@ -15,6 +15,7 @@ stack:         all
 
 Data loss is something, which can happen to everybody: be it an unpatched security hole in your underlying CMS or be it the overworked content editor, who accidentally deletes rather important data. Whatever the cause, you should have backups to recover in case of disaster. Backups are notoriously underused, because it can be hard to set them up properly and also hard to monitor them continuously, to guarantee that they are there, when needed.
 
+
 ## Solution
 
 Automatic, out-of-the box, off-site, encrypted daily backups, without configuration and without hassle.
@@ -46,6 +47,7 @@ Backups are not included with all App plans. See our [pricing page](https://www.
 ## Accessing backups
 
 Find them in the Dashboard > Your App > Backups. Two backup files per day are automatically generated: One of your App's web storage and one of your App's MySQL storage. The web storage backup file is a `tar` archive of all the contents of the `htdocs` folder of your App. The MySQL storage files is a plain `sql` file, containing the result of a `mysqldump` of your App's database.
+
 
 ### Older backups
 
