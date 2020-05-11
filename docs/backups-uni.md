@@ -6,8 +6,7 @@ naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
 group:         platform
-stack:         uni
-proLink:       backups-pro
+stack:         all
 
 ---
 
