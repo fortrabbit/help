@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-11-10
+reviewed:      2020-05-11
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
