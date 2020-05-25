@@ -96,16 +96,33 @@ Your invoices contain the street address of your organization. You will be asked
 This needs to be done by an Owner Account - see our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
 
 
+## Setting up a payment method
+
+A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/billing#toc-payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing).
+
+
+### Troubleshooting payment setup
+
+From time to time clients report issues with setting up a payment method. Here are some common issues:
+
+* Debit cards might not be accepted
+* Sadly credit cards from certain countries like Nigeria seem to have less acceptance
+* We are debiting the card with a 1 USD/EUR test transaction - that's not a payment, you'll get it back right after
+* EU clients might need to solve strong authentication (redirect to bank website)
+* US and other countries might need to authorize the test debit, in some cases that means calling the bank
+
+We can do little about this. We pass your data directly to the payment gateway. Thanks for your understanding. 
+
 
 ## Changing the payment method
 
-A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/billing#toc-payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing). Change the payment method of a Billing Contact like so:
+You have a new credit card or the old one is about to expire? Change the payment method of a Billing Contact like so:
 
 1. Dashboard > Companies > {{ Your Company }} >
 2. Billing Contact >
 3. **Payment method**
 
-Changing the payment method is required when your credit card expired or you wish to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to. See our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
+Changing the payment method will affect future payments and will also be used to balance possible open invoices. In order to change the payment method you will need to have a fortrabbit [Account](/account). Further ths Account needs to have Owner access on the Company the Billing Contact belongs to. See our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
 
 
 
