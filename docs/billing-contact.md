@@ -107,7 +107,7 @@ From time to time clients report issues with setting up new payment methods. Her
 
 * Debit cards might not be accepted, use a full blown credit card please
 * Sadly credit cards from certain countries like Nigeria seem to have less acceptance
-* We are debiting the card with a 1 USD/EUR test transaction - that's not a payment, you'll get it back right after
+* We are debiting the card with a test transaction with a small amount - that's not a payment, you'll get it back right after
 * EU clients might need to solve strong authentication (redirect to bank website)
 * US and other countries might need to authorize the test debit, in some cases that means calling up the bank
 
