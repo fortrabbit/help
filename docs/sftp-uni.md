@@ -32,7 +32,7 @@ Many modern editors or IDEs also feature SFTP integrations by plugin.
 * **Host**: deploy.{{region}}.frbit.com
 * **Port**: 22
 * **Username**: {{ssh-user}}
-* **Password**: Your Account password OR public SSH key
+* **Password**: Your Account password OR private SSH key
 
 
 ### File synchronization
