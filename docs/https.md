@@ -33,7 +33,7 @@ Current browsers show a green lock in the address bar if the connection is over 
 
 ## HTTPS options on fortrabbit
 
-As part of [security efforts](/security) our aim is to give you secure, still easy-to-use and affordable options. Available with all Apps on fortrabbit:
+As part of [security efforts](https://www.fortrabbit.com/security) our aim is to give you secure, still easy-to-use and affordable options. Available with all Apps on fortrabbit:
 
 ### 1. Piggyback HTTPS
 
