@@ -10,7 +10,7 @@ stack:         all
 
 ---
 
-This article covers the topics like billing, pricing, payments, invoices and taxes. Please read the link:/billing-contact[Billing Contact] article to learn about the practical side of things in our Dashboard.
+This article covers the topics like billing, pricing, payments, invoices and taxes. Please read the [Billing Contact](/billing-contact) article to learn about the practical side of things in our Dashboard.
 
 
 ### Free trial
@@ -105,7 +105,7 @@ When you create a Billing Contact, we'll do a debit test on your credit card. Th
 
 **Option 1**: Search your e-mail inbox for "fortrabbit invoice". Each invoice e-mail contains a secret link to the invoice. From there you can print or download the invoice.
 
-**Option 2**: Use the "Download / print" button from the link:/dashboard[Dashboard]: Login to the Dashboard &gt; Your Account &gt; Companies (Your Company) &gt; Billing Contact &gt; Invoice archive &gt; Invoice &gt; Download &amp; print invoice.
+**Option 2**: Use the "Download / print" button from the [Dashboard](/dashboard): Login to the Dashboard &gt; Your Account &gt; Companies (Your Company) &gt; Billing Contact &gt; Invoice archive &gt; Invoice &gt; Download &amp; print invoice.
 
 Invoices are shown as HTML. Depending on support in your browser, a PDF can be generated using the "Print to File" feature.
 
@@ -117,8 +117,8 @@ Sometimes payments may bounce, that just happens. Please note that our bank coll
 There are various reasons why payments bounce:
 
 * Insufficient funds - we will try to debit again after a few days
-* Expired credit cards - link:/billing-contact/#toc-changing-the-payment-method[update your payment method]
-* Something else - link:billing-contact/#toc-changing-the-payment-method[update your payment method] (enter a new card or switch to SEPA)
+* Expired credit cards - [Update your payment method](/billing-contact/#toc-changing-the-payment-method)
+* Something else - [Update your payment method](/billing-contact/#toc-changing-the-payment-method) (enter a new card or switch to SEPA)
 
 Please contact us if you are aware about open invoices with us and or if you have questions about an invoice. In any case, we will inform you by by e-mail about failed payments.
 
