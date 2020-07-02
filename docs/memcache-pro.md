@@ -64,7 +64,7 @@ $m->set('SomeKey', 123);
 $m->get('SomeKey');
 ```
 
-See also the specific examples for: [Laravel](install-laravel-pro#toc-setting-up-memcache), [Symfony](install-symfony#toc-memcache), [Craft](install-craft#toc-memcache).
+See also the specific examples for: [Laravel](install-laravel-pro#toc-setting-up-memcache), [Symfony](install-symfony#toc-cache), [Craft](craft-3-tune#toc-cache-and-sessions-on-the-pro-stack).
 
 
 
