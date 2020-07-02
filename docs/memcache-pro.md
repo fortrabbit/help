@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2019-09-30
+reviewed:    2020-07-02
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
@@ -64,7 +64,7 @@ $m->set('SomeKey', 123);
 $m->get('SomeKey');
 ```
 
-See also the specific examples for: [Laravel](install-laravel-pro#toc-memcache), [Symfony](install-symfony#toc-memcache), [Craft](install-craft#toc-memcache).
+See also the specific examples for: [Laravel](install-laravel-pro#toc-setting-up-memcache), [Symfony](install-symfony#toc-memcache), [Craft](install-craft#toc-memcache).
 
 
 
