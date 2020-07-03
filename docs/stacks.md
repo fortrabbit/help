@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "About the Stacks"
 title:         "About the Stacks"
-reviewed:      2019-09-30
+reviewed:      2020-07-03
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide."
 group:         stacks
 stack:         all
@@ -25,7 +25,7 @@ The Stacks on fortrabbit are not just some marketing gimmick to sell you the mor
 | Traffic                     | low, medium                             | low - very high                                   |
 | Scalability                 | xxs - s                                 | xxs - xxxl                                        |
 | High Availability           | no                                      | yes, except Development level                     |
-| Local storage               | persistent                              | [ephemeral](#toc-ephemeral-storage)               |
+| Local file storage          | persistent                              | [ephemeral](#toc-ephemeral-storage)               |
 | Primary application type    | websites                                | web applications                                  |
 | Secondary application type  | web applications                        | websites                                          |
 | Architecture                | single webserver + db server            | distributed containers                            |
