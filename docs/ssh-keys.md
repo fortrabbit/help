@@ -79,9 +79,8 @@ The key's randomart image is:
 |    ..           |
 +----[SHA256]-----+
 ```
-You may omit -f and the file-path to use the default location.
 
-### Supported key types
+You may omit -f and the file-path to use the default location.
 
 
 ### SSH keys generation on Windows
