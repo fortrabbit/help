@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "About the Stacks"
 title:         "About the Stacks"
-reviewed:      2020-07-03
+reviewed:      2020-07-13
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide."
 group:         stacks
 stack:         all
@@ -13,7 +13,7 @@ stack:         all
 
 ## The three sentence story
 
-The Stacks on fortrabbit are not just some marketing gimmick to sell you the more expensive package, these stacks are fundamentally different in design and use cases. **The Universal Stack** is for everyone to build websites and web applications, combining legacy workflows with modern design paradigms. **The Professional Stack** is for sophisticated developers to build modern cloud-enabled high-performance PHP web applications with lot's of traffic.
+The Stacks on fortrabbit are not just some marketing gimmick to sell you the more expensive package, these stacks are fundamentally different in design and use cases. **The Universal Stack** is for everyone to build websites and web applications, combining legacy workflows with modern design paradigms. **The Professional Stack** is for sophisticated developers to build modern cloud-enabled high-performance PHP web applications with lots of traffic.
 
 
 ## The facts table

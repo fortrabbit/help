@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2019-09-30
+reviewed:      2020-07-13
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         stacks
 stack:         uni
@@ -32,7 +32,7 @@ Unless your project is very resource intensive, there is virtually no applicatio
 
 ## Persistent storage
 
-Persistent storage is a fancy word to describe: it's just regular storage, which won't be deleted. In contrary to [Ephemeral storage](app-pro#toc-ephemeral-storage), it allows you to use the website storage as you would with any VPS or shared hosting solution. All data your App writes is written to the disk and not removed upon deploy. In short: it is persistent.
+Persistent storage is just a fancy word to describe regular storage, which won't be deleted. In contrary to [Ephemeral storage](app-pro#toc-ephemeral-storage), it allows you to use the website storage as you would with any VPS or shared hosting solution. All data your App writes is written to the disk and not removed upon deploy. In short: it is persistent.
 
 ## Logs
 
@@ -43,7 +43,7 @@ You can access either live logs or historic logs of your App. Please [read the l
 
 The Universal plans differ in web storage size, MySQL size, available PHP memory and features like backups and cron jobs.
 
-The PHP memory has an impact on the performance of your site. Too little PHP memory can also cause errors or even crashes on memory intensive tasks. 
+PHP's memory has an impact on the performance of your site. Too little PHP memory can also cause errors or even crashes on memory intensive tasks. 
 
 The smallest plan is suited for hobby projects, landing pages, one-pagers, MVPs, weekend hacks, development, skeletons, personal blogs and whatever small project you can think of. The highest plan is suited for more serious intentions: you can put a commercial project there. Everything in between can be in between. [See the pricing page](https://www.fortrabbit.com/pricing) for specs.
 
@@ -53,7 +53,7 @@ If you need more horse power and options, please see how you can: [Migrate from 
 
 Sorry, at this time it is not possible to downgrade from a higher to a lower plan in the Universal Stack. While this would be nice for users - please believe that it is not our aim to lock you in - it would be quite complicated to achieve. To downgrade, we would have to implement several limit checks and give infos in the Dashboard which limits should have be to adjusted before downgrading.
 
-As an alternative we suggest to throw away the current App and create a new one: download the [backups](/backups-uni), delete the App, create a new App with correct plan and upload (or deploy) again.
+As an alternative we suggest to throw away the current App and create a new one: download the [backups](/backups-uni), delete the App, create a new App with the correct plan and upload (or deploy) again.
 
 Thanks for understanding!
 
