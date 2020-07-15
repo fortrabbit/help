@@ -96,10 +96,10 @@ You can also have a look at the very detailed [Git and SSH key setup on Windows 
 
 ### SSH keys generation on Mac OS & Linux
 
+
 This tutorial from GitHub should cover your needs:
 
 * [Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-mac)
-
 
 
 ## Save your public SSH keys with your fortrabbit Account
@@ -201,10 +201,26 @@ In public key authentication you have a key pair that consists of a public (eg `
 When you install your public key with fortrabbit it can be used to authenticate you: your SSH clients uses your private key to encrypt plain text data, which is then decrypted, using your public key, on the fortrabbit SSH server. If this decryption succeeds, then it must have been encrypted by your private key and you are let in.
 -->
 
+## About SSH key authentication
+
+SSH key authentication is a more secure alternative to plain-old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username to verify your identity.
+
+The public part of the key, ending in `.pub` is safe to give out, while the private part should not be shared.
+
+After you import a public key into your fortrabbit account, it can then be used to authenticate you. When an SSH client connects, the server will encrypt some secret using the public key. If the client is able to decrypt the secret with the private key and send it back to the server, then the server knows that the client has the private key and can be trusted.
+
+You may watch these educational videos if you need more info:
+
+- https://www.youtube.com/watch?v=y2SWzw9D4RA
+- https://www.youtube.com/watch?v=ORcvSkgdA58
+
 
 ## Account SSH keys
 
-**This is the recommended method:** you store and manage your public SSH keys with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own or you are collaborating with. It also makes managing collaboration easy — add/remove collaborators and code access is handled "automagically".
+
+Your account on fortrabbit may store several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the mysql database for all of your Apps. If you lose your key and import a new one, then the old one will no longer be valid. The benefit of this is you do not have to update passwords.
+
+In additon, other users who have an account on fortrabbit may collaborate on your Apps if you add them as a collaborator. Their SSH keys will then be allowed to deal with your App.
 
 
 ## App-only SSH keys
