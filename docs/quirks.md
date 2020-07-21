@@ -34,7 +34,7 @@ To launch a PHP script you need to specify the PHP interpreter explicitly, like 
 
 ## Image optimization tools
 
-Tools like `jpegoptim` and `optipng` can additionally help to reduce file size of your images and are considered a best practice today. As much as we would like to make those tools available, we can't. They consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting. 
+Tools like `jpegoptim` and `optipng` can additionally help to reduce file size of your images and are considered a best practice today. As much as we would like to make those tools available, we can't. They consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting.
 
 
 ### wkhtmltopdf
@@ -49,7 +49,7 @@ wkhtmltopdf is a popular library to convert HTML to PDF. It's NOT installed and 
 
 ### Performance
 
-Apps are designed for fast web delivery — to answer page requests swiftly. Unlike a VPS, which is a multi-purpose box, Apps are single-purpose for web delivery. Installing CPU intensive software would hurt the performance. 
+Apps are designed for fast web delivery — to answer page requests swiftly. Unlike a VPS, which is a multi-purpose box, Apps are single-purpose for web delivery. Installing CPU intensive software would hurt the performance.
 
 * [Learn about the resource limits here](/limits)
 
@@ -154,16 +154,35 @@ Outgoing traffic is limited for [security](security) reasons — most ports for 
 </div>
 
 
+## Outgoing IP address
 
-## Outgoing IP
+In some cases you need to know your App's IP address, like for payment processing or in environments that are behind a firewall.
 
-In some cases you need to know your App's IP address, like for payment processing or with fire-walling in corporate environments.
+For [Professional Apps](/app-pro) on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway.
 
-For [Professional Apps](/app-pro) on a production level plan the outgoing IP is fixed, for each region (EU: `52.50.42.152`, US: `52.72.32.63`), except for the deploy service. For [Universal Apps](/apps-uni) and for Pro Apps on development plans the IP is not guaranteed. Although with high probability, it won't change during the App's lifetime. 
+ For [Universal Apps](/apps-uni) and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App.
 
-You can set up a regular running "test", which queries https://ifconfig.co/ or the like to notify you of changes. Querying such a service from your App eg `<?php echo file_get_contents("https://ifconfig.co/");` is the easiest way to determine your App's current IP. Depending on the use-case, it is possible to use a HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) for a vanity IP address. 
+You can see this for yourself with a php script.
 
-There is also an [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) also available in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) which you can parse and use.
+    <?php
+    echo file_get_contents("https://ifconfig.co/");
+
+Querying an HTTP service like that from an App is the easiest way to determine the current IP address. Depending on your needs, it is possible to use an HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) to get a static IP address. Finally, there is also the [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) and the same list in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) format.
+
+
+### Outgoing IP addresses for our regions
+
+The traffic from Apps will appear to others as coming from these addresses.
+
+    EU: 52.50.42.152
+    US: 52.72.32.63
+
+Do bear in mind, the place where you shell into with `ssh` or push with `git` is called the deploy service. The IP address of the deploy service may change.
+
+    deploy.eu2.frbit.com 52.212.159.57
+    deploy.us1.frbit.com 52.200.130.83
+
+We do not intend to change the IP address of the deploy services, but we do not guarantee it.
 
 
 ## What this isn't
