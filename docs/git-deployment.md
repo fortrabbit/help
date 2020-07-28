@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-05-10
+reviewed:      2019-07-28
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -21,7 +21,7 @@ We assume that you have: [Git installed](git) locally and know the basics. We fu
 
 ## Usage
 
-Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separated deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remotes master branch. 
+Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch. 
 
 ### Simple Git deployment workflow
 
@@ -47,7 +47,7 @@ $ git push -u origin master
 # 6. Every deploy from now on
 $ git push
 ```
-After the first deployment is done, the Git repo will be synced into the Apps web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+After the first deployment is done, the Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Next time you want to send changes to your App you can simply:
 
@@ -71,7 +71,7 @@ To start with a complete new Git history, you can now reset your repository. Thi
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
-The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be build on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
+The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be built on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
 
 
 ### Git with a GUI or IDE
@@ -88,7 +88,7 @@ Still reading? Dig deeper!
 
 ### Git deployment vs Universal Apps
 
-Universal Apps have persistent storage, which you can access via [SSH](ssh-uni) or [SFTP](sftp-uni). It further means, that runtime data, like user uploads, are persistent and *will not be removed* upon Git push.
+Universal Apps have persistent storage, which you can access via [SSH](ssh-uni) or [SFTP](sftp-uni). It further means that runtime data, like user uploads, are persistent and *will not be removed* upon Git push.
 
 To make sure nothing is deleted, all git deployments to Universal Apps follow an **overwrite but not delete** strategy which is thoroughly explained in the [deployment methods article](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes).
 
@@ -135,18 +135,18 @@ A bloated Git repository slows down deployment. You might even hit our limits. I
 
 We don't actively enforce a single file limit, but you should not put big binary files (> 2 MB) into your Git repo.
 
-In general we also advice not to put assets and most importantly images or even videos in Git. Some images that are belonging to your website layout, like your company logo (a small SVG) are Ok. But when you have a lot of images in Git, odds are, that this is bad practice.
+In general we also advise not to put assets and most importantly images or even videos in Git. Some images that belong to your website layout, like your company logo (a small SVG) are ok. But when you have a lot of images in Git, odds are that this is bad practice.
 
-For almost all cases, your uploaded content images (.jpg, .png, .gif) do not belong in Git. Remember that the Git repo and the web-space are different things here at fortrabbit, [Git is a one-way street here](/deployment-methods-uni#toc-git-works-only-one-way). The next user upload will not be in Git anyways. It's a good practice to **separate code from content** for many reasons. So we advice to deploy user uploads, static assets and other runtime data separated from the core code deployment done with Git. With Universal Stack you can use SFTP/SSH or rsync for this. With the Professional Stack you'll manage those assets on the [Object Storage](/object-storage) anyways.
+For almost all cases, your uploaded content images (`.jpg`, `.png`, `.gif`) do not belong in Git. Remember that the Git repo and the web-space are different things here at fortrabbit, [Git is a one-way street here](/deployment-methods-uni#toc-git-works-only-one-way). The next user upload will not be in Git anyways. It's a good practice to **separate code from content** for many reasons. So we advise to deploy user uploads, static assets and other runtime data separate from the core code deployment done with Git. With Universal Stack you can use SFTP/SSH or rsync for this. With the Professional Stack you'll manage those assets on the [Object Storage](/object-storage) anyways.
 
 #### The hidden .git folder
 
-Git never forgets. It can bring back any content from any file, even deleted ones. To do so, it stores all the stuff in the hidden `.git` folder on top level of the repo. Over time that file can get big to. It can also contain unreachable blobs and other stuff you are not aware of. Depending on the situation, there are many to clean this up: delete files of a certain type, delete the history before a certain date, or even start again from the current state.
+Git never forgets. It can bring back any content from any file, even deleted ones. To do so, it stores all the stuff in the hidden `.git` folder at the top level of the repo. Over time that file can get big too. It can also contain unreachable blobs and other stuff you are not aware of. Depending on the situation, there are many ways to clean this up: delete files of a certain type, delete the history before a certain date, or even start again from the current state.
 
 
 ### Deployment release package
 
-The release package is a gzipped archive which contains: the Apps Git repository + vendor folder + all files generated by pre or post deployment scripts. In short: compressed size of ``~/htdocs``.
+The release package is a gzipped archive which contains: the App's Git repository + vendor folder + all files generated by pre- or post-deployment scripts. In short: compressed size of ``~/htdocs``.
 
 To keep deployment fast for everyone the size of the release package is [limited](http://www.fortrabbit.com/specs#limits). You can find out the release package size locally by packaging the local copy of your App, including the `vendor` folder and anything else generated by your build scripts:
 
@@ -205,7 +205,7 @@ Git submodules are not supported. We recommend to use Git subtrees instead. See 
 If your Git deployment fails for any reason: 
 
 1. If you are unsure about Git: Check out [Getting started with Git](git)
-2. If it didn't worked before: Read above to see if you missed something.
+2. If it didn't work before: Read the above to see if you missed something.
 3. If it still doesn't work: Please get in touch with us.
 
 ### Reporting issues with Git
@@ -231,12 +231,12 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 !! Could not get lock on repository; probably deployment in progress.
 ```
 
-Wait around 20 minutes when you see above message when deploying. That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. That should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time when not finished before successfully. Contact support, when the repository lock is not resolving or when that happens often or even all the time.
+Wait around 20 minutes when you see the above message when deploying. That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. That should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time if not finished before successfully. Contact support, if the repository lock is not resolving or if that happens often or even all the time.
 
 ### Git client max connections
 
-Some graphical clients for Git, like SourceTree and GitKraken are fetching often are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client, in Git Kraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
+Some graphical clients for Git, like SourceTree and GitKraken are fetching often and are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client: In GitKraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
 
 ## Blacklisting
 
-When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
+When nothing works any more, see if you are blacklisted: more [here](/troubleshooting#toc-blacklisting).
