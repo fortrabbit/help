@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-07-10
+reviewed:      2020-07-28
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
@@ -34,21 +34,21 @@ Besides [password authentication](/access-methods#toc-password-authentication) y
 The goals here are:
 
 1. Create an SSH key pair consisting of public and private key.
-2. Store the keys on the right location, so that your Operating System can make use of them.
+2. Store the keys in the right location, so that your Operating System can make use of them.
 3. Save the public key with your fortrabbit Account
 
 
 ## Do you have any SSH keys already?
 
-To check if you have any existing SSH keys installed: Mac Os & Linux: Open a terminal (Mac OS & Linux) or a Git Bash (Windows) and type:
+To check if you have any existing SSH keys installed: Open a terminal (Mac OS & Linux) or a Git Bash (Windows) and type:
 
 ```
 ls ~/.ssh
 ```
 
-If you see an existing key pair listed (for example `id_rsa.pub` and `id_rsa`) that you would like to use to connect to fortrabbit, you can skip the generation and add the public SSH key (contents of `id_rsa.pub`) to your fortrabbit Account in the Dashboard, see below.
+If you see an existing key pair listed (for example `id_rsa.pub` and `id_rsa`) that you would like to use to connect to fortrabbit, you can skip the generation and add the public SSH key (contents of `id_rsa.pub`) to your fortrabbit Account in the Dashboard (see below).
 
-If you don't have any key pairs or you receive an error that ~/.ssh doesn't exist, then you will need to generate new keys.
+If you don't have any key pairs or you receive an error that `~/.ssh` doesn't exist, then you will need to generate new keys.
 
 On Windows: If you don't know what the Git Bash is, or you have a different setup, check our recommendation on the [Git article](git).
 
@@ -87,7 +87,7 @@ You may omit -f and the file-path to use the default location.
 
 The procedure to create SSH keys is slightly different on *nix (Mac OS, Linux) systems and Windows.
 
-There are different ways to setup and use Git with Windows, thus there are also different ways setup and store the keys. We recommend to use the official installer form the Git website, together with Git Bash. Check out this consise tutorial from GitHub:
+There are different ways to set up and use Git with Windows, thus there are also different ways set up and store the keys. We recommend using the official installer from the Git website, together with Git Bash. Check out this concise tutorial from GitHub:
 
 * **[Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)**
 
@@ -96,7 +96,6 @@ You can also have a look at the very detailed [Git and SSH key setup on Windows 
 
 ### SSH keys generation on Mac OS & Linux
 
-
 This tutorial from GitHub should cover your needs:
 
 * [Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-mac)
@@ -104,7 +103,7 @@ This tutorial from GitHub should cover your needs:
 
 ## Save your public SSH keys with your fortrabbit Account
 
-After you have set up Git and created your local SSH key and stored it on the correct place, you'll need to tell fortrabbit about that. Navigate to:
+After you have set up Git and created your local SSH key and stored it in the correct place, you'll need to tell fortrabbit about that. Navigate to:
 
 * Dashboard > Your Account > Access methods > Add a new SSH key
 
@@ -151,12 +150,12 @@ If you still see this error, please review the ssh-setup tutorials above.
 
 ### SSH keys under Windows with PuTTY
 
-We advice not to use PuTTY for this. If generate an SSH key with PuTTY, you will need to make sure that the private key is saved in the location where `git.exe` or `ssh.exe` are looking for it. These questions and answers may help you if you want to use PuTTY.
+We advise not using PuTTY for this. If you generated an SSH key with PuTTY, you will need to make sure that the private key is saved in the location where `git.exe` or `ssh.exe` are looking for it. These questions and answers may help you if you want to use PuTTY.
 
 * [Stack Overflow: Where to find my private RSA key?](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
 * [Superuser: Where does Putty store known_hosts information on Windows?](http://superuser.com/questions/197489/where-does-putty-store-known-hosts-information-on-windows)
 
-Keep in mend that putty uses a custom .ppk format for storing keys. The Putty Private Key format does not work with the OpenSSH ssh client or Git. It is possible extract/convert the private key from a .ppk file with the PuttyGen utility included with PuTTY.
+Keep in mind that PuTTY uses a custom .ppk format for storing keys. The PuTTY Private Key format does not work with the OpenSSH ssh client or Git. It is possible extract/convert the private key from a .ppk file with the PuttyGen utility included with PuTTY.
 
 * [Superuser: How to convert .ppk to openssh](https://superuser.com/questions/232362/how-to-convert-ppk-key-to-openssh-key-under-linux)
 
@@ -167,7 +166,7 @@ If you tried everyting and it is still not working, you can revert back to passw
 
 ### If it worked before and suddenly stops working
 
-If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) (you are not part of team anymore?) happened. If not, have a look at out [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
+If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) happened (e.g. you are not part of a team anymore?). If not, have a look at our [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
 
 
 ### You are asked for a password when using a key and the Account password isn't working
@@ -175,7 +174,6 @@ If you have deployed using SSH keys before and now it doesn't work any more: ple
 In this case, you have probably used a passphrase with your key. This has nothing to do with the fortrabbit Account or services. When a new key is generated, there is usually this prompt: `Enter passphrase for key`. You want to use whatever you said then.
 
 To avoid typing this may times per day, you can use the `ssh-agent`. See this [help article on GitHub](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases) to find out how.
-
 
 - - -
 
@@ -203,7 +201,7 @@ When you install your public key with fortrabbit it can be used to authenticate 
 
 ## About SSH key authentication
 
-SSH key authentication is a more secure alternative to plain-old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username to verify your identity.
+SSH key authentication is a more secure alternative to plain old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username, to verify your identity.
 
 The public part of the key, ending in `.pub` is safe to give out, while the private part should not be shared.
 
@@ -211,16 +209,15 @@ After you import a public key into your fortrabbit account, it can then be used 
 
 You may watch these educational videos if you need more info:
 
-- https://www.youtube.com/watch?v=y2SWzw9D4RA
-- https://www.youtube.com/watch?v=ORcvSkgdA58
+- [https://www.youtube.com/watch?v=y2SWzw9D4RA](https://www.youtube.com/watch?v=y2SWzw9D4RA)
+- [https://www.youtube.com/watch?v=ORcvSkgdA58](https://www.youtube.com/watch?v=ORcvSkgdA58)
 
 
 ## Account SSH keys
 
+Your Account on fortrabbit may store several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the MySQL database for all of your Apps. If you lose your key and import a new one, then the old one will no longer be valid. The benefit of this is you do not have to update passwords.
 
-Your account on fortrabbit may store several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the mysql database for all of your Apps. If you lose your key and import a new one, then the old one will no longer be valid. The benefit of this is you do not have to update passwords.
-
-In additon, other users who have an account on fortrabbit may collaborate on your Apps if you add them as a collaborator. Their SSH keys will then be allowed to deal with your App.
+In addition, other users who have an Account on fortrabbit may collaborate on your Apps if you add them as a collaborator. Their SSH keys will then be allowed to deal with your App.
 
 
 ## App-only SSH keys
