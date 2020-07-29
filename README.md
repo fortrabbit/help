@@ -8,6 +8,11 @@ Welcome to the source of the official fortrabbit documentation. These files here
 Found a typo or an error? Do you want to add something about your framework or service of choice? Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are more than welcome to contribute.
 
 
+## Deployment
+
+This repo only contains the contents of the help. Rendering the contents is done by a PHP engine App running on the fortrabbit platform itself. To deploy latest changes from this repo (master branch), the fortrabbit App needs to be deployed (by fortrabbit staff).
+
+
 ### Sending pull requests
 
 Please find a good balance in the number of commits contained with a pull request. For small typos, just use one commit and one PR. For larger text changes, consider combining commits for readability.
