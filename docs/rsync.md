@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2019-09-30
+reviewed:    2020-07-30
 title:       rsync
 naviTitle:   rsync
 lead:        rsync is one of the best ways to deploy code fast and without hassle. It's also an often overlooked option. Let's change this! This article gives you some direction on how to use it in general and especially here on fortrabbit.
@@ -15,7 +15,7 @@ keywords:
 
 ## About rsync
 
-`rsync` is a shorthand for **r**emote **sync**hronization. It's a command line tool to synchronize files over the network. It's open source. It's old but really good and it's is up to **10 times faster than FTP** as it uses compression and diffs to only transfers changes.
+`rsync` is a shorthand for **r**emote **sync**hronization. It's a command line tool to synchronize files over the network. It's open source. It's old but really good and it's up to **10 times faster than FTP** as it uses compression and diffs to only transfer changes.
 
 ### Read before using
 
@@ -49,7 +49,7 @@ Not using Git and **still using [SFTP](/sftp)?** Consider `rsync` as a replaceme
 
 #### Deploy bundled frontend builds with rsync
 
-You are likely making use of some kind of frontend bundling process - a build tool like webpack, Brunch, Parcel, browserify, gulp.js or alike. That includes compiling, concatenating and minifying of Javascript, SASS, LESS, stylus and maybe also images. Most modern build tools are based on Javascript and Node.js. fortrabbit Apps do not support to trigger such a frontend builds. So we advice to run the production build process [locally](/local-development). That has the advantage that you can optimally debug errors. But you also need to copy those files to your remote App somehow!
+You are likely making use of some kind of frontend bundling process - a build tool like webpack, Brunch, Parcel, browserify, gulp.js or the like. That includes compiling, concatenating and minifying of Javascript, SASS, LESS, stylus and maybe also images. Most modern build tools are based on JavaScript and Node.js. fortrabbit Apps do not support triggering such a frontend build process. So we advise running the production build process [locally](/local-development). That has the advantage that you can optimally debug errors. But you also need to copy those files to your remote App somehow!
 
 
 **Option 1: Just include built files in Git!** You can just include the uglyfied files within your Git repo and deploy it along with the rest of the code. That's not clean, but can be practical when your build process is not that complex. Mind that you might have separate development and production build tasks.
@@ -60,7 +60,7 @@ See our old ["I love assets" blog post](https://blog.fortrabbit.com/i-love-asset
 
 #### Synchronize uploaded assets with rsync
 
-Also, there likely will be files, like image uploads and alike on the Apps file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likely would want to download certain files from the App into your local development.
+Also, there likely will be files, like image uploads and the like, on the App's file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likely would want to download certain files from the App into your local development.
 
 PRO TIP: For [Craft CMS](/craft-3-about) we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
 
@@ -113,7 +113,7 @@ Remote URLs consist of `{{user}}@{{host}}:{{folder}}`. In the examples here [for
 
 #### Local paths
 
-rsync accepts all kind of defining local paths. `./`  will translate to the current directory. You can also use absolute paths like `/home/your-user/projects/{{app-name}}` or relative paths like `../{{app-name}}`.
+rsync accepts all ways to define local paths. `./`  will translate to the current directory. You can also use absolute paths like `/home/your-user/projects/{{app-name}}` or relative paths like `../{{app-name}}`.
 
 
 ### Options
@@ -162,13 +162,13 @@ Now, running this will print out everything that `rsync` **would** transfer - wi
 
 #### Syncing single folders
 
-This is the example for using rsync as an addition when primarily working with Git. In this case you only want to include a specific folder and it's contents. You might want to "upload" your `dist` folder with your compiled CSS, JS and images. Or you want to "download" the assets folder, when an editor has uploaded new images to the CMS. This is the basic command:
+This is a use-case for rsync as an additional step when primarily working with Git. In this case you only want to include a specific folder and its contents. You might want to "upload" your `dist` folder with your compiled CSS, JS and images. Or you want to "download" the assets folder, when an editor has uploaded new images to the CMS. This is the basic command:
 
 ```bash
 $ rsync -av --include='/{{folder}}/***' --exclude='*' ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
-With the `--include` parameter you can specify the path to include, still you need to exclude everything else. The include exclude syntax is flexible as you can include patterns and multiple folders at once. Alternatively you can also just define the local folder and the remote folder.
+With the `--include` parameter you can specify the path to include, but you still need to exclude everything else. The include/exclude syntax is flexible as you can include patterns and multiple folders at once. Alternatively you can also just define the local folder and the remote folder.
 
 
 #### Excluding files
@@ -190,7 +190,7 @@ $ rsync -avC --exclude themes/your-theme/404.php ./ {{app-name}}@deploy.{{region
 $ rsync -avC --exclude 404.php ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
-NOTE: The initial `/` character is important. `--exclude 404.php` and `--exclude /404.php` are _not_ the same. The former means: Any path, which contains "404.php" is to be excluded. The latter means: Any path, which starts with "/404.php" is to be excluded.
+NOTE: The initial `/` character is important. `--exclude 404.php` and `--exclude /404.php` are _not_ the same. The former means: Any path which contains "404.php" is to be excluded. The latter means: Any path which starts with "/404.php" is to be excluded.
 
 ##### Advanced exclude patterns
 
@@ -215,11 +215,11 @@ Also, as you can see, in the JPEG example, you can add any amount of `--exclude`
 If you have a set of files which you always want to exclude, you can create an file containing all exclusions and then use it via `--exclude-from <file>`:
 
 ```bash
-# add two excludes to a plain text file named "excludes"
+# add two excludes to a plain text file named ".rsyncignore"
 $ echo 404.php >> .rsyncignore
 $ echo something-else.php >> .rsyncignore
 
-# run rsync, using the excludes file
+# run rsync, using the .rsyncignore file
 $ rsync -av --exclude-from .rsyncignore ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
@@ -232,9 +232,9 @@ There is still a lot more you can do with exclude and filtering. Not only is the
 
 ### Dealing with obsolete files
 
-`rsync` will work in a non-destructive way per default, like our [overwrite but not delete](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes) strategy. So new files will be written and replaced, but old files will not get deleted. Sometimes that's not what you want. Sometimes you want an exact copy - a mirror.
+`rsync` will work in a non-destructive way by default, like our [overwrite but not delete](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes) strategy. So new files will be written and replaced, but old files will not get deleted. Sometimes that's not what you want. Sometimes you want an exact copy - a mirror.
 
-So, how to remove obsolete files on the remote? The short answer is: add the option `--delete` to your command line and you are done. To give you and example, using the WordPress setup from before: say you deleted this pesky `404.php` file locally. Now, if you run `rsync` without the `--delete` option (and no other added or modified files), `rsync` would tell that it will do nothing:
+So, how to remove obsolete files on the remote? The short answer is: add the option `--delete` to your command line and you are done. To give you and example, using the WordPress setup from before: say you deleted this pesky `404.php` file locally. Now, if you run `rsync` without the `--delete` option (and no other added or modified files), `rsync` would tell you that it will do nothing:
 
 ```
 $ rsync -av ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
@@ -245,7 +245,7 @@ sent 39,037 bytes  received 162 bytes  15,679.60 bytes/sec
 total size ...
 ```
 
-Although it marks the folder `wp-content/themes/your-theme/`, as there have been changes (the removal of `404.php`), but no changes which `rsync` is gonna apply. Now, running with the `--delete` option, then the file will be removed from destination. **This is a feature, not a bug**, meaning: `rsync` won't let you down by deleting files without your say-so. Either way, the first delete run, as always, using the condensed form `-n` of the `--dry-run` option, will show you exactly what would be deleted:
+Although it marks the folder `wp-content/themes/your-theme/`, as if there have been changes (the removal of `404.php`), rsync will not apply any changes. Now, if you run it with the `--delete` option, the file will be removed from the destination. **This is a feature, not a bug**, meaning: `rsync` won't let you down by deleting files without your say-so. Either way, on the first delete run, as always, use the condensed form `-n` of the `--dry-run` option, to show you exactly what would be deleted:
 
 ```bash
 $ rsync -avn --delete ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
@@ -256,9 +256,9 @@ sent 39,062 bytes  received 231 bytes  15,717.20 bytes/sec
 total size ...
 ```
 
-After you confirm that `rsync` would only delete, what you want (otherwise: `--exclude` works also to exclude files which are not in your local file set but remote, and you don't want to remove them from remote), you can go ahead and remove the `-n` option and run again.
+After you confirm that `rsync` will only delete what you want (otherwise: `--exclude` works also to exclude files which are not in your local file set but remote, and you don't want to remove them from remote), you can go ahead and remove the `-n` option and run again.
 
-`rsync` even gives you four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case in it's own). Those four variants of `--delete` just let you control when files are removed. This is actually quite handy: When thinking larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted", when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
+`rsync` even gives you four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case of its own). Those four variants of `--delete` just let you control when files are removed. This is actually quite handy: When dealing with larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted" when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
 
 
 ## Advanced topics
