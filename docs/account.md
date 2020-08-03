@@ -96,7 +96,7 @@ Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra
 
 During the 2FA setup the Dashboard showed you some recovery codes. These codes are always valid for your Account. Please store those in a save place you still remember later on. Use those codes to login and disable (an re-enable) 2FA in case of a lost device.
 
-When you have also lost your 2FA recovery codes: Contact us and ask us to disable 2FA for you manually. Please provide proof that we can safely identify you, for example: invoice numbers, account e-mail address, number and name of Apps, information about code or recent conversations.
+When you have also lost your 2FA recovery codes: Contact us and ask us to disable 2FA for you manually. Please provide proof that we can safely identify you.
 
 
 ## Managing SSH keys
@@ -155,3 +155,36 @@ No longer like fortrabbit? Sorry! To cancel your Account completely:
 Please be aware that: The [billing](/billing) cycle is monthly after usage. When you cancel today, you will get one last invoice next month for the usage this month so far. For example: Today is the 7th, so the first seven days of march will be billed after the march is over.
 
 When you have a [Company](/company) with other Owners, the Company will not be deleted, you will leave the Company. The fortrabbit Account itself is free, you can also delete all Apps and cancel all Company plans so that no future costs will applied. You'll still might get "service" e-mails by us.
+
+
+
+## Recovering access to an Account
+
+You might have completely lost access to your Account. Or someone left the Company who has had an Account forgot to transfer access when offboarding. 
+
+
+### When you have access to the mail that has been used
+
+When you know the e-mail that has been used for the Account here and you have access to it proceed by resetting the Account password — see [above](#resetting-the-account-password). This way you regain access and set a new password so that only you can login. That will not work when the Account has 2FA enabled, please see above.
+
+
+### When you don't know the e-mail or you don't have access to that mail
+
+Sometimes we get contacted by someone claiming to be owner of a business with websites hosted here on fortrabbit. This can be an attempt of social engineering. Therefore we will need to carefully check such requests:
+
+
+### Proof of ownership
+
+Tell us details that only you — the legit owner of the business — can know. More is better:
+
+* last two digits of the current credit card in use
+* a previous invoice number
+* amount of the last invoice
+* name of your Apps hosted here
+* links to LinkedIn profiles
+* details from conversations we have had in support
+* a funny commit message you can recall
+* a detail or a comment in the code
+* names and e-mail addresses of other team members
+* tell us the whole story why you don't have access any more
+* plus anything else that helps us identifying you as the real owner
