@@ -96,7 +96,7 @@ Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra
 
 During the 2FA setup the Dashboard showed you some recovery codes. These codes are always valid for your Account. Please store those in a save place you still remember later on. Use those codes to login and disable (an re-enable) 2FA in case of a lost device.
 
-When you have also lost your 2FA recovery codes: Contact us and ask us to disable 2FA for you manually. Please provide proof that we can safely identify you.
+When you have also lost your 2FA recovery codes: Contact us and ask us to disable 2FA for you manually. Please provide proof that we can safely identify you, see [below](#toc-proof-of-ownership).
 
 
 ## Managing SSH keys
@@ -165,7 +165,7 @@ You might have completely lost access to your Account. Or someone left the Compa
 
 ### When you have access to the mail that has been used
 
-When you know the e-mail that has been used for the Account here and you have access to it proceed by resetting the Account password — see [above](#resetting-the-account-password). This way you regain access and set a new password so that only you can login. That will not work when the Account has 2FA enabled, please see above.
+When you know the e-mail that has been used for the Account here and you have access to it proceed by resetting the Account password — see [above](#toc-resetting-the-account-password). This way you regain access and set a new password so that only you can login. That will not work when the Account has 2FA enabled, please see above.
 
 
 ### When you don't know the e-mail or you don't have access to that mail
