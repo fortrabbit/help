@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-08-04
 title:         SFTP
 naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -17,7 +17,7 @@ keywords:
 
 ---
 
-Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions via web-based interfaces. Those changes can not be back-ported to the version control. Stuff gets out of control.
+While [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with a CMS. These systems are often not designed for Git-workflows, and write to the file system when installing plugins and upgrading versions via web-based interfaces. Those changes can not be back-ported to the version control. Stuff gets out of control.
 
 All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to support legacy applications and workflows.
 
@@ -43,10 +43,10 @@ Most SFTP clients feature a file synchronization mode. You can choose your local
 
 This example shows how to configure your SFTP client to quickly sync code:
 
-1. Create a bookmark (favorite) that stores the access informations to connect with one click
+1. Create a bookmark (favorite) that stores the access information to connect with one click
 2. Set a local directory to be synced with the online directory in the bookmark
 3. Set rules for exclude patterns (a huge time saver!)
-4. Run simulation first, the first run will take longer, results will be cached, execution will be fast
+4. Run simulation first; the first run will take longer, results will be cached, execution will be fast
 5. First sync down, then sync up
 
 The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic.
@@ -67,7 +67,7 @@ When nothing works any more, see if you are blacklisted, more [here](/troublesho
 
 ### About SFTP
 
-SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH](/ssh-uni) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
+SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH](/ssh-uni) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really make a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
 
 ### Mixing deployment methods
 
