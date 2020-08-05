@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2019-09-30
+reviewed:     2020-07-30
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set up a local PHP development environment.
@@ -15,6 +15,13 @@ keywords:
      - 127.0.0.1
 
 ---
+
+<div class="alert" style="padding: 1px 30px">
+  <p>
+     We have a more up-to-date overview of local dev tooling over <a href="https://blog.fortrabbit.com/tools-for-php-development-local-dev-site-setup">here in our blog</a>.
+  </p>
+</div>
+
 
 ## Problem
 

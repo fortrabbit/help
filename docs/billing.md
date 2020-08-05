@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-05-04
+reviewed:      2020-08-03
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -47,12 +47,11 @@ Within the first few days of every new month, you will get the invoice for the c
 
 #### The monthly billing cycle in detail
 
-The fortrabbit billing bot calculates the due amount for each Billing Contact at the end of the month. Based on that data, a new invoice will be created. The invoices are accessible through our Dashboard. The invoice is dated to the last day of the month and the service period is that month.
-
-* On the first day of the following month, all clients are notified about this new invoice
-* On the 3rd of the month, the fortrabbit billing bot will charge all invoices having credit card as the payment method
-* Around the 7th of the month, all the SEPA direct payments invoices are issued and executed a few days later
-* In the middle of a month, a human will look over bounced invoices. At that time, due payments will be re-charged and additional payment reminders may be sent out.
+* End of month: Invoice are getting created for the monthly usage
+* 1st of the month: Invoices for the previous month are getting send out
+* 3rd of the month: Credit card payments are issued
+* 7th of the month: SEPA direct payments are issued
+* Until end of month: Review and retry of bounced invoices
 
 
 ### Costs monitoring
@@ -65,7 +64,7 @@ You can check the current costs by looking at your **Billing Contact**, see the 
 You can pay by credit card or SEPA direct debit. For enterprise clients (large volume) we also offer to pay by bill (giro / wire) (on account, after invoice).
 
 * Visa, MasterCart and Amex are the supported credit cards
-* Debit cards are not supported
+* Many debit cards are not supported, some are
 * SEPA direct debit is accessible to clients in the European Union
 * PayPal is NOT supported, there are no future plans for that
 
