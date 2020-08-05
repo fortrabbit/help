@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-09-30
+reviewed:         2020-08-05
 title:            Install Slim Framework 4
 naviTitle:        Slim Framework
 lead:             Slim is a PHP micro framework that helps you write simple web applications and APIs quickly. Learn how to install and tune Slim 4 on fortrabbit.
@@ -13,18 +13,18 @@ websiteLink:      http://www.slimframework.com/?utm_source=fortrabbit
 websiteLinkText:  slimframework.com
 category:         micro framework
 image:            slim-logo.png
-version:          4.2
+version:          4.5
 supportLevel:     b
 
 ---
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/get-ready).
+For best results here, make sure you have completed all the steps from the [get ready guide](/get-ready).
 
 ## Root path
 
-Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
+Go to the Dashboard and [set the root path](/app#toc-root-path) of your App to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -35,14 +35,14 @@ Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's do
 Execute locally in your terminal:
 
 ```bash
-# 1. Use Composer to create a local Symfony project named like your App
+# 1. Use Composer to create a local Slim project named like your App
 $ composer create-project slim/slim-skeleton {{app-name}}
 
 # 2. Change into the folder
 $ cd {{app-name}}
 
 # 3. Initialize a local Git repo
-$ git init .
+$ git init
 
 # 4. Add all files
 $ git add -A
