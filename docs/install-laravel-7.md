@@ -83,7 +83,6 @@ You can also push your existing Laravel installation to fortrabbit. If you are a
 If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source, for reference only:
 
 ```php
-<?php
 return [
     'connections'   => [
         'mysql' => [
