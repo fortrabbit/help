@@ -251,7 +251,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 ## Dealing with user sessions on the Professional Stack
 
-If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel file sessio driver. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
+If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel file session driver. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
 
 ```bash
 # Create a migration for the session table  - locally
