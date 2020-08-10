@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2020-07-02
+reviewed:    2020-08-10
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
@@ -22,20 +22,19 @@ keywords:
 
 ## Solution
 
-Meet Memcache(d) caching: the standard network cache which is extremely fast and reliable. Applying it correctly can boost the performance of most web applications dramatically. We offer optional Memcache scalings, which provision dedicated memcached servers, running on a single or two Nodes for data redundancy.
+Meet Memcache(d) caching: the standard network cache which is extremely fast and reliable. Applying it correctly can boost the performance of most web applications dramatically. We offer optional Memcache scalings, which provision dedicated memcached servers, running on a single Node, or two Nodes for data redundancy.
 
-The foremost use-case example are user sessions in the aforementioned multi-node scenario. Aside from those any kind of buffered data - such as expensive MySQL query results - can be stored and received extremely fast.
-
+The foremost use-case example is user sessions in the aforementioned multi-node scenario. Aside from these, any kind of buffered data - such as expensive MySQL query results - can be stored and retrieved extremely fast.
 
 ## Usage
 
-You can enable and scale Memcache in the [Dashboard](dashboard). The smallest available scaling is a memcached server running on a single Node and is primarily recommended for development scenarios. The additional Production scalings grow in size of memory and span across two nodes to offer high availability in outage scenarios.
+You can enable and scale Memcache in the [Dashboard](dashboard). The smallest available scaling is a memcached server running on a single Node and is primarily recommended for development scenarios. The additional Production scalings grow in memory size and span across two Nodes to offer high availability in outage scenarios.
 
 In PHP you have two drivers to connect to a memcached server: [Memcache](http://php.net/manual/en/book.memcache.php) and [Memcached](http://php.net/manual/en/book.memcached.php). If in doubt, use the former one.
 
 ## Production PHP and Memcache
 
-All PHP production scaling are running on two Nodes. If your App needs to handle session data, you need to keep it consistent across the Nodes. Memcache is also our recommended a solution for this.
+All PHP production scaling runs on two Nodes. If your App needs to handle session data, you need to keep it consistent across the Nodes. Memcache is also our recommended solution for this.
 
 ## Access Memcache from your App
 
@@ -44,7 +43,7 @@ All PHP production scaling are running on two Nodes. If your App needs to handle
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 $mc      = $secrets['MEMCACHE'];
 
-// enable redundant session handler
+// Enable redundant session handler
 ini_set('session.save_handler', 'memcached');
 ini_set('memcached.sess_number_of_replicas', 1);
 ini_set('memcached.sess_consistent_hash', 1);
@@ -56,7 +55,7 @@ ini_set('session.save_path', implode(", ", [
 
 session_start();
 
-// use redundant memcache for user data
+// Use redundant memcache for user data
 $m = new Memcached();
 $m->addServer($mc['HOST1'], $mc['PORT1']);
 $m->addServer($mc['HOST2'], $mc['PORT2']);
@@ -66,19 +65,17 @@ $m->get('SomeKey');
 
 See also the specific examples for: [Laravel](install-laravel-pro#toc-setting-up-memcache), [Symfony](install-symfony#toc-cache), [Craft](craft-3-tune#toc-cache-and-sessions-on-the-pro-stack).
 
-
-
 ## Scaling
 
-In the Dashboard, go to your App and click on Memcache under the scaling options. Please also see the [Memcache scaling](scaling#toc-memcache) section. Using a plan with two Nodes allow you two modes:
+In the Dashboard, go to your App and click on Memcache under the scaling options. Please also see the [Memcache scaling](scaling#toc-memcache) section. Using a plan with two Nodes gives you two modes:
 
-1. **Combined**: data is stored only on one of the nodes > twice the memory size
-2. **Redundant** (recommended): data is stored on both nodes > one node can fail
+1. **Combined**: data is stored only on one of the Nodes > twice the memory size
+2. **Redundant** (recommended): data is stored on both Nodes > one Node can fail
 
 
 ### Redundant setup
 
-The PHP Memcached extension can be heavily configured and tuned. Individual App requirements might result very custom settings. With that in mind, following our own best practice advice for a redundant setup:
+The PHP Memcached extension can be heavily configured and tuned. Individual App requirements might require highly customized settings. With that in mind, we advise configuring for a redundant setup:
 
 ``` php
 // Initialize Memcached with an ID, which allows persistent connections
@@ -130,7 +127,7 @@ if (!$mc->getServerList()) {
 
 ### Pitfall: Memcached::getVersion vs redundant setup
 
-Some very popular Memcached adapters use the `getVersion` method of the Memcached extension to check the state of the connection after setup. We do not recommend this, [due to incompatibility of this approach with redundant setups](https://github.com/laravel/framework/issues/17957).
+Some very popular Memcached adapters use the `getVersion` method of the Memcached extension to check the state of the connection after setup. We do not recommend this, [due to the incompatibility of this approach with redundant setups](https://github.com/laravel/framework/issues/17957).
 
 ## Alternatives
 
