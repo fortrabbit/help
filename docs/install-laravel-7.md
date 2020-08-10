@@ -177,7 +177,7 @@ public function boot()
 ```
 
 
-### Database import and export
+## Database import and export
 
 There are various use cases to export and import the database. Likely you want to:
 
@@ -188,7 +188,7 @@ There are various use cases to export and import the database. Likely you want t
 Read on in the [MySQL article](/mysql) on how to do that and other tasks.
 
 
-### Working with artisan migrate
+## Working with artisan migrate
 
 If you are using the Universal Stack, you can log in to [SSH](ssh-uni) and execute `artisan` on the App (note that you'll need to call `artisan` via PHP: more on that [here](/quirks#toc-need-to-call-via-php-interpreter)):
 
@@ -221,9 +221,9 @@ You can also add this command to your `composer.json` to have it run automatical
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
 
-### Logging
+## Logging
 
-#### Logging for Universal Apps
+### Logging for Universal Apps
 
 You can access your logs via SSH or SFTP. Laravel, per default, stores it's log files in `storage/logs`. You can download them via SFTP from that folder. If you need to "tail" your logs live, you can:
 
@@ -235,7 +235,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 $ tail -f storage/logs/laravel.log
 ```
 
-#### Logging for Professional Apps
+### Logging for Professional Apps
 
 By default Laravel writes all logs to `storage/logs/`. Since you don't have [direct file access](/app-pro#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
 
@@ -249,7 +249,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 [Flare](https://flareapp.io/) (no business association) is an error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
 
-### Dealing with user sessions on the Professional Stack
+## Dealing with user sessions on the Professional Stack
 
 If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel file sessio driver. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
 
@@ -276,14 +276,14 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 </div>
 
 
-### Queueing
+## Queueing
 
-#### Queueing for Universal Apps
+### Queueing for Universal Apps
 
 The Universal Stack does not support long running processes like `php artisan queue:work`.
 Please check out the see below for details on how to integrate those in the Professional Stack.
 
-#### Queueing for Professional Apps
+### Queueing for Professional Apps
 
 Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue:
 
@@ -312,7 +312,7 @@ To run `php artisan queue:work` in the background, spin up a new [Worker](worker
 **NB**: Laravel offers two commands to process queues: `queue:work` and `queue:listen`. We recommend using `queue:work`, and *not* using `queue:listen`. This is because the `queue:listen` command boots the Laravel framework for each iteration, whereas `queue:work` boots the framework once and runs as a daemon. Using `queue:work` offers high memory and performance gains in comparison with `queue:listen`.
 
 
-### Using the Object Storage for assets (Professional Stack)
+## Using the Object Storage for assets (Professional Stack)
 
 fortrabbit Pro Apps have an [ephemeral storage](/app-pro#toc-ephemeral-storage). If you require persistent storage for user uploads or any other runtime data your App creates (including assets like CSS and JS), you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration effort to a minimum:
 
@@ -339,7 +339,7 @@ return [
 If you want to use the Object Storage with your fortrabbit App and local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variable](/env-vars) in the Dashboard to the value `s3`. Also see the [README](https://github.com/fortrabbit/laravel-object-storage) of the repo.
 
 
-### Using Laravel Mix
+## Using Laravel Mix
 
 Laravel Mix compiles JS and CSS to really small and handy files using webpack (also see the [Laravel docs on this](https://laravel.com/docs/mix)). You can run Mix locally, but not on fortrabbit as Node.js currently is not available on our services. So you need to run the build process for production locally first.
 
@@ -355,7 +355,7 @@ This will compile your assets in the locations specified in your `webpack.mix.js
 
 Since this will mean your assets won't be deployed with Git, we need to use other tools for deploying the assets.
 
-#### Deploying assets with Univeral Apps
+### Deploying assets with Univeral Apps
 
 We recommend using `rsync`. The one-liner below works with the most common scenarios, but feel free to adjust it to your needs if your setup differs:
 
@@ -374,7 +374,7 @@ For your convenience you can define rsync command `npm run deploy-assets`. Examp
 }
 ```
 
-#### Deploying assets with Professional Apps
+### Deploying assets with Professional Apps
 
 You can export your minified assets to the [Object Storage](object-storage) by extending Laravel Mix with the `webpack-s3-plugin`. This is how it works: To start, execute in your terminal:
 
@@ -432,7 +432,7 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
 
-### Working with Redis
+## Working with Redis
 
 Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer a Redis service of its own. To use Redis, you will need to book an externally-hosted Redis service. We have an article for [redislabs](/redis-cloud). 
 
@@ -473,7 +473,7 @@ return [
 If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard).
 
 
-### Setting up Memcache (Professional Stack)
+## Setting up Memcache (Professional Stack)
 
 Make sure you enabled the [Memcache](memcache-pro) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
@@ -548,11 +548,11 @@ return [
 In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
 
 
-### Scheduling
+## Scheduling
 
 The [Laravel scheduler](https://laravel.com/docs/7.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
 
-### Using artisan down (Professional Stack)
+## Using artisan down (Professional Stack)
 
 `artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel with the `CheckForMaintenanceMode` middleware. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) only affects the deployment Node, not your live App. Any file changes via SSH remote exec do not affect your App.
 
@@ -561,7 +561,7 @@ There are at least two options to do this:
 1. Add `artisan down` as a `post-install-cmd` script in `composer.json`, then `git push` (remove the command and push again to bring it back online)
 2. Use a custom middleware and command which uses another source than a file, like `memcache` or `database`
 
-### Using Laravel Envoy
+## Using Laravel Envoy
 
 Easy. Here is an `Envoy.blade.php` example:
 
@@ -584,6 +584,6 @@ $ envoy run ls
 $ envoy run migrate
 ```
 
-### Sending mail
+## Sending mail
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
