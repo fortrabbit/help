@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-06
+reviewed:         2020-08-10
 title:            Install Laravel 7
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 7 on fortrabbit.
@@ -80,7 +80,7 @@ You can also push your existing Laravel installation to fortrabbit. If you are a
 
 ### MySQL configuration
 
-If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source, for reference only:
+If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So **you don't need to set anything**! Just keep `config/database.php` as it is. Here is the source, for reference only:
 
 ```php
 return [
@@ -108,11 +108,11 @@ return [
 ];
 ```
 
-The all CAPITAL configs above are what is going to be replaced with contents from the environment variables. For your local development setup you can populate the `.env` with your local database credentials. See our [ENV var article](/env-vars) as well.
+The all CAPITAL configs above will be replaced by the contents of the environment variables. For your local development setup you can populate the `.env` file with your local database credentials. See our [ENV var article](/env-vars) as well.
 
 #### MySQL configuration with App secrets
 
-Beside using ENV vars to set your configs, you can also use fortrabbit App secrets ([see the article](secrets) for more info). Here is an example for `config/database.php`:
+Beside using ENV vars to configure your MySQL connection, you can also use fortrabbit App secrets ([see the article](secrets) for more info). Here is an example for `config/database.php`:
 
 ```php
 // locally: use standard settings
@@ -178,7 +178,7 @@ public function boot()
 
 ## Database import and export
 
-There are various use cases to export and import the database. Likely you want to:
+There are various use cases for exporting and importing databases. Likely you want to:
 
 1. Export the database from your old webhosting
 2. Export your local database to import it to the fortrabbit database
@@ -197,7 +197,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 $ php artisan migrate --force
 ```
 
-If you are using the Universal or the Pro Stack, you can [execute remote commands via SSH](/remote-ssh-execution-pro). For example:
+If you are using the Universal or the Professional Stack, you can [execute remote commands via SSH](/remote-ssh-execution-pro). For example:
 
 ```bash
 # remote execution
@@ -280,11 +280,11 @@ Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to
 ### Queueing for Universal Apps
 
 The Universal Stack does not support long running processes like `php artisan queue:work`.
-Please check out the see below for details on how to integrate those in the Professional Stack.
+Please see below for details on how to implement them in the Professional Stack.
 
 ### Queueing for Professional Apps
 
-Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue:
+Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simply uses your database connection as a queue:
 
 ```bash
 # Create a migration for the jobs table locally
@@ -304,7 +304,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
 
 That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
 
-Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_CONNECTION` [environment variable](env-vars) accordingly in the Dashboard.
+Once you've decided the queue you want to use, just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_CONNECTION` [environment variable](env-vars) accordingly in the Dashboard.
 
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
@@ -313,7 +313,7 @@ To run `php artisan queue:work` in the background, spin up a new [Worker](worker
 
 ## Using the Object Storage for assets (Professional Stack)
 
-fortrabbit Pro Apps have an [ephemeral storage](/app-pro#toc-ephemeral-storage). If you require persistent storage for user uploads or any other runtime data your App creates (including assets like CSS and JS), you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration effort to a minimum:
+fortrabbit Professional Apps have an [ephemeral storage](/app-pro#toc-ephemeral-storage). If you require persistent storage for user uploads or any other runtime data your App creates (including assets like CSS and JS), you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration effort to a minimum:
 
 ```bash
 composer require fortrabbit/laravel-object-storage
@@ -375,14 +375,14 @@ For your convenience you can define rsync command `npm run deploy-assets`. Examp
 
 ### Deploying assets with Professional Apps
 
-You can export your minified assets to the [Object Storage](object-storage) by extending Laravel Mix with the `webpack-s3-plugin`. This is how it works: To start, execute in your terminal:
+You can export your minified assets to the [Object Storage](object-storage) by extending Laravel Mix with the `webpack-s3-plugin`. This is how it works: To start, in your terminal, enter:
 
 ```bash
 # Get your Object Storage credentials
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
-Then put the values in your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
+Then put the values which this command outputs in your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
 ```js
 const mix = require('laravel-mix');
@@ -426,14 +426,14 @@ $ npm install webpack-s3-plugin --save
 $ npm run production --env=production
 ```
 
-Mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
+Bear in mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
 
 Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
 
 
 ## Working with Redis
 
-Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer a Redis service of its own. To use Redis, you will need to book an externally-hosted Redis service. We have an article for [redislabs](/redis-cloud). 
+Redis can be used in Laravel as a cache or a queue or both. fortrabbit does not offer a Redis service of its own. To use Redis, you will need to book an externally-hosted Redis service. We have an article for [Redis Labs](/redis-cloud). 
 
 1. On the fortrabbit side, turn on the Redis extension in the Dashboard under App > Settings > PHP.
 2. Then setup an Account with a Redis provider. 
@@ -549,7 +549,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 
 ## Scheduling
 
-The [Laravel scheduler](https://laravel.com/docs/7.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
+The [Laravel scheduler](https://laravel.com/docs/7.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
 
 ## Using artisan down (Professional Stack)
 
@@ -585,4 +585,4 @@ $ envoy run migrate
 
 ## Sending mail
 
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides an API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
