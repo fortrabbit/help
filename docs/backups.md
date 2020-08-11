@@ -29,7 +29,7 @@ Backups are not included with all App plans. See our [pricing page](https://www.
 ## Backup features
 
 * Daily backups
-* 14 days retention (30 days for pro Apps)
+* 14 days retention (30 days for Pro Apps)
 * File backups (code + assets + user uploads)
 * Low disk I/O > copy on write filesystem > only changes
 * MySQL backups
