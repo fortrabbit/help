@@ -248,9 +248,19 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 [Flare](https://flareapp.io/) (no business association) is an error tracker for Laravel, which provides a searchable log archive and SMS, Email & Slack notifications.
 
-## Dealing with user sessions on the Professional Stack
+## User sessions
 
-If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel file session driver. Using the `database` driver is the easiest way to persist user sessions across multiple Nodes. This is a good exercise for migrations:
+There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/7.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
+
+<div markdown="1" data-user="known">
+[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
+
+### User sessions for Universal Apps
+
+Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/7.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
+
+To use the `database` driver, follow these steps:
 
 ```bash
 # Create a migration for the session table  - locally
@@ -268,11 +278,11 @@ $ git push
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
 ```
 
-Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to make use of the database sessions.
+### User sessions for Professional Apps
 
-<div markdown="1" data-user="known">
-[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-</div>
+If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel `file` session driver. One solution to this issue is to use a cache-based store like [Redis](#toc-working-with-redis) or Memcached. See [our instructions below](https://help.fortrabbit.com/install-laravel-7#toc-setting-up-memcache-professional-stack-) for setting up the fortrabbit Memcache component. Don't forget to specify `memcached` as the `SESSION_DRIVER` environment variable. 
+
+Note that, since Memcache is an in-memory store which does not persist its data over server reboots, for long-lived sessions the `database` driver should be preferred (see the previous section for details). 
 
 
 ## Queueing
@@ -302,7 +312,7 @@ $ git push
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
 ```
 
-That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
+That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-working-with-redis).
 
 Once you've decided the queue you want to use, just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_CONNECTION` [environment variable](env-vars) accordingly in the Dashboard.
 
@@ -311,7 +321,7 @@ To run `php artisan queue:work` in the background, spin up a new [Worker](worker
 **NB**: Laravel offers two commands to process queues: `queue:work` and `queue:listen`. We recommend using `queue:work`, and *not* using `queue:listen`. This is because the `queue:listen` command boots the Laravel framework for each iteration, whereas `queue:work` boots the framework once and runs as a daemon. Using `queue:work` offers high memory and performance gains in comparison with `queue:listen`.
 
 
-## Using the Object Storage for assets (Professional Stack)
+## Setting up Object Storage (Professional Stack)
 
 fortrabbit Professional Apps have an [ephemeral storage](/app-pro#toc-ephemeral-storage). If you require persistent storage for user uploads or any other runtime data your App creates (including assets like CSS and JS), you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). Using our `object-storage` driver reduces the configuration effort to a minimum:
 
@@ -354,7 +364,7 @@ This will compile your assets in the locations specified in your `webpack.mix.js
 
 Since this will mean your assets won't be deployed with Git, we need to use other tools for deploying the assets.
 
-### Deploying assets with Univeral Apps
+### Deploying assets with Universal Apps
 
 We recommend using `rsync`. The one-liner below works with the most common scenarios, but feel free to adjust it to your needs if your setup differs:
 
@@ -474,7 +484,7 @@ If you plan on using Redis as a cache, then open `config/cache.php` and set the 
 
 ## Setting up Memcache (Professional Stack)
 
-Make sure you enabled the [Memcache](memcache-pro) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
+Memcache is a data store that can be used for caching and session storage. You can enable the [Memcache](memcache-pro) component in the Dashboard. Then you can use the [App Secrets](secrets) to get your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
 ```php
 // locally: use standard settings
@@ -544,7 +554,7 @@ return [
 ];
 ```
 
-In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `array` via `.env`.
+In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit. If you don't have memcached on your local machine, set the driver to `file` or `database` via `.env`.
 
 
 ## Scheduling
