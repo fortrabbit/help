@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-10
+reviewed:         2020-08-20
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
 order:            1
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.4
+version:          3.5
 supportLevel:     a
 
 keywords:
@@ -39,7 +39,7 @@ There are many ways to work with Craft CMS — depending on project needs and sk
 
 ### Modern workflow
 
-Experienced developers who are ready to work with a terminal, [Git](/git) and [Composer](/composer) will benefit most from our advanced workflows. This is were our 💜s are.
+Experienced developers who are ready to work with a terminal, [Git](/git) and [Composer](/composer) will benefit most from our advanced workflows. This is where our 💜s are.
 
 1. **[Install Craft CMS locally](craft-3-install-local)**: Install new with Composer or use an existing project
 2. **[Setup Craft for fortrabbit](/craft-3-setup)**: Prepare environments, sync database
@@ -50,13 +50,13 @@ Experienced developers who are ready to work with a terminal, [Git](/git) and [C
 
 ### Craft Copy
 
-**Take a shortcut!** We have published this little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. It guides you through the process of setting everything up, it even has a table to show you which parts are still missing. Give it a try! Here is an appetizer:
+**Take a shortcut!** We have published this little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. It guides you through the process of setting everything up, and it even has a table to show you which parts are still missing. Give it a try! Here is an appetizer:
 
 ```bash
 # Install and initialize
 $ composer config platform --unset
-$ composer require fortrabbit/craft-copy:^1.0.0-RC9
-$ ./craft install/plugin copy
+$ composer require fortrabbit/craft-copy:^1.0.0-RC11
+$ ./craft plugin/install copy
 $ ./craft copy/setup
 
 # Sync database up (local ⟶ fortrabbit)

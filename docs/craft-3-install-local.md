@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-10
+reviewed:         2020-08-20
 title:            Install Craft CMS locally
 naviTitle:        Install Craft locally
 lead:             Learn how to install Craft CMS locally, matching your skills and workflows.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.4
+version:          3.5
 supportLevel:     a
 
 keywords:
@@ -69,8 +69,8 @@ This will ask you some questions, the defaults will work mostly, you can change 
 
 ### 2b. Browser setup
 
-You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
+You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin/install` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
 
 ## Next steps
 
-By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments.
+By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and log in to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments.
