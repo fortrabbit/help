@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-24
+reviewed:         2020-08-26
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to Universal Apps using rsync or SFTP.
@@ -33,7 +33,14 @@ For best results here, make sure you have completed all steps from the [get read
 
 Craft CMS "assets" are user generated stuff: uploaded files, mostly images that lives in "volumes" — also see [the official Craft docs](https://craftcms.com/docs/3.x/assets.html) on that. 
 
-Files within local "asset" "volumes" are by default excluded from Git, so that code and content are separated. Furthermore, files uploaded to the App directly would [not be represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyway. So when you deploy Craft CMS using Git, the "assets" must be managed and deployed independently.
+When creating asset volumes in the Craft CMS control panel, their contents are by default excluded from Git, so that code and content are separated. However, if you've already created a directory in your `web` folder and you now reference that directory as the webroot of a volume you're creating, you will need to manually configure Git to ignore the files in it. To do this, add a file `.gitignore` in the volume's directory, with the following contents:
+
+```
+*
+!.gitignore
+```
+
+Another reason that assets should be managed and deployed independently from Git deployment, is that files uploaded to the production App would [not be represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyway.
 
 
 ## Options to sync assets

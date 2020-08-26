@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-20
+reviewed:         2020-08-26
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -35,7 +35,7 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 return [
     // Global settings
     '*' => [
-        'siteUrl' => App::env('SITE_URL') ?: '@web'
+        'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'
     ],    
     // fortrabbit
     'production' => [
@@ -106,7 +106,7 @@ Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms
 
 ### Using project config
 
-Note that with Craft 3.5, the `useProjectConfigFile` config setting [has been deprecated](https://craftcms.com/knowledge-base/upgrading-to-craft-3-5#project-config-workflow). Craft will now always create a `project.yaml` file in the `/config/project` directory.
+Note that with Craft 3.5, the `useProjectConfigFile` config setting [has been deprecated](https://craftcms.com/knowledge-base/upgrading-to-craft-3-5#project-config-workflow). Craft will now always create multiple project config files in the `/config/project` directory.
 
 With the [fortrabbit/craft-auto-migrate](https://github.com/fortrabbit/craft-auto-migrate) package, Project Config changes are applied automatically every time you `git push` changes.
 
