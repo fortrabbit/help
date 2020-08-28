@@ -18,7 +18,7 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 * [Learn about the differences to VPS hosting](https://www.fortrabbit.com/why-not-vps)
 
 
-## No once-click installers
+## No 1-click installers
 
 When creating an App we ask for the desired software you are about to use. This can be Laravel, Craft CMS, WordPress or alike. **That will not install the software for you.** Please don't expect one-click-installers here. This is self service PHP hosting for professional developers. We believe in a clear separation of concerns where you will take care of the code you'll write and use and where we will manage the infrastructure. We also expect you to have a local development environment, see [the local dev article](/local-development).
 
