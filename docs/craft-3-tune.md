@@ -226,15 +226,6 @@ We advise using dedicated specialized third party image optimization services, l
 * [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
 
 
-#### Using the Craft Imager plugin
-
-The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons of options for image transforms including support for `webp`. Please bear in mind we do not support any optimizers besides `webp`. If **not** using **imgix**, we suggest the following settings:
-
-* `'imagerSystemPath' => '/tmp/imager'` To make sure cached transforms persist when you deploy new code.
-* `'useCwebp' => true` Use the cwebp command line tool (ImageMagick works with webp as well).
-* `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
-
-
 ## Craft CLI
 
 Craft CMS comes with a built in command line interface which can be called from the console. You can also run it one the App (Universal Apps only) itself like so:
