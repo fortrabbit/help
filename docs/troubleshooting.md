@@ -59,9 +59,28 @@ That can have multiple causes. See the [DNS and domain troubleshooting help](dom
 Most likely you have just added your domain and it still takes a while until the Let's Encrypt certs will kick in. See our [HTTPS troubleshooting section](https#toc-troubleshooting-tls) for more.
 
 
-## I see a 5xx error
+## I see a 500 or a 503 error
 
 You can likely find out about that yourself. Please see [the App troubleshooting section](/app#toc-500-internal-server-error) for more.
+
+
+## I see a 504 error
+
+504 errors are always time-outs. Something blocking or taking too long to process and the server times out.
+
+This can be external API calls, database queries or image transforms (ImageMagick). Sometimes its plugins for CMS systems. 504 errors are usually connected to your code or the code you are using, not to general "server issues" here. It’s not likely that you can find something in the PHP error logs, as it just runs out of time.
+
+Here are some tips to proceed:
+
+*  What is the request process with your page?
+*  Are you doing image transformations? How? Can you cache them?
+*  Are you making calls to external APIs?
+*  Is your page generating an expensive database query?
+*  Is there maybe some sort of loop you are creating in your code?
+*  Use a profiler like Blackfire or NewRelic to find the bottleneck!
+*  You can also decrease/increase max_timeout setting for debugging.
+
+
 
 
 ## I uploaded Craft by SFTP but it's not working!

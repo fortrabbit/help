@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-26
+reviewed:         2020-09-02
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -65,7 +65,7 @@ ENVIRONMENT=dev
 
 Your fortrabbit App comes with a predefined App Name and a URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder. 
 
-Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. 
+Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `PRIMARY_SITE_URL` ENV var or the `@web` fallback, which is a good default.  Older versions of Craft might use `SITE_URL`.
 
 You can also add multiple domains. From the fortrabbit side, just point them to the App's root path, configure routing and display of contents within Craft CMS and/or use additional [htaccess rules](/htaccess).
 
@@ -224,15 +224,6 @@ We advise using dedicated specialized third party image optimization services, l
 
 * [Imager Craft](https://github.com/aelvan/Imager-Craft/)
 * [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
-
-
-#### Using the Craft Imager plugin
-
-The [aelvan/Imager-Craft](https://github.com/aelvan/Imager-Craft) provides tons of options for image transforms including support for `webp`. Please bear in mind we do not support any optimizers besides `webp`. If **not** using **imgix**, we suggest the following settings:
-
-* `'imagerSystemPath' => '/tmp/imager'` To make sure cached transforms persist when you deploy new code.
-* `'useCwebp' => true` Use the cwebp command line tool (ImageMagick works with webp as well).
-* `'fillInterval' => 600` If you make use of fillInterval, make sure to increase the interval (defaults to 200) to avoid too many different image instances.
 
 
 ## Craft CLI
