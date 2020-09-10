@@ -18,7 +18,7 @@ keywords:
 
 <div class="alert" style="padding: 1px 30px">
   <p>
-     We have a more up-to-date overview of local dev tooling over <a href="https://blog.fortrabbit.com/tools-for-php-development-local-dev-site-setup">here in our blog</a>.
+     We have a more up-to-date overview of local dev tooling over <a href="https://blog.fortrabbit.com/tools-for-php-development-local-dev-site-setup">here in our blog</a>. There is also an <a href="https://blog.fortrabbit.com/local-craft-dev-site-ddev-development-tool">article on how set up Craft CMS locally with DDEV</a>.
   </p>
 </div>
 
