@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-08-03
+reviewed:      2020-09-18
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -61,12 +61,23 @@ You can check the current costs by looking at your **Billing Contact**, see the 
 
 ### Payment methods
 
-You can pay by credit card or SEPA direct debit. For enterprise clients (large volume) we also offer to pay by bill (giro / wire) (on account, after invoice).
+#### Credit card
 
-* Visa, MasterCart and Amex are the supported credit cards
-* Many debit cards are not supported, some are
-* SEPA direct debit is accessible to clients in the European Union
-* PayPal is NOT supported, there are no future plans for that
+Visa, MasterCart and Amex are the supported credit cards. Many debit cards are not supported, some are, try it out. US clients might need to ask their bank to allow payments from us. When setting up the payment option we'll do test charge.
+
+#### SEPA direct debit
+
+SEPA direct debit is accessible to clients in the European Union.
+
+#### On invoice
+
+For enterprise clients we also offer to pay by bill (giro / wire) (on account, after invoice). The current workflow requires that there is already a Billing Contact set up here, including a valid payment method and best with a couple of invoices. Then you can ask us in support to change the payment method to on invoice.
+
+
+
+#### Currently not supported
+
+PayPal is NOT supported, there are no future plans for that.
 
 
 ### Billing e-mail address
