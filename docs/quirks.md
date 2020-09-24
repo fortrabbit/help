@@ -167,24 +167,20 @@ Outgoing traffic is limited for [security](security) reasons — most ports for 
 
 In some cases you need to know your App's IP address, like for payment processing or in environments that are behind a firewall.
 
-For [Professional Apps](/app-pro) on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway.
+**For [Professional Apps](/app-pro)** on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway. The traffic from Apps will appear to others as coming from these addresses.
 
- For [Universal Apps](/apps-uni) and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App.
+    EU: 52.50.42.152
+    US: 52.72.32.63
 
-You can see this for yourself with a php script.
+**For [Universal Apps](/apps-uni)** and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App. You can see this for yourself with a PHP script. Querying an HTTP service like that from an App is the easiest way to determine the current IP address. 
 
     <?php
     echo file_get_contents("https://ifconfig.co/");
 
-Querying an HTTP service like that from an App is the easiest way to determine the current IP address. Depending on your needs, it is possible to use an HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) to get a static IP address. Finally, there is also the [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) and the same list in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) format.
 
+Depending on your needs, it is possible to use an HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) to get a static IP address. 
 
-### Outgoing IP addresses for our regions
-
-The traffic from Apps will appear to others as coming from these addresses.
-
-    EU: 52.50.42.152
-    US: 52.72.32.63
+Finally, there is also the [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) and the same list in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) format.
 
 Do bear in mind, the place where you shell into with `ssh` or push with `git` is called the deploy service. The IP address of the deploy service may change.
 

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-08-05
+reviewed:      2020-09-08
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -375,3 +375,8 @@ So far we have covered how to route a domain to fortrabbit. To receive and send 
 ### Domain limit
 
 Please mind that there is a limit of 100 domains per App. In many cases you can use a wildcard instead.
+
+
+### No DNS settings for the App URL
+
+When setting up an App we'll provide an App URL - see [App help](/app#toc-app-url). You can not configure any DNS entries for that App URL.
