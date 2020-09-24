@@ -1,17 +1,17 @@
 ---
 
 template:         article
-reviewed:         2020-08-10
-title:            Install Laravel 7
+reviewed:         2020-09-24
+title:            Install Laravel 8
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 7 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 8 on fortrabbit.
 group:            Install_guides
 
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-black-new.svg
-version:          7.23.0
+version:          8.6.0
 stack:            all
 supportLevel:     a
 
@@ -250,7 +250,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 ## User sessions
 
-There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/7.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
+There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/8.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -258,7 +258,7 @@ There are various session drivers available in Laravel: see a [full list here](h
 
 ### User sessions for Universal Apps
 
-Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/7.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
+Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/8.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
 
 To use the `database` driver, follow these steps:
 
@@ -280,7 +280,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
 
 ### User sessions for Professional Apps
 
-If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel `file` session driver. One solution to this issue is to use a cache-based store like [Redis](#toc-working-with-redis) or Memcached. See [our instructions below](https://help.fortrabbit.com/install-laravel-7#toc-setting-up-memcache-professional-stack-) for setting up the fortrabbit Memcache component. Don't forget to specify `memcached` as the `SESSION_DRIVER` environment variable. 
+If you are on the Professional Stack, since you might have multiple Nodes and no persistent shared storage, you can not rely on the default Laravel `file` session driver. One solution to this issue is to use a cache-based store like [Redis](#toc-working-with-redis) or Memcached. See [our instructions below](#toc-setting-up-memcache-professional-stack-) for setting up the fortrabbit Memcache component. Don't forget to specify `memcached` as the `SESSION_DRIVER` environment variable. 
 
 Note that, since Memcache is an in-memory store which does not persist its data over server reboots, for long-lived sessions the `database` driver should be preferred (see the previous section for details). 
 
@@ -559,7 +559,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 
 ## Scheduling
 
-The [Laravel scheduler](https://laravel.com/docs/7.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
+The [Laravel scheduler](https://laravel.com/docs/8.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
 
 ## Using artisan down (Professional Stack)
 
