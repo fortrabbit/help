@@ -71,7 +71,7 @@ SEPA direct debit is accessible to clients in the European Union.
 
 #### On invoice
 
-For enterprise clients from Europe with a recurring revenue of more than 300 € we also offer to pay by bill (giro / wire) (on account, after invoice). The current workflow requires that there is already a Billing Contact set up here, including a valid payment method and best with a couple of invoices. Then, please <a href="#asd" onclick="Intercom('showNewMessage', 'I would like to apply for payment on invoice …')">contact us</a> to change the payment method to on invoice. 
+For enterprise clients from Europe with a recurring revenue of more than 300 € we also offer to pay by bill (giro / wire) (on account, after invoice). The current workflow requires that there is already a Billing Contact including a valid payment method set up. Please <a href="#asd" onclick="Intercom('showNewMessage', 'I would like to apply for payment on invoice …')">contact us</a> to change the payment method to on invoice. 
 
 
 #### Currently not supported
