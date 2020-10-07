@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-09-18
+reviewed:      2020-10-07
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -71,7 +71,7 @@ SEPA direct debit is accessible to clients in the European Union.
 
 #### On invoice
 
-For enterprise clients we also offer to pay by bill (giro / wire) (on account, after invoice). The current workflow requires that there is already a Billing Contact set up here, including a valid payment method and best with a couple of invoices. Then you can ask us in support to change the payment method to on invoice.
+For enterprise clients with some more monthly recurring revenue (>=300 MRR) we also offer to pay by bill (giro / wire) (on account, after invoice). The current workflow requires that there is already a Billing Contact set up here, including a valid payment method and best with a couple of invoices. Then you can ask us in support to change the payment method to on invoice. 
 
 
 
