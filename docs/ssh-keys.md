@@ -5,7 +5,7 @@ reviewed:      2020-07-28
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
-group:         deployment
+group:         troubleshooting
 stack:         all
 
 

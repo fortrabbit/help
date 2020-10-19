@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2020-10-19
-title:         Denylist
-naviTitle:     Denylist
+title:         Outgoing calls
+naviTitle:     Outgoing calls
 excerpt:       What you may want to know about our blocklist.
 lead:          Can not make outgoing calls from your App? We block a lot of ports. 
 group:         troubleshooting
