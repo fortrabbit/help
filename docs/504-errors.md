@@ -5,7 +5,7 @@ reviewed:      2020-10-19
 title:         504 errors
 naviTitle:     504 errors
 excerpt:       What you may want to know about our 404 errors.
-lead:          Are you seeing a 504 error page? 
+lead:          'The 504 HTTP status code is "Gateway timeout". This means that the request is taking too long to process or something is blocking execution.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -13,7 +13,7 @@ dontList:      false
 ---
 
 
-504 errors are always time-outs. Something is blocking or taking too long to process. Usually when you are trying to call the page initially, nothing will happen and it keeps loading until it will finally show the 504 page. 
+Usually when you are trying to call the page initially, nothing will happen and it keeps loading until it will finally show the 504 page. 
 
 
 ## Need to know
