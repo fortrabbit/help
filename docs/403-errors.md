@@ -17,16 +17,33 @@ dontList:      false
 
 In most cases this is not a server issue, but something with your code and configuration.
 
+
 ### No code deployed
 
-Please push some code
+The App is new. You have not yet deployed any code. Please upload some code from your local development environment.
+
 
 ### Wrong root path 
 
-Check if the [root path](/app#toc-root-path) (doc root) is configured correctly
+With certain CMS and frameworks we pre-populate the root path. So depending in your choice when creating the App, something might not be configured correctly Check the [root path](/app#toc-root-path) of your App.
 
-* Issues with `.htaccess`- Check your [`.htaccess` file](/htaccess), maybe it is missing
+
+### .htaccess problems
+
+Issues with `.htaccess`- Check your [`.htaccess` file](/htaccess), maybe it is missing
+
+
+### File permissions
+
 * Wrong permissions - Check your file permissions
+
+
+### DNS issues
+
 * DNS not propagated -  Wait a little and try again
-* Wrong address - Check for typos in the address bar (URL)
+
+
+### Wrong address
+
+Check for typos in the address bar (URL)
 * Something else - Please check the [fortrabbit status](https://status.forttabbit.com)
