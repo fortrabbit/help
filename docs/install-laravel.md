@@ -563,7 +563,7 @@ The [Laravel scheduler](https://laravel.com/docs/8.x/scheduling) is not supporte
 
 ## Using artisan down (Professional Stack)
 
-`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel with the `CheckForMaintenanceMode` middleware. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) only affects the deployment Node, not your live App. Any file changes via SSH remote exec do not affect your App.
+`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel with the `CheckForMaintenanceMode` middleware. Modifying files via [SSH remote execution](remote-ssh-execution-pro) only affects the deployment Node, not your live App. Any file changes via SSH remote exec do not affect your App.
 
 There are at least two options to do this:
 
