@@ -149,10 +149,10 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
-```
+$ mysqldump --set-gtid-purged=OFF -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
+``` 
 
-Replace the placeholders with your local credentials. 
+The `--set-gtid-purged=OFF` option is required to prevent permission errors like `#1227 - Access denied; you need (...) SUPER privilege(s)` when importing the database. If you use `mariaDB` locally the GTID option needed.
 
 Next, open a tunnel and import the newly created dump file into your database. This is easier with two terminal windows: One for the tunnel and the other to execute the import. These instructions must be run on your **local machine**, the import will not work if you log in to fortrabbit before running these commands.
 
