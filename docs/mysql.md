@@ -321,3 +321,12 @@ You'll see a `max_user_connections` error when you've reached the max connection
 
 If you see that error on other occasions or it's not going away after a while, contact support.
 
+### Access denied; missing SUPER privileges
+
+When importing a database dump you've created with a recent version of `mysqldump`, you may experience errors like this:
+
+```
+#1227 - Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+```
+
+To prevent this error, create the dump again using the `--set-gtid-purged=OFF` option. If you don't use the `mysqldump` command line tool directly, but a GUI that relies on it, the chance is very high there is checkbox to disable "GTID PURGED".   
