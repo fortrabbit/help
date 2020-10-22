@@ -15,12 +15,14 @@ dontList:      false
 
 ## Common reasons and solutions
 
+In most cases this is not a server issue, but something with your code and configuration.
+
 
 ### No code deployed
 
 A common case for the 404 page is that no code has been deployed yet. 
 
-This can be a misunderstanding: You might have thought that choosing a [Software Preset](#toc-software-prest) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead and deploy some code first.
+This can be a misunderstanding: You might have thought that choosing a [Software Preset](/app#toc-software-preset) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead and deploy some code first.
 
 Maybe also, the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error? Please check if all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
 

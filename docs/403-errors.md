@@ -5,7 +5,7 @@ reviewed:      2020-10-20
 title:         403 errors
 naviTitle:     403 errors
 excerpt:       What you may want to know about our 403 errors.
-lead:          'The 403 HTTP status code is "Forbidden". This means that access is denied. The resource is not allowed for you for some reason.'
+lead:          'The 403 HTTP status code is "Forbidden". This means that access is denied. The resource is not allowed for some reason.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -25,17 +25,17 @@ The App is new. You have not yet deployed any code. Please upload some code from
 
 ### Wrong root path 
 
-With certain CMS and frameworks we pre-populate the root path. So depending in your choice when creating the App, something might not be configured correctly Check the [root path](/app#toc-root-path) of your App.
+With certain CMS and frameworks we pre-populate the root path. So depending in your choice when creating the App, something might not be configured correctly. Check the [root path](/app#toc-root-path) of your App.
 
 
 ### .htaccess problems
 
-Issues with `.htaccess`- Check your [`.htaccess` file](/htaccess), maybe it is missing
+Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htaccess` file, or maybe the file missing. See our [.htaccess help](/htaccess).
 
 
 ### File permissions
 
-* Wrong permissions - Check your file permissions
+ Wrong permissions - Check your file permissions
 
 
 ### DNS issues
