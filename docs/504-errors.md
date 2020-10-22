@@ -15,6 +15,7 @@ dontList:      false
 ## 504 error behavior
 
 * 504 errors will be shown after a longer time of trying to load a page
+* 504 errors here are sometimes rendered using a fortrabbit error page template
 * 504 errors often occur out without code changes
 * 504 errors are sometimes connected to traffic patterns
 * 504 errors are sometimes caused by editorial changes in a CMS
@@ -80,3 +81,15 @@ The fortrabbit Dashboard is providing some useful metrics. You can see 5xx metri
 In order to separate 504 from the other 503, 502 and 500 errors, have a look at the PHP response time metric. The PHP response time always goes up, when there are 504 errors. In return not always when the PHP response goes up, 504 errors occur. 
 
 Aim for no swap usage and a low PHP response time of not more than 200 ms. 
+
+
+## It could also be something on our side
+
+It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on the side of your hosting provider — us. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
+
+
+## Contacting support
+
+Please help us helping you. Have a look in the logs of your App to find out where the error exactly is. If that does not help you already, please include logs and additional information with your support request. 
+
+* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 403 for my App ______ for around ___.  I have made the following changes recently: ____')">Contact support</a>

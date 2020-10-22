@@ -5,17 +5,24 @@ reviewed:      2020-10-20
 title:         403 errors
 naviTitle:     403 errors
 excerpt:       What you may want to know about our 403 errors.
-lead:          'The 403 HTTP status code is "Forbidden". This means that access is denied. The resource is not allowed for some reason.'
+lead:          'The 403 HTTP status code is "Forbidden". This means that access is denied, or in other words: the resource is not allowed for some reason. This article aims to help developers troubleshooting such errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
 
 ---
 
+## 403 error behavior
+
+* 403 errors will usually be shown on screen immediately
+* 403 errors often occur after code or configuration changes
+* 403 errors here are often rendered using a fortrabbit error page template
+
 
 ## Common reasons and solutions
 
 In most cases this is not a server issue, but something with your code and configuration.
+
 
 
 ### No code deployed
@@ -30,20 +37,38 @@ With certain CMS and frameworks we pre-populate the root path. So depending in y
 
 ### .htaccess problems
 
-Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htaccess` file, or maybe the file missing. See our [.htaccess help](/htaccess).
+Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htaccess` file. Developes using SFTP often miss to upload that hidden file. See our [.htaccess help](/htaccess).
 
 
 ### File permissions
 
- Wrong permissions - Check your file permissions
+ Sometimes 403 errors are happening due to wrong file permissions. This can happen when you deploy with SFTP or SSH. Make sure that PHP can write the files `composer.json`, `composer.lock`, `storage/*` and `vendor/*` and other files. Set the file permissions for those files to `744` with your SFTP client or by SSH.  The `*.php` files should be executable.
+
+<!-- Duplicate with Craft CMS: Upload SFTP, maybe remove the other one -->
+
+
+### Missing http-auth credentials
+
+When you have used HTTP auth to protect your website from unwanted visitors and someone is trying access that without entering the correct username and password a 403 access denied error will occur as well.
 
 
 ### DNS issues
 
-* DNS not propagated -  Wait a little and try again
+Sometimes it takes a while until DNS is propagated. This can be when your App is new, you have upgraded the scaling or you have just routed a domain. Wait a little and try again.
 
 
 ### Wrong address
 
-Check for typos in the address bar (URL)
-* Something else - Please check the [fortrabbit status](https://status.forttabbit.com)
+You might have an error with URL. Check for typos in the address bar (URL) of your browser.
+
+
+## It could also be something on our side
+
+It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on the side of your hosting provider — us. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
+
+
+## Contacting support
+
+Please help us helping you. Have a look in the logs of your App to find out where the error exactly is. If that does not help you already, please include logs and additional information with your support request. 
+
+* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 403 for my App ______ for around ___.  I have made the following changes recently: ____')">Contact support</a>

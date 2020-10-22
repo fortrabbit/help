@@ -2,10 +2,10 @@
 
 template:      article
 reviewed:      2020-10-19
-title:         TLS/SSL errors
-naviTitle:     TLS/SSL errors
+title:         TLS issues
+naviTitle:     TLS issues
 excerpt:       What you may want to know about our SSL/TLS errors.
-lead:          Are you seeing a certificate error in the browser? 
+lead:          Are you seeing a certificate error in the browser? This article aims to help developers troubleshooting such errors.
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -13,7 +13,8 @@ dontList:      false
 ---
 
 
-We provide free Let's Encrypt certificates for all domains. Additionally you can install your own. Read more about the HTTPS options with the [main article](/https). This article helps when something is not working.
+We provide free Let's Encrypt certificates for all domains. Additionally you can install your own. Read more about the HTTPS options with the [main article](/https).
+
 
 ### Review certificates in the browser
 
