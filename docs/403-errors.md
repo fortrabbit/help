@@ -15,7 +15,7 @@ dontList:      false
 ## 403 error behavior
 
 * 403 errors will usually be shown on screen immediately
-* 403 errors often occur after code or configuration changes
+* 403 errors often occur during setup or after code or configuration changes
 * 403 errors here are often rendered using a fortrabbit error page template
 
 

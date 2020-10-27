@@ -5,7 +5,7 @@ reviewed:      2020-10-19
 title:         Troubleshoot 404 errors
 naviTitle:     404 errors
 excerpt:       What you may want to know about our 404 errors.
-lead:          'The 404 HTTP status code is "not found". The server can be reached and is answering but there is nothing to show under this address. This article aims to help developers troubleshooting such errors.'
+lead:          'The 404 HTTP status code is "File Not Found". The server can be reached and is answering but there is nothing to show under this address. This article aims to help developers troubleshooting such errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -16,13 +16,13 @@ dontList:      false
 ## 404 error behavior
 
 * 404 errors will usually be shown on screen immediately
-* 404 errors often occur after code or configuration changes
+* 404 errors often occur during setup or after code or configuration changes
 * 404 errors here are often rendered using a fortrabbit error page template
 
 
 ## Common reasons and solutions
 
-**In almost all cases this is not a server issue, but something with your code and configuration.** Please check the following common issues first:
+**In most cases this is not a server issue, but something with your code and configuration.** Please check the following common issues first:
 
 
 ### No code deployed

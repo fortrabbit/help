@@ -5,7 +5,7 @@ reviewed:      2020-10-27
 title:         Troubleshoot 500 errors
 naviTitle:     500 errors
 excerpt:       What you may want to know about our 500 errors.
-lead:          'The 500 HTTP status code is "Service unavailable". This article aims to help developers troubleshooting such errors.'
+lead:          'The 500 HTTP status code is "Internal Server Error". This article aims to help developers troubleshooting such errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
