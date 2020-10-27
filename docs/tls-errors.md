@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-19
+reviewed:      2020-10-27
 title:         TLS issues
 naviTitle:     TLS issues
 excerpt:       What you may want to know about our SSL/TLS errors.
@@ -29,7 +29,7 @@ To troubleshoot TLS/SSL issues, it's often helpful a certificate in the browser.
 
 You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. If you expect the cert in the browser, you see that the cert is issued for `*.frb.io` not for your domain. 
 
-This can happen, when the domain is brand new and the cert is not YET installed (can take up to 24 hours). In this case, please wait a little. 
+This can happen, when the domain is brand new and the cert is not YET installed. It can take up to 24 hours for the certs to get installed. The cert for the naked domain (for forwarding) usually takes a bit longer than the other one.
 
 This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please see the domain settings in the Dashboard. 
 
