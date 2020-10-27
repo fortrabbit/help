@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-07-13
+reviewed:      2020-10-27
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -329,7 +329,7 @@ Here are some common gotchas that mostly happen with new Apps:
 
 ### 500 internal server error
 
-See [here](/500-errors).
+Please see [here](/500-errors).
 
 
 ### Version mismatch without any changes made
