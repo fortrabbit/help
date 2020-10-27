@@ -36,7 +36,7 @@ This can also happen, when your domain is not routed to fortrabbit (YET), only d
 There are also other edge cases when this can happen and is not resolving on it's own. One case is, that your domain has set CAA records (see above) with DNS. 
 
 
-### Cert is installed but browser bar is showing a green lock
+### Cert is installed but browser bar is not showing a green lock
 
 In most cases this is due to "**mixed content**", which means, the cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http:` requests. You can use `https://` instead or you just leave out the protocol entirely like so: `//`. The last method will use whatever has been used before, so that works especially well, with different environments, for instance when your local development machine doesn't have TLS.
 
