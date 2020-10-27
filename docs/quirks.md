@@ -142,25 +142,17 @@ You can use / create as many [branches](git) as you want and push them to the fo
 
 This is a feature, not a bug: use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master (or your App's name like: {{app-name}}) branch and push it.
 
+
 ### Release package limit
 
 To keep deployment fast for everyone the size of the release package is limited to 200 MB. [Read on](git#toc-release-package-limit).
+
 
 ## MySQL with persistent connections during upgrade
 
 When scaling (up or down) your MySQL, your App's database will be migrated to a new node. Therefore the CNAME target of your App's MySQL hostname will be changed. The hostname's time to live (TTL) is 60 seconds, which reflects the maximum expected downtime during upgrade.
 
 With persistent connections this can take longer (possibly up to half an hour). Therefore we recommend to disable persistent connections during upgrades and downgrades.
-
-
-
-## Firewall
-
-Outgoing traffic is limited for [security](security) reasons — most ports for making outgoing calls are locked. Only the most [standard ports are white-listed](http://www.fortrabbit.com/specs#firewall). Any access to service Components provided by us directly (Memcached, MySQL, ..) is of course also allowed. Any other traffic is denied - but you can request to open ports for your App. To do so: login to the Dashboard, browse to your App, go to the firewall settings, "request a custom white listing".
-
-<div markdown="1" data-user="known">
-[Request a new firewall white-listing for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/firewall)
-</div>
 
 
 ## Outgoing IP address

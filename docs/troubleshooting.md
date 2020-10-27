@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2020-10-19
 title:         Troubleshooting index
 naviTitle:     troubleshooting
 excerpt:       Hanging somewhere? Something is not working? Check out the most common gotchas here.
@@ -25,7 +25,7 @@ This can have multiple causes. Please make sure to grab the correct access crede
 
 ## I can not push code by Git!
 
-Please also the question above on authentication. Check if SSH/SFTP is working for you and if Git is setup correctly. Also see our [getting started with Git article](/git), when you are new to this. Check out the [Git troubleshooting](/git-deployment#toc-troubleshooting) section.
+Please also the question above on authentication. Check if SSH/SFTP is working for you and if Git is setup correctly. Also see our [getting started with Git article](/git), when you are new to this. Check out the [Git troubleshooting](/git-troubleshooting) section.
 
 
 ## Composer update is failing!
@@ -40,13 +40,11 @@ When deploying with Git, you might wonder why some old files have not been delet
 
 ## I see a 403 error
 
-That can have multiple causes. One common reason is that the hidden `.htaccess` file is missing, see [here](/htaccess#toc-missing-htaccess). Another common issue is that you have forgotten to set a correct root path, see [here](https://help.fortrabbit.com/app#toc-root-path).
-
+See [here](/403-errors).
 
 ## I see a 404 error
 
-That can have multiple causes: Maybe no code deployed, maybe wrong root path, maybe something else. Please see [here](app#toc-404-not-found).
-
+See [here](/404-errors).
 
 
 ## My domain is not working!
@@ -56,31 +54,19 @@ That can have multiple causes. See the [DNS and domain troubleshooting help](dom
 
 ## I see an SSL cert error
 
-Most likely you have just added your domain and it still takes a while until the Let's Encrypt certs will kick in. See our [HTTPS troubleshooting section](https#toc-troubleshooting-tls) for more.
+See [here](/tls-errors).
 
 
 ## I see a 500 or a 503 error
+
+See [here](/503-errors)
 
 You can likely find out about that yourself. Please see [the App troubleshooting section](/app#toc-500-internal-server-error) for more.
 
 
 ## I see a 504 error
 
-504 errors are always time-outs. Something blocking or taking too long to process and the server times out.
-
-This can be external API calls, database queries or image transforms (ImageMagick). Sometimes its plugins for CMS systems. 504 errors are usually connected to your code or the code you are using, not to general "server issues" here. It’s not likely that you can find something in the PHP error logs, as it just runs out of time.
-
-Here are some tips to proceed:
-
-*  What is the request process with your page?
-*  Are you doing image transformations? How? Can you cache them?
-*  Are you making calls to external APIs?
-*  Is your page generating an expensive database query?
-*  Is there maybe some sort of loop you are creating in your code?
-*  Use a profiler like Blackfire or NewRelic to find the bottleneck!
-*  You can also decrease/increase max_timeout setting for debugging.
-
-
+See [here](/504-errors)
 
 
 ## I uploaded Craft by SFTP but it's not working!
@@ -108,10 +94,6 @@ See what the error says and try to find out the solution yourself. This is a hos
 Do not hesitate to contact us. Make sure to provide all details upfront so that we can back on you easily. See [here](https://www.fortrabbit.com/support-policy#successful-support) on how to get good support quickly.
 
 
-## Blacklisting
+## Blocklisting
 
-We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will therefore get blacklisted. This applies to all kind of deployment connections, S3, SSH/SFTP and Git.
-
-Before thinking about blacklisting, please assure that it has worked before. We haven't had any support case where blacklisting occurred before it worked at least once. So, when you have not been able to connect before, chances are very very high that this is NOT blacklisting. Please see our [access methods troubleshooting section](/access-methods#toc-troubleshooting) next instead.
-
-Get a new IP by disconnecting from the internet shortly, by restarting your router device. <a class="type-bold" href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__. My App Name is _______. Its not the first time I am trying to connect, it has worked before.')">Ask us</a> to remove your IP from the blacklisting ban.
+See [here](/denylist)

@@ -189,54 +189,13 @@ if (getenv('APP_NAME')) {
 -->
 
 
-
 ### Integrating with GitHub & Bitbucket
 
 We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily possible to combine your fortrabbit repo with [GitHub](github) and [Bitbucket](bitbucket).
 
 
-## Don't use Git submodules
+## Git submodules
 
-Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
+Git submodules are NOT supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
 
 
-## Troubleshooting
-
-If your Git deployment fails for any reason: 
-
-1. If you are unsure about Git: Check out [Getting started with Git](git)
-2. If it didn't work before: Read the above to see if you missed something.
-3. If it still doesn't work: Please get in touch with us.
-
-### Reporting issues with Git
-
-To help us helping you please provide a verbose output of the push (or pull) operation:
-
-```
-# See remotes
-$ git remote -v
-
-# Generate verbose output for push
-$ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit master
-
-# Generate verbose output for pull
-$ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
-```
-
-**Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
-
-### Deployment lock error
-
-```
-!! Could not get lock on repository; probably deployment in progress.
-```
-
-Wait around 20 minutes when you see the above message when deploying. That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. That should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time if not finished before successfully. Contact support, if the repository lock is not resolving or if that happens often or even all the time.
-
-### Git client max connections
-
-Some graphical clients for Git, like SourceTree and GitKraken are fetching often and are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client: In GitKraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
-
-## Blacklisting
-
-When nothing works any more, see if you are blacklisted: more [here](/troubleshooting#toc-blacklisting).
