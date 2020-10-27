@@ -3,7 +3,7 @@
 template:      article
 reviewed:      2020-10-19
 title:         Firewalling
-naviTitle:     Outgoing requests
+naviTitle:     Firewalling
 excerpt:       What you may want to know about making outgoing calls and our blocklist.
 lead:          Having trouble making outgoing calls from your App? That's maybe because we block most non-standard ports. You can request to get your opened.
 group:         troubleshooting

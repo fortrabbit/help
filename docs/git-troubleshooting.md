@@ -5,7 +5,7 @@ reviewed:      2020-10-22
 title:         Git troubleshooting
 naviTitle:     Git troubleshooting
 excerpt:       What you may want to know to debug Git connection issues
-lead:          'This article aims to help you finding common issues when working with Git on fortrabbit.'
+lead:          'This article aims to help you finding common issues when deploying with Git on fortrabbit.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -13,10 +13,10 @@ dontList:      false
 ---
 
 
-## Read these first please
+## Read first please
 
-1. If you are new to Git: Check out [Git intro article](/git) first, learn basic concepts and how to install Git for your local development
-2. If you set up Git here for the first time: Read the [Git deployment guide](/git-deployment) first, see how Git is integrated as a deployment method at fortrabbit 
+1. **If you are new to Git**: Check out [Git intro article](/git) first, learn basic concepts and how to install Git for your local development
+2. **If you set up Git here for the first time**: Read the [Git deployment guide](/git-deployment) first, see how Git is integrated as a deployment method at fortrabbit 
 
 
 

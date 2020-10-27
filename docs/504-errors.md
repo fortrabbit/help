@@ -85,11 +85,13 @@ Aim for no swap usage and a low PHP response time of not more than 200 ms.
 
 ## It could also be something on our side
 
-It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on the side of your hosting provider — us. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
+It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
 
 
 ## Contacting support
 
-Please help us helping you. Have a look in the logs of your App to find out where the error exactly is. If that does not help you already, please include logs and additional information with your support request. 
+Whether your investigation (see above) leads to possible service issues at our side or you are stuck in debugging the issue on your own, don't hesitate to contact us.
 
-* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 403 for my App ______ for around ___.  I have made the following changes recently: ____')">Contact support</a>
+Please include logs and additional information with your support request. 
+
+* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 504 for my App ______ for around ___. I have made the following changes recently: ____.')">Contact support</a>

@@ -327,9 +327,9 @@ While deleting an App is irrevocable, Backups might still be around. If your App
 Here are some common gotchas that mostly happen with new Apps:
 
 
-### 500, 502 or 503 Internal Server Error
+### 500 internal server error
 
-See [here](/504-errors)
+See [here](/500-errors).
 
 
 ### Version mismatch without any changes made

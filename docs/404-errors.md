@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2020-10-19
-title:         404 errors
+title:         Troubleshoot 404 errors
 naviTitle:     404 errors
 excerpt:       What you may want to know about our 404 errors.
 lead:          'The 404 HTTP status code is "not found". The server can be reached and is answering but there is nothing to show under this address. This article aims to help developers troubleshooting such errors.'
@@ -22,7 +22,7 @@ dontList:      false
 
 ## Common reasons and solutions
 
-In most cases this is not a server issue, but something with your code and configuration.
+**In almost all cases this is not a server issue, but something with your code and configuration.** Please check the following common issues first:
 
 
 ### No code deployed
@@ -68,6 +68,8 @@ It is also possible — although less likely - that this error is caused by a ne
 
 ## Contacting support
 
-Please help us helping you. Have a look in the logs of your App to find out where the error exactly is. If that does not help you already, please include logs and additional information with your support request. 
+Whether your investigation (see above) leads to possible service issues at our side or you are stuck in debugging the issue on your own, don't hesitate to contact us.
 
-* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 403 for my App ______ for around ___.  I have made the following changes recently: ____')">Contact support</a>
+Please include logs and additional information with your support request. 
+
+* <a href="#asd" onclick="Intercom('showNewMessage', 'I see 404 for my App ______ for around ___. I have made the following changes recently: ____. I have checked for the root path already.')">Contact support</a>

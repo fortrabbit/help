@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2020-10-22
-title:         Too many login attempts
-naviTitle:     Too many login attempts
+title:         Blocklisting
+naviTitle:     Blocklisting
 excerpt:       What you may want to know about blocking when trying to deploy.
 lead:          "We are actively filtering deployment traffic for security reasons: Too many falsy login attempts or parallel connections are considered dangerous and will therefore get blocked. This applies to all kind of deployment connections, S3, SSH/SFTP and Git."
 group:         troubleshooting

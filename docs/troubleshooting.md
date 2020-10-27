@@ -25,7 +25,7 @@ This can have multiple causes. Please make sure to grab the correct access crede
 
 ## I can not push code by Git!
 
-Please also the question above on authentication. Check if SSH/SFTP is working for you and if Git is setup correctly. Also see our [getting started with Git article](/git), when you are new to this. Check out the [Git troubleshooting](/git-deployment#toc-troubleshooting) section.
+Please also the question above on authentication. Check if SSH/SFTP is working for you and if Git is setup correctly. Also see our [getting started with Git article](/git), when you are new to this. Check out the [Git troubleshooting](/git-troubleshooting) section.
 
 
 ## Composer update is failing!

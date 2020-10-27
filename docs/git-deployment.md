@@ -189,7 +189,6 @@ if (getenv('APP_NAME')) {
 -->
 
 
-
 ### Integrating with GitHub & Bitbucket
 
 We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily possible to combine your fortrabbit repo with [GitHub](github) and [Bitbucket](bitbucket).
