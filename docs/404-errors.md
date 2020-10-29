@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2020-10-19
+reviewed:      2020-10-29
 title:         Troubleshoot 404 errors
 naviTitle:     404 errors
-excerpt:       What you may want to know about our 404 errors.
-lead:          'The 404 HTTP status code is "File Not Found". The server can be reached and is answering but there is nothing to show under this address. This article aims to help developers troubleshooting such errors.'
+excerpt:       Some tips on troubleshooting 404 errors.
+lead:          'The 404 HTTP status code means "File Not Found". The server can be reached and is answering but there is nothing to show under this address. This article aims to help developers troubleshooting 404 errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -22,31 +22,31 @@ dontList:      false
 
 ## Common reasons and solutions
 
-**In most cases this is not a server issue, but something with your code and configuration.** Please check the following common issues first:
+**In most cases this is not a server issue, but a problem with your code and configuration.** Please check the following common issues first:
 
 
 ### No code deployed
 
-A common case for the 404 page is that no code has been deployed yet. 
+A common reason for the 404 page is that no code has been deployed yet. 
 
-This can be a misunderstanding: You might have thought that choosing a [Software Preset](/app#toc-software-preset) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead and deploy some code first.
+This can be a misunderstanding: You might have thought that when you choose a [Software Preset](/app#toc-software-preset) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead and deploy some code first.
 
-Maybe also, the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error? Please check if all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
+Or maybe the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error. Please check that all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
 
 
 ### Wrong root path
 
-Maybe your software is using a different root path than the one that is currently set? Check the [root path](#toc-root-path) settings.
+Maybe your software is using a different root path than the one that is currently set? Check the [root path](/app#toc-root-path) settings.
 
-`htdocs` is the default [root path](#toc-root-path), when no specific software has been chosen in the [Software Preset](#toc-software-preset). Now, when you decide to install [Laravel](install-laravel) or any software later on, you might have to set the root path accordingly.
+`htdocs` is the default [root path](/app#toc-root-path) if no specific software has been chosen in the [Software Preset](#toc-software-preset). Now, if you decide to install [Laravel](install-laravel) or any other software later on, you might have to set the root path accordingly.
 
-We have also seen cases where people have uploaded a whole `Craft` folder into the App's `htdocs` folder. You should probably better upload all files into `htdocs` directly, not into an extra folder that contains the files.
+We have also seen cases where people have uploaded a whole `Craft` folder into the App's `htdocs` folder. You should probably rather upload all files into `htdocs` directly, not into an extra folder that contains the files.
 
 
 ### .htaccess is missing
 
 Another common cause for 404 errors is a missing `.htaccess` file. This file is hidden from your Operating System by default (as it starts with a period) but contains important rules for your application to function properly.
-So when you are uploading with SFTP and have maybe dragged the files from your Desktop (Finder) into your SFTP application (Cyberduck, Transmit, FileZilla), this file is likely missing. 
+So if you are uploading with SFTP and have dragged the files from your Desktop (Finder) into your SFTP application (Cyberduck, Transmit, FileZilla), this file will likely be missing. 
 
 You might be able to use the file explorer from your SFTP application or temporarily show hidden files in your OS to make the `.htaccess` file visible to you. Just make sure that when an `.htaccess` file is present (most likely it is), that it gets uploaded as well.
 
@@ -58,7 +58,7 @@ You might have an error with URL. Check for typos in the address bar (URL) of yo
 
 ### App is not yet ready
 
-Creating an App can sometimes take a few minutes. If you visit the App URL during that time, you'll get also get a 404 error. It's possible that this DNS response gets cached locally. 
+Creating an App can sometimes take a few minutes. If you visit the App URL during that time, you'll get a 404 error. It's possible that this DNS response gets cached locally. 
 
 
 ## It could also be something on our side
@@ -68,7 +68,7 @@ It is also possible — although less likely - that this error is caused by a ne
 
 ## Contacting support
 
-Whether your investigation (see above) leads to possible service issues at our side or you are stuck in debugging the issue on your own, don't hesitate to contact us.
+Whether your investigation (see above) leads to possible service issues on our side or you are stuck debugging the issue on your own, don't hesitate to contact us.
 
 Please include logs and additional information with your support request. 
 

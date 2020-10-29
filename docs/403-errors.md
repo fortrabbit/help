@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2020-10-20
+reviewed:      2020-10-29
 title:         Troubleshoot 403 errors
 naviTitle:     403 errors
-excerpt:       What you may want to know about our 403 errors.
-lead:          'The 403 HTTP status code is "Forbidden". This means that access is denied, or in other words: the resource is not allowed for some reason. This article aims to help developers troubleshooting such errors.'
+excerpt:       Some tips on troubleshooting 403 errors.
+lead:          'The 403 HTTP status code means "Forbidden". This means that access is denied, or in other words: the resource is not allowed for some reason. This article aims to help developers troubleshooting 403 errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -21,13 +21,7 @@ dontList:      false
 
 ## Common reasons and solutions
 
-**In most cases this is not a server issue, but something with your code and configuration.** Please check the following common issues first:
-
-
-
-### No code deployed
-
-The App is new. You have not yet deployed any code. Please upload some code from your local development environment.
+**In most cases this is not a server issue, but a problem with your code and/or configuration.** Please check the following common issues first:
 
 
 ### Wrong root path 
@@ -37,19 +31,19 @@ With certain CMS and frameworks we pre-populate the root path. So depending in y
 
 ### .htaccess problems
 
-Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htaccess` file. Developes using SFTP often miss to upload that hidden file. See our [.htaccess help](/htaccess).
+Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htaccess` file. Developers using SFTP often forget to upload that hidden file. See our [.htaccess help](/htaccess).
 
 
 ### File permissions
 
- Sometimes 403 errors are happening due to wrong file permissions. This can happen when you deploy with SFTP or SSH. Make sure that PHP can write the files `composer.json`, `composer.lock`, `storage/*` and `vendor/*` and other files. Set the file permissions for those files to `744` with your SFTP client or by SSH.  The `*.php` files should be executable.
+Sometimes 403 errors are caused by wrong file permissions. This can happen when you deploy with SFTP or SSH. Make sure that PHP has write permissions for the files `composer.json`, `composer.lock`, `storage/*`, `vendor/*` and other files. Set the file permissions for those files to `744` with your SFTP client or by SSH.  Any `*.php` files should be executable.
 
 <!-- Duplicate with Craft CMS: Upload SFTP, maybe remove the other one -->
 
 
 ### Missing http-auth credentials
 
-When you have used HTTP auth to protect your website from unwanted visitors and someone is trying access that without entering the correct username and password a 403 access denied error will occur as well.
+If you have used HTTP auth to protect your website from unwanted visitors and someone is trying access that without entering the correct username and password, a 403 access denied error will occur.
 
 
 ### DNS issues
@@ -64,12 +58,12 @@ You might have an error with URL. Check for typos in the address bar (URL) of yo
 
 ## It could also be something on our side
 
-It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
+It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabbit.com) if there are any ongoing maintenance windows or service issues known.
 
 
 ## Contacting support
 
-Whether your investigation (see above) leads to possible service issues at our side or you are stuck in debugging the issue on your own, don't hesitate to contact us.
+Whether your investigation (see above) leads to possible service issues on our side, or you are stuck debugging the issue on your own, don't hesitate to contact us.
 
 Please include logs and additional information with your support request. 
 

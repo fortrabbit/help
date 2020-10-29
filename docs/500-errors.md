@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2020-10-27
+reviewed:      2020-10-29
 title:         Troubleshoot 500 errors
 naviTitle:     500 errors
-excerpt:       What you may want to know about our 500 errors.
-lead:          'The 500 HTTP status code is "Internal Server Error". This article aims to help developers troubleshooting such errors.'
+excerpt:       Some tips on troubleshooting 500 errors.
+lead:          'The 500 HTTP status code means "Internal Server Error". This article aims to help developers troubleshooting 500 errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -17,7 +17,7 @@ dontList:      false
 
 * 500 errors will usually be shown on screen immediately
 * 500 errors often occur after code or configuration changes
-* 500 errors are sometimes just printed as a "service unavailable" message, check the HTTP in the browser to be sure this is indeed a 500 error
+* 500 errors are sometimes just printed as a "service unavailable" message, check the browser’s developer tools for the response's HTTP status code to be sure this is indeed a 500 error
 * 500 errors here are often rendered using a fortrabbit error page template
 
 
@@ -38,7 +38,7 @@ Since 500 errors often appear during installation, setup or code changes: Review
 
 ### Check your .htaccess file
 
-Our experience in support shows us that many 500 errors are caused by wrong rules in your `.htaccess` file. See our [main article on .htaccess](/htaccess) for some background. Have you done any changes to `.htaccess` lately?
+Our experience in support shows us that many 500 errors are caused by wrong rules in your `.htaccess` file. See our [main article on `.htaccess`](/htaccess) for some background. Have you made any changes to `.htaccess` lately?
 
 
 ## It could also be something on our side
@@ -48,7 +48,7 @@ It is also possible — although less likely - that this error is caused by a ne
 
 ## Contacting support
 
-Whether your investigation (see above) leads to possible service issues at our side or you are stuck in debugging the issue on your own, don't hesitate to contact us.
+Whether your investigation (see above) leads to possible service issues on our side or you are stuck debugging the issue on your own, don't hesitate to contact us.
 
 Please include logs and additional information with your support request. 
 
