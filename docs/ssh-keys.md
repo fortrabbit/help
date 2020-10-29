@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-07-28
+reviewed:      2020-10-29
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
@@ -33,7 +33,7 @@ Besides [password authentication](/access-methods#toc-password-authentication) y
 
 The goals here are:
 
-1. Create an SSH key pair consisting of public and private key.
+1. Create an SSH key pair consisting of a public and private key.
 2. Store the keys in the right location, so that your Operating System can make use of them.
 3. Save the public key with your fortrabbit Account
 

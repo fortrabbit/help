@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-22
+reviewed:      2020-10-29
 title:         Blocklisting
 naviTitle:     Blocklisting
 excerpt:       What you may want to know about blocking when trying to deploy.
@@ -15,9 +15,9 @@ dontList:      false
 
 ### Before contacting support
 
-Please assure that your connection has worked before. When you have not been able to connect before, chances are very very high that this is NOT blocking but instead some configuration problem. Please see our [access methods troubleshooting section](/access-methods#toc-troubleshooting) next and make sure that you can rule out other issues.
+Please assure that your connection has worked before. If you have not been able to connect before, chances are very very high that this is NOT blocking but instead some configuration problem. Please see our [access methods troubleshooting section](/access-methods#toc-troubleshooting) next and make sure that you can rule out other issues.
 
-Also, get to connect from a different IP. You can do so by switching the WIFI or by restarting your router. 
+Also, try to connect from a different IP. You can do so by switching the WIFI or by restarting your router. 
 
 ### Contacting support
 
