@@ -152,7 +152,7 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 $ mysqldump --set-gtid-purged=OFF -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
 ``` 
 
-The `--set-gtid-purged=OFF` option is required to prevent permission errors like `#1227 - Access denied; you need (...) SUPER privilege(s)` when importing the database. If you use `mariaDB` locally the GTID option needed.
+The `--set-gtid-purged=OFF` option is required to prevent permission errors like `#1227 - Access denied; you need (...) SUPER privilege(s)` when importing the database. If you use `mariaDB` locally the GTID option is needed.
 
 Next, open a tunnel and import the newly created dump file into your database. This is easier with two terminal windows: One for the tunnel and the other to execute the import. These instructions must be run on your **local machine**, the import will not work if you log in to fortrabbit before running these commands.
 
@@ -329,4 +329,4 @@ When importing a database dump you've created with a recent version of `mysqldum
 #1227 - Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 ```
 
-To prevent this error, create the dump again using the `--set-gtid-purged=OFF` option. If you don't use the `mysqldump` command line tool directly, but a GUI that relies on it, the chance is very high there is checkbox to disable "GTID PURGED".   
+To prevent this error, create the dump again using the `--set-gtid-purged=OFF` option. If you don't use the `mysqldump` command line tool directly, but a GUI that relies on it, the chance is very high there is a checkbox to disable "GTID PURGED".   
