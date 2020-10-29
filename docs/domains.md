@@ -229,7 +229,7 @@ You probably want to host more than one website on your App like so:
 Let's say you have `your-domain.com` pointed to your App already. Now that other TLD, the domain `your-domain.co.uk` is  registered as well. So, of course, you want your App to show up under this domain as well. Now there are two main ways how this can be implemented:
 
 1. `your-domain.co.uk/pricing` will forward to `your-domain.com/pricing`
-2. `your-domain.co.uk/pricing` and `your-domain.co.uk/pricing` will both show the same content
+2. `your-domain.co.uk/pricing` and `your-domain.com/pricing` will both show the same content
 
 What you want, in most scenarios, is the first one: forwarding. Serving the same content under multiple domains is confusing — not only for humans but also for bots: The SEO spider bot might down-rank your content as a duplicate. You want a primary domain — one canonical name.
 
@@ -273,3 +273,4 @@ When setting up an App we'll provide an App URL - see [App help](/app#toc-app-ur
 ## Troubleshooting
 
 Please see our [DNS troubleshooting guide](/).
+
