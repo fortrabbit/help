@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2020-07-13
+reviewed:      2020-08-28
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
@@ -18,6 +18,15 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 * [Learn about the differences to VPS hosting](https://www.fortrabbit.com/why-not-vps)
 
 
+## No 1-click installers
+
+When creating an App we ask for the desired software you are about to use. This can be Laravel, Craft CMS, WordPress or alike. **That will not install the software for you.** Please don't expect one-click-installers here. This is self service PHP hosting for professional developers. We believe in a clear separation of concerns where you will take care of the code you'll write and use and where we will manage the infrastructure. We also expect you to have a local development environment, see [the local dev article](/local-development).
+
+* Read more more about the [Software Preset here](/app#toc-software-preset).
+* Our [support policy](https://www.fortrabbit.com/support-policy) outlines service scope as well
+
+
+
 ## No root shell
 
 Professional Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) come with an SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails or mailserver. 
@@ -29,7 +38,7 @@ The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long
 
 ### Need to call via php interpreter
 
-To launch a PHP script you need to specify the PHP interpreter explicitly, like `php artisan` or `php ./craft` for example.
+To launch a PHP script you need to specify the PHP interpreter explicitly: for example, `php artisan` or `php craft`.
 
 
 ## Image optimization tools
@@ -133,9 +142,11 @@ You can use / create as many [branches](git) as you want and push them to the fo
 
 This is a feature, not a bug: use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master (or your App's name like: {{app-name}}) branch and push it.
 
+
 ### Release package limit
 
 To keep deployment fast for everyone the size of the release package is limited to 200 MB. [Read on](git#toc-release-package-limit).
+
 
 ## MySQL with persistent connections during upgrade
 
@@ -144,38 +155,24 @@ When scaling (up or down) your MySQL, your App's database will be migrated to a 
 With persistent connections this can take longer (possibly up to half an hour). Therefore we recommend to disable persistent connections during upgrades and downgrades.
 
 
-
-## Firewall
-
-Outgoing traffic is limited for [security](security) reasons — most ports for making outgoing calls are locked. Only the most [standard ports are white-listed](http://www.fortrabbit.com/specs#firewall). Any access to service Components provided by us directly (Memcached, MySQL, ..) is of course also allowed. Any other traffic is denied - but you can request to open ports for your App. To do so: login to the Dashboard, browse to your App, go to the firewall settings, "request a custom white listing".
-
-<div markdown="1" data-user="known">
-[Request a new firewall white-listing for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/firewall)
-</div>
-
-
 ## Outgoing IP address
 
 In some cases you need to know your App's IP address, like for payment processing or in environments that are behind a firewall.
 
-For [Professional Apps](/app-pro) on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway.
+**For [Professional Apps](/app-pro)** on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway. The traffic from Apps will appear to others as coming from these addresses.
 
- For [Universal Apps](/apps-uni) and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App.
+    EU: 52.50.42.152
+    US: 52.72.32.63
 
-You can see this for yourself with a php script.
+**For [Universal Apps](/apps-uni)** and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App. You can see this for yourself with a PHP script. Querying an HTTP service like that from an App is the easiest way to determine the current IP address. 
 
     <?php
     echo file_get_contents("https://ifconfig.co/");
 
-Querying an HTTP service like that from an App is the easiest way to determine the current IP address. Depending on your needs, it is possible to use an HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) to get a static IP address. Finally, there is also the [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) and the same list in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) format.
 
+Depending on your needs, it is possible to use an HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) to get a static IP address. 
 
-### Outgoing IP addresses for our regions
-
-The traffic from Apps will appear to others as coming from these addresses.
-
-    EU: 52.50.42.152
-    US: 52.72.32.63
+Finally, there is also the [official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) and the same list in [JSON](https://ip-ranges.amazonaws.com/ip-ranges.json) format.
 
 Do bear in mind, the place where you shell into with `ssh` or push with `git` is called the deploy service. The IP address of the deploy service may change.
 

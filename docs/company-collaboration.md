@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-08-26
+reviewed:      2019-09-02
 title:         Company collaboration
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
@@ -72,7 +72,10 @@ The App Collaborator role can be modified by Owners and Admins. It's the same as
 
 ## Inviting a Company member
 
-The steps to invite a Company member are the same as described [in the App collaboration](app-collaboration#toc-inviting-an-app-collaborator). The difference is that you can choose additional Company level roles.
+* When logged in to the Dashboard, go to your Account, find "Invite a developer" or directly call: [dashboard.fortrabbit.com/users/invite](https://dashboard.fortrabbit.com/users/invite)
+* If you are part of multiple Companies, you will be asked to choose the Company
+* Enter name, e-mail and role
+* Click "Send invitation"
 
 
 ## Advanced collaboration usage

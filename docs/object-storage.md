@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-04-17
+reviewed:      2020-07-29
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -24,7 +24,7 @@ keywords:
 
 ## Problem
 
-Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different:
+Back in the day you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there, linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different:
 
 fortrabbit Apps have an [ephemeral file system](/app-pro#toc-ephemeral-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
 
@@ -68,14 +68,14 @@ The fortrabbit Object Storage is a multi purpose solution for offshore files. Yo
 To sum it up:
 
 - Everything is *public* and accessible through `https://{{app-name}}.objects.frb.io/path-of-the-file.extension`.
-- Everything in /private/… is private and only accessible if proxified through your app.
+- Everything in /private/… is private and only accessible if proxied through your app.
 
 
 ### Implementation
 
-The fortrabbit Object Storage implements large parts of the [AWS S3 REST API](http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html) making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
+The fortrabbit Object Storage implements large parts of the [AWS S3 REST API](http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html), making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
 
-For now we don't support `preSignedRequest` which allows to upload to S3 without proxifying. If your users need to upload a file on your storage or need to access a private file, the request needs to go through your app.
+For now we don't support `preSignedRequest` which allows you to upload to S3 without proxying. If your users need to upload a file on your storage or need to access a private file, the request needs to go through your app.
 
 
 ## Booking & scaling
@@ -100,7 +100,7 @@ Once you have something up, you can view the files via [HTTP in your browser](#t
 
 ### Obtaining credentials
 
-The Apps Object Storage access details consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Issue this in your local terminal to get them:
+The App's Object Storage access details consist of: a bucket name, a server (aka: endpoint), a key and a secret. As with all credentials, these are stored with the [App secrets](/secrets). Enter this in your local terminal to get them:
 
 ```bash
 # Read the secrets.json, show access for the App {{app-name}}
@@ -153,7 +153,7 @@ Since we live in the Composer age most of those abstraction libraries use the AW
 
 #### Flysystem
 
-[Flysystem](http://flysystem.thephpleague.com/) by The PHP League / Frank De-Jonge. Both available AWS Adapters are compatible with the Object Storage.
+[Flysystem](http://flysystem.thephpleague.com/) by The PHP League / Frank de Jonge. Both available AWS Adapters are compatible with the Object Storage.
 
 
 ##### Flysystem V2
@@ -207,7 +207,7 @@ There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amaz
 
 ### Manual upload
 
-In some use-cases you want to upload and modify (CRUD) files manually. Also you might want to manually review the existing files in your Object Storage. You can use any S3 compatible client to upload files to the Object Storage. We recommend the following software clients:
+In some use-cases you want to upload and modify (CRUD) files manually. Also you might want to manually review the existing files in your Object Storage. You can use any S3-compatible client to upload files to the Object Storage. We recommend the following software clients:
 
 * **[Cyberduck](https://cyberduck.io/)**, a free cross platform GUI client (requires the S3 AWS2 Signature [download + install](https://svn.cyberduck.io/trunk/profiles/S3%20AWS2%20Signature%20Version%20(HTTPS).cyberduckprofile))
 * [Transmit](https://panic.com/transmit/), a GUI client for MacOs X
@@ -222,7 +222,7 @@ Once you have uploaded some files, the ultimate goal is of course to serve them 
 
 * [{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md) < works when Object Storage is booked
 
-We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framework/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
+We recommend using a secured connection via `HTTPS` but that is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framework/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 
 
 ### Log access
@@ -243,16 +243,16 @@ Still reading? Go on and dig into the details:
 
 ### Caching
 
-All files served from the Object Storage will be served with caching headers. Those caching headers have two effects: The client (browser) knows that it does not need to reload the files from the server, which, of course, makes things quite a bit faster. The other effect of the caching header is that the Object Storage server will cache the files as well. This might sound a bit strange on first view but the result is that besides re-visiting browsers also newcomers will get their files very fast, because they are read mostly from the memory of the Object Storage servers, which is extremely fast.
+All files served from the Object Storage will be served with caching headers. Those caching headers have two effects: The client (browser) knows that it does not need to reload the files from the server, which, of course, makes things quite a bit faster. The other effect of the caching header is that the Object Storage server will cache the files as well. This might sound a bit strange on first view but the result is that not only re-visiting browsers, but also newcomers will get their files very fast, because they are read mostly from the memory of the Object Storage servers, which is extremely fast.
 
 Not existing files (404) are also cached, but only shortly. See [specs](https://www.fortrabbit.com/specs) for details on default cache durations.
 
 
 #### Manipulate cache durations
 
-You can change the default cache durations of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simple set either of two headers: `Cache-Control` or `Expires`. Those will then be forwarded to the browser and also define the caching time on the server.
+You can change the default cache duration of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simply set either of two headers: `Cache-Control` or `Expires`. These will then be forwarded to the browser and also define the caching time on the server.
 
-Take care that we don't do cache purging. So when changing the cache duration, only new assets will be effected. Assets already in the cache will stay there as long as the old value is past.
+Take care that we don't do cache purging. So when changing the cache duration, only new assets will be affected. Assets already in the cache will stay there as long as the old value is past.
 
 
 #### Cache busting
@@ -265,7 +265,7 @@ https://{{app-name}}.objects.frb.io/path/to/file.jpg?2019-05-05.2
 https://{{app-name}}.objects.frb.io/path/to/file.jpg?2019-05-06.1
 ```
 
-Caching works on the whole URL, including the query string. So if you change the query string you are delivering accessing a different item, hence it's not cached. Many frameworks/CMS already do that for you, but it's easy to implement manually as well.
+Caching works on the whole URL, including the query string. So if you change the query string you are referencing a different item, hence it's not cached. Many frameworks/CMS already do that for you, but it's easy to implement manually as well.
 
 
 ### Resetting the secret key
@@ -281,15 +281,16 @@ If you need to change the secret key of your Object Storage: Login to the Dashbo
 
 ### Deploying static assets to the Object Storage
 
-You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool.
+You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advise excluding these files from Git, generate them locally and upload them directly from your build tool.
 
 
 #### Webpack, Gulp, Grunt & co
 
-You can automate the process of uploading files with a task runner or build script. You can use Gulp with an S3 plugin, such as `gulp-awspublish` or `gulp-S3`. Please mind to find a plugin that supports to send over the `endpoint`, as standard AWS locations will not work. Plugins that are based on `knox` or `aws-sdk` will probably work.
+You can automate the process of uploading files with a task runner or build script. You can use Gulp with an S3 plugin, such as `gulp-awspublish` or `gulp-S3`. Please mind to find a plugin that supports sending over the `endpoint`, as standard AWS locations will not work. Plugins that are based on `knox` or `aws-sdk` will probably work.
 
 
-Example `objects.json`. Mind to replace all value with your own ones. Exclude this file from Git for security reasons.
+Example `objects.json`. Remember to replace all value with your own ones. Exclude this file from Git for security reasons.
+
 ```
 {
   "key":      "{{app-name}}",
@@ -301,7 +302,8 @@ Example `objects.json`. Mind to replace all value with your own ones. Exclude th
 ```
 
 Example of a `gulpfile.js`. Reading credentials from the json file then deploying files to the object storage via the S3 protocol.
-```
+
+```js
 var s3 = require("gulp-s3");
 
 aws = JSON.parse(fs.readFileSync('./objects.json'));
@@ -312,7 +314,7 @@ gulp.src('./dist/**')
 
 ### Accessing the Object Storage from another App
 
-It's possible to access the Object Storage from one App by another App or by some external website or application. The Object Storage access is not restricted to be used by the App itself.
+It's possible to access one App's Object Storage from another App or by some external website or application. The Object Storage access is not restricted to be used by the App itself.
 
 
 ## Quirks
@@ -322,7 +324,7 @@ Good to know the limits!
 
 ### No PHP execution
 
-You can upload PHP files to the Object Storage — but that will not make much sense, as those will not be executed. In fact, they will be displayed probably in plain text (depending on the Content-Type). So, unless you want to publish it: Don't do it.
+You can upload PHP files to the Object Storage — but that will not make much sense, as those will not be executed. In fact, they will probably be displayed in plain text (depending on the `Content-Type`). So, unless you want to publish it: Don't do it.
 
 
 ### No custom domains
@@ -337,34 +339,34 @@ The Object Storage is tightly integrated with fortrabbit. You don't need to figh
 
 #### No multi-part upload
 
-In some cases, very big uploads (500 MB for example) might be need to be split into multiple parts and put together after upload again. This is called multi-part-upload. This can be done by your plugin or client — mostly in the background. Please mind that the fortrabbit Object Storage currently does not support multi-part uploading.
+In some cases, very big uploads (500 MB for example) might be need to be split into multiple parts and put together after upload again. This is called multi-part-upload. This can be done by your plugin or client — mostly in the background. Please bear in mind that the fortrabbit Object Storage currently does not support multi-part uploading.
 
 
 #### Advanced S3 REST API
 
-The following bucket or object actions are currently not support - but will reply with a dummy-OK message, to not break clients: ACL, CORS, Lifecycle, Policy, Replication, Tagging, Website, Logging, Notification, RequestPayment, Versioning.
+The following bucket or object actions are currently not supported - but will reply with a dummy-OK message, to not break clients: ACL, CORS, Lifecycle, Policy, Replication, Tagging, Website, Logging, Notification, RequestPayment, Versioning.
 
 CORS is partially supported: CORS rules will be not be accepted but a default CORS rules, which accepts all, is active.
 
 
 ### The private folder
 
-On root level of your Object Storage you'll find a folder called `private`. This folder is special, as you can not access any of it's contents by HTTP (via the browser). You can only do so via PHP. Hence: You can use it for anything you want to store, but do not publish.
+At the root level of your Object Storage you'll find a folder called `private`. This folder is special, as you can not access any of its contents by HTTP (via the browser). You can only do so via PHP. Hence: You can use it for anything you want to store, but not to publish.
 
 
 ### Data center location
 
-The location of the Object Storage will match the Apps location. So if you choose your App to be hosted in US, the files in your Object Storage will be there as well. We have ideas to extend the Object Storage with by CDN functionality (think CloudFront).
+The location of the Object Storage will match the App's location. So if you choose your App to be hosted in US, the files in your Object Storage will be there as well. We have ideas to extend the Object Storage with CDN functionality (think CloudFront).
 
 
 ### File size limit
 
-The Object Storage is laid out to handle lot's of small to medium sized files, not very large files, like videos. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
+The Object Storage is laid out to handle lots of small to medium sized files, not very large files, like videos. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
 
 
 ### Number of files
 
-Currently, the Object Storage only supports a listing for limited number of files per directory. As a work-around, you can spread them over multiple folders. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
+Currently, the Object Storage only supports a listing for limited number of files per directory. As a workaround, you can spread them over multiple folders. Please see our [specs](https://fortrabbit.com/specs-pro) table for current limitations.
 
 
 ### No directory listings
@@ -379,14 +381,14 @@ It's not possible to define custom 404 pages matching your own design.
 
 ### Case sensitivity
 
-Same as S3 the Object Storage is case sensitive. So you can upload `file` and `FILE` in the same folder. Also there is a difference between `https://{{app-name}}.objects.frb.io/file` and `https://{{app-name}}.objects.frb.io/FILE`.
+As with S3, the Object Storage is case sensitive. So you can upload `file` and `FILE` in the same folder. Also there is a difference between `https://{{app-name}}.objects.frb.io/file` and `https://{{app-name}}.objects.frb.io/FILE`.
 
 
 ### Exceeding the quota
 
-Please mind that in alignment with all the other App Components the Object Storage will not be upgraded automatically: when you exceed the Object Storage quota you simply cannot upload more files and need to scale the component in the Dashboard. Again: No downtime, whatsoever.
+Please bear in mind that in alignment with all the other App Components the Object Storage will not be upgraded automatically: when you exceed the Object Storage quota you simply cannot upload more files and need to scale the component in the Dashboard. Again: No downtime, whatsoever.
 
 
 ## Alternatives
 
-The use of the Object Storage is optional, you might not need it or you can use AWS S3, or Rackspace Cloud Files or alike. You probably also have a look at image transformation services, which will render images in any possible format/compression and size.
+The use of the Object Storage is optional, you might not need it or you can use AWS S3, or Rackspace Cloud Files or the like. You could probably also have a look at image transformation services, which will render images in any possible format/compression and size.

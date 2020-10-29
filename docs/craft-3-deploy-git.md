@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-10
+reviewed:         2020-08-20
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -12,7 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.4
+version:          3.5
 supportLevel:     a
 
 keywords:
@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about), have [Craft installed locally](craft-3-install-local) and [setup](/craft-3-setup). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional Apps](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about), and have [Craft installed locally](craft-3-install-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer); it can be applied to [Professional Apps](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
 
 
 ## Deploy the Craft code base with Git
@@ -35,8 +35,8 @@ For best results here, make sure you have completed all steps from the [get read
 Trigger the following commands in your **local** terminal:
 
 ```
-# 1. Initialize Git (when not already done)
-$ git init .
+# 1. Initialize Git (if not already done)
+$ git init
 
 # 2. Add your App's Git remote to your local repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
@@ -56,7 +56,7 @@ $ git push -u fortrabbit master
 $ git push
 ```
 
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [Git guide](/git).
+**Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and our [Git guide](/git).
 
 
 ## Next steps

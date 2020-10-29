@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-02-27
+reviewed:      2020-07-29
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
@@ -17,12 +17,12 @@ keywords:
 
 ## Problem
 
-[Git push to deploy](git) is nice and easy to get your code up and running quickly. But deployment is not deployment — there is a huge variety of use cases and preferred workflows. The `fortrabbit.yml` is an optional helper to support your habits. With the deployment file version you can add post- or pre-deploy scripts and control how Composer behaves.
+[Git push to deploy](git) is nice and easy to get your code up and running quickly. But deployment is not just deployment — there is a huge variety of use cases and preferred workflows. The `fortrabbit.yml` is an optional helper to support your habits. With the deployment file version you can add post- or pre-deploy scripts and control how Composer behaves.
 
 
 ## Solution
 
-Create a file named `fortrabbit.yml` in the App's root folder of your project and include it into Git. After each push, the friendly fortrabbit bots will look for the file and parse it if existent.
+Create a file named `fortrabbit.yml` in the App's root folder of your project and include it into Git. After each push, the friendly fortrabbit bots will look for the file and parse it if exists.
 
 
 ## Full schema
@@ -82,7 +82,7 @@ Only a single pre/post script will be executed, chaining won't work. If you need
 
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
 
-Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
+Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can set up two deployment files with names: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
 
 
 ## Private composer use case
@@ -109,7 +109,7 @@ file_put_contents($fortrabbitSshConfigPath, str_replace(
 
 ### Changes from scripts are not affecting the file system of the App
 
-Mind the desgin of the fortrabbit infrastructure: 
+Mind the design of the fortrabbit infrastructure: 
 
 * the deployment service is separated from the web delivery service
 * the deployment file will be executed on the deploy service, not on the App

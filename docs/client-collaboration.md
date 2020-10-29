@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-27
+reviewed:      2020-08-26
 title:         Working for a client
 naviTitle:     Working for a client
 excerpt:       How to work with a non-techie client
@@ -101,7 +101,6 @@ As an Admin you will see the App your client in the Dashboard. You can of course
 
 The client can also dismiss you of your access role within hir Company.
 
-- - -
 
 ## Alternative work-flows
 
@@ -113,3 +112,11 @@ The client can also dismiss you of your access role within hir Company.
 3. Changes the "Invoice e-mail" address to the client e-mail
 
 This work-flow is faster and does not involve any interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card informations.
+
+
+#### Changing ownership of Apps
+
+Beside inviting a client you can also "transfer ownership". Here is the difference between the two workflows:
+
+* With "transfer ownership" you can move an App from one Company to another. You already need to be Owner of both Companies to do that.
+* With "invite client" you can ask someone to take over ownership of an App. You will become Admin for the new Company then.
