@@ -63,7 +63,7 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr source:web_ph
 # Filter by HTTP status code, e.g. 4xx OR 3xx:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access 2>&1 | grep -E ' 40.?| 30.?'
 
-# Set terminal colors, if your worker output includes colors escape sequences, e.g. '#033[1;32m' to green:
+# Set terminal colors, if your worker output includes color escaped sequences, e.g. '#033[1;32m' to green:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:worker 2>&1 | sed 's/#033/\o033/g'
 ```
 
