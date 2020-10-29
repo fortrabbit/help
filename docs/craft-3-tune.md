@@ -103,6 +103,13 @@ fortrabbit will provide Let's Encrypt TLS certificates for all domains; please s
 
 Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) for examples.
 
+### X-Powered-By headers
+
+You probably think it's a good idea to disable headers that expose which PHP version and CMS you use. And we think so too!
+
+However, internally we analyse this header to determine if it is a static or dynamic PHP response. With this information we generate two different metrics for the dashboard: PHP requests and Static requests.
+In `config/general.php` you can disable the header with `'sendPoweredByHeader' => false,` (default: true). This is not required, since we strip all `X-Powered-By` headers eventually.
+
 
 ### Using project config
 
