@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
+reviewed:      2020-10-30
 title:         Troubleshoot 403 errors
 naviTitle:     403 errors
 excerpt:       Some tips on troubleshooting 403 errors.
