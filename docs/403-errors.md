@@ -24,9 +24,9 @@ dontList:      false
 **In most cases this is not a server issue, but a problem with your code and/or configuration.** Please check the following common issues first:
 
 
-### Wrong root path 
+### No code deployed
 
-With certain CMS and frameworks we pre-populate the root path. So depending in your choice when creating the App, something might not be configured correctly. Check the [root path](/app#toc-root-path) of your App.
+A common reason for the 403 page is that no code has been deployed yet. Please deploy some code. See our [access methods article](/access-methods) to get started.
 
 
 ### .htaccess problems

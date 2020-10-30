@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
+reviewed:      2020-10-30
 title:         Troubleshoot 404 errors
 naviTitle:     404 errors
 excerpt:       Some tips on troubleshooting 404 errors.
@@ -40,7 +40,7 @@ Maybe your software is using a different root path than the one that is currentl
 
 `htdocs` is the default [root path](/app#toc-root-path) if no specific software has been chosen in the [Software Preset](#toc-software-preset). Now, if you decide to install [Laravel](install-laravel) or any other software later on, you might have to set the root path accordingly.
 
-We have also seen cases where people have uploaded a whole `Craft` folder into the App's `htdocs` folder. You should probably rather upload all files into `htdocs` directly, not into an extra folder that contains the files.
+We have also seen cases where people have uploaded a whole `Craft` or `WordPress` folder into the App's `htdocs` folder. Better upload all files into `htdocs` directly, not into an extra folder that contains the files.
 
 
 ### .htaccess is missing
