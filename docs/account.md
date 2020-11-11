@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-08-03
+reviewed:      2020-11-11
 title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account
@@ -188,3 +188,14 @@ Tell us details that only you — the legit owner of the business — can know. 
 * names and e-mail addresses of other team members
 * tell us the whole story why you don't have access any more
 * plus anything else that helps us identifying you as the real owner
+
+
+## Deletion of abandoned Accounts
+
+We delete old and neglected Accounts when all of the following attributes are given:
+
+* no login to our Dashboard for a long time
+* no access to any Company any more
+* no active Apps running
+
+We think that is in the best interest of our users for privacy and security. It's easy to sign up again at any time later. We might not inform the Account about an upcoming auto-delete.
