@@ -24,9 +24,7 @@ All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to supp
 
 ## Accessing SFTP
 
-There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows).
-
-Many modern editors or IDEs also feature SFTP integrations by plugin.
+There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows). Many modern editors or IDEs also feature SFTP integrations by plugin.
 
 * **Mode**: SFTP (not regular FTP)
 * **Host**: deploy.{{region}}.frbit.com
