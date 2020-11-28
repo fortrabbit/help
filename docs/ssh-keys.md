@@ -175,29 +175,6 @@ In this case, you have probably used a passphrase with your key. This has nothin
 
 To avoid typing this may times per day, you can use the `ssh-agent`. See this [help article on GitHub](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases) to find out how.
 
-- - -
-
-<!--
-## About SSH key authentication
-
-I disagree with the language here.
-SSH keys are not nerdy, passwords are simpleminded and very 1960s 
-
-I don't like this section.
-The third paragraph is wrong.
-The first is a massive oversimplification, and written in with a lot of bloat.
-The second repeats information from other places in this document.
-
-There is no need to explain ssh-keys here. Send people to the wikipedia page, please! or this:
-https://www.ssh.com/ssh/public-key-authentication
-
-
-In case you haven't worked with SSH keys before — you might be interested to understand how it works. The bottom line is that SSH key authentication is a bit nerdy, but actually both: convenient and secure. "SSH keys are a way to identify trusted computers, without involving passwords." That's from GitHub and probably the shortest way to explain what it is about and the most crucial benefit.
-
-In public key authentication you have a key pair that consists of a public (eg `id_rsa.pub`) and a private key (eg `id_rsa`). What is encrypted with one (eg the public key) can be decrypted by the other (then: the private key). Further, having only the public key [does not allow you to derive the private key](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics). Hence you can safely "give out" your public key.
-
-When you install your public key with fortrabbit it can be used to authenticate you: your SSH clients uses your private key to encrypt plain text data, which is then decrypted, using your public key, on the fortrabbit SSH server. If this decryption succeeds, then it must have been encrypted by your private key and you are let in.
--->
 
 ## About SSH key authentication
 
