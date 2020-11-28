@@ -34,8 +34,8 @@ Did you maybe recently pushed code? Or did some editor changed some setting on t
 
 There are many reasons why websites might go down. Often the error you are seeing gives a good hint on what the issue might be.
 
-It's likely a 504 error when the website is loading and loading but never shows up. Please proceed to our [504 troubleshooting](/504-errors) page.
+It's likely a 504 error when the website is loading and loading but never shows up or show up a 504 error page. Please proceed to our [504 troubleshooting](/504-errors) page.
 
-It's likely a 503 error when you see a "service unavailable" message or just a blank screen. Please proceed to our [503 troubleshooting](/503-errors) page. Provide PHP error logs with your question.
+It's likely a 503 error when you see a "service unavailable" message or just a blank screen or a 503 error page. Please proceed to our [503 troubleshooting](/503-errors) page. Provide PHP error logs with your question.
 
 
