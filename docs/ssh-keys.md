@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
-naviTitle:     SSH keys setup
-title:         Troubleshooting SSH keys setup
-lead:          This article helps solving common issues setting up your SSH keys.
-group:         troubleshooting
+reviewed:      2020-11-28
+naviTitle:     SSH key setup
+title:         SSH key setup
+lead:          This article helps setting up your SSH keys on your local machine.
+group:         deployment
 stack:         all
 
 
@@ -126,27 +126,6 @@ The above is multi-line only for readability. Please remove the line breaks from
 
 You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
 
-- - -
-
-
-## Troubleshooting
-
-The following section covers some errors you may encounter when using an SSH key with our services. Please also see the [general connection trouble shooting](/access-methods#toc-troubleshooting) before.
-
-
-### Permission denied error
-
-If you see this after issuing the commands `git push` or `git pull`,
-
-```
-Permission denied (publickey).
-fatal: Could not read from remote repository.
-```
-
-then you the key you are using is not associated with your Dashboard account. Verify that you have imported your key into your fortrabbit account and that [Git](git) is correctly installed on your machine. It may take a upto two minutes for a new key to get activated, after it is imported. Usually it works within 30 seconds. 
-
-If you still see this error, please review the ssh-setup tutorials above.
-
 
 ### SSH keys under Windows with PuTTY
 
@@ -158,22 +137,6 @@ We advise not using PuTTY for this. If you generated an SSH key with PuTTY, you 
 Keep in mind that PuTTY uses a custom .ppk format for storing keys. The PuTTY Private Key format does not work with the OpenSSH ssh client or Git. It is possible extract/convert the private key from a .ppk file with the PuttyGen utility included with PuTTY.
 
 * [Superuser: How to convert .ppk to openssh](https://superuser.com/questions/232362/how-to-convert-ppk-key-to-openssh-key-under-linux)
-
-### If you can not get the keys to work
-
-If you tried everyting and it is still not working, you can revert back to password authentication. Read this: [remove the public keys from your fortrabbit Account](access-methods#toc-how-to-change-from-ssh-key-to-password-authentication)
-
-
-### If it worked before and suddenly stops working
-
-If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) happened (e.g. you are not part of a team anymore?). If not, have a look at our [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
-
-
-### You are asked for a password when using a key and the Account password isn't working
-
-In this case, you have probably used a passphrase with your key. This has nothing to do with the fortrabbit Account or services. When a new key is generated, there is usually this prompt: `Enter passphrase for key`. You want to use whatever you said then.
-
-To avoid typing this may times per day, you can use the `ssh-agent`. See this [help article on GitHub](https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases) to find out how.
 
 
 ## About SSH key authentication

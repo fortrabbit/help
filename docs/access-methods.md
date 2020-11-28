@@ -104,6 +104,7 @@ When for some reason SSH key authentication does not work for you, you can downg
 
 When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well – the new password will be used.
 
+
 ## How it works
 
 ### Access schema

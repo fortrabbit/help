@@ -4,7 +4,7 @@ template:      article
 reviewed:      2020-10-29
 title:         Git troubleshooting
 naviTitle:     Git troubleshooting
-excerpt:       What you may want to know to debug Git connection issues
+excerpt:       What you may want to know to debug Git issues
 lead:          'This article aims to help you finding common issues when deploying with Git on fortrabbit.'
 group:         troubleshooting
 stack:         all
@@ -18,11 +18,19 @@ dontList:      false
 1. **If you are new to Git**: Check out [Git intro article](/git) first, learn the basic concepts and how to install Git for your local development
 2. **If you are setting up Git here for the first time**: Read the [Git deployment guide](/git-deployment) first, see how Git is integrated as a deployment method at fortrabbit 
 
-
-
-
 ## Common issues and solutions
 
+
+### Permission denied error
+
+If you see this after issuing the commands `git push` or `git pull`,
+
+```
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+```
+
+then you the key you are using is not associated with your Dashboard account. Verify that you have imported your key into your fortrabbit account and that [Git](git) is correctly installed on your machine. It may take a up to two minutes for a new key to get activated, after it is imported. Usually it works within 30 seconds.
 
 
 ### Deployment lock error
@@ -36,6 +44,11 @@ Wait around 20 minutes if you see the above message when deploying. That can hap
 ### Git client max connections
 
 Some graphical clients for Git, like SourceTree and GitKraken are fetching often and are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client: In GitKraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
+
+
+### Composer errors
+
+Sometimes you might see a Composer error in the git deploy log. This is rare. This can stop your code to be deployed. Usually this is caused by configuration issues on your side. Check your composer.json for dependency issues.
 
 
 ## Reporting issues with Git in support

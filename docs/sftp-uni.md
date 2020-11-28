@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2020-08-04
-title:         SFTP
-naviTitle:     SFTP
+reviewed:      2020-11-28
+title:         SFTP deployment
+naviTitle:     SFTP deployment
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
 
 stack:         uni
@@ -50,12 +50,6 @@ This example shows how to configure your SFTP client to quickly sync code:
 The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic.
 
 
-## Troubleshooting SFTP
-
-Got an error when trying to login? fortrabbit supports username + password and public key authentication. Please continue here to troubleshoot access:
-
-* [See the access methods article](/access-methods)
-
 ### Blacklisting
 
 When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
@@ -70,3 +64,10 @@ SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged wi
 ### Mixing deployment methods
 
 Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
+
+
+## Troubleshooting SFTP
+
+Got an error when trying to login? fortrabbit supports username + password and public key authentication. Please continue here to troubleshoot access:
+
+* [See the SFTP troubleshooting guide](/sftp-troubleshooting)

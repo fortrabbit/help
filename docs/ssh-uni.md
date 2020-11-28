@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2019-09-30
-title:         SSH
-naviTitle:     SSH
+title:         SSH deployment
+naviTitle:     SSH deployment
 lead:          Learn what you can do on the command line with fortrabbit Apps.
 
 stack:         uni
