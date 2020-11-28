@@ -184,11 +184,6 @@ The public part of the key, ending in `.pub` is safe to give out, while the priv
 
 After you import a public key into your fortrabbit account, it can then be used to authenticate you. When an SSH client connects, the server will encrypt some secret using the public key. If the client is able to decrypt the secret with the private key and send it back to the server, then the server knows that the client has the private key and can be trusted.
 
-You may watch these educational videos if you need more info:
-
-- [https://www.youtube.com/watch?v=y2SWzw9D4RA](https://www.youtube.com/watch?v=y2SWzw9D4RA)
-- [https://www.youtube.com/watch?v=ORcvSkgdA58](https://www.youtube.com/watch?v=ORcvSkgdA58)
-
 
 ## Account SSH keys
 
