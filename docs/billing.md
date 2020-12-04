@@ -134,11 +134,11 @@ Please contact us if you are aware about open invoices with us and or if you hav
 
 #### Service cancellation after repeatedly bounced payments
 
-At some point, after several unsuccessful attempts to charge your account, your App will be deleted. We will not take your data hostage until you pay us, we will permanently delete Apps. ***Deleted Apps can not be recovered.*** https://blog.fortrabbit.com/bounced-payment[Read why we do this in a story from our blog].
+At some point, after several unsuccessful attempts to charge your account, your App will be deleted. We will not take your data hostage until you pay us, we will permanently delete Apps. ***Deleted Apps can not be recovered.*** Read why we do this in a [story from our blog](https://blog.fortrabbit.com/bounced-payment).
 
 We consider deleting Apps for bounced payments carefully with human review on a per client basis. Here is the basic rule set:
 
-For brand new clients with no previous invoices: In case the very first invoice keeps on bouncing (we will retry) and you have not reacted to our e-mails, we will proceed with the deletion of the App right away.
+For brand new clients: In case the very first or second invoice keeps on bouncing (we will retry) and you have not reacted to our e-mails, we will proceed with the deletion of the App right away.
 
 For clients with less than 6 invoices or when the credit card processor reports possible fraud or the Account looks suspicious: We might delete the App after the first bounced invoice (we will retry) or if the client fails to respond to our e-mails.
 
