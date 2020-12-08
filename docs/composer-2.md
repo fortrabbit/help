@@ -25,7 +25,7 @@ keywords:
 At 2020-12-XX we switched to Composer 2.x with our git deployment. It makes the deployments with composer much faster, but in some edge cases deployments might break. Composer 1.x is not actively maintained, so we recommend to upgrade to Composer 2 sooner or later.
 
 
-## Laravel 5.5, 5.6, 5.7, 5.8, 6, and 7 
+## Fix Laravel 5.5, 5.6, 5.7, 5.8, 6, and 7 
 
 Git deployments with older versions of Laravel might stop working. Luckily a patch [#32309](https://github.com/laravel/framework/issues/32309 was applied to all previous versions. Make sure to update Laravel locally:
 
@@ -38,7 +38,7 @@ composer update laravel/framework
 ```
 
 
-## Craft 3
+## Fix Craft 3
 
 
 Git deployments with older versions of Craft might stop working throwing errors like this:
@@ -49,13 +49,12 @@ Failed to extract vendor/plugin-name
 
 Solution: Update Craft to 3.5.15 or higher
 
-----
 
 ## How to use Composer 1?
 
 
-There might be another other respons why Composer 2 does not work for your, like packages that don't follow PSR-4 naming conventions.
-In this case you may want to use Composer 1. With a little effort you can: 
+There might be another other reason why Composer 2 does not work for your, like packages that don't follow PSR-4 naming conventions.
+In this case you may don't want to use Composer 2. With a little effort you can stick with Composer 1: 
 
 Create a `fortrabbit.yml` that disables the default composer behaviour and calls a custom script instead:
 
@@ -82,5 +81,4 @@ echo shell_exec('php /tmp/composer.phar install --prefer-dist -n -d $PWD');
 ```
 
 Put both files in the root of your project, commit the changes and use it as long as Composer support the 1.x branch.
-
 
