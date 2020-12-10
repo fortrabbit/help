@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-08-11
+reviewed:      2020-12-10
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -84,7 +84,7 @@ Please mind that [environment variables](/env-vars) and [App secrets](/secrets) 
 
 ## Backups from deleted Apps
 
-Associated backups will also get removed when an App is deleted. There is a short delay of 2 days in which backups from already deleted Apps — only if the previous App plan contained backups - can be supplied on request by fortrabbit.
+Associated backups will also get removed when an App is deleted. There is a short delay of 5 days in which backups from already deleted Apps — only if the previous App plan contained backups - can be supplied on request by fortrabbit.
 
 
 ## Backup excludes
