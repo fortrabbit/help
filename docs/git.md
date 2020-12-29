@@ -2,11 +2,10 @@
 
 template:      article
 reviewed:      2019-09-30
-naviTitle:     Getting started with Git
+naviTitle:     Git intro
 title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
-group:         deployment
-stack:         tips
+group:         tips
 
 keywords:
     - ssh key
