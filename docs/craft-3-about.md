@@ -37,5 +37,5 @@ There are [two hosting stacks](/stacks) here on fortrabbit. You can choose with 
 
 1. **[Install Craft CMS locally](craft-3-install-local)**: Install new with Composer or use an existing project
 2. **[Setup Craft for fortrabbit](/craft-3-setup)**: Prepare environment, set defaults
-3. **[Deploy Craft](/craft-3-deploy-craft-copy)**: Use our Craft Copy tool to deploy your Craft
+3. **[Deploy Craft](/craft-3-deploy-craft-copy)**: Use our Craft Copy tool
 5. **[Tune Craft](/craft-3-tune)**: Master it!
