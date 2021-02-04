@@ -71,5 +71,6 @@
     "wkhtmltopdf",
     "wordpress",
     "yourdomain"
-  ]
+  ],
+  "cSpell.language": "en"
 }
