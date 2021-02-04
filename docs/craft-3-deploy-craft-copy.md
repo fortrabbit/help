@@ -37,7 +37,7 @@ Craft Copy is a command line tool to help you deploying Craft CMS from our local
 
 ## Installing and using Craft Copy
 
-Please see the Craft Copy usage guide at Github [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy#requirements). It guides you through the 
+Please see the **[Craft Copy usage guide at GitHub](https://github.com/fortrabbit/craft-copy#requirements)**. It guides you through the process of installing the plugin, connecting your App, deploying code, assets and database.
 
 
 ## Alternative ways to deploy Craft CMS
