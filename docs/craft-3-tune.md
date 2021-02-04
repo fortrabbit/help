@@ -143,9 +143,7 @@ Otherwise you can run into trouble: Imagine you make changes to the database str
 
 ```php
 return [
-    '*' => [
-        'cpTrigger' => 'godmode'
-    ]
+    'cpTrigger' => 'godmode'
 ];
 ```
 
