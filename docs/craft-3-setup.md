@@ -62,16 +62,7 @@ Please include the following settings in the settings file located in `config/ge
 
 ```php
 return [
-    // Global settings
-    '*' => [
-        'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web',
-    ],
-    // fortrabbit
-    'production' => [
-        'devMode'           => false,
-        'allowAdminChanges' => false,
-        'allowUpdates'      => false,
-    ],
+    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web',
 ];
 ```
 
