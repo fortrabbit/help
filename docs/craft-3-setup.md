@@ -69,20 +69,6 @@ return [
 The file contains other settings as well: keep those. For more details and options, check out our [Craft CMS tuning guide](/craft-3-tune#toc-craft-cms-configuration-details).
 
 
-## Database synchronization
-
-Now, your [local Craft installation](/craft-3-install-local) should already have created a MySQL database with a few tables in it. The fortrabbit database, on the other hand, is still empty. Now, export your local database and import it to the fortrabbit remote. Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit and export/import tables.
-
-**PRO TIP**: You will probably often synchronize development and production databases. We have developed a handy command line tool: **[Craft Copy](https://github.com/fortrabbit/craft-copy)** to speed that up. It works like this:
-
-```bash
-# Sync database up (local ⟶ fortrabbit)
-$ php craft copy/db/up
-
-# Sync database down (local ⟵ fortrabbit)
-$ php craft copy/db/down
-```
-
 ## Next steps
 
-Craft CMS is configured to run locally and is also ready for fortrabbit. Next you can [deploy it with Git](/craft-3-deploy-git) or [upload it by SFTP](/craft-3-upload-sftp). Don't forget our [Craft tuning guide](/craft-3-tune) afterwards.
+Craft CMS is configured to run locally and is also ready for fortrabbit. Next you can [deploy it with Craft Copy](/craft-3-deploy-craft-copy).  Don't forget our [Craft tuning guide](/craft-3-tune) afterwards.
