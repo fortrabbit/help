@@ -35,7 +35,7 @@ Examine the logs of your App. See [here for Uni Apps](logging-uni) and [here for
 
 ## It could also be something on our side
 
-It is also possible that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabit.com) if there are any ongoing maintenance windows or service issues known.
+It is also possible that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabbit.com) if there are any ongoing maintenance windows or service issues known.
 
 
 ## Contacting support
