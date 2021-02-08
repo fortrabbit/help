@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-09-02
+reviewed:         2021-02-02
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.5
+version:          3.6
 supportLevel:     a
 
 keywords:
@@ -27,26 +27,6 @@ keywords:
 ## Get ready
 
 Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
-
-
-## Craft CMS configuration details
-
-```php
-return [
-    // Global settings
-    '*' => [
-        'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'
-    ],    
-    // fortrabbit
-    'production' => [
-        'devMode'            => false,
-        'allowUpdates'       => false,
-        'allowAdminChanges'  => false,
-    ],
-];
-```
-
-Above is an example for `config/general.php`. In the actual file, you will find more settings. The ones above might be discussed in the context of hosting. There are some shared settings, as well as some environment specific settings for production (fortrabbit) and development (locally). Here are the details:
 
 
 ### Multi-environment configuration
@@ -63,9 +43,16 @@ ENVIRONMENT=dev
 
 ### Domain setup
 
-Your fortrabbit App comes with a predefined App Name and a URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder. 
+Your fortrabbit App comes with a predefined App Name and a URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
 
-Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `PRIMARY_SITE_URL` ENV var or the `@web` fallback, which is a good default.  Older versions of Craft might use `SITE_URL`.
+Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `PRIMARY_SITE_URL` ENV var or the `@web` fallback, which is a good default. Older versions of Craft might use `SITE_URL`.
+
+```php
+return [
+    // Recommended Domain usage for general.php
+    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'
+];
+```
 
 You can also add multiple domains. From the fortrabbit side, just point them to the App's root path, configure routing and display of contents within Craft CMS and/or use additional [htaccess rules](/htaccess).
 
@@ -143,9 +130,7 @@ Otherwise you can run into trouble: Imagine you make changes to the database str
 
 ```php
 return [
-    '*' => [
-        'cpTrigger' => 'godmode'
-    ]
+    'cpTrigger' => 'godmode'
 ];
 ```
 
