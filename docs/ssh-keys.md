@@ -159,3 +159,6 @@ In addition, other users who have an Account on fortrabbit may collaborate on yo
 
 In certain scenarios, you may want to grant someone or something access to an App without creating a new Account. For these purposes, you can use App-only keys that are separate from any Account on fortrabbit. The App-only keys are managed via the Dashboard.
 
+## Troubleshooting SSH key access
+
+Please see the dedicated [SSH troubleshoot guide](/ssh-key-troubleshooting).
