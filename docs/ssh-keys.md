@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-11-28
+reviewed:      2021-02-09
 naviTitle:     SSH key setup
 title:         SSH key setup
 lead:          This article helps setting up your SSH keys on your local machine.

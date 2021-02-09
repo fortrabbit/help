@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-02-09
+reviewed:      2021-02-09
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
