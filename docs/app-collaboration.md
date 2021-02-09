@@ -41,6 +41,7 @@ App collaboration allows you to invite other developers to a single or multiple 
 * CAN access code via Git, SSH and SFTP
 * CAN see the App in the Dashboard
 * CAN see the Company the App belongs to
+* CAN see information of other Accounts with the same App access
 * CAN change settings of an App in the Dashboard
 * CAN NOT invite other collaborators
 * CAN NOT scale an App
