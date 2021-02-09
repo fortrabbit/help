@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-11-28
+reviewed:      2020-02-09
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
@@ -66,7 +66,6 @@ SSH keys are stored with your Account. In the "Dashboard" > "Your Account" > "Co
 We have a [dedicated article](ssh-keys) on setting up and troubleshooting your local SSH keys.
 
 
-
 ### GitHub SSH key import
 
 **Automatic import**: When signing up to fortrabbit, we'll check at GitHub if there are any public SSH keys associated with your e-mail. If we find any, we'll import them and install them with your account. This is a one time setup, your SSH keys will not be synced. You can manage the SSH keys like any other keys then.
@@ -80,6 +79,10 @@ The [direct Dashboard link](https://dashboard.fortrabbit.com/boarding/keys/githu
 
 In certain cases you might want to add code access to an App without the need to register a new Account with fortrabbit. One case is a hectic ad-hoc hotfix scenario (good luck!), another case is that you have some advanced deployment with a third party continuous integration service bot going on. So you can install additional App-only custom public SSH keys with each App. You manage those App-only SSH keys in the Dashboard with your App.
 
+
+### Troubleshooting SSH key access
+
+Please see the dedicated [SSH troubleshoot guide](/ssh-key-troubleshooting).
 
 ## Password authentication
 
