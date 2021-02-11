@@ -48,7 +48,7 @@ The Owner role can NOT be modified by someone else, multiple Owners per Company 
 * create, delete, configure & scale all Apps of the Company
 * access code of all Apps of the Company
 * delete, create, change Billing Contacts for the Company
-* manage all roles (but other Owners) of the Company
+* manage all roles of the Company
 * invite new Users for any role to the Company
 * leave the Company (if other Owners are present)
 * delete the Company
@@ -60,14 +60,14 @@ The Admin role can be modified by Owners. Accounts with this role within a Compa
 
 * create, delete, configure & scale all Apps of the Company
 * access code of all Apps of the Company
-* manage all Collaborators of the Company
+* manage all Admins and Collaborators of the Company
 * invite new Admins or Collaborators to the Company
 * leave the Company
+
 
 ### App Collaborator
 
 The App Collaborator role can be modified by Owners and Admins. It's the same as with [App collaboration](app-collaboration) and has the same permissions. When any paid Company collaboration plan is booked, all Apps, including all Universal Apps, are granted unlimited App collaboratortion.
-
 
 
 ## Inviting a Company member
