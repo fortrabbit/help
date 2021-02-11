@@ -112,5 +112,3 @@ There are two levels of teamwork:
 2. **[Company level collaboration](company-collaboration)**: Company members act on behalf of the Company
 
 Both levels work side by side and can be combined. Also check out our [fancy explaining video](https://help.fortrabbit.com/teamwork-video).
-
-
