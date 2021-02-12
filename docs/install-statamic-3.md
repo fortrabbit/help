@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-14
+reviewed:         2021-02-12
 title:            Install Statamic 3 on fortrabbit
 naviTitle:        Statamic
 lead:             Statamic is a cool file based CMS. Learn here how to install and tune Statamic 3 on fortrabbit.
@@ -28,36 +28,22 @@ keywords:
 ---
 
 
-
-## Document status
-
-Mind that this install guide is work in progress and for the BETA version of Statamic 3. Our current knowledge on the inner workings of Statamic is limited. We have not much first hand experience. Make sure to use the official Statamic docs at [statamic.dev](https://statamic.dev/) as your main source of truth.
-
- 
 ## Get ready
 
-Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready. Also best, already have a plain vanilla App at fortrabbit ready. There is no Statamic preset yet, so best choose "plain PHP" when bookng a new App in the fortrabbit Dashboard. 
+Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready. Also best, already have a plain vanilla App at fortrabbit ready. There is no Statamic preset yet, so best choose "plain PHP" when booking a new App in the fortrabbit Dashboard.
 
 
 ## Install Statamic locally
 
-Before you deploy anything to fortrabbit, we highly recommend to have your Statamic project running locally. This is how to start a project from scratch on your local machine (with a folder called like your App):
-
-```
-# 1. Create a local (on your own computer) Statamic project folder (called like your App) with Composer:
-composer create-project statamic/statamic {{app-name}} --prefer-dist --stability=dev
-```
-
-From there on, some development might happen or you already have a project running locally, now:
-
+Before you deploy anything to fortrabbit, get your Statamic project running on your local computer. Please see the [official Statamic install guide](https://statamic.dev/installation) for up-to-date instructions.
 
 ## Setup
 
-Next up, let's get Statamic ready that the same installation can run locally and on the fortrabbit App.
+Next up, let's get Statamic ready, so that the same installation can run locally and on the fortrabbit App.
 
 ### Set environment variables
 
-Statamic comes with a predefined (hidden) `.env` file. t includes what you'll need to run Statamic locally. Mind that the `.env` is ignored from Git. 
+Statamic comes with a predefined (hidden) `.env` file. t includes what you'll need to run Statamic locally. Mind that the `.env` is ignored from Git.
 
 Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars":
 
@@ -83,7 +69,6 @@ Statamic 3 is a Laravel application. So the root path needs to be set to `public
 * [dashboard.fortrabbit.com/apps/{{app-name}}/rootpath](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath) <- direct link
 
 
-
 ## Choose your deployment work-flow
 
 There are two "main" ways to deploy code here on fortrabbit: [Git](/git-deployment) and [SFTP](/sftp-uni). The general rule of thumb is, that content driven legacy applications, like [WordPress](/install-wordpress), are better uploaded in classical manner with SFTP. Modern PHP web frameworks that are based on [Composer](/composer) are mostly deployed with Git. 
@@ -91,6 +76,8 @@ There are two "main" ways to deploy code here on fortrabbit: [Git](/git-deployme
 Now, Statamic is a bit in between and is - like [Grav](/install-grav) and [Kirby](/install-kirby-3) - file based. So there is usually no database by default, the actual contents are text files written on the file system.
 
 [Our architecture graphic here](/deployment-methods-uni#toc-understanding-the-architecture) shows you that the files, you can access via SFTP or SSH (Universal App) are not the ones, that are in Git. The Git repo is a separated thing. So, deploying with Git is a one way street that only goes up, not down (also [see here](/deployment-methods-uni#toc-git-works-only-one-way)). In other words: You can NOT `git pull` any changes you have made on the Apps file system. In an ideal world, code and content are maybe separated. With a file based CMS this is all together.
+
+The [official Git integration](https://statamic.dev/git-integration) for Statamic is therefore not working here.
 
 
 ## SFTP upload
@@ -177,12 +164,6 @@ By now, you have Statamic installation running on your local machine and you can
 At the beginning you most likely have been using the App URL as your domain. You can also add any number of domains to your App. Please see our [domain article](/domains) for more.
 
 
-### Using MySQL as a content store
-
-_MYSQL is still WORK IN PROGRESS!_
-
-Beside storing contents on the file system in markdown, Statamic also offers to store contents with a MySQL database. On fortrabbit, that might ( depends on your use case ) be a good option, since each Universal App comes with a MySQL database anyways and you don't have to go the extra round with rsync while still having good separation of code and content.
-
 #### ENV vars for Statamic MySQL setup
 
 MySQL access will be configured via ENV vars as well (see above on the matter as well). Copy/paste this additional setup into the textarea with environment variables settings form in the fortrabbit Dashboard:
@@ -198,7 +179,6 @@ DB_USERNAME=${MYSQL_USER}
 
 It maps the keys Statamic is expecting with dynamic ENV vars provided by fortrabbit.
 
-_MYSQL is still WORK IN PROGRESS!_
 
 ### Working with the Control Panel
 
