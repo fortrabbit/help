@@ -8,7 +8,6 @@ lead:             Statamic is a cool file based CMS. Learn here how to install a
 group:            Install_guides
 stack:            uni
 dontList:         false
-workInProgress:   true
 
 websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
