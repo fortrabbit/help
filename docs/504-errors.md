@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
+reviewed:      2021-02-12
 title:         Troubleshoot 504 errors
 naviTitle:     504 errors
 excerpt:       Some tips on troubleshooting 504 errors.
@@ -21,6 +21,7 @@ dontList:      false
 * 504 errors are sometimes caused by editorial changes in a CMS
 * 504 errors often come and go – from offline to online and back again
 * 504 errors usually will not show up in the PHP error logs
+* Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what  Apache is reporting back
 
 
 ## Common reasons and solutions
