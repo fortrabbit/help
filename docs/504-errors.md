@@ -29,9 +29,9 @@ dontList:      false
 In most cases this is not a server issue, but something with your code and configuration.
 
 
-### Poorly performing database queries 
+### Poorly performing database queries
 
-Your App might be making MySQL database queries that are too heavy. MySQL queries can be CPU intensive and long running. Sometimes this is a technical requirement, often this is unawareness on the part of the developer. 
+Your App might be making MySQL database queries that are too heavy. MySQL queries can be CPU intensive and long running. Sometimes this is a technical requirement, often this is unawareness on the part of the developer.
 
 Review your code for inefficient queries. If unsure consult a senior colleague or use a profiler like [Blackfire](/blackfire) to find the bottlenecks. Refactor your query design to write better performing MySQL queries or even rethink your data model. Caching certain database results can be another tactic after refactoring.
 
