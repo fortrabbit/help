@@ -22,6 +22,7 @@ dontList:      false
 * 504 errors often come and go – from offline to online and back again
 * 504 errors usually will not show up in the PHP error logs
 * Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what  Apache is reporting back
+* Sometimes even SSH and SFTP will not work for such ans App
 
 
 ## Common reasons and solutions
