@@ -128,6 +128,7 @@ The Account who leaves a Company will loose the ability to see and edit the App 
 
 You might want to leave the Company when the project you have collaborated on has ended or you are actually leaving the Company in real live as well. Each Account can leave a Company at any time.
 
+
 ##### How to actively leave a Company
 
 In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Company" button. There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
@@ -137,10 +138,9 @@ In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Co
 
 Let's say a project phase has ended, so that an App Collaborator does not need have access any more. Who can can fire whom:
 
-* An Owner can remove Admins and App collaborators
-* An Admin can remove App collaborators
+* An Owner can remove Owners, Admins and App collaborators
+* An Admin can remove Admins and App collaborators
 * An App Collaborator can remove nobody
-* No one can remove an Owner
 
 ##### How to remove Accounts
 
@@ -155,8 +155,3 @@ To make the process of leaving transparent, all involved parties will get a noti
 #### A note on security when people leave
 
 Please mind that the person who has left still might have local code copies and thereby access to sensitive data like MySQL passwords. We advice to reset service passwords. Please see the [security article](security#toc-password-reset) for more.
-
-
-#### Remove an Owner Account that already left a business
-
-It sometimes can get a bit hectic when people leave. There are so many things to think about, emotions are often involved as well. Sometimes we get contacted to remove Owner Accounts from Companies here at fortrabbit who already left the business in real live. There is no interface for this currently, as an Owner can not just remove another Owner, but you can ask us in support to get your old business partner removed from the Company here. Be prepared to identify yourself and provide some details on the person who has left (maybe link to LinkedIn with a the new job), so that we can make sure your request is legit.
