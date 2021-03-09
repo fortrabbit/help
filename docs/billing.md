@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-07
+reviewed:      2021-03-09
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -98,6 +98,10 @@ We consider our primary clients to be entrepreneurs and other businesses. In oth
 ### VATIN for EU clients
 
 We recommend to enter your VATIN (Value Added Tax Identification Number), sometimes referenced as VAT TAX ID or similar. This way you save upfront costs for VAT — reverse charge makes this possible. See [our guide](billing-contact#toc-adding-a-vat-in) to setup your VATIN with your Billing Contact.
+
+### EU VAT exemption
+
+We charge no VAT, if article 151(1)(a) VAT Directive applies, e.g. for international bodies, embassies or other EU organizations with a valid VAT exemption certificate. Please get in touch if VAT exemption applies to your organization.
 
 
 ### Currencies
