@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2021-03-18
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.
@@ -103,7 +103,7 @@ You can decode the created CSR file to make sure did it correctly. Run this in y
 openssl req -in yourcsr.csr -noout -text
 ```
 
-Substitute `yourcsr.csr` with your file. Or just use an online tool, like [this one](/https://www.sslshopper.com/csr-decoder.html).
+Substitute `yourcsr.csr` with your file. Or just use an online tool (CSR decoder).
 
 
 #### Convert an existing key to RSA format
