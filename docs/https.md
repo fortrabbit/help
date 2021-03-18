@@ -55,7 +55,8 @@ The roadmap to setup TLS custom reads like so:
 2. create a key and a certificate request locally (see below)
 3. using the certificate request: purchase an TLS/SSL cert from a third party CA
 4. (book the TLS component for your App in the Dashboard) < Pro App only
-5. upload your key and cert(s) to the Dashboard
+5. upload your key and cert(s) to the Dashboard:  
+App > Settings > All settings > Custom TLS certificate
 6. route all your (sub)domains to your App
 
 #### Create a new key and certificate
