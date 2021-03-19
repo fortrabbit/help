@@ -5,7 +5,7 @@ reviewed:      2021-03-19
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.
-lead:          Criminals and goverment agencies are trying to read your Apps communication. Better serve all requests over HTTPS for extended privacy. 
+lead:          Criminals and government agencies are trying to read your Apps communication. Better serve all requests over HTTPS for extended privacy. 
 group:         platform
 stack:         all
 
