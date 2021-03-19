@@ -25,35 +25,31 @@ Each fortrabbit App comes with its own Git repo. Note that this repo is not loca
 
 ### Simple Git deployment workflow
 
-```bash
-# 1. Clone the (empty) app to register the remote origin master
-$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+1. Clone the (empty) repostory
+2. Go to the app-name folder
+3. Do stuff
+4. Initialize Git locally
+5. Set upstream and 1st push
+6. Every deploy from now on
 
-# 2. Go in the folder
-$ cd {{app-name}}
+On the terminal this will look similar to this:
 
-# 3. Do stuff
-$ echo '<?php echo "PHPower to the PHPeople";' >index.php
+    git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+    cd {{app-name}}
+    echo '<?php echo "PHPower to the PHPeople";' >index.php
+    git add index.php
+    git commit -am 'Initial commit'
+    git push -u origin master
+    git push
 
-# 4. Initialize Git locally
-$ git add index.php
-$ git commit -am 'Initial commit'
+After the first deployment is done, the traced files from te Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-# 5. Set upstream and 1st push
-$ git push -u origin master
-# long output
-# After that it already works
+Next time you want to send changes to your App, you will have to add new or changed files and subequently do a git-push:
 
-# 6. Every deploy from now on
-$ git push
-```
-After the first deployment is done, the Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
-
-Next time you want to send changes to your App you can simply:
-
-```bash
-$ git push
-```
+    $ git add new-file.txt
+    $ git add index.php
+    $ git commit -m 'new version'
+    $ git push
 
 ### Adding fortrabbit as a remote
 
