@@ -95,7 +95,7 @@ You manage your code access with your user Account on fortrabbit. This way you a
 
 URLs and terminal commands depend on the currently active access method.
 
-```shell
+```bash
 # Git clone with SSH keys
 $ git clone {{app-name}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
@@ -118,7 +118,7 @@ When you are currently logged in to the Dashboard (a cookie is stored), you will
 
 #### Try it out yourself
 
-```shell
+```bash
 # change the values on the right and see the below change
 SSH user: {{ssh-user}}
 Region:   {{region}}
