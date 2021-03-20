@@ -165,10 +165,11 @@ While some implicit technical details are obvious to you, they might not be for 
 
 ## Code examples
 
+* Open and close code blocks with ````shell` where shell is the language for syntax highlighting
 * Try to keep code examples together in one block, avoid mixing paragraphs and code blocks
 * Code blocks follow standard markdown formatting
 * Show output only when necessary
-* Output should be a comment
+* Output should be a comment `#`
 * Use comments in between commands to explain what's going on
 * `$` to start a command
 * Start code examples right away: PHP without `<?php`, Bash without `#!/bin/bash`
