@@ -165,10 +165,11 @@ While some implicit technical details are obvious to you, they might not be for 
 
 ## Code examples
 
-* try to keep code examples together in one block, avoid mixing paragraphs and code blocks
+* Try to keep code examples together in one block, avoid mixing paragraphs and code blocks
 * Code blocks follow standard markdown formatting
 * Show output only when necessary
 * Output should be a comment
+* Use comments in between commands to explain what's going on
 * `$` to start a command
 * Start code examples right away: PHP without `<?php`, Bash without `#!/bin/bash`
 
@@ -191,7 +192,8 @@ While some implicit technical details are obvious to you, they might not be for 
 ## Maintainability
 
 * Find the right balance between being general and being precise (aka Captain Obvious)
-* Very detailed step-by-step articles are easy to follow but get outdated very quickly 
+* Very detailed step-by-step articles are easy to follow but get outdated very quickly
+* Don't use screenshots and images, use words and ASCII graphics
 * Don't bury numbers (like prices and limits) in articles
 * All those numbers must be managed in the "pricing" and the "specs" page
 * Keep it DRY! Don't repeat yourself
