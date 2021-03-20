@@ -82,53 +82,6 @@ If you followed our [ssh key setup guide](ssh-keys) then your public key will be
     ~/.ssh/id_rsa.pub
 
 
-### Verify ssh-key mode
-
-Given that you have an App named  _tripple-w-app_ in EU, then the following applies
-
-<!-- fixme: this is detected as PHP -->
-
-    App Name  tripple-w-app (example)
-    Region    eu2
-    Username  tripple-w-app
-    Host      deploy.eu2.frbit.com
-    Password  None or whatever you used before (not fortrabbit Account password)
-
-
-Try this, if the output is "app", then you are good to go.
-
-    $ ssh tripple-w-app@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa_fortrabbit whoami
-    app
-
-If you see a password prompt, then you either created the key with a passphrase or the key
-was very recently imported and the system thinks you are still using the username+password mode.
-
-    $ ssh tripple-w-app@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa_fortrabbit whoami
-    tripple-w-app@deploy.eu2.frbit.com's password:
-
-Either type in the passphrase that was used when the key was created or allow the system 40-180
-seconds to activate the new key.
-
-### Upload a file with sftp in ssh-key mode
-
-<!-- fixme: this is detected as PHP -->
-
-    $ echo greetings, supaninja\! > f
-    $ echo put f | sftp -b - -F /dev/null -i ~/.ssh/id_rsa_fortrabbit tripple-w-app@deploy.eu2.frbit.com
-    sftp> put f
-
-Check the file via HTTP
-
-    $ curl -D- http://tripple-w-app.frb.io/f
-    HTTP/1.1 200 OK
-    Date: Thu, 18 Mar 2021 11:54:43 GMT
-    Server: Apache 2.x
-    Last-Modified: Thu, 18 Mar 2021 11:54:19 GMT
-    ETag: "16-5bdce427595ab"
-    Accept-Ranges: bytes
-    Content-Length: 22
-
-    greetings, supaninja!
 
 
 

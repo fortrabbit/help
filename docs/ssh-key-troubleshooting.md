@@ -56,7 +56,7 @@ When your local development environment is containerized with Docker or Vagrant 
 
 When trying to connect add the `-v` to show a full connection log. This might help finding the issue.
 
-```shell
+```bash
   ssh {{app-name}}@deploy.{{region}}.frbit.com -v
 ```
 

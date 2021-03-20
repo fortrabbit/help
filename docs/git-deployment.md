@@ -21,39 +21,54 @@ We assume that you have: [Git installed](git) locally and know the basics. We fu
 
 ## Usage
 
-Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch. 
+Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch.
+
+## Terminal or GUI
+
+We usually use Terminal commands to explain things, since those are standard. If you prefer a GUI-oriented solution, check out the recommendations over at the [official git website](https://git-scm.com/downloads/guis).
+
 
 ### Simple Git deployment workflow
 
-1. Clone the (empty) repostory
-2. Go to the app-name folder
-3. Do stuff
-4. Initialize Git locally
-5. Set upstream and 1st push
-6. Every deploy from now on
-
 On the terminal this will look similar to this:
 
-    git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-    cd {{app-name}}
-    echo '<?php echo "PHPower to the PHPeople";' >index.php
-    git add index.php
-    git commit -am 'Initial commit'
-    git push -u origin master
-    git push
+```bash
+# 1. Clone the (empty) repository
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# 2. Go to the app-name folder
+$ cd {{app-name}}
+
+# 3. Do stuff
+$ echo '<?php echo "PHPower to the PHPeople";' >index.php
+
+# 4. Initialize Git locally
+$ git add index.php
+
+# 5. Commit changes
+$ git commit -am 'Initial commit'
+
+# 6. Set upstream and 1st push
+$ git push -u origin master
+
+# 7. Every deploy from now on
+$ git push
+```
 
 After the first deployment is done, the traced files from te Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-Next time you want to send changes to your App, you will have to add new or changed files and subequently do a git-push:
+Next time you want to send changes to your App, you will have to add new or changed files and subsequently do a git-push:
 
-    $ git add new-file.txt
-    $ git add index.php
-    $ git commit -m 'new version'
-    $ git push
+```bash
+$ git add new-file.txt
+$ git add index.php
+$ git commit -m 'new version'
+$ git push
+```
 
 ### Adding fortrabbit as a remote
 
-```
+```bash
 # Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
@@ -62,7 +77,7 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 To start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
 
-```
+```bash
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```

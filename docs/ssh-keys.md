@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-02-09
+reviewed:      2021-03-20
 naviTitle:     SSH key setup
 title:         SSH keys setup
 lead:          Learn how to how to create an SSH key pair on your local machine and how to add it your fortrabbit Account.
@@ -55,19 +55,16 @@ After you import a public key into your fortrabbit account, it can then be used 
 ## Do you already have a key?
 
 To see any existing keys, open a terminal or use Git Bash and use find to list the dot-ssh folder.
-If you prefer a GUI-oriented solution, check out the recommendations over at the [official git website](https://git-scm.com/downloads/guis).
 
-    $ find ~/.ssh
+```bash
+$ find ~/.ssh
+#/home/handle/.ssh/config
+#/home/handle/.ssh/id_rsa
+#/home/handle/.ssh/id_rsa.pub
+#/home/handle/.ssh/known_hosts
+```
 
 If you don't have any key pairs or get an error about a missing folder, then proceed to the next section.
-
-    /home/handle/.ssh/config
-    /home/handle/.ssh/id_rsa
-    /home/handle/.ssh/id_rsa.pub
-    /home/handle/.ssh/known_hosts
-    /home/handle/.ssh/id_rsa_fortrabbit
-    /home/handle/.ssh/id_rsa_fortrabbit.pub
-
 
 On the other hand, if you do see key pairs like above (public - pub extension, private - no extension), then you can opt to use the existing key pair with fortrabbit. It is not strictly required to create a new key pair, but the one you end up using must be in the RSA format.
 
@@ -79,40 +76,45 @@ To import the public part into your fortrabbit Account via Dashboard, read about
 Currently, we support only RSA keys. Please use 4096 bit keys, or longer.
 You can skip the `-f ~/.ssh/id_rsa_fortrabbit` part to use the default location which is `~/.ssh/id_rsa`
 
-    $ ssh-keygen -t rsa -b 4096 -C user@fortrabbit -f ~/.ssh/id_rsa_fortrabbit
-    Generating public/private rsa key pair.
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again:
-    (...)
+```bash
+$ ssh-keygen -t rsa -b 4096 -C user@fortrabbit -f ~/.ssh/id_rsa_fortrabbit
+# Generating public/private rsa key pair.
+# Enter passphrase (empty for no passphrase):
+# Enter same passphrase again:
+# ...
 
-**Note the above!** Just press Enter twice and the key will not be protected by a passphrase.
+↑ Press Enter twice to skip the passphrase
 
-    (...)
-    Your identification has been saved in /home/jaroslav/.ssh/id_rsa_fortrabbit
-    Your public key has been saved in /home/jaroslav/.ssh/id_rsa_fortrabbit.pub
-    The key fingerprint is:
-    SHA256:QuLDaljPIExVTlsCZkyKiByU7p9RlKp8ABmJcyC5F54 user@fortrabbit
-    The key's randomart image is:
-    +---[RSA 4096]----+
-    |*O+*o+..         |
-    |&.O.oo+          |
-    |*O o+o.          |
-    |+oE+ +           |
-    |+o= = . S        |
-    | B B . .         |
-    |. = =            |
-    | . o             |
-    |                 |
-    +----[SHA256]-----+
+# Your identification has been saved in /home/user/.ssh/id_rsa_fortrabbit
+# Your public key has been saved in /home/user/.ssh/id_rsa_fortrabbit.pub
+# The key fingerprint is:
+# SHA256:QuLDaljPIExVTlsCZkyKiByU7p9RlKp8ABmJcyC5F54 user@fortrabbit
+# The key's randomart image is:
+# +---[RSA 4096]----+
+# |*O+*o+..         |
+# |&.O.oo+          |
+# |*O o+o.          |
+# |+oE+ +           |
+# |+o= = . S        |
+# | B B . .         |
+# |. = =            |
+# | . o             |
+# |                 |
+# +----[SHA256]-----+
+```
 
-If you want to use the default location (because you don't have any other keys),
-then type this instead, followed by the Enter key three times.
 
-    $ ssh-keygen -t rsa -b 4096 -C user@fortrabbit
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/jaroslav/.ssh/id_rsa):
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again:
+<!-- TODO: Discuss this please! Why do we send the location? The name is already unique! -->
+
+If you want to use the default location (because you don't have any other keys), then type this instead, followed by the Enter key three times.
+
+```bash
+$ ssh-keygen -t rsa -b 4096 -C user@fortrabbit
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/home/user/.ssh/id_rsa):
+# Enter passphrase (empty for no passphrase):
+# Enter same passphrase again:
+```
 
 
 ### SSH keys generation on Windows
@@ -141,14 +143,15 @@ After you have set up Git and created a key pair, the public part of the key mus
 
 You might need to re-enter your fortrabbit Account password. Then you will see a form with a textarea to paste the public key in to. If you followed our guide, the file you want to import wil be located in:
 
-```shell
-~/.ssh/id_rsa_fortrabbit.pub # or
+```bash
+~/.ssh/id_rsa_fortrabbit.pub 
+# or
 ~/.ssh/id_rsa.pub
 ```
 
 This is what a valid SSH key looks like (don't paste this):
 
-```shell
+```bash
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbez9IDLYECMpQUQgNTWPG5aPMwJFNNP3a0
 gAHVz8+N4HgiwFwBll2iUX0YPHIpbfeXN4Kab30qsevw59cjQ1XC7yjkrXy03OyOv/Z9X+KpB
 vnf/cRXwz2zxfQqwvmXIQl3jlxyuA+Y4VjvELIvCrnnsfJDETmF8HZG4zA5XFfS95y5xx3TF9
@@ -163,7 +166,7 @@ The above key is split across multiple lines for the sake of readability. When a
 
 The value to paste into the text field can be read into the clipboard from a terminal. On Windows, just use notepad to open the `id_rsa.pub` file and select all, then copy. You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
 
-```shell
+```bash
 $ pbcopy < ~/.ssh/id_rsa.pub    # Mac OS
 $ xclip -i < ~/.ssh/id_rsa.pub  # linux
 ```
