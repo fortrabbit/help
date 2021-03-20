@@ -22,72 +22,25 @@ All [Universal Stack Apps](app-uni) support access via SFTP which is similar to 
 It is also possible to [deploy with Git](git-deployment). This has some advantages, but may not be suitable for every application and user. For example, most CMS application are not designed to take a Git repository into account. If a plugin is installed from the WebUI, and the application downloads new files, then those files are not automatically added to Git. It is certainly possible to deploy any PHP application via Git on fortrabbit, but you need consider scenarios like the above.
 
 
-## SFTP access: username + password
+## SFTP access
 
-1. Remove all ssh-keys from your profile, if you have any
-2. Visit the Dashboard and find your username and sftp-host address
-3. Configure your GUI client (not explained here)
-4. Upload your files for great success
-
-### Credentials and hostname (username+password access mode)
-
-<!-- fixme: this is detected a s PHP snippet -->
-
-    Host     deploy.«region».frbit.com
-                    (us1 or eu2)
-    Login    tripple-w-app.«randomletters»
-                           (the suffux is random)
-    Password Your fortrabbit Account password
-    Protocol SFTP
-    Port     22
+1. Visit: Dashboard > Apps > {{appname}} > Access > SFTP
+2. Configure your GUI client with the credentials shown
+3. Connect and upload files
 
 
-Note that this password is the the same as the fortrabbit Dashboard password.
-The username will have a random string after the app-name like tripple-w-app.f4n4gkrx90ot4yxm.
-In this username+password access mode, the login consists of two parts {{app-name}}.{{random-letters}}.
-You can find this in the Dashboard under:
+### Credentials for username + password access mode
 
-- dasboard.fortrabbit.com -&gt; Apps -&gt; {{YourApp}} -&gt; Access -&gt; SFTP
+```
+Host:       deploy.{{region}}.frbit.com
+User name:  {{ssh-user}}
+Password:   Your fortrabbit Account password
+Protocol:   SFTP
+Port:       22
+```
 
-### Verify username+password mode
+The user name will have a random string after the app-name like `tripple-w-app.f4n4gkrx90ot4yxm.`.
 
-For example, if you have an App named tripple-w-app in the eu2 region, then the following applies.
-
-    App      tripple-w-app
-    Region   eu2
-    Host     deploy.eu2.frbit.com
-    Login    tripple-w-app.f4n4gkrx90ot4yxm
-    Password Your fortrabbit Account password
-
-To verify that SFTP access works, open a terminal and type the following,
-but use your own App name and the correct region.
-
-    $ unset SSH_AUTH_SOCK
-    $ echo hello welt > f
-    $ sftp -F /dev/null tripple-w-app.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com
-    tripple-w-app.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com's password:
-
-Paste your password, output continues...  
-When you get to `sftp>`, type put f, enter, exit, enter.
-
-    Connected to deploy.eu2.frbit.com.
-    sftp> put f
-    Uploading f to /srv/app/tripple-w-app/htdocs/f
-    f                                         100%   11     0.3KB/s   00:00
-    sftp> exit
-
-Now access the file with a http client (aka web browser)
-
-    $ curl -D- http://tripple-w-app.frb.io/f
-    HTTP/1.1 200 OK
-    Date: Thu, 18 Mar 2021 09:50:21 GMT
-    Server: Apache 2.x
-    Last-Modified: Thu, 18 Mar 2021 09:43:32 GMT
-    ETag: "b-5bdcc6ebed7b6"
-    Accept-Ranges: bytes
-    Content-Length: 11
-
-    hello welt
 
 ## SFTP access: ssh-key
 
@@ -97,16 +50,8 @@ Now access the file with a http client (aka web browser)
 
 ### Using sftp without a password (ssh-key access mode)
 
-First create a key as described in our [ssh key setup guide](ssh-keys), you need to use an RSA key.  
-Then, import the key into your fortrabbit account.  
-Finally, test the connection.
+First create a key as described in our [ssh key setup guide](ssh-keys).  
 
-To import the key, log in to your account and find the add-ssh-key-button.
-
-- dasboard.fortrabbit.com -&gt; Your Account -&gt; [Add a new SSH key]
-  - do not import the _private key_
-  - copy-paste the contents of `id_rsa(_fortrabbit).pub` into the text field
-  - do not paste any newline characters
 
 The value to paste into the textfield can be read into the clipboard from a terminal.  
 On windows, just use notepad to open the `id_rsa.pub` file and select all, then use control+c.  
@@ -187,34 +132,17 @@ Check the file via HTTP
 
 
 
-## Further reading
+## About SFTP
 
-Related topics
-
-* [ssh key setup guide](ssh-keys)
-
-### Help! Nothing works...
-
-Please read [ssh-key troubleshooting page](ssh-key-troubleshooting) before opening a support ticket.
-These "authentication issues" are quite commonly reported, but SSH access and SFTP access is very rarely broken on our end.
-Some common issues are also covered on the [SFTP troubleshooting page](/sftp-troubleshooting).
-
-### Troubleshooting SFTP
-
-* [ssh-key troubleshooting page](ssh-key-troubleshooting)
-* [SFTP troubleshooting page](/sftp-troubleshooting)
-
-
-### About SFTP
-
-SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a [SSH](/ssh-uni) connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical porposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
+SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical purposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
 
 There are various SFTP clients out there. We recommend [Cyberduck](https://cyberduck.io/) (on Mac and Windows). Modern editors and IDEs have support for SFTP, including Sublime, PhpStorm, Notepad++ and so on. In a hurry, you can use `sftp` from a terminal which should be installed if `ssh` is installed.
 
 
-
-### Mixing deployment methods
+## Mixing deployment methods
 
 Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
 
+## Troubleshooting SFTP
 
+Having issues? Please see our [SFTP troubleshooting page](/sftp-troubleshooting).
