@@ -61,7 +61,7 @@ Thanks for understanding!
 
 ## Password authentication with http-auth
 
-```shell
+```bash
 # 1. login to your App via SSH
 
 
