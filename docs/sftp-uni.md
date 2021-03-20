@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-11-28
+reviewed:      2021-03-19
 title:         SFTP deployment
 naviTitle:     SFTP deployment
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -19,10 +19,10 @@ keywords:
 
 All [Universal Stack Apps](app-uni) support access via SFTP which is similar to the classical FTP-based workflow.
 
-It is also possible to [deploy with Git](git-deployment). This has some advantages, but may not be suitable for every application and user. For examle, most CMS application are not designed to take a Git repository into account. If a plugin is installed from the WebUI, and the application downloads new files, then those files are not automatically added to Git. It is certainly possible to deploy any PHP appication via Git on fortrabbit, but you need consider senarios like the above.
+It is also possible to [deploy with Git](git-deployment). This has some advantages, but may not be suitable for every application and user. For example, most CMS application are not designed to take a Git repository into account. If a plugin is installed from the WebUI, and the application downloads new files, then those files are not automatically added to Git. It is certainly possible to deploy any PHP application via Git on fortrabbit, but you need consider scenarios like the above.
 
 
-## SFTP access: username+password
+## SFTP access: username + password
 
 1. Remove all ssh-keys from your profile, if you have any
 2. Visit the Dashboard and find your username and sftp-host address

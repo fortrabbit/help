@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-11-28
+reviewed:      2021-03-19
 naviTitle:     SFTP troubleshooting
 title:         SFTP troubleshooting
 excerpt:       What you may want to know to debug SFTP issues
@@ -18,30 +18,34 @@ keywords:
 
 ---
 
-**Related topcs**
+**Related topics**
 
 - [Code access methods](/access-methods) on fortrabbit
-- [Deployment methods](/deployment-methods) on fortrabbit.
-- [SFTP access](/sftp-uni).
+- [Deployment methods](/deployment-methods) on fortrabbit
+- [SFTP access](/sftp-uni)
 - [SSH access troubleshooting](/ssh-troubleshooting)
 - [SSH key setup](ssh-keys)
 - [SSH key troubleshooting](/ssh-key-troubleshooting)
 
+
 ## Common reasons and solutions
 
-If you are unable to log in to your Universal-Stack App using SFTP,
-then scan the table of contents here to see if your problem is already covered.
+If you are unable to log in to your Universal App using SFTP, scan the table of contents here to see if your problem is already covered.
 
-## Password problems (aka Permission denied, please try again)
+
+## Password problems (Permission denied, please try again)
 
 First of all, [figure out which access method is currently active](access-methods#toc-available-authentication-methods) for your fortrabbit Account.
 
+
 ### Option 1: **password+username mode**
 
-If you are using the username+password mode, then you need to type in your fortrabbit account password when authenticating with SFTP.
-The username will look like «app-name».«random-letters». Find your App in the Dashboard to figure out this login / sftp-username.
-The sftp-acces page provides a [test for the password mode](sftp-uni#toc-verify-username-password-mode) you can perform from a terminal.
-Do give that a try.
+If you are using the username + password mode, then you need to type in your fortrabbit Account password when authenticating with SFTP. The username will look like {{appname}}.{{randomletters}}. 
+
+Make sure to copy-paste the correct credentials. Find the Access to your App in the Dashboard.
+
+The sftp-access page provides a [test for the password mode](sftp-uni#toc-verify-username-password-mode) you can perform from a terminal.
+
 
 ### Option 2: **ssh-key mode**
 
