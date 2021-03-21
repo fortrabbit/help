@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-19
+reviewed:      2021-03-21
 title:         SFTP deployment
 naviTitle:     SFTP deployment
 lead:          Learn about the classical way to access files on your Universal App on fortrabbit.
@@ -41,6 +41,7 @@ Port:       22
 
 **When using SSH key authentication**: in most cases you can leave the password field empty. The SFTP client will look up the keys. In rare cases you might need to specify the exact key by showing the client the path to the key.
 
+
 ## SFTP clients
 
 There are various SFTP clients out there. We recommend [Cyberduck](https://cyberduck.io/) (on Mac and Windows). Modern editors and IDEs have support for SFTP, including Sublime, PhpStorm, Notepad++ and so on. In a hurry, you can use `sftp` from a terminal which should be installed if `ssh` is installed.
@@ -51,7 +52,7 @@ There are various SFTP clients out there. We recommend [Cyberduck](https://cyber
 It is also possible to [deploy with Git](git-deployment) here and also use [SSH](/ssh-uni). It is not recommended to mix the different deployment methods. Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
 
 
-## About SFTP
+## Some more about SFTP
 
 SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical purposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
 
