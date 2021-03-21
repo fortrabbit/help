@@ -78,7 +78,7 @@ From this view, you will be able to select individual keys. Selecting a specific
 
 ### After changing the access method
 
-Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard. So please pick up the new access credentials.
+Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard. Pick up the new access credentials from Access tab with your Apps.
 
 
 ## SSH key authentication
