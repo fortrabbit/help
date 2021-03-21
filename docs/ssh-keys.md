@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-20
+reviewed:      2021-03-21
 naviTitle:     SSH key setup
 title:         SSH keys setup
 lead:          Learn how to how to create an SSH key pair on your local machine and how to add it your fortrabbit Account.
@@ -30,26 +30,26 @@ keywords:
 
 ---
 
-Besides [password authentication](/access-methods#toc-password-authentication) you can use SSH keys to authenticate with fortrabbit services, including **[deploying via Git](git)**, [accessing live logs](logging-pro) and [remote MySQL access](mysql#toc-remote-mysql-access). SSH key authentication is more secure and arguably more convenient. Additionally, it allows several users-accounts to collaborate on one or more Apps without sharing a password.
+Besides [password authentication](/access-methods#toc-password-authentication) you can use SSH keys to authenticate with fortrabbit services, including **[deploying via Git](git)**, [accessing live logs](logging-pro) and [remote MySQL access](mysql#toc-remote-mysql-access). SSH key authentication is more secure and arguably more convenient.
 
-The goals here are:
+## Covered here
 
-1. Create an SSH key pair consisting of a public and private key.
-2. Store the keys in the right location, so that your Operating System can make use of them.
+1. Create an SSH key pair consisting of a public and a private key
+2. Store the keys in the right location
 3. Save the public key with your fortrabbit Account
 
 And hopefully explain the main concepts behind ssh-keys in simple terms.
 
 
-## About SSH key authentication
+## About SSH public key authentication
 
-Public-key authentication is more secure than plain old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username, to verify your identity.
+SSH public key authentication is more secure than plain old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username, to verify your identity.
 
-It's more secure than password authentication and also more convenient, once set it up. SSH key authentication is very common and is used by service providers including BitBucket, GitHub, AWS, Google, Microsoft and virtually everyone else.
+It's more secure than password authentication and also more convenient, once it is set up. SSH key authentication is very common and is used by service providers including BitBucket, GitHub, AWS, Google, Microsoft and virtually everyone else.
 
 The public part of the key, ending in `.pub` is safe to give out, while the private part should not be shared.
 
-After you import a public key into your fortrabbit account, it can then be used to authenticate you. When an SSH client connects, the server will encrypt some secret using the public key. If the client is able to decrypt the secret with the private key and send it back to the server, then the server knows that the client has the private key and can be trusted.
+After you import a public key into your fortrabbit Account, it can then be used to authenticate you. When an SSH client connects, the server will encrypt some secret using the public key. If the client is able to decrypt the secret with the private key and send it back to the server, then the server knows that the client has the private key and can be trusted.
 
 
 ## Do you already have a key?
@@ -131,7 +131,7 @@ You can also have a look at this very detailed article which is more windows-ori
 
 * [Git and SSH key setup on Windows from Beanstalk](http://guides.beanstalkapp.com/version-control/git-on-windows.html)
 
-## Importing a public keys into your fortrabbit Account
+## Importing public SSH keys into your fortrabbit Account
 
 After you have set up Git and created a key pair, the public part of the key must be imported in the fortrabbit Dashboard. The navigation to the import form is not very complex: 
 
@@ -162,30 +162,34 @@ IvP1bffus+WdY75 you@localhost
 
 **Make sure you paste the public part of the key and not the private.**
 
-The above key is split across multiple lines for the sake of readability. When adding a key in the Dashboard, it must be all-on-one line, without any newline characters in the middle.  The key must start with `ssh-rsa`, other key types are not supported with our services.
+The above key is split across multiple lines for the sake of readability. When adding a key in the Dashboard, it must be all-on-one line, without any newline characters in the middle. The key must start with `ssh-rsa`, other key types are not supported with our services.
 
-The value to paste into the text field can be read into the clipboard from a terminal. On Windows, just use notepad to open the `id_rsa.pub` file and select all, then copy. You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
+### Copy your public SSH key value
+
+The value to paste into the text field can be read into the clipboard from a terminal. On Windows, just use notepad to open the `id_rsa.pub` file and select all, then copy.
 
 ```bash
-$ pbcopy < ~/.ssh/id_rsa.pub    # Mac OS
-$ xclip -i < ~/.ssh/id_rsa.pub  # linux
+# macOS
+$ pbcopy < ~/.ssh/id_rsa.pub
+
+# Linux
+$ xclip -i < ~/.ssh/id_rsa.pub
 ```
 
 ### GitHub SSH key import
 
-**Automatic import**: When signing up to fortrabbit, we'll check at GitHub if there are any public SSH keys associated with your e-mail. If we find any, we'll import them and install them with your account. This is a one time setup, your SSH keys will not be synced. You can manage the SSH keys like any other keys then.
+**Automatic import**: When signing up to fortrabbit, we'll check at GitHub if there are any public SSH keys associated with your e-mail. If we find any, we'll import them and install them with your Account. This is a one time setup, your SSH keys will not be synced. You can manage the SSH keys like any other keys then.
 
 **Manual import**: You can also tell the import helper your GitHub account, when using different e-mail addresses here and on GitHub. There is a small link which will take you
 
 The [direct Dashboard link](https://dashboard.fortrabbit.com/boarding/keys/github) (login and re-authentication maybe required) will take you there directly.
 
 
-
 ## fortrabbit specific concepts
 
 ### Account SSH keys
 
-Remember, on fortrabbit an Account represents a person (see [Account help page](/account) ). Your Account on fortrabbit may store the public parts of several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the MySQL database for all of your Apps. In addition, other users who have an Account on fortrabbit may collaborate on your Apps without the need to share passwords. Their SSH keys will then be allowed to deal with your App.
+Remember, on fortrabbit an Account represents a person - see the [Account help page](/account). Your Account on fortrabbit may store the public parts of several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the MySQL database for all of your Apps. In addition, other users who have an Account on fortrabbit may collaborate on your Apps without the need to share passwords. Their SSH keys will then be allowed to deal with your App.
 
 
 ### App-only SSH keys
