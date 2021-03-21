@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-19
+reviewed:      2021-03-21
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the two authentication methods available for fortrabbit services.
@@ -22,7 +22,7 @@ keywords:
 
 After creating an Account on fortrabbit (e-mail + password) and having checked out the [Dashboard](/dashboard), there is more to explore. Read on to learn how to interact with services provided on fortrabbit.
 
-Services or actions which require authentication include:
+## Services which require authentication
 
 * Deploying code with [Git](/git-deployment#toc-usage)
 * Using [SSH](/ssh-uni)
@@ -34,42 +34,51 @@ Services or actions which require authentication include:
 
 ## Available authentication methods
 
-* **Password** - username + password mode - the classical and default alternative - [see below](#toc-password-authentication)
-* **Public key** - ssh-key mode - the recommended approach (slightly more advanced) - [see below](#toc-ssh-key-authentication)
+* **Password**  - [see below](#toc-password-authentication)  
+   classical username + password authentication 
+* **SSH public key authentication** - [see below](#toc-ssh-key-authentication)  
+    slightly more advanced and recommended using private and public SSH keys
 
 ## Identify your current access method
 
-To figure out what is currently active, go to the [fortrabbit Dashboard](/dashboard), then [Your Account (upper right)](https://dashboard.fortrabbit.com/account). On the right side of the page, below the section Security, you will see one of two things:
+To figure out what is currently active, go to: 
 
-* **Password**: a heading called Code access with the subtext: You can access code with your Account password
-* **Public key** a heading called SSH keys above a list of imported public keys
++ [fortrabbit Dashboard](/dashboard) > [Your Account (upper right)](https://dashboard.fortrabbit.com/account)
+
+On the right side of the page, below the section Security, you will see one of two things:
+
+* A heading called Code access with a subtext shows that you are using username + password authentication
+* A heading called SSH keys above a list of imported public keys shows that you are using SSH public key authentication
 
 
-## Select one of the methods
+## Selecting one of the methods
 
-You must opt in to use ssh-keys by importing a public key. Only one of these methods can be active at any given time.
+Only one of these methods can be active at any given time. Username + password is the default. You must opt in to use SSH public key authentication by importing a public key.
+
 
 ### Changing from password to SSH key authentication
-
-First, you must create a key-pair and import the public part into the fortrabbit Account.
-After a public key is imported, the username+password access mode is automatically disabled.
-If you remove all ssh keys from your fortrabbit Account, the username + password access mode is automatically re-enabled.
-
-Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard.
-
-To import a public ssh key, go to: Dashboard > Your Account > Code access
-
 
 <div markdown="1" data-user="known">
 [Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
 </div>
 
+Add your public SSH keys to your fortrabbit Account to change the access method from from username + password authentication to SSH public key authentication. Please see the [SSH key help page](/ssh-keys) for all details.
+
+After a public SSH key is imported, the username + password access mode is automatically disabled (takes a couple of minutes).
+
 
 ### Changing from SSH key to password authentication
 
-If ssh keys do not work for you, you can disable the ssh-key access mode by removing all public keys from your account. Go to: Dashboard > Your Account > SSH keys
+You can disable SSH public key authentication by removing all public SSH keys from your fortrabbit Account. Go to: 
+
+* Dashboard > Your Account > SSH keys
 
 From this view, you will be able to select individual keys. Selecting a specific key brings up another view where the key can be deleted. After the last public key is removed, the username + password access mode will be automatically re-enabled.
+
+
+### After changing the access method
+
+Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard. So please pick up the new access credentials.
 
 
 ## SSH key authentication
@@ -80,6 +89,7 @@ See our [SSH key guide](ssh-keys) on how to setup keys and how to add them to yo
 ## Password authentication
 
 This is the default method before any public SSH keys are imported. Use this, if you just want to check out fortrabbit or when you have trouble setting SSH keys.
+
 
 ### When you change your Account password
 
@@ -104,10 +114,10 @@ $ git clone {{app-name}}.{{randomletters}}@deploy.{{region}}.frbit.com:{{app-nam
 
 
 # Example Git repository URL with SSH keys
-tripple-w-app@deploy.eu2.frbit.com:tripple-w-app.git
+appname@deploy.eu2.frbit.com:appname.git
 
 # Example Git repository URL with username + password
-tripple-w-app.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:tripple-w-app.git
+appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
 
 
