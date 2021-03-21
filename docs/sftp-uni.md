@@ -4,7 +4,7 @@ template:      article
 reviewed:      2021-03-19
 title:         SFTP deployment
 naviTitle:     SFTP deployment
-lead:          Learn about the classical way to deploy and access your App on fortrabbit.
+lead:          Learn about the classical way to access files on your Universal App on fortrabbit.
 
 stack:         uni
 group:         deployment
@@ -13,88 +13,48 @@ keywords:
     - beginner
     - deployment
     - dreamweaver
-    -
+    - FTP
+    - FTPS
 
 ---
 
-All [Universal Stack Apps](app-uni) support access via SFTP which is similar to the classical FTP-based workflow.
 
-It is also possible to [deploy with Git](git-deployment). This has some advantages, but may not be suitable for every application and user. For example, most CMS application are not designed to take a Git repository into account. If a plugin is installed from the WebUI, and the application downloads new files, then those files are not automatically added to Git. It is certainly possible to deploy any PHP application via Git on fortrabbit, but you need consider scenarios like the above.
+## SFTP access steps
 
-
-## SFTP access
-
-1. Visit: Dashboard > Apps > {{appname}} > Access > SFTP
-2. Configure your GUI client with the credentials shown
+1. Grab the access credentials from the fortrabbit Dashboard:  
+   Apps > {{appname}} > Access > SFTP
+2. Copy paste the credentials into your SFTP client
 3. Connect and upload files
 
 
-### Credentials for username + password access mode
+### SFTP access details
 
-```
+```nohighlight
 Host:       deploy.{{region}}.frbit.com
 User name:  {{ssh-user}}
-Password:   Your fortrabbit Account password
-Protocol:   SFTP
+Password:   Your Account password OR private SSH key
+Protocol:   SFTP (not FTP)
 Port:       22
 ```
 
-The user name will have a random string after the app-name like `tripple-w-app.f4n4gkrx90ot4yxm.`.
+**When using username + password authentication**: The user name will have a random string after the app-name like `appname.f4n4gkrx90ot4yxm.`. In this case you will need to provide your fortrabbit Account password.
+
+**When using SSH key authentication**: in most cases you can leave the password field empty. The SFTP client will look up the keys. In rare cases you might need to specify the exact key by showing the client the path to the key.
+
+## SFTP clients
+
+There are various SFTP clients out there. We recommend [Cyberduck](https://cyberduck.io/) (on Mac and Windows). Modern editors and IDEs have support for SFTP, including Sublime, PhpStorm, Notepad++ and so on. In a hurry, you can use `sftp` from a terminal which should be installed if `ssh` is installed.
 
 
-## SFTP access: ssh-key
+## Other deployment methods
 
-1. Create a key on your machine
-2. Import the public key into fortrabbit Account from Dashboard
-3. Profit (use ssh and git like a boss)
-
-### Using sftp without a password (ssh-key access mode)
-
-First create a key as described in our [ssh key setup guide](ssh-keys).  
-
-
-The value to paste into the textfield can be read into the clipboard from a terminal.  
-On windows, just use notepad to open the `id_rsa.pub` file and select all, then use control+c.  
-You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
-
-    xclip -i < ~/.ssh/id_rsa.pub           # linux
-                                           # or...
-    pbcopy < ~/.ssh/id_rsa_fortrabbit.pub  # Mac OS
-
-The public key looks like this.
-
-    $ cat ~/.ssh/id_rsa_fortrabbit.pub
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQEKK60BoNOQ0Cns76npf3V2p357WrfIkG0Ih+
-    fpQ40Yrdp7XdrsJ1S28g6utK50CP8Mvxm8ldgRcP4xUGCrVyu0+3xJaLHVPVO8dseg8spMrtVR7C
-    G1YVekR85dHw9XkGgoPMmncrcmzO91DK6kcdmdKr3S3usXLvbmbEBxfhrp80/OYYHlKFV4fRVUyO
-    GZjxF/mtI40i9VW4K0OY2bJufREeMhGYQWF+lYQ3jGNgH24oFpBC1Vq4l/sSsq68IuN/e5lyNW8X
-    uBzTh1CyisdqysCzOTFpUG1o/SOeajMWJoqos6VQYIxmC5KwkJW8LbvCiwvr+T/8VVKv0z/CMsZv
-    uMOhochKZQHl33AgmiHZwrkfeWfMUdBdxmGFfMj6nIWhywWijYvWnHpWq6+PdarRo1CqqTqxFRhJ
-    VshQin1JdtnT2kuzoFAil8oYBpAS0z73dgt08pxTyYJ74PXY/dpKHE7Z7KaRd5SIDoSN6ibPv1Qv
-    3nQN7qNTAxK02xn4tV15l5CyK/rBX+5z6oBOoyHN87xI3rRxDt598ixJk6AX0Jod5GjumJxoAB8j
-    vOk+sHRerMGdPcXRVoyZFa4RXI4nnZP0UM0tuA2FAdXQQVyogezhcTdvfqVyDshrOFLRaMiUO3HN
-    n2F+p1uTyFhzXEnfB5W8TKjR+WGUxp/C6Dhm4Q== user@fortrabbit
-
-
-If you followed our [ssh key setup guide](ssh-keys) then your public key will be in one of these locations:
-
-    ~/.ssh/id_rsa_fortrabbit.pub
-    ~/.ssh/id_rsa.pub
-
-
-
+It is also possible to [deploy with Git](git-deployment) here and also use [SSH](/ssh-uni). It is not recommended to mix the different deployment methods. Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
 
 
 ## About SFTP
 
 SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical purposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
 
-There are various SFTP clients out there. We recommend [Cyberduck](https://cyberduck.io/) (on Mac and Windows). Modern editors and IDEs have support for SFTP, including Sublime, PhpStorm, Notepad++ and so on. In a hurry, you can use `sftp` from a terminal which should be installed if `ssh` is installed.
-
-
-## Mixing deployment methods
-
-Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
 
 ## Troubleshooting SFTP
 
