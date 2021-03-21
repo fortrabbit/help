@@ -35,9 +35,9 @@ After creating an Account on fortrabbit (e-mail + password) and having checked o
 ## Available authentication methods
 
 * **Password**  - [see below](#toc-password-authentication)  
-   classical username + password authentication 
+  classical username + password authentication 
 * **SSH public key authentication** - [see below](#toc-ssh-key-authentication)  
-    slightly more advanced and recommended using private and public SSH keys
+  slightly more advanced and recommended using private and public SSH keys
 
 ## Identify your current access method
 
@@ -121,7 +121,7 @@ appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
 
 
-### The code example helper
+## The code example helper
 
 When you are currently logged in to the Dashboard (a cookie is stored), you will see a yellow box on the right side here - with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
 
