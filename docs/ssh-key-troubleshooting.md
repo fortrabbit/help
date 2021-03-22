@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2021-03-21
+reviewed:      2021-03-22
 naviTitle:     SSH key troubleshooting
 title:         SSH key troubleshooting
 excerpt:       What you may want to know to debug SSH key issues
-lead:          'This article aims to help you finding common issues when trying to connect to fortrabbit deploy services using SSH key authentication.'
+lead:          'This article aims to help you finding common issues when trying to connect to fortrabbit deploy services such as SFTP and SSH using SSH public key authentication.'
 group:         troubleshooting
 stack:         all
 
