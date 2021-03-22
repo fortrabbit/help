@@ -35,7 +35,7 @@ When it worked, you will see small a welcome screen:
 –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
 ```
 
-You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authentication) if you got an error.
+You are now logged in to your App by SSH.
 
 ## Things to do with SSH
 
@@ -73,6 +73,7 @@ $ ./some-script.php
 
 rsync is a super cool deployment tool that adds on top of SSH. Please read the dedicated [rsync article](/rsync).
 
+
 ### Using Composer
 
 Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. So usually, you don't need to run Composer on the App itself. Really. When you find yourself running Composer on the App itself, chances are that you are doing something wrong there. Think twice, ask us in doubt. If you still need to run Composer manually on the App, you can, please don't use `composer update`, that will cause memory problems in most cases. Use `composer install` instead. Again, running Composer directly on the App is for edge cases.
@@ -86,9 +87,8 @@ Using [Git deployment](git-deployment) will trigger [Composer](composer) automat
 * See the [specs page](https://fortrabbit.com/specs) for more limits and numbers
 
 
-## Troubleshooting authentication
+## Troubleshooting SSH access
 
-Got an error when trying to login? fortrabbit supports username + password and public key authentication. The latter is recommend, but, especially when using Windows, sometimes password is the only feasible option. Please go on here:
+Got an error when trying to login by SSH? Please [proceed here](/ssh-troubleshooting).
 
-* [See the access methods article](access-methods)
 
