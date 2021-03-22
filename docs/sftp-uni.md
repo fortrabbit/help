@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2020-11-28
+reviewed:      2021-03-21
 title:         SFTP deployment
 naviTitle:     SFTP deployment
-lead:          Learn about the classical way to deploy and access your App on fortrabbit.
+lead:          Learn about the classical way to access files on your Universal App on fortrabbit.
 
 stack:         uni
 group:         deployment
@@ -13,61 +13,54 @@ keywords:
     - beginner
     - deployment
     - dreamweaver
-    -
+    - FTP
+    - FTPS
 
 ---
 
-While [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with a CMS. These systems are often not designed for Git-workflows, and write to the file system when installing plugins and upgrading versions via web-based interfaces. Those changes can not be back-ported to the version control. Stuff gets out of control.
 
-All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to support legacy applications and workflows.
+## SFTP access steps
 
-
-## Accessing SFTP
-
-There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows). Many modern editors or IDEs also feature SFTP integrations by plugin.
-
-* **Mode**: SFTP (not regular FTP)
-* **Host**: deploy.{{region}}.frbit.com
-* **Port**: 22
-* **Username**: {{ssh-user}}
-* **Password**: Your Account password OR private SSH key
+1. Grab the access credentials from the fortrabbit Dashboard:  
+   Apps > {{appname}} > Access > SFTP
+2. Copy paste the credentials into your SFTP client
+3. Connect and upload files
 
 
-### File synchronization
+### SFTP access details
 
-Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course.
+```nohighlight
+Host:       deploy.{{region}}.frbit.com
+User name:  {{ssh-user}}
+Password:   Your Account password OR private SSH key
+Protocol:   SFTP (not FTP)
+Port:       22
+```
 
-#### Setting up SFTP file sync
+## Access methods
 
-This example shows how to configure your SFTP client to quickly sync code:
+**When using username + password authentication**: The user name will have a random string after the app-name like `appname.f4n4gkrx90ot4yxm.`. In this case you will need to provide your fortrabbit Account password.
 
-1. Create a bookmark (favorite) that stores the access information to connect with one click
-2. Set a local directory to be synced with the online directory in the bookmark
-3. Set rules for exclude patterns (a huge time saver!)
-4. Run simulation first; the first run will take longer, results will be cached, execution will be fast
-5. First sync down, then sync up
+**When using SSH key authentication**: in most cases you can leave the password field empty. The SFTP client will look up the keys. In rare cases you might need to specify the exact key by showing the client the path to the key.
 
-The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic.
-
-
-### Blacklisting
-
-When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
+Learn more about [access methods here](/access-methods).
 
 
-## Further reading
+## SFTP clients
 
-### About SFTP
+There are various SFTP clients out there. We recommend [Cyberduck](https://cyberduck.io/) (on Mac and Windows). Modern editors and IDEs have support for SFTP, including Sublime, PhpStorm, Notepad++ and so on. In a hurry, you can use `sftp` from a terminal which should be installed if `ssh` is installed.
 
-SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH](/ssh-uni) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really make a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
 
-### Mixing deployment methods
+## Other deployment methods
 
-Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
+It is also possible to [deploy with Git](git-deployment) here and also use [SSH](/ssh-uni). It is not recommended to mix the different deployment methods. Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
+
+
+## Some more about SFTP
+
+SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical purposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
 
 
 ## Troubleshooting SFTP
 
-Got an error when trying to login? fortrabbit supports username + password and public key authentication. Please continue here to troubleshoot access:
-
-* [See the SFTP troubleshooting guide](/sftp-troubleshooting)
+Having issues? Please see our [SFTP troubleshooting page](/sftp-troubleshooting).

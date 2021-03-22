@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-07-28
+reviewed:      2021-03-20
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -21,15 +21,22 @@ We assume that you have: [Git installed](git) locally and know the basics. We fu
 
 ## Usage
 
-Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch. 
+Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch.
+
+## Terminal or GUI
+
+We usually use Terminal commands to explain things, since those are standard. If you prefer a GUI-oriented solution, check out the recommendations over at the [official git website](https://git-scm.com/downloads/guis).
+
 
 ### Simple Git deployment workflow
 
+On the terminal this will look similar to this:
+
 ```bash
-# 1. Clone the (empty) app to register the remote origin master
+# 1. Clone the (empty) repository
 $ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 2. Go in the folder
+# 2. Go to the app-name folder
 $ cd {{app-name}}
 
 # 3. Do stuff
@@ -37,27 +44,31 @@ $ echo '<?php echo "PHPower to the PHPeople";' >index.php
 
 # 4. Initialize Git locally
 $ git add index.php
+
+# 5. Commit changes
 $ git commit -am 'Initial commit'
 
-# 5. Set upstream and 1st push
+# 6. Set upstream and 1st push
 $ git push -u origin master
-# long output
-# After that it already works
 
-# 6. Every deploy from now on
+# 7. Every deploy from now on
 $ git push
 ```
-After the first deployment is done, the Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-Next time you want to send changes to your App you can simply:
+After the first deployment is done, the traced files from te Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+
+Next time you want to send changes to your App, you will have to add new or changed files and subsequently do a git-push:
 
 ```bash
+$ git add new-file.txt
+$ git add index.php
+$ git commit -m 'new version'
 $ git push
 ```
 
 ### Adding fortrabbit as a remote
 
-```
+```bash
 # Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
@@ -66,7 +77,7 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 To start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
 
-```
+```bash
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```

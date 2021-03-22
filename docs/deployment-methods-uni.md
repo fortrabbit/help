@@ -56,7 +56,7 @@ Please keep in mind, that the Git repo is not the web storage. After you Git pus
 
 ### Git works only one way
 
-**Git is a one way street here and the only way is up.** You can not `pull` the changes, which are made via SSH or SFTP, from the web storage back into your Git repo. So you can upload something via SFTP and clone it down later via Git. While this might looks odd at first: this design keeps your Git repo clean of temporary, binary and other blob data. The diagram above visualizes this. Use Git only for code deployment, not to manage all of your Apps runtime data. Separate code - managed in Git - from content - managed via SSH/SFTP.
+**Git is a one way street here and the only way is up.** You can not `pull` the changes, which are made via SSH or SFTP, from the web storage back into your Git repo. So you can not upload something via SFTP and clone it down later via Git. While this might looks odd at first: this design keeps your Git repo clean of temporary, binary and other blob data. The diagram above visualizes this. Use Git only for code deployment, not to manage all of your Apps runtime data. Separate code - managed in Git - from content - managed via SSH/SFTP.
 
 ### Git push overwrite but not deletes
 

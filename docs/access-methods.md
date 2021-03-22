@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2021-02-09
+reviewed:      2021-03-21
 naviTitle:     Access methods
 title:         How to access fortrabbit services
-lead:          Learn about the different authentication methods with fortrabbit.
+lead:          Learn about the two authentication methods available for fortrabbit services.
 group:         deployment
 stack:         all
 
@@ -20,9 +20,9 @@ keywords:
 
 ---
 
-So far so good: You are using your Account e-mail address and your Account password to login to the fortrabbit [Dashboard](/dashboard). Beside that, there are these interaction channels with fortrabbit services:
+After creating an Account on fortrabbit (e-mail + password) and having checked out the [Dashboard](/dashboard), there is more to explore. Read on to learn how to interact with services provided on fortrabbit.
 
-## Interactions requiring authentication
+## Services which require authentication
 
 * Deploying code with [Git](/git-deployment#toc-usage)
 * Using [SSH](/ssh-uni)
@@ -32,122 +32,105 @@ So far so good: You are using your Account e-mail address and your Account passw
 * Execution [SSH Remote commands](/remote-ssh-execution-pro#toc-usage)
 * Accessing the [Object Storage](/object-storage#toc-accessing-the-object-storage)
 
-Of course these operations need to be protected. We need to make sure that only you and your team have access. You can choose between two authentication methods: 
-
 ## Available authentication methods
 
-* **Password** - the easy default - [see below](#toc-password-authentication)
-* **Public SSH key** - for advanced users - [see below](#toc-ssh-key-authentication)
+* **Password**  - [see below](#toc-password-authentication)  
+  classical username + password authentication 
+* **SSH public key authentication** - [see below](#toc-ssh-key-authentication)  
+  slightly more advanced and recommended using private and public SSH keys
+
+## Identify your current access method
+
+To figure out what is currently active, go to: 
+
++ [fortrabbit Dashboard](/dashboard) > [Your Account (upper right)](https://dashboard.fortrabbit.com/account)
+
+On the right side of the page, below the section Security, you will see one of two things:
+
+* A heading called Code access with a subtext shows that you are using username + password authentication
+* A heading called SSH keys above a list of imported public keys shows that you are using SSH public key authentication
 
 
-## How to edit your access method
+## Selecting one of the methods
 
-In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Code access" you can find your current settings. If you have already added an SSH key this section will be called "SSH keys".
+Only one of these methods can be active at any given time. Username + password is the default. You must opt in to use SSH public key authentication by importing a public key.
+
+
+### Changing from password to SSH key authentication
+
+<div markdown="1" data-user="known">
+[Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
+</div>
+
+Add your public SSH keys to your fortrabbit Account to change the access method from from username + password authentication to SSH public key authentication. Please see the [SSH key help page](/ssh-keys) for all details.
+
+After a public SSH key is imported, the username + password access mode is automatically disabled (takes a couple of minutes).
+
+
+### Changing from SSH key to password authentication
+
+You can disable SSH public key authentication by removing all public SSH keys from your fortrabbit Account. Go to: 
+
+* Dashboard > Your Account > SSH keys
+
+From this view, you will be able to select individual keys. Selecting a specific key brings up another view where the key can be deleted. After the last public key is removed, the username + password access mode will be automatically re-enabled.
+
+
+### After changing the access method
+
+Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard. Pick up the new access credentials from Access tab with your Apps.
 
 
 ## SSH key authentication
 
-We recommend to use public SSH key authentication to identify yourself with fortrabbit services. It's more secure than password authentication and also more convenient, once you have set it up. SSH key authentication is commonly used with services like BitBucket and GitHub.
+See our [SSH key guide](ssh-keys) on how to setup keys and how to add them to your fortrabbit Account.
 
-
-
-### How to add public SSH keys
-
-SSH keys are stored with your Account. In the "Dashboard" > "Your Account" > "Code access"/"SSH keys" you can add and remove SSH keys.
-
-<div markdown="1" data-user="known">
-
-[Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
-
-</div>
-
-### How to create a public SSH key locally
-
-We have a [dedicated article](ssh-keys) on setting up and troubleshooting your local SSH keys.
-
-
-### GitHub SSH key import
-
-**Automatic import**: When signing up to fortrabbit, we'll check at GitHub if there are any public SSH keys associated with your e-mail. If we find any, we'll import them and install them with your account. This is a one time setup, your SSH keys will not be synced. You can manage the SSH keys like any other keys then.
-
-**Manual import**: You can also tell the import helper your GitHub account, when using different e-mail addresses here and on GitHub. There is a small link which will take you 
-
-The [direct Dashboard link](https://dashboard.fortrabbit.com/boarding/keys/github) (login and re-authentication maybe required) will take you there directly.
-
-
-### App-only SSH keys
-
-In certain cases you might want to add code access to an App without the need to register a new Account with fortrabbit. One case is a hectic ad-hoc hotfix scenario (good luck!), another case is that you have some advanced deployment with a third party continuous integration service bot going on. So you can install additional App-only custom public SSH keys with each App. You manage those App-only SSH keys in the Dashboard with your App.
-
-
-### Troubleshooting SSH key access
-
-Please see the dedicated [SSH troubleshoot guide](/ssh-key-troubleshooting).
 
 ## Password authentication
 
-This is the default method when no public SSH keys are installed. Use this, when you just want to check out fortrabbit or when you have trouble setting up your SSH keys locally. **Hobbyists are using Password authentication. Professionals are using SSH key authentication.**
-
-### How to change from password to SSH key authentication
-
-In the "Dashboard" > "Your Account" > "Code access" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
-
-
-<div markdown="1" data-user="known">
-[Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
-</div>
-
-
-### How to change from SSH key to password authentication
-
-When for some reason SSH key authentication does not work for you, you can downgrade to password like so: In the "Dashboard" > "Your Account" > "SSH keys" you can click on your public SSH keys, this will bring up a view where you can delete the key. When deleting the last key, password authentication will be re-enabled.
+This is the default method before any public SSH keys are imported. Use this, if you just want to check out fortrabbit or when you have trouble setting SSH keys.
 
 
 ### When you change your Account password
 
-When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well – the new password will be used.
+When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well - the new password will be used.
 
 
-## How it works
+## Authentication in teams
 
-### Access schema
+You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different access method and that your settings might not work for them. Also see our [team work article](/collaboration).
 
-URLs and terminal commands depend on your chosen access method. 
 
+## Practical examples
+
+URLs and terminal commands depend on the currently active access method.
+
+```bash
+# Git clone with SSH keys
+$ git clone {{app-name}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# Git clone with username + password
+$ git clone {{app-name}}.{{randomletters}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+
+# Example Git repository URL with SSH keys
+appname@deploy.eu2.frbit.com:appname.git
+
+# Example Git repository URL with username + password
+appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
-# Git clone example
-$ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
-```
-
-* [[your-app]] is the name of your App (see Dashboard)
-* [[region]] is `eu2` or `us1`, depending on the location of your App
 
 
-#### With SSH key authentication
-
-* No need to enter passwords, your public key will be used
-* [[ssh-user]] will be: [[your-app]]
-
-#### With password authentication
-
-* You will need to enter your fortrabbit Account password (each time)
-* [[ssh-user]] will be: [[your-app]].[[long-user-string]]
-
-
-#### The code example helper
+## The code example helper
 
 When you are currently logged in to the Dashboard (a cookie is stored), you will see a yellow box on the right side here - with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
 
 
-##### Try it out yourself
+#### Try it out yourself
 
-```
+```bash
 # change the values on the right and see the below change
 SSH user: {{ssh-user}}
 Region:   {{region}}
 Your app: {{app-name}}
 ```
-
-### Authentication in teams
-
-You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different access method and that your settings might not work for them. Also see our [team work article](/collaboration).
