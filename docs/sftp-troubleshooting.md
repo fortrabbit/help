@@ -18,49 +18,33 @@ keywords:
 
 ---
 
-**Related topics**
-
-- [Code access methods](/access-methods) on fortrabbit
-- [Deployment methods](/deployment-methods) on fortrabbit
-- [SFTP access](/sftp-uni)
-- [SSH access troubleshooting](/ssh-troubleshooting)
-- [SSH key setup](ssh-keys)
-- [SSH key troubleshooting](/ssh-key-troubleshooting)
-
 
 ## Common reasons and solutions
 
-If you are unable to log in to your Universal App using SFTP, scan the table of contents here to see if your problem is already covered.
+Are you unable to login to your Universal App using SFTP? Please scan the table of contents here to see if your problem is already covered.
 
 
-## Password problems (Permission denied, please try again)
+## Password not accepted
 
-First of all, [figure out which access method is currently active](access-methods#toc-available-authentication-methods) for your fortrabbit Account.
+Are you seeing a "**Permission denied, please try again**" error?
 
+### Check your access method first
 
-### Option 1: **password+username mode**
-
-If you are using the username + password mode, then you need to type in your fortrabbit Account password when authenticating with SFTP. The username will look like {{appname}}.{{randomletters}}. 
-
-Make sure to copy-paste the correct credentials. Find the Access to your App in the Dashboard.
-
-The sftp-access page provides a [test for the password mode](sftp-uni#toc-verify-username-password-mode) you can perform from a terminal.
+Make sure that you know which access method you are currently using. We have "username + password" or "SSH public key authentication". If you are unsure, please please see the section about [figuring out which access method is currently active](access-methods#toc-available-authentication-methods) for your fortrabbit Account.
 
 
-### Option 2: **ssh-key mode**
+### Tips to proceed when username + password is enabled
 
-If you are using the ssh-key mode and still face a password prompt it can mean a few things.
+If you are using the username + password access mode, then you need to type in your fortrabbit Account password when authenticating with SFTP. The username will look like `{{appname}}.{{randomletters}}`. 
 
-- your ssh key is protected by a passphrase
-- the rsa key in standard location (~/.ssh/id_rsa) has been rejected
-- all keys in your ssh-agent have been rejected
+Make sure to copy-paste the correct credentials for hostname and user from the Dashboard. Find the Access to your App.
 
-If you key is protected by a passphrase, then type that in.
-We do not know and can not know what you picked as the passphrase for your key.
-It may or may not be the same as your fortrabbit Account password.
 
-If your keys have no passphrases or if they are already unlocked in the agent but have all been rejected, then the ssh-server will still ask you for a password.
-This is because it must support both access modes. If you are using the ssh-key access mode, typing in any password will not grant you access, even if you type in your fortrabbit Account password.
+### Tips to proceed when SSH public key is enabled
+
+If you are using the SSH public key authentication and still face a password prompt it can mean a few things. 
+
+
 **Essentially, only one access mode can be active at any particular time.** This is explained on the [access methods page](access-methods).
 There is a [test on the sftp-access page for the ssh-key access mode](sftp-uni#toc-verify-ssh-key-mode) that you can perform from a terminal.
 Do it, and you will know more about your situation.
@@ -68,14 +52,7 @@ Do it, and you will know more about your situation.
 
 #### Recently imported key not working
 
-After importing a key in the dashboard, please allow upto 3 minutes for it to be activated. If you try to access the App before the ssh-key has been activated, you will be asked for a password, because the old password+username is still in effect.
-
-    $ ssh tripple-w-app@deploy.eu2.frbit.com ls -lha
-    tripple-w-app@deploy.eu2.frbit.com's password:
-
-The passphrase may be chosen when the key is created, but it can aslo be blank. If your key was generated without a passphrase, typing the dashboard fortrabbit account password here will not do what you want.  For the username+password mode to work, you need to remove all ssh-keys from your profile.
-
-
+After importing a key in the Dashboard, please allow up to 7 minutes for it to be activated. If you try to access the App before the SSH key has been activated, you will be asked for a password, because the old "username + password" is still in effect.
 
 #### Internal error I01 after an App is created
 
@@ -106,3 +83,11 @@ We do not support FTP. Please pick SFTP instead.
 There is no SFTP for Pro Apps. There is only [remote SSH execution](/remote-ssh-execution-pro).
 
 
+## Related topics
+
+- [Code access methods](/access-methods) on fortrabbit
+- [Deployment methods](/deployment-methods) on fortrabbit
+- [SFTP access](/sftp-uni)
+- [SSH access troubleshooting](/ssh-troubleshooting)
+- [SSH key setup](ssh-keys)
+- [SSH key troubleshooting](/ssh-key-troubleshooting)
