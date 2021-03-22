@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-30
+reviewed:      2021-03-22
 title:         SSH deployment
 naviTitle:     SSH deployment
 lead:          Learn what you can do on the command line with fortrabbit Apps.
@@ -92,7 +92,3 @@ Got an error when trying to login? fortrabbit supports username + password and p
 
 * [See the access methods article](access-methods)
 
-
-### Blacklisting
-
-When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
