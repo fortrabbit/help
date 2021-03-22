@@ -37,9 +37,13 @@ Protocol:   SFTP (not FTP)
 Port:       22
 ```
 
+## Access methods
+
 **When using username + password authentication**: The user name will have a random string after the app-name like `appname.f4n4gkrx90ot4yxm.`. In this case you will need to provide your fortrabbit Account password.
 
 **When using SSH key authentication**: in most cases you can leave the password field empty. The SFTP client will look up the keys. In rare cases you might need to specify the exact key by showing the client the path to the key.
+
+Learn more about [access methods here](/access-methods).
 
 
 ## SFTP clients
