@@ -22,7 +22,13 @@ keywords:
 ---
 
 
-If you are completely new to ssh-key authentication, please read our [SSH key setup guide](ssh-keys) and the ssh-key parts of the [SFTP access guide](/sftp-uni).
+## Common reasons and solutions
+
+Can't login by SSH? Here are some common issues users often run into.
+
+### SSH public key issues
+
+If you have trouble setting up a connection, using SSH public keys as your authentication method - especially when you are doing this for the first time - see our [SSH key troubleshooting guide](ssh-key-troubleshooting) first.
 
 
 ### Host authenticity warning
