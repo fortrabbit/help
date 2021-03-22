@@ -55,7 +55,8 @@ The roadmap to setup TLS custom reads like so:
 2. create a key and a certificate request locally (see below)
 3. using the certificate request: purchase an TLS/SSL cert from a third party CA
 4. (book the TLS component for your App in the Dashboard) < Pro App only
-5. upload your key and cert(s) to the Dashboard
+5. upload your key and cert(s) to the Dashboard:  
+App > Settings > All settings > Custom TLS certificate
 6. route all your (sub)domains to your App
 
 #### Create a new key and certificate
@@ -103,7 +104,7 @@ You can decode the created CSR file to make sure did it correctly. Run this in y
 openssl req -in yourcsr.csr -noout -text
 ```
 
-Substitute `yourcsr.csr` with your file. Or just use an online tool, like [this one](/https://www.sslshopper.com/csr-decoder.html).
+Substitute `yourcsr.csr` with your file. Or just use an online tool (CSR decoder).
 
 
 #### Convert an existing key to RSA format
