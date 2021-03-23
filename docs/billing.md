@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-09
+reviewed:      2021-03-23
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -149,6 +149,8 @@ For clients with less than 6 invoices or when the credit card processor reports 
 For long term clients with more than 6 paid invoices and at least 2 bounced invoices (we will retry) in a row or a total of 4 unpaid invoices: Before deletion we will attempt to write a personal e-mails, beside the automated ones. We will also try to contact everyone involved in the Company or project. We might delete Apps when there was no reply on our attempts to reach out.
 
 In any case, with 3 open invoices in a row and no reply: We will immediately delete Apps.
+
+For clients with invoices higher than 1k different rules might apply.
 
 
 ### Paying open invoices
