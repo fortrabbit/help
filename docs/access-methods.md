@@ -35,9 +35,9 @@ After creating an Account on fortrabbit (e-mail + password) and having checked o
 ## Available authentication methods
 
 * **Password**  - [see below](#toc-password-authentication)  
-  classical username + password authentication 
+  Classical username + password authentication mode
 * **SSH public key authentication** - [see below](#toc-ssh-key-authentication)  
-  slightly more advanced and recommended using private and public SSH keys
+  Slightly more advanced and more convenient mode using private and public SSH keys
 
 ## Identify your current access method
 
@@ -119,7 +119,6 @@ appname@deploy.eu2.frbit.com:appname.git
 # Example Git repository URL with username + password
 appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
-
 
 ## The code example helper
 
