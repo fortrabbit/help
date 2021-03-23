@@ -20,17 +20,19 @@ keywords:
 
 ## Verify access methods
 
-People report authentication issues quite often, but SSH access and SFTP access is very rarely broken on our end. Follow these steps to verify that the connection works. Should it turn out otherwise, at least you will be able to point to what is failing.
+People report authentication issues quite often, but SSH access and SFTP access is rarely broken on our end. Follow these steps to verify that the connection works. Should it turn out otherwise, at least you will be able to point to what is failing.
 
 ### Verify access using username + password authentication mode
 
 This is te default access mode. If you have an App named tripple-w-app in the eu2 region, then the following applies:
 
-    App      tripple-w-app
-    Region   eu2
-    Host     deploy.eu2.frbit.com
-    Login    tripple-w-app.f4n4gkrx90ot4yxm
-    Password Your fortrabbit Account password
+```nohighlight
+App      tripple-w-app
+Region   eu2
+Host     deploy.eu2.frbit.com
+Login    tripple-w-app.f4n4gkrx90ot4yxm
+Password Your fortrabbit Account password
+```
 
 To verify that SFTP access works, open a terminal and type the following, but use your own App name and the correct region. If you are using a specific framework such as Craft-CMS or Laravel, then before running the commans, go to that folder first. That folder is usually called public or web.
 
