@@ -5,8 +5,9 @@ reviewed:      2021-03-23
 naviTitle:     Verify access methods
 title:         Testing access to fortrabbit services
 lead:          Instructions on how to check access from a terminal
-group:         deployment
+group:         troubleshooting
 stack:         all
+dontList:      true
 
 keywords:
      - ssh
