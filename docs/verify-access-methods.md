@@ -21,7 +21,12 @@ keywords:
 
 
 <!--  
-Proposing to change the title from "verify access methods" to "Code access verification". "Verify access methods" means to me to test if both access methods work. But the goal of the user is to get access working, whatever their method is.
+Proposing to change the title from "verify access methods" to "Code access verification" or "Code access testing" or "Access troubleshooting". 
+
+"Verify access methods" means to me to test if both access methods work. But the goal of the user is to get access working, whatever their method is.
+
+I also removed it from being linked from the development section and put it in the troubleshooting section. But also in there I am not sure if it is aligned with the other articles and more like a special article to be used in support? 
+
 -->
 
 People often report authentication issues, but code access via SSH, SFTP and Git is rarely broken on our end. Follow these steps to test and verify that the connection works. Should it turn out otherwise, at least you will be able to point our support to what is failing.
