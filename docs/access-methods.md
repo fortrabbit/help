@@ -120,6 +120,8 @@ appname@deploy.eu2.frbit.com:appname.git
 appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
 
+If you need more specific examples, then go to [Verify access methods](/verify-access-methods)
+
 ## The code example helper
 
 When you are currently logged in to the Dashboard (a cookie is stored), you will see a yellow box on the right side here - with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
