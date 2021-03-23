@@ -120,7 +120,11 @@ appname@deploy.eu2.frbit.com:appname.git
 appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
 
-If you need more specific examples, then go to [Verify access methods](/verify-access-methods)
+
+## Testing code access
+
+Please see the [verify access methods page](/verify-access-methods) to quickly test if code access works.
+
 
 ## The code example helper
 
