@@ -25,7 +25,9 @@ Proposing to change the title from "verify access methods" to "Code access verif
 
 "Verify access methods" means to me to test if both access methods work. But the goal of the user is to get access working, whatever their method is.
 
-I also removed it from being linked from the development section and put it in the troubleshooting section. But also in there I am not sure if it is aligned with the other articles and more like a special article to be used in support? 
+I also removed it from being linked from the development section and put it in the troubleshooting section. But also in there I am not sure if it is aligned with the other articles and more like a special article to be used in support?
+
+We need to figure from where to link that article.
 
 -->
 
