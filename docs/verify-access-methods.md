@@ -34,7 +34,7 @@ Login    tripple-w-app.f4n4gkrx90ot4yxm
 Password Your fortrabbit Account password
 ```
 
-To verify that SFTP access works, open a terminal and type the following, but use your own App name and the correct region. If you are using a specific framework such as Craft-CMS or Laravel, then before running the commans, go to that folder first. That folder is usually called public or web.
+To verify that SFTP access works, open a terminal and type the following, but use your own App name and the correct region. If you are using a specific framework such as Craft-CMS or Laravel, then before running the commands, go to that folder first. That folder is usually called public or web.
 
     $ unset SSH_AUTH_SOCK
     $ echo hello world > f
