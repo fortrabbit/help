@@ -1,13 +1,13 @@
 ---
 
 template:      article
-reviewed:      2021-03-23
-naviTitle:     Verify access methods
+reviewed:      2021-03-25
+naviTitle:     Access testing
 title:         Testing access to fortrabbit services
 lead:          This article provides instructions on how to check code access for username + password and SSH key authentication from the terminal using sftp and ssh.
 group:         troubleshooting
 stack:         all
-dontList:      true
+dontList:      false
 
 keywords:
      - ssh
