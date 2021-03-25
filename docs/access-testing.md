@@ -27,7 +27,8 @@ People often report authentication issues, but code access via SSH, SFTP and Git
 
 For the following examples we use a theoretical App called `tripple-w-app` that is hosted in the `eu2` region. Replace those values with the ones from your own App. Best look up the credentials from the Dashboard > Your App > Access.
 
-Unsure which identification method you are using? See [here to identify your access method](access-methods#toc-identify-your-current-access-method).
+Unsure which access method you are using? See [here to identify your access method](access-methods#toc-identify-your-current-access-method). Test the one that is active for you.
+
 
 
 ## Test access for username + password authentication
@@ -87,6 +88,16 @@ If you see a password prompt, then these two cases are likely:
 
 <!--
 
-I am missing what people should do next? I guess they should use verbose mode next? The SSH troubleshooting guide good be mentioned next. But I am not how the connection will be.
+I am missing what people should do next? After they have done the test and it is not working? I guess they should use verbose mode next? The SSH troubleshooting guide good be mentioned next. But I am not how the connection will be.
+
+-->
+
+
+
+<!--
+
+Sorry for further tearing apart your document here. I realize that there is not much left from it's original content.  Last comment. I swear:
+
+Let's say we get the dynamic variables fixed, so that they show up correctly when the page loads. That was the intention with those vars, we could skip the step where the client needs to figure out what their access method is. We can show the {{ssh-user}} and that's it.
 
 -->
