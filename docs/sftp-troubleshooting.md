@@ -72,6 +72,65 @@ If it hangs for a long time while trying to connect, then it is possible that yo
 There is no SFTP for Pro Apps. There is only [remote SSH execution](/remote-ssh-execution-pro).
 
 
+## Testing SFTP from the terminal
+
+With this test you can use use SFTP from the terminal. This is sometimes easier to debug, than working with GUI clients:
+
+
+```nohighlight
+App:        {{app-name}}
+Region:     {{region}}
+Host:       deploy.{{region}}.frbit.com
+Login:      {{ssh-user}}
+Password:   Leave blank when using SSH key auth OR use Account password for username + password auth
+```
+
+Use your own App name and the correct region. Best grab the credentials from our Dashboard.
+
+If you are using a specific framework such as Craft CMS or Laravel, then before running the commands, go to the root path of the App first. That folder is usually called `public` or `web` (depending on CMS or framework).
+
+To verify that SFTP access works, open a terminal and type the following:
+
+```bash
+$ unset SSH_AUTH_SOCK
+$ echo hello world > f
+$ sftp -F /dev/null {{ ssh-user }}@deploy.eu2.frbit.com
+# Might ask for password for username + password auth
+```
+
+When you get to `sftp>` prompt: 
+
+1. type "put f"
+2. hit the <kbd>enter</kbd> key
+3. type "exit"
+4. then hit the <kbd>enter</kbd> key again
+
+```bash
+Connected to deploy.eu2.frbit.com.
+sftp> put f
+Uploading f to /srv/app/tripple-w-app/htdocs/f
+f                                         100%   11     0.3KB/s   00:00
+sftp> exit
+```
+
+Now access the file with an HTTP client like so:
+
+```bash
+$ curl -D- https://tripple-w-app.frb.io/f
+# HTTP/1.1 200 OK
+# Date: Thu, 18 Mar 2022 09:50:21 GMT
+# Server: Apache 2.x
+# Last-Modified: Thu, 18 Mar 2022 09:43:32 GMT
+# ETag: "b-5bdcc6ebed7b6"
+# Accept-Ranges: bytes
+# Content-Length: 12
+
+hello world
+```
+
+You can also use your web browser to visit `https://tripple-w-app.frb.io/f`.
+
+
 ## Related topics
 
 - [Code access methods](/access-methods) on fortrabbit
