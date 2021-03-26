@@ -59,7 +59,7 @@ When this is not working for you can try the following:
 * Windows users please mind that a terminal prompt will not accept copy paste. Type the password.
 * Reset your fortrabbit Account password with the fortrabbit Dashboard under your Account and wait a short while until the changes are applied and try again.
 * Check for the unlikely case that there is a general service issue under [status.fortrabbit.com](https://status.fortrabbit.com)
-* <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______.')">Contact support</a>
+* If nothing helps please <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______. I have already tried ________')">contact support</a> and provide details of steps you have been taking so far.
 
 
 ## Test access for SSH key authentication
