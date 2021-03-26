@@ -24,7 +24,6 @@ Are you seeing a "**Permission denied, please try again**" error when trying to 
 ## Check your access method first
 
 Make sure that you know which access method you are currently using. We have "username + password" or "SSH public key authentication". If you are unsure, please please see the section about [figuring out which access method is currently active](access-methods#toc-available-authentication-methods) for your fortrabbit Account.
-[]
 
 ### Tips to proceed when username + password is enabled
 
@@ -133,6 +132,7 @@ You can also use your web browser to visit `https://tripple-w-app.frb.io/f`.
 
 ## Related topics
 
+- [Access testing with SSH](/access-tesing)
 - [Code access methods](/access-methods) on fortrabbit
 - [Deployment methods](/deployment-methods) on fortrabbit
 - [SFTP access](/sftp-uni)
