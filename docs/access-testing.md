@@ -50,6 +50,8 @@ app
 
 You are good to go when the output is "app".
 
+When this is not working for you, please reset your fortrabbit Account password with the fortrabbit Dashboard under your Account and wait a short while until the changes are applied.
+
 
 ## Test access for SSH key authentication
 
@@ -83,19 +85,3 @@ Then these two cases are likely:
 + The SSH key was very recently imported. Allow the system up to 7 minutes to activate the new public SSH key.
 
 If you still have trouble please proceed to the [SSH key troubleshooting page](/ssh-key-troubleshooting).
-
-<!--
-
-I am missing what people should do next? After they have done the test and it is not working? I guess they should use verbose mode next? The SSH troubleshooting guide good be mentioned next. But I am not how the connection will be.
-
--->
-
-
-
-<!--
-
-Sorry for further tearing apart your document here. I realize that there is not much left from it's original content.  Last comment. I swear:
-
-Let's say we get the dynamic variables fixed, so that they show up correctly when the page loads. That was the intention with those vars, we could skip the step where the client needs to figure out what their access method is. We can show the {{ssh-user}} and that's it.
-
--->
