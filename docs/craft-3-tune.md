@@ -43,7 +43,7 @@ ENVIRONMENT=dev
 
 ### Domain setup
 
-Your fortrabbit App comes with a predefined App Name and a URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
+Your fortrabbit App comes with a predefined App Name and a URL like `{{app-name}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
 
 Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `PRIMARY_SITE_URL` ENV var or the `@web` fallback, which is a good default. Older versions of Craft might use `SITE_URL`.
 
@@ -353,7 +353,7 @@ Craft CMS is not all free. To enable the good parts you need to obtain a licence
 
 A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well, if for instance you started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
 
-The App URL `{{appname}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
+The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
 
 
 

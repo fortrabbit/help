@@ -22,7 +22,7 @@ keywords:
 ## SFTP access steps
 
 1. Grab the access credentials from the fortrabbit Dashboard:  
-   Apps > {{appname}} > Access > SFTP
+   Apps > {{app-name}} > Access > SFTP
 2. Copy paste the credentials into your SFTP client
 3. Connect and upload files
 
@@ -56,9 +56,9 @@ There are various SFTP clients out there. We recommend [Cyberduck](https://cyber
 It is also possible to [deploy with Git](git-deployment) here and also use [SSH](/ssh-uni). It is not recommended to mix the different deployment methods. Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.
 
 
-## Some more about SFTP
+## SFTP is not FTP
 
-SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS but for most practical purposes they seem very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
+SFTP is short for SSH File Transfer Protocol. It is used for uploading and downloading files over a SSH connection. Despite the similar name, SFTP is very different than FTP or FTPS internally, but for most practical purposes they are very similar. SFTP is preferable to FTP because the the transferred data is encrypted and not visible to everyone on the network.
 
 
 ## Troubleshooting SFTP

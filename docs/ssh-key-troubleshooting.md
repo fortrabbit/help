@@ -41,9 +41,9 @@ If you are using the SSH public key authentication and you still face a password
 + Other configuration issues on your side
 
 
-#### Local passphrases
+#### Key passphrases
 
-If your local SSH key is protected by a passphrase, then type that in. We do not know and can not know what you picked as the passphrase for your key. It likely is NOT the same as your fortrabbit Account password.
+If your local SSH key is protected by a key passphrase, then type that in. We do not know and can not know what you picked as the passphrase for your key. It likely is NOT the same as your fortrabbit Account password.
 
 
 ### Rejected keys

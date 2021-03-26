@@ -25,7 +25,7 @@ keywords:
 ## Common reasons and solutions
 
 ```bash
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 # Some error here!
 ```
 

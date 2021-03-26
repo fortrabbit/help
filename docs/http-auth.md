@@ -30,7 +30,7 @@ Create a `.htaccess` file in the directory you want to secure, also see our [.ht
 ```
 Authtype Basic
 AuthName "Welcome to my awesome project. Please Login."
-AuthUserFile /srv/app/{{appname}}/htdocs/.htpasswd
+AuthUserFile /srv/app/{{app-name}}/htdocs/.htpasswd
 Require valid-user
 ```
 
