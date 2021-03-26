@@ -132,7 +132,7 @@ You can also use your web browser to visit `https://tripple-w-app.frb.io/f`.
 
 ## Related topics
 
-- [Access testing with SSH](/access-tesing)
+- [Access testing with SSH](/access-testing)
 - [Code access methods](/access-methods) on fortrabbit
 - [Deployment methods](/deployment-methods) on fortrabbit
 - [SFTP access](/sftp-uni)
