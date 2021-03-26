@@ -44,37 +44,27 @@ Password:   Your fortrabbit Account password
 Open a terminal and enter:
 
 ```bash
-$ ssh tripple-w-app.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa_fortrabbit whoami
+$ ssh tripple-w-app.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com -F /dev/null whoami
 app
 ```
 
-<!--
-
-Sorry to bother now with this. The -i flag with the ssh command says to use the id_rsa_fortrabbit key, right? But we can not know if that is installed for sure. 
-
-It is only part of our help to set it up like that. I guess most people will use keys that they already have and that are not called id_rsa_fortrabbit. We do have a GitHub auto-import. I think many people are using that.
-
-So I suggest to remove that part (from both examples).
-
--->
-
-You are good to go when the output is "app" for the following command is "app".
+You are good to go when the output is "app".
 
 
 ## Test access for SSH key authentication
 
 ```nohighlight
-App Name  tripple-w-app (example)
-Region    eu2
-Username  tripple-w-app
-Host      deploy.eu2.frbit.com
-Password  None or whatever you used before (not fortrabbit Account password)
+App Name:   tripple-w-app (example)
+Region:     eu2
+Username:   tripple-w-app
+Host:       deploy.eu2.frbit.com
+Password:   None or whatever you used before (not the fortrabbit Account password)
 ```
 
 Open a terminal and enter:
 
 ```bash
-$ ssh tripple-w-app@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa_fortrabbit whoami
+$ ssh tripple-w-app@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa whoami
 app
 ```
 
