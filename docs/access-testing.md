@@ -70,7 +70,14 @@ app
 
 You are good to go when the output is "app".
 
-If you see a password prompt, then these two cases are likely:
+If you see a password prompt like this:
+
+```bash
+$ ssh tripple-w-app@deploy.eu2.frbit.com -F /dev/null -i ~/.ssh/id_rsa whoami
+tripple-w-app@deploy.eu2.frbit.com's password:
+```
+
+Then these two cases are likely:
 
 + You created your SSH key with a passphrase. Type in the passphrase.
 + The SSH key was very recently imported. Allow the system up to 7 minutes to activate the new public SSH key.
