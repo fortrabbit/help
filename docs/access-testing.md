@@ -50,7 +50,16 @@ app
 
 You are good to go when the output is "app".
 
-When this is not working for you, please reset your fortrabbit Account password with the fortrabbit Dashboard under your Account and wait a short while until the changes are applied.
+When this is not working for you can try the following:
+
+* Do you have other Apps hosted here? Try to access these.
+  * If you can access other Apps and it is just not working for a specific App and that App is older than 5 minutes, <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______.')">contact support</a>.
+  * If you can not access any App at all, it's likely something on your side continue below
+* If you don't have other Apps hosted here and this is the first time you are doing this, it likely is related to the credentials you are entering. Make sure to use the correct values.
+* Windows users please mind that a terminal prompt will not accept copy paste. Type the password.
+* Reset your fortrabbit Account password with the fortrabbit Dashboard under your Account and wait a short while until the changes are applied and try again.
+* Check for the unlikely case that there is a general service issue under [status.fortrabbit.com](https://status.fortrabbit.com)
+* <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______.')">Contact support</a>
 
 
 ## Test access for SSH key authentication
