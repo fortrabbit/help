@@ -99,7 +99,7 @@ In the next step you will be asked for your [MySQL password](#toc-obtain-the-mys
 
 ### MySQL via GUI
 
-We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac, along with [at least a few others](https://www.google.com/search?q=mysql%20gui).
+We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Ace](https://github.com/Sequel-Ace/Sequel-Ace) for Mac, along with [at least a few others](https://www.google.com/search?q=mysql%20gui).
 
 The clients above can be configured to help you to connect via an SSH tunnel to the MySQL database in one convenient step. In the connection dialog or tab of the client you pick, you will need to insert the correct parameters for SSH and MySQL.
 
@@ -218,7 +218,7 @@ In some cases — like when importing our [MySQL backups](/backups) — you migh
 SET FOREIGN_KEY_CHECKS=0;
 ```
 
-In a GUI like Sequel Pro there is a query window to run it. This value will then be reset to the default value when you close the connection.
+In a GUI like Sequel Ace there is a query window to run it. This value will then be reset to the default value when you close the connection.
 
 
 ## Local MySQL

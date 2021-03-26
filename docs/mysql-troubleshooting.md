@@ -21,7 +21,7 @@ You'll need to **enter both: SSH access and MySQL access details**. Within the f
 
 ## max_user_connections
 
-You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are limited. If you use up all the allotted connections, it can take a little until the App recovers. If this turns out to be a problem for you, look into limiting the number of concurrent connections from your MySQL gui or the App iteslf.
+You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Ace. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are limited. If you use up all the allotted connections, it can take a little until the App recovers. If this turns out to be a problem for you, look into limiting the number of concurrent connections from your MySQL gui or the App itself.
 
 If you see that error on other occasions or it's not going away after a while, contact support.
 
