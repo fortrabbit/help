@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-25
+reviewed:      2021-03-26
 naviTitle:     Access testing
 title:         Testing access to fortrabbit services
 lead:          This article provides instructions on how to check code access for username + password and SSH key authentication from the terminal using ssh.
@@ -80,7 +80,7 @@ app
 
 You are good to go when the output is "app".
 
-If you see a password prompt, then these two cases are likely: 
+If you see a password prompt, then these two cases are likely:
 
 + You created your SSH key with a passphrase. Type in the passphrase.
 + The SSH key was very recently imported. Allow the system up to 7 minutes to activate the new public SSH key.
