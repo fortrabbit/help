@@ -82,6 +82,7 @@ Then these two cases are likely:
 + You created your SSH key with a passphrase. Type in the passphrase.
 + The SSH key was very recently imported. Allow the system up to 7 minutes to activate the new public SSH key.
 
+If you still have trouble please proceed to the [SSH key troubleshooting page](/ssh-key-troubleshooting).
 
 <!--
 
