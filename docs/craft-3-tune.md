@@ -43,7 +43,7 @@ ENVIRONMENT=dev
 
 ### Domain setup
 
-Your fortrabbit App comes with a predefined App Name and a URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
+Your fortrabbit App comes with a predefined App Name and a URL like `{{app-name}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
 
 Craft CMS usually plays well with any domain. Using the `@web` alias syntax in your CP settings and templates is a way to stay flexible. The config block below defines domain relates aliases. To differentiate between environments use of the `PRIMARY_SITE_URL`. 
 
