@@ -56,7 +56,7 @@ When this is not working for you can try the following:
   * If you can access other Apps and it is just not working for a specific App and that App is older than 5 minutes, <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______.')">contact support</a>.
   * If you can not access any App at all, it's likely something on your side continue below
 * If you don't have other Apps hosted here and this is the first time you are doing this, it likely is related to the credentials you are entering. Make sure to use the correct values.
-* Windows users please mind that a terminal prompt will not accept copy paste. Type the password.
+* If you are using the classical cmd.exe terminal in Windows, use the mouse to paste or type your password. Read more [here](https://superuser.com/questions/62598/how-do-i-paste-into-the-windows-cmd-prompt-by-using-only-the-keyboard) and [here](https://www.maketecheasier.com/enable-copy-paste-command-prompt-windows10/)
 * Reset your fortrabbit Account password with the fortrabbit Dashboard under your Account and wait a short while until the changes are applied and try again.
 * Check for the unlikely case that there is a general service issue under [status.fortrabbit.com](https://status.fortrabbit.com)
 * If nothing helps please <a href="#asd" onclick="Intercom('showNewMessage', 'I can not access my App ______. I have already tried ________')">contact support</a> and provide details of steps you have been taking so far.
