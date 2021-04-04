@@ -212,10 +212,7 @@ By the way: The image format `webp` is supported with fortrabbit's imageMagick v
 
 #### Using a third party image service
 
-We advise using dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins support external services:
-
-* [Imager Craft](https://github.com/aelvan/Imager-Craft/)
-* [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
+We advise using dedicated specialized third party image optimization services, like imgix, tinypng, kraken to do the job best.
 
 
 ## Craft CLI
