@@ -41,9 +41,14 @@ The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long
 To launch a PHP script you need to specify the PHP interpreter explicitly: for example, `php artisan` or `php craft`.
 
 
-## Image optimization tools
+## No image optimization tools
 
-Tools like `jpegoptim` and `optipng` can additionally help to reduce file size of your images and are considered a best practice today. As much as we would like to make those tools available, we can't. They consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting.
+Tools like `jpegoptim`, `optipng`, `pngquant`, `SVGO`, `gifsicle` and alike can help to reduce file size of your images. Using such tools are considered a best practice today. Unfortunately they consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting. Consider using a third party service for this.
+
+
+## No video compressing
+
+`ffmpeg` and `ffprobe` alike are also not available to avoid overuse of resources.
 
 
 ### wkhtmltopdf
