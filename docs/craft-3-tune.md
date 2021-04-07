@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-02-02
+reviewed:         2021-03-30
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -45,12 +45,17 @@ ENVIRONMENT=dev
 
 Your fortrabbit App comes with a predefined App Name and a URL like `{{app-name}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
 
-Craft CMS usually plays well with any domain. The `@web` syntax in your settings and templates is one way to set it up. You can also use environment variables. Using `'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'`, as in the example above, tells Craft CMS to use the `PRIMARY_SITE_URL` ENV var or the `@web` fallback, which is a good default. Older versions of Craft might use `SITE_URL`.
+Craft CMS usually plays well with any domain. Using the `@web` alias syntax in your CP settings and templates is a way to stay flexible. The config block below defines domain relates aliases. To differentiate between environments use of the `PRIMARY_SITE_URL`. 
 
 ```php
 return [
-    // Recommended Domain usage for general.php
-    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web'
+    // Recommended aliases in config/general.php
+     'aliases' => [
+          '@web' => \craft\helpers\App::env('PRIMARY_SITE_URL') ?: '/',
+          '@webroot' => dirname(__DIR__) . '/web',
+          '@assetBasePath' => '@webroot/assets',
+          '@assetBaseUrl' => '/assets',
+     ],
 ];
 ```
 
