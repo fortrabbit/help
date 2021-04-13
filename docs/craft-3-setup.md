@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-03-31
+reviewed:         2021-04-13
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -54,19 +54,6 @@ That ENV var is already set. Just replace it with your local one. Also see the [
 ## Database setup
 
 TLDR: **No need to configure the MySQL database connection for fortrabbit, it should already be set.** On fortrabbit the [environment variables](/env-vars) are seeded from the ones set in the Dashboard (not from the .env file). If you chose Craft in the [Software Preset](/app#toc-software-preset) when creating the App, all ENV vars at fortrabbit will already be pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
-
-
-## Configuration settings
-
-Please include the following settings in the settings file located in `config/general.php`:
-
-```php
-return [
-    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web',
-];
-```
-
-The file contains other settings as well: keep those. For more details and options, check out our [Craft CMS tuning guide](/craft-3-tune#toc-craft-cms-configuration-details).
 
 
 ## Next steps
