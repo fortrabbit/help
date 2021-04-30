@@ -76,10 +76,10 @@ For enterprise clients from Europe with a recurring revenue of more than 300 €
 ##### How on invoice works
 
 + We invoice you in USD or EUR
-+ You pay in the currency as with your invoice
++ You pay in the currency as stated on your invoice
 + We provide you with our German bank routing number (IBAN + BIC)
 + Invoices are sent by e-mail monthly to the billing mail registered with our Dashboard
-+ There are no statements or receipts, just the invoices
++ Mind that there are no extra statements or payment receipts, just the invoices
 + Invoices need to be paid within 30 days
 + We expect individual payments for each invoice
 + Each payment needs to include the exact invoice number to be matched
