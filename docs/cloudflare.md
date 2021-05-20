@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2020-12-02
+reviewed:         2021-05-20
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -67,6 +67,8 @@ The App URL has HTTPS, so you can and should set SSL to **full** to ensure end-t
 
 ## Advanced topics
 
+
+
 ### CloudFlare VS fortrabbit Dashboard
 
 CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the fortrabbit Dashboard that is routed via CloudFlare a definite answer is not possible. The Dashboard is aware of many CloudFlare IPs, so it will likely guess that the domain is routed via CloudFlare. Still you might see an error, while in fact the domain is routed correctly.
@@ -74,6 +76,10 @@ CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the for
 ### ClouFlare SSL VS Let's Encrypt
 
 Many fortrabbit clients have used CloudFlare to get SSL, see our [HTTPS article](/https) as well, for their own custom domain without the need to book and setup a custom cert here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt. So if that is your aim, you'll might not need CloudFlare.
+
+### CloudFlare and 2nd level subdomains
+
+When you are seeing an `SSL_ERROR_NO_CYPHER_OVERLAP` error. But you think you have set up everything correctly, check the domain you are trying to route. Is is a second level of a subdomain like `dev.www.example.com`? If so, further actions might be required, please see the [CloudFlare help](https://support.cloudflare.com/hc/en-us/articles/200170566-Troubleshooting-SSL-errors#h_55e4d315-c60d-4798-9c4c-c75d9baed1b7).
 
 ### Other reasons to use CloudFlare
 
