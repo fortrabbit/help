@@ -67,9 +67,7 @@ The App URL has HTTPS, so you can and should set SSL to **full** to ensure end-t
 
 ## Advanced topics
 
-
-
-### CloudFlare VS fortrabbit Dashboard
+### CloudFlare DNS and fortrabbit Dashboard Status
 
 CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the fortrabbit Dashboard that is routed via CloudFlare a definite answer is not possible. The Dashboard is aware of many CloudFlare IPs, so it will likely guess that the domain is routed via CloudFlare. Still you might see an error, while in fact the domain is routed correctly.
 
