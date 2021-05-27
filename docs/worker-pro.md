@@ -130,10 +130,10 @@ You can access the job output of your Worker. Both STDOUT and STDERR generated b
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:worker
 
 # STDOUT from the the job "a-job" - generated via `echo "The message\n"`
-# 2019-01-14T12:00:01Z INFO (a-job): The message
+# 2021-01-14T12:00:01Z INFO (a-job): The message
 
 # STDERR from the job "a-job" - generated via `error_log("The message")`
-# 2019-01-14T12:00:02Z ERR  (a-job): The message
+# 2021-01-14T12:00:02Z ERR  (a-job): The message
 ```
 
 First comes the formatted time ([RFC 3339](https://tools.ietf.org/html/rfc3339)), followed by the log level, the name of the job and finally the message which has been written. See our [logging article](/logging-pro) for more.
