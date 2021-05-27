@@ -73,7 +73,7 @@ The App URL has HTTPS, so you can and should set SSL to **full** to ensure end-t
 
 CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the fortrabbit Dashboard that is routed via CloudFlare a definite answer is not possible. The Dashboard is aware of many CloudFlare IPs, so it will likely guess that the domain is routed via CloudFlare. Still you might see an error, while in fact the domain is routed correctly.
 
-### ClouFlare SSL VS Let's Encrypt
+### CloudFlare SSL VS Let's Encrypt
 
 Many fortrabbit clients have used CloudFlare to get SSL, see our [HTTPS article](/https) as well, for their own custom domain without the need to book and setup a custom cert here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt. So if that is your aim, you'll might not need CloudFlare.
 
