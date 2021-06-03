@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        iwantmyname
-reviewed:         2019-09-30
+reviewed:         2021-06-03
 title:            Using iwantmyname with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit

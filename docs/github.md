@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-11-20
+reviewed:         2021-06-03
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-07-26
+reviewed:      2021-06-03
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.

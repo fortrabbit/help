@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-27
+reviewed:      2021-06-03
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform

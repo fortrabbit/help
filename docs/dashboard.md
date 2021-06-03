@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-09-27
+reviewed:      2021-06-03
 naviTitle:     The Dashboard
 title:         The fortrabbit Dashboard
 lead:          On fortrabbit you won't find any old-school server admin control panel like CPanel. The fortrabbit dashboard is designed to give you fine-grained control:
