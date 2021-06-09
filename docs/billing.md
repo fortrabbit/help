@@ -188,7 +188,7 @@ This is our current policy because we have a custom billing system and refunds a
 
 If you think something is wrong with your invoice, please contact us. We may be able to give you a discount on your next invoice to show good will on our part.
 
-Some clients complain that they haven't made any use of the services at all and therefor are requesting a refund. Please note that each booked App is utilizing hardware resources whether there have been visitors or not.
+Some clients say that they haven't made any use of the services at all and therefor are requesting a refund. Please note that each booked App is utilizing hardware resources whether there have been visitors or not.
 
 
 ### Account cancellation
