@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-04-30
+reviewed:      2021-06-09
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -182,9 +182,13 @@ Yearly payments are not supported because we do not accept upfront payments beca
 
 ### No refunds
 
-We are not offering refunds at this time. This is our current policy because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
+We are not offering refunds at this time.
+
+This is our current policy because we have a custom billing system and refunds are complicated to do correctly under German accounting laws. We would have to send you a reduced negative invoice and it would require additional manual steps in book keeping for this.
 
 If you think something is wrong with your invoice, please contact us. We may be able to give you a discount on your next invoice to show good will on our part.
+
+Some clients complain that they haven't made any use of the services at all and therefor are requesting a refund. Please note that each booked App is utilizing hardware resources whether there have been visitors or not.
 
 
 ### Account cancellation
