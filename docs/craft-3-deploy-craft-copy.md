@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-02-02
+reviewed:         2021-07-08
 title:            Deploy Craft CMS with Craft Copy
 naviTitle:        Deploy Craft
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -33,6 +33,11 @@ Make sure to have completed all steps from the [get ready guide](/craft-3-about)
 ## About Craft Copy
 
 Craft Copy is a command line tool to help you deploying Craft CMS from our local development environment to your fortrabbit App. It will take care of the code, the assets and the database.
+
+<div class="responsive-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/h8g5t-X6ya4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 
 ## Installing and using Craft Copy
