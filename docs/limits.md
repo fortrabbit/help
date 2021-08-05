@@ -148,15 +148,3 @@ The MySQL storage limit is critical. When exceeding this, multiple things can ha
 **Description**: Each App has an included traffic, also known as transfer or bandwidth, amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
 **Solution**: Once that limit is exceeded, we will charge per additional 5 GB or part thereof, as described in the above linked specs page. High traffic is often caused by videos or images. Images are often not compressed well enough and videos are big by definition. An alternative way to set delivery of static assets is by using a pull-CDN or by completely outsourcing the static files, either to an image and video hosting service, or to a cloud storage like AWS S3. For the Professional Stack we are offering the Object Storage.
-
-
-## Load testing
-
-So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the limits above. Make sure to have a swift PHP response time already, at least 200ms. Also, please respect the following limits: 
-
-* Universal Stack: Max 300 RPM
-* Professional Stack: 300 RPM per Node
-
-Each App is different in the way it's built and in the way it is consumed. There are compute-intensive highly dynamic Apps, there are Apps that are mostly static. Some have many assets, some none. Some have only one page, some have thousands of pages. You as the developer should know your project, the way it is built and how it will be used. Follow best practices, see our [application design article](/app-design). Get insights from a plugin like [Blackfire](/blackfire) or [NewRelic](/new-relic).
-
-<a class="action b-2"  href="#" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________. And ____ ____ ____ ___ _ ____ __ …').preventDefault()">Contact support to schedule a load test</a>
