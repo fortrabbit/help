@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2021-06-03
+reviewed:   2021-08-05
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing logs of your App is essential for developing. Here is how you can do it on fortrabbit.
