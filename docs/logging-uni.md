@@ -42,7 +42,7 @@ stderr.log
 stderr.log.1.gz
 ```
 
-The `.log` file contains the latest logs, the `.gz` (gzipped) file contains older logs for each type. Not each log might actually be available, the files shown are `symlinks`. The Apache error logs are containing IP addresses (Remote_Addr). Logs are rotated with `logrotate` on a daily basis and a cap of 100 MB per uncompressed log file. You will most likely find different available historic logging time frames per type of log file.
+The `.log` file contains the latest logs, the `.gz` (gzipped) file contains older logs for each type. Not each log might actually be available, the files shown are `symlinks`. The Apache error logs are containing IP addresses (Remote_Addr).
 
 
 ### Log files in your CMS/framework
