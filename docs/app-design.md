@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-06-03
+reviewed:      2021-08-06
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
@@ -166,4 +166,4 @@ If your App runs fast with only a few visitors it doesn't mean it can handle the
 
 ## Security design
 
-Last not least: Take care to keep your App secure. Check our [security page](https://www.fortrabbit.com/security) with some best practices and duties.
+Last not least: Take care to keep your App secure. Check our [security page](/security-design) with some best practices and duties.
