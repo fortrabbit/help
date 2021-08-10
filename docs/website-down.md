@@ -5,23 +5,22 @@ reviewed:      2021-08-10
 naviTitle:     Website down
 title:         How to report downtime
 excerpt:       What to do when your website hosted on fortrabbit is down.
-lead:          'This article helps finding common issues when your website is down and also how to communicate with us in the most professional manner.'
+lead:          "Your website hosted here is offline now? This is an urgent situation. Let's waste no time and get it solved together in a professional manner. This article helps finding common issues when your website is down and also how to communicate professionally."
 group:         troubleshooting
 stack:         all
 
 ---
 
-Your website hosted on fortrabbit is not online any more? This is an urgent situation. Let's waste no time and get it solved together in a professional manner.
 
-## Please keep a cool head
+## Keep a cool head
 
-Even in urgent emergency situations, please try to stay calm.
+Please try to stay calm and focus on the facts. Emotions and allegations won't help fixing the issue.
 
-## In most cases it's something on your side
+## It's likely something on your side
 
-Please understand that our experience shows us that most website downtime is individual and caused by code and configuration issues. Every day clients are contacting us because of some server is down. In the great majority of cases we don't find services issues. In many cases we can help the client solving the issue.
+Most website downtime is individual and caused by code and configuration issues from the responsible developer (you). In many  cases we can help you to solve the issue.
 
-## Maybe it's something on our side
+## It's maybe something on our side
 
 By providing enough details you may can help us spot a service issue faster.
 
