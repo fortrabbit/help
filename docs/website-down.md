@@ -1,24 +1,27 @@
 ---
 
 template:      article
-reviewed:      2021-03-13
+reviewed:      2021-08-10
 naviTitle:     Website down
-title:         Website down
-excerpt:       What to do when your website hosted on fortrabbit is down
-lead:          'This article helps finding common issues when your website is down.'
+title:         How to report downtime
+excerpt:       What to do when your website hosted on fortrabbit is down.
+lead:          'This article helps finding common issues when your website is down and also how to communicate with us in the most professional manner.'
 group:         troubleshooting
 stack:         all
 
 ---
 
-Your website hosted on fortrabbit is not online any more. This is an urgent situation. Let's waste no time and get it solved together.
+Your website hosted on fortrabbit is not online any more? This is an urgent situation. Let's waste no time and get it solved together.
 
-## In most cases it's your issue
+## Keep a cool head
+
+Even in urgent emergency situations, please try to stay calm. 
+
+## In most cases it's something on your side
 
 Please understand that our experience shows us that most website downtime is individual and caused by code and configuration issues. Every day clients are contacting us because of some server is down. In the great majority of cases we don't find services issues. In many cases we can help the client solving the issue.
 
 Please help us helping you. Follow this route:
-
 
 ## What's the exact App name?
 
@@ -28,11 +31,9 @@ Make sure to provide the exact App name. Is the happening to just one App hosted
 
 When you are the Owner of the App but not the technical contact we advice to get your developer in contact with us.
 
-
 ## Have you made any recent changes?
 
 Did you maybe recently pushed code? Or did some editor changed some setting on the App? Or was there any other change done, prior the downtime? Maybe someone uploaded a lot of images or performed other actions interacting with the website? Anything that can be of interest.
-
 
 ## What kind of error do you see?
 
@@ -42,12 +43,14 @@ It's likely a 504 error when the website is loading and loading but never shows 
 
 It's likely a 503 error when you see a "service unavailable" message or just a blank screen or a 503 error page. Please proceed to our [503 troubleshooting](/503-errors) page. Provide PHP error logs with your question.
 
-
 ## Since when do you see the error?
 
 Report the exact time when the issue started to happen.
 
-
 ## What else do we need to to know?
 
 Is the error happening constantly, or is it more on/off? Have you got similar issues before?
+
+## Respect general support best practices
+
+Also see our [general support tips](support-tips).
