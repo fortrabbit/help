@@ -11,17 +11,19 @@ stack:         all
 
 ---
 
-Your website hosted on fortrabbit is not online any more? This is an urgent situation. Let's waste no time and get it solved together.
+Your website hosted on fortrabbit is not online any more? This is an urgent situation. Let's waste no time and get it solved together in a professional manner.
 
-## Keep a cool head
+## Please keep a cool head
 
-Even in urgent emergency situations, please try to stay calm. 
+Even in urgent emergency situations, please try to stay calm.
 
 ## In most cases it's something on your side
 
 Please understand that our experience shows us that most website downtime is individual and caused by code and configuration issues. Every day clients are contacting us because of some server is down. In the great majority of cases we don't find services issues. In many cases we can help the client solving the issue.
 
-Please help us helping you. Follow this route:
+## Maybe it's something on our side
+
+By providing enough details you may can help us spot a service issue faster.
 
 ## What's the exact App name?
 
@@ -51,6 +53,6 @@ Report the exact time when the issue started to happen.
 
 Is the error happening constantly, or is it more on/off? Have you got similar issues before?
 
-## Respect general support best practices
+## Follow general support best practices
 
-Also see our [general support tips](support-tips).
+Also see our [general support tips](support-tips) on best practices to make your support request here successful.
