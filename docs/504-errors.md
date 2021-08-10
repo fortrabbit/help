@@ -31,17 +31,17 @@ In most cases this is not a server issue, but something with your code and confi
 
 ### Poorly performing database queries
 
+Most common cause of individual downtime are slow database queries. A MySQL query might work in a testing environment, but not in production at a certain point of traffic and more data.
+
 Your App might be making MySQL database queries that are too heavy. MySQL queries can be CPU intensive and long running. Sometimes this is a technical requirement, often this is unawareness on the part of the developer.
 
 Review your code for inefficient queries. If unsure consult a senior colleague or use a profiler like [Blackfire](/blackfire) to find the bottlenecks. Refactor your query design to write better performing MySQL queries or even rethink your data model. Caching certain database results can be another tactic after refactoring.
-
 
 ### Too many database queries
 
 Your App might be making too many database queries. This issue is similar to the one above. Sometimes too many and poorly written MySQL queries come in tandem. In Craft CMS for example it's easy to write a lot of queries.
 
 Review your code and see if you can avoid or optimize queries.
-
 
 ### Image transforms with ImageMagick
 
@@ -55,16 +55,15 @@ The size of the original image also matters.
 
 One mitigation can be to use the GD library instead of imageMagick. Though it creates slightly more artifacts in JPG compression and maybe slightly bigger files, GD is way less resource hungry. You can change this with the PHP settings of your App in our Dashboard.
 
-
 ### External API calls
 
 Sometimes a 504 error is caused when you call an external API that is not responding, or that responds too late. This should be relatively easy to debug. Try turning off any blocking external API calls.
-
 
 ### Something else on application level
 
 Basically anything that will end up in an endless loop can cause a 504 error. This can be a plugin of a CMS or something within your templates. Imagine a template that is endlessly including itself. It will go on for a while until either the memory, the CPU or the runtime come to an end.
 
+There are many technical measurements which can be taken by the client to dramatically lower the chances of having any downtime at all. Our multi-node production plans are offering high availability when correctly implemented. For CMS systems such as Craft CMS, it's often possible to cache the whole frontend in a CDN by using edge caching with a third party service such as Cloudflare.
 
 ## Other ways to proceed
 
@@ -81,11 +80,9 @@ In order to separate 504 from the other 503, 502 and 500 errors, have a look at 
 
 Aim for no swap usage and a low PHP response time of not more than 200 ms. 
 
-
 ## It could also be something on our side
 
 It is also possible — although less likely - that this error is caused by a network, hardware or configuration issue on our side, your hosting provider. Please check our status page under [status.fortrabbit.com](https://status.fortrabbit.com) if there are any ongoing maintenance windows or service issues known.
-
 
 ## Contacting support
 

@@ -18,7 +18,9 @@ Please try to stay calm and focus on the facts. Emotions and allegations won't h
 
 ## It's likely something on your side
 
-Most website downtime is individual and caused by code and configuration issues from the responsible developer (you). In many  cases we can help you to solve the issue.
+Most downtime we see is caused by "client coding mistakes" - usually by not making proper use of the available resources. In many cases we can help you to solve the issue.
+
+Many of such errors can be resolved by analyzing logs files and metrics. We are happy to discuss and research such problems together with our clients.
 
 ## It's maybe something on our side
 
