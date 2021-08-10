@@ -304,7 +304,7 @@ In some edge cases, like hanging PHP processes with 504 errors or 408 errors, re
 2. find and click the "Restart App" button
 3. wait a minute until changes are applied
   
-This will restart the Apache service and the PHP-FPM processes. Nothing more, your data will stay safe. There will be a short downtime of the App. Use carefully, it should not be used on a regular basis. Please <a href="javascript:Intercom('showNewMessage')">contact us</a>, if you have ongoing trouble with your App.
+This will restart the Apache service and the PHP-FPM processes. Nothing more, your data will stay safe. There will be a short downtime of the App. Use carefully, it should not be used on a regular basis. This button is not a silver bullet to fix all server issues. Please <a href="javascript:Intercom('showNewMessage')">contact us</a>, if you have ongoing trouble with your App.
 
 
 ## Deleting an App
