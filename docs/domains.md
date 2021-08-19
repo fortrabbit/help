@@ -116,7 +116,7 @@ www       CNAME      {{app-name}}.frb.io  < Only www!
 
 Optional but highly recommended: The fortrabbit domain forwarding service redirects all incoming requests on the naked domain to the `www.` version of the domain using `301 Moved Permanently` headers. It also works for deeplinks, so `http://your-domain.com/page` will be forwarded to `http://www.your-domain.com/page`. A custom SSL cert from Let's Encrypt for each naked domain will be issued, so that ALL communication can be secure (best combined with [.htaccess](/htaccess) rules on the `www.` side to force https). It needs to be set up as an `A`-record, you can not use `CNAME` on a naked domain, as that would possibly break your DNS settings (especially if you want to send e-mails). The service itself is independent from the App; it's the same IP for all Apps in one region.
 
-#### Use cases and anti-patterns for the redirect service
+#### Anti-patterns for the redirect service
 
 In general you can expect our redirect service to work. But there might be services issues only affecting the redirect service. So better don't rely on it too much. Maybe even more important, requesting a resource from the redirect service means an additional http hop and that might make your website slower. Please, when using our redirect service, do yourself the favor:
 
