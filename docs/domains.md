@@ -118,12 +118,12 @@ Optional but highly recommended: The fortrabbit domain forwarding service redire
 
 #### Use cases and anti-patterns for the redirect service
 
-In general you can expect our redirect service to work. But there might be services issues only affecting the redirect service. So better don't rely on it too much. Maybe even more important, requesting a resource from the redirect service means an additional http hop and that makes your website slower. Please, when using our redirect service, do yourself the favor:
+In general you can expect our redirect service to work. But there might be services issues only affecting the redirect service. So better don't rely on it too much. Maybe even more important, requesting a resource from the redirect service means an additional http hop and that might make your website slower. Please, when using our redirect service, do yourself the favor:
 
 * Don't configure your CMS to use the naked domain for all links (site_url)
-* Don't send your advertisement clicks through the naked domain
-* Don't setup Pingdom alerts for your naked domain
-* When using CloudFlare, better setup the redirect within CloudFlare
+* Don't send external links (advertisement clicks) through the naked domain
+* Don't setup uptime checks for your naked domain
+* Better setup the redirect within CloudFlare when using this
 
 Please mind that all redirects on the redirect service are marked as 301 (moved permanently). That way Google and other search engines will pick up the www domain as the main domain.
 
