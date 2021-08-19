@@ -5,7 +5,7 @@ reviewed:      2021-08-10
 naviTitle:     Website down
 title:         How to report downtime
 excerpt:       What to do when your website hosted on fortrabbit is down.
-lead:          "Your website hosted here is offline now? This is an urgent situation. Let's waste no time and get it solved together in a professional manner. This article helps finding common issues when your website is down and also how to communicate professionally."
+lead:          "Your website hosted here is offline right now? Let's waste no time and get it solved together in a professional manner. This article helps finding common issues when your website is down and also how to communicate professionally."
 group:         troubleshooting
 stack:         all
 
@@ -14,7 +14,7 @@ stack:         all
 
 ## Keep a cool head
 
-Please try to stay calm and focus on the facts. Emotions and allegations won't help fixing the issue.
+This is an urgent situation. Please try to stay calm and focus on the facts. Emotions and allegations won't help fixing the issue.
 
 ## It's likely something on your side
 
