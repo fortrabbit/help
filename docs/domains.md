@@ -123,6 +123,7 @@ In general you can expect our redirect service to work. But there might be servi
 * Don't configure your CMS to use the naked domain for all links (site_url)
 * Don't send your advertisement clicks through the naked domain
 * Don't setup Pingdom alerts for your naked domain
+* When using CloudFlare, better setup the redirect within CloudFlare
 
 Please mind that all redirects on the redirect service are marked as 301 (moved permanently). That way Google and other search engines will pick up the www domain as the main domain.
 
