@@ -125,7 +125,12 @@ In general you can expect our redirect service to work. But there might be servi
 * Don't setup uptime checks for your naked domain
 * Better setup the redirect within CloudFlare when using this
 
-Please mind that all redirects on the redirect service are marked as 301 (moved permanently). That way Google and other search engines will pick up the www domain as the main domain.
+Please mind that all redirects on the redirect service are marked as 301 (moved permanently). That way search engines will pick up the www domain as the main domain anyways.
+
+### Design pattern for the redirect service
+
+* Use `www.domain.tld` instead of just `domain.tld` for all links to avoid unnecessary 301 round-trips on each request. This includes internal links, advertisements and ping checkers.
+
 
 ### Alternative ways to use a naked domain
 
