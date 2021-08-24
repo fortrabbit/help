@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
+reviewed:      2021-08-24
 title:         TLS issues
 naviTitle:     TLS issues
 excerpt:       What you may want to know about our SSL/TLS errors.
@@ -27,7 +27,11 @@ To troubleshoot TLS/SSL issues, it's often helpful to view the certificate in th
 
 ### You see a certificate warning 
 
-You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. If you inspect the cert in the browser, you see that the cert is issued for `*.frb.io` not for your domain. 
+You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. If you inspect the cert in the browser, you see that the cert is issued for `*.frb.io` not for your domain. The error might be:
+
+```
+NET::ERR_CERT_COMMON_NAME_INVALID
+```
 
 This can happen, if the domain is brand new and the cert is not yet installed. It can take up to 24 hours for the certs to get installed. The cert for the naked domain (for forwarding) usually takes a bit longer than the other one.
 
