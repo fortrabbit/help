@@ -54,11 +54,7 @@ If you're planning on growing large and expect a lot of traffic, you will end up
 
 ### Database considerations
 
-Well, talking about database optimization could easily fill a whole book — or books. The most basic tips for relational databases, such as MySQL:
-
-* **Smart indexing**: First off: Use indexes. But which? Look at your queries. MySQL provides [EXPLAIN](http://dev.mysql.com/doc/refman/5.5/en/explain.html). EXPLAIN shows you which columns and which of their indices (if any) are used. It also points out if inefficient strategies, such as "[temporary tables](https://dev.mysql.com/doc/refman/5.7/en/internal-temporary-tables.html)" or "[filesort](https://www.percona.com/blog/2009/03/05/what-does-using-filesort-mean-in-mysql/)" are applied. So: Log your queries, run them through EXPLAIN and build your (multi-column) indexes based on the EXPLAIN results. Most importantly: repeat this from time to time, because things change and different data-size proportions might benefit from different indexes;
-* **Avoid JOINs**: JOINs are easily used with modern ORMs and look like a good idea at first glance (and in certain situations they are!). However, when your App grows, they are many times the reason why your database performance decreases hugely. Why? Because there is a major difference between a join between 100 x 100 rows and 10,000 x 100,000 rows: the former fits in the memory, the latter not;
-* **Split write-tables & read-tables**: Try to use separate write-intensive and read-intensive tables. Whenever you write on a table, you invalidate the query cache. For instance: if you have a read-intensive user table, and want to log their latest activity, use an additional table for this;
+Well, talking about database optimization could easily fill a whole book — or books. We have a help article about the most basic tips for relational databases, such as MySQL, [over here](/mysql-performance).
 
 
 ### Static file separation
