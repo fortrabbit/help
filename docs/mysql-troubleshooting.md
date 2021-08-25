@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2020-10-30
+reviewed:      2021-08-25
 title:         MySQL Troubleshooting
 naviTitle:     MySQL Troubleshooting
 excerpt:       Some tips on troubleshooting MySQL connections.
-lead:          'This article aims to help you finding common issues when connecting to your MySQL database on fortrabbit.'
+lead:          'This article aims to help you finding common issues with your MySQL database on fortrabbit.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -33,4 +33,4 @@ When importing a database dump you've created with a recent version of `mysqldum
 #1227 - Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 ```
 
-To prevent this error, create the dump again using the `--set-gtid-purged=OFF` option. If you don't use the `mysqldump` command line tool directly, but a GUI that relies on it, the chance is very high there is a checkbox to disable "GTID PURGED".   
+To prevent this error, create the dump again using the `--set-gtid-purged=OFF` option. If you don't use the `mysqldump` command line tool directly, but a GUI that relies on it, the chance is very high there is a checkbox to disable "GTID PURGED".
