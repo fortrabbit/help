@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2021-08-25
-title:         MySQL Troubleshooting
-naviTitle:     MySQL Troubleshooting
+title:         MySQL troubleshooting
+naviTitle:     MySQL troubleshooting
 excerpt:       Some tips on troubleshooting MySQL connections.
 lead:          'This article aims to help you finding common issues with your MySQL database on fortrabbit.'
 group:         troubleshooting
