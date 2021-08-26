@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-08-19
+reviewed:      2021-08-27
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -33,9 +33,11 @@ Please note that fortrabbit does not provide domain registration services. An "e
 
 ## About domains on fortrabbit
 
-Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any number of external domains to your App. Your goal here is to have your App running under your own domain.
+Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can "route" any number of external domains to your App. Essentially that means that you can host a PHP application under a dedicated domain name on fortrabbit, that you have registered with a third party domain name registrar.
 
-First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so:
+First off, make sure that the App knows about the domain via the Dashboard. Then point the domain to the IP address of our redirect service (region-specific). Finally, set up a CNAME from www.domain.tld to the unique App URL provided by us.
+
+Start the process in the fortrabbit Dashboard like so:
 
 ## Connect your domain to fortrabbit
 
@@ -48,18 +50,20 @@ First off, make sure that the App knows about the domain. Then point the domain 
 
 This is the most common usage. You first add the domain within the fortrabbit Dashboard. Use the preselected "www" option. That will bring you to a screen showing the current DNS settings and the desired settings. Go to your domain providers control panel and change the settings as provided by the fortrabbit Dashboard. That basically means:
 
-For the www prefix: 
+For the www prefix:
 
 * Remove any A Record
 * Point the CNAME Record to the fortrabbit App URL: {{ app-name }}.frb.io
 * Leave NS or TXT or any other records untouched
+* Remove any AAAA records
 
 For the naked domain:
 
-* Change the A Record to use the IP of our forwarding service
+* Change the A Record to use the IP of our redirect service
 * Leave any other records untouched, especially MX
+* Remove any AAAA records
 
-Save the settings with your domain provider and wait a while, depending on your TTL settings that can take up to 24h. 
+Save the settings with your domain provider and wait a while. The while depends on the TTL settings of the DNS records, or usually up to 24h.
 
 
 ## Routing options
@@ -71,23 +75,23 @@ The world of DNS is one of its own. You want to do more than just the basics? Co
 
 Back in the day the `www.` prefix indicated that this is an address to type into the browser. Nowadays the `www.` prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. For example: We use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
 
-The trick is that you can route subdomains using `CNAME` records. By this you are telling your DNS provider to resolve a `hostname` instead of a fixed `IP` (which would be an `A` record). The great advantage is that the IP address behind the hostname target can change later on — without your intervention. In other words: `CNAME` routing helps us to compensate hardware failures and DDOS attacks for you, since we can move your App around. 
+The trick is that you can route subdomains using `CNAME` records. By this you are telling your DNS provider to resolve a `hostname` instead of a fixed `IP` (which would be an `A` record). The great advantage is that the IP address behind the hostname target can change later on — without your intervention. In other words: `CNAME` routing helps us to compensate hardware failures and DDOS attacks for you, since we can move your App around.
 
 ### Naked domains
 
-There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours. 
+There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours.
 
 Naked domains should not be routed using a `CNAME` record; they should be routed using an `A`-Record. This is because of the specifications of DNS. You may want to have e-mails with your domain like `info@fortrabbit.com`, it is not possible to have with a CNAME record at the same time. Any domain routed to an IP is bound to that IP. This doesn't give us the flexibility to move your App around in case of incidents, for example with a DDoS attack.
 
-Yes, naked domains may look more pleasing to the eye, but don't take this too seriously. All big players, like Google, use a `www.` subdomain, without you noticing, and most bigger sites you'll visit do the same. 
+Yes, naked domains may look more pleasing to the eye, but don't take this too seriously. All big players, like Google, use a `www.` subdomain, without you noticing, and most bigger sites you'll visit do the same.
 
 Safari and Chrome don't even show the `www.` prefix any more in the address bar. Firefox is greying out the protocol of this so-called trivial domain.
 
-The `www.` prefix is so common, you'll hardly hardly recognize it. Is Facebook with `www.`? Is Google with `www.`? Is Wikipedia with `www.`? Yes, they all are and you don't care. It's just the best way to deal with DNS. 
+The `www.` prefix is so common, you'll hardly hardly recognize it. Is Facebook with `www.`? Is Google with `www.`? Is Wikipedia with `www.`? Yes, they all are and you don't care. It's just the best way to deal with DNS.
 
 We are providing a forwarding service, so that all requests on the naked domain will get forwarded to the `www.` domain, even deeplinks and https links. So you can still print the naked domain on flyers or in your e-mail signature.
 
-Sometimes we have heard that the move from naked to `www.` can impact SEO in a negative way. This should not be the case, if you do it properly, as all your old URLs and deeplinks should be redirected to the new ones, using a standard `301 Moved Permanently` HTTP header. 
+Sometimes we have heard that the move from naked to `www.` can impact SEO in a negative way. This should not be the case, if you do it properly, as all your old URLs and deeplinks should be redirected to the new ones, using a standard `301 Moved Permanently` HTTP header.
 
 So please, as long as the naked domain works and will forward all requests, don't worry too much. If your boss still says so, use an external DNS provider that supports CNAME flattening (sometimes called ANAME): [here is help to do that on CloudFlare](/cloudflare#toc-using-cloudflare-for-naked-domains).
 
@@ -116,20 +120,26 @@ www       CNAME      {{app-name}}.frb.io  < Only www!
 
 Optional but highly recommended: The fortrabbit domain forwarding service redirects all incoming requests on the naked domain to the `www.` version of the domain using `301 Moved Permanently` headers. It also works for deeplinks, so `http://your-domain.com/page` will be forwarded to `http://www.your-domain.com/page`. A custom SSL cert from Let's Encrypt for each naked domain will be issued, so that ALL communication can be secure (best combined with [.htaccess](/htaccess) rules on the `www.` side to force https). It needs to be set up as an `A`-record, you can not use `CNAME` on a naked domain, as that would possibly break your DNS settings (especially if you want to send e-mails). The service itself is independent from the App; it's the same IP for all Apps in one region.
 
-#### Best practice for the redirect service
+#### Recommendations for our redirect service
 
-* Use `www.domain.tld` instead of just `domain.tld` for all links to avoid unnecessary 301 round-trips on each request. This includes internal links, advertisements and ping checkers.
+* Use `www.domain.tld` instead of just `domain.tld` in all links
 
-#### Bad practices for the redirect service
+This includes internal links, advertisements and ping checkers. Doing so avoids unnecessary 301 redirects on each request and makes your website slightly faster.
 
-In general you can expect our redirect service to work. But there might be services issues only affecting the redirect service. So better don't rely on it too much. Maybe even more important, requesting a resource from the redirect service means an additional http hop and that might make your website slower. Please, when using our redirect service, do yourself the favor:
+**Pratices to avoid**
 
-* Don't configure your CMS to use the naked domain for all links (site_url)
-* Don't send external links (advertisement clicks) through the naked domain
-* Don't setup uptime checks for your naked domain
-* Better setup the redirect within CloudFlare when using this
+In general you can expect our redirect service to work. However, in case of an outage if all or your links depend on the redirect service (by pointing to the http://naked.domain/foobar instead of http://www.naked.domain/foobar), then the whole website will stop working.
 
-Please mind that all redirects on the redirect service are marked as 301 (moved permanently). That way search engines will pick up the www domain as the main domain anyways.
+Even more importantly, requesting a resource via the redirect service forces an additional http-redirect making your website function slower.
+
+Because of the above stated reasons you should;
+
+* Configure your CMS to use the www. subdomain instead of the naked domain for all links (e.g. `site_url`)
+* Send your external traffic (e.g. advertisement clicks) to the www. subdomain instead of the naked domain
+* Configure your uptime checks with A URL to the the www.domain.tld/foobar instead of domain.tld/foobar
+* Setup the redirect within CloudFlare if you are using it
+
+For SEO purposes, keep in mind that all redirects on the redirect service are marked as 301 (moved permanently). That way search engines will pick up the www. subdomain as the primary address or URL for the website.
 
 
 ### Alternative ways to use a naked domain
@@ -155,7 +165,7 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 
 #### Using a canonical tag
 
-In the cases above you forward all requests to the ONE main domain you are using. In some cases you might have two domains serving the same content. Now, search engines need to know which page is the one they should show the results for. To help the search bots, you can use a canonical tag. 
+In the cases above you forward all requests to the ONE main domain you are using. In some cases you might have two domains serving the same content. Now, search engines need to know which page is the one they should show the results for. To help the search bots, you can use a canonical tag.
 
 Let's say you have the page `fortrabbit.com` and `fort-rabbit.com` registered with your fortrabbit App. And you want both to display the same content but still keep the originally entered URL. _Actually, for this example you might want to create a redirect to the domain that matters most to you._ Now you want the search engines to prefer and link to the first domain, so you add in the head of each HTML page delivered:
 

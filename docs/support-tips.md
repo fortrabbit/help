@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-08-10
+reviewed:      2021-08-26
 title:         Path to successful support
 naviTitle:     Support tips
 lead:          "Here are some tips to how to get the answers you need from quickly."
@@ -18,36 +18,50 @@ Consider the following pattern when you have a question:
 2. Search the error logs, check Google and Stack Overflow
 3. Haven't found answer? Ask us!
 
-This is the most time-efficient way to handle being stuck, and it's the most respectful of other people's time, too. And it helps you, to get up running faster on your own.
+This is the most time-efficient way to handle being stuck, and it's the most respectful approach of other people's time.
 
-## Be specific
+## Be specific about the issue
 
-Ambiguity is the kryptonite of support. Give us timestamps, full error messages, error logs, screenshots, URLs, and any other specific information that can help to identify problems. Bad example: "Urgent. Something is wrong. Fix this ASAP!"
+Ambiguity is the kryptonite of support. Give us timestamps, full error messages, error logs, screenshots, URLs, and any other specific information that can help to identify a problem. Stick to one problem at a time, this helps reduce the noise level and confusion factor if the problem has to be handed over to another support agent.
+
+Bad example: "Urgent. Something is wrong. Fix this ASAP!"  
+Better: "At 17:00 UTC today, my app foobar shows an error: ECONNREFUSED after several seconds when I visit the URL http://foobar.com/contact-us and click the [submit] button"
 
 ## Describe your problem in technical terms
 
-Use tech language to describe your problem. Invest the time to make explain exactly what's going on. Bad example: "My site is stuck."
+Use technical language to describe your problem if you are able to do so. Put some effort into explaining exactly what's going on.
+
+Bad example: "My site is stuck."  
+Better: "When I visit mydomain.com, the browser shows an error: "Not secure" in the URL bar"
 
 ## Provide sufficient information right away
 
-Hello? You there? Hello? Somebody there? Don't expect to always get a prompt answer, describe your question in detail upfront. Take the time to outline your problem. Reduce ping-pong, provide sufficient details.
+Avoid _connection negotiation_ with a support agent. We are not always ready to initiate a chat session. Specifically, avoid introductions such as this this:
+
+- Hello, You there?
+- Hi, good day.
+- Hi, I have a question.
+- Hi, I just want to ask some questions about _topic_
+- Hey, I'm wondering if you could answer a few questions about using _technology_ on your platform
+
+We can not guarantee a prompt ansewr at all times. Describe your situation in detail upfront, ask your questions and we will do our best to answer in a timely fasion. We appreciate greatly when clients take the time to outline a problem and provide sufficient details instead of relying on a ping-pong style of conversation. We are a amall team and these chat-sessions are highly time costly for us.
 
 ## Open only one ticket per issue
 
-Please don't try to speed up things by asking the same questions multiple times. Opening multiple tickets on the same issue will only impeded our ability to provide timely support.
+Please don't try to speed up things by asking the same questions multiple times. We observe some times that in an urgent situation several people from the same company will initiate separate support cases. This is counter productive from our perspective. Opening multiple tickets on the same issue will only impede our ability to provide timely support.
 
 ## Discuss only one issue per ticket
 
-If you have a different problem than the previous one, start a new conversation. Each conversation should have one topic, ideally.
+If you have a different (new) problem than the one you set out to solve initially with a support case, then please start a new conversation. Each conversation should have one topic. This helps sharpen the focus of each conversation and makes it easier to hand over a case to 2nd level support.
 
 ## Include replication steps
 
-We almost always need to recreate the problem. Please provide us with the exact steps to replicate the issue. If we can't see it, we can't debug it.
+To solve a problem we often need to recreate the scenario. Please provide us with the exact steps to replicate the issue. If we can't see it, we can't debug it.
 
 ## Ask for clarification
 
-We are humans. Sometimes we may not always get it right. Ask for explanations when our answer doesn't make sense to you. Don't be afraid to correct us, or to ask for more details if we don't seem to understand the issue.
+We are often busy and usually recieve a lot of questions about the same or similar topics. Sometimes we asses the situation incorrectly and provide inaccurate suggestions. If you think this has happened, or if the answer does not make sense to you, ask for explanations. Don't be afraid to correct us, or provide further details if we don't seem to understand the issue.
 
 ## Ask in english
 
-That's the universal language we all speak.
+All of our support agents can speak and reply in English.
