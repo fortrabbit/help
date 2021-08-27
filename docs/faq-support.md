@@ -22,13 +22,6 @@ We will answer as soon as possible. The median response time has been around 50 
 
 Median is similar to average, see the [Wikipedia definition](https://en.wikipedia.org/wiki/Median). Sometimes we answer quickly, sometimes it can take a while.
 
-<!--
-// Middle or median? Or average?
-// What is the middle? 4 hours?
-
-It's NOT the guaranteed answer time, it's the middle.
--->
-
 ## Can you help me migration my websites over?
 
 We don't provide assisted migration from third party service, becasuse fortrabbit is a self-service aimed at developers. Unlless you have the necessary skills to deploy and maintain a website, you will need a developer to handle your website on fortrabbit. However, we are always happy to help with specific technical questions on the matter. There is also a detailed [migration guide](https://help.fortrabbit.com/migrating) which you may find useful.Doing the migration on your own helps you understanding how deployment works here.
