@@ -24,7 +24,7 @@ Median is similar to average, see the [Wikipedia definition](https://en.wikipedi
 
 ## Can you help me migration my websites over?
 
-We don't provide assisted migration from third party service, becasuse fortrabbit is a self-service aimed at developers. Unlless you have the necessary skills to deploy and maintain a website, you will need a developer to handle your website on fortrabbit. However, we are always happy to help with specific technical questions on the matter. There is also a detailed [migration guide](https://help.fortrabbit.com/migrating) which you may find useful.Doing the migration on your own helps you understanding how deployment works here.
+We don't provide assisted migration from third party service, because fortrabbit is a self-service aimed at developers. Unless you have the necessary skills to deploy and maintain a website, you will need a developer to handle your website on fortrabbit. However, we are always happy to help with specific technical questions on the matter. There is also a detailed [migration guide](https://help.fortrabbit.com/migrating) which you may find useful.Doing the migration on your own helps you understanding how deployment works here.
 
 ## What if we will have a traffic spike event?
 
@@ -32,13 +32,7 @@ We might be able to prepare that with you. Please let us know a few days in adva
 
 ## What if I have an urgent question?
 
-The scope of our support covers primarilly helping with deployment of the code and configuring your Apps. Mind that we are also monitoring our systems for general issues. The few urgent cases we do see are usually connectet to human errors when clients accidentally mess up or delete things. We have priority criteria policies, meaning that urgent and important cases will be answered first.
-
-<!--
-// pointless
-
-That doesn't happen often.
--->
+The scope of our support covers primarily helping with deployment of the code and configuring your Apps. Mind that we are also monitoring our systems for general issues. The few urgent cases we do see are usually connected to human errors when clients accidentally mess up or delete things. We have priority criteria policies, meaning that urgent and important cases will be answered first.
 
 ## What if I miss the answer?
 
@@ -50,7 +44,7 @@ Kind of. We have [Company plans](https://www.fortrabbit.com/company-plans) for e
 
 ## What other support channels do you offer?
 
-Sorry, no telephone support hotline here, but you can call our office and we will likely answer the phone. fortrabbit limits the general support to online communication. It allows us to keep the pricing down, while maintaining a feature-rich application. It also helps us gathering details and other information for effective troubleshooting. A lot of our support involves pointing to relevant help articles, we feel this is easier to do in written form. The suppot cases are often technical in nature, requiring escalation to 2nd level support. We rely on the conversasion prior to escalation to provide the basis for further troublesooting and support.
+Sorry, no telephone support hotline here, but you can call our office and we will likely answer the phone. fortrabbit limits the general support to online communication. It allows us to keep the pricing down, while maintaining a feature-rich application. It also helps us gathering details and other information for effective troubleshooting. A lot of our support involves pointing to relevant help articles, we feel this is easier to do in written form. The support cases are often technical in nature, requiring escalation to 2nd level support. We rely on the conversation prior to escalation to provide the basis for further troubleshooting and support.
 
 ## Do you offer 24/7 support?
 
