@@ -20,12 +20,12 @@ stack:         all
 ## Passwords
 
 * The password to login with the fortrabbit Dashboard must be secure.
-   * Use a password manager or a long pass-phrase.
-   * Don't share your Account password, use our collaboration features instead.
+  * Use a password manager or a long pass-phrase.
+  * Don't share your Account password, use our collaboration features instead.
 * Enable two-factor authentication (2FA) with your fortrabbit Account.
 * Use SSH key authentication to access code instead of username+password
 * Rotate internal passwords via the Dashboard for your App:
-    * MySQL database
-    * Object storage
-    * When company members leave
+  * MySQL database
+  * Object storage
+  * When company members leave
 * Go over the list of imported SSH public keys periodically and keep only those being used.
