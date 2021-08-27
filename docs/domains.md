@@ -43,8 +43,7 @@ Start the process in the fortrabbit Dashboard like so:
 
 1. Click Your App > Domains > "Add a new domain"
 2. Choose a domain name
-3. Use the provided informations to route the domain with your domain provider
-
+3. Use the provided information to route the domain with your domain provider
 
 ## Basic setup
 
@@ -65,11 +64,9 @@ For the naked domain:
 
 Save the settings with your domain provider and wait a while. The while depends on the TTL settings of the DNS records, or usually up to 24h.
 
-
 ## Routing options
 
-The world of DNS is one of its own. You want to do more than just the basics? Cool! Let's dive into it – understand the background, explore advanced and alternative settings.
-
+The world of DNS is one of its own. You want to do more than just the basics? Cool! Let's dive into it - understand the background, explore advanced and alternative settings.
 
 ### www and other subdomains
 
@@ -101,7 +98,6 @@ You could grab the IP of your App and use that as an `A`-record for your domain.
 
 In some cases you could just use `CNAME` routing for your naked domain. It's theoretically possible, but not recommended by the [DNS specs](http://www.ietf.org/rfc/rfc1035.txt), and would also break any e-mail delivery for your domain.
 
-
 ### Forwarding a naked domain to www
 
 You should still care about your naked domain, as some users might type it in directly in the browser address bar. So you usually want to forward all requests from your naked domain to your primary canonical subdomain. That's why you'll get two routing values, the main `CNAME` target (for the `www.` domain) and an additional `A`-record (for the naked domain).
@@ -127,7 +123,7 @@ Optional but highly recommended: The fortrabbit domain forwarding service redire
 * Configure your uptime checks with A URL to the the www.domain.tld/foobar
 * Setup the redirect within CloudFlare if you are using it
 
-In general you can expect our redirect service to work. However, in case of a redirect service outage if all or your links depend on it - by pointing to `http://naked.domain/foobar` instead of `http://www.naked.domain/foobarz - your whole website will stop working.
+In general you can expect our redirect service to work. However, in case of a redirect service outage if all or your links depend on it - by pointing to `http://naked.domain/foobar` instead of `http://www.naked.domain/foobarz` - your whole website will stop working.
 
 Even more importantly, requesting a resource via the redirect service forces an additional http-redirect making your website function slower.
 
@@ -145,7 +141,6 @@ In the fortrabbit Dashboard you can add a naked domain. To make this work you ne
 * [DNS made easy: ANAME records](http://help.dnsmadeeasy.com/managed-dns/records/aname-records/)
 * [Easy DNS: ANAME records](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 
-
 #### Forwarding, using your domain provider
 
 Some domain providers also support a simple HTTP redirect. Please see your domain provider's documentation. Here are some examples:
@@ -160,7 +155,7 @@ In the cases above you forward all requests to the ONE main domain you are using
 
 Let's say you have the page `fortrabbit.com` and `fort-rabbit.com` registered with your fortrabbit App. And you want both to display the same content but still keep the originally entered URL. _Actually, for this example you might want to create a redirect to the domain that matters most to you._ Now you want the search engines to prefer and link to the first domain, so you add in the head of each HTML page delivered:
 
-```
+```html
 <head>
     …
     <link rel="canonical" href="https://www.fortrabbit.com">
@@ -172,7 +167,6 @@ More on [canonical URLs on Google webmasters](https://support.google.com/webmast
 ### Using CloudFlare
 
 Please see our [CloudFlare article](/cloudflare) on how to setup and use CloudFlare together with fortrabbit.
-
 
 ### Wildcard domains
 
@@ -192,7 +186,6 @@ For security reasons we'll need to verify that you own the domain. You will need
 
 We do not provide Let's Encrypt certificates for wildcard domains. So you need to bring your own certificate. See our [HTTPS article](/https) for more.
 
-
 ## Changing the default domain
 
 Per default your App URL is the "default domain". You can change it so that links from the Dashboard and the thumbnail preview generation will use a custom domain of yours. We also use the default domain for various internal monitoring services.
@@ -203,14 +196,11 @@ To change the default domain: In the Dashboard go to your App > Domains. There c
 
 Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [HTTPS article](/https) for information on secured connections and SSL certificates.
 
-
 ## Setting a custom root path for a domain
 
 A root path is a folder in the [file system](/directories) of the App where the domain will end. Per default all domains will have the same root path. The root of your App can be set under the settings of your App — See the [root path settings topic](/app#toc-root-path).
 
-
 - - -
-
 
 ## Choosing a domain provider
 
@@ -220,11 +210,10 @@ fortrabbit is not offering direct domain registration and management. In classic
 2. Additional SSL certificate ordering
 3. Specialized in advanced DNS configurations
 4. Exotic TLD-endings
-4. General domain forwarding
-5. Support for forwards with ALIAS or ANAME records
+5. General domain forwarding
+6. Support for forwards with ALIAS or ANAME records
 
 Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separate services for domain registration and e-mail hosting.
-
 
 ## Multiple domains on one App
 
@@ -258,7 +247,6 @@ This should be preferred. You can forward one domain to another domain without a
 
 Please keep an eye on HTTPS when forwarding. HTTPS will most likely not be provided by your domain provider. In most cases this is not issue.
 
-
 ### Forwarding other domains within your App
 
 You might also do the forwarding programmatically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dashboard and then catch all the requests in the App. Here is an example, which always redirects to a domain `www.some-domain.tld`:
@@ -274,13 +262,11 @@ This example is generic. Please check your framework or CMS for plug-ins or conf
 
 So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
 
-
 ## Quirks
 
 ### Domain limit
 
 Please mind that there is a limit of 100 domains per App. In many cases you can use a wildcard instead.
-
 
 ### No DNS settings for the App URL
 
@@ -289,4 +275,3 @@ When setting up an App we'll provide an App URL - see [App help](/app#toc-app-ur
 ## Troubleshooting
 
 Please see our [DNS troubleshooting guide](/).
-
