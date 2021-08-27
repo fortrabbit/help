@@ -36,7 +36,7 @@ Use technical language to describe your problem if you are able to do so. Put so
 
 ## Provide sufficient information right away
 
-Avoid _connection negotiation_ with a support agent. We are not always ready to initiate a chat session.
+Avoid trying to "negotiate a connection" with a support agent. We are not always ready to participate in a chat session.
 
 Specifically, avoid introductions such as this this:
 
