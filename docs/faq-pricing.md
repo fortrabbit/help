@@ -54,14 +54,7 @@ With Universal Apps there is a limitation in that the Apps can not be scaled dow
 
 ## How do you bill?
 
-At the end of each month we send an invoice the usage of that month. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component.
-
-<!--
-// This is not a place to market/promote the nature of our billing mode, imho.
-// Anyway, the below is not how we bill. It's something else, not quite sure what.
-
-You pay as you grow.
--->
+At the end of each month we send an invoice the usage of that month. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component. See our [billing article](/billing) for more.
 
 ## What's the tinkering level?
 
@@ -69,14 +62,7 @@ Use for development, testing, playing, experiments, staging, feature branches, h
 
 ## What's the production level?
 
-Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns and so on. [99.9% Uptime guarantee](https://www.fortrabbit.com/sla).
-
-<!--
-
-The 99.9 link needs some text, like, "this plan is covered by"
-It looks out of place otherwise, which is why I removed it from the section above.
-
--->
+Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns and so on. This level is covered by 99.9% Uptime guarantee - [see our SLA](https://www.fortrabbit.com/sla).
 
 ## What about taxes?
 
