@@ -68,34 +68,10 @@ Use for professional work, commercial projects, mission critical Apps, live site
 
 The fortrabbit service is targeted at professional B2B clients. Prices are net and subject to statutory VAT and may be added. Please also see our [billing page](/billing).
 
-<!--
-// To my understanding Net prices already include Tax. I find the sentence above confusing.
-
-From the web: Net price is the value at which a product or service is sold after all taxes and other costs are added and all discounts subtracted.
--->
-
-<!--
-// why do you want to alienate private users?
-
-, for entrepreneurs only
-
-«The fortrabbit service is targeted at professional B2B users»
-// In a way that contradicts a lot of what I have heard internally over the last couple of years.
-// I need some clarification on this point / position
--->
-
 ## What about support?
 
-Our Dashboard is a powerful tool and we think it is mostly self-explanatory. We provide additional [documentation](/) documentation about our services and related topics. On top of that, we have [company plans](https://www.fortrabbit.com/company-plans) which provide enhanced collaboration features and better support. You may want to read our [support FAQ](/faq-support) as well.
+Our Dashboard is a powerful tool and we think it is mostly self-explanatory. We provide additional [documentation](/) documentation about our services and related topics. On top of that, we have [company plans](https://www.fortrabbit.com/company-plans) which provide enhanced collaboration features and more hands-on support. You may want to read our [support FAQ](/faq-support) as well.
 
-<!--
-// This sounds like a baseless opinion;
-Most of our clients prefer self-service.
-
-// I don't like this formulation because it seems arrogant.
-... documentation is actually helpful
--->
-
-## My question is not listed here!
+## My question is not listed here
 
 You can search our [help pages](/) and of course we would like to hear it directly, just open a chat message (bottom right corner) or [mail us](mailto:sales@fortrabbit.com).
