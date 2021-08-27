@@ -95,8 +95,7 @@ Sometimes we have heard that the move from naked to `www.` can impact SEO in a n
 
 So please, as long as the naked domain works and will forward all requests, don't worry too much. If your boss still says so, use an external DNS provider that supports CNAME flattening (sometimes called ANAME): [here is help to do that on CloudFlare](/cloudflare#toc-using-cloudflare-for-naked-domains).
 
-
-#### Don'ts
+#### Practices to avoid for naked domains
 
 You could grab the IP of your App and use that as an `A`-record for your domain. It's technically possible, but then your App will be offline once we move it to a another Node (which changes the IP address).
 
@@ -123,24 +122,16 @@ Optional but highly recommended: The fortrabbit domain forwarding service redire
 #### Recommendations for our redirect service
 
 * Use `www.domain.tld` instead of just `domain.tld` in all links
+* Configure your CMS to use the www. subdomain for all links (e.g. `site_url`)
+* Send your external traffic (e.g. advertisement clicks) to the www. domain
+* Configure your uptime checks with A URL to the the www.domain.tld/foobar
+* Setup the redirect within CloudFlare if you are using it
 
-This includes internal links, advertisements and ping checkers. Doing so avoids unnecessary 301 redirects on each request and makes your website slightly faster.
-
-**Pratices to avoid**
-
-In general you can expect our redirect service to work. However, in case of an outage if all or your links depend on the redirect service (by pointing to the http://naked.domain/foobar instead of http://www.naked.domain/foobar), then the whole website will stop working.
+In general you can expect our redirect service to work. However, in case of a redirect service outage if all or your links depend on it - by pointing to `http://naked.domain/foobar` instead of `http://www.naked.domain/foobarz - your whole website will stop working.
 
 Even more importantly, requesting a resource via the redirect service forces an additional http-redirect making your website function slower.
 
-Because of the above stated reasons you should;
-
-* Configure your CMS to use the www. subdomain instead of the naked domain for all links (e.g. `site_url`)
-* Send your external traffic (e.g. advertisement clicks) to the www. subdomain instead of the naked domain
-* Configure your uptime checks with A URL to the the www.domain.tld/foobar instead of domain.tld/foobar
-* Setup the redirect within CloudFlare if you are using it
-
 For SEO purposes, keep in mind that all redirects on the redirect service are marked as 301 (moved permanently). That way search engines will pick up the www. subdomain as the primary address or URL for the website.
-
 
 ### Alternative ways to use a naked domain
 
