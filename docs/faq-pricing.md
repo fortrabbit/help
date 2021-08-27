@@ -48,10 +48,9 @@ Yes, you can quit your Account completely with immediate effect at any time dire
 
 ## Can I scale my App at any time?
 
-You can scale Pro-Stack component up and down at any time. However, the change is not instentaneous and depending or currently available resources it may take a few minutes to provision the necessary hardware resources before the change becomes effective.
+You can scale Pro-Stack component up and down at any time. However, the change is not instantaneous and depending or currently available resources it may take a few minutes to provision the necessary hardware resources before the change becomes effective.
 
-With universal Apps there is a limitation in that the Apps can not be scaled down to a lower tier.
-<!-- Universal apps can not be scaled -->
+With Universal Apps there is a limitation in that the Apps can not be scaled down to a lower tier.
 
 ## How do you bill?
 
