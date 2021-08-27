@@ -17,11 +17,6 @@ stack:         all
 * Best practice for security and portability is to store secrets like database password not with code but with our App Secrets or ENV vars (as long as they are not exposed as well).
 * Don't store sensitive information in plain text in the database, use ciphertext.
 
-<!--
-* It's good practice to perform a security check against the most common attack vectors before going live.
-
-what does this mean in practical terms? I honestly don't know. Provide concrete tips or remove this fluff-->
-
 ## Passwords
 
 * The password to login with the fortrabbit Dashboard must be secure.
