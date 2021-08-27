@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-08-26
+reviewed:      2021-08-27
 title:         Path to successful support
 naviTitle:     Support tips
 lead:          "Here are some tips to how to get the answers you need from quickly."
@@ -24,27 +24,30 @@ This is the most time-efficient way to handle being stuck, and it's the most res
 
 Ambiguity is the kryptonite of support. Give us timestamps, full error messages, error logs, screenshots, URLs, and any other specific information that can help to identify a problem. Stick to one problem at a time, this helps reduce the noise level and confusion factor if the problem has to be handed over to another support agent.
 
-Bad example: "Urgent. Something is wrong. Fix this ASAP!"  
-Better: "At 17:00 UTC today, my app foobar shows an error: ECONNREFUSED after several seconds when I visit the URL http://foobar.com/contact-us and click the [submit] button"
+* Bad: _"Urgent. Something is wrong. Fix this ASAP!"_
+* Better: _"At 17:00 UTC today, my app foobar shows an error: ECONNREFUSED after several seconds when I visit the URL http://foobar.com/contact-us and click the 'submit' button"_
 
 ## Describe your problem in technical terms
 
 Use technical language to describe your problem if you are able to do so. Put some effort into explaining exactly what's going on.
 
-Bad example: "My site is stuck."  
-Better: "When I visit mydomain.com, the browser shows an error: "Not secure" in the URL bar"
+* Bad: _"My site is stuck."_
+* Better: _"When I visit mydomain.com, the browser shows an error: "Not secure" in the URL bar"_
 
 ## Provide sufficient information right away
 
-Avoid _connection negotiation_ with a support agent. We are not always ready to initiate a chat session. Specifically, avoid introductions such as this this:
+Avoid _connection negotiation_ with a support agent. We are not always ready to initiate a chat session.
 
-- Hello, You there?
-- Hi, good day.
-- Hi, I have a question.
-- Hi, I just want to ask some questions about _topic_
-- Hey, I'm wondering if you could answer a few questions about using _technology_ on your platform
+Specifically, avoid introductions such as this this:
 
-We can not guarantee a prompt ansewr at all times. Describe your situation in detail upfront, ask your questions and we will do our best to answer in a timely fasion. We appreciate greatly when clients take the time to outline a problem and provide sufficient details instead of relying on a ping-pong style of conversation. We are a amall team and these chat-sessions are highly time costly for us.
+- _"Hello, You there?"_
+- _"Hello, how are you doing?"_
+- _"Hi, good day."_
+- _"Hi, I have a question."_ - then no question asked
+- _"Hi, I just want to ask some questions about TOPIC"_ - no question asked
+- _"Hey, I'm wondering if you could answer a few questions about using TECH on your platform"_ - no question asked
+
+We can not guarantee a prompt answer at all times. Describe your situation in detail upfront, ask your questions and we will do our best to answer in a timely fashion. We appreciate greatly when clients take the time to outline a problem and provide sufficient details instead of relying on a ping-pong style of conversation. We are a small team and these chat-sessions are highly time costly for us.
 
 ## Open only one ticket per issue
 
@@ -60,7 +63,7 @@ To solve a problem we often need to recreate the scenario. Please provide us wit
 
 ## Ask for clarification
 
-We are often busy and usually recieve a lot of questions about the same or similar topics. Sometimes we asses the situation incorrectly and provide inaccurate suggestions. If you think this has happened, or if the answer does not make sense to you, ask for explanations. Don't be afraid to correct us, or provide further details if we don't seem to understand the issue.
+We are often busy and usually receive a lot of questions about the same or similar topics. Sometimes we asses the situation incorrectly and provide inaccurate suggestions. If you think this has happened, or if the answer does not make sense to you, ask for explanations. Don't be afraid to correct us, or provide further details if we don't seem to understand the issue.
 
 ## Ask in english
 
