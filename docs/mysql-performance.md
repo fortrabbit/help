@@ -9,7 +9,7 @@ lead:          'This article guides to identifying common performance issues wit
 group:         tips
 stack:         all
 dontList:      false
-wip:           true
+workInProgress: true
 
 ---
 
