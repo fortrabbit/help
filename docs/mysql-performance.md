@@ -1,14 +1,15 @@
 ---
 
 template:      article
-reviewed:      2021-08-25
+reviewed:      2021-08-30
 title:         MySQL performance tips
 naviTitle:     MySQL performance tips
 excerpt:       Some tips for a better MySQL performance.
 lead:          'This article guides to identifying common performance issues with your MySQL database on fortrabbit.'
 group:         tips
 stack:         all
-dontList:      true
+dontList:      false
+wip:           true
 
 ---
 
