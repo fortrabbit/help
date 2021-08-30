@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-08-07
+reviewed:      2021-08-27
 title:         Frequently asked questions on pricing
 naviTitle:     FAQ pricing
 lead:          "Here are are some common questions and answers on our pricing and billing."
@@ -12,7 +12,7 @@ stack:         all
 
 ## What's included in the price?
 
-No configuration required. Apps are instant and come ready to use with a private Git repo, Composer integration, an App URL, ephemeral storage, traffic, collaboration features, App Secrets and more.
+Apps are created instantly and come ready to use with a private Git repo, Composer integration, an App URL, ephemeral or permanent storage, traffic, collaboration features, App Secrets and more.
 
 ## Which plan is right for me?
 
@@ -32,11 +32,11 @@ One App shall host one website. Each App comes with a dedicated App URL, dedicat
 
 ## What's a Component?
 
-A Component is an individually scalable service (PHP, MySQL, Memcache …). Each App can have multiple Components at different scaling states. Presets are common combinations of Components.
+A Component is an individually scalable service (PHP, MySQL, Memcache, Workers). Each App can have multiple Components at different scaling tiers. Presets are common combinations of Components.
 
 ## What's a Node?
 
-A Node is a virtual machine that is optimized for a certain Component (PHP, MySQL …). Apps are running distributed across multiple Nodes. Node resources are shared: the higher the Components scaling plan, the less Apps are hosted on a single Node.
+A Node is a virtual machine that is optimized for a certain Component (PHP, MySQL, Memcache, Workers). Apps are running distributed across multiple Nodes. Node resources are shared: the higher the Components scaling plan, the fewer Apps are hosted on a single Node.
 
 ## What about data center locations?
 
@@ -44,28 +44,34 @@ You can currently choose between US1, Virginia (USA) and EU1, Dublin (Ireland) a
 
 ## Can I cancel at any time?
 
-Yes, you can quit your Account completely with immediate effect at any time directly from the Dashboard or scale down components or delete Apps.
+Yes, you can quit your Account completely with immediate effect at any time directly from the Dashboard.
+
+## Can I scale my App at any time?
+
+You can scale Pro-Stack component up and down at any time. However, the change is not instantaneous and depending or currently available resources it may take a few minutes to provision the necessary hardware resources before the change becomes effective.
+
+With Universal Apps there is a limitation in that the Apps can not be scaled down to a lower tier.
 
 ## How do you bill?
 
-You pay as you grow. At the end of each month, we'll bill for the monthly usage. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component.
+At the end of each month we send an invoice the usage of that month. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component. See our [billing article](/billing) for more.
 
 ## What's the tinkering level?
 
-Use for development, testing, playing, experiments, staging, feature branches, hot fixes, pet projects, weekend hacks, student work, personal blogs, low traffic websites … [99% Uptime guarantee](https://www.fortrabbit.com/sla)).
+Use for development, testing, playing, experiments, staging, feature branches, hot fixes, pet projects, weekend hacks, student work, personal blogs, low traffic websites and so on.
 
 ## What's the production level?
 
-Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns … [99.9% Uptime guarantee](https://www.fortrabbit.com/sla).
+Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns and so on. This level is covered by 99.9% Uptime guarantee - [see our SLA](https://www.fortrabbit.com/sla).
 
 ## What about taxes?
 
-The fortrabbit service is professional B2B hosting, for entrepreneurs only. Prices are net and subject to statutory VAT and may be added. Please also see our [billing page](/billing).
+The fortrabbit service is targeted at professional B2B clients. Prices are net and subject to statutory VAT and may be added. Please also see our [billing page](/billing).
 
 ## What about support?
 
-Most of our clients prefer self-service. The Dashboard is powerful and self-explaining. The additional [documentation](/) is actually helpful. On top of that we offer [affordable professional support](https://www.fortrabbit.com/company-plans). Also see our [support FAQ](/faq-support)
+Our Dashboard is a powerful tool and we think it is mostly self-explanatory. We provide additional [documentation](/) documentation about our services and related topics. On top of that, we have [company plans](https://www.fortrabbit.com/company-plans) which provide enhanced collaboration features and more hands-on support. You may want to read our [support FAQ](/faq-support) as well.
 
-## My question is not listed here!
+## My question is not listed here
 
 You can search our [help pages](/) and of course we would like to hear it directly, just open a chat message (bottom right corner) or [mail us](mailto:sales@fortrabbit.com).
