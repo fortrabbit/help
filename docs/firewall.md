@@ -6,7 +6,7 @@ title:         Firewalling
 naviTitle:     Firewalling
 excerpt:       What you may want to know about making outgoing requests and our blocklist.
 lead:          Having trouble making outgoing requests from your App? That's maybe because we block most non-standard ports. You can ask us to get yours openned.
-group:         troubleshooting
+group:         tips
 stack:         all
 dontList:      false
 

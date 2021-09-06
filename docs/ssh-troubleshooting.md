@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2021-03-21
-naviTitle:     SSH troubleshooting
+naviTitle:     SSH access
 title:         SSH troubleshooting
 excerpt:       What you may want to know to debug SSH connection issues
 lead:          'This article aims to help you finding common issues establishing an SSH connection on fortrabbit.'

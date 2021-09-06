@@ -3,7 +3,7 @@
 template:      article
 reviewed:      2020-10-29
 title:         Git troubleshooting
-naviTitle:     Git troubleshooting
+naviTitle:     Git
 excerpt:       What you may want to know to debug Git issues
 lead:          'This article aims to help you finding common issues when deploying with Git on fortrabbit.'
 group:         troubleshooting

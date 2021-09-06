@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2021-03-19
-naviTitle:     SFTP troubleshooting
-title:         SFTP troubleshooting
+naviTitle:     SFTP access
+title:         SFTP access troubleshooting
 excerpt:       What you may want to know to debug SFTP issues
 lead:          'This article helps solving common issues when trying to connect by SFTP to on a Universal App hosted on fortrabbit.'
 group:         troubleshooting
