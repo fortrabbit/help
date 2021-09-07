@@ -4,7 +4,7 @@ template:      article
 reviewed:      2021-08-27
 title:         Path to successful support
 naviTitle:     Support tips
-lead:          "Here are some tips to how to get the answers you need from quickly."
+lead:          "Here are some tips to how to get the answers you need quickly."
 group:         tips
 stack:         all
 
@@ -14,9 +14,9 @@ stack:         all
 
 Consider the following pattern when you have a question:
 
-1. Read our documentation
+1. Search and read our documentation here
 2. Search the error logs, check Google and Stack Overflow
-3. Haven't found answer? Ask us!
+3. Haven't found answer? Ask us and provide all the details
 
 This is the most time-efficient way to handle being stuck, and it's the most respectful approach of other people's time.
 
