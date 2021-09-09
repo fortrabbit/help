@@ -20,20 +20,6 @@ Consider the following pattern when you have a question:
 
 This is the most time-efficient way to handle being stuck, and it's the most respectful approach of other people's time.
 
-## Be specific about the issue
-
-Ambiguity is the kryptonite of support. Give us timestamps, full error messages, error logs, screenshots, URLs, and any other specific information that can help to identify a problem. Stick to one problem at a time, this helps reduce the noise level and confusion factor if the problem has to be handed over to another support agent.
-
-* Bad: _"Urgent. Something is wrong. Fix this ASAP!"_
-* Better: _"At 17:00 UTC today, my app foobar shows an error: ECONNREFUSED after several seconds when I visit the URL http://foobar.com/contact-us and click the 'submit' button"_
-
-## Describe your problem in technical terms
-
-Use technical language to describe your problem if you are able to do so. Put some effort into explaining exactly what's going on.
-
-* Bad: _"My site is stuck."_
-* Better: _"When I visit mydomain.com, the browser shows an error: "Not secure" in the URL bar"_
-
 ## Provide sufficient information right away
 
 Avoid trying to "negotiate a connection" with a support agent. We are not always ready to participate in a chat session.
@@ -48,6 +34,24 @@ Specifically, avoid introductions such as this this:
 - _"Hey, I'm wondering if you could answer a few questions about using TECH on your platform"_ - no question asked
 
 We can not guarantee a prompt answer at all times. Describe your situation in detail upfront, ask your questions and we will do our best to answer in a timely fashion. We appreciate greatly when clients take the time to outline a problem and provide sufficient details instead of relying on a ping-pong style of conversation. We are a small team and these chat-sessions are highly time costly for us.
+
+## Be specific about the issue
+
+Ambiguity is the kryptonite of support. Give us timestamps, full error messages, error logs, screenshots, URLs, and any other specific information that can help to identify a problem. Stick to one problem at a time, this helps reduce the noise level and confusion factor if the problem has to be handed over to another support agent.
+
+* Bad: _"Urgent. Something is wrong. Fix this ASAP!"_
+* Better: _"At 17:00 UTC today, my app foobar shows an error: ECONNREFUSED after several seconds when I visit the URL http://foobar.com/contact-us and click the 'submit' button"_
+
+## Describe your problem in technical terms
+
+Use technical language to describe your problem if you are able to do so. Put some effort into explaining exactly what's going on.
+
+* Bad: _"My site is stuck."_
+* Better: _"When I visit mydomain.com, the browser shows an error: "Not secure" in the URL bar"_
+
+## Provide context
+
+We don't know your website or web application. Please provide us with the context required to understand your question. Describe your goals.
 
 ## Open only one ticket per issue
 
