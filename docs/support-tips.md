@@ -53,11 +53,11 @@ Use technical language to describe your problem if you are able to do so. Put so
 
 We don't know your website or web application. Please provide us with the context required to understand your question. Describe your goals.
 
-## Open only one ticket per issue
+## Open only one support ticket per issue
 
 Please don't try to speed up things by asking the same questions multiple times. We observe some times that in an urgent situation several people from the same company will initiate separate support cases. This is counter productive from our perspective. Opening multiple tickets on the same issue will only impede our ability to provide timely support.
 
-## Discuss only one issue per ticket
+## Discuss only one issue per support ticket
 
 If you have a different (new) problem than the one you set out to solve initially with a support case, then please start a new conversation. Each conversation should have one topic. This helps sharpen the focus of each conversation and makes it easier to hand over a case to 2nd level support.
 
