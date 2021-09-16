@@ -119,9 +119,9 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com du -sh
 # You can run the command also when being logged in by SSH
 ```
 
-### Review files
+### Review files on the web storage for clutter
 
-Login by SSH or SFTP to review your files on your App. In most cases the web storage over-usage is not caused by real world requirements but by misconfiguration. Common issues and unnecessary files filling up space:
+Login by SSH or SFTP to review your files on your App. In most cases the web storage over-usage is not caused by real world requirements but by misconfiguration. Look out for common issues and unnecessary files filling up space:
 
 - Verbose custom log files
 - Not required template fragments
