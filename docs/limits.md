@@ -112,24 +112,31 @@ The MySQL storage limit is critical. When exceeding this, multiple things can ha
 
 ### Use the disk usage command to get the actual usage
 
-This Terminal command will list you the current size of the `htdocs` folder of your App:
+The `du` Terminal command will list you the current size of the `htdocs` folder of your App:
 
 ```bash
-ssh {{ssh-user}}@deploy.[{{region}}]].frbit.com du -smc .
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com du -sh
+# You can also use on the App and for specific folders
+# You can run the command also when being logged in by SSH
 ```
-
-You can also use on the App and for specific folders.
 
 ### Review files
 
-Login by SSH or SFTP to review your files on your App. In most cases the web storage over-usage is not caused by requirements but by misconfiguration. Common issues:
+Login by SSH or SFTP to review your files on your App. In most cases the web storage over-usage is not caused by real world requirements but by misconfiguration. Common issues and unnecessary files filling up space:
 
-- Misconfigured caching to write template fragments on disk that will never be used - 
-- Unnecessary
+- Verbose custom log files
+- Not required template fragments
+- Custom backups on disk by some CMS plugin
+- Large and/or duplicate uploads by CMS editors
+- Other general temporary files
 
-Maybe there are custom temp files, custom logs or other unused resources you can safely delete. Maybe you have a WordPress backup plugin enabled filling up the web storage? Turn it off. 
+### How to clean up web space
 
-Contact us if you are unsure what to do.
+- Make sure to have a fresh local backup first
+- Delete files by SSH or SFTP
+- Check and correct the config of your CMS or framework to make sure this will not happen again:
+  - Turn off unnecessary plugins
+  - Turn off verbose logging (the fortrabbit environment should be production)
 
 ## Object Storage
 
