@@ -140,7 +140,7 @@ Login by SSH or SFTP to review your files on your App. In most cases the web sto
   - Turn off unnecessary backup plugins
   - Turn off verbose logging (fortrabbit should be production)
 
-Especially the backup plugins and settings can be become problematic. Please mind that a backup plugin will not only use disk storage but also CPU power while creating the backups which might reduce web delivery performance. Also mind that such backups are onsite. That means, when your App is not accessible in a case of emergency, your backups will be neither. A solid offsite backup solution is included with some Universal App plans - [see our backups article](/backups)
+Especially the backup plugins and settings can be become problematic. Please mind that a backup plugin will not only use disk storage but also CPU power while creating the backups which might reduce web delivery performance. Also mind that such backups are onsite. That means, when your App is not accessible in a case of emergency, your backups will be neither. A solid offsite backup solution is included with some Universal App plans - [see our backups article](/backups). When backups are booked here, your local backups will also be backed up - backups of backups.
 
 ## Object Storage
 
