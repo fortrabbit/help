@@ -133,9 +133,14 @@ Login by SSH or SFTP to review your files on your App. In most cases the web sto
 
 - Make sure to have a fresh local backup first
 - Delete files by SSH or SFTP
-- Check and correct the config of your CMS or framework to make sure this will not happen again:
-  - Turn off unnecessary plugins
-  - Turn off verbose logging (the fortrabbit environment should be production)
+
+### How to prevent your website to fill up web storage again
+
+- Check and correct CMS or framework config, in particular:
+  - Turn off unnecessary backup plugins
+  - Turn off verbose logging (fortrabbit should be production)
+
+Especially the backup plugins and settings can be become problematic. Please mind that a backup plugin will not only use disk storage but also CPU power while creating the backups which might reduce web delivery performance. Also mind that such backups are onsite. That means, when your App is not accessible in a case of emergency, your backups will be neither. A solid offsite backup solution is included with some Universal App plans - [see our backups article](/backups)
 
 ## Object Storage
 
