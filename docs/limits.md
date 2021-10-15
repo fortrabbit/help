@@ -117,6 +117,10 @@ The `du` Terminal command will list you the current size of the `htdocs` folder 
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com du -sh
 # You can also use on the App and for specific folders
 # You can run the command also when being logged in by SSH
+
+# When logged in to an App by SSH
+# see file sizes in the current dir:
+$ du -h -d1
 ```
 
 ### Review files on the web storage for clutter
