@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2020-10-30
+reviewed:      2021-10-23
 title:         All about MySQL
 naviTitle:     MySQL
-lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
+lead:          How to access & configure the common database on fortrabbit.
 group:         platform
 proGroup:      Components
 
@@ -28,6 +28,9 @@ keywords:
 
 ---
 
+
+
+PHP + MySQL is a classic.
 
 ## Obtain the MySQL password
 
