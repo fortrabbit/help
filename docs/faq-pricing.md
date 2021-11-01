@@ -62,7 +62,7 @@ Use for development, testing, playing, experiments, staging, feature branches, h
 
 ## What's the production level?
 
-Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns and so on. This level is covered by 99.9% Uptime guarantee - [see our SLA](https://www.fortrabbit.com/sla).
+Use for professional work, commercial projects, mission critical Apps, live sites, high traffic campaigns and so on. This level is covered by 99.9% Uptime guarantee - [see our SLA](https://www.fortrabbit.com/uptime).
 
 ## What about taxes?
 
