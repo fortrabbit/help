@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-30
+reviewed:      2021-12-07
 title:         Troubleshoot 403 errors
 naviTitle:     403 errors
 excerpt:       Some tips on troubleshooting 403 errors.
@@ -40,6 +40,9 @@ Sometimes 403 errors are caused by wrong file permissions. This can happen when 
 
 <!-- Duplicate with Craft CMS: Upload SFTP, maybe remove the other one -->
 
+## Missing `index.php` or `index.html` file
+
+Sometimes people forget to upload an index file. The web server will look for that. When it's not present, it can nto deliver anything. Check your directory if either an `index.php` or `index.html` file is present.
 
 ### Missing http-auth credentials
 
