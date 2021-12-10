@@ -12,7 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.6
+version:          3.7
 uniLink:          craft-3-assets-uni
 supportLevel:     a
 

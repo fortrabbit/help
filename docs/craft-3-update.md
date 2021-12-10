@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-25
+reviewed:         2021-12-10
 title:            Update Craft CMS
 naviTitle:        Update Craft
 lead:             We recommend to always use the latest version of all software for security reasons. Mind that you are responsible for the software you write yourself and use. Here are some strategies to best keep Craft CMS up-to-date.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.6
+version:          3.7
 supportLevel:     a
 
 keywords:

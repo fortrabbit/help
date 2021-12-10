@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-09-24
+reviewed:         2021-12-10
 title:            Install Laravel 8
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 8 on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-black-new.svg
-version:          8.6.0
+version:          8.x
 stack:            all
 supportLevel:     a
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-06-03
+reviewed:         2021-12-10
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.6
+version:          3.7
 supportLevel:     a
 
 

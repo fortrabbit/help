@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-03-27
+reviewed:         2021-12-10
 title:            Install Symfony 5
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 5 on fortrabbit.
@@ -27,7 +27,6 @@ otherVersions:
 
 We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you are using Symfony 4, you can safely follow this guide, given Symfony 5 did not break compatibility changes.
 
-
 ### Root path
 
 If you did not choose Symfony when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
@@ -35,7 +34,6 @@ If you did not choose Symfony when creating the App in the Dashboard at first, p
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
-
 
 ### ENV vars
 
@@ -53,7 +51,6 @@ Within the Dashboard under your App settings you can modify the ENV vars. Modify
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
-
 
 ## Quick start
 
@@ -92,11 +89,9 @@ $ git push
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-
 ## MySQL
 
 Until now you just deployed some code. If you want to use doctrine and Mysql it requires some more tinkering to make it yours.
-
 
 ### Configuration
 
@@ -109,7 +104,6 @@ doctrine:
         url: '%env(DATABASE_URL)%'
 
 ```
-
 
 ### Doctrine & symfony console
 
@@ -136,14 +130,12 @@ You can also add this migrate command to your `composer.json` to have it run aut
 
 With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
-
 ## Deploying compiled JS & CSS
 
 There currently is no possibility to use Node.js with our services. The build process to compile JS and CSS needs to run locally - whether with [Encore](https://symfony.com/doc/current/frontend/encore/installation.html), [Webpack](https://www.npmjs.com/package/webpack), [Gulp](https://www.npmjs.com/package/gulp), [Grunt](https://www.npmjs.com/package/grunt), or the solution of your choice).
 
 Compiled assets should not be under version control. So, instead of committing the build files to Git, you deploy them separately. 
 Given the way our stacks are designed (Universal having persistent storage and Professional allowing horizontal scaling), deploying your assets will be done differently.
-
 
 ### Deploying compiled assets for Universal Apps
 
@@ -154,16 +146,13 @@ To deploy your compiled assets to your app, when using Universal Stack, you can 
 $ rsync -av ./public/build/ {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/
 ```
 
-
 ### Deploying compiled assets for Professional Apps
 
 These is no persistent storage with the Professional Stack.  We provide the Object Storage for this, see the [main article](/object-storage) on how to access.
 
-
 ## Advanced configurations
 
 Still reading? Let's go on:
-
 
 ### Logging
 
@@ -179,13 +168,11 @@ monolog:
             # ..
 ```
 
-
 ### Sending emails
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `Swiftmailer`.
 Symfony provides a Mailer component that makes things easy. To configure the way your emails are sent, mind setting a `MAILER_DSN` environment variable.
 More on this in the [official documentation](https://symfony.com/doc/current/mailer.html).
-
 
 ### Cache
 

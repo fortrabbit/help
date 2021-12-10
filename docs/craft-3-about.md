@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-20
+reviewed:         2021-12-10
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
 order:            1
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.6
+version:          3.7
 supportLevel:     a
 
 keywords:
