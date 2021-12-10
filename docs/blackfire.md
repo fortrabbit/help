@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-04-14
+reviewed:         2021-12-10
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
 stack:            all
