@@ -29,7 +29,7 @@ keywords:
 
 ## About Blackfire
 
-Blackfire empowers all developers and IT/Ops to continuously verify and improve their app’s performance, throughout its life cycle - by getting the right information at the right moment. Blackfire enables to write performance tests that can be run along your standard test suite. It also provides recommendations to help you improve the performance of your application.
+Blackfire empowers all developers and IT/Ops to continuously verify and improve their app's performance, throughout its life cycle - by getting the right information at the right moment. Blackfire enables to write performance tests that can be run along your standard test suite. It also provides recommendations to help you improve the performance of your application.
 
 Using Blackfire in production will gain even better insights, once your App will receive traffic. Knowing about the performance of your code will make you a better developer and you will also likely be able to reduce hosting costs here by refactoring your code for a better performance. 
 
