@@ -15,6 +15,7 @@ version:          1.4.3
 stack:            pro
 uniLink:          install-grav-1-uni
 supportLevel:     b
+deprecated:       1
 
 ---
 
@@ -30,7 +31,6 @@ For best results here, make sure you have completed all steps from the [get read
 ### Download
 
 First **[download](http://getgrav.org/downloads)** and unpack the latest Grav locally (Grav core, not with Admin). It unpacks in the subfolder `grav`.
-
 
 ### Configure for Composer
 
@@ -108,7 +108,6 @@ $ git push
 ```
 
 Done.
-
 
 ### Grav Admin VS ephemeral storage
 

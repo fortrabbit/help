@@ -35,7 +35,6 @@ When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.fr
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Grav installation_
 * [{{app-name}}.frb.io/admin](https://{{app-name}}.frb.io/admin) _< Grav admin_
 
-
 ## Advanced setup and migration
 
 **Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Grav installation or if you would like to setup Grav so that you can run in a local development environment as well as in your fortrabbit App:
