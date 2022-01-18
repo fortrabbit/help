@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-12-10
+reviewed:         2022-01-18
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -309,7 +309,6 @@ return [
 ]; 
 ```
 
-
 ## Cache and sessions on the Pro Stack
 
 On the [Pro Stack](/app-pro) in multi Node environments (see [terminology](/terminology)) you can not rely on the file based cache or session storage. Store this data in Memcache (a key-value storage tool) which is accessible from all Nodes instead - also see our [Memcache article](/memcache-pro). We have developed a custom extension for using Memcache. With that no further configuration is required: you just need to pull it in to your `composer.json` like so:
@@ -318,16 +317,13 @@ On the [Pro Stack](/app-pro) in multi Node environments (see [terminology](/term
 $ composer require fortrabbit/yii-memcached
 ```
 
-
 ## Performance
 
 When you experience a slow site, but no errors, often the database is the bottle neck. The [Craft Debug Tool­bar](https://nystudio107.com/blog/profiling-your-website-with-craft-cms-3s-debug-toolbar) provides useful information about which queries you run and how long it takes to execute them. Rule of thumb: if you run more 50 queries you should do something about it.
 
-
 ### Twig cache tag
 
-Craft's `{% cache %}` tag is a good thing to prevent execution of expensive queries over and over again, however it's **very important** to use it wisely. Make sure to use a specific cache key, otherwise you risk filling up your database with thousands of rows. Andew Welch explains it [in this blog post](https://nystudio107.com/blog/the-craft-cache-tag-in-depth) in detail.
-
+Craft's `{% cache %}` tag is a good thing to prevent execution of expensive queries over and over again, however it's **very important** to use it wisely. Make sure to use a specific cache key, otherwise you risk filling up the disk (causing IO problems) or Memcache (or the database for older versions of Craft).
 
 ### Cache plugins
 
