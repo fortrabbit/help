@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2021-06-03
+reviewed:     2022-01-20
 title:        Worker
 naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.
@@ -11,11 +11,6 @@ uniLink:      cron-job-uni
 
 ---
 
-<!--
-
-TODO: say something about message queuing ??
-
--->
 
 ## Problem
 
@@ -141,7 +136,7 @@ First comes the formatted time ([RFC 3339](https://tools.ietf.org/html/rfc3339))
 
 ## Restart job after code update
 
-This happens automatically. Whenever you push a new code update via Git all Nonstop and Cron Jobs will be shutdown and started anew.
+This happens automatically. Whenever you push a new code update via Git Nonstop Jobs will be shutdown and started anew. Cron Jobs will pick up the new code with the next scheduled cycle.
 
 
 ### Job statistics
