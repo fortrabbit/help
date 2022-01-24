@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2021-12-10
-title:            Install Symfony 5
+reviewed:         2022-01-24
+title:            Install Symfony 6
 naviTitle:        Symfony
-lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 5 on fortrabbit.
+lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 6 on fortrabbit.
 
 group:            Install_guides
 stack:            all
@@ -13,7 +13,7 @@ websiteLink:      https://symfony.com
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          "5 & 4"
+version:          "6/5/4"
 supportLevel:     a
 
 otherVersions:
@@ -25,7 +25,7 @@ otherVersions:
 
 ## Get ready
 
-We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you are using Symfony 4, you can safely follow this guide, given Symfony 5 did not break compatibility changes.
+We assume you've already created a new App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you are using Symfony 4 or 5, you can safely follow this guide, given Symfony 6 did not break compatibility changes.
 
 ### Root path
 
@@ -37,7 +37,7 @@ If you did not choose Symfony when creating the App in the Dashboard at first, p
 
 ### ENV vars
 
-Symfony 5 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. You can even use ENV vars in the .yml configurations now. To get you started quickly, we provide you with the following ENV vars by default when you have chosen the Symfony from when creating the App:
+Symfony 6 [environments](https://symfony.com/doc/current/configuration.html#configuration-based-on-environment-variables) are controlled by the `APP_ENV` ENV var. You can even use ENV vars in the .yml configurations now. To get you started quickly, we provide you with the following ENV vars by default when you have chosen the Symfony from when creating the App:
 
 ```osterei32
 APP_ENV=prod
