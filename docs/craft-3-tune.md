@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-01-18
+reviewed:         2022-01-26
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -309,9 +309,11 @@ return [
 ]; 
 ```
 
-## Cache and sessions on the Pro Stack
+## Cache, Sessions and Mutex on the Pro Stack
 
-On the [Pro Stack](/app-pro) in multi Node environments (see [terminology](/terminology)) you can not rely on the file based cache or session storage. Store this data in Memcache (a key-value storage tool) which is accessible from all Nodes instead - also see our [Memcache article](/memcache-pro). We have developed a custom extension for using Memcache. With that no further configuration is required: you just need to pull it in to your `composer.json` like so:
+On the [Pro Stack](/app-pro) in multi Node environments (see [terminology](/terminology)) you can not rely on the file based cache or session storage. Store this data in Memcached (a key-value storage) which is accessible from all Nodes instead - also see our [Memcache article](/memcache-pro). 
+
+We have developed a composer package that integrates Craft with Memcache. With that no further configuration is required: you just need to pull it in to your `composer.json` like so:
 
 ```bash
 $ composer require fortrabbit/yii-memcached
