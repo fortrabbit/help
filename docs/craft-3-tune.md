@@ -325,17 +325,25 @@ When you experience a slow site, but no errors, often the database is the bottle
 
 ### Twig cache tag
 
-Craft's `{% cache %}` tag is a good thing to prevent execution of expensive queries over and over again, however it's **very important** to use it wisely. Make sure to use a specific cache key, otherwise you risk filling up the disk (causing IO problems) or Memcache (or the database for older versions of Craft).
+Craft's `{% cache %}` tag is a good thing to prevent execution of expensive queries over and over again, however it's **very important** to use it wisely. Make sure to use a specific cache key, otherwise you risk an inefficient Cache-Hit-Rate and lots of cache items filling up the disk or Memcache.
 
 ### Cache plugins
 
 Full page cache plugins like [Blitz](https://github.com/putyourlightson/craft-blitz) or [Upper](https://github.com/ostark/upper) can improve TTFB dramatically, as they turn a dynamic site into static HTML. However, if your site is slow, it's preferable to identify the problem, instead of hiding it with a cache plugin. 
 
+### Database I/O
+
+The amount and complexity of database queries, as well as the size of your dataset, have a direct impact on the performance of your site. While the queries you create in your templates are more or less your responsibility, there are other queries that you can't directly control.
+We have analysed hundreds of Craft sites to understand common query patterns. Especially sites with large amounts of data (Entries, Fields, etc) and frequent content updates suffer from these "hidden" queries. 
+
+Fortunately, there is a plugin called [Relax](https://plugins.craftcms.com/relax) that takes care it. We recently released it for free to help our customers and the broader craft community:
+
+[https://github.com/ostark/craft-relax](https://github.com/ostark/craft-relax)
+
 
 ### Static files in /templates
 
 We've seen this many times. Developers put static assets like `.css` and `.js` in the `/templates` folder next to the twig templates. Craft delivers those files, but it creates massive overhead. Instead you should always put static files in `/web/some-dir/` to prevent any PHP execution when delivering those files.
-
 
 
 ## Queue jobs
@@ -344,21 +352,21 @@ Craft CMS uses queue jobs for long-running tasks. By default these jobs are proc
 In the worst case scenario the queue runner consumes all PHP resources. Luckily there are more robust solutions available. [Andrew Welch](https://nystudio107.com/blog/robust-queue-job-handling-in-craft-cms) explains it in detail. Here is the TLDR:
 
 
-### Async Queue plugin
+### Use the Async Queue plugin
 
 For most queue workloads the `ostark/craft-async-queue` plugin mitigates the problems described above. There is no further configuration required, just install it like any other plugin. See the [guide on Github](https://github.com/ostark/craft-async-queue) to understand what it does.  
 
 
-### Worker job
+### Offload to Worker job
 
 On the [Pro Stack](/app-pro) you can run long running processes in a isolated environment without hurting site delivery.
-You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `php craft queue/listen`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
+You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job" with this Craft command: `php craft queue/listen -v`. To disable the default queue runner, `runQueueAutomatically` must be disabled in `config/general.php`.  
 
 
 
 ## Sending mail
 
-You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
+You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
 
 Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) maintain a [plugin for Postmark](https://plugins.craftcms.com/postmark). With that plugin installed you can easily set it up.
 
@@ -406,7 +414,7 @@ Your fortrabbit App is set to be your production environment per default. So whe
 
 ### You see a 504 message
 
-That's a timeout issue. Commonly this happens when doing too many image transformations at once (see above please).
+That's a timeout issue. Commonly this happens when Craft is busy processing the queue or doing too many image transformations at once (see above please). 
 
 
 
