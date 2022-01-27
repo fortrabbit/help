@@ -18,7 +18,7 @@ image:            symfony-mark.png
 version:          3.4.4
 
 otherVersions:
-  5 : install-symfony-5
+  6 : install-symfony-6
 
 ---
 
