@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-20
+reviewed:      2022-01-30
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -82,8 +82,7 @@ To start with a complete new Git history, you can now reset your repository. Thi
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
-The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be built on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
-
+The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be built on the next push (of your new code base).
 
 ### Git with a GUI or IDE
 
