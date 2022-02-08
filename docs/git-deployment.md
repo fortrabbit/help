@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-01-30
+reviewed:      2022-02-08
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -114,16 +114,20 @@ To make sure nothing is deleted, all git deployments to Universal Apps follow an
 
 Your `git push` updates the Git remote on fortrabbit and triggers the build of a new release package. This new release package will then be distributed to all the Nodes your App runs on. All files on the Nodes will then be replaced by the ones contained in the release package. Check out [this video](deployment-architecture-video) to understand the flow.
 
-
 ### The branch name counts
 
-While you can have as many Git branches you want, only changes in certain branches will be deployed. The `master` branch is the default one.
+You can use / create as many branches as you want and push them to the fortrabbit remote repository. However there are only three branches which will be deployed: the main branch, the master branch and a branch which has the same name as your App. If your App is named your-app then a branch named your-app will be preferred over the master and main branches.
 
+The branch priority goes like this: `appname` > `master` > `main`.
 
-### Branching for multi-staging setups
+So if you have previously pushed a master branch, and then push a main branch later, the master branch will take priority and still be the one that is built and deployed. To switch to using the main branch instead, you have to reset the repository and then push only the main branch. Beware that when you reset the repository all branches will be deleted! Make sure you have local backups of any feature branches or other branches.
 
-Usually, only the remote Git `master` branch will be deployed. You can also create a branch with the same name as your App, which will be preferred over the master branch. That way it is easier to set up a [multi-staging environment](multi-staging).
+```bash
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
+git push --set-upstream fortrabbit main
+```
 
+You can also use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master, main (or your App's name like: async) branch and push it.
 
 ### Deployment file
 
