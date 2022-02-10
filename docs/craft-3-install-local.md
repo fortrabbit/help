@@ -22,6 +22,7 @@ keywords:
   - setup
   - install-guide
 
+rank: 80
 ---
 
 ## Get ready
