@@ -143,10 +143,7 @@ The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpReque
 
 ### Branch name matters
 
-You can use / create as many [branches](git) as you want and push them to the fortrabbit remote repository. However there are only two branches which will be deployed: the `master` branch and a branch which has the same name as your App. If your App is named `your-app` then a branch named `your-app` will be preferred over the `master` branch.
-
-This is a feature, not a bug: use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master (or your App's name like: {{app-name}}) branch and push it.
-
+Only the branches `main`, `master` and the `{{app-name}}` will be deployed to the webspace. More [here](git-deployment#toc-the-branch-name-counts).
 
 ### Release package limit
 
