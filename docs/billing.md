@@ -142,8 +142,8 @@ Sometimes payments may bounce, that just happens. Please note that our bank coll
 There are various reasons why payments bounce:
 
 * Insufficient funds - we will try to debit again after a few days
-* Expired credit cards - [Update your payment method](/billing-contact/#toc-changing-the-payment-method)
-* Something else - [Update your payment method](/billing-contact/#toc-changing-the-payment-method) (enter a new card or switch to SEPA)
+* Expired credit cards - [Update your payment method](/billing-contact#toc-changing-the-payment-method)
+* Something else - [Update your payment method](/billing-contact#toc-changing-the-payment-method) (enter a new card or switch to SEPA)
 
 Please contact us if you are aware about open invoices with us and or if you have questions about an invoice. In any case, we will inform you by by e-mail about failed payments.
 
