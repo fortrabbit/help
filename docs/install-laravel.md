@@ -23,6 +23,8 @@ keywords:
     - install
     - laravel
 
+rank: 70
+
 ---
 
 ## Get ready
