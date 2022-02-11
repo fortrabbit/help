@@ -115,6 +115,9 @@ image: myfunkyimage.png
 # type, for CMS/framework
 type:  CMS
 
+# Search result ranking with Algolia
+rank: 100
+
 ```
 
 ## Horizontal rulers
