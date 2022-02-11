@@ -1,12 +1,13 @@
 ---
 
-template:      article
-reviewed:      2021-06-09
-title:         Billing on fortrabbit
-naviTitle:     Billing
-excerpt:       Our consumption based pricing model explained.
-group:         platform
-stack:         all
+template:   article
+reviewed:   2022-02-11
+title:      Billing on fortrabbit
+naviTitle:  Billing
+excerpt:    Our consumption based pricing model explained.
+group:      platform
+stack:      all
+rank:       100
 
 ---
 
