@@ -1,8 +1,8 @@
 ---
 
 template:   article
-reviewed:   2021-08-30
-title:      About logs on fortrabbit
+reviewed:   2022-02-11
+title:      Logging on fortrabbit
 naviTitle:  Logging
 lead:       Accessing logs of your App is essential for developing. Here is how you can do it on fortrabbit.
 group:      deployment
@@ -13,6 +13,8 @@ proLink:    logging-pro
 keywords:
     - Logging
     - Logs
+
+rank: 80
 
 ---
 
