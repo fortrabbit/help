@@ -9,6 +9,7 @@ lead:          'The 500 HTTP status code means "Internal Server Error". This art
 group:         troubleshooting
 stack:         all
 dontList:      false
+rank:          10
 
 ---
 
@@ -17,7 +18,7 @@ dontList:      false
 
 * 500 errors will usually be shown on screen immediately
 * 500 errors often occur after code or configuration changes
-* 500 errors are sometimes just printed as a "service unavailable" message, check the browser’s developer tools for the response's HTTP status code to be sure this is indeed a 500 error
+* 500 errors are sometimes just printed as a "service unavailable" message, check the browser's developer tools for the response's HTTP status code to be sure this is indeed a 500 error
 * 500 errors here are often rendered using a fortrabbit error page template
 
 

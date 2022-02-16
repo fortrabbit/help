@@ -16,6 +16,8 @@ keywords:
     - phpdotenv
     - dotenv
 
+rank: 10
+
 ---
 
 ## Problem

@@ -9,6 +9,7 @@ lead:          'The 504 HTTP status code means "Gateway timeout". This means tha
 group:         troubleshooting
 stack:         all
 dontList:      false
+rank:          20
 
 ---
 
@@ -19,7 +20,7 @@ dontList:      false
 * 504 errors often occur without code changes
 * 504 errors are sometimes connected to traffic patterns
 * 504 errors are sometimes caused by editorial changes in a CMS
-* 504 errors often come and go – from offline to online and back again
+* 504 errors often come and go - from offline to online and back again
 * 504 errors usually will not show up in the PHP error logs
 * Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what  Apache is reporting back
 
