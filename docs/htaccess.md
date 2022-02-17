@@ -16,6 +16,8 @@ keywords:
     - ssi
     - gzip
 
+rank:     3
+
 ---
 
 
