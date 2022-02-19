@@ -7,6 +7,8 @@ title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
 group:         deployment
 stack:         all
+rank:          2
+
 
 keywords:
     - beginner

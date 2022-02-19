@@ -9,6 +9,7 @@ lead:          Learn what you can do on the command line with fortrabbit Apps.
 stack:         uni
 proLink:       remote-ssh-execution-pro
 group:         deployment
+rank:          1
 
 keywords:
     - beginner

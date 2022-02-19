@@ -9,6 +9,8 @@ group:         platform
 proGroup:      Components
 
 stack:         all
+rank:          1
+
 
 keywords:
      - localhost
