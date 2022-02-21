@@ -17,6 +17,19 @@ keywords:
 
 ---
 
+## Prerequisites
+
+This is how PHP versions are handled with fortrabbit:
+
+* fortrabbit will provide PHP updates once they come available
+* New PHP versions are available in the fortrabbit Dashboard
+* There are usually multiple PHP version to choose from available
+* You need to update software you are using yourself
+* You will need to change to a newer PHP version yourself
+* Outdated PHP versions will be remove by fortrabbit (see [supported PHP versions](https://www.php.net/supported-versions.php))
+* Apps on outdated PHP versions will be upgraded to the next PHP version available
+
+Also see the [fortrabbit update policies](https://www.fortrabbit.com/update-policies).
 
 ## Simple PHP version upgrade path
 
