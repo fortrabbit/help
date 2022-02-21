@@ -4,8 +4,8 @@ template:      article
 reviewed:      2022-02-21
 title:         Upgrading the PHP version
 naviTitle:     Upgrading the PHP version
-lead:          "This PHP upgrade path guides you through best practices upgrading the PHP version for your fortrabbit App."
-group:         Tips
+lead:          This PHP upgrade path guides you through best practices upgrading the PHP version for your fortrabbit App.
+group:         tips
 stack:         all
 
 keywords:
@@ -24,20 +24,16 @@ This is the simple way to update your App in 5 minutes. It should work for 90% o
 
 1. Make sure the software you are using is up-to-date
 2. In the [fortrabbit Dashboard](https://dashboard.fortrabbit.com/)
-3. navigate to the App and then click on Settings > PHP
+3. Navigate to the App and then click on Settings > PHP
 4. Change to a newer PHP version and hit "save"
 5. Check if your website is still working after a few minutes
-6. You can safely switch back the version if it doesn't work (see below to continue)
+6. You can safely switch back the version if it doesn't work
 
-This will update the PHP runtime on fortrabbit. You may also want to update the 
+This will update the PHP runtime on fortrabbit. You may also want to update your local development environment as well, read on.
 
 ## Sophisticated PHP version upgrade path
 
-If the above procedure is breaking your website or you don't want to risk your production environment, here is a better, more advanced way. 
-
-TLDR: First update your local version, once that is working, deploy to fortrabbit and change the version. 
-
-Here are the steps one by one:
+If the above procedure is breaking your website or you don't want to risk your production environment, here is a better, more advanced way. First update your local version, once that is working, deploy to fortrabbit and change the version. Here are the steps one by one:
 
 ### 1 - Update your local development environment
 
