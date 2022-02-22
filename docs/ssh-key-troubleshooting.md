@@ -62,7 +62,7 @@ If you use an unprotected key (no passphrase) and still get asked about a passwo
 To use a specific key run SSH like this:
 
 ```bash
-$ ssh -i ~/.ssh/id_rsa_fortrabbit {{app-name}}@deploy.{{region}.frbit.com
+$ ssh -i ~/.ssh/id_rsa_fortrabbit {{app-name}}@deploy.{{region}}.frbit.com
 ```
 
 Adjust the path of the key (`~/.ssh/id_rsa_fortrabbit`). It needs to point to private key that you actually have on your machine.
