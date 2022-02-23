@@ -116,7 +116,7 @@ To make sure nothing is deleted, all git deployments to Universal Apps follow an
 
 Your `git push` updates the Git remote on fortrabbit and triggers the build of a new release package. This new release package will then be distributed to all the Nodes your App runs on. All files on the Nodes will then be replaced by the ones contained in the release package. Check out [this video](deployment-architecture-video) to understand the flow.
 
-### The branch name counts
+### The branch name that counts
 
 You can use / create as many branches as you want and push them to the fortrabbit remote repository. However there are only three branches which will be deployed: the main branch, the master branch and a branch which has the same name as your App. If your App is named your-app then a branch named your-app will be preferred over the master and main branches.
 
