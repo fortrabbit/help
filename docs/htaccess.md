@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2021-10-22
+reviewed:    2022-02-23
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -118,7 +118,7 @@ Don't serve the same content to the same client twice! Control how the browser o
 # adjust and extend to your needs
 <ifModule mod_headers.c>
   #  images expire after 1 month
-  <filesMatch ".(gif|png|jpg|jpeg|ico|pdf|svg|js)$">
+  <filesMatch ".(gif|png|jpg|jpeg|webp|ico|pdf|svg|js)$">
     Header set Cache-Control "max-age=2592000"
   </filesMatch>
   # CSS expires after 1 day
