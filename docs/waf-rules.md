@@ -1,14 +1,12 @@
 ---
 
 template:      article
-reviewed:      2022-03-01
+reviewed:      2022-03-02
 naviTitle:     WAF rules
 title:         Web Application Firewall
 excerpt:       Protect your App against common attacks and harmful requests
 group:         platform
 stack:         all
-dontList:      true
-dontIndex:     true
 ---
 
 
@@ -18,11 +16,11 @@ Your App is exposed to the World Wide Web to give your users access. Unfortunate
 
 ## Solution
 
-Instead of a full-fledged Web Application Firewall we block most common automated request patterns.
+Instead of a full-fledged Web Application Firewall we block the most common automated request patterns.
 
 ## Basic WAF rules
 
-By default "Basic WAF rules" are enabled, you can disable them in the dashboard. 
+By default "Basic WAF rules" are enabled; you can disable them in the Dashboard. 
 
 ### Blocked files
 
@@ -43,7 +41,7 @@ By default "Basic WAF rules" are enabled, you can disable them in the dashboard.
 
 ## Write your own rules using .htaccess
 
-Intentionally we don't block every possible attack we've seen in the past. There are rules that would affect you but anybody else.
+Intentionally we don't block every possible attack we've seen in the past. There are rules which may be specific to your use case but which are not necessarily required for everyone.
 Use an `.htaccess` file to write your own rules. Below you can find some examples: 
 
 ### Non-WordPress sites should block all common WordPress files:
@@ -55,22 +53,14 @@ Use an `.htaccess` file to write your own rules. Below you can find some example
 </Location>
 ```
 
-### PMA
+### Block specific file extensions:
 
 ```plain
-<Location ~ "(pma\.php|phpmyadmin\.php)$">
-    Order allow,deny
-    Deny from all
-</Location>
-```
-
-### XXX YYY ZZZ
-
-```plain
-<Location ~ "(xxx\.php|yyy\.php|zzzz\.php)$">
-    Order allow,deny
-    Deny from all
-</Location>
+# Archives you probably don't want to expose
+<FilesMatch "\.(bz2|gz|zip)$">
+   Order allow,deny
+   Deny from all
+</FilesMatch>
 ```
 
 ### WordPress sites should limit WP Admin to an IP if possible:
