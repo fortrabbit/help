@@ -50,11 +50,9 @@ On the right side of the page, below the section Security, you will see one of t
 * A heading called Code access with a subtext shows that you are using username + password authentication
 * A heading called SSH keys above a list of imported public keys shows that you are using SSH public key authentication
 
-
 ## Selecting one of the methods
 
 Only one of these methods can be active at any given time. Username + password is the default. You must opt in to use SSH public key authentication by importing a public key.
-
 
 ### Changing from password to SSH key authentication
 
@@ -66,7 +64,6 @@ Add your public SSH keys to your fortrabbit Account to change the access method 
 
 After a public SSH key is imported, the username + password access mode is automatically disabled (takes a couple of minutes).
 
-
 ### Changing from SSH key to password authentication
 
 You can disable SSH public key authentication by removing all public SSH keys from your fortrabbit Account. Go to: 
@@ -75,31 +72,25 @@ You can disable SSH public key authentication by removing all public SSH keys fr
 
 From this view, you will be able to select individual keys. Selecting a specific key brings up another view where the key can be deleted. After the last public key is removed, the username + password access mode will be automatically re-enabled.
 
-
 ### After changing the access method
 
 Please note that the code access part (aka username) is different for these two access modes. The one which is currently correct will be shown in the Dashboard. Pick up the new access credentials from Access tab with your Apps.
-
 
 ## SSH key authentication
 
 See our [SSH key guide](ssh-keys) on how to setup keys and how to add them to your fortrabbit Account.
 
-
 ## Password authentication
 
 This is the default method before any public SSH keys are imported. Use this, if you just want to check out fortrabbit or when you have trouble setting SSH keys.
-
 
 ### When you change your Account password
 
 When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well - the new password will be used.
 
-
 ## Authentication in teams
 
 You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different access method and that your settings might not work for them. Also see our [team work article](/collaboration).
-
 
 ## Practical examples
 
@@ -120,16 +111,13 @@ appname@deploy.eu2.frbit.com:appname.git
 appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 ```
 
-
 ## Testing code access
 
 Please see the [verify access methods page](/access-testing) to quickly test if code access works.
 
-
 ## The code example helper
 
 When you are currently logged in to the Dashboard (a cookie is stored), you will see a yellow box on the right side here - with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
-
 
 #### Try it out yourself
 
