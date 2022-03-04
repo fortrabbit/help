@@ -123,7 +123,7 @@ appname.f4n4gkrx90ot4yxm@deploy.eu2.frbit.com:appname.git
 
 ## Testing code access
 
-Please see the [verify access methods page](/verify-access-methods) to quickly test if code access works.
+Please see the [verify access methods page](/access-testing) to quickly test if code access works.
 
 
 ## The code example helper

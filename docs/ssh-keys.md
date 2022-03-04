@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-03-21
+reviewed:      2022-03-04
 naviTitle:     SSH key setup
 title:         SSH keys setup
 lead:          Learn how to how to create an SSH key pair on your local machine and how to add it your fortrabbit Account.
@@ -141,7 +141,7 @@ After you have set up Git and created a key pair, the public part of the key mus
 [Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
 </div>
 
-You might need to re-enter your fortrabbit Account password. Then you will see a form with a textarea to paste the public key in to. If you followed our guide, the file you want to import wil be located in:
+You might need to re-enter your fortrabbit Account password. Then you will see a form with a textarea to paste the public key in to. If you followed our guide, the file you want to import will be located in:
 
 ```bash
 ~/.ssh/id_rsa_fortrabbit.pub 
