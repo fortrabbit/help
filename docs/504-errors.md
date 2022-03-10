@@ -3,9 +3,9 @@
 template:      article
 reviewed:      2021-02-12
 title:         Troubleshoot 504 errors
-naviTitle:     504 errors
-excerpt:       Some tips on troubleshooting 504 errors.
-lead:          'The 504 HTTP status code means "Gateway timeout". This means that the request is taking too long to process or something is blocking execution. This article aims to help developers troubleshooting 504 errors.'
+naviTitle:     HTTP 504 and 503 errors
+excerpt:       Some tips on troubleshooting 504 and 503 errors.
+lead:          'The 504 HTTP status code means "Gateway timeout". The 503 HTTP status code means "Service Unavailable". Usually this means that the request is taking too long to process or something is blocking execution and many requests are piling up. This article aims to help developers troubleshooting 504 and 503 errors.'
 group:         troubleshooting
 stack:         all
 dontList:      false
@@ -13,7 +13,7 @@ rank:          20
 
 ---
 
-## 504 error behavior
+## Typical symptoms of 504
 
 * 504 errors will be shown after a longer time of trying to load a page
 * 504 errors here are sometimes rendered using a fortrabbit error page template
@@ -22,7 +22,7 @@ rank:          20
 * 504 errors are sometimes caused by editorial changes in a CMS
 * 504 errors often come and go - from offline to online and back again
 * 504 errors usually will not show up in the PHP error logs
-* Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what  Apache is reporting back
+* Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what Apache is reporting back
 
 
 ## Common reasons and solutions
