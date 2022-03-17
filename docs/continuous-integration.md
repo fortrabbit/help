@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-12-20
+reviewed:         2022-03-17
 title:            Integrating CI with fortrabbit
 naviTitle:        Continuous Integration
 lead:             Automated testing, builds, special deploy scripts and other actions on fortrabbit.
@@ -80,8 +80,8 @@ $ git clone git@bitbucket.org:your-username/your-repo-name.git
 # 2. Go to into that folder
 $ cd your-repo-name
 
-# 3. rename master branch to test branch, if you haven't already
-$ git branch -m master test
+# 3. rename main branch to test branch, if you haven't already
+$ git branch -m main test
 
 # 4. create stage and prod branch, if you haven't already
 $ git branch stage

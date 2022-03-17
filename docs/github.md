@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-06-03
+reviewed:         2022-03-18
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -47,7 +47,7 @@ Your fortrabbit Apps are already coming with a [Git repo](/git-deployment). So w
 
 ## Simple integration
 
-This example shows you how to combine the two services in an easy detached way. The idea is, that the code development master is hosted on GitHub while each developer has it's [own local dev env](/local-development). fortrabbit is the live production. Once changes, or a new version is ready, it get's deployed to fortrabbit. All developers have access to GitHub, while for example only the lead developer also has access to fortrabbit. There hir needs to be able to push the code base either to fortrabbit or to GitHub.
+This example shows you how to combine the two services in an easy detached way. The idea is, that the code development master is hosted on GitHub while each developer has it's [own local dev env](/local-development). fortrabbit is the live production. Once changes, or a new version is ready, it gets deployed to fortrabbit. All developers have access to GitHub, while for example only the lead developer also has access to fortrabbit. They need to be able to push the code base either to fortrabbit or to GitHub.
 
 Add your external Git-provider as one remote and fortrabbit as another remote. Then you can push to your external provider while in development and collaborating; push to fortrabbit to see the code in action. Here is how you add your App's Git remote on fortrabbit to your already existing local working copy of a GitHub / Bitbucket / GitLab repo and then work with it:
 
@@ -55,8 +55,8 @@ Add your external Git-provider as one remote and fortrabbit as another remote. T
 # add your App's remote and name it "fortrabbit"
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# now push to the master branch of your App's remote on fortrabbit
-$ git push fortrabbit master
+# now push to the main branch of your App's remote on fortrabbit
+$ git push fortrabbit main
 ```
 
 ## GitHub Actions

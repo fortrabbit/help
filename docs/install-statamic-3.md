@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-02-12
+reviewed:         2022-03-18
 title:            Install Statamic 3 on fortrabbit
 naviTitle:        Statamic
 lead:             Statamic is a cool file based CMS. Learn here how to install and tune Statamic 3 on fortrabbit.
@@ -122,7 +122,7 @@ $ git add -A
 $ git commit -m 'My first commit'
 
 # 6. Initial push and upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 
 # From there on only
 $ git push

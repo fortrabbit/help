@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-12-10
+reviewed:         2022-03-18
 title:            Install Laravel 8
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 8 on fortrabbit.
@@ -34,7 +34,7 @@ Please make sure to have followed our [get ready guide](/get-ready) before start
 
 ## Quick start
 
-This i the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-setup-for-an-existing-code-base). Execute the following in your terminal **on your local machine**:
+This is the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-setup-for-an-existing-code-base). Execute the following in your terminal **on your local machine**:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
@@ -57,7 +57,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 7. Push changes to fortrabbit
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 # this installs Laravel with Composer on remote and take a while
 
 # the next deployments will be much faster

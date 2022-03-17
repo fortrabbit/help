@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-01-20
+reviewed:         2022-03-18
 title:            Install October CMS on fortrabbit
 naviTitle:        October CMS
 lead:             October is a free, open-source, self-hosted CMS based on the Laravel PHP framework. Learn how to install and use it on fortrabbit.
@@ -278,7 +278,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # Push to deploy
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 ```
 
 Your first deploy takes a long time, because all composer packages need to be installed. Subsequent deployments won't need to do that and will be much faster.

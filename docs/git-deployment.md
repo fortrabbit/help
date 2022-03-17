@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-02-08
+reviewed:      2022-03-17
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -23,7 +23,7 @@ We assume that you have: [Git installed](git) locally and know the basics. We fu
 
 ## Usage
 
-Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's master branch.
+Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separate deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remote's main branch.
 
 ## Terminal or GUI
 
@@ -51,7 +51,7 @@ $ git add index.php
 $ git commit -am 'Initial commit'
 
 # 6. Set upstream and 1st push
-$ git push -u origin master
+$ git push -u origin main
 
 # 7. Every deploy from now on
 $ git push

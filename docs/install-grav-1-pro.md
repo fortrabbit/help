@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-04-29
+reviewed:         2022-03-18
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular free file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -62,7 +62,7 @@ $ git add -A
 $ git commit -m 'Initial'
 
 # 6. Initial push and upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 
 # 7. From there on only
 $ git push

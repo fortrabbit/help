@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-10-29
+reviewed:      2022-03-18
 title:         Git troubleshooting
 naviTitle:     Git
 excerpt:       What you may want to know to debug Git issues
@@ -60,10 +60,10 @@ To help us helping you please provide a verbose output of the push (or pull) ope
 $ git remote -v
 
 # Generate verbose output for push
-$ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit master
+$ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit main
 
 # Generate verbose output for pull
-$ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
+$ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit main
 ```
 
-**Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
+**Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit main`

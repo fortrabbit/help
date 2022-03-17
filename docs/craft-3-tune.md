@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-01-26
+reviewed:         2022-03-17
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -49,7 +49,7 @@ That ENV var is already set. Just replace it with your local one. Also see the [
 
 ### Multi-environment configuration
 
-Craft embraces the idea of storing environment specific configurations in ENV vars. The database config ([config/db.php](https://github.com/craftcms/craft/blob/master/config/db.php)) is a good example of that.
+Craft embraces the idea of storing environment specific configurations in ENV vars. The database config ([config/db.php](https://github.com/craftcms/craft/blob/main/config/db.php)) is a good example of that.
 
 Additionally you can create groups in every config file. The top level array key maps with the `CRAFT_ENVIRONMENT` constant, which defaults to the `ENVIRONMENT` ENV var. With this flexible approach you decide which configurations are under version control to share with your team and which are not. We assume fortrabbit to be your production environment, so the `ENVIRONMENT` ENV var is set to `production` on remote and locally to `dev`.
 
@@ -111,7 +111,7 @@ fortrabbit will provide Let's Encrypt TLS certificates for all domains; please s
 
 #### Using .htaccess for redirects and to force https
 
-Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) for examples.
+Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/main/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https or disabling access on the App URL. Please see our [.htaccess article](/htaccess) for examples.
 
 ### X-Powered-By headers
 

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-05-27
+reviewed:      2022-03-18
 naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
@@ -36,9 +36,9 @@ Most likely you are developing with a local PHP environment on your machine. So 
 
 The short of it: all you need to utilize multi-staging on fortrabbit is multiple Apps. We further assume you are using our [Git deployment](git-deployment) — because then your local setup is easier to manage.
 
-Git supports multiple, named branches of your code. Per default, it comes with a branch called `master`. When pushing to fortrabbit our deployment will look for the `master` branch and deploy it. 
+Git supports multiple, named branches of your code. Per default, it comes with a branch called `master` but git provides a hint to change the default branch name to `main`. You can change the default branch name by running `git branch -m main`. When pushing to fortrabbit our deployment will look for the `main` branch and deploy it. 
 
-To make things easier for multi-staging scenarios, there is another branch, which is preferred over the `master` branch by the fortrabbit deployment: A branch named like your App. Say the name of your App is `your-app`, then you can create a branch called `your-app` which will be deployed instead of the `master` branch.
+To make things easier for multi-staging scenarios, there is another branch, which is preferred over the `main` branch by the fortrabbit deployment: A branch named like your App. Say the name of your App is `your-app`, then you can create a branch called `your-app` which will be deployed instead of the `main` branch.
 
 ### Sample setup
 
@@ -54,7 +54,7 @@ $ git clone {{app-name}}@deploy.eu2.frbit.com:your-app-test.git {{your-app-test}
 $ cd {{app-name}}
 ```
 
-This first cloning will create the remote `origin` and clone the `master` branch to your local disk.
+This first cloning will create the remote `origin` and clone the `main` branch to your local disk.
 
 #### Add the other Apps
 

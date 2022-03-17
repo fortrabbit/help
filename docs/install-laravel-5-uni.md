@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-12-01
+reviewed:         2022-03-18
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -61,7 +61,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 7. Push changes to fortrabbit
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 # this installs Laravel with Composer on remote and take while
 
 # the next deployments will be much faster

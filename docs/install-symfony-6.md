@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-01-24
+reviewed:         2022-03-18
 title:            Install Symfony 6
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 6 on fortrabbit.
@@ -78,7 +78,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 5. Initial push and set upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 # Lots of output
 
 # 6. From there on only

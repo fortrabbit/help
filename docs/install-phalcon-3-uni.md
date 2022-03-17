@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-06-16
+reviewed:         2022-03-18
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
@@ -89,7 +89,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 8. Initial push and upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 
 # 9. From there on only
 $ git push

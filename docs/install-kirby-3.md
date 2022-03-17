@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-05
+reviewed:         2022-03-18
 title:            Install Kirby 3 on fortrabbit
 naviTitle:        Kirby
 lead:             Kirby is a popular, file based CMS originated from Germany (YEAH!). Learn here how to install and tune Kirby on fortrabbit.
@@ -105,7 +105,7 @@ $ git add -A
 $ git commit -m 'My first commit'
 
 # 6. Initial push and upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 
 # From there on only
 $ git push

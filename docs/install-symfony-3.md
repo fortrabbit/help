@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-01-30
+reviewed:         2022-03-18
 title:            Install Symfony 3
 naviTitle:        Symfony 3
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
@@ -79,7 +79,7 @@ $ git commit -m 'Initial'
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 7. Push changes to fortrabbit
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 
 # 8. After the first push you only need
 $ git push

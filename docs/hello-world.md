@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-06-03
+reviewed:      2022-03-18
 naviTitle:     Hello world
 title:         Hello world tutorial with Git
 lead:          This is the famous 3 minute tutorial to get started with fortrabbit. It uses plain simple PHP without any framework or CMS. See how fast and easy you can get your code up and running.
@@ -47,12 +47,12 @@ $ git add index.php
 $ git commit -am 'initial commit'
 
 # 6. Set upstream and 1st push
-$ git push -u origin master
+$ git push -u origin main
 # Counting objects: 3, done.
 # Writing objects: 100% (3/3), 251 bytes | 0 bytes/s, done.
 # Total 3 (delta 0), reused 0 (delta 0)
 
-# Commit received, starting build of branch master
+# Commit received, starting build of branch main
 #
 # –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
 #
@@ -99,8 +99,8 @@ $ git push -u origin master
 # –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
 #
 # To {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-#  * [new branch]      master -> master
-# Branch master set up to track remote branch master from origin.
+#  * [new branch]      main -> main
+# Branch main set up to track remote branch main from origin.
 
 # 7. Every deploy from now on
 $ git push

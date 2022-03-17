@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-02-23
+reviewed:    2022-03-18
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -46,7 +46,7 @@ Your fortrabbit Apps are running on the Apache web server. You can make use of `
 When you are using a framework or a CMS, chances are high, that you don't need to wrangle with `.htaccess` at all, as that comes built-in. Here are the most used ones:
 
 * **Laravel** comes with a [boilerplate htaccess](https://github.com/laravel/laravel/blob/master/public/.htaccess) you can extend
-* **Craft CMS** comes with a [boilerplate htaccess](https://github.com/craftcms/craft/blob/master/web/.htaccess) you can extend
+* **Craft CMS** comes with a [boilerplate htaccess](https://github.com/craftcms/craft/blob/main/web/.htaccess) you can extend
 * **WordPress** [manages htaccess](https://codex.wordpress.org/htaccess) for you
 
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-20
+reviewed:         2022-03-17
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -48,7 +48,7 @@ $ git add -A
 $ git commit -m 'Initial commit'
 
 # 5. Initial push and upstream
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 # The first push takes a little longer
 # as it runs Composer
 

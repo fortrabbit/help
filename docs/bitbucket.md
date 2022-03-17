@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2021-12-10
+reviewed:       2022-03-17
 naviTitle:      Bitbucket
 title:          Combine fortrabbit with Bitbucket
 lead:           Learn how to integrate the second most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -42,18 +42,18 @@ The easiest way to deploy to fortrabbit from Bitbucket is to `git push` directly
 ```yml
 pipelines:
   branches:
-    master:
+    main:
       -   step:
             name: Deploy to STAGING
             deployment: staging
             script:
-              - git push --force {staging-app-name}@deploy.{region}.frbit.com:{staging-app-name}.git HEAD:master
+              - git push --force {staging-app-name}@deploy.{region}.frbit.com:{staging-app-name}.git HEAD:main
       -   step:
             name: Deploy to PRODUCTION
             deployment: production
             trigger: manual
             script:
-              - git push --force {production-app-name}@deploy.{region}.frbit.com:{production-app-name}.git HEAD:master
+              - git push --force {production-app-name}@deploy.{region}.frbit.com:{production-app-name}.git HEAD:main
 ```
 
 Note: This simple workflow does not work if you are building assets in your pipeline that end up adding or changing files that you want to deploy. For that you will need to do a `git commit` in your pipeline and that is out of scope for this simple guide.

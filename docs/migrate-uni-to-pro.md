@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     Migrate Universal > Professional
 title:         Migrate Universal to Professional
-reviewed:      2021-06-03
+reviewed:      2022-03-18
 lead:          "The Universal stack is a good starting point. If you truly need to scale: we offer the Professional stack for exactly that purpose. Here is how you migrate an App from Universal to Professional."
 group:         stacks
 stack:         all
@@ -123,7 +123,7 @@ $ git add -A
 $ git commit -m 'Initial'
 
 # push for the first time
-$ git push -u fortrabbit master
+$ git push -u fortrabbit main
 ```
 
 ## Review
