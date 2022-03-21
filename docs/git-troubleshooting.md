@@ -3,12 +3,13 @@
 template:      article
 reviewed:      2022-03-18
 title:         Git troubleshooting
-naviTitle:     Git
+naviTitle:     Git troubleshooting
 excerpt:       What you may want to know to debug Git issues
 lead:          'This article aims to help you finding common issues when deploying with Git on fortrabbit.'
-group:         troubleshooting
+group:         git
 stack:         all
 dontList:      false
+order:         5
 
 ---
 

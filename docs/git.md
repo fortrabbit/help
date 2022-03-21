@@ -1,12 +1,14 @@
 ---
 
 template:      article
-reviewed:      2022-01-30
+reviewed:      2022-03-21 16:29:52
 naviTitle:     Git intro
 title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
-group:         tips
+group:         git
+stack:         all
 rank:          1
+order:         1
 
 keywords:
     - ssh key

@@ -3,10 +3,11 @@
 template:      article
 reviewed:      2021-09-06
 title:         Testing domain routing with your local hosts file
-naviTitle:     Hosts file for domain testing
+naviTitle:     DNS testing with the hosts file
 excerpt:       Test domain setting before you route it
 lead:          ''
-group:         tips
+group:         dns
+order:         15
 stack:         all
 dontList:      false
 

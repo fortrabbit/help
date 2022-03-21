@@ -9,6 +9,7 @@ group:            platform
 stack:            all
 dontList:         false
 workInProgress:   false
+order:            1
 
 keywords:
     - 'local development'

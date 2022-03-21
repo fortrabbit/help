@@ -2,11 +2,11 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2020-08-28
+reviewed:      2022-03-21 17:34:15
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
-group:         platform
+group:         quirks
 
 ---
 
@@ -17,15 +17,12 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 * [Learn more about Apps](/app)
 * [Learn about the differences to VPS hosting](https://www.fortrabbit.com/why-not-vps)
 
-
 ## No 1-click installers
 
 When creating an App we ask for the desired software you are about to use. This can be Laravel, Craft CMS, WordPress or alike. **That will not install the software for you.** Please don't expect one-click-installers here. This is self service PHP hosting for professional developers. We believe in a clear separation of concerns where you will take care of the code you'll write and use and where we will manage the infrastructure. We also expect you to have a local development environment, see [the local dev article](/local-development).
 
 * Read more more about the [Software Preset here](/app#toc-software-preset).
 * Our [support policy](https://www.fortrabbit.com/support-policy) outlines service scope as well
-
-
 
 ## No root shell
 
@@ -35,21 +32,17 @@ We do this for security and performance reasons. Embrace the idea of decoupled s
 
 The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background, but again only for software you can install via Composer.
 
-
 ### Need to call via php interpreter
 
 To launch a PHP script you need to specify the PHP interpreter explicitly: for example, `php artisan` or `php craft`.
-
 
 ## No image optimization tools
 
 Tools like `jpegoptim`, `optipng`, `pngquant`, `SVGO`, `gifsicle` and alike can help to reduce file size of your images. Using such tools are considered a best practice today. Unfortunately they consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting. Consider using a third party service for this.
 
-
 ## No video compressing
 
 `ffmpeg` and `ffprobe` alike are also not available to avoid overuse of resources.
-
 
 ### wkhtmltopdf
 
@@ -59,7 +52,6 @@ wkhtmltopdf is a popular library to convert HTML to PDF. It's NOT installed and 
 * Use PDF as a service like [cloudconvert](https://cloudconvert.com/) or [others](https://stackoverflow.com/a/5344424/1449386)
 * Rethink if you really need PDF? An invoice in HTML is sometimes ok too
 * Consider PDF creation on the client side with JS in the browser, with [jsPDF](https://parall.ax/products/jspdf) or similar
-
 
 ### Performance
 
@@ -73,7 +65,6 @@ We believe in a clear division of security. In a nutshell: We - fortrabbit - tak
 
 * [Learn about the security concepts here](https://www.fortrabbit.com/security)
 
-
 ## Service location
 
 Data center locations are available in Ireland (AWS EU-1) and Virginia / USA (AWS US-EAST-1). A data center can be chosen for each App individually, but can't be changed later on. The service is available in Euro (€) or US Dollars ($): This can be chosen with each [Billing Contact](/billing-contact). The fortrabbit headquarters is based in Berlin, time zone is: CET.
@@ -86,7 +77,6 @@ In PHP Sendmail is usually used with the `mail()` function. Back in the good ol'
 
 In recent days, this is a really bad practice: your web server can send mails, but not receive any - it is not a mail server. So it is not distinguishable from any home PC part of a bot net. Long story short: it is very likely that your mail will not be received.
 
-
 ### Direct SMTP
 
 There is no mailing built-in here. Instead of `sendmail` you can use a mail script that uses SMTP (Simple Mail Transfer Protocol) via your e-mail provider - usually the one that provides your domain - directly.
@@ -96,7 +86,6 @@ There are countless possibilities how to use SMTP. Most frameworks and CMS give 
 Pro tip: In Gmail you need to allow "less secure apps" to connect. See the [official Google help](https://support.google.com/accounts/answer/6010255).
 
 A better solution might be to use a "transactional mail service", those are built to do the bulk mailing — see [extending fortrabbit](/#extending-fortrabbit). You can either connect to them via "SMTP relay" or by "API". Those services help you to save your App's resources, are probably more reliable and have some nice extra features like analytics and debugging.
-
 
 ## PHP
 
@@ -182,7 +171,6 @@ Do bear in mind, the place where you shell into with `ssh` or push with `git` is
     deploy.us1.frbit.com 52.200.130.83
 
 We do not intend to change the IP address of the deploy services, but we do not guarantee it.
-
 
 ## What this isn't
 

@@ -5,8 +5,9 @@ reviewed:      2021-09-06
 title:         All about bare domains and our redirect service
 lead:          How to configure the bare domain for forwarding and how the redirect service works
 naviTitle:     Bare domains
-group:         platform
+group:         dns
 stack:         all
+order:         5
 
 keywords:
     - TLD

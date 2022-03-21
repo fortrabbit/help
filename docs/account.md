@@ -6,7 +6,7 @@ title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account
 lead:          An Account with fortrabbit represents YOU, it's your personal login and access here — no more no less.
-group:         platform
+group:         dashboard
 stack:         all
 
 keywords:

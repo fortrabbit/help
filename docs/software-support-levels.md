@@ -1,12 +1,12 @@
 ---
 
 template:      article
-reviewed:      2021-06-03
+reviewed:      2022-03-21 17:39:31
 title:         Software support levels
 naviTitle:     Software support levels
 lead:          Personally supporting developers succeeding here is an important part of our work. To get support, use the chat bubble in the bottom right corner. We can help you with all general hosting questions as well as wth general PHP questions. Additionally we are good wth certain frameworks and CMS. We have categorized our knowledge in levels.
 noToc:         1
-group:         platform
+group:         support
 stack:         all
 hideExamples:  yes
 

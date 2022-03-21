@@ -1,13 +1,13 @@
 ---
 
 template:      article
-reviewed:      2021-03-21
-title:         SFTP deployment
-naviTitle:     SFTP deployment
+reviewed:      2022-03-21 16:44:54
+title:         SFTP access
+naviTitle:     SFTP access
 lead:          Learn about the classical way to access files on your Universal App on fortrabbit.
-
 stack:         uni
-group:         deployment
+group:         sftp
+order:         1
 
 keywords:
     - beginner

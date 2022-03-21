@@ -5,7 +5,7 @@ reviewed:    2021-06-03
 title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
-group:       platform
+group:       tips
 stack:       all
 
 ---

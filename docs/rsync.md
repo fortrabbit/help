@@ -1,12 +1,13 @@
 ---
 
 template:    article
-reviewed:    2021-12-10
-title:       rsync
-naviTitle:   rsync
+reviewed:    2022-03-21 16:51:16
+title:       Using rsync
+naviTitle:   Using rsync
 lead:        rsync is one of the best ways to deploy code fast and without hassle. It's also an often overlooked option. Let's change this! This article gives you some direction on how to use it in general and especially here on fortrabbit.
 group:       deployment
 stack:       uni
+order:       9
 
 keywords:
     - rsync

@@ -7,6 +7,7 @@ title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
 group:         platform
 stack:         all
+order:         1
 
 ---
 

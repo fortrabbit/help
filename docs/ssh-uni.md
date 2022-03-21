@@ -2,13 +2,14 @@
 
 template:      article
 reviewed:      2021-03-22
-title:         SSH deployment
-naviTitle:     SSH deployment
+title:         SSH access
+naviTitle:     SSH access
 lead:          Learn what you can do on the command line with fortrabbit Apps.
 
 stack:         uni
 proLink:       remote-ssh-execution-pro
-group:         deployment
+group:         ssh
+order:         3
 rank:          1
 
 keywords:

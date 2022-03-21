@@ -1,14 +1,15 @@
 ---
 
 template:      article
-reviewed:      2021-08-24
+reviewed:      2022-03-21 17:25:06
 title:         Troubleshooting TLS and HTTPS issues
-naviTitle:     TLS and HTTPS
+naviTitle:     TLS troubleshooting
 excerpt:       What you may want to know about our SSL/TLS errors.
 lead:          Are you seeing a certificate error in the browser? This article aims to help developers troubleshooting such errors.
-group:         troubleshooting
+group:         tls
 stack:         all
 dontList:      false
+order:         5
 
 ---
 

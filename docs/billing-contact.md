@@ -6,7 +6,7 @@ title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
 lead:          You want certain Apps to be charged from a different credit card while keeping team and access settings.
-group:         platform
+group:         dashboard
 stack:         all
 
 keywords:

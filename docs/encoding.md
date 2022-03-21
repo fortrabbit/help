@@ -5,7 +5,7 @@ reviewed:   2021-06-03
 title:      Encoding/charset other than UTF-8
 naviTitle:  Encodings
 lead:       UTF-8 is assumed as the default encoding. You can set a different encoding manually — if you really want. This is on how to change the character encodings with fortrabbit.
-group:      platform
+group:      development
 stack:      all
 
 keywords:

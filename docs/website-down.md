@@ -8,6 +8,7 @@ excerpt:       What to do when your website hosted on fortrabbit is down.
 lead:          "Your website hosted here is offline right now? Let's waste no time and get it solved together in a professional manner. This article helps finding common issues when your website is down and also how to communicate professionally."
 group:         troubleshooting
 stack:         all
+order:         1
 
 ---
 

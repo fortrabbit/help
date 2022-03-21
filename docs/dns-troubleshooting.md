@@ -2,13 +2,14 @@
 
 template:      article
 reviewed:      2021-09-06
-title:         DNS and domain and troubleshooting
-naviTitle:     DNS and domains
+title:         DNS and domain troubleshooting
+naviTitle:     DNS troubleshooting
 excerpt:       Troubleshooting DNS issues
 lead:          'DNS is hard. This article aims to help you - the developer - solving common problems when connecting a domain to your fortrabbit App.'
-group:         troubleshooting
+group:         dns
 stack:         all
 dontList:      false
+order:         10
 
 ---
 

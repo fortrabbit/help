@@ -7,6 +7,7 @@ naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
 group:         deployment
 stack:         all
+order:         10
 
 keywords:
    - advanced

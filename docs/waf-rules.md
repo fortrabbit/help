@@ -7,6 +7,8 @@ title:         Web Application Firewall
 excerpt:       Protect your App against common attacks and harmful requests
 group:         platform
 stack:         all
+order:         10
+
 ---
 
 

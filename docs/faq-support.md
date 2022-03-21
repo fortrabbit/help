@@ -5,7 +5,7 @@ reviewed:      2021-08-27
 title:         Frequently asked questions on our support
 naviTitle:     FAQ support
 lead:          "Here are are some common questions and answers on our terms of service."
-group:         tips
+group:         faq
 stack:         all
 
 ---

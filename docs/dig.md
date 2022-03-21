@@ -3,10 +3,11 @@
 template:      article
 reviewed:      2021-09-06
 title:         Using dig to check DNS settings
-naviTitle:     Checking DNS with dig
+naviTitle:     DNS checking with dig
 excerpt:       Easy query domain results from the terminal
 lead:          'You can use a browser-based DNS lookup tool, but you can also use the terminal to see the current DNS settings of your domain.'
-group:         tips
+group:         dns
+order:         7
 stack:         all
 dontList:      false
 

@@ -5,7 +5,7 @@ reviewed:      2021-08-27
 title:         Path to successful support
 naviTitle:     Support tips
 lead:          "Here are some tips to how to get the answers you need quickly."
-group:         tips
+group:         support
 stack:         all
 
 ---

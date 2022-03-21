@@ -5,7 +5,7 @@ reviewed:      2021-06-03
 title:         Companies on fortrabbit
 naviTitle:     Company
 excerpt:       How to work with Companies on fortrabbit
-group:         platform
+group:         dashboard
 stack:         all
 
 keywords:

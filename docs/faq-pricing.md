@@ -5,7 +5,7 @@ reviewed:      2021-08-27
 title:         Frequently asked questions on pricing
 naviTitle:     FAQ pricing
 lead:          "Here are are some common questions and answers on our pricing and billing."
-group:         tips
+group:         faq
 stack:         all
 
 ---

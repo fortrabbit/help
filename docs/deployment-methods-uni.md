@@ -7,6 +7,7 @@ reviewed:      2021-06-03
 excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni
+order:         3
 
 ---
 

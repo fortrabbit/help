@@ -5,7 +5,7 @@ reviewed:    2021-06-03
 title:       How to use private Composer repos with SSH keygen
 naviTitle:   Private Composer repos
 lead:        Generate a unique SSH key-pair for your App on fortrabbit to use private Composer repos.
-group:       platform
+group:       development
 stack:       all
 
 keywords:

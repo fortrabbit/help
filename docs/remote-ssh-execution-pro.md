@@ -7,7 +7,8 @@ title:         Using remote SSH commands
 excerpt:       "How to run Artisan migrate and other useful commands."
 lead:          "There is no full SSH access with Professional Apps, but you can still run SSH commands, here is how."
 stack:         pro
-group:         deployment
+group:         ssh
+order:         2
 
 ---
 

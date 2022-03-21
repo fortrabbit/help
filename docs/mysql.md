@@ -1,16 +1,15 @@
 ---
 
 template:      article
-reviewed:      2021-10-23
+reviewed:      2022-03-21 17:27:46
 title:         All about MySQL
-naviTitle:     MySQL
+naviTitle:     MySQL access
 lead:          How to access & configure the common database on fortrabbit.
-group:         platform
+group:         mysql
 proGroup:      Components
-
 stack:         all
 rank:          1
-
+order:         1
 
 keywords:
      - localhost

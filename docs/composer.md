@@ -5,7 +5,7 @@ reviewed:      2021-12-10
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Composer is the defacto standard to handle PHP application dependencies, as well as providing mechanisms to keep them up-2-date. Learn how to integrate Composer into your development workflow with fortrabbit.
-group:         deployment
+group:         development
 stack:         all
 
 keywords:

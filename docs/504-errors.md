@@ -10,6 +10,7 @@ group:         troubleshooting
 stack:         all
 dontList:      false
 rank:          20
+order:         20
 
 ---
 

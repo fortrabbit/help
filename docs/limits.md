@@ -5,7 +5,7 @@ reviewed:         2021-09-15
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
-group:            platform
+group:            quirks
 stack:            all
 
 ---

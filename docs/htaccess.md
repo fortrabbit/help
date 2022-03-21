@@ -1,11 +1,11 @@
 ---
 
 template:    article
-reviewed:    2022-03-18
+reviewed:    2022-03-21 16:50:23
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
-group:       deployment
+group:       development
 stack:       all
 
 keywords:
