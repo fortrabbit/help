@@ -7,6 +7,8 @@ naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
 group:            craft
 stack:            all
+oder:             10
+dontList:         true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
