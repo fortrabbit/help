@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-18
+reviewed:         2022-03-21
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -20,7 +20,8 @@ dontList:         true
 dontIndex:        true
 
 otherVersions:
-    6 : install-laravel-6-pro
+    8: install-laravel
+    9: install-laravel-9
     
 keywords:
     - php
@@ -34,7 +35,7 @@ keywords:
 
 Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
 
-MIND: This the install guide for Laravel version 5. We have an [Laravel install guide](/install-laravel) for a newer version (6). Check out that article as well, it includes more up-to-date information.
+MIND: This the install guide for Laravel version 5. We have an [Laravel install guide](/install-laravel-9) for a newer version (9). Check out that article as well, it includes more up-to-date information.
 
 
 ## Quick start

@@ -2,28 +2,29 @@
 
 template:         article
 reviewed:         2022-03-21
-title:            Install Laravel 8
+title:            Install Laravel 9
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 8 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 9 on fortrabbit.
+group:            Install_guides
 
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-black-new.svg
-version:          8.x
+version:          9.x
 stack:            all
 supportLevel:     a
 
 otherVersions:
     5 : install-laravel-5-uni
-    9: install-laravel-9
+    8: install-laravel
 
 keywords:
     - php
     - install
     - laravel
 
-rank: 70
+rank: 80
 
 ---
 
@@ -31,7 +32,6 @@ rank: 70
 
 Please make sure to have followed our [get ready guide](/get-ready) before starting here. 
 
-MIND: This the install guide for Laravel version 8. We have an [Laravel install guide](/install-laravel-9) for a newer version (9). Check out that article as well, it includes more up-to-date information.
 
 ## Quick start
 
@@ -59,14 +59,14 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 # 7. Push changes to fortrabbit
 $ git push -u fortrabbit main
-# this installs Laravel with Composer on remote and take a while
+# this installs Laravel with Composer on remote and takes a while
 
 # the next deployments will be much faster
 # 8. Push from now on
 $ git push
 ```
 
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
+**Got an error?** Please see the [access troubleshooting](/access-methods). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
@@ -78,7 +78,7 @@ $ git push
 
 ### Setup for an existing code base
 
-You can also push your existing Laravel installation to fortrabbit. If you are already using Git, you can add fortrabbit as an additional remote, as described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating).
+You can also push your existing Laravel installation to fortrabbit. If you are already using Git, you can add fortrabbit as an additional remote, as described [above](#toc-quick-start) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating).
 
 
 ### MySQL configuration
@@ -227,7 +227,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 ## User sessions
 
-There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/8.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
+There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/9.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -235,7 +235,7 @@ There are various session drivers available in Laravel: see a [full list here](h
 
 ### User sessions for Universal Apps
 
-Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/8.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
+Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/9.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
 
 To use the `database` driver, follow these steps:
 
@@ -536,7 +536,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 
 ## Scheduling
 
-The [Laravel scheduler](https://laravel.com/docs/8.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
+The [Laravel scheduler](https://laravel.com/docs/9.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
 
 ## Using artisan down (Professional Stack)
 
