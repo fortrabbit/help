@@ -38,9 +38,15 @@ Sometimes 403 errors are caused by issues with `.htaccess`. Check your `.htacces
 
 ### File permissions
 
-Sometimes 403 errors are caused by wrong file permissions. This can happen when you deploy with SFTP or SSH. Make sure that PHP has write permissions for the files `composer.json`, `composer.lock`, `storage/*`, `vendor/*` and other files. Set the file permissions for those files to `744` with your SFTP client or by SSH.  Any `*.php` files should be executable.
+Sometimes 403 errors are caused by wrong file permissions. This can happen when you deploy with SFTP or SSH or sometimes Git. Make sure that PHP has write permissions for files like `composer.json`, `composer.lock`, `storage/*`, `vendor/*`. Set the file permissions for those files to `744` with your SFTP client or by SSH. All `*.php` files should also be executable.
 
-<!-- Duplicate with Craft CMS: Upload SFTP, maybe remove the other one -->
+```shell
+# Use for a folder and all it's contents recursively
+chmod -R 744 directoryname
+
+# Change a specific file name
+chmod 744 filename
+```
 
 ## Missing `index.php` or `index.html` file
 

@@ -47,7 +47,7 @@ Doesn't work as expected? Keep calm and read on:
 
 ### File permissions
 
-You might need to change file permissions. Make sure that Craft can write the files `composer.json`, `composer.lock`, `storage/*` and `vendor/*` on the App. Set the file permissions for those files to `744` with your SFTP client. 
+You might need to change file permissions. See [here for more](403-errors#toc-file-permissions).
 
 ### Hidden .htaccess file
 
