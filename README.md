@@ -1,22 +1,18 @@
 # fortrabbit help pages
 
-Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, extended with frontmatter meta-data. Contents are getting published on: https://help.fortrabbit.com
-
+Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, extended with frontmatter meta-data. Contents are getting published on: [help.fortrabbit.com](https://help.fortrabbit.com)
 
 ## Contributing
 
 Found a typo or an error? Do you want to add something about your framework or service of choice? Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are more than welcome to contribute.
 
-
 ### Deploying
 
 This repo only contains the contents of the help. Rendering the contents is done by a PHP engine App running on the fortrabbit platform itself. To deploy latest changes from this repo (master branch), the fortrabbit App needs to be deployed (by fortrabbit staff).
 
-
 ### Sending pull requests
 
 Please find a good balance in the number of commits contained with a pull request. For small typos, just use one commit and one PR. For larger text changes, consider combining commits for readability.
-
 
 ## Front Matter syntax
 
@@ -125,12 +121,11 @@ rank: 100
 * `---` don't use this, otherwise the whole help page won't be rendered
 * `- - -` use this
 
-
 ## Dynamic help
 
 Those values will be replaced by JS when users are logged in:
 
-```
+```raw
 SSH user: {{ssh-user}}
 Region:   {{region}}
 Your app: {{app-name}}
@@ -138,12 +133,11 @@ Your app: {{app-name}}
 
 It will dynamically show the correct code examples and Dashboard links.
 
-
 ## Dashboard links
 
 You can have certain parts in Markdown available only for Users who are logged in like so:
 
-```
+```html
 <div markdown="1" data-user="known">
 
 [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
@@ -153,20 +147,17 @@ You can have certain parts in Markdown available only for Users who are logged i
 
 This parses markdown inside the DIV. With the data-user attribute it checks if the user is logged in. links to the Dashboard will be styled as buttons — use a verb to start them!
 
+## Writing conventions
 
-# Writing conventions
+### Support driven documentation
 
-## Support driven documentation
+These help pages are often used to point clients to answers on common questions. That's why some topics are covered im much detail. Clients are asking for it. So instead of writing an answer in client support, one might just update the help pages and point the client to the new section. Headlines have anchors for deep-linking like [help.fortrabbit.com/craft-3-assets-uni#toc-options-to-sync-assets](https://help.fortrabbit.com/craft-3-assets-uni#toc-options-to-sync-assets).
 
-These help pages are often used to point clients to answers on common questions. That's why some topics are covered im much detail. Clients are asking for it. So instead of writing an answer in client support, one might just update the help pages and point the client to the new section. Headlines have anchors for deep-linking like https://help.fortrabbit.com/craft-3-assets-uni#toc-options-to-sync-assets .
-
-
-## Know the target audience
+### Know the target audience
 
 While some implicit technical details are obvious to you, they might not be for the client. Explaining one acronym only with another acronym might not help. Sometimes it needs some more words.
 
-
-## Code examples
+### Code examples
 
 * Open and close code blocks with ````shell` where shell is the language for syntax highlighting
 * Try to keep code examples together in one block, avoid mixing paragraphs and code blocks
@@ -177,8 +168,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * `$` to start a command
 * Start code examples right away: PHP without `<?php`, Bash without `#!/bin/bash`
 
-
-## Writing 
+### Writing
 
 * Use sentence case in headlines
 * Don't use too many headlines to structure text
@@ -192,8 +182,7 @@ While some implicit technical details are obvious to you, they might not be for 
 * Write speaking links, not like so: `[here](http://somewhere)` but so: `[GitHub project](http…)`
 * Don't bullshit. Avoid the use of marketing buzzwords
 
-
-## Maintainability
+### Maintainability
 
 * Find the right balance between being general and being precise (aka Captain Obvious)
 * Very detailed step-by-step articles are easy to follow but get outdated very quickly
@@ -204,16 +193,14 @@ While some implicit technical details are obvious to you, they might not be for 
 * Have one SSOT, link to it
 * Don't fully cover the same topic on different places, just link to the location
 
-
-## File name conventions
+### File name conventions
 
 When creating new files:
 
 * use dashes instead of spaces or low dashes for file names
 * use the short versions: `-uni`, `-pro` at the end for different stacks
 
-
-## fortrabbit owned words and common casing
+### fortrabbit owned words and common casing
 
 * **Account** — ~~profile~~, ~~account~~
 * **Activities** ~~history~~, ~~diary~~, ~~log~~
@@ -245,7 +232,6 @@ When creating new files:
 * **{{ interchangeable-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 
-
 ### Collaboration words
 
 * **Collaboration** = Company collaboration + App collaboration
@@ -260,8 +246,7 @@ When creating new files:
 * **App Collaborator**
 * **Role** — ~~permission~~, ~~access role~~
 
-
-## Times & dates
+### Times & dates
 
 * use the same time-zone E V E R Y W H E R E when communicating times
 * the communicated time-zone is UTC
@@ -272,7 +257,6 @@ When creating new files:
 * **m** - ~~mins~~, ~~min~~
 * **h** - ~~hrs~~
 
-
 ### Metric units
 
 * **16 MB** — ~~mb~~, capital letters, a space between value and unit
@@ -281,7 +265,6 @@ When creating new files:
 * **16 KB**
 * 10k — ~~10,000~~
 * times a value: ×, `&times`; ~~x~~
-
 
 ### Other words
 
@@ -311,8 +294,7 @@ When creating new files:
 * **SSL cert** — ~~SSL certificate~~
 * **web storage** — ~~webspace~~
 * **Composer** — ~~composer~~
-* **macOS** — ~~Mac OS X~~ (https://en.wikipedia.org/wiki/Mac_OS)
-
+* **macOS** — ~~Mac OS X~~
 
 ## Avoid words list
 
@@ -325,8 +307,7 @@ Please do not use the following "bullshit" words:
 * empowering
 * revolutionizing
 
-
-## Gender-neutral language
+### Gender-neutral language
 
 When referencing a hypothetical person, such as "a user with a session cookie", use gender-neutral pronouns (they/their/them). For example, instead of:
 
@@ -336,11 +317,9 @@ When referencing a hypothetical person, such as "a user with a session cookie", 
 * his or hers, use theirs
 * himself or herself, use themselves
 
-
-## Corporate identity
+### Corporate identity
 
 There is no fortrabbit logo as graphic file. To create the brand logo just type: "• fortrabbit" — bullet character, a normal space and then name of the company with a f. Use the [Georgia Typeface](http://en.wikipedia.org/wiki/Georgia_(typeface)) in bold and italic. Use lot's of whitespace around the logo, don't put other text nearby the logo. When using the company name within a paragraph of text, write "fortrabbit" with a f, even at the beginning of a sentence. Don't use the bullet or any other typeface here.
-
 
 ### Logos and brand assets
 
