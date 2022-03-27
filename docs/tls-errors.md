@@ -38,9 +38,15 @@ This can also happen, if your domain is not routed to fortrabbit (yet). Only dom
 
 There are also other edge cases when this can happen, for example, if your domain [has set CAA records](/https#toc-secure-your-domain-with-a-caa-record) with DNS.
 
-### Cert is installed but browser bar is not showing a green lock
+### Cert is installed but the browser shows a mixed content warning
 
-In most cases this is due to "**mixed content**", which means, the cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http://` requests. You can use `https://` instead or you just leave out the protocol entirely like so: `//`. The last method will use whatever has been used before, so that works especially well, with different environments, for instance when your local development machine doesn't have TLS.
+You see an error like this:
+
+> Mixed Content: The page at '{{domain}}' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint '{{domain}}'. This request has been blocked; the content must be served over HTTPS.
+
+The cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http://` requests. This can be CSS files, fonts, images or AJAX calls.
+
+You can use `https://` instead or you just leave out the protocol entirely like so: `//`. The last method will use whatever has been used before, so that works especially well, with different environments, for instance when your local development machine doesn't have TLS.
 
 ### It's not working with Internet Explorer 8 or older
 
