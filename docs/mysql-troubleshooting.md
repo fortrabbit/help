@@ -9,7 +9,7 @@ lead:          'This article aims to help you finding common issues with your My
 group:         mysql
 stack:         all
 dontList:      false
-order:         2
+order:         10
 
 ---
 
