@@ -7,6 +7,7 @@ naviTitle:   GZIP compression
 lead:        ''
 group:       htaccess
 stack:       all
+order:       9
 
 keywords:
     - HTTP Auth
@@ -16,7 +17,6 @@ keywords:
     - ssi
     - gzip
 
-rank:     5
 
 ---
 
