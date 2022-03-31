@@ -61,7 +61,7 @@ There is not much to say on that topic. Just make sure to upload all contents of
 
 Here is a basic rundown to initialize Git, add fortrabbit as a remote and push changes to your App:
 
-```
+```bash
 # 1. Initialize Git (when not already)
 $ git init .
 

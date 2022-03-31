@@ -91,7 +91,7 @@ At this point you should be able to run the project in your local development en
 
 ### Deploy Kirby with Git
 
-```
+```bash
 # 1. Initialize Git
 $ git init
 

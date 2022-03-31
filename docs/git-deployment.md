@@ -50,11 +50,8 @@ $ git add index.php
 # 5. Commit changes
 $ git commit -am 'Initial commit'
 
-# 6. Set upstream and 1st push
-$ git push -u origin main
-
-# 7. Every deploy from now on
-$ git push
+# 6. Push
+$ git push 
 ```
 
 After the first deployment is done, the traced files from te Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
@@ -73,6 +70,9 @@ $ git push
 ```bash
 # Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# Then define you want to push fortrabbit like so
+$ git push -u origin fortrabbit
 ```
 
 ### Resetting the remote repo

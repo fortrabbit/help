@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-18
+reviewed:      2022-03-31 18:23:54
 naviTitle:     Hello world
 title:         Hello world tutorial with Git
 lead:          This is the famous 3 minute tutorial to get started with fortrabbit. It uses plain simple PHP without any framework or CMS. See how fast and easy you can get your code up and running.
@@ -22,7 +22,6 @@ keywords:
 ## Get ready
 
 Let's have a quick check-up before we get started here: You have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine. You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup), have created a plain vanilla PHP [App](app) - make sure to not select any framework or CMS (or if you did, change the root path back to htdocs in the Dashboard).
-
 
 ## Deploy a hello world example with Git
 
@@ -46,8 +45,8 @@ $ git add index.php
 # 5. Commit the staged snapshot to the project history
 $ git commit -am 'initial commit'
 
-# 6. Set upstream and 1st push
-$ git push -u origin main
+# 6. 1st push
+$ git push
 # Counting objects: 3, done.
 # Writing objects: 100% (3/3), 251 bytes | 0 bytes/s, done.
 # Total 3 (delta 0), reused 0 (delta 0)
@@ -105,11 +104,10 @@ $ git push -u origin main
 # 7. Every deploy from now on
 $ git push
 ```
-**Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and [Git troubleshooting](/git).
-**Did it work?** Cool! That's it. You now visit your App URL in the browser:
+
+**Got an error?** Please see [access testing](/access-testing) and [Git troubleshooting](/git-troubleshooting). **Did it work?** Cool! That's it. You now visit your App URL in the browser:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
-
 
 ### Further reading
 
