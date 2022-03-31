@@ -5,7 +5,7 @@ reviewed:    2021-06-03
 title:       Using HTTP Auth on fortrabbit
 lead:        You probably don't want the whole world to see your development in progress. Better restrict access to a fortunate few. This is how to use HTTP (basic) authentication to trigger a username/password prompt in the browser.
 naviTitle:   HTTP auth
-group:       tips
+group:       htaccess
 stack:       all
 
 keywords:
@@ -53,9 +53,6 @@ htpasswd -c ~/directory/.htpasswd john
 The -c flag create a new file. The first param defines the file name and (absolute) pat to store it. The second param the username. The tool will prompt for the password. You can also use web service like this one:
 
 * [htaccesstools.com/htpasswd-generator](http://www.htaccesstools.com/htpasswd-generator/)
-
-
-
 
 ## Deploy HTTP Auth
 

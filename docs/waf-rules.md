@@ -40,37 +40,8 @@ By default "Basic WAF rules" are enabled; you can disable them in the Dashboard.
 * .sql
 * .swf
 
-
 ## Write your own rules using .htaccess
 
-Intentionally we don't block every possible attack we've seen in the past. There are rules which may be specific to your use case but which are not necessarily required for everyone.
-Use an `.htaccess` file to write your own rules. Below you can find some examples: 
+Intentionally we don't block every possible attack we've seen in the past. There are rules which may be specific to your use case but which are not necessarily required for everyone. Use an `.htaccess` file to write your own rules.
 
-### Non-WordPress sites should block all common WordPress files:
-
-```plain
-<Location ~ "(wp-login\.php|wp-comments-post\.php)$">
-    Order allow,deny
-    Deny from all
-</Location>
-```
-
-### Block specific file extensions:
-
-```plain
-# Archives you probably don't want to expose
-<FilesMatch "\.(bz2|gz|zip)$">
-   Order allow,deny
-   Deny from all
-</FilesMatch>
-```
-
-### WordPress sites should limit WP Admin to an IP if possible:
-
-```plain
-<Files wp-login.php>
-    Order deny,allow
-    Deny from all
-    Allow from <YOUR IP>
-</Files>
-```
+See our [htaccess](/#htaccess) section for more.
