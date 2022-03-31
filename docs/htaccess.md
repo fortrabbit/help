@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-03-21 16:50:23
+reviewed:    2022-03-24 15:00:00
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -37,7 +37,7 @@ DO NOT USE THE .htaccess class for code blocks, it will break the $ from being c
 Your fortrabbit Apps are running on the Apache web server. You can make use of `.htaccess`. Missing (remember it's hidden) and wrong `htaccess` directives are common issues. These sensitive defaults are set on the fortrabbit platform regarding .htaccess:
 
 * Apache configuration syntax 2.2 and 2.4 are supported 
-* GZIP compression is enabled per default
+* GZIP compression is enabled per default for text based content types
 * Access on all `.ht*` files is disabled, so nobody can read your .htaccess
 
 
@@ -149,6 +149,15 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 
 You might want some `.htaccess` rules only to be applied in a certain environment. A common use case is that is to forward all traffic to HTTPS on your fortrabbit App in production, but not in your local development environment. 
 
+
+### GZIP compression
+
+HTTP responses are compressed if the `content-type` header indicates a text document, for example `text/css` or `text/html`.
+To enable GZIP compression for other HTTP responses, like your REST or GraphQL APIs, use the `AddOutputFilterByType` directive: 
+
+```plain
+AddOutputFilterByType DEFLATE application/json
+```
 
 #### 1. Make sure environment variables are set
 
