@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2021-03-21
+reviewed:      2022-04-01 14:51:23
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the two authentication methods available for fortrabbit services.
-group:         deployment
+group:         access
 stack:         all
 
 keywords:
