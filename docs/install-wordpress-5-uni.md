@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2020-08-04
+reviewed:         2022-04-10 07:53:57
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides

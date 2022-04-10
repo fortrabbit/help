@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2020-08-26
+reviewed:      2022-04-10 07:53:51
 title:         Working for a client
 naviTitle:     Working for a client
 excerpt:       How to work with a non-techie client
