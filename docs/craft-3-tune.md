@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-17
+reviewed:         2022-04-12
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -381,7 +381,10 @@ A Craft CMS license is limited to a single domain, which means you can only acce
 
 The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
 
+## Headless Craft
 
+By default HTTP responses with content type `text/html`, `text/css` and `text/javascript` are gzipped. When you use Craft in headless mode as a GraphQL or REST API, the content type is application/json.
+In the article about [GZIP compression](/gzip-compression) you learn how to enable it for other content types.
 
 ## Troubleshooting
 
