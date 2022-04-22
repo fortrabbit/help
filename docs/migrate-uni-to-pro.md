@@ -8,6 +8,8 @@ lead:          "The Universal stack is a good starting point. If you truly need 
 group:         stacks
 stack:         all
 
+order:         10
+
 ---
 
 The goal of this article is to help you migrate your [Universal App](/app-uni) to a [Professional App](/app-pro). On the way, you will learn how to configure and modify your new Professional App, so that it becomes easily scalable in the future. So scalable indeed, that you only need to click a button in the Dashboard to scale resources whenever you need more performance.

@@ -10,6 +10,8 @@ stack:         pro
 uniLink:       app-uni
 showAlways:    true
 
+order:         3
+
 ---
 
 The Professional Stack is made for modern PHP development workflows building modern web applications. It subscribes to the 12-factor design paradigms. Also see our [stacks article](/stacks) for more options.

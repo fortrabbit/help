@@ -1,12 +1,14 @@
 ---
 
 template:      article
-reviewed:      2021-02-09
+reviewed:      2022-04-22 14:56:45
 title:         App collaboration
 naviTitle:     App collaboration
 lead:          Leverage App level collaboration to easily develop code with others on fortrabbit.
 group:         collaboration
 stack:         all
+
+order:         10
 
 keywords:
     - collaboration

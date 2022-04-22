@@ -12,6 +12,8 @@ lead:          "fortrabbit is designed for people like us — web devs. But in r
 dontList:      false
 dontLink:      false
 
+order:         2
+
 keywords:
     - collaboration
     - administrator

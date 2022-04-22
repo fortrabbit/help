@@ -1,12 +1,14 @@
 ---
 
 template:      article
-reviewed:      2021-02-09
+reviewed:      2022-04-22 14:55:47
 title:         Collaborating on fortrabbit
 naviTitle:     About Collaboration
 lead:          Learn about the powerful teamwork features and how to map your real world business relationships on your favorite hosting platform — fortrabbit.
 group:         collaboration
 stack:         all
+
+order:         1
 
 keywords:
     - collaboration
