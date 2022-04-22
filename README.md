@@ -78,6 +78,10 @@ workInProgress: yes
 # (use underscore instead of space)
 group: Extending_fortrabbit
 
+# Order to show in lists in groups
+# higher number is later down the list
+order: 7
+
 # don't show in list on homepage
 dontList: true
 
