@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-04-10 07:54:00
+reviewed:    2022-04-27 08:56:40
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
@@ -72,7 +72,6 @@ In the Dashboard, go to your App and click on Memcache under the scaling options
 1. **Combined**: data is stored only on one of the Nodes > twice the memory size
 2. **Redundant** (recommended): data is stored on both Nodes > one Node can fail
 
-
 ### Redundant setup
 
 The PHP Memcached extension can be heavily configured and tuned. Individual App requirements might require highly customized settings. With that in mind, we advise configuring for a redundant setup:
@@ -128,6 +127,14 @@ if (!$mc->getServerList()) {
 ### Pitfall: Memcached::getVersion vs redundant setup
 
 Some very popular Memcached adapters use the `getVersion` method of the Memcached extension to check the state of the connection after setup. We do not recommend this, [due to the incompatibility of this approach with redundant setups](https://github.com/laravel/framework/issues/17957).
+
+## Memcache statistics
+
+There are no metrics shown in our Dashboard about Memcache. But you can use the official Memcached::getStats ([see php.net](https://www.php.net/manual/en/memcached.getstats.php)) function like so:
+
+```bash
+ssh {{appname}}@deploy.{{region}}.frbit.com "echo stats | nc memcachecluster.frbit.com 11211"
+```
 
 ## Alternatives
 
