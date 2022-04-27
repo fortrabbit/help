@@ -97,14 +97,6 @@ echo getenv("MY_ENV_VAR");
 
 So far we have covered the basics read on to learn to dive deeper into ENV vars and how they can help you.
 
-<!--
-Environment detection usually the opposite
-
-### Environment detection
-
-ENV vars, by definition, also can play a major role when it comes to detecting which environment the application currently runs in. Beside different access credentials, you may want to set additional parameters, when running locally, please see our [local development](local-development#toc-environment-detection) article for more.
--->
-
 ### ENV var types on fortrabbit
 
 There are four different kinds of ENV vars here on fortrabbit which are available to your App at runtime.
