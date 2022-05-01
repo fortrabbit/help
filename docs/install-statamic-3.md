@@ -42,7 +42,7 @@ Next up, let's get Statamic ready, so that the same installation can run locally
 
 ### Set environment variables
 
-Statamic comes with a predefined (hidden) `.env` file. t includes what you'll need to run Statamic locally. Mind that the `.env` is ignored from Git.
+Statamic comes with a predefined (hidden) `.env` file. It includes what you'll need to run Statamic locally. Mind that the `.env` is ignored from Git.
 
 Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars":
 
