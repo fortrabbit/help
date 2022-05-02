@@ -93,7 +93,7 @@ Your invoices contain the street address of your organization. You will be asked
 * Billing Contact >
 * **Invoice address**
 
-This needs to be done by an Owner Account - see our [collaboration article](/billing-contact#toc-changing-the-billing-e-mail-address).
+This needs to be done by an Owner Account - see our [collaboration article](/company-collaboration#toc-access-roles).
 
 
 ## Setting up a payment method
