@@ -14,7 +14,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
 
 keywords:
@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-3-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
+[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
 
 
 ## Choose your Craft install workflow
@@ -43,12 +43,12 @@ This is the recommended - more sophisticated - way. You will use [Git](/git) and
 $ composer create-project craftcms/craft {{app-name}}
 ```
 
-See an error? Check your [local development](/local-development). Later on you can [deploy Craft with Git](/craft-3-deploy-git) either to Universal or Professional Apps on fortrabbit.
+See an error? Check your [local development](/local-development). Later on you can [deploy Craft with Git](/craft-deploy-git) either to Universal or Professional Apps on fortrabbit.
 
 
 ### 1b. Download the Craft zip file
 
-Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files. Later on you can upload [Craft with SFTP](/craft-3-upload-sftp) on Universal Apps.
+Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files. Later on you can upload [Craft with SFTP](/craft-upload-sftp) on Universal Apps.
 
 
 ## Install Craft CMS locally
@@ -74,4 +74,4 @@ You can also run the installer in the browser by visiting this address: `http://
 
 ## Next steps
 
-By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and log in to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments.
+By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and log in to the Craft admin panel. Now it's time to [configure Craft](/craft-setup) to work in both environments.

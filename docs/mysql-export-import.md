@@ -32,7 +32,7 @@ keywords:
 
 ## Get ready
 
-Make sure to be able to access the fortrabbit MySQL database, see the [MySQL access article](/mysql). Craft CMS users may want to look into using [Craft Copy](/craft-3-deploy-craft-copy) that helps with that.
+Make sure to be able to access the fortrabbit MySQL database, see the [MySQL access article](/mysql). Craft CMS users may want to look into using [Craft Copy](/craft-deploy-craft-copy) that helps with that.
 
 ## MySQL export import on the command line
 

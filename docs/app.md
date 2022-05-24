@@ -113,7 +113,7 @@ While creating an App you can choose from a variety of popular open source PHP s
 * Set a [root path](#toc-root-path) — to serve the App from the right location
 * Populate [ENV vars](env-vars) — to connect to the database automatically
 
-So, the Software Preset saves you some work and helps to prevent errors. It does not install anything. It's non-destructive, you can change all settings later on as you wish. This is especially handy with modern software that supports [ENV var](env-vars) configuration and environment detection — like [Laravel](install-laravel) or [Craft CMS](craft-3-deploy-git) do. It makes the application really portable, you can deploy the same code base to any App and it will work out of the box. 
+So, the Software Preset saves you some work and helps to prevent errors. It does not install anything. It's non-destructive, you can change all settings later on as you wish. This is especially handy with modern software that supports [ENV var](env-vars) configuration and environment detection — like [Laravel](install-laravel) or [Craft CMS](craft-deploy-git) do. It makes the application really portable, you can deploy the same code base to any App and it will work out of the box. 
 
 
 ## Settings

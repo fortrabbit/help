@@ -73,7 +73,7 @@ The strategy applied in the synchronization is:
 
 ### Not all applications work well with Git
 
-Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster-child-level for good Git support. [WordPress](/install-wordpress-uni) and other CMS are not Git compatible, out-of-the-box. [Craft 3](/craft-3-deploy-git) works well with Git and Composer.
+Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster-child-level for good Git support. [WordPress](/install-wordpress-uni) and other CMS are not Git compatible, out-of-the-box. [Craft 3](/craft-deploy-git) works well with Git and Composer.
 
 ## Choosing a workflow
 

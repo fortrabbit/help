@@ -71,7 +71,7 @@ See [here](/504-errors)
 
 ## I uploaded Craft by SFTP but it's not working!
 
-Most likely you have not followed our install guides. We expect you to have a [local development environment](/local-development) and fortrabbit to be production. Please see the [Craft SFTP guide](/craft-3-upload-sftp#toc-service-unavailable-error).
+Most likely you have not followed our install guides. We expect you to have a [local development environment](/local-development) and fortrabbit to be production. Please see the [Craft SFTP guide](/craft-upload-sftp#toc-service-unavailable-error).
 
 
 ## I clicked on my desired software but it got not installed!

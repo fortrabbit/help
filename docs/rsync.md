@@ -63,7 +63,7 @@ See our old ["I love assets" blog post](https://blog.fortrabbit.com/i-love-asset
 
 Also, there likely will be files, like image uploads and the like, on the App's file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likely would want to download certain files from the App into your local development.
 
-PRO TIP: For [Craft CMS](/craft-3-about) we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
+PRO TIP: For [Craft CMS](/craft-about) we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
 
 
 

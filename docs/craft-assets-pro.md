@@ -13,8 +13,8 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
-uniLink:          craft-3-assets-uni
+version:          4.0
+uniLink:          craft-assets-uni
 supportLevel:     a
 
 keywords:
@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about) and have [Craft running on your local machine](/craft-3-install-local), [set up](/craft-3-setup) and [deployed](/craft-3-deploy-git). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-about) and have [Craft running on your local machine](/craft-install-local), [set up](/craft-setup) and [deployed](/craft-deploy-git). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
 
 
 ## Craft CMS assets on Pro Apps
@@ -51,4 +51,4 @@ See the [main Object Storage article](/object-storage#toc-object-storage-access)
 
 ## Next steps
 
-Continue with [tuning Craft](/craft-3-tune).
+Continue with [tuning Craft](/craft-tune).
