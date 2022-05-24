@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-04-25 17:04:28
+reviewed:         2022-05-25
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -38,7 +38,7 @@ Make sure to have followed [our guides](/craft-about) so far. You should have al
 The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. When you used Composer to install, that key was shown at the end of the installation. If not, open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
 
 ```dotenv
-SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
+CRAFT_SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
 It will contain a value if you have [installed Craft 4 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
@@ -55,7 +55,7 @@ Additionally you can create groups in every config file. The top level array key
 
 ```dotenv
 # Local environment ENV 
-ENVIRONMENT=dev
+CRAFT_ENVIRONMENT=dev
 ```
 
 ### Domain setup
@@ -154,7 +154,7 @@ If your local Craft installation contains a table prefix, the one on the fortrab
 
 ```dotenv
 # Example Table prefix
-DB_TABLE_PREFIX=craft_
+CRAFT_DB_TABLE_PREFIX=craft_
 ```
 
 ## Manually setting ENV vars
@@ -164,14 +164,11 @@ Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fo
 ### Craft ENV vars on fortrabbit
 
 ```osterei32
-DB_DATABASE=${MYSQL_DATABASE}
-DB_DRIVER=mysql
-DB_PASSWORD=${MYSQL_PASSWORD}
-DB_SERVER=${MYSQL_HOST}
-DB_USER=${MYSQL_USER}
-DB_DSN=mysql:host=${MYSQL_HOST};port=3306;dbname=${MYSQL_DATABASE}
-ENVIRONMENT=production
-SECURITY_KEY=LongRandomString
+CRAFT_DB_DRIVER=mysql
+CRAFT_DB_PASSWORD=${MYSQL_PASSWORD}
+CRAFT_DB_DSN=mysql:host=${MYSQL_HOST};port=3306;dbname=${MYSQL_DATABASE}
+CRAFT_ENVIRONMENT=production
+CRAFT_SECURITY_KEY=LongRandomString
 ```
 
 ## Using Craft CMS plugins
