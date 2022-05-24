@@ -16,6 +16,8 @@ image:            craft-cms-mark-black-new.svg
 version:          4.0
 supportLevel:     a
 
+otherVersions:
+    3 : craft-3
 
 keywords:
   - craft
@@ -33,7 +35,7 @@ Make sure to have followed [our guides](/craft-about) so far. You should have al
 
 ## Craft configuration on fortrabbit
 
-Craft 3 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). This means you can run your Craft locally and remotely without code or configuration file changes. Locally, your `.env` file will be modified and read. That file is not part of Git, you don't need it on the App.
+Craft 4 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). This means you can run your Craft locally and remotely without code or configuration file changes. Locally, your `.env` file will be modified and read. That file is not part of Git, you don't need it on the App.
 
 
 ## Database setup

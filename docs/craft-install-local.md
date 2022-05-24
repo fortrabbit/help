@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
+[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-about) available. Use the detailed [official Craft 4 install guide](https://docs.craftcms.com/v4/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
 
 
 ## Choose your Craft install workflow
@@ -37,7 +37,7 @@ The way you will install Craft will set the course on how you will [deploy](/dep
 
 ### 1a. Download Craft with Composer
 
-This is the recommended - more sophisticated - way. You will use [Git](/git) and [Composer](/composer#toc-local-composer) in the Terminal. Run this command **on you local machine** to create a Craft 3 project to get started:
+This is the recommended - more sophisticated - way. You will use [Git](/git) and [Composer](/composer#toc-local-composer) in the Terminal. Run this command **on you local machine** to create a Craft 4 project to get started:
 
 ```
 $ composer create-project craftcms/craft {{app-name}}
@@ -53,7 +53,7 @@ Are you more "designer" and less "developer"? SFTP also works here. Just downloa
 
 ## Install Craft CMS locally
 
-Craft 3 uses environment variables to access environment specific settings. With your fortrabbit Craft App, those variables are already set. Configure it to work on your local machine now. You have two options to install Craft:
+Craft 4 uses environment variables to access environment specific settings. With your fortrabbit Craft App, those variables are already set. Configure it to work on your local machine now. You have two options to install Craft:
 
 ### 2a. Terminal setup
 

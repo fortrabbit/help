@@ -191,9 +191,9 @@ Per default all the [domains](/domains) of the App will route to the same root p
 
 | Framework/CMS                                | Root path     |
 | -------------------------------------------- | ------------- |
-| Laravel, Phalcon, Craft 2, Symfony 4, Slim 3 | htdocs/public |
-| Symfony 2, Symfony 3, Craft 3                | htdocs/web    |
-| Drupal 8, WordPress, Grav                    | htdocs        |
+| Laravel, Phalcon, Craft 2, Symfony 5, Slim 3 | htdocs/public |
+| Symfony 2, Symfony 3, Craft 3, Craft 4       | htdocs/web    |
+| Drupal 8, Drupal 9, WordPress, Grav          | htdocs        |
 
 
 You can however set the root path afterwards at any given time by visiting the appropriate setting in the Dashboard under your App.

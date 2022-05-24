@@ -16,6 +16,9 @@ image:            craft-cms-mark-black-new.svg
 version:          4.0
 supportLevel:     a
 
+otherVersions:
+    3 : craft-3
+
 keywords:
   - craft
   - craftCMS
@@ -38,7 +41,7 @@ The mandatory Craft CMS security key has to be shared among all environments. We
 SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
-It will contain a value if you have [installed Craft 3 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
+It will contain a value if you have [installed Craft 4 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
@@ -332,8 +335,6 @@ The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thank
 
 By default HTTP responses with content type `text/html`, `text/css` and `text/javascript` are gzipped. When you use Craft in headless mode as a GraphQL or REST API, the content type is application/json.
 In the article about [GZIP compression](/gzip-compression) you learn how to enable it for other content types.
-<<<<<<< HEAD:docs/craft-3-tune.md
-=======
 
 ## Troubleshooting
 
@@ -375,4 +376,3 @@ That's a timeout issue. Commonly this happens when Craft is busy processing the 
 ### Large assets upload problems
 
 Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and its default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` settings, which you can configure in the Dashboard, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) to see if you can find some meaningful errors.
->>>>>>> 67fec13 (Craft help: rename paths (remove '3')):docs/craft-tune.md

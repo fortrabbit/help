@@ -5,7 +5,7 @@ reviewed:         2022-03-21 15:49:06
 title:            Getting started with Craft CMS on fortrabbit
 naviTitle:        1. Get started with Craft
 order:            1
-lead:             Craft 3 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
+lead:             Craft 4 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
 group:            craft
 stack:            all
 
