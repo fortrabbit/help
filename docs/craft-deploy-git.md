@@ -29,7 +29,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-about), and have [Craft installed locally](craft-install-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer); it can be applied to [Professional Apps](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-start), and have [Craft installed locally](craft-install-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer); it can be applied to [Professional Apps](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-upload-sftp).
 
 
 ## Deploy the Craft code base with Git
@@ -63,7 +63,7 @@ $ git push
 
 ## Next steps
 
-Please also make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on your [App's Stack](/craft-about#toc-1-1-choose-your-stack): 
+Please also make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on your [App's Stack](/craft-start#toc-1-1-choose-your-stack): 
 
 * Universal Apps: [Deploy assets with rsync](/craft-assets-uni)
 * Professional Apps: [Deploy assets to the Object Storage](/craft-assets-pro).

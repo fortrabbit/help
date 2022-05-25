@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-about). Further, this guide is for advanced users on the [Uni Stack](/app-uni) already using [Git deployment to deploy Craft](/craft-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-start). Further, this guide is for advanced users on the [Uni Stack](/app-uni) already using [Git deployment to deploy Craft](/craft-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-upload-sftp).
 
 
 ## About Craft Assets

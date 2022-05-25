@@ -28,7 +28,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have completed all steps from the [get ready guide](/craft-about). You now should have Craft installed in your local development environment already, if not see [here](craft-install-local).
+Make sure to have completed all steps from the [get ready guide](/craft-start). You now should have Craft installed in your local development environment already, if not see [here](craft-install-local).
 
 
 ## About Craft Copy
@@ -48,20 +48,15 @@ Please see the **[Craft Copy usage guide at GitHub](https://github.com/fortrabbi
 
 ## Alternative ways to deploy Craft CMS
 
-Don't feel like using Craft Copy? Np problem! Here are some alternative ways to deploy Craft on fortrabbit:
-
-### SFTP deployment
+Don't feel like using Craft Copy? No problem! Here are some alternative ways to deploy Craft on fortrabbit:
 
 There is a more basic guide: [Install Craft using SFTP](/craft-upload-sftp).
-
-### Git deployment
-
-If you prefer to use Git directly, check out our guide: [Deploy Craft CMS with Git](/craft-deploy-git)
+Or if you prefer to use Git directly, check out our guide: [Deploy Craft CMS with Git](/craft-deploy-git)
 
 
 ### Assets management
 
-There are two dedicated guides here to deploy the Craft `assets` folder separately. It depends on your [App's Stack](/craft-about#toc-1-1-choose-your-stack): 
+There are two dedicated guides here to deploy the Craft `assets` folder separately. It depends on your [App's Stack](/craft-start#toc-1-1-choose-your-stack): 
 
 * For Universal Apps: [Deploy assets with rsync](/craft-assets-uni)
 * For Professional Apps: [Deploy assets to the Object Storage](/craft-assets-pro).

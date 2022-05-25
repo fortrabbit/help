@@ -30,7 +30,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-about) so far. You should have already [installed Craft locally](craft-install-local) and deployed it your fortrabbit App. 
+Make sure to have followed [our guides](/craft-start) so far. You should have already [installed Craft locally](craft-install-local) and deployed it your fortrabbit App. 
 
 
 ## Craft configuration on fortrabbit

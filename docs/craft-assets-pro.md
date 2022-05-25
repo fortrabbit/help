@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-about) and have [Craft running on your local machine](/craft-install-local), [set up](/craft-setup) and [deployed](/craft-deploy-git). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-start) and have [Craft running on your local machine](/craft-install-local), [set up](/craft-setup) and [deployed](/craft-deploy-git). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
 
 
 ## Craft CMS assets on Pro Apps

@@ -31,7 +31,7 @@ rank: 90
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-about) so far. You should have already [installed Craft locally](craft-install-local), [configured](/craft-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
+Make sure to have followed [our guides](/craft-start) so far. You should have already [installed Craft locally](craft-install-local), [configured](/craft-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
 
 ### Security key setup
 
