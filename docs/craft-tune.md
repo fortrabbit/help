@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-04-25 17:04:28
+reviewed:         2022-05-25
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,8 +13,11 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
+
+otherVersions:
+    3 : craft-3
 
 keywords:
   - craft
@@ -28,17 +31,17 @@ rank: 90
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
+Make sure to have followed [our guides](/craft-start) so far. You should have already [installed Craft locally](craft-install-local), [configured](/craft-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
 
 ### Security key setup
 
 The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. When you used Composer to install, that key was shown at the end of the installation. If not, open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
 
 ```dotenv
-SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
+CRAFT_SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
-It will contain a value if you have [installed Craft 3 correctly on your local machine](/craft-3-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
+It will contain a value if you have [installed Craft 4 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
@@ -52,7 +55,7 @@ Additionally you can create groups in every config file. The top level array key
 
 ```dotenv
 # Local environment ENV 
-ENVIRONMENT=dev
+CRAFT_ENVIRONMENT=dev
 ```
 
 ### Domain setup
@@ -115,7 +118,7 @@ In `config/general.php` you can disable the header with `'sendPoweredByHeader' =
 
 ### Using project config
 
-Note that with Craft 3.5, the `useProjectConfigFile` config setting [has been deprecated](https://craftcms.com/knowledge-base/upgrading-to-craft-3-5#project-config-workflow). Craft will now always create multiple project config files in the `/config/project` directory.
+Craft will now always create multiple project config files in the `/config/project` directory.
 
 With the [fortrabbit/craft-auto-migrate](https://github.com/fortrabbit/craft-auto-migrate) package, Project Config changes are applied automatically every time you `git push` changes.
 
@@ -151,7 +154,7 @@ If your local Craft installation contains a table prefix, the one on the fortrab
 
 ```dotenv
 # Example Table prefix
-DB_TABLE_PREFIX=craft_
+CRAFT_DB_TABLE_PREFIX=craft_
 ```
 
 ## Manually setting ENV vars
@@ -161,14 +164,11 @@ Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fo
 ### Craft ENV vars on fortrabbit
 
 ```osterei32
-DB_DATABASE=${MYSQL_DATABASE}
-DB_DRIVER=mysql
-DB_PASSWORD=${MYSQL_PASSWORD}
-DB_SERVER=${MYSQL_HOST}
-DB_USER=${MYSQL_USER}
-DB_DSN=mysql:host=${MYSQL_HOST};port=3306;dbname=${MYSQL_DATABASE}
-ENVIRONMENT=production
-SECURITY_KEY=LongRandomString
+CRAFT_DB_DRIVER=mysql
+CRAFT_DB_PASSWORD=${MYSQL_PASSWORD}
+CRAFT_DB_DSN=mysql:host=${MYSQL_HOST};port=3306;dbname=${MYSQL_DATABASE}
+CRAFT_ENVIRONMENT=production
+CRAFT_SECURITY_KEY=LongRandomString
 ```
 
 ## Using Craft CMS plugins
@@ -187,7 +187,7 @@ This method let's you conveniently discover, install and also "activate" (pay fo
 2. Visit the plugin store
 3. Search, install and activate plugins
 
-Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our [updating instructions](/craft-3-update).
+Plugins installed via the plugin store are "pinned" with `composer.json` and must also be updated through the same mechanisms. Please also see our [updating instructions](/craft-update).
 
 
 #### B) Install Craft plugins via command line
@@ -332,3 +332,44 @@ The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thank
 
 By default HTTP responses with content type `text/html`, `text/css` and `text/javascript` are gzipped. When you use Craft in headless mode as a GraphQL or REST API, the content type is application/json.
 In the article about [GZIP compression](/gzip-compression) you learn how to enable it for other content types.
+
+## Troubleshooting
+
+### You see a Max Execution Time warning
+
+The Craft CMS Control Panel has a system report that will check for technical requirements. Our default setting for `max_execution_time` is 60 seconds. The Control Panel will complain that: "Craft requires a minimum PHP max execution time of 120 seconds ... "
+
+The truth is, only heavy tasks like updates, backups and queue execution in the Craft Control Panel may take longer than 60 seconds. For site delivery a short `max_execution_time` is beneficial to prevent blocking PHP resources. No HTTP response should take longer than a few seconds, actually.
+
+Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
+
+
+### You see a "Service Unavailable" or 503 message
+
+What to do when your Craft CMS throws an "Service Unavailable" message on the screen instead of rendering your website? Don't be afraid, you can likely solve that yourself. Especially during setup it's likely that some tiny config is still missing or wrong. Check the logs.
+
+
+#### Common errors with initial setup
+
+Here are some common errors, the cause of 90% of failing Craft CMS installations here:
+
+* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App; see our [security key setup guide](craft-setup#toc-security-key).
+* **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your `.env` file at home as it will be ignored anyway. See our [environment variables article](/env-vars) as well. 
+* **Missing table prefix** - You might have a table prefix locally, some users do this locally to have multiple installations in one big database. To distinguish between them you can set up a table prefix. You can do this with an environment variable: locally you set that with your `.env` file, in fortrabbit via the Dashboard.
+* **Missing .htaccess file** — Commonly happens with SFTP upload. The `.htaccess` file is hidden, make sure to copy it over as well.
+
+
+#### Temporarily turning on/off dev mode
+
+Your fortrabbit App is set to be your production environment per default. So when an runtime exception occurs, you will presented with the very basic "Service Unavailable" error screen. This is to prevent visitors of your website from seeing any information about the system and the errors. One thing you can do, is temporarily setting DevMode to true, so that you can see the error output printed on screen. We advise against doing it, unless it is a non-production environment. 
+
+
+### You see a 504 message
+
+That's a timeout issue. Commonly this happens when Craft is busy processing the queue or doing too many image transformations at once (see above please). 
+
+
+
+### Large assets upload problems
+
+Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and its default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` settings, which you can configure in the Dashboard, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) to see if you can find some meaningful errors.

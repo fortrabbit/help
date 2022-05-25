@@ -1,11 +1,11 @@
 ---
 
 template:         article
-reviewed:         2022-03-21 15:49:06
+reviewed:         2022-05-25
 title:            Getting started with Craft CMS on fortrabbit
 naviTitle:        1. Get started with Craft
 order:            1
-lead:             Craft 3 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
+lead:             Craft 4 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
 group:            craft
 stack:            all
 
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
 order:            1
 
@@ -39,7 +39,7 @@ There are [two hosting stacks](/stacks) here on fortrabbit. You can choose with 
 
 ## Workflow
 
-1. **[Install Craft CMS locally](craft-3-install-local)**: Install new with Composer or use an existing project
-2. **[Setup Craft for fortrabbit](/craft-3-setup)**: Prepare environment, set defaults
-3. **[Deploy Craft](/craft-3-deploy-craft-copy)**: Use our Craft Copy tool
-5. **[Tune Craft](/craft-3-tune)**: Master it!
+1. **[Install Craft CMS locally](craft-install-local)**: Install new with Composer or use an existing project
+2. **[Setup Craft for fortrabbit](/craft-setup)**: Prepare environment, set defaults
+3. **[Deploy Craft](/craft-deploy-craft-copy)**: Use our Craft Copy tool
+5. **[Tune Craft](/craft-tune)**: Master it!

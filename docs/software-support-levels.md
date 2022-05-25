@@ -23,7 +23,7 @@ keywords:
 
 We have really solid hands-on experience with this. Ask us anything.
 
-* [Craft CMS](/craft-3-about)
+* [Craft CMS](/craft-start)
 * [Laravel](/install-laravel-6)
 * [Symfony](/install-symfony-6)
 

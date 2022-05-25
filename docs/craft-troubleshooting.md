@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-04-12
+reviewed:         2022-05-25
 title:            Troubleshooting Craft CMS issues
 naviTitle:        Craft troubleshooting
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
 
 keywords:
@@ -29,7 +29,7 @@ rank: 190
 
 ## You see a 504 message
 
-That's a timeout issue. Commonly this happens when Craft is busy processing the queue or doing too many image transformations at once or something else is blocking. Please see our [Craft CMS performance article](/craft-3-performance) for more details on the matter.
+That's a timeout issue. Commonly this happens when Craft is busy processing the queue or doing too many image transformations at once or something else is blocking. Please see our [Craft CMS performance article](/craft-performance) for more details on the matter.
 
 ## You see a Max Execution Time warning
 
@@ -37,7 +37,7 @@ The Craft CMS Control Panel has a system report that will check for technical re
 
 The truth is, only heavy tasks like updates, backups and queue execution in the Craft Control Panel may take longer than 60 seconds. For site delivery a short `max_execution_time` is beneficial to prevent blocking PHP resources. No HTTP response should take longer than a few seconds, actually.
 
-Please also see our [Craft CMS performance article](/craft-3-performance) for more details on the matter.
+Please also see our [Craft CMS performance article](/craft-performance) for more details on the matter.
 
 ## You see a "Service Unavailable" or 503 message
 
@@ -47,7 +47,7 @@ What to do when your Craft CMS throws an "Service Unavailable" message on the sc
 
 Here are some common errors, the cause of 90% of failing Craft CMS installations here:
 
-* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App; see our [security key setup guide](craft-3-setup#toc-security-key).
+* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App; see our [security key setup guide](craft-setup#toc-security-key).
 * **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your `.env` file at home as it will be ignored anyway. See our [environment variables article](/env-vars) as well. 
 * **Missing table prefix** - You might have a table prefix locally, some users do this locally to have multiple installations in one big database. To distinguish between them you can set up a table prefix. You can do this with an environment variable: locally you set that with your `.env` file, in fortrabbit via the Dashboard.
 * **Missing .htaccess file** — Commonly happens with SFTP upload. The `.htaccess` file is hidden, make sure to copy it over as well.

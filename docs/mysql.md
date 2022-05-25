@@ -58,7 +58,7 @@ $pdo = new \PDO(
 $pdo->query("SELECT * FROM ...")
 ```
 
-That is only a generic example. See our specific guides for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-6#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](craft-3-tune) which are often using zero-config style environment variables.
+That is only a generic example. See our specific guides for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-6#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](craft-tune) which are often using zero-config style environment variables.
 
 ## Access the MySQL database from local
 

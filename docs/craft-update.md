@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-21 15:50:32
+reviewed:         2022-05-25
 title:            Update Craft CMS
 naviTitle:        6. Update Craft
 lead:             We recommend to always use the latest version of all software for security reasons. Mind that you are responsible for the software you write yourself and use. Here are some strategies to best keep Craft CMS up-to-date.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
 
 keywords:
@@ -30,7 +30,7 @@ keywords:
 
 **Remember**: your local development environment is the master where changes are applied and tested first. Please update your local Craft CMS installation first and apply updates by deploying to production as a second step. That way you make sure that your environments are in sync.
 
-The `config/general.php` file we use in [our setup guide](/craft-3-setup#toc-configuration-settings) sets `allowUpdates` to `false`: this prevents plugin and Craft core updates from the Craft Control Panel in the `production` environment (fortrabbit App).
+The `config/general.php` file we use in [our setup guide](/craft-setup#toc-configuration-settings) sets `allowUpdates` to `false`: this prevents plugin and Craft core updates from the Craft Control Panel in the `production` environment (fortrabbit App).
 
 It's a common mistake we see. Make sure your environments are in sync and you don't mess with updates and installing plugins on the App itself. 
 
@@ -79,7 +79,7 @@ Continuous development with an SFTP workflow is a hassle. One strategy is to upl
 
 In many cases when updating a database migration is required. This will upgrade the database table structure to match the latest updates, and will be carried out when running the updates locally. But it's an extra step required to be done with your fortrabbit App.
 
-As of Craft 3.5 all essential settings will be stored in a `project.yaml` file. See also [here](/craft-3-tune#toc-using-project-config).
+As of Craft 3.5 all essential settings will be stored in a `project.yaml` file. See also [here](/craft-tune#toc-using-project-config).
 
 Here are your options to run migrations:
 

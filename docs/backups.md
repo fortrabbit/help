@@ -98,7 +98,7 @@ craft/storage/backups
 craft/storage/logs
 craft/storage/runtime
 
-# Craft 3
+# Craft 3 and 4
 storage/backups
 storage/logs
 storage/runtime

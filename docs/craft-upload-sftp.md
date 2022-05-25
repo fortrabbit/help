@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-06-03
+reviewed:         2022-05-25
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          3.7
+version:          4.0
 supportLevel:     a
 
 keywords:
@@ -25,11 +25,11 @@ keywords:
 ---
 
 
-This legacy guide here follows the easiest path to get Craft up and running on fortrabbit.  We also have a more advanced workflow to [deploy Craft with Git](/craft-3-deploy-git).
+This legacy guide here follows the easiest path to get Craft up and running on fortrabbit.  We also have a more advanced workflow to [deploy Craft with Git](/craft-deploy-git).
 
 ## Get ready
 
-In any case, you should have [local development environment](local-development) and [Craft installed](/craft-3-install-local) and [configured](/craft-3-setup); also see our [get ready guide](/get-ready).
+In any case, you should have [local development environment](local-development) and [Craft installed](/craft-install-local) and [configured](/craft-setup); also see our [get ready guide](/get-ready).
 
 ## Upload Craft with SFTP
 
@@ -67,9 +67,9 @@ You can then change the ENV variable back to `production`. We actually assume th
 
 ## Consider
 
-A downside of the SFTP workflow is that you have to keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users.
+A downside of the SFTP workflow is that you have to keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-assets-uni) is optional but still helpful for SFTP users.
 
 
 ## Next steps
 
-Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). Next, [configure Craft](/craft-3-setup) to complete your setup.
+Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). Next, [configure Craft](/craft-setup) to complete your setup.

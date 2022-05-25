@@ -57,7 +57,7 @@ The `.env` file concept has become quite common and there are ports to all langu
 * [github.com/vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 * [github.com/symfony/dotenv](https://github.com/symfony/dotenv)
 
-Modern PHP frameworks — [Laravel](/install-laravel), [Symfony](/install-symfony) …) and CMS ([Craft](/craft-3-about)) use one or the other under the hood.
+Modern PHP frameworks — [Laravel](/install-laravel), [Symfony](/install-symfony) …) and CMS ([Craft](/craft-start)) use one or the other under the hood.
 
 ### ENV vars on fortrabbit
 

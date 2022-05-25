@@ -51,7 +51,7 @@ So, at the end of this — ideally — you have two versions of your project/web
 On your fortrabbit production environment you are replicating your local workflow by creating two parallel versions:
 
 1. Create a new App in the Dashboard.
-2. [Deploy code with Git](/craft-3-deploy-git) and [rsync the assets](/craft-3-assets-uni) from your new local Craft 3 version to your new fortrabbit App.
+2. [Deploy code with Git](/craft-deploy-git) and [rsync the assets](/craft-assets-uni) from your new local Craft 3 version to your new fortrabbit App.
 3. Once you have two versions running locally and on fortrabbit smoothly, remove the [domain](/domains) from the old App running on Craft 2 and add it to the new App running on Craft 3. Check out our general [migration guide](/migrating) on how to switch seamlessly and without downtime.
 4. After the domain switch is done, you can now safely delete the not needed Craft 2 fortrabbit App. 
 
