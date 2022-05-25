@@ -27,12 +27,19 @@ keywords:
 
 ## Use Craft 3 
 
-Starting from May 27th 2022 we assume every new Craft App created on fortrabbit runs on Craft 4. To deploy a Craft 3 some changes are required.    
+Starting from May 25th 2022 we assume every new Craft App created on fortrabbit runs on Craft 4. To deploy a Craft 3 some changes are required.    
 
 ## Craft 3 Environment variables
 
+<div markdown="1" data-user="known">
+[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
 
-```
+The following ENV vars Craft 3 expects. Copy the block below and paste it under the ENV var settings of your App.
+All you need to change is the `SECURITY_KEY`. You get it from your local .env file.
+
+
+```osterei32
 DB_DATABASE=${MYSQL_DATABASE}
 DB_DRIVER=mysql
 DB_PASSWORD=${MYSQL_PASSWORD}
