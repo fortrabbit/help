@@ -3,11 +3,11 @@
 template:         article
 reviewed:         2022-05-25
 title:            Craft 3 setup
-naviTitle:        Differences between Craft 3 and Craft 4
+naviTitle:        Differences between Craft 3 and 4
 lead:             In our help pages we cover the setup process of Craft 4. Here we document the differences to Craft 3. 
 group:            craft
 stack:            all
-dontList:         false
+dontList:         true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
