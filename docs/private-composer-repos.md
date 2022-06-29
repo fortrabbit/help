@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2021-06-03
+reviewed:    2022-06-29
 title:       How to use private Composer repos with SSH keygen
 naviTitle:   Private Composer repos
 lead:        Generate a unique SSH key-pair for your App on fortrabbit to use private Composer repos.
@@ -34,6 +34,8 @@ ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen
 The private key will not be displayed (you don't need it either). The public key in the example is starting at `ssh-rsa AAA...` and ending at `..odTimp`.
 
 You can now install the key in your private Composer repository - something like BitBucket, GitHub or the one from your company. You can re-run this command at any time to view or change the current key of your App.
+
+**Alternatively, you use the [Composer auth.json file](/composer-auth) which is more common these days.**
 
 ### Link your private repo
 

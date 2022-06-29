@@ -70,7 +70,7 @@ sustained:
 
 ### Private repositories in Composer
 
-You need to add the private repositories into your `composer.json` file? Read on [here](private-composer-repos).
+You need to add the private repositories into your `composer.json` file? Read on [here](/composer-auth.md).
 
 ## Composer from SSH
 
