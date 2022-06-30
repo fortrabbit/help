@@ -35,7 +35,7 @@ The private key will not be displayed (you don't need it either). The public key
 
 You can now install the key in your private Composer repository - something like BitBucket, GitHub or the one from your company. You can re-run this command at any time to view or change the current key of your App.
 
-**Alternatively, you use the [Composer auth.json file](/composer-auth) which is more common these days.**
+**Alternatively, you can use the [Composer auth.json file](/composer-auth) which is more common these days.**
 
 ### Link your private repo
 
