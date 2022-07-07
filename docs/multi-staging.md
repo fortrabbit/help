@@ -7,7 +7,7 @@ title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
 group:         development
 stack:         all
-order:         10
+order:         9
 
 ---
 
