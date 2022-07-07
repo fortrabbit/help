@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-06-30
+reviewed:    2022-07-07
 title:       How to generate auth.json for Composer private repos 
 naviTitle:   Private Composer repos
 lead:        Generate an auth.json file during deployment to access private Composer repos.
@@ -42,8 +42,8 @@ $data = [
     ],
     'http-basic' => [
         'nova.laravel.com' => [
-            'username' => $username,
-            'password' => $password,
+            'username' => $nova_username,
+            'password' => $nova_password,
         ]
     ]
 ];
