@@ -3,10 +3,11 @@
 template:    article
 reviewed:    2022-07-07
 title:       How to generate auth.json for Composer private repos 
-naviTitle:   Private Composer repos
+naviTitle:   Private Composer repos with auth.json
 lead:        Generate an auth.json file during deployment to access private Composer repos.
 group:       development
 stack:       all
+order:       10
 
 keywords:
     - Composer
