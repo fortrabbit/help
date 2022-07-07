@@ -26,6 +26,8 @@ This is just for the sake of demonstration, you will probably need to adjust it 
 Since you don't want to keep secrets in your git history, you can store them in [Secrets](/secrets) or [Env vars](/env-vars). In the script we show both ways.
 
 ```php
+<?php
+
 # add-auth.php
 
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
@@ -36,7 +38,7 @@ $github_oauth =  getenv('GITHUB_OAUTH_TOKEN');
 
 $data = [
     'github-oauth' => [
-        ["github.com" =>  "8f4f2e8c4454651dae52fab1b43eefdda06f9cd5xxx"]
+        ["github.com" =>  $github_oauth]
     ],
     'http-basic' => [
         'nova.laravel.com' => [
