@@ -48,7 +48,7 @@ The memory limit is for all jobs combined. For *Worker L* plans and above, there
 
 * See the [specs page](http://www.fortrabbit.com/specs#worker) for limits.
 
-Please mind that the Worker Component is not available for Apps in trail mode.
+Please mind that the Worker Component is not available for Apps in trial mode.
 
 ## Using the Worker
 

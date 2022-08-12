@@ -54,7 +54,7 @@ $ git commit -am 'Initial commit'
 $ git push 
 ```
 
-After the first deployment is done, the traced files from te Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+After the first deployment is done, the traced files from the Git repo will be synced into the App's web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Next time you want to send changes to your App, you will have to add new or changed files and subsequently do a git-push:
 
