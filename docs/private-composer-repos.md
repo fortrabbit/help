@@ -4,7 +4,7 @@ template:    article
 reviewed:    2022-08-24
 title:       How to use private Composer repos 
 naviTitle:   Private Composer repos 
-lead:        Learn two different ways how to access privat composer repositories during git deployment
+lead:        Learn two different ways how to access privat composer repositories during git deployment.
 group:       development
 stack:       all
 order:       11
