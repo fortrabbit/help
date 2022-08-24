@@ -165,6 +165,9 @@ Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained
 
 ## General scaling tips
 
+* It may takes up to 45 minutes until a scaling is applied after booking
+  * New hardware may need to be allocated and data needs to copied
+  * Only when everything is ready, the new resources will be used
 * Scaling between plans should only cause seconds or no downtime at all.
 * In edge cases hanging "PHP processes" can extend downtime to minutes.
 * The actual execution of the scaling happens postponed. Usually a few minutes after booking the plan. 
