@@ -54,7 +54,7 @@ With Universal Apps there is a limitation in that the Apps can not be scaled dow
 
 ## How do you bill?
 
-At the end of each month we send an invoice the usage of that month. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component. See our [billing article](/billing) for more.
+At the end of each month we send an invoice the usage of that month. The billing period is daily. So you'll be charged just for the days you have actually used a certain App or Component. See our [pro rated billing article](pro-rated-billing) for more.
 
 ## What's the tinkering level?
 
@@ -66,7 +66,7 @@ Use for professional work, commercial projects, mission critical Apps, live site
 
 ## What about taxes?
 
-The fortrabbit service is targeted at professional B2B clients. Prices are net and subject to statutory VAT and may be added. Please also see our [billing page](/billing).
+The fortrabbit service is targeted at professional B2B clients. Prices are net and subject to statutory VAT and may be added. Please also see our [VAT help page](/vat).
 
 ## What about support?
 

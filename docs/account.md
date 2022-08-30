@@ -152,7 +152,7 @@ No longer like fortrabbit? Sorry! To cancel your Account completely:
 2. Your account
 3. **Cancel Account** and follow the instructions.
 
-Please be aware that: The [billing](/billing) cycle is monthly after usage. When you cancel today, you will get one last invoice next month for the usage this month so far. For example: Today is the 7th, so the first seven days of march will be billed after the march is over.
+Please be aware that: The [billing](/pro-rated-billing) cycle is monthly after usage. When you cancel today, you will get one last invoice next month for the usage this month so far. For example: Today is the 7th, so the first seven days of march will be billed after the march is over.
 
 When you have a [Company](/company) with other Owners, the Company will not be deleted, you will leave the Company. The fortrabbit Account itself is free, you can also delete all Apps and cancel all Company plans so that no future costs will applied. You'll still might get "service" e-mails by us.
 

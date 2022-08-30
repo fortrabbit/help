@@ -173,4 +173,4 @@ Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained
 * The actual execution of the scaling happens postponed. Usually a few minutes after booking the plan. 
 * Required scaling is very unique to your application.
 * Experiment with the settings that are best working good for you.
-* Experimenting with scaling settings is not cost-intensive, thanks to [daily billing](/billing).
+* Experimenting with scaling settings is not cost-intensive, thanks to [daily billing](/pro-rated-billing).

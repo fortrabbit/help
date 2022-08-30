@@ -98,7 +98,7 @@ This needs to be done by an Owner Account - see our [collaboration article](/com
 
 ## Setting up a payment method
 
-A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/billing#toc-payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing).
+A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing).
 
 
 ### Troubleshooting payment setup
@@ -128,7 +128,7 @@ Changing the payment method will affect future payments and will also be used to
 
 ## Adding a VAT IN
 
-It is recommended to add your VAT IN to your Billing Contact when your company is registered in the European Union. This can save you (and us) upfront value added taxes. Please see our [tax topic](/billing#toc-taxes). To enter your VAT IN:
+It is recommended to add your VAT IN to your Billing Contact when your company is registered in the European Union. This can save you (and us) upfront value added taxes. Please see our [tax topic](/vat). To enter your VAT IN:
 
 1. Dashboard > Companies > {{ Your Company }} >
 2. Billing Contact >

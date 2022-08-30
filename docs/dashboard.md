@@ -32,7 +32,7 @@ keywords:
 
 **[Collaboration](/collaboration)**: Manage your own teams and join other teams.
 
-**[Billing](/billing)**: Manage your different Companies and Billing Contacts, see invoices.
+**[Billing](/#billing)**: Manage your different Companies and Billing Contacts, see invoices.
 
 
 ## Accessing the Dashboard

@@ -315,7 +315,7 @@ You can always delete Apps you own or administer. To delete an App, visit the Ap
 
 ### Recovering deleted Apps
 
-Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINAL here and can't be reversed. We delete as much as possible when a client requests so or when we have to because payments have bounced too often. We do so for privacy and security reasons. We believe that it should be your right to be forgotten. Imagine that we take your data as a hostage until you pay us. So in most cases that's actually good. Also read [how we handle bounced payments](/billing#toc-bounced-payments).
+Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINAL here and can't be reversed. We delete as much as possible when a client requests so or when we have to because payments have bounced too often. We do so for privacy and security reasons. We believe that it should be your right to be forgotten. Imagine that we take your data as a hostage until you pay us. So in most cases that's actually good. Also read [how we handle bounced payments](/bounced-payments).
 
 
 ### Recovering Backups
