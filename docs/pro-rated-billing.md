@@ -55,7 +55,7 @@ This is easy math. However, not all months have 30 days and by design we have fi
 * November: 30 days = $0.5 daily price
 * December: 31 days = $0.4838709677 daily price
 
-When you multiple the daily price by the number of days inß the month you will end up roughly with a fixed monthly price of $15. On average months have 30.437 days. That means the 30 days based daily price is a bit higher than the actual price to pay.
+When you multiple the daily price by the number of days in the month you will end up roughly with a fixed monthly price of $15. On average months have 30.437 days. That means the 30 days based daily price is a bit higher than the actual price to pay.
 
 
 ## Monthly invoices
