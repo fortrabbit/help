@@ -73,7 +73,7 @@ To import the public part into your fortrabbit Account via Dashboard, read about
 You can skip the `-f ~/.ssh/id_rsa_fortrabbit` part to use the default location which is `~/.ssh/id_rsa`
 
 ```bash
-$ ssh-keygen -t ed25519 -C user@fortrabbit -f ~/.ssh/id_rsa_fortrabbit
+$ ssh-keygen -t ed25519 -C user@fortrabbit -f ~/.ssh/id_ed25519_fortrabbit
 # Generating public/private rsa key pair.
 # Enter passphrase (empty for no passphrase):
 # Enter same passphrase again:
