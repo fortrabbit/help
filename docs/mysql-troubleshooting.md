@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 17:28:58
+reviewed:      2022-10-07 11:19:35
 title:         MySQL troubleshooting
 naviTitle:     MySQL troubleshooting
 excerpt:       Some tips on troubleshooting MySQL connections.
@@ -19,12 +19,31 @@ The most common misunderstanding when trying to connect from a local machine, is
 
 You'll need to **enter both: SSH access and MySQL access details**. Within the fortrabbit Dashboard under your App > Access, there is a small link labeled: "Show SSH tunnel info" which will reveal everything you'll need to enter in a MySQL client to connect to the remote database.
 
+## max_user_connections error
 
-## max_user_connections
+You'll see a `max_user_connections` error when you've reached the max connection limit. 
 
-You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Ace. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are limited. If you use up all the allotted connections, it can take a little until the App recovers. If this turns out to be a problem for you, look into limiting the number of concurrent connections from your MySQL gui or the App itself.
+```
+SQLSTATE[HY000] [1226] User 'xxxxxx' has exceeded the 'max_user_connections' resource (current value: 10)
+```
 
-If you see that error on other occasions or it's not going away after a while, contact support.
+The limit is defined by the App plan. We give a few more MySQL concurrent connections than allowed PHP-FPM concurrent requests.
+
+### Typical causes
+
+- too many concurrent connections from the web
+- every requests starts multiple connections to MySQL
+- a background cron job or worker keeps connections open for a long time
+- lingering queries that run for a long time
+- MySQL GUI client opens too many connections (see below)
+
+### What to do about it
+
+Figure out what’s causing connections to linger → eliminate those causes.
+
+### GUI clients eating MySQL connections
+
+You are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Ace? Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are limited. If you use up all the allotted connections, it can take a little until the App recovers. If this turns out to be a problem for you, look into limiting the number of concurrent connections from your MySQL gui or the App itself.
 
 ## Access denied; missing SUPER privileges
 
