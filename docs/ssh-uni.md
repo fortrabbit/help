@@ -18,7 +18,7 @@ keywords:
 
 ---
 
-Using our [Git deployment](git-deployment) is great, but sometimes need a little more control. That's where the Secure SHell comes in. SSH is the big brother of [SFTP](sftp-uni) and allows you to directly interact with your App's code. You may want to set up a [SSH Key](ssh-keys) if you don't have one already.
+Using our [Git deployment](git-deployment) is great, but sometimes need a little more control. That's where the Secure SHell comes in. SSH is the big brother of [SFTP](sftp-uni) and allows you to directly interact with your App's code. You may want to set up an [SSH Key](ssh-keys) if you don't have one already.
 
 
 ## Accessing SSH
@@ -30,9 +30,9 @@ Execute the following in your terminal to login to your App.
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 ```
 
-If you are asked for a password, it is NOT your Account password. It's likely then that the key has not been imported correctly or she client is sending the wrong key from the default location, and not the one you imported.
+If you are asked for a password, it is NOT your Account password. It's likely then that the key has not been imported correctly or the client is sending the wrong key from the default location, and not the one you imported.
 
-If the login went well, you will see small a welcome message:
+If the login went well, you will see a small welcome message:
 
 ```
 –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
@@ -72,14 +72,21 @@ $ ./artisan some:command
 $ ./some-script.php
 ```
 
+### Opening a tunnel (for MySQL)
+
+Have a look at these example scenarios
+
+- [exporting and importing a MySQL dump](https://help.fortrabbit.com/mysql-export-import#toc-mysql-export-import-on-the-command-line)
+- [using the standard mysql client](https://help.fortrabbit.com/mysql#toc-mysql-via-terminal)
+
 ### Syncing code with rsync
 
-rsync is a super cool deployment tool that adds on top of SSH. Please read the dedicated [rsync article](/rsync).
+The rsync tool makes it easy to synchronize files in different (remote) file system folders. Please read the dedicated [rsync article](/rsync).
 
 
 ### Using Composer
 
-Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. So usually, you don't need to run Composer on the App itself. Really. When you find yourself running Composer on the App itself, chances are that you are doing something wrong there. Think twice, ask us in doubt. If you still need to run Composer manually on the App, you can, please don't use `composer update`, that will cause memory problems in most cases. Use `composer install` instead. Again, running Composer directly on the App is for edge cases.
+Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. Therefore, it should not be necessary to run Composer from the App environment. If you still need to run Composer manually on the App, you can. Please think twise before using `composer update`, because that will bring your local code out of sync which is likely to cause issues. Use `composer install` instead. Again, running Composer directly on the App is probably not what you want to do.
 
 
 ## Limitations
