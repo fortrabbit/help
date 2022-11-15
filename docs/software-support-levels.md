@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 17:39:31
+reviewed:      2022-11-15 09:16:37
 title:         Software support levels
 naviTitle:     Software support levels
 lead:          Personally supporting developers succeeding here is an important part of our work. To get support, use the chat bubble in the bottom right corner. We can help you with all general hosting questions as well as wth general PHP questions. Additionally we are good wth certain frameworks and CMS. We have categorized our knowledge in levels.
@@ -33,6 +33,7 @@ We have really solid hands-on experience with this. Ask us anything.
 We know how to install it here but have no hands-on experience here in-house. 
 
 * [WordPress](/install-wordpress-5-uni)
+* [Statamic](/install-statamic-3)
 * [Kirby](/install-kirby-3)
 * [Grav](/install-grav-1)
 * [Slim framework](/install-slim-4)
@@ -59,7 +60,6 @@ You can definitely install this software here. We know some clients are using it
 * Shopware
 * Silverstripe
 * Stacey
-* Statamic
 * TYPO3
 * Zend
 

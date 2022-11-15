@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-04
+reviewed:      2022-09-02
 naviTitle:     SSH key setup
 title:         SSH keys setup
 lead:          Learn how to how to create an SSH key pair on your local machine and how to add it your fortrabbit Account.
@@ -17,7 +17,6 @@ keywords:
     - ssh
     - Putty
     - PuttyGen
-    - msysGit
     - CygWin
     - Windows
     - Git Bash
@@ -41,7 +40,6 @@ Besides [password authentication](/access-methods#toc-password-authentication) y
 
 And hopefully explain the main concepts behind ssh-keys in simple terms.
 
-
 ## About SSH public key authentication
 
 SSH public key authentication is more secure than plain old passwords. The main concept is that instead of a short password, one uses a key file which is virtually impossible to guess. You give us the public part of your key and when logging in it will be used, together with the private key and username, to verify your identity.
@@ -51,7 +49,6 @@ It's more secure than password authentication and also more convenient, once it 
 The public part of the key, ending in `.pub` is safe to give out, while the private part should not be shared.
 
 After you import a public key into your fortrabbit Account, it can then be used to authenticate you. When an SSH client connects, the server will encrypt some secret using the public key. If the client is able to decrypt the secret with the private key and send it back to the server, then the server knows that the client has the private key and can be trusted.
-
 
 ## Do you already have a key?
 
@@ -67,18 +64,16 @@ $ find ~/.ssh
 
 If you don't have any key pairs or get an error about a missing folder, then proceed to the next section.
 
-On the other hand, if you do see key pairs like above (public - pub extension, private - no extension), then you can opt to use the existing key pair with fortrabbit. It is not strictly required to create a new key pair, but the one you end up using must be in the RSA format.
+On the other hand, if you do see key pairs like above (public - pub extension, private - no extension), then you can opt to use the existing key pair with fortrabbit. It is not strictly required to create a new key pair.
 
 To import the public part into your fortrabbit Account via Dashboard, read about [importing keys](ssh-keys#toc-import-a-public-keys-into-your-fortrabbit-account) further down.
 
-
 ## Generate a SSH key pair (aka ssh key)
 
-Currently, we support only RSA keys. Please use 4096 bit keys, or longer.
 You can skip the `-f ~/.ssh/id_rsa_fortrabbit` part to use the default location which is `~/.ssh/id_rsa`
 
 ```bash
-$ ssh-keygen -t rsa -b 4096 -C user@fortrabbit -f ~/.ssh/id_rsa_fortrabbit
+$ ssh-keygen -t ed25519 -C user@fortrabbit -f ~/.ssh/id_ed25519_fortrabbit
 # Generating public/private rsa key pair.
 # Enter passphrase (empty for no passphrase):
 # Enter same passphrase again:
@@ -104,25 +99,19 @@ $ ssh-keygen -t rsa -b 4096 -C user@fortrabbit -f ~/.ssh/id_rsa_fortrabbit
 # +----[SHA256]-----+
 ```
 
-
-<!-- TODO: Discuss this please! Why do we send the location? The name is already unique! -->
-
 If you want to use the default location (because you don't have any other keys), then type this instead, followed by the Enter key three times.
 
 ```bash
-$ ssh-keygen -t rsa -b 4096 -C user@fortrabbit
+$ ssh-keygen -t ed25519 -C user@fortrabbit
 # Generating public/private rsa key pair.
 # Enter file in which to save the key (/home/user/.ssh/id_rsa):
 # Enter passphrase (empty for no passphrase):
 # Enter same passphrase again:
 ```
 
-
 ### SSH keys generation on Windows
 
-The procedure to create SSH keys is slightly different on Mac OS and Linux compared to Windows.
-There are different ways to set up and use Git with Windows and also different ways set up and store the keys.
-We recommend using the official installer from the Git website, together with Git Bash.
+The procedure to create SSH keys is slightly different on Mac OS and Linux compared to Windows. There are different ways to set up and use Git with Windows and also different ways set up and store the keys. We recommend using the official installer from the Git website, together with Git Bash.
 
 Check out this concise tutorial from GitHub (covering all three of the most popular platforms):
 
@@ -134,7 +123,7 @@ You can also have a look at this very detailed article which is more windows-ori
 
 ## Importing public SSH keys into your fortrabbit Account
 
-After you have set up Git and created a key pair, the public part of the key must be imported in the fortrabbit Dashboard. The navigation to the import form is not very complex: 
+After you have set up Git and created a key pair, the public part of the key must be imported in the fortrabbit Dashboard. The navigation to the import form is not very complex:
 
 * Dashboard > Your Account > Access methods > Add a new SSH key
 
@@ -163,7 +152,12 @@ IvP1bffus+WdY75 you@localhost
 
 **Make sure you paste the public part of the key and not the private.**
 
-The above key is split across multiple lines for the sake of readability. When adding a key in the Dashboard, it must be all-on-one line, without any newline characters in the middle. The key must start with `ssh-rsa`, other key types are not supported with our services.
+The above key is split across multiple lines for the sake of readability. When adding a key in the Dashboard, it must be all-on-one line, without any newline characters in the middle.
+
+### Supported SSH key types
+
+* RSA
+* ed25519
 
 ### Copy your public SSH key value
 
@@ -185,13 +179,11 @@ $ xclip -i < ~/.ssh/id_rsa.pub
 
 The [direct Dashboard link](https://dashboard.fortrabbit.com/boarding/keys/github) (login and re-authentication maybe required) will take you there directly.
 
-
 ## fortrabbit specific concepts
 
 ### Account SSH keys
 
 Remember, on fortrabbit an Account represents a person - see the [Account help page](/account). Your Account on fortrabbit may store the public parts of several SSH keys. We recommend you use this method for authentication. Doing so allows you to push code, view logs, and connect to the MySQL database for all of your Apps. In addition, other users who have an Account on fortrabbit may collaborate on your Apps without the need to share passwords. Their SSH keys will then be allowed to deal with your App.
-
 
 ### App-only SSH keys
 

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-02-21
+reviewed:      2022-10-12 10:46:36
 title:         Upgrading the PHP version
 naviTitle:     Upgrading the PHP version
 lead:          This PHP upgrade path guides you through best practices upgrading the PHP version for your fortrabbit App.
@@ -69,6 +69,12 @@ Get your dependencies up-to-date:
 Applications based on PHP frameworks like Laravel and Symfony are usually updated with Composer which keeps track of all dependencies.
 
 Issuing `composer outdated` in the Terminal will give you a list of outdated packages. Those in red need can easily be updated. Those in yellow also need to be updated but might cause trouble because they are major version upgrades.
+
+You can also ask Composer why you currently can not upgrade to a PHP version:
+
+```php
+composer why-not php 8
+```
 
 To update a dependency, simply change any required versions in your `composer.json` to a newer version and then issue a `composer update` to actually install the required updates.
 

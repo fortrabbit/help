@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-04-10 07:53:34
+reviewed:      2022-10-05 12:30:54
 title:         Troubleshoot 404 errors
 naviTitle:     404 errors
 excerpt:       Some tips on troubleshooting 404 errors.
@@ -21,11 +21,9 @@ order:         2
 * 404 errors often occur during setup or after code or configuration changes
 * 404 errors here are often rendered using a fortrabbit error page template
 
-
 ## Common reasons and solutions
 
 **In most cases this is not a server issue, but a problem with your code and configuration.** Please check the following common issues first:
-
 
 ### No code deployed
 
@@ -35,6 +33,7 @@ This can be a misunderstanding: You might have thought that when you choose a [S
 
 Or maybe the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error. Please check that all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
 
+Or maybe you have pushed to the wrong branch? Only `main` and `master` and `appname` will be deployed.
 
 ### Wrong root path
 
