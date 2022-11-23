@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     Migrate Universal > Professional
 title:         Migrate Universal to Professional
-reviewed:      2022-03-18
+reviewed:      2022-11-23 10:55:24
 lead:          "The Universal stack is a good starting point. If you truly need to scale: we offer the Professional stack for exactly that purpose. Here is how you migrate an App from Universal to Professional."
 group:         stacks
 stack:         all
@@ -27,7 +27,7 @@ Before we show you how to migrate your existing Universal App to a Professional 
 * Your framework/CMS supports cache abstraction, so that you can use our [Memcache](memcache-pro) Component
 * Your framework/CMS does not use live updates (think "WordPress update button"), or you don't use them
 * You are familiar with Git
-* You are no friend of the shell
+* You are familiar with Terminal usage
 
 ### Check the install guides
 
