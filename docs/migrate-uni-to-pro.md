@@ -26,8 +26,7 @@ Before we show you how to migrate your existing Universal App to a Professional 
 * Your framework/CMS supports storage abstraction, so that you can use our [Object Storage](object-storage) Component
 * Your framework/CMS supports cache abstraction, so that you can use our [Memcache](memcache-pro) Component
 * Your framework/CMS does not use live updates (think "WordPress update button"), or you don't use them
-* You are familiar with Git
-* You are familiar with Terminal usage
+* You are familiar with Git and Terminal usage
 
 ### Check the install guides
 
