@@ -51,7 +51,7 @@ if (getenv("NOVA_USER") && getenv("NOVA_PASS")) {
 }
 ```
 
-The script you created needs to be executed before Composer tries to install packages. Create a fortrabbit.yaml file with the following structure:
+The script you created needs to be executed before Composer tries to install packages. Create a fortrabbit.yml file with the following structure:
 
 ```yaml
 version: 2
