@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2021-09-15
+reviewed:         2022-12-13 12:02:32
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -86,6 +86,25 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 All other write operations, such as `DELETE` or `DROP`, which are needed for possible cleanup operations, are still allowed. The implementation of those suspensions is time delayed and can take effect a few minutes after the limit has been exceeded.
 
 The MySQL storage limit is critical. When exceeding this, multiple things can happen: maybe nothing happens, or some parts of the site throwing errors or even "white screens". The kind of error depends where write capabilities are used, a news site which can only be written by an editor might deliver just fine - whereas a community site, which stores user comments stops working in large parts.
+
+### Query large MySQL table sizes
+
+How to get the size of a table in MySQL? Use the following MySQL query on your database to find out which tables are taking most space.
+
+```SQL
+SELECT
+  TABLE_NAME AS `Table`,
+  ROUND((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024) AS `Size (MB)`
+FROM
+  information_schema.TABLES
+WHERE
+  TABLE_SCHEMA = "APPNAME"
+ORDER BY
+  (DATA_LENGTH + INDEX_LENGTH)
+DESC;
+```
+
+Replace your APPNAME with your App name.
 
 **Solution**: To re-enable write capabilities you either can upgrade to a bigger scaling or reduce data size by deleting rows or dropping tables. Mind that the time delay goes both ways: When you clean up the DB and remove data size, it can take a couple of minutes for the privileges to become available again.
 
