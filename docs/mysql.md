@@ -125,7 +125,7 @@ $i++;
 
 Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Using a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
 
-## Obtain the MySQL password from the Dashboard
+## Obtain the MySQL password
 
 You can look up the SSH command to receive the MySQL password in the Dashboard > Your App > Access.
 
