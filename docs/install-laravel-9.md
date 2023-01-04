@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-21
+reviewed:         2023-01-04
 title:            Install Laravel 9
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 9 on fortrabbit.
@@ -16,7 +16,7 @@ stack:            all
 supportLevel:     a
 
 otherVersions:
-    5 : install-laravel-5-uni
+    5: install-laravel-5-uni
     8: install-laravel
 
 keywords:
@@ -324,22 +324,33 @@ return [
 
 If you want to use the Object Storage with your fortrabbit App and local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variable](/env-vars) in the Dashboard to the value `s3`. Also see the [README](https://github.com/fortrabbit/laravel-object-storage) of the repo.
 
+## Using Vite
 
-## Using Laravel Mix
+As of version 9, [Vite](https://vitejs.dev) replaces Mix as Laravel's default asset manager. Since fortrabbit does not provide a Node.js service, as with Mix you will need to compile your assets for production locally before deploying them to you App.
 
-Laravel Mix compiles JS and CSS to really small and handy files using webpack (also see the [Laravel docs on this](https://laravel.com/docs/mix)). You can run Mix locally, but not on fortrabbit as Node.js currently is not available on our services. So you need to run the build process for production locally first.
+To get started, install Vite and the Laravel plugin:
 
 ```bash
-# Install node modules (locally)
 npm install
-
-# Build assets using Laravel Mix (locally)
-npm run prod
 ```
 
-This will compile your assets in the locations specified in your `webpack.mix.js` file, which by default is `public/js` and `public/css`. To keep your Git repo clean these, along with `public/mix-manifest.json`, should be added to your `.gitignore` file and not committed to the repo.
+After that, during local development, you can start the Vite dev server with
 
-Since this will mean your assets won't be deployed with Git, we need to use other tools for deploying the assets.
+```bash
+npm run dev
+```
+
+Your development asset files should be found in the locations specified in the `vite.config.js` file (by default 'resources/css/app.css' and 'resources/js/app.js').
+
+When you are ready to deploy your assets, you must first build them for production locally with
+
+```bash
+npm run build
+```
+
+This will compile the assets and place them in a `build` folder in the `public` directory. This folder is by default excluded from the repo in `.gitignore`.
+
+For more details on using Vite, see [Laravel's docs](https://laravel.com/docs/9.x/vite).
 
 ### Deploying assets with Universal Apps
 
@@ -347,7 +358,7 @@ We recommend using `rsync`. The one-liner below works with the most common scena
 
 ```bash
 # Rsync command to sync the assets in your /public folder 
-rsync -av --include='/js/***' --include='/css/***' --include='mix-manifest.json' --exclude='*'  ./public/ {{app-name}}@deploy.{{region}}.frbit.com:./public/
+rsync -av ./public/build/ {{app-name}}@deploy.{{region}}.frbit.com:./public/build/
 ```
 
 For your convenience you can define rsync command `npm run deploy-assets`. Example of `package.json`:
@@ -362,60 +373,64 @@ For your convenience you can define rsync command `npm run deploy-assets`. Examp
 
 ### Deploying assets with Professional Apps
 
-You can export your minified assets to the [Object Storage](object-storage) by extending Laravel Mix with the `webpack-s3-plugin`. This is how it works: To start, in your terminal, enter:
+You can export your minified assets to the [Object Storage](object-storage) with the `vite-plugin-s3`:
 
 ```bash
-# Get your Object Storage credentials
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+npm install fortrabbit/vite-plugin-s3
 ```
 
-Then put the values which this command outputs in your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
+Now, to get your App's Object Storage details, enter this in the terminal:
+
+```bash
+ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+```
+
+Then put the values which this command outputs in your `.env` file and prefix the keys with `VITE_OBJECT_STORAGE_`. In your `vite.config.js`, load the plugin and configure it with the env vars:
 
 ```js
-const mix = require('laravel-mix');
-const S3Plugin = require('webpack-s3-plugin');
+import { defineConfig, loadEnv } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import viteS3 from 'vite-plugin-s3';
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
-
-// S3Plugin config
-if (process.env.npm_config_env === 'production') {
-    mix.webpackConfig({
+export default defineConfig(({ mode }) => {
+    const env = loadEnv(mode, process.cwd());
+    return {
         plugins: [
-            new S3Plugin({
-                // Only upload css and js
-                include: /.*\.(css|js)/,
+            laravel({
+                input: ['resources/css/app.css', 'resources/js/app.js'],
+                refresh: true,
+            }),
+            viteS3({
                 s3Options: {
-                    accessKeyId: process.env.OBJECT_STORAGE_KEY,
-                    secretAccessKey: process.env.OBJECT_STORAGE_SECRET,
-                    endpoint: process.env.OBJECT_STORAGE_SERVER,
-                    region: process.env.OBJECT_STORAGE_REGION,
-                    signatureVersion: 'v2'
+                    accessKeyId: env.VITE_OBJECT_STORAGE_KEY,
+                    secretAccessKey: env.VITE_OBJECT_STORAGE_SECRET,
+                    region: env.VITE_OBJECT_STORAGE_REGION,
+                    endpoint: env.VITE_OBJECT_STORAGE_SERVER,
+                    signatureVersion: 'v2',
                 },
                 s3UploadOptions: {
-                    Bucket: process.env.OBJECT_STORAGE_BUCKET
+                    Bucket: env.VITE_OBJECT_STORAGE_BUCKET,
                 },
-                // the source dir
-                directory: 'public'
-            })
-        ]
-    });
-}
+            }),
+        ],
+    };
+});
 ```
 
 Back in your terminal:
 
 ```bash
-# Install package via NPM
-$ npm install webpack-s3-plugin --save
-
 # Run the publish task
-$ npm run production --env=production
+npm run build
 ```
 
-Bear in mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
+Bear in mind that you need to [tell your source code](https://help.fortrabbit.com/object-storage#toc-http-access) to look for the minified CSS & JS files on the offshore Object Storage.
 
 Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
+
+### Migrating
+
+If you want to migrate an existing project from Mix to Vite, Laravel has a [guide for that](https://github.com/laravel/vite-plugin/blob/main/UPGRADE.md#migrating-from-laravel-mix-to-vite). And if you've changed your mind, it has another guide for [migrating back from Vite to Mix](https://github.com/laravel/vite-plugin/blob/main/UPGRADE.md#migrating-from-vite-to-laravel-mix).
 
 
 ## Working with Redis
