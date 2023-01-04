@@ -68,14 +68,6 @@ $pdo = new PDO(
 );
 ```
 
-## Obtain the MySQL password from the Dashboard
-
-You can look up the MySQL password in the Dashboard > Your App > Access.
-
-<div markdown="1" data-user="known">
-[Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}#tab-mysql)
-</div>
-
 ## Resetting the MySQL password
 
 Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-password), you can also reset it. Do so in the Dashboard > Your App > Access > MySQL. Please mind that this comes with consequences:

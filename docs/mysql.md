@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 17:27:46
+reviewed:      2022-12-20 08:38:03
 title:         All about MySQL
 naviTitle:     MySQL access
 lead:          How to access & configure the common database on fortrabbit.
@@ -124,3 +124,15 @@ $i++;
 ```
 
 Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Using a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
+
+## Obtain the MySQL password
+
+You can look up the SSH command to receive the MySQL password in the Dashboard > Your App > Access.
+
+```shell
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
+```
+
+<div markdown="1" data-user="known">
+[Look up the MySQL password for **{{app-name}}** in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#tab-mysql)
+</div>
