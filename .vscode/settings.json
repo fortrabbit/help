@@ -68,6 +68,7 @@
     "signup",
     "SIGTERM",
     "smtp",
+    "Statamic",
     "symfony",
     "symlinks",
     "syslog",
