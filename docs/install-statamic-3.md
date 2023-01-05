@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-01-04
+reviewed:         2023-01-05
 title:            Install Statamic 3 on fortrabbit
 naviTitle:        Statamic
 lead:             Statamic is a cool file based CMS. Learn here how to install and tune Statamic 3 on fortrabbit.
@@ -29,13 +29,13 @@ keywords:
 
 ## Get ready
 
-Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready. Also best, already have a plain vanilla App at fortrabbit ready. There is no Statamic preset yet, so best choose "Laravel" (since Statamic is based on Laravel after all) when booking a new App in the fortrabbit Dashboard.
+Make sure you to have completed all steps in the [get ready guide](/get-ready). Have a local development environment with PHP and a web server ready. Also have an App at fortrabbit ready. There is no Statamic preset yet, so choose "Laravel" (since Statamic is based on Laravel) when booking a new App in the fortrabbit Dashboard.
 
 ## Install Statamic locally
 
 Before you deploy anything to fortrabbit, get your Statamic project running on your local computer. Please see the [official Statamic install guide](https://statamic.dev/installing/local) for up-to-date instructions. Also see our [local development article](/local-development) for options setting up a local development environment.
 
-Best already have your first admin user setup.
+It would be good to already have your first admin user set up.
 
 ## Setup
 
@@ -43,9 +43,9 @@ Next up, let's get Statamic ready, so that the same installation can run locally
 
 ### Set environment variables
 
-Statamic comes with a predefined (hidden) `.env` file. It includes what you'll need to run Statamic locally. Mind that the `.env` is ignored from Git.
+Statamic comes with a predefined `.env` file. It includes what you'll need to run Statamic locally. Bear in mind that the `.env` is ignored in Git.
 
-Best change the environment variables for your fortrabbit in our Dashboard. Go to your App in the Dashboard, under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars":
+You should change the environment variables for your fortrabbit App in our Dashboard. Go to your App in the Dashboard, and under Settings find "ENV vars". You will be presented with a textarea to put in your "Custom ENV vars":
 
 ```env
 APP_KEY=base64:nh4IjpE8duK2GDRG2hYouQjOcmFR9wtCNgKXDkAoMRw=
@@ -63,7 +63,7 @@ The three ENV vars above will differ from your local installation. You can also 
 
 ### Set the root path
 
-Statamic 3 is a Laravel application. So the root path needs to be set to `public`. This should be set already when you have chosen the Laravel software preset. 
+Statamic 3 is a Laravel application. So the root path needs to be set to `public`. This should be set already if you have chosen the Laravel software preset. 
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/rootpath](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath) <- direct link
 
@@ -73,7 +73,7 @@ There are two "main" ways to deploy code here on fortrabbit: [Git](/git-deployme
 
 Now, Statamic is a bit in between and is - like [Grav](/install-grav) and [Kirby](/install-kirby-3) - file based. So there is usually no database by default, the actual contents are text files written on the file system.
 
-[Our architecture graphic here](/deployment-methods-uni#toc-understanding-the-architecture) shows you that the files, you can access via SFTP or SSH (Universal App) are not the ones, that are in Git. The Git repo is a separated thing. So, deploying with Git is a one way street that only goes up, not down (also [see here](/deployment-methods-uni#toc-git-works-only-one-way)). In other words: You can NOT `git pull` any changes you have made on the Apps file system. In an ideal world, code and content are maybe separated. With a file based CMS this is all together.
+[Our architecture graphic here](/deployment-methods-uni#toc-understanding-the-architecture) shows you that the files you can access via SFTP or SSH (Universal App) are not the ones that are in Git. The Git repo is a separate thing. This means that deploying with Git is a one way street that only goes up, not down (also [see here](/deployment-methods-uni#toc-git-works-only-one-way)). In other words: You can NOT `git pull` any changes you have made on the App's file system. In an ideal world, code and content are maybe separated. With a file based CMS this is all together.
 
 ## Deployment workflows documented
 
@@ -83,11 +83,11 @@ Now, Statamic is a bit in between and is - like [Grav](/install-grav) and [Kirby
 
 ### 2 - Git and rsync
 
-**Statamic deployment option 2 (recommended)** — You'll  deploy to fortrabbit using Git ( and Composer ) and (optionally) synchronize contents with rsync. Let's go:
+**Statamic deployment option 2 (recommended)** — You'll deploy to fortrabbit using Git (and Composer) and (optionally) synchronize contents with rsync. Let's go:
 
 #### 2.a - Configure Statamic for Git with rsync
 
-Open your local Statamic project folder with your text editor or IDE. Within there open the (hidden) `.gitignore` file on top level to tell Git to ignore all content. Add this to `.gitignore`:
+Open your local Statamic project folder with your text editor or IDE. Within it open the `.gitignore` file at the root level to tell Git to ignore all content. Add this to `.gitignore`:
 
 TODO: Add other folders!
 
@@ -97,13 +97,13 @@ TODO: Add other folders!
 /content
 ```
 
-PLEASE NOTE: The setting above will also keep the `/content` folder out of Git. This is our recommended way of doing it. It separates code from content. You will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way (see on work-flows above).
+PLEASE NOTE: The setting above will keep the `/content` folder out of Git. This is our recommended way of doing it. It separates code from content. You will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` file so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way (see on work-flows above).
 
-At that point you should be able to run the project in your local development environment already. We highly recommend to develop the site locally, use fortrabbit for staging and production.
+At that point you should be able to run the project in your local development environment already. We highly recommend developing the site locally, using fortrabbit for staging and production.
 
 #### 2.b - Deploy Statamic with Git
 
-In case you haven't already, setup Git, configure the fortrabbit App Git repo as a remote and push code. Run this on your local computer:
+In case you haven't already, set up Git, configure the fortrabbit App Git repo as a remote and push the code. Run this on your local computer:
 
 ```shell
 # 1. Initialize Git
@@ -129,14 +129,14 @@ Also see our [Git deployment article](/git-deployment) for more details on Git h
 
 #### 2.c - Synchronize content with rsync
 
-As mentioned above, deployment of your code base (templates and configuration) and dependencies (Statamic and Composer) is done via Git deployment. Deploying the content is a separated step. We recommend to use rsync to up- or down-load new contents to and from your remote fortrabbit App (see also our [rsync article](/rsync)). On your local computer in the Terminal in the Statamic project folder execute:
+As mentioned above, deployment of your code base (templates and configuration) and dependencies (Statamic and Composer) is done via Git deployment. Deploying the content is a separate step. We recommend using rsync to up- or down-load new contents to and from your remote fortrabbit App (see also our [rsync article](/rsync)). On your local computer in the terminal in the Statamic project folder execute:
 
 ```shell
 # SYNC UP: from local to remote
 $ rsync -av ./content {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
-It works also the other way around. For example in a case, where you have done some edits online and want those changes to be reflected in your local development environment:
+It works also the other way around. For example, if you have some edits done online and want them to be reflected in your local development environment:
 
 ```shell
 # SYNC DOWN: from remote to local
@@ -145,9 +145,9 @@ $ rsync -av Statamic-test@deploy.eu2.frbit.com:~/content ./
 
 ### 3 - Sophisticated Git workflow
 
-This is an advanced, opinionated and somehow experimental workflow for experienced developers to deploy Statamic where all content is stored as files and managed with Git using the Statamic Git Automation. See the [Git Automation Statamic docs article](https://statamic.dev/git-automation) to get the idea and as reference.
+This is an advanced, opinionated and experimental workflow for experienced developers to deploy Statamic, where all content is stored as files and managed with Git using the Statamic Git Automation. See the [Git Automation Statamic docs article](https://statamic.dev/git-automation) to get the idea and as reference.
 
-You will have a `main` branch to manage code and an `editorial` branch which is used to feed in new contents.
+You will have a `main` branch to manage code and an `editorial` branch which is used to feed in new content.
 
 #### 3.a - Local preparation
 
@@ -177,10 +177,10 @@ STATAMIC_GIT_AUTOMATIC=true
 Login to your fortrabbit App by SSH and execute:
 
 1. Setup an SSH key with SSH keygen (no passphrase), see our [SSH keys setup guide](/ssh-keys#toc-generate-a-ssh-key-pair-aka-ssh-key-)
-2. Copy the content of the public key likely `/srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit.pub` to a buffer
-3. In the fortrabbit Dashboard create a new 'app-only SSH key' with the App, paste the content of the public key file (open the file with VIM)
+2. Copy the content of the public key (likely `/srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit.pub`) to a buffer
+3. In the fortrabbit Dashboard create a new 'app-only SSH key' with the App, paste the contents of the public key file (open the file with Vim)
 4. While logged in by SSH create a config file in the already existing folder `.ssh` by running `touch config`
-5. Add the content below to the newly created config file (edit the file with VIM)
+5. Add the content below to the newly created config file (edit the file with Vim)
 
 ```config
 # Add this to .ssh/config
@@ -194,39 +194,40 @@ Host deploy.{{region}}.frbit.com
 Still logged in by SSH on the fortrabbit App:
 
 1. Init git
-2. Create an `editorial` branch and check it out
+2. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
 3. Add the fortrabbit deploy service as origin remote
-4. Create a Git user see example below
-
-See the [Statamic Git guide](https://statamic.dev/git-automation#remote-setup) and the [fortrabbit git remote help](/git-deployment#toc-adding-fortrabbit-as-a-remote) as reference.
+4. Create a Git user (see example below)
 
 ```shell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
+See the [Statamic Git guide](https://statamic.dev/git-automation#remote-setup) and the [fortrabbit git remote help](/git-deployment#toc-adding-fortrabbit-as-a-remote) as reference.
+
+
 #### 3.g Try it out
 
-Still logged in by SSH on the fortrabbit you should be now able to add and commit files to Git the App and push changes to the deploy service remote to the `editorial` branch.
+Still logged in by SSH on the fortrabbit you should be now able to add and commit files with Git to the App and push changes to the deploy service remote from the `editorial` branch.
 
 With the Git repo on your local computer you can fetch and checkout the `editorial` remote branch. Pull changes from there and merge them back into your `main` branch that you are using for development.
 
 #### 3.f - Git in the Statamic Control Panel
 
-Now you can also use the Statamic Git Automation, depending on the setup, pending editorial changes are visible with the online Git editor in the Statamic Control Panel or are getting commited and pushed automatically (best use the recommended delay).
+Now you can also use the Statamic Git Automation, depending on the setup, pending editorial changes are visible with the online Git editor in the Statamic Control Panel or get committed and pushed automatically (we advise using the recommended delay).
 
 
 ## Tuning Statamic
 
-By now, you have Statamic installation running on your local machine and you can easily deploy it to your fortrabbit App. You can deploy code changes and Statamic updated with Git. Additionally contents are synced down and up using rsync or Git. Let's get deeper:
+By now, you have a Statamic installation running on your local machine and you can easily deploy it to your fortrabbit App. You can deploy code changes with Git. Additionally contents are synced up and down using rsync or Git. Let's go deeper:
 
 ### Adding domains
 
-At the beginning you most likely have been using the App URL as your domain. You can also add any number of domains to your App. Please see our [domain article](/domains) for more.
+At the beginning you have probably been using the App URL as your domain. You can also add any number of domains to your App. Please see our [domain article](/domains) for more.
 
 #### ENV vars for Statamic MySQL setup
 
-MySQL access will be configured via ENV vars as well (see above on the matter as well). Copy/paste this additional setup into the textarea with environment variables settings form in the fortrabbit Dashboard:
+MySQL access will be configured via ENV vars as well. Copy/paste this additional setup into the environment variables form in the fortrabbit Dashboard:
 
 ```
 DB_CONNECTION=mysql
@@ -237,35 +238,35 @@ DB_PORT=3306
 DB_USERNAME=${MYSQL_USER}
 ```
 
-It maps the keys Statamic is expecting with dynamic ENV vars provided by fortrabbit.
+It maps the keys Statamic is expecting to dynamic ENV vars provided by fortrabbit.
 
 ### Working with the Control Panel
 
-Statamic - like other CMS - has a "Control Panel". That Dashboard enables you - or maybe the client/editor - to create and edit the contents easily in the browser. You can create different users (admins) for the Control Panel.
+Statamic - like other CMS's - has a control panel. That dashboard enables you - or maybe the client/editor - to create and edit the contents easily in the browser. You can create different users (admins) for the control panel.
 
 * [{{app-name}}.frb.io/cp](https://{{app-name}}.frb.io/cp)
 
-For this, please consider how you are dealing with the contents created: 
+For this, please consider how you are dealing with the content created: 
 
-* You should really not use the Control Panel on the App when you have all contents in Git, in fact you should only change things locally. 
+* You should really not use the control panel on the App if you have all content stored in Git: you should only change things locally. 
 * When using rsync (or SFTP) you can sync changes you have made on the App directly back down or the other way around.
 * When using MySQL as a data store, you might want to dump the production database and bring it back locally from time to time
 
-### Continuos development
+### Continuous development
 
-We recommend to always develop locally first — it's just the most convenient way. Deploy, when you have reached a certain status of development. In many cases the "real" content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync or sftp or you have the contents in MySQL.
+We recommend to always develop locally first — it's just the most convenient way. Deploy when you have reached a certain state of development. In many cases the "real" content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync or sftp unless you have the content in MySQL.
 
 ### Backups
 
-Some fortrabbit App plans have [backups enabled](/backups-uni). You can also spin your own solution. With Git you can already easily rollback changes. 
+Some fortrabbit App plans have [backups enabled](/backups-uni). You can also spin your own solution. With Git you can already easily roll back changes. 
 
 ### Updating Statamic
 
-We recommend to update your local development environment first. On your local computer issue `composer update` in Terminal on root level of the project folder to trigger the update. When you have confirmed that everything works, `git push` to bring the latest updates to your fortrabbit App.
+We recommend updating your local development environment first. On your local computer execute `composer update` in the terminal at the root level of your project folder to trigger the update. When you have confirmed that everything works, `git push` to bring the latest updates to your fortrabbit App.
 
 ### Sending mails
 
-fortrabbit does not support `sendmail`, so sending mails out of the box might not work. Statamic provides config for transactional mail providers, or you can use a plugin to send e-mail over your own SMTP account.
+fortrabbit does not support `sendmail`, so sending e-mails out of the box might not work. Statamic provides config for transactional mail providers, or you can use a plugin to send e-mail over your own SMTP account.
 
 ### Getting a license
 
