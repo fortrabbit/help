@@ -147,7 +147,7 @@ $ rsync -av Statamic-test@deploy.eu2.frbit.com:~/content ./
 
 This is an advanced, opinionated and experimental workflow for experienced developers to deploy Statamic, where all content is stored as files and managed with Git using the Statamic Git Automation. See the [Git Automation Statamic docs article](https://statamic.dev/git-automation) to get the idea and as reference.
 
-You will have a `main` branch to manage code and an `editorial` branch which is used to feed in new content.
+The idea is to create another repo on the App, which has the same upstream as your local repo: both the local and the App repos are sharing the same upstream. So the first step is to create this repo on the App, then create a new branch there, which is where we put any new content created on the App. (We create this new branch because we do not want to push changes to the master branch on the deploy service, because this would trigger a deployment.) Then, any changes we make to content on the App can then be pulled into your local repo, where it can be merged.
 
 #### 3.a - Local preparation
 
@@ -174,9 +174,9 @@ STATAMIC_GIT_AUTOMATIC=true
 
 #### 3.d - Prepare Git on the fortrabbit App
 
-Login to your fortrabbit App by SSH and execute:
+Login to your fortrabbit App by SSH and:
 
-1. Setup an SSH key with SSH keygen (no passphrase), see our [SSH keys setup guide](/ssh-keys#toc-generate-a-ssh-key-pair-aka-ssh-key-)
+1. Set up an SSH key with SSH keygen (no passphrase), see our [SSH keys setup guide](/ssh-keys#toc-generate-a-ssh-key-pair-aka-ssh-key-)
 2. Copy the content of the public key (likely `/srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit.pub`) to a buffer
 3. In the fortrabbit Dashboard create a new 'app-only SSH key' with the App, paste the contents of the public key file (open the file with Vim)
 4. While logged in by SSH create a config file in the already existing folder `.ssh` by running `touch config`
@@ -191,12 +191,15 @@ Host deploy.{{region}}.frbit.com
 
 #### 3.e Init Git on the fortrabbit App
 
-Still logged in by SSH on the fortrabbit App:
+We need to create a separate branch to avoid triggering a deployment when pushing to the deploy service. So, make sure you are still logged in by SSH on the fortrabbit App.
 
-1. Init git
-2. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
-3. Add the fortrabbit deploy service as origin remote
-4. Create a Git user (see example below)
+First add a `.gitignore` file. Its contents should be the same as the `.gitignore` file on your local project. Then:
+
+1. Initialise a new git repo: `git init`.
+2. `git add .` & `git commit -m 'initial commit'`
+3. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
+4. Add the fortrabbit deploy service as a remote (`git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git`)
+5. Create a Git user (see example below)
 
 ```shell
 git config --global user.name "John Doe"
@@ -208,13 +211,17 @@ See the [Statamic Git guide](https://statamic.dev/git-automation#remote-setup) a
 
 #### 3.g Try it out
 
-Still logged in by SSH on the fortrabbit you should be now able to add and commit files with Git to the App and push changes to the deploy service remote from the `editorial` branch.
+Still logged in by SSH on the fortrabbit App, you should be now able to add and commit files with Git to the App and push changes to the deploy service remote from the `editorial` branch.
+
+When pushing for the first time, set the remote as an upstream: `git push -u fortrabbit editorial`.
+
+To get this new branch locally, run `git fetch fortrabbit`.
 
 With the Git repo on your local computer you can fetch and checkout the `editorial` remote branch. Pull changes from there and merge them back into your `main` branch that you are using for development.
 
 #### 3.f - Git in the Statamic Control Panel
 
-Now you can also use the Statamic Git Automation, depending on the setup, pending editorial changes are visible with the online Git editor in the Statamic Control Panel or get committed and pushed automatically (we advise using the recommended delay).
+Now you can also use the Statamic Git Automation, depending on the setup, pending editorial changes are visible with the online Git editor in the Statamic control panel or get committed and pushed automatically (we advise using the recommended delay).
 
 
 ## Tuning Statamic
