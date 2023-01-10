@@ -87,17 +87,22 @@ Now, Statamic is a bit in between and is - like [Grav](/install-grav) and [Kirby
 
 #### 2.a - Configure Statamic for Git with rsync
 
-Open your local Statamic project folder with your text editor or IDE. Within it open the `.gitignore` file at the root level to tell Git to ignore all content. Add this to `.gitignore`:
-
-TODO: Add other folders!
+Open your local Statamic project folder with your text editor or IDE. Within it open the `.gitignore` file at the root level to tell Git to ignore all content. We need to add any folders to `.gitignore` which contain user-generated content:
 
 ```gitignore
 …
 # Exclude stuff you are creating from Git
 /content
+/users
+/resources/blueprints
+/resources/fieldsets
+/resources/forms
+/resources/users
+/storage/forms
+/public/assets
 ```
 
-PLEASE NOTE: The setting above will keep the `/content` folder out of Git. This is our recommended way of doing it. It separates code from content. You will need to run dedicated rsync commands to deploy and update the "contents" (see below). You can also decide to not touch the `.gitignore` file so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way (see on work-flows above).
+PLEASE NOTE: This is our recommended way of doing it. It separates code from content. You will need to run dedicated rsync commands to deploy and update this user-generated content (see below). You can also decide to not touch the `.gitignore` file so that you can deploy everything with Git all together. Keep in mind that you can not pull in new contents from the fortrabbit App this way (see on work-flows above).
 
 At that point you should be able to run the project in your local development environment already. We highly recommend developing the site locally, using fortrabbit for staging and production.
 
@@ -107,7 +112,7 @@ In case you haven't already, set up Git, configure the fortrabbit App Git repo a
 
 ```shell
 # 1. Initialize Git
-$ git init .
+$ git init
 
 # 2. Add your Apps Git remote to your local repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
@@ -133,14 +138,23 @@ As mentioned above, deployment of your code base (templates and configuration) a
 
 ```shell
 # SYNC UP: from local to remote
-$ rsync -av ./content {{app-name}}@deploy.{{region}}.frbit.com:~/
+$ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/assets {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
+
+(You may not have all these folders on your local system: Only include folders which you do have.)
 
 It works also the other way around. For example, if you have some edits done online and want them to be reflected in your local development environment:
 
 ```shell
 # SYNC DOWN: from remote to local
-$ rsync -av Statamic-test@deploy.eu2.frbit.com:~/content ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/content ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/users ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/blueprints ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/fieldsets ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/forms ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/users ./
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/storage/forms ./ 
+$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/public/assets' ./
 ```
 
 ### 3 - Sophisticated Git workflow
