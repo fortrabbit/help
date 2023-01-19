@@ -20,11 +20,9 @@ keywords:
 
 When you create a new [App](/app) in the [Dashboard](/dashboard) you'll be presented with a plan chooser for the PHP Component. See below to select the correct initial scaling.
 
-
 ## Configuring PHP
 
 You'll find a PHP settings page with your App in the Dashboard. Here you can switch the PHP version and configure various PHP extensions.
-
 
 ## Vertical scaling
 
@@ -48,7 +46,6 @@ The majority of applications will run within this scaling group.
 * [Grav](http://getgrav.org/), [our install guide](install-grav)
 * [Slim](http://www.slimframework.com/), [our install guide](install-slim)
 
-
 ### PHP m: bigger CMS & grown Apps
 
 * [eZ](http://ez.no/)
@@ -56,13 +53,11 @@ The majority of applications will run within this scaling group.
 * [Zend](http://framework.zend.com/)
 * your Composer requirements grow beyond 30 lines
 
-
 ### PHP l: fat CMS & e-commerce
 
 * [Magneto](http://magento.com/)
 * [Sylius](http://sylius.org/)
 * [Thelia](http://thelia.net/)
-
 
 ### When to upgrade the vertical plan
 
@@ -72,32 +67,11 @@ To be ready for that: watch the memory and swap metrics in the [Dashboard](dashb
 
 In some cases swap usage by the application is not possible. In these cases you might see dreaded white-pages and along going error messages in the log: "Allowed memory size of 1234.. bytes exhausted (tried to allocate 234 bytes)." This should be understand as an urgent reminder to scale to the next vertical size.
 
-
 ## Horizontal scaling
 
 You can [scale horizontally](scaling-pro#toc-horizontal-scaling) for two reasons: 1) higher availability, 2) more visitors. While single Node Tinkering plans can handle low traffic amounts easy enough, multi Node Production plans can handle live traffic and come with considerable increased availability.
 
 If the App is mission critical, then you want to consider using plans which could handle more traffic than it is actually getting. More Nodes assure that the App keeps running without any impact even of one of the Nodes fails (although it would automatic recover, it could take some minutes).
-
-
-### PHP requests vs page-views
-
-In our [specs](http://www.fortrabbit.com/specs-pro) table you can find an overview of how many "PHP requests" per hour you can expect to handle with each plan. A PHP request is a single request to your App, which is handled by a PHP script.
-
-Viewing a single page of an App ("page-view") usually calls a PHP script, which renders out HTML. The HTML usually contains references to "static" assets (.js, .css, ..). which are then loaded by the browser. In this case **a PHP request is equivalent to a page-view**.
-
-A PHP request differs from a page-view, if:
-
-1. You make AJAX requests from the page which are handled by PHP scripts
-2. The loaded assets (.js, .css, ..) are "piped" through or rendered by PHP
-
-In both of those cases: one page-view will generate multiple PHP requests.
-
-Now, a PHP requests to one App is different from a PHP request to another App in terms of resource usage. Say one request is to a plain PHP script which just prints "Hello world" and takes 5 ms to render, while the other is to a fat e-commerce stack, which includes hundreds of PHP files and takes 1000 ms to render.
-
-For simplification we assume an average of 500 ms rendering time per PHP request in our recommendations in the [specs](http://www.fortrabbit.com/specs-pro) table, which is on the safe-side. If your App is faster: great! Expect more performance. If it's slower: well, you can probably [tune your App](app-design)).
-
-
 
 ## Scaling from Tinkering to Production
 
@@ -115,7 +89,6 @@ When using Production PHP plans, which run on two or even more Nodes, you need a
 
 Alternatively you can store session data in the [MySQL Database](mysql) and cache data in APCU, which works fine for Apps with few visitors (~1k PHP requests per hour) in our experience.
 
-
 ## Scaling from Production to Dedicated
 
 The Dedicated PHP plans are the continuation of the Production level. They allow your App to grow the number of PHP requests to a really large number. To provide the best fit for your App they come with an additional setting in the Dashboard: "FPM process processes per Node". You have three options, which map to our [main vertical PHP plan sizes](#toc-vertical-scaling):
@@ -130,15 +103,9 @@ Each dedicated PHP plan comes with a dedicated load balancer cluster, which we m
 
 Besides the plans you can choose in the Dashboard we offer much larger plans. Please [contact us](mailto:sales@fortrabbit.com?subject=Scale+me+up!).
 
-
-
-
 ## PHP processes
 
-fortrabbit utilizes FPM (FastCGI Process Manager) for persistent PHP processes. Each Node comes with two processes. Each PHP process can respond to one concurrent PHP request at a time. Most PHP requests don't take very long to execute. Say responding takes 500 ms on average, than one process can handle two requests per second. If it takes 100 ms than one process can handle ten requests per second. And so on.
-
-For your convinience, you can find the amount of available PHP processes per plan on the [specs](http://www.fortrabbit.com/specs-pro) page.
-
+See the dedicated [PHP process article](php-processes).
 
 ## PHP memory
 
@@ -160,10 +127,9 @@ It's hard to pre-calculate the expected memory usage of your App. However, you c
 
 For example, using [Slim Framework](install-slim) does require (big surprise) far less memory than using a full scale framework such as CakePHP or [Laravel](install-laravel). A form + email based mini-eshop requires far less memory than a Magento installation with plugins.
 
-A approximation, although with exceptions, is to look at the size of the source code to guesstimate the expected memory usage. Using the same example: the source code (especially including Composer package files) of a Laravel is larger than of Slim Framework, so you can expect Laravels memory consumption to be larger and you would be right.
+A approximation, although with exceptions, is to look at the size of the source code to guesstimate the expected memory usage. Using the same example: the source code (especially including Composer package files) of a Laravel is larger than of Slim Framework, so you can expect Laravel's memory consumption to be larger and you would be right.
 
 The tricky part is the runtime data. Say you have a blog with comments using a database. Now rendering a small blog entry with no comments will utilize less memory than rendering a large blog entry with thousands of comments. Or does it? Well, it really strongly depends on your design and actual code. For example, you could load all of the thousands of comments into a PHP array and then render the site or you could load them one by one and print them out immediately - both would have a different impact on memory. In general the memory usage will change over the lifetime of your App - expect it to increase with growing data size.
-
 
 ## Further reading
 

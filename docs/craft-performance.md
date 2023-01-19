@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-05-25
+reviewed:         2023-01-19 14:19:41
 title:            Craft CMS performance tips
 naviTitle:        Craft performance tips
 lead:             All about performance problems with Craft CMS and how to run Craft CMS fast on fortrabbit.
@@ -30,30 +30,13 @@ rank: 100
 
 ### Understand Time To First Byte and PHP response time
 
-For the webserver performance the "PHP response time" is an important metric. It can roughly be translated to the Time To First Byte ([Wikipedia](https://en.wikipedia.org/wiki/Time_to_first_byte)), the latter also includes network latency effects.
+For the web server performance the "PHP response time" is an important metric. It can roughly be translated to the Time To First Byte ([Wikipedia](https://en.wikipedia.org/wiki/Time_to_first_byte)), the latter also includes network latency effects.
 
 When running Craft CMS on fortrabbit, with a little tuning and attention to best practices, you should be able to attain a "PHP response time" of 250ms or even less.
 
 ### Understand PHP processes and execution time
 
-With fortrabbit we are using the FPM (FastCGI Process Manager). Each App get's a limited set of such processes that can run in parallel.
-
-A bad example:
-
-- Your App has four PHP processes
-- A PHP request commonly takes one second (long) to execute
-- A common page view of your website is creating three PHP requests
-- Each page view is consuming is already occupying most of the available PHP requests
-- You have three website visitors at the same time
-- Soon one will have to wait until one of the PHP processes will become free again causing even longer load time
-
-You see how this can stack up?
-
-That's why it is utterly important to get the PHP response time down.
-
-Sometimes clients are asking us in support to increase the `max_execution_time`. While this might help to execute long-running tasks, this also blocks the PHP processes for a longer time. That's we usually advise to lower the time it takes to execute PHP to be able to serve your website to your visitors simultaneously.
-
-Our Pro Stack has Workers to offload long-running background tasks.
+Please see our dedicated [PHP processes article](/php-processes).
 
 ## How to identify performance problems
 
