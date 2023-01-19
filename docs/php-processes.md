@@ -16,7 +16,7 @@ workInProgress: yes
 
 Unlike fronted Javascript, which is running in the web browser, PHP scripts are being executed on the web server and the output is then usually delivered to the web page as HTML.
 
-A FPM PHP process is a reserved computing resource - think CPU. Each PHP process can respond to one concurrent PHP request at a time. Unlike with php-cgi the FPM PHP process keeps alive.
+A PHP FPM process is a reserved computing resource - think CPU. Each PHP process can respond to one concurrent PHP request at a time. Unlike with php-cgi the PHP FPM process stays alive.
 
 ## Our implementation
 
@@ -27,11 +27,11 @@ fortrabbit utilizes FPM (FastCGI Process Manager). Beside the allocated PHP memo
 
 ## PHP processes, PHP requests and PHP response time
 
-- By design PHP requests should take only a very short time to execute.
-  - If it takes longer, it’s likely your code. Refactor it for performance!
+- By design PHP requests should only take a very short time to execute.
+  - If it takes longer, it’s likely your code is slow. Refactor it for performance!
 - Aim for 250 ms or less on average.
   - Our Dashboard shows you PHP response time metrics.
-- A new incoming PHP request will have to wait when all PHP requests are busy.
+- A new incoming PHP request will have to wait when all PHP processes are busy.
 
 ### A simple example
 
@@ -51,7 +51,7 @@ fortrabbit utilizes FPM (FastCGI Process Manager). Beside the allocated PHP memo
 
 Page views refer to a single request made by a user to view a page on a website. This request will likely involve a number of HTTP requests, such as images, HTML, CSS, and Javascript files, all of which must be downloaded from the Apache web server. 
 
-A page view likely will also require the server to execute any PHP scripts associated with the page, which translates into one PHP process for each PHP script.
+A page view will likely also require the server to execute any PHP scripts associated with the page, which translates into one PHP process for each PHP script.
 
 For many websites the ratio between page view and PHP request is one to one. But often one page view will generate multiple PHP requests, for instance by making different AJAX calls to the backend to query the database or returning API requests or transforming images.
 
