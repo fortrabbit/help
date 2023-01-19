@@ -16,7 +16,7 @@ workInProgress: yes
 
 Unlike fronted Javascript, which is running in the web browser, PHP scripts are being executed on the web server and the output is then usually delivered to the web page as HTML.
 
-A FPM PHP process is a reserved persistent computing resource, ready to be used at any time. Each PHP process can respond to one concurrent PHP request at a time.
+A FPM PHP process is a reserved computing resource - think CPU. Each PHP process can respond to one concurrent PHP request at a time. Unlike with php-cgi the FPM PHP process keeps alive.
 
 ## Our implementation
 
