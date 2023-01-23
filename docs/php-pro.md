@@ -127,7 +127,7 @@ It's hard to pre-calculate the expected memory usage of your App. However, you c
 
 For example, using [Slim Framework](install-slim) does require (big surprise) far less memory than using a full scale framework such as CakePHP or [Laravel](install-laravel). A form + email based mini-eshop requires far less memory than a Magento installation with plugins.
 
-A approximation, although with exceptions, is to look at the size of the source code to guesstimate the expected memory usage. Using the same example: the source code (especially including Composer package files) of a Laravel is larger than of Slim Framework, so you can expect Laravel's memory consumption to be larger and you would be right.
+An approximation, although with some exceptions, is to look at the size of the source code to guesstimate the expected memory usage. Using the same example: the source code (especially including Composer package files) of a Laravel installation is larger than that of Slim Framework, so you can expect Laravel's memory consumption to be larger, and you would be right.
 
 The tricky part is the runtime data. Say you have a blog with comments using a database. Now rendering a small blog entry with no comments will utilize less memory than rendering a large blog entry with thousands of comments. Or does it? Well, it really strongly depends on your design and actual code. For example, you could load all of the thousands of comments into a PHP array and then render the site or you could load them one by one and print them out immediately - both would have a different impact on memory. In general the memory usage will change over the lifetime of your App - expect it to increase with growing data size.
 

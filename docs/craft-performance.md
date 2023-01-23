@@ -30,7 +30,7 @@ rank: 100
 
 ### Understand Time To First Byte and PHP response time
 
-For the web server performance the "PHP response time" is an important metric. It can roughly be translated to the Time To First Byte ([Wikipedia](https://en.wikipedia.org/wiki/Time_to_first_byte)), the latter also includes network latency effects.
+For web server performance "PHP response time" is an important metric. It can be roughly translated to the Time To First Byte ([Wikipedia](https://en.wikipedia.org/wiki/Time_to_first_byte)), which also includes network latency effects.
 
 When running Craft CMS on fortrabbit, with a little tuning and attention to best practices, you should be able to attain a "PHP response time" of 250ms or even less.
 
