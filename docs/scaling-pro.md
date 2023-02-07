@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-06-03
+reviewed:      2023-02-07
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -89,7 +89,6 @@ Use for live web applications, for which performance and high availability is ke
 
 For those lucky few wildly successful web applications. Dedicated private cloud resources give you more control and of course ultimate power.
 
-
 ### When to grow horizontally
 
 There are three common scenarios which require a scalable, elastic, environment:
@@ -106,7 +105,6 @@ Our scaling capabilities are focused on the first two scenarios, because the sla
 
 The fortrabbit [Dashboard](/dashboard) provides you with useful performance metrics on how your App is doing, what it is handling and how much memory it consumes. This can help you fine tune for the best scaling settings.
 
-
 ## How to scale
 
 That's the easiest part: login to the [Dashboard](/dashboard), go to your App, click on the Component you want to scale and choose a new scaling. Scaling happens almost instantly and can easily be reversed. The minimum billing period of one day makes it easy to experiment with different settings. Try out a higher scaling level for a day, and you'll only be charged for one day. Scaling happens within minutes, in most cases without downtime.
@@ -119,7 +117,6 @@ So what is there to scale? Given a typical PHP web application, you have these m
 
 PHP is the main Component on fortrabbit, you can scale it vertically and horizontally. Please see our dedicated [article on PHP](php-pro).
 
-
 ### MySQL
 
 While PHP implements the logic, the [MySQL database](mysql) (most of the time) contains the data the logic works on. Each database has physical limits (disk performance, amount of memory, available CPUs).
@@ -129,7 +126,6 @@ You should choose a MySQL plan which has at least as many connections as your PH
 All Production and Dedicated MySQL scaling are replicated. This means: they run on two MySQL Nodes at the same time. One of those Nodes is called "master", the other "slave". The master Node is the active Nodes, to which your App automatically connects to. If the master fails then the slave takes automatically over and your App keeps running.
 
 Also see the quirk when [scaling MySQL with persistent connections](quirks#toc-mysql-with-persistent-connections-during-upgrade).
-
 
 ### Memcache
 
@@ -143,7 +139,6 @@ Production level Memcache scalings run on two Nodes. Now it depends on how you u
 
 All worker plans run only on a single Node. In case one of those Nodes fails they are restarted automatically. This does not guarantee high availability but eventual availability, which is in almost all cases a good approach for executing background tasks. See also the main [Workers article](/workers).
 
-
 ### Object Storage
 
 Professional Apps have an [ephemeral local storage](app-pro#toc-ephemeral-storage), which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance.
@@ -152,16 +147,13 @@ Content driven websites usually make use of the local file system to store asset
 
 The Object Storage plans are limited by storage (not traffic). It will not scale automatically, you need to keep an eye on the size. In the App overview in the Dashboard you can find a graph that shows you home much storage within the current plan is in use. Scaling up and down can (almost) instantly be done in the Dashboard.
 
-
 ## Clean code saves money
 
 We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design). Also the [limits article](/limits) to understand what happens when your App is exceeding those.
 
-
 ## Advanced specifications
 
 Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained informations about plans and limits.
-
 
 ## General scaling tips
 
