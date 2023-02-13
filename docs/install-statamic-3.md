@@ -203,7 +203,7 @@ Host deploy.{{region}}.frbit.com
     IdentityFile /srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit
 ```
 
-#### 3.e Init Git on the fortrabbit App
+#### 3.e - Init Git on the fortrabbit App
 
 We need to create a separate branch to avoid triggering a deployment when pushing to the deploy service. So, make sure you are still logged in by SSH on the fortrabbit App.
 
@@ -223,7 +223,7 @@ git config --global user.email johndoe@example.com
 See the [Statamic Git guide](https://statamic.dev/git-automation#remote-setup) and the [fortrabbit git remote help](/git-deployment#toc-adding-fortrabbit-as-a-remote) as reference.
 
 
-#### 3.g Try it out
+#### 3.f - Try it out
 
 Still logged in by SSH on the fortrabbit App, you should be now able to add and commit files with Git to the App and push changes to the deploy service remote from the `editorial` branch.
 
@@ -233,7 +233,7 @@ To get this new branch locally, run `git fetch fortrabbit`.
 
 With the Git repo on your local computer you can fetch and checkout the `editorial` remote branch. Pull changes from there and merge them back into your `main` branch that you are using for development.
 
-#### 3.f - Git in the Statamic Control Panel
+#### 3.g - Git in the Statamic Control Panel
 
 Now you can also use the Statamic Git Automation, depending on the setup, pending editorial changes are visible with the online Git editor in the Statamic control panel or get committed and pushed automatically (we advise using the recommended delay).
 
