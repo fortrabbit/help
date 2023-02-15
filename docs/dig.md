@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-09-06
+reviewed:      2023-02-15 08:20:13
 title:         Using dig to check DNS settings
 naviTitle:     DNS checking with dig
 excerpt:       Easy query domain results from the terminal

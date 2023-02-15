@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-09-27
+reviewed:      2023-02-15 08:20:42
 title:         Our security recommendations
 naviTitle:     Security tips
 lead:          "Essential tips to keep your fortrabbit Account and your code base secure."

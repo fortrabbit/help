@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-08-10
+reviewed:      2023-02-15 08:20:24
 naviTitle:     Website down
 title:         How to report downtime
 excerpt:       What to do when your website hosted on fortrabbit is down.

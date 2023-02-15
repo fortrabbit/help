@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-09-06
+reviewed:      2023-02-15 08:21:20
 title:         Testing domain routing with your local hosts file
 naviTitle:     DNS testing with the hosts file
 excerpt:       Test domain setting before you route it

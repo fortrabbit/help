@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        SendGrid
-reviewed:         2021-12-10
+reviewed:         2023-02-15 08:20:37
 title:            Using SendGrid with fortrabbit
 group:            Transactional_e-mail
 section:          Extending_fortrabbit

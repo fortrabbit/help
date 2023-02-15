@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-06-03
+reviewed:      2023-02-15 08:20:44
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 excerpt:       "How to run Artisan migrate and other useful commands."
