@@ -81,7 +81,19 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 $ composer install
 ```
 
-This way Composer will be executed within your App's web delivery environment, which is not optimized for such tasks. Please don't use `composer update` as this might cause Composer to hit the App's memory limits.
+This way Composer will be executed within your App's web delivery environment, which is not optimized for such tasks. 
+
+**Please don't use `composer update` as this might cause Composer to hit the App's memory limits.**
+
+### Composer 1 on the App
+
+We do not actively update the composer version in your ssh environment, you can control it on your own:
+
+```bash
+$ composer selfupdate --2
+```
+
+Please mind, the composer version in the git (deployment) environment is always up-to-date and managed by us.
 
 ## Troubleshooting
 
