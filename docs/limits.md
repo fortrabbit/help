@@ -100,13 +100,11 @@ SELECT
 FROM
   information_schema.TABLES
 WHERE
-  TABLE_SCHEMA = "APPNAME"
+  TABLE_SCHEMA = {{app-name}}
 ORDER BY
   (DATA_LENGTH + INDEX_LENGTH)
 DESC;
 ```
-
-Replace your APPNAME with your App name.
 
 ### Run OPTIMIZE table
 
