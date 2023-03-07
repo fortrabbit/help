@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-01-05
+reviewed:         2023-03-07
 title:            Install Statamic 3 on fortrabbit
 naviTitle:        Statamic
 lead:             Statamic is a cool file based CMS. Learn here how to install and tune Statamic 3 on fortrabbit.
@@ -159,7 +159,7 @@ $ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/public/assets' ./
 
 ### 3 - Sophisticated Git workflow
 
-This is an advanced, opinionated and experimental workflow for experienced developers to deploy Statamic, where all content is stored as files and managed with Git using the Statamic Git Automation. See the [Git Automation Statamic docs article](https://statamic.dev/git-automation) to get the idea and as reference.
+This is an advanced, opinionated and **experimental** workflow for experienced developers to deploy Statamic, where all content is stored as files and managed with Git using the Statamic Git Automation. See the [Git Automation Statamic docs article](https://statamic.dev/git-automation) to get the idea and as reference.
 
 The idea is to create another repo on the App, which has the same upstream as your local repo: both the local and the App repos are sharing the same upstream. So the first step is to create this repo on the App, then create a new branch there, which is where we put any new content created on the App. (We create this new branch because we do not want to push changes to the master branch on the deploy service, because this would trigger a deployment.) Then, any changes we make to content on the App can then be pulled into your local repo, where it can be merged.
 
@@ -210,10 +210,10 @@ We need to create a separate branch to avoid triggering a deployment when pushin
 First add a `.gitignore` file. Its contents should be the same as the `.gitignore` file on your local project. Then:
 
 1. Initialise a new git repo: `git init`.
-2. `git add .` & `git commit -m 'initial commit'`
-3. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
-4. Add the fortrabbit deploy service as a remote (`git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git`)
-5. Create a Git user (see example below)
+2. Create a Git user (see example below)
+3. `git add .` & `git commit -m 'initial commit'`
+4. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
+5. Add the fortrabbit deploy service as a remote (`git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git`)
 
 ```shell
 git config --global user.name "John Doe"
