@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2022-05-25
 title:            Getting started with Craft CMS on fortrabbit
-naviTitle:        1. Get started with Craft
+naviTitle:        1. Craft CMS intro
 order:            1
 lead:             Craft 4 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
 group:            craft
