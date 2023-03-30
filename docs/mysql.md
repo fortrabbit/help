@@ -88,7 +88,7 @@ In the next step you will be asked for your [MySQL password](#toc-obtain-the-mys
 
 ### MySQL via GUI
 
-We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Ace](https://github.com/Sequel-Ace/Sequel-Ace) for Mac, along with [at least a few others](https://www.google.com/search?q=mysql%20gui).
+For macOS we recommend the free [Sequel Ace](https://github.com/Sequel-Ace/Sequel-Ace). It's a fork of Sequel Pro (which is not compatible with recent MySQL versions any more). Other free alternatives are [MySQL Workbench](http://www.mysql.com/products/workbench/) and [HeidiSQL](http://www.heidisql.com/). Commercial MySQL clients are [TablePlus](https://tableplus.com/) and [NaviCat](https://navicat.com/en/). There are more.
 
 The clients above can be configured to help you to connect via an SSH tunnel to the MySQL database in one convenient step. In the connection dialog or tab of the client you pick, you will need to insert the correct parameters for SSH and MySQL.
 
