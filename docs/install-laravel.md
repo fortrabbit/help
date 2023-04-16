@@ -1,30 +1,31 @@
 ---
 
 template:         article
-reviewed:         2022-03-21
-title:            Install Laravel 8
+reviewed:         2023-04-15
+title:            Install Laravel 10
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 8 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 9 on fortrabbit.
+group:            Install_guides
 
 websiteLink:      http://laravel.com
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-black-new.svg
-version:          8.x
+version:          10.x
 stack:            all
 supportLevel:     a
 
 otherVersions:
-    5 : install-laravel-5-uni
+    5: install-laravel-5-uni
+    8: install-laravel-8
     9: install-laravel-9
-    10: install-laravel
 
 keywords:
     - php
     - install
     - laravel
 
-rank: 50
+rank: 80
 
 ---
 
@@ -32,7 +33,6 @@ rank: 50
 
 Please make sure to have followed our [get ready guide](/get-ready) before starting here. 
 
-MIND: This the install guide for Laravel version 8. We have an [Laravel install guide](/install-laravel-9) for a newer version (9). Check out that article as well, it includes more up-to-date information.
 
 ## Quick start
 
@@ -60,14 +60,14 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 # 7. Push changes to fortrabbit
 $ git push -u fortrabbit main
-# this installs Laravel with Composer on remote and take a while
+# this installs Laravel with Composer on remote and takes a while
 
 # the next deployments will be much faster
 # 8. Push from now on
 $ git push
 ```
 
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
+**Got an error?** Please see the [access troubleshooting](/access-methods). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
@@ -79,7 +79,7 @@ $ git push
 
 ### Setup for an existing code base
 
-You can also push your existing Laravel installation to fortrabbit. If you are already using Git, you can add fortrabbit as an additional remote, as described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating).
+You can also push your existing Laravel installation to fortrabbit. If you are already using Git, you can add fortrabbit as an additional remote, as described [above](#toc-quick-start) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating).
 
 
 ### MySQL configuration
@@ -228,7 +228,7 @@ You can now use our regular [log access](logging-pro) to view the stream.
 
 ## User sessions
 
-There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/8.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
+There are various session drivers available in Laravel: see a [full list here](https://laravel.com/docs/9.x/session#configuration). Read further to see which ones are most suitable for your App. Whichever driver you end up using, you will need to specify it in the environment variables. Add a new ENV var `SESSION_DRIVER` in the Dashboard and give it the appropriate value.
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -236,7 +236,7 @@ There are various session drivers available in Laravel: see a [full list here](h
 
 ### User sessions for Universal Apps
 
-Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/8.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
+Since Universal Apps have persistent storage, you are able to use the default `file` driver for sessions. You can of course also use the other options specified in the [Laravel session docs](https://laravel.com/docs/9.x/session#configuration), though please note that we do not support Redis or Memcached out of the box. If you would like to use Redis, please see [our section on Redis below](#toc-working-with-redis). If you would like to use Memcached, consider switching to a Professional App. 
 
 To use the `database` driver, follow these steps:
 
@@ -325,22 +325,33 @@ return [
 
 If you want to use the Object Storage with your fortrabbit App and local storage with your local development setup then replace the "default" value in `filesystems.php` as well. Set `FILESYSTEM_DRIVER` in your local `.env` file to the value `local` and the [environment variable](/env-vars) in the Dashboard to the value `s3`. Also see the [README](https://github.com/fortrabbit/laravel-object-storage) of the repo.
 
+## Using Vite
 
-## Using Laravel Mix
+As of version 9, [Vite](https://vitejs.dev) replaces Mix as Laravel's default asset manager. Since fortrabbit does not provide a Node.js service, as with Mix you will need to compile your assets for production locally before deploying them to you App.
 
-Laravel Mix compiles JS and CSS to really small and handy files using webpack (also see the [Laravel docs on this](https://laravel.com/docs/mix)). You can run Mix locally, but not on fortrabbit as Node.js currently is not available on our services. So you need to run the build process for production locally first.
+To get started, install Vite and the Laravel plugin:
 
 ```bash
-# Install node modules (locally)
 npm install
-
-# Build assets using Laravel Mix (locally)
-npm run prod
 ```
 
-This will compile your assets in the locations specified in your `webpack.mix.js` file, which by default is `public/js` and `public/css`. To keep your Git repo clean these, along with `public/mix-manifest.json`, should be added to your `.gitignore` file and not committed to the repo.
+After that, during local development, you can start the Vite dev server with
 
-Since this will mean your assets won't be deployed with Git, we need to use other tools for deploying the assets.
+```bash
+npm run dev
+```
+
+Your development asset files should be found in the locations specified in the `vite.config.js` file (by default 'resources/css/app.css' and 'resources/js/app.js').
+
+When you are ready to deploy your assets, you must first build them for production locally with
+
+```bash
+npm run build
+```
+
+This will compile the assets and place them in a `build` folder in the `public` directory. This folder is by default excluded from the repo in `.gitignore`.
+
+For more details on using Vite, see [Laravel's docs](https://laravel.com/docs/9.x/vite).
 
 ### Deploying assets with Universal Apps
 
@@ -348,7 +359,7 @@ We recommend using `rsync`. The one-liner below works with the most common scena
 
 ```bash
 # Rsync command to sync the assets in your /public folder 
-rsync -av --include='/js/***' --include='/css/***' --include='mix-manifest.json' --exclude='*'  ./public/ {{app-name}}@deploy.{{region}}.frbit.com:./public/
+rsync -av ./public/build/ {{app-name}}@deploy.{{region}}.frbit.com:./public/build/
 ```
 
 For your convenience you can define rsync command `npm run deploy-assets`. Example of `package.json`:
@@ -363,60 +374,64 @@ For your convenience you can define rsync command `npm run deploy-assets`. Examp
 
 ### Deploying assets with Professional Apps
 
-You can export your minified assets to the [Object Storage](object-storage) by extending Laravel Mix with the `webpack-s3-plugin`. This is how it works: To start, in your terminal, enter:
+You can export your minified assets to the [Object Storage](object-storage) with the `vite-plugin-s3`:
 
 ```bash
-# Get your Object Storage credentials
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+npm install fortrabbit/vite-plugin-s3
 ```
 
-Then put the values which this command outputs in your `.env` file and prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
+Now, to get your App's Object Storage details, enter this in the terminal:
+
+```bash
+ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+```
+
+Then put the values which this command outputs in your `.env` file and prefix the keys with `VITE_OBJECT_STORAGE_`. In your `vite.config.js`, load the plugin and configure it with the env vars:
 
 ```js
-const mix = require('laravel-mix');
-const S3Plugin = require('webpack-s3-plugin');
+import { defineConfig, loadEnv } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import viteS3 from 'vite-plugin-s3';
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
-
-// S3Plugin config
-if (process.env.npm_config_env === 'production') {
-    mix.webpackConfig({
+export default defineConfig(({ mode }) => {
+    const env = loadEnv(mode, process.cwd());
+    return {
         plugins: [
-            new S3Plugin({
-                // Only upload css and js
-                include: /.*\.(css|js)/,
+            laravel({
+                input: ['resources/css/app.css', 'resources/js/app.js'],
+                refresh: true,
+            }),
+            viteS3({
                 s3Options: {
-                    accessKeyId: process.env.OBJECT_STORAGE_KEY,
-                    secretAccessKey: process.env.OBJECT_STORAGE_SECRET,
-                    endpoint: process.env.OBJECT_STORAGE_SERVER,
-                    region: process.env.OBJECT_STORAGE_REGION,
-                    signatureVersion: 'v2'
+                    accessKeyId: env.VITE_OBJECT_STORAGE_KEY,
+                    secretAccessKey: env.VITE_OBJECT_STORAGE_SECRET,
+                    region: env.VITE_OBJECT_STORAGE_REGION,
+                    endpoint: env.VITE_OBJECT_STORAGE_SERVER,
+                    signatureVersion: 'v2',
                 },
                 s3UploadOptions: {
-                    Bucket: process.env.OBJECT_STORAGE_BUCKET
+                    Bucket: env.VITE_OBJECT_STORAGE_BUCKET,
                 },
-                // the source dir
-                directory: 'public'
-            })
-        ]
-    });
-}
+            }),
+        ],
+    };
+});
 ```
 
 Back in your terminal:
 
 ```bash
-# Install package via NPM
-$ npm install webpack-s3-plugin --save
-
 # Run the publish task
-$ npm run production --env=production
+npm run build
 ```
 
-Bear in mind that you need to tell your source code to look for the minified CSS & JS files on the offshore Object Storage.
+Bear in mind that you need to [tell your source code](https://help.fortrabbit.com/object-storage#toc-http-access) to look for the minified CSS & JS files on the offshore Object Storage.
 
 Another option might be to combine fortrabbit with GitHub Actions so you can have builds running over at GitHub and deploy everything along with artefacts afterwards. See our [blog post](https://blog.fortrabbit.com/how-to-use-github-actions).
+
+### Migrating
+
+If you want to migrate an existing project from Mix to Vite, Laravel has a [guide for that](https://github.com/laravel/vite-plugin/blob/main/UPGRADE.md#migrating-from-laravel-mix-to-vite). And if you've changed your mind, it has another guide for [migrating back from Vite to Mix](https://github.com/laravel/vite-plugin/blob/main/UPGRADE.md#migrating-from-vite-to-laravel-mix).
 
 
 ## Working with Redis
@@ -537,7 +552,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 
 ## Scheduling
 
-The [Laravel scheduler](https://laravel.com/docs/8.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
+The [Laravel scheduler](https://laravel.com/docs/9.x/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard cron jobs is 10 minutes here, but the Laravel scheduler requires a 1 minute schedule. Use the [Professional Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your cron jobs will be outsourced to background processes. 
 
 ## Using artisan down (Professional Stack)
 
