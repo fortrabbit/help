@@ -17,14 +17,15 @@ supportLevel:     a
 
 otherVersions:
     5: install-laravel-5-uni
-    8: install-laravel
+    8: install-laravel-8
+    10: install-laravel
 
 keywords:
     - php
     - install
     - laravel
 
-rank: 80
+rank: 50
 
 ---
 

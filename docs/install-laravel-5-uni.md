@@ -20,8 +20,9 @@ dontList:         true
 dontIndex:        true
 
 otherVersions:
-    8: install-laravel
+    8: install-laravel-8
     9: install-laravel-9
+    10: install-laravel
     
 keywords:
     - php
