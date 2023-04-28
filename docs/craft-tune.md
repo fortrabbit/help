@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-05-25
+reviewed:         2025-04-28
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -51,7 +51,7 @@ That ENV var is already set. Just replace it with your local one. Also see the [
 
 Craft embraces the idea of storing environment specific configurations in ENV vars. The database config ([config/db.php](https://github.com/craftcms/craft/blob/main/config/db.php)) is a good example of that.
 
-Additionally you can create groups in every config file. The top level array key maps with the `CRAFT_ENVIRONMENT` constant, which defaults to the `ENVIRONMENT` ENV var. With this flexible approach you decide which configurations are under version control to share with your team and which are not. We assume fortrabbit to be your production environment, so the `ENVIRONMENT` ENV var is set to `production` on remote and locally to `dev`.
+Additionally, you can create groups in every config file. The top level array key maps with the `CRAFT_ENVIRONMENT` constant, which defaults to the `CRAFT_ENVIRONMENT` ENV var. With this flexible approach you decide which configurations are under version control to share with your team and which are not. We assume fortrabbit to be your production environment, so the `CRAFT_ENVIRONMENT` ENV var is set to `production` on remote and locally to `dev`.
 
 ```dotenv
 # Local environment ENV 
@@ -62,7 +62,9 @@ CRAFT_ENVIRONMENT=dev
 
 Your fortrabbit App comes with a predefined App Name and a URL like `{{app-name}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to add domains to your fortrabbit App, please see our [domains article](/domains). For Craft CMS be sure to have set your domain's root path to the `/web` folder.
 
-Craft CMS usually plays well with any domain. Using the `@web` alias syntax in your CP settings and templates is a way to stay flexible. The config block below defines domain relates aliases. To differentiate between environments use of the `PRIMARY_SITE_URL`. 
+When installing Craft locally, it will ask you which domain you want to use. This local domain differs form the one you want to use in production. That's why it is stored in the `PRIMARY_SITE_URL` ENV var. The installer creates this ENV var in the .env file. In your fortrabbit production environment you may need to set `PRIMARY_SITE_URL` using the ENV var settings of your App. 
+
+Craft CMS uses `@web` alias internally when it deals with HTTP requests. Unless you define it, Craft will try to figure it out based on HTTP headers - which is not always possible. It's good practise to define it explicitly using `PRIMARY_SITE_URL` ENV var.   
 
 ```php
 return [
