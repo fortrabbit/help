@@ -71,9 +71,7 @@ return [
     // Recommended aliases in config/general.php
      'aliases' => [
           '@web' => \craft\helpers\App::env('PRIMARY_SITE_URL') ?: '/',
-          '@webroot' => dirname(__DIR__) . '/web',
-          '@assetBasePath' => '@webroot/assets',
-          '@assetBaseUrl' => '/assets',
+          '@webroot' => dirname(__DIR__) . '/web'
      ],
 ];
 ```
