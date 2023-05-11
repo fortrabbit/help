@@ -27,7 +27,7 @@ keywords:
 
 We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup). 
 
-This install guide was last tested with version 5.4 but believed to work with older versions in the exact same way.
+This install guide was last tested with version you can see on the right but believed to work with older versions in the exact same way.
 
 ## Quick start
 
