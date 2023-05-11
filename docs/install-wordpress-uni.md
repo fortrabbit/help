@@ -2,11 +2,11 @@
 
 template:         article
 reviewed:         2023-05-11 20:13:38
-title:            Install WordPress 6
+title:            Install WordPress
 naviTitle:        WordPress
 group:            Install_guides
 stack:            uni
-lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 5 on fortrabbit.
+lead:             Learn how to install and tune the popular blogging and CMS engine WordPress on fortrabbit.
 deprecated:       0
 stack:            uni
 
