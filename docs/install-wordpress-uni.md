@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-04-10 07:53:57
+reviewed:         2023-05-11 20:13:38
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
@@ -14,7 +14,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          5.4
+version:          6.2
 supportLevel:     b
 
 keywords:
@@ -33,7 +33,7 @@ This install guide was last tested with version 5.4 but believed to work with ol
 
 ### 1. Download WordPress
 
-Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. 
+Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`.
 
 ### 2. Upload WordPress files
 
@@ -61,7 +61,6 @@ After the guided web setup is done, you will be automatically redirected to the 
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/wp-admin) _< WordPress admin_
-
 
 ## Advanced setup
 
