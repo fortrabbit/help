@@ -2,7 +2,7 @@
 
 template:         article
 reviewed:         2023-05-11 20:13:38
-title:            Install WordPress 5
+title:            Install WordPress 6
 naviTitle:        WordPress
 group:            Install_guides
 stack:            uni
