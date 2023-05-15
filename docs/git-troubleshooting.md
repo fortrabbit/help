@@ -46,7 +46,7 @@ You can run the halt signal by issuing:
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com halt
 ```
 
-Wait around 20 minutes if you see the above message when deploying. Contact support, if the repository lock is not resolving or if this happens often.
+Contact support, if the repository lock is not resolving or if this happens often.
 
 ### Git client max connections
 
