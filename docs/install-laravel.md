@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2023-04-15
-title:            Install Laravel 10
+reviewed:         2023-05-18 07:01:13
+title:            Install Laravel
 naviTitle:        Laravel
-lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 9 on fortrabbit.
+lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel on fortrabbit.
 group:            Install_guides
 
 websiteLink:      http://laravel.com
