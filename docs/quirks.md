@@ -150,10 +150,12 @@ With persistent connections this can take longer (possibly up to half an hour). 
 
 In some cases you need to know your App's IP address, like for payment processing or in environments that are behind a firewall.
 
-**For [Professional Apps](/app-pro)** on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway. The traffic from Apps will appear to others as coming from these addresses.
+**For [Professional Apps](/app-pro)** on production level plans, the outgoing IP address is fixed. All outgoing traffic from these Apps is routed through a NAT gateway. The traffic from Apps will appear to others as coming from these addresses:
 
     EU: 52.50.42.152
     US: 52.72.32.63
+
+This is also true for [Workers](/worker-pro) but not during deployment.
 
 **For [Universal Apps](/apps-uni)** and for Pro Apps on development plans the IP address is not guaranteed. Although it will most probably not change during the lifetime of an App. You can see this for yourself with a PHP script. Querying an HTTP service like that from an App is the easiest way to determine the current IP address. 
 
