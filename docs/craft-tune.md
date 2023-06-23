@@ -330,8 +330,11 @@ The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thank
 
 ## Headless Craft
 
-By default HTTP responses with content type `text/html`, `text/css` and `text/javascript` are gzipped. When you use Craft in headless mode as a GraphQL or REST API, the content type is application/json.
-In the article about [GZIP compression](/gzip-compression) you learn how to enable it for other content types.
+By default HTTP responses with content type `text/html`, `text/css` and `text/javascript` are gzipped. When you use Craft in headless mode as a GraphQL or REST API, the content type is application/json. In the article about [GZIP compression](/gzip-compression) you learn how to enable it for other content types.
+
+## Craft storage folder
+
+We found a couple of Craft CMS installations blowing up the storage folder. This is often related to plugins and configuration. Some search engine bot might try to crawl all pages, causing a faceted search plugin to create gigabytes of template fragments. Some other plugin may just write very verbose logs. Note that we have a cron to keep the Craft CMS storage folder clean. Best, make sure to configure your website to not cause such issues, beside the web storage, such issues have impact on performance.
 
 ## Troubleshooting
 
