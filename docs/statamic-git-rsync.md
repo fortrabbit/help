@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-03-07
+reviewed:         2023-06-29 17:57:42
 order:            2
 title:            Deploy Statamic with Git and rsync
 naviTitle:        Statamic Git + rsync
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          3
+version:          4
 supportLevel:     b
 
 keywords:

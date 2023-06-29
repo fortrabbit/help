@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-03-07
+reviewed:         2023-06-29 17:57:25
 title:            Statamic on fortrabbit
 naviTitle:        Statamic intro
 order:            1
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          3
+version:          4
 supportLevel:     b
 
 keywords:
@@ -62,7 +62,7 @@ The three ENV vars above will differ from your local installation. You can also 
 
 ### Set the root path
 
-Statamic 3 is a Laravel application. So the root path needs to be set to `public`. This should be set already if you have chosen the Laravel software preset. 
+Statamic is a Laravel application. So the root path needs to be set to `public`. This should be set already if you have chosen the Laravel software preset.
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/rootpath](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath) <- direct link
 

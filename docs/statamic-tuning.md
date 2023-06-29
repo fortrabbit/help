@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-03-07
+reviewed:         2023-06-29 17:57:37
 title:            Tuning Statamic
 naviTitle:        Tune Statamic
 order:            5
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          3
+version:          4
 supportLevel:     b
 
 keywords:
