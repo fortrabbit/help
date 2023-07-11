@@ -92,7 +92,7 @@ As mentioned above, deployment of your code base (templates and configuration) a
 $ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/build ./storage/app  ./public/assets stata4testing@deploy.eu2.frbit.com:~/
 ```
 
-You may not have all these folders on your local system: Only include folders which you do have.
+You may not have all these folders on your local system: Best only include folders which you do have. Otherwise rsync might print some strange error messages.
 
 You may want to run `npm run build` to have fresh production assets via Vite. More details with [Laravel install guide](/install-laravel#toc-using-vite).
 
