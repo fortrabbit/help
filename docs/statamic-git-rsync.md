@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-06-29 17:57:42
+reviewed:         2023-07-11 14:41:44
 order:            2
 title:            Deploy Statamic with Git and rsync
 naviTitle:        Statamic Git + rsync
@@ -89,15 +89,17 @@ As mentioned above, deployment of your code base (templates and configuration) a
 
 ```shell
 # SYNC UP: from local to remote
-$ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/assets {{app-name}}@deploy.{{region}}.frbit.com:~/
+$ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/build ./storage/app  ./public/assets stata4testing@deploy.eu2.frbit.com:~/
 ```
 
-(You may not have all these folders on your local system: Only include folders which you do have.)
+You may not have all these folders on your local system: Only include folders which you do have.
+
+You may want to run `npm run build` to have fresh production assets via Vite. More details with [Laravel install guide](/install-laravel#toc-using-vite).
 
 It works also the other way around. For example, if you have some edits done online and want them to be reflected in your local development environment:
 
 ```shell
-# SYNC DOWN: from remote to local
+# SYNC DOWN: from remote to local one by one examples
 $ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/content ./
 $ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/users ./
 $ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/blueprints ./
