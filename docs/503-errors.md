@@ -14,7 +14,6 @@ order:         15
 
 ---
 
-
 ## Typical symptoms of 503 errors
 
 + 503 errors will usually be shown on screen immediately
