@@ -93,4 +93,4 @@ Each App has one database named like the App. The mysql-user you have received i
 
 ## Using MySQL functions, procedures and triggers
 
-By default you don't have permissions to create MySQL functions, procedures and triggers as it requires SUPER privileges. We enable it on request for dedicated MySQL plans (Pro Stack only).
+You don't have permissions to create MySQL functions, procedures and triggers as it requires SUPER privileges.
