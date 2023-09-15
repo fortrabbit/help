@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 17:27:46
+reviewed:      2023-09-15 15:28:57
 title:         How to export and import a MySQL database
 naviTitle:     MySQL export & import
 lead:          To set up an application environment, you may need to migrate existing data. The following examples deal with exporting and importing MySQL data from one environment (local machine) to another (fortrabbit). The same steps apply in reverse, but the to and from login details need to be swapped.
@@ -40,7 +40,7 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump --set-gtid-purged=OFF -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
+$ mysqldump --column-statistics=0 --set-gtid-purged=OFF --no-tablespaces --set-gtid-purged=OFF -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
 ```
 
 The `--set-gtid-purged=OFF` option is required to prevent permission errors like `#1227 - Access denied; you need (...) SUPER privilege(s)` when importing the database. If you use `mariaDB` locally the GTID option is needed.
