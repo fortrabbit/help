@@ -40,7 +40,7 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump --column-statistics=0 --set-gtid-purged=OFF --no-tablespaces --set-gtid-purged=OFF -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
+$ mysqldump --column-statistics=0 --set-gtid-purged=OFF --no-tablespaces -u{{local-db-user}} -p{{local-password}} {{local-db-name}} > dump.sql
 ```
 
 The `--set-gtid-purged=OFF` option is required to prevent permission errors like `#1227 - Access denied; you need (...) SUPER privilege(s)` when importing the database. If you use `mariaDB` locally the GTID option is needed.
