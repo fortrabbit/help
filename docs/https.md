@@ -134,7 +134,7 @@ The following practical tips on how to deal with HTTPS are applying to all TLS o
 
 ### Redirect all requests to HTTPS
 
-It is recommended to forward all requests to the secure line, so no more "http://", only "http**s**://". See [an example here](/htaccess#toc-redirect-all-requests-to-https).
+It is recommended to forward all requests to the secure line, so no more "http://", only "http**s**://". See [an example here](/redirects).
 
 
 ### Secure your domain with a CAA record
