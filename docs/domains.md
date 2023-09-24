@@ -50,7 +50,7 @@ This is the most common usage. You first add the domain within the fortrabbit Da
 For the www prefix:
 
 * Remove any A Record
-* Point the CNAME Record to the fortrabbit App URL: {{ app-name }}.frb.io
+* Point the CNAME Record to the fortrabbit App URL: {{app-name}}.frb.io
 * Leave NS or TXT or any other records untouched
 * Remove any AAAA records
 
