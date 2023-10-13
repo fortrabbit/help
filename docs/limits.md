@@ -177,8 +177,7 @@ Especially the backup plugins and settings can be become problematic. Please min
 
 **Description**: Each Object Storage scaling comes with a fixed amount of available storage. You can review this amount per scaling on our [specs page](http://www.fortrabbit.com/specs-pro#object-storage). This limit cannot be exceeded. Any write operation (modifying a file or creating a new file) will be rejected, if it would result in exceeding the limit of the scaling.
 
-**Solution**: You can either clean up obsolete data to reduce the used size or upgrade to a bigger scaling. If you need more than our current plans offer, please [get in touch](mailto:support@fortrabbit.com) and let us know how much you need and we will get back to you with an offer.
-
+**Solution**: You can either clean up obsolete data to reduce the used size or upgrade to a bigger scaling.
 ### Memcache
 
 **Scope**: Professional Apps with Memcache Component
