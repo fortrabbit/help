@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-10
+reviewed:      2023-11-15 15:51:58
 title:         Troubleshoot 504 errors
 naviTitle:     504 errors
 excerpt:       Some tips on troubleshooting 504 and 503 errors.

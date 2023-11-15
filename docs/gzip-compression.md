@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-03-24 15:00:00
+reviewed:    2023-11-15 15:53:55
 title:       How to enable GZIP compression with htaccess
 naviTitle:   GZIP compression
 lead:        ''

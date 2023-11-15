@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Cloudflare
-reviewed:         2022-02-03
+reviewed:         2023-11-15 15:52:34
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit

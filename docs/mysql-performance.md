@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 17:28:18
+reviewed:      2023-11-15 15:55:03
 title:         MySQL performance tips
 naviTitle:     MySQL performance tips
 excerpt:       Some tips for a better MySQL performance.

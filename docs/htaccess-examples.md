@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-03-24 15:00:00
+reviewed:    2023-11-15 15:54:00
 naviTitle:   .htaccess examples
 title:       .htaccess by example
 lead:        'Here some examples what .htaccess can be used for.'

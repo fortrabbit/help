@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2022-03-21 17:34:15
+reviewed:      2023-11-15 15:55:21
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
@@ -82,8 +82,6 @@ In recent days, this is a really bad practice: your web server can send mails, b
 There is no mailing built-in here. Instead of `sendmail` you can use a mail script that uses SMTP (Simple Mail Transfer Protocol) via your e-mail provider - usually the one that provides your domain - directly.
 
 There are countless possibilities how to use SMTP. Most frameworks and CMS give them to you out of the box. If you use a custom script, have a look at [Swift Mailer](https://swiftmailer.symfony.com/). There are special solutions for [WordPress](install-wordpress#toc-smtp), [Laravel](install-laravel#toc-smtp) & [Symfony](install-symfony#toc-smtp).
-
-Pro tip: In Gmail you need to allow "less secure apps" to connect. See the [official Google help](https://support.google.com/accounts/answer/6010255).
 
 A better solution might be to use a "transactional mail service", those are built to do the bulk mailing — see [extending fortrabbit](/#extending-fortrabbit). You can either connect to them via "SMTP relay" or by "API". Those services help you to save your App's resources, are probably more reliable and have some nice extra features like analytics and debugging.
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-12-13 12:02:32
+reviewed:         2023-11-15 15:54:49
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.

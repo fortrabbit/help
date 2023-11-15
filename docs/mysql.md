@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-12-20 08:38:03
+reviewed:      2023-11-15 15:55:08
 title:         All about MySQL
 naviTitle:     MySQL access
 lead:          How to access & configure the common database on fortrabbit.

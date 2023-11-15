@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-18
+reviewed:         2023-11-15 15:54:47
 title:            Install Symfony 6
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 6 on fortrabbit.

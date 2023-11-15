@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-09-02
+reviewed:      2023-11-15 15:55:39
 naviTitle:     SSH key setup
 title:         SSH keys setup
 lead:          Learn how to how to create an SSH key pair on your local machine and how to add it your fortrabbit Account.

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-03-31 12:00:47
+reviewed:    2023-11-15 15:54:04
 title:       Troubleshooting .htaccess
 naviTitle:   Troubleshooting .htaccess
 lead:        'Here are the most common mistakes we see in combination with `.htaccess`.'

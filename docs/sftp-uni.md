@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 16:44:54
+reviewed:      2023-11-15 15:55:33
 title:         SFTP access
 naviTitle:     SFTP access
 lead:          Learn about the classical way to access files on your Universal App on fortrabbit.

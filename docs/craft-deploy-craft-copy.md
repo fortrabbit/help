@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-05-25
+reviewed:         2023-11-15 15:52:57
 title:            Deploy Craft CMS with Craft Copy
 naviTitle:        4. Deploy Craft
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 

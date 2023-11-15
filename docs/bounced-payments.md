@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2022-08-30
+reviewed:   2023-11-15 15:52:29
 title:      Bounced payments
 naviTitle:  Bounces
 excerpt:    Which payment methods are available to whom

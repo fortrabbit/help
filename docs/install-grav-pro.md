@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-18
+reviewed:         2023-11-15 15:54:14
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular free file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.

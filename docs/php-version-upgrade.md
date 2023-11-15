@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-10-12 10:46:36
+reviewed:      2023-11-15 15:55:15
 title:         Upgrading the PHP version
 naviTitle:     Upgrading the PHP version
 lead:          This PHP upgrade path guides you through best practices upgrading the PHP version for your fortrabbit App.

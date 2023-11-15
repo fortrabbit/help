@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2022-03-17
+reviewed:         2023-11-15 15:52:43
 title:            Integrating CI with fortrabbit
 naviTitle:        Continuous Integration
 lead:             Automated testing, builds, special deploy scripts and other actions on fortrabbit.

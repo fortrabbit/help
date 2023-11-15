@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2022-03-24 15:00:00
+reviewed:    2023-11-15 15:54:11
 title:       About .htaccess
 naviTitle:   About .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?

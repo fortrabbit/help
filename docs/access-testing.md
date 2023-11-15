@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-04-01 14:51:31
+reviewed:      2023-11-15 15:52:04
 naviTitle:     Access testing
 title:         Testing access to fortrabbit services
 lead:          This article provides instructions on how to check code access for username + password and SSH key authentication from the terminal using ssh.

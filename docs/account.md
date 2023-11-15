@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-04-10 07:53:39
+reviewed:      2023-11-15 15:52:06
 title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account

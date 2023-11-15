@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-02
+reviewed:      2023-11-15 15:55:51
 naviTitle:     WAF rules
 title:         Web Application Firewall
 excerpt:       Protect your App against common attacks and harmful requests

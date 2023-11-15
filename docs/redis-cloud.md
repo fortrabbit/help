@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Redis Labs
-reviewed:         2022-04-10 07:54:02
+reviewed:         2023-11-15 15:55:25
 title:            Using Redis Labs with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit

@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2022-09-23
+reviewed:   2023-11-15 15:55:13
 title:      About payment methods
 naviTitle:  Payment methods
 excerpt:    Which payment methods are available to whom

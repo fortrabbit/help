@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-21 16:29:52
+reviewed:      2023-11-15 15:53:50
 naviTitle:     Git intro
 title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.

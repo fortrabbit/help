@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-04-22
+reviewed:      2023-11-15 15:52:41
 title:         Company collaboration
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.

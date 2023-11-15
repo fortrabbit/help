@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-04-10 07:53:54
+reviewed:      2023-11-15 15:53:45
 title:         Firewalling
 naviTitle:     Firewalling
 excerpt:       What you may want to know about making outgoing requests and our blocklist.

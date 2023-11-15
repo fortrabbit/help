@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-31 17:52:37
+reviewed:      2023-11-15 15:55:00
 title:         Advanced MySQL topics
 naviTitle:     Advanced MySQL topics
 lead:          How to access & configure the common database on fortrabbit.

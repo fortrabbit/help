@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-03-17
+reviewed:      2023-11-15 15:53:47
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.

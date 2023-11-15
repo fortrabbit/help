@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2022-10-07 11:19:35
+reviewed:      2023-11-15 15:55:06
 title:         MySQL troubleshooting
 naviTitle:     MySQL troubleshooting
 excerpt:       Some tips on troubleshooting MySQL connections.
