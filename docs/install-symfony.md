@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:54:47
+reviewed:         2023-11-27 15:54:47
 title:            Install Symfony 6
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 6 on fortrabbit.
@@ -61,6 +61,8 @@ Given that fortrabbit uses Apache as a web server, consider fetching the default
 ```bash
 $ composer require symfony/apache-pack
 ```
+
+After running the command, the `.htaccess` should be copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with ` Options +SymLinksIfOwnerMatch`.
 
 If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`.
 
