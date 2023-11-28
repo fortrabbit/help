@@ -77,9 +77,13 @@ There are many technical measurements which can be taken by the client to dramat
 
 The fortrabbit Dashboard provides some useful metrics. You can see 5xx metrics by following the "Show all metrics" link. The 5xx metric is a mix of 500, 502, 503 and 504 errors.
 
-In order to separate 504 from the other 503, 502 and 500 errors, have a look at the PHP response time metric. The PHP response time always goes up when there are 504 errors. 
+In order to separate 504 from the other 503, 502 and 500 errors, have a look at the PHP response time metric. The PHP response time always goes up when there are 504 errors.
 
-Aim for no swap usage and a low PHP response time of not more than 200 ms. 
+Aim for no swap usage and a low PHP response time of not more than 200 ms.
+
+## Restarting the App
+
+In some 504 situations it may help to restart the App to relieve hanging PHP processes. That's a mitigation not a solution. More [details here](/app#toc-restarting-an-app).
 
 ## It could also be something on our side
 
