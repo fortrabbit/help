@@ -18,8 +18,8 @@ order:         20
 
 + 504 errors will be shown after a longer time of trying to load a page
 + 504 errors here are sometimes rendered using a fortrabbit error page template
-+ 504 errors often occur without code changes
-+ 504 errors are sometimes connected to traffic patterns
++ 504 errors often occur **without code changes**
++ 504 errors are sometime*s connected to traffic patterns
 + 504 errors are sometimes caused by editorial changes in a CMS
 + 504 errors often come and go - from offline to online and back again
 + 504 errors usually will not show up in the PHP error logs
