@@ -14,12 +14,11 @@ websiteLink:      https://getkirby.com/
 websiteLinkText:  getkirby.com
 category:         CMS
 image:            kirby-mark.png
-version:          4
+version:          3.4
 supportLevel:     b
 
 otherVersions:
     2 : install-kirby-2
-    3 : install-kirby-3
 
 keywords:
     - getkirby
@@ -64,8 +63,6 @@ $ composer create-project getkirby/plainkit {{app-name}}
 ```
 
 NOTE: that Kirby offers a "starterkit" (with some demo contents and a theme with some templates) and a "plainkit" with no contents at all (which is used here). Maybe you also have a project running locally and are just looking for ways to deploy that. Continue with the next steps.
-
-NOTE: 
 
 ### Configure Kirby for Git deployment
 
