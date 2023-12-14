@@ -7,7 +7,7 @@ naviTitle:        Kirby
 lead:             Kirby is a popular, file based CMS originated from Germany (YEAH!). Learn here how to install and tune Kirby on fortrabbit.
 group:            Install_guides
 stack:            uni
-dontList:         false
+dontList:         true
 workInProgress:   false
 
 websiteLink:      https://getkirby.com/

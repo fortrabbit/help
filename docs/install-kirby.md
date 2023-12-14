@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:54:24
+reviewed:         2023-12-14 14:20:37
 title:            Install Kirby 3 on fortrabbit
 naviTitle:        Kirby
 lead:             Kirby is a popular, file based CMS originated from Germany (YEAH!). Learn here how to install and tune Kirby on fortrabbit.
@@ -63,9 +63,6 @@ mv starterkit/* .
 # 4. Remove the old folder
 rm -rf starterkit
 
-# 5. Bring in the .htaccess
-wget https://raw.githubusercontent.com/getkirby/starterkit/main/.htaccess
-
 # 6. Use VIM to edit the config to enable the panel
 vim site/config/config.php
 ```
@@ -98,8 +95,6 @@ $ composer create-project getkirby/plainkit {{app-name}}
 ```
 
 NOTE that Kirby offers a "starterkit" (with some demo contents and a theme with some templates) and a "plainkit" with no contents at all (which is used here). Maybe you also have a project running locally and are just looking for ways to deploy that. Continue with the next steps.
-
-NOTE that Kirby 4 does seem to support only PHP 8.1 in that type of installation.
 
 ### Configure Kirby for Git deployment
 
