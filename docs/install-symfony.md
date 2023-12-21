@@ -1,8 +1,8 @@
 ---
 
 template:         article
-reviewed:         2023-12-20 15:54:47
-title:            Install Symfony 7
+reviewed:         2023-12-21 11:16:56
+title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 7 on fortrabbit.
 
@@ -13,7 +13,7 @@ websiteLink:      https://symfony.com
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          "7/6/5/4"
+version:          "7"
 supportLevel:     a
 
 otherVersions:
