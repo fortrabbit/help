@@ -62,7 +62,7 @@ Given that fortrabbit uses Apache as a web server, consider fetching the default
 $ composer require symfony/apache-pack
 ```
 
-After running the command, the `.htaccess` should be copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`.
+After running the command, the `.htaccess` should have been copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`.
 
 If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`.
 
