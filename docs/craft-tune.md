@@ -252,42 +252,35 @@ There are two kind of `5xx` errors you can see on fortrabbit with Craft CMS: "Se
 
 Craft CMS is piping the PHP errors to its own location, located here:
 
-```storage/logs/web.log```
+```storage/logs/web-YYYY-MM-DD.log```
 
 You can use [SFTP](/sftp-uni) or maybe better [SSH](/ssh-uni) to analyze the PHP error logs. Most likely you will find information on where the script has crashed and stopped. Also see our [log article](/logging-uni) for more details.
 
 To access [php_error logs](/logging-pro#toc-log-access) on the Professional Stack you need to adjust Craft's log target in your `config/app.php` file. 
 
 ```php 
+<?php
+
+use craft\helpers\App;
+use Monolog\Logger;
+use Monolog\Handler\ErrorLogHandler;
+
 return [
+    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
     'components' => [
         'log' => [
             'targets' => [
-                function () {
-                    return new class() extends \craft\log\FileTarget
-                    {
-                        public function init()
-                        {
-                            $this->setLevels(
-                                YII_DEBUG === true
-                                    ? ['trace', 'warning', 'error']
-                                    : ['warning', 'error']
-                            );
-                        }
-
-                        public function export()
-                        {
-                            $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages));
-                            // revert to php defaults & log
-                            ini_set('error_log', 'syslog');
-                            error_log($text . PHP_EOL);
-                        }
-                    };
-                }
+                [
+                    'class' => \samdark\log\PsrTarget::class,
+                    'except' => ['yii\web\HttpException:40*', 'yii\i18n\PhpMessageSource:*'],
+                    'logVars' => [],
+                    'logger' => (new Logger('app'))->pushHandler(new ErrorLogHandler()),
+                    'addTimestampToContext' => true,
+                ]
             ]
         ]
     ]
-]; 
+];
 ```
 
 ## Cache, Sessions and Mutex on the Pro Stack
