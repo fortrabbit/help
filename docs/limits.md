@@ -106,13 +106,19 @@ ORDER BY
 DESC;
 ```
 
-### Run OPTIMIZE table
+### Run OPTIMIZE and ANALYZE table
 
-Once you know which MySQL tables are large and you still have INSERT permissions you can shrink em by running the OPTIMIZE command.
+Once you know which MySQL tables are large and you still have INSERT permissions you can shrink em by running the OPTIMIZE and ANALYZE commands.
 
 ```SQL
 OPTIMIZE TABLE name-of-a-large-table
+ANALYZE TABLE name-of-a-large-table
 ```
+
+OPTIMIZE TABLE: Use this to reorganize the physical storage of table data and associated index data. It's particularly effective after substantial insert, update, or delete operations, especially for InnoDB tables with their own .ibd files or MyISAM and ARCHIVE tables with variable-length rows. For more details, see the [MySQL Reference Manual on OPTIMIZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/optimize-table.html).
+
+ANALYZE TABLE: This command updates the statistics for a table, helping the MySQL optimizer make better choices for query execution plans. It's especially useful after significant modifications to the table. Refer to the [MySQL Reference Manual on ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html) for additional information.
+
 
 ## MySQL index
 
