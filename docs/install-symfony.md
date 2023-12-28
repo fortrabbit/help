@@ -56,13 +56,18 @@ You can view and edit the env vars in the Dashboard under your App settings. You
 
 It is assumed that you already have a Symfony project installed and running locally. This can be an existing project or a new one, see the [official download page](https://symfony.com/download) for instructions for your local operating system.
 
-Given that fortrabbit uses Apache as a web server, consider fetching the default `.htaccess` file for Symfony, via Flex (since this is from the "contrib" repository, you will be asked to confirm the installation. Do it by pressing `y`):
+### Get Apache pack
+
+Given that fortrabbit uses Apache as a web server, fetch the default `.htaccess` file for Symfony, via Flex:
 
 ```bash
 $ composer require symfony/apache-pack
+# This is from the "contrib" repository, you will be asked to confirm. Press `y`.
 ```
 
 After running the command, the `.htaccess` should have been copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`.
+
+### Deploy with Git
 
 If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`.
 
