@@ -209,7 +209,7 @@ There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amaz
 
 In some use-cases you want to upload and modify (CRUD) files manually. Also you might want to manually review the existing files in your Object Storage. You can use any S3-compatible client to upload files to the Object Storage. We recommend the following software clients:
 
-* **[Cyberduck](https://cyberduck.io/)**, a free cross platform GUI client (requires the S3 AWS2 Signature [download + install](https://svn.cyberduck.io/trunk/profiles/S3%20AWS2%20Signature%20Version%20(HTTPS).cyberduckprofile))
+* **[Cyberduck](https://cyberduck.io/)**, a free cross platform GUI client
 * [Transmit](https://panic.com/transmit/), a GUI client for MacOs X
 * [s3cmd](http://s3tools.org/s3cmd), a cross platform command line tool written in Python
 
