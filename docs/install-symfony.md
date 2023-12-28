@@ -65,7 +65,7 @@ $ composer require symfony/apache-pack
 # This is from the "contrib" repository, you will be asked to confirm. Press `y`.
 ```
 
-After running the command, the `.htaccess` should have been copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`.
+After running the command, the `.htaccess` should have been copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`. That additional step is required to make it work on fortrabbit.
 
 ### Deploy with Git
 
