@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2021-12-10
+reviewed:      2024-01-24
 title:         How to download a fortrabbit App
 naviTitle:     Downloading an App
 lead:          "This article helps you downloading all the application data required directly from our services to run it elsewhere. This might help you: boarding a new developer, moving away to a different hosting provider, or just getting a fresh backup, or archiving your project before shutting it down. Tech skills are required to do this."
