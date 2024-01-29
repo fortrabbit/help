@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2023-11-15 15:52:29
+reviewed:   2024-01-29 09:23:31
 title:      Bounced payments
 naviTitle:  Bounces
 excerpt:    Which payment methods are available to whom
@@ -12,7 +12,6 @@ rank:       100
 
 ---
 
-
 ## Why payments bounce
 
 There are various reasons why payments bounce:
@@ -22,7 +21,6 @@ There are various reasons why payments bounce:
 * Something else - [Update your payment method](/billing-contact#toc-changing-the-payment-method) (enter a new card or switch to SEPA)
 
 Please contact us if you are aware about open invoices with us and or if you have questions about an invoice. In any case, we will inform you by by e-mail about failed payments.
-
 
 ## Automatic retries
 
@@ -38,17 +36,15 @@ For brand new clients: In case the very first or second invoice keeps on bouncin
 
 For clients with less than 6 invoices or when the credit card processor reports possible fraud or the Account looks suspicious: We might delete the App after the first bounced invoice (we will retry) or if the client fails to respond to our e-mails.
 
-For long term clients with more than 6 paid invoices and at least 2 bounced invoices (we will retry) in a row or a total of 4 unpaid invoices: Before deletion we will attempt to write a personal e-mails, beside the automated ones. We will also try to contact everyone involved in the Company or project. We might delete Apps when there was no reply on our attempts to reach out.
+For long term clients with more than €/$30 monthly recurring revenue and more than 6 paid invoices and at least 2 bounced invoices (we will retry) in a row or a total of 3 unpaid invoices: Before deletion we will attempt to write a personal e-mails, beside the automated ones. We will also try to contact everyone involved in the Company or project. We might delete Apps when there was no reply on our attempts to reach out.
 
 In any case, with 3 open invoices in a row and no reply: We will immediately delete Apps.
 
 For clients with invoices higher than 1k different rules might apply.
 
-
 ## Paying open invoices
 
 Open invoices can be found in the Dashboard. Login to our Dashboard &gt; follow the instructions in the "open invoices" warning. Credit card payments are done immediately. SEPA direct payments are delayed. If your credit card has insufficient funds at the time of charging, we may try to charge it again during the month.
-
 
 ## No refunds
 
@@ -59,7 +55,6 @@ This is our current policy because we have a custom billing system and refunds a
 If you think something is wrong with your invoice, please contact us. We may be able to give you a discount on your next invoice to show good will on our part.
 
 Some clients say that they haven't made any use of the services at all and therefor are requesting a refund. Please note that each booked App is utilizing hardware resources whether there have been visitors or not.
-
 
 ## Account cancellation
 
