@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-12-21 11:16:56
+reviewed:         2024-01-29 15:32:00
 title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony on fortrabbit.
@@ -65,7 +65,7 @@ $ composer require symfony/apache-pack
 # This is from the "contrib" repository, you will be asked to confirm. Press `y`.
 ```
 
-After running the command, the `.htaccess` should have been copied to your /public folder. Open the file and replace `Options +FollowSymlinks` with `Options +SymLinksIfOwnerMatch`. That additional step is required to make it work on fortrabbit.
+After running the command, the `.htaccess` should have been copied to your /public folder.
 
 ### Deploy with Git
 
@@ -98,7 +98,7 @@ $ git push
 
 ## MySQL
 
-Until now you just deployed some code. If you want to use Doctrine and MySql it requires some more tinkering to make it yours.
+Until now you just deployed some code. If you want to use Doctrine and MySQL it requires some more tinkering to make it yours.
 
 ### Configuration
 
