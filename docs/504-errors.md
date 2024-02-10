@@ -25,7 +25,7 @@ order:         20
 + 504 errors usually will not show up in the PHP error logs
 + Sometimes you'll find: "AH01079: failed to make connection to backend" in the logs, this is what Apache is reporting back
 
-504 and [503 errors](/503-errors) are two sides of the same coin. PHP-FPM (the PHP process manager here) has too much to do. 504 and 503 errors are often happening simultaneously.
+504 and [503 errors](/503-errors) are two sides of the same coin. PHP-FPM (the PHP process manager here) has too much to do. 504 and 503 errors are often happening simultaneously. Restarting the App can help to mitigate the issue.
 
 ## Behavior
 
@@ -85,6 +85,10 @@ There are many technical measurements which can be taken by the client to dramat
 ### Identifying 504 errors with the dashboard
 
 The fortrabbit dashboard provides some useful metrics. You can see 5xx metrics by following the "Show all metrics" link. The 5xx metric is a mix of 500, 502, 503 and 504 errors. Have a look at the PHP response time metric as well. The PHP response time always goes up when there are 504 errors. Aim for no swap usage and a low PHP response time of not more than 200 ms.
+
+### Restarting the App
+
+In some 504 situations it may help to restart the App to relieve hanging PHP processes. That's a mitigation not a solution. More [details here](/app#toc-restarting-an-app).
 
 ### It could also be something on our side
 
