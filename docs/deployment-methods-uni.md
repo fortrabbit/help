@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Deployment methods"
 title:         "Deployment methods"
-reviewed:      2023-02-15 08:20:11
+reviewed:      2024-03-05 07:08:28
 excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni
@@ -63,13 +63,15 @@ Please keep in mind, that the Git repo is not the web storage. After you Git pus
 
 The [Professional Stack](app-pro) has [atomic deployments](app-pro#toc-atomic-deployment). With the Universal Stack it's different, the contents from Git will be synced into the web space:
 
-When you push new changes via Git to your App Composer will be executed. In addition, user defined scripts (either specified via [deployment file](/deployment-file-v2) or [Composer scripts](https://getcomposer.org/doc/articles/scripts.md)) might also be executed. Resulting of the push and the executions, a temporary file set is generated and subsequently synchronized to your App's web storage. So, when accessing your App via SSH/SFTP, the web storage can contain files which are not in Git. 
+When you push new changes via Git to your App Composer will be executed. In addition, user defined scripts (either specified via [deployment file](/deployment-file-v2) or [Composer scripts](https://getcomposer.org/doc/articles/scripts.md)) might also be executed. Resulting of the push and the executions, a temporary file set is generated and subsequently synchronized to your App's web storage. So, when accessing your App via SSH/SFTP, the web storage can contain files which are not in Git.
 
 The strategy applied in the synchronization is:
 
 * Files existing in the temporary file set and existing on the web storage will be overwritten
 * Files existing in the temporary file set but not existing on the web storage will be created
 * Files not existing in the temporary file set but existing on the web storage will not be touched
+
+Although this may seem odd, it's a live saving feature. It makes sure that all user uploads and runtime data created by the application will not be deleted during deployment. Ephemeral storage causes more trouble than folders that exist after deployment.
 
 ### Not all applications work well with Git
 
