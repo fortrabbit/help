@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:51:55
+reviewed:      2024-03-14 20:28:00
 title:         Troubleshoot 503 errors
 naviTitle:     503 errors
 excerpt:       Some tips on troubleshooting 503 errors.
@@ -18,6 +18,7 @@ order:         15
 
 + 503 errors will usually be shown on screen immediately
 + 503 errors often occur after code or configuration changes
++ 503 errors can also happen without code or configuration changes
 + 503 errors are sometimes just printed as a "service unavailable" message, check the browser's developer tools for the response's HTTP status code to be sure this is indeed a 503 error
 + 503 errors here are often rendered using a fortrabbit error page template
 
