@@ -162,7 +162,7 @@ $ wget https://wordpress.org/latest.tar.gz
 # 3. Unpack wordpress
 $ tar zxf latest.tar.gz
 
-# 4. Move unpackged files to top level
+# 4. Move unpacked files to top level
 $ mv wordpress/* .
 
 # 5. Remove the downloaded container
@@ -202,7 +202,7 @@ These are pretty standard operations. You can download and update themes directl
 
 ### Keeping WordPress secure
 
-Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](https://www.fortrabbit.com/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check the article from the offical WordPress codex on how to [configure automatic background updates](https://wordpress.org/support/article/configuring-automatic-background-updates/) and take care that your WordPress core, plugins and even themes are always [up-to-date](#toc-updating-wordpress).
+Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](https://www.fortrabbit.com/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check the article from the official WordPress codex on how to [configure automatic background updates](https://wordpress.org/support/article/configuring-automatic-background-updates/) and take care that your WordPress core, plugins and even themes are always [up-to-date](#toc-updating-wordpress).
 
 
 #### Protect against bots

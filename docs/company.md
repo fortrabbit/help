@@ -72,7 +72,7 @@ As an Owner you can also decide to delete your Company. This is a huge step, as 
 * {{ Your Company }} >
 * Hit the **Delete Company** button and follow the instructions
 
-Deleting a Comoany will not cancel your Account, [see dedicated instructions for that](/account#toc-deleting-an-account). When a Company has more than one Owner, you can also just leave it:
+Deleting a Company will not cancel your Account, [see dedicated instructions for that](/account#toc-deleting-an-account). When a Company has more than one Owner, you can also just leave it:
 
 #### Leaving a Company
 

@@ -110,10 +110,10 @@ The client can also dismiss you of your access role within hir Company.
 
 1. Login to the Dashboard
 1. Click on "[Set up a new Company](https://dashboard.fortrabbit.com//account/company/new)" and follows the steps
-2. Use the billing informations provided by your client
+2. Use the billing information provided by your client
 3. Changes the "Invoice e-mail" address to the client e-mail
 
-This work-flow is faster and does not involve any interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card informations.
+This work-flow is faster and does not involve any interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card information.
 
 
 #### Changing ownership of Apps

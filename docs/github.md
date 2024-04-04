@@ -99,7 +99,7 @@ This will give you a response like the following:
 }
 ```
 
-What you need is the `token` value. In the above example it is `12345abc1234512345`. Open up your `composer.json` file and add the token withunder the `config` directive:
+What you need is the `token` value. In the above example it is `12345abc1234512345`. Open up your `composer.json` file and add the token under the `config` directive:
 
 ```
 {

@@ -76,7 +76,7 @@ Each [App](app) comes with a dedicated Git remote repository. In Git lingua this
 
 ### Using Git for deployment
 
-On top of storing your code in a different location (local machine + fortrabbit remote) Git is also the way to deploy code changes to your App. When issuing `git push` your code will be transferred to the fortrabbit remote and a chain of deployment processes is triggered. Those run [Composer](https://getcomposer.org/) and execute custom scripts you can define yourself, if needed. The resulting code base and files will be packaged and distributed to the various components of your [Apps](app): the PHP component (public web) and the optional Worker component (background). Please see our [deployment article](deployment) for detailed informations and advanced usage.
+On top of storing your code in a different location (local machine + fortrabbit remote) Git is also the way to deploy code changes to your App. When issuing `git push` your code will be transferred to the fortrabbit remote and a chain of deployment processes is triggered. Those run [Composer](https://getcomposer.org/) and execute custom scripts you can define yourself, if needed. The resulting code base and files will be packaged and distributed to the various components of your [Apps](app): the PHP component (public web) and the optional Worker component (background). Please see our [deployment article](deployment) for detailed information and advanced usage.
 
 
 ## Git desktop GUIs
@@ -88,4 +88,4 @@ Most people probably use Git from the command line (aka bash, terminal, shell). 
 
 ### Git is not GitHub
 
-Sometimes people confuse Git with GitHub. [GitHub](https://github.com) is a popular provider to host Git repositories publicly or privately. GitHub has extended Git workflows with neat communication tools around the basic Git usage. Most notable is the "pull request" workflow. The fortrabbit [Dashboard](dashboard) does not offer such project communication tools — it's barebone Git only. You can however build your own workflow which includes a hosted Git repo on GitHub ([integration guide](/github)) or Bitbucket ([integration guide](/bitbucket)) or any another Git repo provider.
+Sometimes people confuse Git with GitHub. [GitHub](https://github.com) is a popular provider to host Git repositories publicly or privately. GitHub has extended Git workflows with neat communication tools around the basic Git usage. Most notable is the "pull request" workflow. The fortrabbit [Dashboard](dashboard) does not offer such project communication tools — it's bare bone Git only. You can however build your own workflow which includes a hosted Git repo on GitHub ([integration guide](/github)) or Bitbucket ([integration guide](/bitbucket)) or any another Git repo provider.

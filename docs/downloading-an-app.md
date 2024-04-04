@@ -19,7 +19,7 @@ But there are some real world scenarios why downloading the remote App might sti
 
 * A new developer is joining the project
 * A previous developer has left without transferring the project in a responsible manner
-* Your harddisk crashed or you have accidentally deleted your local setup somehow
+* Your hard disk crashed or you have accidentally deleted your local setup somehow
 
 
 ## Downloading the fortrabbit App data directly

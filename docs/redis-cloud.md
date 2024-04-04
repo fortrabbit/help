@@ -49,7 +49,7 @@ In the next step you can name your resource (aka Redis server). Our recommended 
 
 When your subscription becomes available (you can see the status in the Redis Labs control panel) you will get an "Endpoint", which consists of a hostname and a port. For example: `pub-redis-12345.us-east-1-3.7.ec2.redislabs.com:12345`. The first part (`pub-redis...redislabs.com`) is the hostname and the last part (`12345`) is the port.
 
-We recommend to store this information in your App's [secrets](secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
+We recommend to store this information in your App's [secrets](secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
 
 ```plain
 # the hostname and port
@@ -83,7 +83,7 @@ For specific integrations check out the [install guides](/#install-guides) and f
 If you don't use a framework, configure `session.save_handler` and `session.save_path` in your php.ini to tell phpredis where to store the sessions. Make sure to do it very early in your application, before accessing session data.
 
 ```php
-// Read the secrects you've set in the Dashboard
+// Read the secrets you've set in the Dashboard
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 $host    = $secrets['CUSTOM']['REDIS_HOST'];
 $port    = $secrets['CUSTOM']['REDIS_PORT'];

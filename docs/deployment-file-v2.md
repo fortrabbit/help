@@ -74,7 +74,7 @@ post: post.php
 
 When developing pre/post scripts, it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
-Bear in mind the pre script won't have access to dependencies/libraries during your first deployment, since `composer install` hasn't ran at that time. Subsequent deployments will have those files however, since the `/vendor` directory is sustained - unless you reset the repositiory.
+Bear in mind the pre script won't have access to dependencies/libraries during your first deployment, since `composer install` hasn't ran at that time. Subsequent deployments will have those files however, since the `/vendor` directory is sustained - unless you reset the repository.
 
 Only a single pre/post script will be executed, chaining won't work. If you need to run multiple scripts, you'll need to create a wrapper script and require your other scripts within.
 

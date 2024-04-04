@@ -58,7 +58,7 @@ version: 2
 pre: add-auth.php
 ```
 
-Additionally, you need to set the `COMPOSER_HOME` env var and the env vars you use in the scriptin the dashboard:
+Additionally, you need to set the `COMPOSER_HOME` env var and the env vars you use in the script in the dashboard:
 
 ```yaml
 COMPOSER_HOME=/tmp/.composer

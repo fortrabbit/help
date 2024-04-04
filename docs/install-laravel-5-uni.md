@@ -122,7 +122,7 @@ If you have not chosen the Laravel in the [Software Preset](app#toc-software-pre
 
 There are various use cases to export and import the database:
 
-1. Export the database from your old webhosting
+1. Export the database from your old web hosting
 2. Export your local database to import it to the fortrabbit database
 3. Export the remote database from fortrabbit to bring your local installation up-to-date
 

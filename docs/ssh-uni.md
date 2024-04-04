@@ -86,7 +86,7 @@ The rsync tool makes it easy to synchronize files in different (remote) file sys
 
 ### Using Composer
 
-Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. Therefore, it should not be necessary to run Composer from the App environment. If you still need to run Composer manually on the App, you can. Please think twise before using `composer update`, because that will bring your local code out of sync which is likely to cause issues. Use `composer install` instead. Again, running Composer directly on the App is probably not what you want to do.
+Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. Therefore, it should not be necessary to run Composer from the App environment. If you still need to run Composer manually on the App, you can. Please think twice before using `composer update`, because that will bring your local code out of sync which is likely to cause issues. Use `composer install` instead. Again, running Composer directly on the App is probably not what you want to do.
 
 
 ## Limitations

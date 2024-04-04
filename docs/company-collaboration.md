@@ -69,7 +69,7 @@ The Admin role can be modified by Owners. Accounts with this role within a Compa
 
 ### App Collaborator
 
-The App Collaborator role can be modified by Owners and Admins. It's the same as with [App collaboration](app-collaboration) and has the same permissions. When any paid Company collaboration plan is booked, all Apps, including all Universal Apps, are granted unlimited App collaboratortion.
+The App Collaborator role can be modified by Owners and Admins. It's the same as with [App collaboration](app-collaboration) and has the same permissions. When any paid Company collaboration plan is booked, all Apps, including all Universal Apps, are granted unlimited App collaboration.
 
 
 ## Inviting a Company member

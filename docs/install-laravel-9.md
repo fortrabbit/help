@@ -157,7 +157,7 @@ public function boot()
 
 There are various use cases for exporting and importing databases. Likely you want to:
 
-1. Export the database from your old webhosting
+1. Export the database from your old web hosting
 2. Export your local database to import it to the fortrabbit database
 3. Export the remote database from fortrabbit to bring your local installation up-to-date
 

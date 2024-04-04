@@ -39,7 +39,7 @@ Choose your desired plan to initiate the sign up. You'll first just need to choo
 
 ## Setting it up
 
-In order to get your mails through the SPAM filter of your users, you'll need to authorize the ownership of the domain you are using — think DNS modifications. fortrabbit is not envolved here. You do this with your domain or DNS provider of choice. This is done with DKIM ([SendGrid docs](https://sendgrid.com/docs/Glossary/dkim.html)) and SPF ([SendGrid docs](https://sendgrid.com/docs/Glossary/spf.html)).
+In order to get your mails through the SPAM filter of your users, you'll need to authorize the ownership of the domain you are using — think DNS modifications. fortrabbit is not involved here. You do this with your domain or DNS provider of choice. This is done with DKIM ([SendGrid docs](https://sendgrid.com/docs/Glossary/dkim.html)) and SPF ([SendGrid docs](https://sendgrid.com/docs/Glossary/spf.html)).
 
 
 

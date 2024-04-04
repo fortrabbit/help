@@ -153,7 +153,7 @@ We are in this together. The smarter you code, the less resources you'll need. O
 
 ## Advanced specifications
 
-Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained informations about plans and limits.
+Our [specs page](http://www.fortrabbit.com/specs) provides you with fine-grained information about plans and limits.
 
 ## General scaling tips
 

@@ -25,7 +25,7 @@ keywords:
 
 ## Problem
 
-fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online-only development. The deployment is fast but still takes too long when developing rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging informations.
+fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online-only development. The deployment is fast but still takes too long when developing rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging information.
 
 
 ## Solution

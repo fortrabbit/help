@@ -51,7 +51,7 @@ Your website is slow, you will feel it. Common signs of performance issues are:
 
 The fortrabbit Dashboard offers a metric section (your hosting provider likely will have something similar) including the following vital data points:
 
-- **PHP response time**: Aim for less than 250ms on average. In our experience, it's more likely that a website with an average high repsonse time will have problems. Slow websites that are getting some more visits than usual are tending to break down (504) faster.
+- **PHP response time**: Aim for less than 250ms on average. In our experience, it's more likely that a website with an average high response time will have problems. Slow websites that are getting some more visits than usual are tending to break down (504) faster.
 - **5xx error metric**: See if there are any peaks in 5xx errors. If there are, see if at the same time, the PHP response time went up, in that case those 5xx errors are likely 504 time out errors.
 - **Memory usage**: The memory used should not come to close to the hosting resources you have booked on average, 80% average usage and single peaks are Ok.
 - **Memory swap usage**: Swap is when there is no (fast) RAM available anymore and data needs to be accessed from disc (slow). This should be within bounds, which depends on your website.

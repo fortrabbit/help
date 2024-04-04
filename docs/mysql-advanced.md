@@ -81,7 +81,7 @@ It is possible to access a MySQL from another App within the same region (EU, US
 
 ## Accessing the remote MySQL from your local App
 
-It is also possible to access the fortrabbit database from the local installation of your App. You will need to open a tunnel, as described above to do so. While possible we do not recommend that approach. You local App will feel slow, unless you have a very good internet connection. Further, you will run the risk of messing up the database if several apps are wrinting to it at the same time. The best practice here is separating the local development environment from production.
+It is also possible to access the fortrabbit database from the local installation of your App. You will need to open a tunnel, as described above to do so. While possible we do not recommend that approach. You local App will feel slow, unless you have a very good internet connection. Further, you will run the risk of messing up the database if several apps are writing to it at the same time. The best practice here is separating the local development environment from production.
 
 ## Differences between Professional and Universal
 
