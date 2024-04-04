@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:53:38
+reviewed:         2024-04-04 09:45:11
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 keywords:
@@ -57,7 +57,7 @@ Don't forget to upload the hidden `web/.htaccess` file. This file is required. Y
 
 If you don't follow our suggestion to have a local development environment and just upload the latest `.zip` package from Craft via SFTP, it will not work out of the box and will throw a service unavailable error. Within the logs you can see that the error was caused in line 515 in `Application.php`. If you look at the lines before in that file you can see that a condition for the installer to run is that it has to be in "dev" mode.
 
-**To fix that**: Change the ENV var in the Dashboard from: `ENVIRONMENT=production` to `ENVIRONMENT=dev`
+**To fix that**: Change the ENV var in the Dashboard from: `CRAFT_ENVIRONMENT=production` to `CRAFT_ENVIRONMENT=dev`
 
 Run the installer like so (the base URL will still throw an error):  
 [{{app-name}}.frb.io/admin/](https://{{app-name}}.frb.io/admin/)

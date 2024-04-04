@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:53:33
+reviewed:         2024-04-04 12:21:13
 title:            Troubleshooting Craft CMS issues
 naviTitle:        Craft troubleshooting
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 keywords:

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-09-14 11:39:30
+reviewed:         2024-04-04 11:50:47
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 otherVersions:
@@ -41,7 +41,7 @@ The mandatory Craft CMS security key has to be shared among all environments. We
 CRAFT_SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
-It will contain a value if you have [installed Craft 4 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
+It will contain a value if you have [installed Craft 5 correctly on your local machine](/craft-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
@@ -64,7 +64,7 @@ Your fortrabbit App comes with a predefined App Name and a URL like `{{app-name}
 
 When installing Craft locally, it will ask you which domain you want to use. This local domain differs form the one you want to use in production. That's why it is stored in the `PRIMARY_SITE_URL` ENV var. The installer creates this ENV var in the .env file. In your fortrabbit production environment you may need to set `PRIMARY_SITE_URL` using the ENV var settings of your App. 
 
-Craft CMS uses `@web` alias internally when it deals with HTTP requests. Unless you define it, Craft will try to figure it out based on HTTP headers - which is not always possible. It's good practise to define it explicitly using `PRIMARY_SITE_URL` ENV var.   
+Craft CMS uses `@web` alias internally when it deals with HTTP requests. Unless you define it, Craft will try to figure it out based on HTTP headers - which is not always possible. It's good practice to define it explicitly using `PRIMARY_SITE_URL` ENV var.   
 
 ```php
 return [
@@ -309,15 +309,15 @@ You need to enable the [Worker](/worker-pro) component and set up a "Nonstop Job
 
 ## Sending mail
 
-You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
+You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows you to configure sending mail via SMTP. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
 
 Our recommendation: Use an external third party transactional mail provider for that. Pixel & Tonic (Craft CMS creators) maintain a [plugin for Postmark](https://plugins.craftcms.com/postmark). With that plugin installed you can easily set it up.
 
 ## Licensing Craft CMS
 
-Craft CMS is not all free. To enable the good parts you need to obtain a licence from Pixel & Tonic (the folks building Craft CMS). 
+Craft CMS is not all free. To enable the good parts you need to obtain a license from Pixel & Tonic (the folks building Craft CMS). 
 
-A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL for development and you might have used that to connect your Craft CMS licence with. You can change the domain of a Craft licence as well, if for instance you started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+A Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You might have used the fortrabbit App URL for development and you might have used that to connect your Craft CMS license with. You can change the domain of a Craft license as well, if for instance you started with our App URL but now want to use your own domain with your Craft Console — over at https://console.craftcms.com/.
 
 The App URL `{{app-name}}.frb.io` is already whitelisted as a testing URL, thanks to Pixel & Tonic.
 
