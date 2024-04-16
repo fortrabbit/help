@@ -32,8 +32,7 @@ rank: 80
 
 ## Get ready
 
-Please make sure to have followed our [get ready guide](/get-ready) before starting here. 
-
+Please make sure to have followed our [get ready guide](/get-ready) before starting here.
 
 ## Quick start
 
@@ -84,7 +83,6 @@ With that in place, any time you deploy your code, database changes will be appl
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-
 ## Setup
 
 **Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Laravel installation or if you would like to set up Laravel so that you can run it in a local development environment as well as in your fortrabbit App:
@@ -93,7 +91,6 @@ With that in place, any time you deploy your code, database changes will be appl
 ### Setup for an existing code base
 
 You can also push your existing Laravel installation to fortrabbit. If you are already using Git, you can add fortrabbit as an additional remote, as described [above](#toc-quick-start) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating).
-
 
 ### MySQL configuration
 
@@ -147,7 +144,6 @@ return [
 
 This configuration contains environment detection, so the App can run on your local machine with your local database, as well as on fortrabbit. You can also use App secrets to store custom third party access credentials.
 
-
 ## Database import and export
 
 There are various use cases for exporting and importing databases. Likely you want to:
@@ -157,7 +153,6 @@ There are various use cases for exporting and importing databases. Likely you wa
 3. Export the remote database from fortrabbit to bring your local installation up-to-date
 
 Read on in the [MySQL article](/mysql) on how to do that and other tasks.
-
 
 ## Working with artisan migrate
 
@@ -179,7 +174,6 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate --force'
 **Note**: If `APP_ENV` is set to `production` - which is the default - the `--force` flag for migrate commands will override the confirmation prompt. 
 
 You can also add the migrate command to your `composer.json` to have it run automatically every time you push changes ([see above](#toc-quick-start)).
-
 
 ## Logging
 
@@ -229,7 +223,6 @@ If you are on the Professional Stack, since you might have multiple Nodes and no
 
 Note that, since Memcache is an in-memory store which does not persist its data over server reboots, for long-lived sessions the `database` driver should be preferred (see the previous section for details). 
 
-
 ## Queueing
 
 ### Queueing for Universal Apps
@@ -248,7 +241,6 @@ Once you've decided the queue you want to use, just open `config/queue.php` and 
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
 **NB**: Laravel offers two commands to process queues: `queue:work` and `queue:listen`. We recommend using `queue:work`, and *not* using `queue:listen`. This is because the `queue:listen` command boots the Laravel framework for each iteration, whereas `queue:work` boots the framework once and runs as a daemon. Using `queue:work` offers high memory and performance gains in comparison with `queue:listen`.
-
 
 ## Setting up Object Storage (Professional Stack)
 
@@ -423,7 +415,6 @@ return [
 ```
 
 If you plan on using Redis as a cache, then open `config/cache.php` and set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard).
-
 
 ## Setting up Memcache (Professional Stack)
 
