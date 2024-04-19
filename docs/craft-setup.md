@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:53:28
+reviewed:         2024-04-04 09:41:45
 title:            Setup Craft CMS
 naviTitle:        3. Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 otherVersions:
@@ -35,7 +35,7 @@ Make sure to have followed [our guides](/craft-start) so far. You should have al
 
 ## Craft configuration on fortrabbit
 
-Craft 4 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). This means you can run your Craft locally and remotely without code or configuration file changes. Locally, your `.env` file will be modified and read. That file is not part of Git, you don't need it on the App.
+Craft 5 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). This means you can run your Craft locally and remotely without code or configuration file changes. Locally, your `.env` file will be modified and read. That file is not part of Git, you don't need it on the App.
 
 
 ## Database setup

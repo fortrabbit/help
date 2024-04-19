@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-01-19 14:19:41
+reviewed:         2024-04-04 12:13:06
 title:            Craft CMS performance tips
 naviTitle:        Craft performance tips
 lead:             All about performance problems with Craft CMS and how to run Craft CMS fast on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 keywords:
@@ -82,7 +82,7 @@ The amount and complexity of database queries, as well as the size of your datas
 
 #### How Craft CMS makes use of the database
 
-The beauty about Craft CMS is that you can get by with just writing TWIG templates — you don't need to write a single MySQL query yourself. Within the TWIG templates there is an abstraction layer to create a query to the database. That's a dangerous tool at your proposal since there a couple of important not so well known things about it.
+The beauty about Craft CMS is that you can get by with just writing TWIG templates — you don't need to write a single MySQL query yourself. Within the TWIG templates there is an abstraction layer to create a query to the database. That's a dangerous tool at your disposal since there a couple of important not so well known things about it.
 
 - Craft is running database queries all the time, completely blocking
 - Craft is joining all the time, since everything is an element, that can get slow quickly

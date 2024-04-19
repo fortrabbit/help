@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:53:02
+reviewed:         2024-04-03 16:48:12
 title:            Install Craft CMS locally
 naviTitle:        2. Install Craft locally
 lead:             Learn how to install Craft CMS locally, matching your skills and workflows.
@@ -14,7 +14,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-mark-black-new.svg
-version:          4.0
+version:          5.0
 supportLevel:     a
 
 keywords:
@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-start) available. Use the detailed [official Craft 4 install guide](https://docs.craftcms.com/v4/installation.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft 3 project running locally.
+[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-start) available. Use the detailed [official Craft install guide](https://craftcms.com/docs/5.x/install.html) as your guideline to install Craft on your local machine first. You can safely skip this step when you already have an existing Craft project running locally.
 
 
 ## Choose your Craft install workflow
@@ -37,23 +37,25 @@ The way you will install Craft will set the course on how you will [deploy](/dep
 
 ### 1a. Download Craft with Composer
 
-This is the recommended - more sophisticated - way. You will use [Git](/git) and [Composer](/composer#toc-local-composer) in the Terminal. Run this command **on you local machine** to create a Craft 4 project to get started:
+This is the recommended - more sophisticated - way. You will use [Git](/git) and [Composer](/composer#toc-local-composer) in the Terminal. Run this command **on you local machine** to create a Craft project to get started:
 
 ```
 $ composer create-project craftcms/craft {{app-name}}
 ```
+
+Follow the prompt to complete setup for your new Craft project.
 
 See an error? Check your [local development](/local-development). Later on you can [deploy Craft with Git](/craft-deploy-git) either to Universal or Professional Apps on fortrabbit.
 
 
 ### 1b. Download the Craft zip file
 
-Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files. Later on you can upload [Craft with SFTP](/craft-upload-sftp) on Universal Apps.
+Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest.zip](https://craftcms.com/latest.zip). Unpack that zip file to get to the actual project files. Later on you can upload [Craft with SFTP](/craft-upload-sftp) on Universal Apps.
 
 
 ## Install Craft CMS locally
 
-Craft 4 uses environment variables to access environment specific settings. With your fortrabbit Craft App, those variables are already set. Configure it to work on your local machine now. You have two options to install Craft:
+Craft uses environment variables to access environment specific settings. With your fortrabbit Craft App, those variables are already set. Configure it to work on your local machine now. You have two options to install Craft:
 
 ### 2a. Terminal setup
 
