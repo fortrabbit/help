@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2023-11-15 15:52:27
+reviewed:       2024-05-17
 naviTitle:      Bitbucket
 title:          Combine fortrabbit with Bitbucket
 lead:           Learn how to integrate the second most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -27,13 +27,13 @@ keywords:
 
 ---
 
-[Bitbucket](https://bitbucket.org?utm_source=fortrabbit) is a Git hosting service that offers advanced Git work-flows, such as 'pull requests'. It offers private repos in a free plan and is a popular choice in combination with fortrabbit. It also offers [paid plans](https://bitbucket.org/product/pricing) for "growing teams".
-
-Bitbucket is similar to GitHub, please hop over to the [GitHub integration](github) article to learn about available work-flows, like having two remotes.
+[Bitbucket](https://bitbucket.org?utm_source=fortrabbit) is a Git hosting service that offers advanced Git work-flows, such as 'pull requests'. It offers private repos in a free plan and is a popular choice in combination with fortrabbit. It also offers [paid plans](https://www.atlassian.com/software/bitbucket/pricing) for "growing teams". Bitbucket is similar to GitHub, please hop over to the [GitHub integration](github) article to learn about available work-flows, like having two remotes.
 
 ## Deployment pipeline
 
-Bitbucket has pipelines to handle hooks to build stuff. In order for BitBucket to push to your fortrabbit App, you have to [create an SSH key pair with Bitbucket](https://confluence.atlassian.com/bitbucket/use-ssh-keys-in-bitbucket-pipelines-847452940.html) and then [add the public key to your fortrabbit App](access-methods#toc-app-only-ssh-keys).
+Bitbucket has pipelines to handle hooks to build stuff. In order for Bitbucket to push to your fortrabbit App, you have to [create an SSH key pair with Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/using-ssh-keys-in-bitbucket-pipelines/) and then [add the public key to your fortrabbit App](access-methods#toc-app-only-ssh-keys).
+
+You will also need to 'fetch' the public key from the fortrabbit deploy service. Do that with the Bitbucket dashboard under repository settings > SSH keys > Known hosts. Add `deploy.{region}.frbit.com`.
 
 ### Example pipeline
 
