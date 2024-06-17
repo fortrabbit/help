@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-06-29 17:57:25
+reviewed:         2024-06-17 10:50:00
 title:            Statamic on fortrabbit
 naviTitle:        Statamic intro
 order:            1
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          4
+version:          5
 supportLevel:     b
 
 keywords:

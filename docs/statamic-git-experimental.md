@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-06-29 17:57:51
+reviewed:         2024-06-17 10:50:00
 order:            4
 title:            Deploy Statamic with Git on fortrabbit (experimental)
 naviTitle:        Statamic Git experimental
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          4
+version:          5
 supportLevel:     b
 
 keywords:
@@ -65,8 +65,8 @@ STATAMIC_GIT_AUTOMATIC=true
 Login to your fortrabbit App by SSH and:
 
 1. Set up an SSH key with SSH keygen (no passphrase), see our [SSH keys setup guide](/ssh-keys#toc-generate-a-ssh-key-pair-aka-ssh-key-)
-2. Copy the content of the public key (likely `/srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit.pub`) to a buffer
-3. In the fortrabbit Dashboard create a new 'app-only SSH key' with the App, paste the contents of the public key file (open the file with Vim)
+2. Copy the contents of the public key (likely `/srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit.pub`)
+3. In the fortrabbit Dashboard create a new 'app-only SSH key' with the App, paste the contents of the public key file
 4. While logged in by SSH create a config file in the already existing folder `.ssh` by running `touch config`
 5. Add the content below to the newly created config file (edit the file with Vim)
 
@@ -74,7 +74,7 @@ Login to your fortrabbit App by SSH and:
 # Add this to .ssh/config
 # Use the App specific region, app name and SSH key name
 Host deploy.{{region}}.frbit.com
-    IdentityFile /srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit
+IdentityFile /srv/app/{{app-name}}/htdocs/.ssh/id_ed25519_fortrabbit
 ```
 
 ## 5 - Init Git on the fortrabbit App
@@ -85,14 +85,13 @@ First add a `.gitignore` file. Its contents should be the same as the `.gitignor
 
 1. Initialise a new git repo: `git init`.
 2. Create a Git user (see example below)
-3. `git add .` & `git commit -m 'initial commit'`
-4. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
-5. Add the fortrabbit deploy service as a remote (`git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git`)
-
 ```shell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
+3. `git add .` & `git commit -m 'initial commit'`
+4. Create an `editorial` branch and check it out (`git checkout -b 'editorial'`)
+5. Add the fortrabbit deploy service as a remote (`git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git`)
 
 See the [Statamic Git guide](https://statamic.dev/git-automation#remote-setup) and the [fortrabbit git remote help](/git-deployment#toc-adding-fortrabbit-as-a-remote) as reference.
 

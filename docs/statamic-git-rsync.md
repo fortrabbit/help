@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-07-11 14:41:44
+reviewed:         2024-06-17 10:50:00
 order:            2
 title:            Deploy Statamic with Git and rsync
 naviTitle:        Statamic Git + rsync
@@ -14,7 +14,7 @@ websiteLink:      https://statamic.com/
 websiteLinkText:  statamic.com
 category:         CMS
 image:            statamic-mark-new.svg
-version:          4
+version:          5
 supportLevel:     b
 
 keywords:
@@ -89,7 +89,7 @@ As mentioned above, deployment of your code base (templates and configuration) a
 
 ```shell
 # SYNC UP: from local to remote
-$ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/build ./storage/app  ./public/assets stata4testing@deploy.eu2.frbit.com:~/
+$ rsync -avR ./content ./users ./resources/blueprints ./resources/fieldsets ./resources/forms ./resources/users ./storage/forms ./public/build ./storage/app ./public/assets {{ssh-user}}@deploy.{{region}}.frbit.com:~/
 ```
 
 You may not have all these folders on your local system: Best only include folders which you do have. Otherwise rsync might print some strange error messages.
