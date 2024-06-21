@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-05-07 17:34:20
+reviewed:      2024-06-21 16:56:02
 naviTitle:     SSH access troubleshooting
 title:         SSH access troubleshooting
 excerpt:       What you may want to know to debug SSH connection issues
@@ -79,9 +79,13 @@ Connection to deploy.eu2.frbit.com closed.
 
 If more than 10 minutes have passed and you still get a similar error (despite successful authentication), then please contact us via the <a href="#asd" onclick="Intercom('showNewMessage', 'I see an !! Internal error I01 for my App ______.')">support chat</a>.
 
+## SSH key passphrases
+
+You might be asked for a passphrase when trying to connect by SSH. Mind that a passphrase is a local security mechanism that you have set up to protect your SSH key. Under macOS the SSH key passphrase can be stored with the keychain. It's not related to fortrabbit services. See this [GitHub help page](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases) for more on passphrases.
+
 ## Check your your local SSH config
 
-Sometimes SSH connection issues are related to configuration with your local SSH configuration. Look into the `~/.ssh` folder on your computer (Linux & macOS). In that folder there is a `config` file and a `known_hosts` file. Both may contain entries for fortrabbit servers (frbit.com), instructing your system to use a specific connection method. To debug this, remove anything related to fortrabbit. After changing the config, best restart SSH. Not sure what the most elegant way to do this is. `killall sshd` might do the trick.
+Sometimes SSH connection issues are related to configuration with your local SSH configuration. Look into the `~/.ssh` folder on your computer (Linux & macOS). In that folder there is a `config` file and a `known_hosts` file. Both may contain entries for fortrabbit servers (frbit.com), instructing your system to use a specific connection method. To debug this, remove anything related to fortrabbit. After changing the config, best restart SSH. `killall sshd` might do the trick.
 
 ## Related topics
 
