@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-06-17 10:50:00
+reviewed:         2024-07-02 11:02:00
 order:            2
 title:            Deploy Statamic with Git and rsync
 naviTitle:        Statamic Git + rsync
@@ -100,12 +100,12 @@ It works also the other way around. For example, if you have some edits done onl
 
 ```shell
 # SYNC DOWN: from remote to local one by one examples
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/content ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/users ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/blueprints ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/fieldsets ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/forms ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/resources/users ./
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/storage/forms ./ 
-$ rsync -av '{{app-name}}@deploy.{{region}}.frbit.com:~/public/assets' ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/content ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/users ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/resources/blueprints ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/resources/fieldsets ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/resources/forms ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/resources/users ./
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/storage/forms ./ 
+$ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/public/assets' ./
 ```
