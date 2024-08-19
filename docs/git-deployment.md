@@ -66,14 +66,17 @@ $ git push
 ```
 
 ### Adding fortrabbit as a remote
+Using Git already? Add fortrabbit as an additional remote:
 
 ```bash
-# Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+```
 
-# Then push to fortrabbit (replace branch-name with your branch name):
+Then push your branch to fortrabbit remote (replace branch-name with your branch name):
+```bash
 $ git push -u fortrabbit branch-name
 ```
+For our deployment service to deploy the branch, it has to be named `master`, `main` or the same as your app name. See below for more detail.
 
 ### Resetting the remote repo
 
