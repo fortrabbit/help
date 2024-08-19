@@ -71,8 +71,8 @@ $ git push
 # Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# Then define you want to push fortrabbit like so
-$ git push -u origin fortrabbit
+# Then push to fortrabbit (replace branch-name with your branch name):
+$ git push -u fortrabbit branch-name
 ```
 
 ### Resetting the remote repo
