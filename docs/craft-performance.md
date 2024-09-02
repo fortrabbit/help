@@ -71,8 +71,8 @@ We advise to put your website under some controlled stress to see when it will b
 
 There are also commercial, professional profiling services providing helpful detailed low-level profiling information. They can be useful for bigger projects with some more traffic. On the server side, they are integrated as PHP extensions (pre-installed on fortrabbit). The most popular ones are Blackfire (recommended by us) and NewRelic.
 
-- [fortrabbit NewRelic help](https://help.fortrabbit.com/blackfire)
-- [fortrabbit Blackfire help](https://help.fortrabbit.com/new-relic)
+- [fortrabbit Blackfire help](https://help.fortrabbit.com/blackfire)
+- [fortrabbit NewRelic help](https://help.fortrabbit.com/new-relic)
 
 ## Kind of issues
 
