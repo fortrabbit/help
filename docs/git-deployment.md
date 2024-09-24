@@ -80,14 +80,16 @@ For our deployment service to deploy the branch, it has to be named `master`, `m
 
 ### Resetting the remote repo
 
-To start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
+To start with a complete new Git history, you can reset your repository. This can be done with the `reset` command like so:
 
 ```bash
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
-The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be built on the next push (of your new code base).
+This will delete the entire git repo with us, including all branches. The build directory including the vendor folder will also be cleared meaning the next deployment will have a completely clean start.
+
+The reset command itself will not generate a release. So your live App continues to serve web traffic without interruption, until your next git push when a deployment happens.
 
 ### Git with a GUI or IDE
 
