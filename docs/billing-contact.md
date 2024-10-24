@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-02-15 08:19:53
+reviewed:      2024-02-15 08:19:53
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-02-15 08:20:40
+reviewed:      2024-02-15 08:20:40
 title:         Path to successful support
 naviTitle:     Support tips
 lead:          "Here are some tips to how to get the answers you need quickly."

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-02-15 08:19:49
+reviewed:      2024-02-15 08:19:49
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.

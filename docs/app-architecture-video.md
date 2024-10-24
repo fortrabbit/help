@@ -1,7 +1,7 @@
 ---
 
 template:      video
-reviewed:      2023-02-15 08:19:46
+reviewed:      2024-02-15 08:19:46
 naviTitle:     App architecture video
 title:         Video: App architecture
 videoid:       SKMaiJhoPJw

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-02-15 08:20:46
+reviewed:      2024-02-15 08:20:46
 title:         How to reduce your hosting costs
 naviTitle:     Reducing hosting costs
 lead:          "We want you to succeed with your online business here on fortrabbit. This article helps you reviewing and cutting down your cloud costs."

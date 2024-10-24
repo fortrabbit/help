@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-02-22 11:58:02
+reviewed:      2024-02-22 11:58:02
 title:         Git troubleshooting
 naviTitle:     Git troubleshooting
 excerpt:       What you may want to know to debug Git issues
