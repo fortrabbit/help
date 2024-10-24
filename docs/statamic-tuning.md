@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-06-29 17:57:37
+reviewed:         2024-06-29 17:57:37
 title:            Tuning Statamic
 naviTitle:        Tune Statamic
 order:            5
