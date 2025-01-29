@@ -42,7 +42,7 @@ Your fortrabbit Apps are running on the Apache web server. You can make use of `
 When you are using a framework or a CMS, chances are high, that you don't need to wrangle with `.htaccess` at all, as that comes built-in. Here are the most used ones:
 
 * **Laravel** comes with a [boilerplate htaccess](https://github.com/laravel/laravel/blob/master/public/.htaccess) you can extend
-* **Craft CMS** comes with a [boilerplate htaccess](https://github.com/craftcms/craft/blob/main/web/.htaccess) you can extend
+* **Craft CMS** comes with a [boilerplate htaccess](https://github.com/craftcms/craft/blob/5.x/web/.htaccess) you can extend
 * **WordPress** [manages htaccess](https://codex.wordpress.org/htaccess) for you
 
 ## htaccess topics
