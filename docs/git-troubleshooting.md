@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-22 11:58:02
+reviewed:      2025-02-11 07:18:54
 title:         Git troubleshooting
 naviTitle:     Git troubleshooting
 excerpt:       What you may want to know to debug Git issues
@@ -35,7 +35,7 @@ then you the key you are using is not associated with your Dashboard account. Ve
 
 ```raw
 !! repository is busy: probably deployment in progress (prep)
-!! to force stop, you can use: ssh {{app-name}}@deploy.{{region}}.frbit.com halt
+!! to force stop, you can use: ssh {{ssh-user}}@deploy.{{region}}.frbit.com halt
 ```
 
 That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. It should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time if not finished successfully.
@@ -43,7 +43,7 @@ That can happen when somebody else is deploying at the same time, a Git deployme
 You can run the halt signal by issuing:
 
 ```shell
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com halt
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com halt
 ```
 
 Contact support, if the repository lock is not resolving or if this happens often.
