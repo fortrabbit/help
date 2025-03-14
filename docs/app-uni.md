@@ -50,28 +50,3 @@ PHP's memory has an impact on the performance of your site. Too little PHP memor
 The smallest plan is suited for hobby projects, landing pages, one-pagers, MVPs, weekend hacks, development, skeletons, personal blogs and whatever small project you can think of. The highest plan is suited for more serious intentions: you can put a commercial project there. Everything in between can be in between. [See the pricing page](https://www.fortrabbit.com/pricing) for specs.
 
 If you need more horse power and options, please see how you can: [Migrate from Universal App to Professional App](/migrate-uni-to-pro).
-
-## Downgrading
-
-Sorry, at this time it is not possible to downgrade from a higher to a lower plan in the Universal Stack. While this would be nice for users - please believe that it is not our aim to lock you in - it would be quite complicated to achieve. To downgrade, we would have to implement several limit checks and give infos in the Dashboard which limits should have be to adjusted before downgrading.
-
-As an alternative we suggest to throw away the current App and create a new one: download the [backups](/backups-uni), delete the App, create a new App with the correct plan and upload (or deploy) again.
-
-Thanks for understanding!
-
-<!-- apache-util2 not installed, will not work that way.
-
-## Password authentication with http-auth
-
-```bash
-# 1. login to your App via SSH
-
-
-# 2. create a .htpasswd file containing a "username" in the tmp folder
-htpasswd -c /srv/tmp/.htpasswd username
-# You'll be asked for a password
-
-# 3. 
-
-```
--->
