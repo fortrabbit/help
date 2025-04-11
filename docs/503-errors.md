@@ -49,7 +49,7 @@ The error message "Failed to read FastCGI header" means that while Apache was wa
 
 ### Restarting PHP (workaround)
 
-In some cases, to the the App working again, it may be enough to restart the App from the Dashboard.
+In some cases, to get the App working again, it may be enough to restart the App from the Dashboard.
 
 + [Restarting an App](/app#toc-restarting-an-app)
 
