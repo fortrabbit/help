@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:53:47
+reviewed:      2025-05-13 13:43:08
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -178,9 +178,9 @@ $ ls -lh {{app-name}}.tar.gz
 
 ### Code revision file
 
-In your deployment there is a hidden file called `.code-revision`. It's located at `/srv/app/{{app-name}}/.code-revision`. and is getting renewed each time you deploy with Git. It includes the Unix Timestamp of the last Git deployment and the hash of the latest commit, separated by a dot. This what the content looks like:
+With the deployment on the Universal Stack (only) there is a hidden file called `.code-revision`. It's located at `/srv/app/{{app-name}}/.code-revision`. and is getting renewed each time you deploy with Git. It includes the Unix Timestamp of the last Git deployment and the hash of the latest commit, separated by a dot. This what the content looks like:
 
-```
+```raw
 1540931024080267920.26b284844c746f80f42ad7ac77a4ad42d25b27de
 ```
 
