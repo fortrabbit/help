@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2023-11-15 15:54:07
+reviewed:    2025-07-09 14:41:18
 title:       Control HTTP headers
 naviTitle:   HTTP headers
 lead:        'HTTP headers are part of an Hyper Text Transfer Protocol request and response. HTTP headers are defining the operating parameters of an HTTP transaction. Use htaccess to modify these.'

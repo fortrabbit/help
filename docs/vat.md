@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2023-11-15 15:55:49
+reviewed:   2025-07-09 14:40:27
 title:      When does VAT apply?
 naviTitle:  VAT
 excerpt:    Who needs to pay value added tax

@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2023-11-15 15:55:19
+reviewed:   2025-07-09 14:42:31
 title:      Pro-rated billing explained
 naviTitle:  Pro-rated billing
 excerpt:    "How does pro-rated billing work?"

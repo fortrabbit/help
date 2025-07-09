@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:55:44
+reviewed:      2025-07-09 14:41:45
 title:         Troubleshooting TLS and HTTPS issues
 naviTitle:     TLS troubleshooting
 excerpt:       What you may want to know about our SSL/TLS errors.

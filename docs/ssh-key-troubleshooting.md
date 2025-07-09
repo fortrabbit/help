@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:55:37
+reviewed:      2025-07-09 14:42:22
 naviTitle:     SSH key troubleshooting
 title:         SSH key troubleshooting
 excerpt:       What you may want to know to debug SSH key issues

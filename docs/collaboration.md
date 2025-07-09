@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:52:36
+reviewed:      2025-07-09 14:40:35
 title:         Collaborating on fortrabbit
 naviTitle:     About Collaboration
 lead:          Learn about the powerful teamwork features and how to map your real world business relationships on your favorite hosting platform — fortrabbit.

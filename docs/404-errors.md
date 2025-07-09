@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:51:46
+reviewed:      2025-07-09 14:39:23
 title:         Troubleshoot 404 errors
 naviTitle:     404 errors
 excerpt:       Some tips on troubleshooting 404 errors.

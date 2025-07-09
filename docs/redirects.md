@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2023-11-15 15:55:23
+reviewed:    2025-07-09 14:42:41
 title:       Redirects with .htaccess
 naviTitle:   Redirects
 lead:        'The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, or specific domain, prettify URLs by omitting file endings, force https and much more.'

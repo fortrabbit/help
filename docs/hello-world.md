@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:53:57
+reviewed:      2025-07-09 14:41:06
 naviTitle:     Hello world
 title:         Hello world tutorial with Git
 lead:          This is the famous 3 minute tutorial to get started with fortrabbit. It uses plain simple PHP without any framework or CMS. See how fast and easy you can get your code up and running.

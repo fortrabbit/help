@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:55:31
+reviewed:      2025-07-09 14:41:42
 naviTitle:     SFTP troubleshooting
 title:         SFTP access troubleshooting
 excerpt:       What you may want to know to debug SFTP issues

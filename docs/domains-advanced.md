@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:53:40
+reviewed:      2025-07-09 14:40:43
 title:         Advanced domain configuration
 lead:          "The world of DNS is one of its own. You want to do more than just the basics? Let's dive into it - understand the background, explore advanced and alternative settings."
 naviTitle:     Advanced domain setups

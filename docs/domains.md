@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:53:43
+reviewed:      2025-07-09 14:40:51
 title:         How to configure domains for fortrabbit
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Basic domain configuration

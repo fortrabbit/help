@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:51:52
+reviewed:      2025-07-09 14:39:29
 title:         Troubleshoot 502 errors
 naviTitle:     502 errors
 excerpt:       Some tips on troubleshooting 502 errors.

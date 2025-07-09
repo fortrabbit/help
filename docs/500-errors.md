@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2023-11-15 15:51:49
+reviewed:      2025-07-09 14:39:26
 title:         Troubleshoot 500 errors
 naviTitle:     500 errors
 excerpt:       Some tips on troubleshooting 500 errors.
