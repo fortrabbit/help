@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2023-11-15 15:55:21
+reviewed:      2025-07-18 17:48:11
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
