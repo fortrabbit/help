@@ -100,6 +100,12 @@ Cron Jobs are time scheduled PHP executions. They run at defined times, independ
 
 The interval timing is guaranteed, the exact time of execution is randomized. For example: 30 minutes will run at every 13th minute and at the 43rd minute again. All daily, weekly and monthly jobs run between 00:00 and 10:00 UTC. Weekly intervals will run on Monday.
 
+#### Limits
+
+* Cron scripts can run for maximum 12 hours, then it will be killed
+* Each time the cron triggers, a new copy of the cron script is started
+* When 5 scripts are running at the same time, no more will start until another exits
+
 
 ### Metrics
 
