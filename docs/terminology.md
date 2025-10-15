@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:20:33
+reviewed:      2025-09-15 08:20:33
 naviTitle:     Terminology
 title:         What is what on fortrabbit?
 lead:          You'll find many capitalized words in these docs. These words refer to fortrabbit "creations". This list shall give you an overview:

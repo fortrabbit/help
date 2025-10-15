@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-01-29 15:32:00
+reviewed:         2025-10-15 11:39:06
 title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony on fortrabbit.

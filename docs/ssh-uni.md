@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:20:35
+reviewed:      2025-09-15 08:20:35
 title:         SSH access
 naviTitle:     SSH access
 lead:          Learn what you can do on the command line with fortrabbit Apps.

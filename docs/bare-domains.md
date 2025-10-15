@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:19:51
+reviewed:      2025-09-15 08:19:51
 title:         All about bare domains and our redirect service
 lead:          How to configure the bare domain for forwarding and how the redirect service works
 naviTitle:     Bare domains

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:21:24
+reviewed:      2025-09-15 08:21:24
 title:         Frequently asked questions on our terms
 naviTitle:     FAQ terms
 lead:          "Here are are some common questions and answers on our terms of service."

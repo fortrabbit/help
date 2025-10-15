@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:21:03
+reviewed:      2025-09-15 08:21:03
 title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life

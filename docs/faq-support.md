@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:21:26
+reviewed:      2025-09-15 08:21:26
 title:         Frequently asked questions on our support
 naviTitle:     FAQ support
 lead:          "Here are are some common questions and answers on our terms of service."

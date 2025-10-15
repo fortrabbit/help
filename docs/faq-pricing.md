@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:21:28
+reviewed:      2025-09-15 08:21:28
 title:         Frequently asked questions on pricing
 naviTitle:     FAQ pricing
 lead:          "Here are are some common questions and answers on our pricing and billing."

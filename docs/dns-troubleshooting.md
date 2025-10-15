@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-02-15 08:20:18
+reviewed:      2025-09-15 08:20:18
 title:         DNS and domain troubleshooting
 naviTitle:     DNS troubleshooting
 excerpt:       Troubleshooting DNS issues

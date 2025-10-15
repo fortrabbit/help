@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-02-15 08:21:22
+reviewed:         2025-09-15 08:21:22
 title:            Get ready
 naviTitle:        Get ready
 lead:             So you are about to get started with your first fortrabbit App. This short guide makes sure that everything is ready to start with one of our install guides.

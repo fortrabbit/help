@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Deployment methods"
 title:         "Deployment methods"
-reviewed:      2024-03-05 07:08:28
+reviewed:      2025-09-05 07:08:28
 excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni

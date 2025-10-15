@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2024-02-15 08:21:30
+reviewed:   2025-09-15 08:21:30
 title:      Using environment variables in PHP and on fortrabbit
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs. It's a good modern practice.

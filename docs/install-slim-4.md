@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2023-11-15 15:54:43
+reviewed:         2024-11-15 15:54:43
 title:            Install Slim Framework 4
 naviTitle:        Slim Framework
 lead:             Slim is a PHP micro framework that helps you write simple web applications and APIs quickly. Learn how to install and tune Slim 4 on fortrabbit.
