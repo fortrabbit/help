@@ -177,7 +177,7 @@ To start fresh you can reset the Fail and Exit counters using the `jobs_reset` c
 
 ``` bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com jobs_reset
-# This just resets not the jobs itself
+# This resets only the stats, and does not affect any jobs
 ```
 
 
