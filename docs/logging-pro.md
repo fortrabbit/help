@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2025-09-15 08:20:59
+reviewed:   2025-10-31 08:31:59
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing live logs of your App is essential for developing. Here is how you can do it on fortrabbit.
@@ -68,4 +68,4 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access 2>&1 | gre
 
 ## Quirks
 
-Unlike with [Universal Apps](/logging-uni), there are no historical oder logs for Pro Apps available. You might use a third party service like Papertrail or Datadog to achieve that.
+Unlike with [Universal Apps](/logging-uni), there are no historical oder logs for Pro Apps available. You might use a third party service like Papertrail to achieve that.
