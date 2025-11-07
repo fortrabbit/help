@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2025-09-14 20:28:00
+reviewed:      2025-11-07 08:37:21
 title:         Troubleshoot 503 errors
 naviTitle:     503 errors
 excerpt:       Some tips on troubleshooting 503 errors.
@@ -32,7 +32,8 @@ order:         15
 
 ### Check the logs
 
-Examine the logs of your App. See [here for Uni Apps](logging-uni) and [here for Pro Apps](logging-pro). There you'll likely find where the application exited with which error. Compare this with your local development environment and see if it fails the same way. Review your latest code changes.
+503 errors are often associated with uncontrolled termination, so in many cases no PHP error logs will be written. It's anyhow worth a try. Maybe you can find where the application exited with which error. Compare this with your local development environment and see if it fails the same way.
+
 
 ### 'AH1067: Failed to read FastCGI header' Apache error
 
