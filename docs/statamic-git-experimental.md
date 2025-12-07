@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-06-17 10:50:00
+reviewed:         2025-06-17 10:50:00
 order:            4
 title:            Deploy Statamic with Git on fortrabbit (experimental)
 naviTitle:        Statamic Git experimental

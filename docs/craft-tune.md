@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-11-04 17:23:59
+reviewed:         2025-11-04 17:23:59
 title:            Tune Craft CMS
 naviTitle:        5. Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.

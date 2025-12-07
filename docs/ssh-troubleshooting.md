@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-06-21 16:56:02
+reviewed:      2025-06-21 16:56:02
 naviTitle:     SSH access troubleshooting
 title:         SSH access troubleshooting
 excerpt:       What you may want to know to debug SSH connection issues

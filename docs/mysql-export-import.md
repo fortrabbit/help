@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-09-15 15:28:57
+reviewed:      2025-09-15 15:28:57
 title:         How to export and import a MySQL database
 naviTitle:     MySQL export & import
 lead:          To set up an application environment, you may need to migrate existing data. The following examples deal with exporting and importing MySQL data from one environment (local machine) to another (fortrabbit). The same steps apply in reverse, but the to and from login details need to be swapped.

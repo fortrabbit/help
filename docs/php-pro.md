@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-06-02 10:31:13
+reviewed:      2025-06-02 10:31:13
 title:         Using and scaling PHP
 naviTitle:     PHP
 lead:          PHP is — as you are probably aware — a popular web programming language. It's also the core Component here on fortrabbit. See here how to use and scale PHP.

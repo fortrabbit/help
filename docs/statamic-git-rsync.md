@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-07-02 11:02:00
+reviewed:         2025-07-02 11:02:00
 order:            2
 title:            Deploy Statamic with Git and rsync
 naviTitle:        Statamic Git + rsync

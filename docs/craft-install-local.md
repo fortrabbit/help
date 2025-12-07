@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-04-03 16:48:12
+reviewed:         2025-04-03 16:48:12
 title:            Install Craft CMS locally
 naviTitle:        2. Install Craft locally
 lead:             Learn how to install Craft CMS locally, matching your skills and workflows.

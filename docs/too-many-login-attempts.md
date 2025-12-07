@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2024-11-15 15:55:46
+reviewed:      2025-11-15 15:55:46
 title:         Blocklisting
 naviTitle:     Blocklisting
 excerpt:       What you may want to know about blocking when trying to deploy.

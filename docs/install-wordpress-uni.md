@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-05-11 20:13:38
+reviewed:         2025-05-11 20:13:38
 title:            Install WordPress
 naviTitle:        WordPress
 group:            Install_guides

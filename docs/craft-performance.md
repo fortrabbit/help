@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-04-04 12:13:06
+reviewed:         2025-04-04 12:13:06
 title:            Craft CMS performance tips
 naviTitle:        Craft performance tips
 lead:             All about performance problems with Craft CMS and how to run Craft CMS fast on fortrabbit.

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2024-04-03 15:57:23 
+reviewed:         2025-04-03 15:57:23 
 title:            Getting started with Craft CMS on fortrabbit
 naviTitle:        1. Craft CMS intro
 order:            1
