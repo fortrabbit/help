@@ -13,6 +13,7 @@ image:            new-relic-logo.svg
 websiteLink:      https://www.newrelic.com?utm_source=fortrabbit
 websiteLinkText:  newrelic.com
 dataCenters:      n/a
+docs:          /integrations/apm/new-relic
 
 ---
 

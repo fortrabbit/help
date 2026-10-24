@@ -10,6 +10,7 @@ group:         git
 stack:         all
 dontList:      false
 order:         5
+docs:          /platform/deployment/troubleshooting
 
 ---
 

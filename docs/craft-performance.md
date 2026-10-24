@@ -23,6 +23,7 @@ keywords:
   - install-guide
 
 rank: 100
+docs:          /guides/craft-cms/performance
 
 ---
 

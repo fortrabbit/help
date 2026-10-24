@@ -8,6 +8,7 @@ excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni
 order:         3
+docs:          /platform/deployment/intro
 
 ---
 

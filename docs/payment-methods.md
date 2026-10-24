@@ -9,6 +9,7 @@ lead:       "Which payment methods are available to whom."
 group:      billing
 stack:      all
 rank:       100
+docs:          /platform/objects/payment-method
 
 ---
 

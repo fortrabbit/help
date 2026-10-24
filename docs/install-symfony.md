@@ -18,7 +18,7 @@ supportLevel:     a
 
 otherVersions:
   3 : install-symfony-3
-
+docs:          /guides/more/symfony
 
 ---
 

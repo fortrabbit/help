@@ -7,6 +7,7 @@ naviTitle:     Downloading an App
 lead:          "This article helps you downloading all the application data required directly from our services to run it elsewhere. This might help you: boarding a new developer, moving away to a different hosting provider, or just getting a fresh backup, or archiving your project before shutting it down. Tech skills are required to do this."
 group:         tips
 stack:         all
+docs:          /dev/how-to/download-a-website
 
 ---
 

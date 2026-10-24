@@ -30,6 +30,7 @@ keywords:
     - vcs
     - add-on
     - version control
+docs:          /integrations/git-providers/github
 
 ---
 

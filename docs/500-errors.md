@@ -11,6 +11,7 @@ stack:         all
 dontList:      false
 rank:          10
 order:         10
+docs:          /dev/http-status-codes/500
 
 ---
 

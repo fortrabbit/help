@@ -10,6 +10,7 @@ group:         dns
 stack:         all
 dontList:      false
 order:         10
+docs:          /platform/domains/dns-troubleshooting
 
 ---
 

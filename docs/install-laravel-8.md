@@ -25,6 +25,7 @@ keywords:
     - laravel
 
 rank: 50
+docs:          /guides/laravel/install
 
 ---
 

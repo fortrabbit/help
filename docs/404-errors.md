@@ -11,6 +11,7 @@ stack:         all
 dontList:      false
 rank:          5
 order:         2
+docs:          /dev/http-status-codes/404
 
 ---
 

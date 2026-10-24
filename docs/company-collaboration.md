@@ -14,6 +14,7 @@ keywords:
     - collaboration
     - administrator
     - platform design
+docs:          /platform/objects/team
 
 ---
 

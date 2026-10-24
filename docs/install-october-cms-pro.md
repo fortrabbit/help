@@ -22,6 +22,7 @@ keywords:
     - cms
     - install
     - laravel
+docs:          /guides/more/october-cms
 
 ---
 

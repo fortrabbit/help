@@ -13,6 +13,7 @@ order:            1
 
 keywords:
     - 'local development'
+docs:          /platform/get-started/first-steps
 
 ---
 

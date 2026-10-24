@@ -7,6 +7,7 @@ naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
 group:       tips
 stack:       all
+docs:          /dev/how-to/migrate-to-fortrabbit
 
 ---
 

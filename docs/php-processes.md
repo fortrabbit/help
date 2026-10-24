@@ -8,6 +8,7 @@ lead:          'This is what you need to know about PHP processes and our implem
 group:         platform
 stack:         all
 hideExamples:  yes
+docs:          /dev/performance/php-processes
 
 ---
 

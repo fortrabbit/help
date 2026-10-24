@@ -19,6 +19,7 @@ version:          3.4.4
 
 otherVersions:
   6 : install-symfony-6
+docs:          /guides/more/symfony
 
 ---
 

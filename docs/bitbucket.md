@@ -24,6 +24,7 @@ keywords:
     - API
     - CI
     - cloud
+docs:          /integrations/git-providers/bitbucket
 
 ---
 

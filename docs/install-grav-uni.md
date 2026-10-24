@@ -15,6 +15,7 @@ version:          1.7
 stack:            uni
 proLink:          install-grav-1-pro
 supportLevel:     b
+docs:          /guides/more/grav
 
 ---
 

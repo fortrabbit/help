@@ -8,6 +8,7 @@ lead:         Offshore long running and compute intensive tasks with background 
 group:        Components
 stack:        pro
 uniLink:      cron-job-uni
+docs:          /platform/jobs/workers
 
 ---
 

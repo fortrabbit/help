@@ -17,6 +17,7 @@ keywords:
      - password
      - access
      - authentication
+docs:          /platform/code-access/intro
 
 ---
 

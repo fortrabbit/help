@@ -27,6 +27,7 @@ keywords:
     - SSH-2 RSA
     - OpenSSH
     - secure shell
+docs:          /dev/learn/ssh-key-setup
 
 ---
 

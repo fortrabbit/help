@@ -11,6 +11,7 @@ order:       9
 
 keywords:
     - rsync
+docs:          /dev/how-to/rsync
 
 ---
 

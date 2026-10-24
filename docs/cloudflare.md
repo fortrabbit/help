@@ -19,6 +19,7 @@ keywords:
      - CDN
      - ddos
      - ssl
+docs:          /integrations/dns/cloudflare
 
 ---
 

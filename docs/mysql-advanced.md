@@ -26,6 +26,7 @@ keywords:
      - sequel
      - tunnel
      - nosql
+docs:          /platform/mysql/advanced-database
 
 ---
 

@@ -14,6 +14,7 @@ keywords:
     - beginner
     - dashboard
     - deployment
+docs:          /dev/learn/git-push-deploy
 
 ---
 

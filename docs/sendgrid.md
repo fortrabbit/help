@@ -15,6 +15,7 @@ image:            sendgrid-mark.svg
 
 keywords:
     - "transactional mail"
+docs:          /integrations/transactional-mail/sendgrid
 
 ---
 

@@ -10,6 +10,7 @@ group:         tls
 stack:         all
 dontList:      false
 order:         5
+docs:          /dev/learn/https-troubleshooting
 
 ---
 

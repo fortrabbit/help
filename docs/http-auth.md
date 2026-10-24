@@ -12,6 +12,7 @@ keywords:
     - HTTP Auth
     - password for website
     - php
+docs:          /dev/htaccess/http-auth
 
 ---
 

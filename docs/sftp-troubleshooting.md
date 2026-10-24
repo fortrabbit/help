@@ -15,6 +15,7 @@ keywords:
      - password
      - access
      - authentication
+docs:          /platform/code-access/troubleshooting
 
 ---
 

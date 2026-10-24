@@ -15,6 +15,7 @@ keywords:
     - WordPress
     - Symfony
     - Guide
+docs:          /platform/concepts/software-support-levels
 
 ---
 

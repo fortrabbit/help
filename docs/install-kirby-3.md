@@ -26,6 +26,7 @@ keywords:
     - plainkit
     - flatfile
     - headless
+docs:          /guides/kirby/install
 
 ---
 

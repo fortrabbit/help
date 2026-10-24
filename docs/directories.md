@@ -19,6 +19,7 @@ keywords:
     - web root
     - doc root
     - document root
+docs:          /platform/code-access/directories
 
 ---
 

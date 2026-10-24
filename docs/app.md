@@ -8,6 +8,7 @@ lead:          Forget servers. Think services instead. Learn the basic fortrabbi
 group:         platform
 stack:         all
 order:         1
+docs:          /platform/objects/app
 
 ---
 

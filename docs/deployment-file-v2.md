@@ -12,7 +12,7 @@ order:         10
 keywords:
    - advanced
    - git
-
+docs:          /platform/deployment/deploy-file
 
 ---
 

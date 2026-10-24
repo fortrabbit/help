@@ -23,6 +23,7 @@ keywords:
      - domain registrar
      - TLD
      - gTLD
+docs:          /integrations/dns/providers
 
 ---
 

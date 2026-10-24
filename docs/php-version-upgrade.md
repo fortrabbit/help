@@ -14,6 +14,7 @@ keywords:
     - migration
     - EOl
     - mcrypt
+docs:          /dev/how-to/upgrade-php
 
 ---
 

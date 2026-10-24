@@ -23,6 +23,7 @@ keywords:
   - install-guide
 
 rank: 190
+docs:          /guides/craft-cms/troubleshooting
 
 ---
 

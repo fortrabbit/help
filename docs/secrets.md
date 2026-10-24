@@ -13,6 +13,7 @@ keywords:
     - Credentials
     - ENV vars
     - Environment variables
+docs:          /platform/new/changes/app-secrets
 
 ---
 

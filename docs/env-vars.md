@@ -17,6 +17,7 @@ keywords:
     - dotenv
 
 rank: 10
+docs:          /dev/env-vars/access
 
 ---
 

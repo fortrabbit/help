@@ -16,6 +16,7 @@ keywords:
     - terminal
     - shell
     - bash
+docs:          /dev/learn/git-push-deploy
 
 ---
 

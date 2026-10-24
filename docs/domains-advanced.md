@@ -24,6 +24,7 @@ keywords:
     - DNS
     - ns
     - lookup
+docs:          /platform/domains/external-domain-setup
 
 ---
 

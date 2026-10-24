@@ -17,6 +17,7 @@ keywords:
     - gzip
 
 rank:     3
+docs:          /dev/htaccess/http-headers
 
 ---
 

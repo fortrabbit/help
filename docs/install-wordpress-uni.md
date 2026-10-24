@@ -19,6 +19,7 @@ supportLevel:     b
 
 keywords:
     - wp-admin
+docs:          /guides/wordpress/setup
 
 ---
 

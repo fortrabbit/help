@@ -15,6 +15,7 @@ rank:          1
 keywords:
     - beginner
     - deployment
+docs:          /platform/code-access/ssh
 
 ---
 

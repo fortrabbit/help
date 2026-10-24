@@ -10,6 +10,7 @@ group:         mysql
 order:         5
 stack:         all
 dontList:      false
+docs:          /dev/performance/database
 
 ---
 

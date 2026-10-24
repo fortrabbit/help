@@ -15,6 +15,7 @@ keywords:
     - Logs
 
 rank: 20
+docs:          /platform/settings/logs
 
 ---
 

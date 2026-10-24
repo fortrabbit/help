@@ -26,6 +26,7 @@ keywords:
 
 
 rank: 100
+docs:          /guides/craft-cms/install
 
 ---
 

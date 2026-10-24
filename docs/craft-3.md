@@ -21,6 +21,7 @@ keywords:
   - craftCMS4
   - craftCMS3
   - upgrade
+docs:          /guides/craft-cms/setup
 
 ---
 

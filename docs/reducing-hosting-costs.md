@@ -12,7 +12,7 @@ keywords:
     - server costs
     - IT costs
     - cloud costs
-
+docs:          /dev/how-to/reduce-hosting-costs
 
 ---
 

@@ -16,6 +16,7 @@ keywords:
     - php
     - ssi
     - gzip
+docs:          /dev/htaccess/tips
 
 ---
 

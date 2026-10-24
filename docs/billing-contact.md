@@ -20,6 +20,7 @@ keywords:
     - tenant
     - client
     - employees
+docs:          /platform/collaboration/billing-collaboration
 
 ---
 

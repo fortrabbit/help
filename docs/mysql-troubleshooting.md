@@ -10,6 +10,7 @@ group:         mysql
 stack:         all
 dontList:      false
 order:         10
+docs:          /platform/mysql/troubleshooting
 
 ---
 

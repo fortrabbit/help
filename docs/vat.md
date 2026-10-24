@@ -9,6 +9,7 @@ group:      billing
 lead:       "Value Added Tax may apply. But when does it actually?"
 stack:      all
 rank:       100
+docs:          /platform/billing/vat
 
 ---
 

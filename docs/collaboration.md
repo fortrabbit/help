@@ -29,6 +29,7 @@ keywords:
     - collaborator
     - administrator
     - platform design
+docs:          /platform/collaboration/intro
 
 ---
 

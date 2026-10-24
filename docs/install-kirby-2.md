@@ -24,6 +24,7 @@ otherVersions:
 keywords:
     - getkirby
     - starterkit
+docs:          /guides/kirby/install
 
 ---
 

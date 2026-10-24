@@ -10,6 +10,7 @@ group:         quirks
 stack:         all
 dontList:      false
 order:         10
+docs:          /platform/code-access/ssh-rate-limits
 
 ---
 

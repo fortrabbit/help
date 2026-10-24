@@ -15,6 +15,7 @@ keywords:
     - dreamweaver
     - FTP
     - FTPS
+docs:          /platform/code-access/sftp
 
 ---
 

@@ -13,6 +13,7 @@ keywords:
   - git
   - getcomposer
   - Dependency Manager
+docs:          /dev/learn/composer
 
 ---
 

@@ -9,6 +9,7 @@ lead:          "There is no full SSH access with Professional Apps, but you can 
 stack:         pro
 group:         ssh
 order:         2
+docs:          /platform/code-access/ssh
 
 ---
 

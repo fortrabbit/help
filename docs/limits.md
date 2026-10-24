@@ -7,6 +7,7 @@ naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
 group:            quirks
 stack:            all
+docs:          /platform/concepts/limits
 
 ---
 

@@ -8,6 +8,7 @@ lead:         Use time scheduled cron jobs to execute long running operations in
 group:        platform
 stack:        uni
 proLink:      worker-pro
+docs:          /platform/jobs/crons
 
 ---
 

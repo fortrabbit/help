@@ -21,6 +21,7 @@ keywords:
   - craftCMS
   - setup
   - install-guide
+docs:          /guides/craft-cms/updating
 
 ---
 

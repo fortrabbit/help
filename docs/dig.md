@@ -10,6 +10,7 @@ group:         dns
 order:         7
 stack:         all
 dontList:      false
+docs:          /dev/learn/dig
 
 ---
 

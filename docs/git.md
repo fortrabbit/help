@@ -20,6 +20,7 @@ keywords:
     - Cygwin
     - Windows
     - Git Bash
+docs:          /dev/learn/git-intro
 
 ---
 

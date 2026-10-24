@@ -11,6 +11,7 @@ stack:         all
 dontList:      false
 rank:          1
 order:         11
+docs:          /dev/http-status-codes/others/502
 
 ---
 

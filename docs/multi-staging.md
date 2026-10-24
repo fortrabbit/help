@@ -8,6 +8,7 @@ lead:          Learn about development/production environments and how to run th
 group:         development
 stack:         all
 order:         9
+docs:          /dev/learn/staging-environments
 
 ---
 

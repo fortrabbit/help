@@ -16,6 +16,7 @@ stack:            pro
 uniLink:          install-grav-1-uni
 supportLevel:     b
 deprecated:       1
+docs:          /guides/more/grav
 
 ---
 

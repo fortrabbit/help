@@ -25,6 +25,7 @@ keywords:
     - DNS
     - ns
     - lookup
+docs:          /platform/domains/apex-domains
 
 ---
 

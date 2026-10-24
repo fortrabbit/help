@@ -9,6 +9,7 @@ lead:          Having trouble making outgoing requests from your App? That's may
 group:         quirks
 stack:         all
 dontList:      false
+docs:          /platform/settings/firewall-outgoing
 
 ---
 

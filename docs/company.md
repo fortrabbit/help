@@ -19,6 +19,7 @@ keywords:
     - tenant
     - client
     - employees
+docs:          /platform/objects/team
 
 ---
 

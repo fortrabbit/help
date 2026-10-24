@@ -7,6 +7,7 @@ naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
 group:         tips
 stack:         all
+docs:          /dev/performance/intro
 
 ---
 

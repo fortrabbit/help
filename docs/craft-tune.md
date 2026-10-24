@@ -26,6 +26,7 @@ keywords:
   - install-guide
 
 rank: 90
+docs:          /guides/craft-cms/tune
 
 ---
 

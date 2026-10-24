@@ -9,6 +9,7 @@ lead:       "Sometimes payments don't go through. That happens and we understand
 group:      billing
 stack:      all
 rank:       100
+docs:          /platform/billing/late-payments
 
 ---
 

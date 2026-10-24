@@ -7,6 +7,7 @@ naviTitle:     Security tips
 lead:          "Essential tips to keep your fortrabbit Account and your code base secure."
 group:         tips
 stack:         all
+docs:          /dev/learn/security-tips
 
 ---
 

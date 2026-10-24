@@ -10,6 +10,7 @@ stack:         pro
 
 keywords:
     - app-design
+docs:          /dev/performance/scaling
 
 ---
 

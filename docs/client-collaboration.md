@@ -21,6 +21,7 @@ keywords:
     - freelancer
     - client
     - web-developer
+docs:          /platform/collaboration/intro
 
 ---
 

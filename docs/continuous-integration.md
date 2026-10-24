@@ -17,6 +17,7 @@ keywords:
     - travis
     - jenkins
     - hudson
+docs:          /platform/deployment/deploy-hook
 
 ---
 

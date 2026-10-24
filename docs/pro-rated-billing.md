@@ -9,6 +9,7 @@ lead:       "There are no upfront costs or payments here. Pay for what you use. 
 group:      billing
 stack:      all
 rank:       100
+docs:          /platform/billing/daily-aggregation
 
 ---
 

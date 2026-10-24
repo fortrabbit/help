@@ -10,6 +10,7 @@ group:      billing
 stack:      all
 rank:       100
 order:      20
+docs:          /platform/billing/pricing-structure
 
 ---
 

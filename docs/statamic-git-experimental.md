@@ -24,6 +24,7 @@ keywords:
     - laravel
     - flatfile
     - headless
+docs:          /guides/statamic/deploy-git-rsync
 
 ---
 

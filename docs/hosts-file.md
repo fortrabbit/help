@@ -10,6 +10,7 @@ group:         dns
 order:         15
 stack:         all
 dontList:      false
+docs:          /dev/learn/hosts-file
 
 ---
 

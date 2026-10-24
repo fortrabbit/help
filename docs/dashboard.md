@@ -19,6 +19,7 @@ keywords:
     - Ajenti
     - master control panel
     - beginner
+docs:          /platform/get-started/first-steps
 
 ---
 

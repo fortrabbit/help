@@ -23,6 +23,7 @@ keywords:
     - profiling
     - performance
     - testing
+docs:          /integrations/apm/blackfire
 
 ---
 

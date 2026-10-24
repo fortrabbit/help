@@ -27,6 +27,7 @@ keywords:
     - php
     - install
     - laravel
+docs:          /guides/laravel/install
 
 ---
 

@@ -18,6 +18,7 @@ keywords:
     - Certificate Authority
     - port 443
     - port 80
+docs:          /platform/domains/https
 
 ---
 

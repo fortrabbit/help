@@ -7,6 +7,7 @@ title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
 group:         platform
 stack:         all
+docs:          /platform/components/backups
 
 ---
 

@@ -19,6 +19,7 @@ keywords:
     - security
     - mfa
     - 2fa
+docs:          /platform/objects/person
 
 ---
 

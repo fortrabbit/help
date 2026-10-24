@@ -13,6 +13,7 @@ keywords:
      - vhosts
      - localhost
      - 127.0.0.1
+docs:          /integrations/local-development/intro
 
 ---
 

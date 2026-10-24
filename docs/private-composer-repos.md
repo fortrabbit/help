@@ -17,7 +17,7 @@ keywords:
 - Bitbucket
 - auth.json
 - oAuth
-
+docs:          /dev/learn/composer-private-repos
 
 ---
 
